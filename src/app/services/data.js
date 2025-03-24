@@ -9,27 +9,70 @@ import {
 export const sections = [
   {
     id: 1,
-    title: "Web Applications",
+    title: "DEP,DOH,DSNY",
     description:
-      "Use plugins to extend and connect services across hybrid and multi-cloud environments.",
+      `Department of Environmental Protection, Department of Health and 
+      Department of Sanitation, all send out violations, notices, complaints and sometimes 
+      requiring immediate action`,
     image:
       "/PBS%20Assets/better-assets/Icons%20Svgs/Building%20Icon%20(10).svg",
     details: "Additional content for Web Applications...", // Add your details here
   },
   {
     id: 2,
-    title: "Mobile Applications",
+    title: "DOB:",
     description:
-      "Use plugins to extend and connect services across hybrid and multi-cloud environments.",
+      `Department of Buildings complaints, violations, corrections, permits, Certificates of 
+      Occupancy, and job filing status updates provided live for enhanced property and 
+      construction management. Periodic inspections for boilers, elevators, facades, 
+      benchmarking and gas piping are all tracked to ensure compliance while avoiding 
+      violations and fines.`,
     image:
       "/PBS%20Assets/better-assets/Icons%20Svgs/Building%20Icon%20(11).svg",
     details: "Additional content for Mobile Applications...", // Add your details here
   },
   {
     id: 3,
-    title: "Project Management",
+    title: "ECB",
     description:
-      "Use plugins to extend and connect services across hybrid and multi-cloud environments.",
+      `Environmental Control Board, otherwise known as OATH, holds hearings for many 
+      department violations. Tracking their system ensures you never miss a court date again, 
+      instantly updating you on correction submissions, court appearances and 
+      determinations.`,
+    image:
+      "/PBS%20Assets/better-assets/Icons%20Svgs/Building%20Icon%20(12).svg",
+    details: "Additional content for Project Management...", // Add your details here
+  },
+  {
+    id: 4,
+    title: "FDNY",
+    description:
+      `The Fire Department has many certificates, permits, and periodic inspection 
+      requirements that we track for you to ensure compliance. The department's major 
+      requirements include, but are not limited to, a five-year sprinkler flow test, annual 
+      backflow inspections, fire alarm approvals, Certificates of Fitness, letters of approval, 
+      and Certificates of Corrections`,
+    image:
+      "/PBS%20Assets/better-assets/Icons%20Svgs/Building%20Icon%20(12).svg",
+    details: "Additional content for Project Management...", // Add your details here
+  },
+  {
+    id: 5,
+    title: "HPD",
+    description:
+      `The Housing Preservation & Development requires annual registration with many 
+      codes to abide by. We track your building-specific requirements, complaints, corrections 
+      and emergency repairs`,
+    image:
+      "/PBS%20Assets/better-assets/Icons%20Svgs/Building%20Icon%20(12).svg",
+    details: "Additional content for Project Management...", // Add your details here
+  },
+  {
+    id: 6,
+    title: "DOT",
+    description:
+      `Department of Transportation covers all sidewalks and roadways. Complaints, 
+        violations, inspections and emergency repairs are all tracked to ensure compliance.`,
     image:
       "/PBS%20Assets/better-assets/Icons%20Svgs/Building%20Icon%20(12).svg",
     details: "Additional content for Project Management...", // Add your details here

@@ -82,12 +82,13 @@ const SectionList = () => {
           <div className="text-center my-12 xl:mb-8 py-6">
             <div className="text-brand-bright flex flex-col md:flex-row items-center justify-center gap-2 mb-4 md:mb-6">
               {/* <Building className="w-8 h-8" /> */}
-              <h3 className="text-[#2d8b6f] text-lg font-gnuolane uppercase tracking-widest mb-2">
-                Why Choose Us
+              <h3 className="text-4xl md:text-5xl font-conthrax sm:w-5/6 md:w-[70%] mx-auto text-[#2d8b6f] ">
+                We Serve Across NYC’s Departments
               </h3>
             </div>
-            <h1 className="text-4xl md:text-5xl font-conthrax sm:w-5/6 md:w-[70%] mx-auto  text-[#f3f4f6]">
-              Your Pets Will Be Extremely Happy With Us
+            <h1 className="text-[#f3f4f6] text-lg font-gnuolane uppercase tracking-widest mb-2">
+              We don't only deal with these departments for your Alerts but we also deal with these
+              departments for your permitting and inspection work.
             </h1>
           </div>
 
@@ -103,9 +104,8 @@ const SectionList = () => {
 
         {/* Expandable Sections Container */}
         <div
-          className={`container ${
-            expandedId ? "2xl:ml-24" : "mx-auto"
-          } space-y-8 sm:space-y-16 w-[90%] xl:w-[85%] mb-24 lg:my-16`}
+          className={`container ${expandedId ? "2xl:ml-24" : "mx-auto"
+            } space-y-8 sm:space-y-16 w-[90%] xl:w-[85%] mb-24 lg:my-16`}
         >
           <AnimatePresence>
             {/* Map through each section and create expandable cards */}
@@ -118,9 +118,8 @@ const SectionList = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className={`relative cursor-pointer bg-[#252525] rounded-2xl shadow-2xl ${
-                  expandedId === section.id ? "border-brand-bright" : ""
-                } sm:w-[80%] md:w-[65%] lg:w-[80%] xl:w-[75%] mx-auto`}
+                className={`relative cursor-pointer bg-[#252525] rounded-2xl shadow-2xl ${expandedId === section.id ? "border-brand-bright" : ""
+                  } sm:w-[80%] md:w-[65%] lg:w-[80%] xl:w-[75%] mx-auto`}
               >
                 {/* Section Card Header - Always Visible */}
                 <motion.div

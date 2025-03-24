@@ -6,6 +6,7 @@
 
 import HeroSection from "@/components/HeroSection";
 import { aboutContent } from "./data"; // Import data from data.js
+import CTA from "@/components/CTA";
 
 /**
  * About Us Page Component
@@ -19,6 +20,8 @@ const page = () => {
         heading="Built by New Yorkers, For New York"
         text="For Decades, we’ve followed the rules of Inspection, Expediting and portfolio management, Not as Outsiders, but as neighbors, collaborators, and guardians of this city’s skyline."
       />
+
+
 
       {/* Main content section with dark background and responsive padding */}
       <section className="bg-gray-900 text-white px-6 md:px-16 lg:px-24 py-12 py-[150px] xl:py-[200px]">
