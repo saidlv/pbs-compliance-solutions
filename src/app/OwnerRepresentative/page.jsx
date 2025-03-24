@@ -241,7 +241,8 @@ const page = () => {
   return (
     <div>
       {/* Hero section with title */}
-      <HeroSection heading="Owner Representative" text="Below is our Portfolio Section" />
+      <HeroSection heading="Focus on your Vision, We’ll handle the Complexitye" text="PBS Owner Representatives act as your eyes,ears, and voice, ensuring 
+compliance, cost efficiency, and seamless operations for your property" />
 
       {/* Portfolio Content Section */}
       <motion.section
