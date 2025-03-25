@@ -15,14 +15,14 @@ export const menuItems = [
     submenu: [
       {
         name: "Inspection Services",
-        link: "/guide-resources/dob-service-updates",
+        link: "/inspection-services/inspection-services",
       },
       {
         name: "Boiler Inspection",
-        link: "/guide-resources/history-of-local-laws",
+        link: "/inspection-services/boiler-inspection",
       },
-      { name: "Sprinkler Hydrostatic inspection", link: "/guide-resources/nyc-dob-codes" },
-      { name: "Elevator Inspection", link: "/guide-resources/nyc-fdny-codes" },
+      { name: "Sprinkler Hydrostatic inspection", link: "/inspection-services/sh-inspection" },
+      { name: "Elevator Inspection", link: "/inspection-services/elevator-inspection" },
 
     ],
   },
@@ -31,14 +31,14 @@ export const menuItems = [
     submenu: [
       {
         name: "Local Law 11",
-        link: "/guide-resources/dob-service-updates",
+        link: "/law/local-law",
       },
       {
         name: "Local Law 126 (Parking)",
-        link: "/guide-resources/history-of-local-laws",
+        link: "/law/local-law-152",
       },
-      { name: "Local Law 126 (Parapet)", link: "/guide-resources/nyc-dob-codes" },
-      { name: "Local Law 152", link: "/guide-resources/nyc-fdny-codes" },
+      { name: "Local Law 126 (Parapet)", link: "/law/local-law-parapet" },
+      { name: "Local Law 152", link: "/law/local-law-parking" },
 
     ],
   },

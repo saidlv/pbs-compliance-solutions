@@ -25,10 +25,14 @@ module.exports = {
       { loc: "/blog" },
       ...slugs.map((slug) => ({ loc: `/blog/${slug}` })), // Add blog posts dynamically
       { loc: "/OwnerRepresentative" },
-      { loc: "/guide-resources/dob-service-updates" },
-      { loc: "/guide-resources/history-of-local-laws" },
-      { loc: "/guide-resources/nyc-dob-codes" },
-      { loc: "/guide-resources/nyc-fdny-codes" },
+      { loc: "/inspection-services/inspection-services" },
+      { loc: "/inspection-services/boiler-inspection" },
+      { loc: "/inspection-services/sh-inspection" },
+      { loc: "/inspection-services/elevator-inspection" },
+      { loc: "/law/local-law" },
+      { loc: "/law/local-law-152" },
+      { loc: "/law/local-law-parapet" },
+      { loc: "/law/local-law-parking" },
     ];
   },
 };
