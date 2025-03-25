@@ -1,32 +1,121 @@
-export const localawDarapet = [
+export const localLawDataArray = [
   {
-    id: 1,
-    code_title: "GENERAL ADMINISTRATIVE PROVISIONS",
-    chapter_appendix: "CHAPTER 1",
-    title: "ADMINISTRATION",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_AC_Chapter1_Administration.pdf&section=conscode_2014",
+    heading: "Know About LL126:",
+    body: `
+      <p>Local Law 126 requires all NYC parking structures to undergo periodic inspections by licensed 
+      professionals, these evaluations ensure structural integrity, identify hazards, and keep your 
+      property compliant with evolving safety regulations.</p>
+      <p><b>Key Take-aways:</b></p>
+      <ul>
+        <li>Mandatory for most commercial/residential parking garages</li>
+        <li>Inspections must occur every 6 years</li>
+        <li>non-Compliance risks fines up to $10K</li>
+        <li>Garages attached to 1-2 family homes are exempted only</li>
+      </ul>
+      <p>New York City’s Local Law 126 mandates rigorous parking garage inspections and we’re here 
+      to simplify the process. Trust our licensed experts to deliver thorough assessments, actionable 
+      insights, and seamless compliance, so you can focus on what matters most.</p>
+    `,
   },
   {
-    id: 2,
-    code_title: "GENERAL ADMINISTRATIVE PROVISIONS",
-    chapter_appendix: "CHAPTER 2",
-    title: "ENFORCEMENT",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_AC_Chapter2_Enforcement.pdf&section=conscode_2014",
+    heading: "Our Offerings:",
+    body: `
+      <ul>
+        <li>Comprehensive Inspections: Licensed Engineers evaluate structural components, 
+        drainage, electrical systems, and more</li>
+        <li>Hassle-free Reporting: We Handle all documentation and submissions to NYC agencies, 
+        ensuring 100% compliance</li>
+        <li>Repairs & Maintenance: Repairs Plans to address issues cost-effectively</li>
+        <li>Portfolio Management: Streamlined inspections for multi-property owners</li>
+      </ul>
+    `,
   },
   {
-    id: 3,
-    code_title: "GENERAL ADMINISTRATIVE PROVISIONS",
-    chapter_appendix: "CHAPTER 3",
-    title: "MAINTENANCE OF BUILDINGS",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_AC_Chapter3_Maintenance_of_Buildings.pdf&section=conscode_2014",
+    heading: "Why it Matters:",
+    body: `
+      <ul>
+        <li>Being Compliant with LL 126 you can avoid fines, legal disputes and operational 
+        shutdowns.</li>
+        <li>You can prolong the lifespan of your parking structure by getting your inspections done 
+        on time</li>
+        <li>Tenant safety is what matters most for you, and your’s safety is what matters most to us</li>
+      </ul>
+    `,
   },
-  // ... (full 111 entries continued below) ...
   {
-    id: 111,
-    code_title: "BUILDING CODE",
-    chapter_appendix: "APPENDIX S",
-    title: "SUPPLEMENTARY FIGURES FOR LUMINOUS EGRESS PATH MARKINGS",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_BC_Appendix_S_Photoluminescent.pdf&section=conscode_2014",
+    heading: "What Property Owners Need to Know:",
+    body: `
+      <p><b>1- Inspection Requirements:</b></p>
+      <ul>
+        <li>Frequency: Every 6 Years</li>
+        <li>Scope: Full Structural evaluation, including beams, slabs, columns and waterproofing</li>
+        <li>Deadlines: Register your property to PBS Alert Portal to get NYC Departments alerts 
+        before the deadlines</li>
+      </ul>
+      <p><b>2- Compliance Standards:</b></p>
+      <ul>
+        <li>All Garages (New & Existing) must meet NYC Building code</li>
+        <li>Critical Focus on corrosion, concrete deterioration, and load capacity</li>
+      </ul>
+      <p><b>3- Exemptions:</b></p>
+      <p>Commercial properties, condos, co-ops, mixed used buildings must stay compliant with the 
+      code. Only exempted buildings are garages serving 1-2 family homes.</p>
+    `,
+  },
+  {
+    heading: "Why Choose us:",
+    body: `
+      <p><b>The NYC Parking Inspection Experts</b></p>
+      <ul>
+        <li>30+ Years of specialized experience</li>
+        <li>100% Compliance guarantee</li>
+        <li>Transparent Pricing, No Hidden Fees</li>
+      </ul>
+      <p><b>Trusted By:</b></p>
+      <ul>
+        <li>NYC Building Agencies</li>
+        <li>DOB Certified</li>
+        <li>FDNY Certified</li>
+        <li>QEWI Certified Engineers</li>
+        <li>5-Star Google Reviews</li>
+      </ul>
+      <p><b>Your Compliance Our Commitment</b></p>
+    `,
+  },
+  {
+    heading: "PA’s",
+    body: `
+      <ul>
+        <li>What if my Garage Fails? We Prioritize critical repairs to minimize liability and keep your 
+        property operational</li>
+        <li>Managing Multiple Properties is Complex? We Own our Alert System Portal where 
+        everything is managed for us, for our clients</li>
+      </ul>
+    `,
+  },
+  {
+    heading: "Call to Action:",
+    body: `
+      <p>Don't Risk Fines or Compromise Safety, Act Now to secure your property’s failure.</p>
+      <p>Schedule your inspection and get a quote in 24 Hours.</p>
+      <p><b>CTA:</b> Book Your Slot Today</p>
+      <p><b>Call:</b> 914-316-6956</p>
+      <p><b>Email:</b> jon@pbs.nyc</p>
+    `,
+  },
+  {
+    heading: "TRUST SIGNAL:",
+    body: `
+      <ul>
+        <li>FDNY-CERTIFIED</li>
+        <li>DOB-APPROVED</li>
+        <li>NYC APPROVED</li>
+        <li>LICENSED MASTER PLUMBERS</li>
+        <li>LICENSED MASTER ELECTRICIAN</li>
+        <li>NETWORK OF CONTRACTORS</li>
+        <li>4.7/5 Google Reviews</li>
+      </ul>
+    `,
   },
 ];
 

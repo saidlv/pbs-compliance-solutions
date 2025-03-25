@@ -9,14 +9,13 @@ const page = () => {
   return (
     <div>
       {/* Hero section with title and introductory text */}
-      {/* <div className="bg-[#282828] py-16 px-6 md:px-12 lg:px-24 w-full"> */}
-      <HeroSection
-        heading="LL 126 Parking Structure Inspection"
-        text="Ensure Compliance, Prevent risks & Protect your property by our simplified 
-processes through the assessments of our qualified licensed experts."
-        staggerVal={0.1}
-      />
-      {/* </div> */}
+      <div className="bg-[#282828] py-16 px-6 md:px-12 lg:px-24 w-full">
+        <HeroSection
+          heading="NYC FDNY Codes"
+          text="Learn about the codes and regulations in New York City."
+          staggerVal={0.1}
+        />
+      </div>
 
       {/* Main content section with dark background and responsive padding */}
       <div className="bg-[#101010] py-16 px-6 md:px-12 lg:px-24">
