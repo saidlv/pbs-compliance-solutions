@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
-import { serviceUpdates } from "../data"; // Assuming data.js is in the same directory
+import { localLaw } from "../data"; // Assuming data.js is in the same directory
 
 const page = () => {
   return (
@@ -28,14 +28,14 @@ const page = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              {serviceUpdates.whyLl11.heading}
+              {localLaw.whyLl11.heading}
             </h2>
             <p className="text-lg text-[#9ca3af] mb-4">
               <span className="font-bold text-[#4CAF50]">
-                {serviceUpdates.whyLl11.subheadline}
+                {localLaw.whyLl11.subheadline}
               </span>
             </p>
-            <div dangerouslySetInnerHTML={{ __html: serviceUpdates.whyLl11.body }} className="text-[#9ca3af]" />
+            <div dangerouslySetInnerHTML={{ __html: localLaw.whyLl11.body }} className="text-[#9ca3af]" />
           </motion.div>
 
           {/* Our Services */}
@@ -46,14 +46,14 @@ const page = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              {serviceUpdates.ourServices.heading}
+              {localLaw.ourServices.heading}
             </h2>
             <p className="text-lg text-[#9ca3af] mb-4">
               <span className="font-bold text-[#2196F3]">
-                {serviceUpdates.ourServices.subheadline}
+                {localLaw.ourServices.subheadline}
               </span>
             </p>
-            {serviceUpdates.ourServices.services.map((service, index) => (
+            {localLaw.ourServices.services.map((service, index) => (
               <div key={index} className="mb-6">
                 <h3 className="text-xl font-semibold mb-2 text-white">
                   {service.heading}
@@ -87,9 +87,9 @@ const page = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              {serviceUpdates.pbsProcess.heading}
+              {localLaw.pbsProcess.heading}
             </h2>
-            <div dangerouslySetInnerHTML={{ __html: serviceUpdates.pbsProcess.description }} className="text-[#9ca3af]" />
+            <div dangerouslySetInnerHTML={{ __html: localLaw.pbsProcess.description }} className="text-[#9ca3af]" />
           </motion.div>
 
           {/* Why Choose PBS */}
@@ -100,10 +100,10 @@ const page = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              {serviceUpdates.whyChoosePbs.heading}
+              {localLaw.whyChoosePbs.heading}
             </h2>
             <ul className="list-disc list-inside text-[#9ca3af]">
-              {serviceUpdates.whyChoosePbs.points.map((point, index) => (
+              {localLaw.whyChoosePbs.points.map((point, index) => (
                 <li key={index} className="text-lg">
                   {point}
                 </li>
@@ -119,10 +119,10 @@ const page = () => {
             transition={{ duration: 0.5, delay: 1.0 }}
           >
             <h2 className="text-2xl font-semibold mb-4 text-white">
-              {serviceUpdates.ctaSection.heading}
+              {localLaw.ctaSection.heading}
             </h2>
             <div className="flex flex-wrap gap-2">
-              {serviceUpdates.ctaSection.trustSignals.map((signal, index) => (
+              {localLaw.ctaSection.trustSignals.map((signal, index) => (
                 <span
                   key={index}
                   className="bg-[#e9ecef] px-4 py-2 rounded-full text-sm text-[#333]"

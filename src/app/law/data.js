@@ -1,125 +1,76 @@
-export const localLawDataArray = [
+export const parapetData = [
   {
-    heading: "Know About LL126:",
+    heading: "Know About Parapet Inspections, (LL126)",
     body: `
-      <p>Local Law 126 requires all NYC parking structures to undergo periodic inspections by licensed 
-      professionals, these evaluations ensure structural integrity, identify hazards, and keep your 
-      property compliant with evolving safety regulations.</p>
-      <p><b>Key Take-aways:</b></p>
+      <p>Under Local law 126 all NYC buildings with parapets visible from public sidewalks or streets must undergo annual inspections. These evaluations ensure structural stability, identify risks like loose bricks or leaning walls, and prevent accidents that could lead to lawsuits or City-mandated emergency repairs.</p>
+      <p><b>Key Compliance Details you should know</b></p>
       <ul>
-        <li>Mandatory for most commercial/residential parking garages</li>
-        <li>Inspections must occur every 6 years</li>
-        <li>non-Compliance risks fines up to $10K</li>
-        <li>Garages attached to 1-2 family homes are exempted only</li>
-      </ul>
-      <p>New York City’s Local Law 126 mandates rigorous parking garage inspections and we’re here 
-      to simplify the process. Trust our licensed experts to deliver thorough assessments, actionable 
-      insights, and seamless compliance, so you can focus on what matters most.</p>
-    `,
-  },
-  {
-    heading: "Our Offerings:",
-    body: `
-      <ul>
-        <li>Comprehensive Inspections: Licensed Engineers evaluate structural components, 
-        drainage, electrical systems, and more</li>
-        <li>Hassle-free Reporting: We Handle all documentation and submissions to NYC agencies, 
-        ensuring 100% compliance</li>
-        <li>Repairs & Maintenance: Repairs Plans to address issues cost-effectively</li>
-        <li>Portfolio Management: Streamlined inspections for multi-property owners</li>
+        <li>Who’s Affected: Commercial, residential, and mixed-use buildings (Detached 1-2 Family homes, certain low-rise buildings)</li>
+        <li>Deadlines Unsafe conditions must be fixed within 90 Days</li>
+        <li>CTA: Get your property/Portfolio registered in PBS Alert Portal to get timely Alerts</li>
+        <li>Penalties: Fines up to $25K for Non-Compliance or Late Repairs</li>
       </ul>
     `,
   },
   {
-    heading: "Why it Matters:",
+    heading: "Our Range of Services for Your Parapet Inspection",
     body: `
+      <p><b>1- Professional Parapet Assessments:</b><br/>
+      NYC-Licensed architects and engineers conduct hands-on evaluations of structural stability, material deterioration, and appurtenance safety.</p>
+      <p><b>2- Instant Compliance Documentation:</b><br/>
+      Detailed digital reports delivered within hours, including photo evidence, repair priorities, and city-mandated timelines.</p>
+      <p><b>3- Urgent Hazard Mitigation:</b><br/>
+      Expedited Repairs for Critical Risks to meet strict 90-days deadlines (No Permit Delays).</p>
+      <p><b>4- Ongoing Compliance Management:</b><br/>
+      PBS Alert System will keep you updated with the inspection reminders and other deadlines, violations on your property.</p>
+      <p><b>Critical Focus Areas:</b></p>
       <ul>
-        <li>Being Compliant with LL 126 you can avoid fines, legal disputes and operational 
-        shutdowns.</li>
-        <li>You can prolong the lifespan of your parking structure by getting your inspections done 
-        on time</li>
-        <li>Tenant safety is what matters most for you, and your’s safety is what matters most to us</li>
+        <li>Leaning or Bowing Parapets</li>
+        <li>Cracked Masonry, Loose Bricks, or Corroded anchors</li>
+        <li>Unsafe attached elements (e.g., signage, lighting)</li>
       </ul>
     `,
   },
   {
-    heading: "What Property Owners Need to Know:",
+    heading: "Why Choose Us:",
     body: `
-      <p><b>1- Inspection Requirements:</b></p>
+      <p><b>NYC’s Trusted Parapet Specialists</b></p>
       <ul>
-        <li>Frequency: Every 6 Years</li>
-        <li>Scope: Full Structural evaluation, including beams, slabs, columns and waterproofing</li>
-        <li>Deadlines: Register your property to PBS Alert Portal to get NYC Departments alerts 
-        before the deadlines</li>
-      </ul>
-      <p><b>2- Compliance Standards:</b></p>
-      <ul>
-        <li>All Garages (New & Existing) must meet NYC Building code</li>
-        <li>Critical Focus on corrosion, concrete deterioration, and load capacity</li>
-      </ul>
-      <p><b>3- Exemptions:</b></p>
-      <p>Commercial properties, condos, co-ops, mixed used buildings must stay compliant with the 
-      code. Only exempted buildings are garages serving 1-2 family homes.</p>
-    `,
-  },
-  {
-    heading: "Why Choose us:",
-    body: `
-      <p><b>The NYC Parking Inspection Experts</b></p>
-      <ul>
-        <li>30+ Years of specialized experience</li>
-        <li>100% Compliance guarantee</li>
-        <li>Transparent Pricing, No Hidden Fees</li>
-      </ul>
-      <p><b>Trusted By:</b></p>
-      <ul>
-        <li>NYC Building Agencies</li>
-        <li>DOB Certified</li>
-        <li>FDNY Certified</li>
-        <li>QEWI Certified Engineers</li>
-        <li>5-Star Google Reviews</li>
-      </ul>
-      <p><b>Your Compliance Our Commitment</b></p>
-    `,
-  },
-  {
-    heading: "PA’s",
-    body: `
-      <ul>
-        <li>What if my Garage Fails? We Prioritize critical repairs to minimize liability and keep your 
-        property operational</li>
-        <li>Managing Multiple Properties is Complex? We Own our Alert System Portal where 
-        everything is managed for us, for our clients</li>
+        <li>NYC-Licensed Architects & Engineers</li>
+        <li>Transparency Guarantee</li>
+        <li>NYC DOB Certified</li>
       </ul>
     `,
   },
+  // {
+  //   heading: "PA’s:",
+  //   body: "", // No body text provided
+  // },
   {
     heading: "Call to Action:",
     body: `
-      <p>Don't Risk Fines or Compromise Safety, Act Now to secure your property’s failure.</p>
-      <p>Schedule your inspection and get a quote in 24 Hours.</p>
-      <p><b>CTA:</b> Book Your Slot Today</p>
-      <p><b>Call:</b> 914-316-6956</p>
-      <p><b>Email:</b> jon@pbs.nyc</p>
+      <p>Safety isn’t Optional, Compliance is Non-Negotiable</p>
+      <p>Avoid the Year-End Rush</p>
+      <p><b>Call:</b> [Phone Number]</p>
+      <p><b>Email:</b> [Email Address]</p>
     `,
   },
   {
     heading: "TRUST SIGNAL:",
     body: `
-      <ul>
-        <li>FDNY-CERTIFIED</li>
-        <li>DOB-APPROVED</li>
-        <li>NYC APPROVED</li>
-        <li>LICENSED MASTER PLUMBERS</li>
-        <li>LICENSED MASTER ELECTRICIAN</li>
-        <li>NETWORK OF CONTRACTORS</li>
-        <li>4.7/5 Google Reviews</li>
-      </ul>
+      <p>FDNY-CERTIFIED</p>
+      <p>DOB-APPROVED</p>
+      <p>NYC APPROVED</p>
+      <p>LICENSED MASTER PLUMBERS</p>
+      <p>LICENSED MASTER ELECTRICIAN</p>
+      <p>NETWORK OF CONTRACTORS</p>
+      <p>4.7/5 Google Reviews</p>
     `,
   },
 ];
 
-export const serviceUpdates = {
+
+export const localLaw = {
   whyLl11: {
     heading: "Why Local Law 11 Matters",
     subheadline: "Born from Tragedy, built for safety",
@@ -200,7 +151,7 @@ export const serviceUpdates = {
     ],
   },
 };
-export const localLawData = {
+export const parking = {
   section2: {
     heading: "Know About LL126:",
     body: `
@@ -323,105 +274,94 @@ export const localLawData = {
 
 import { ChevronDown, FileText, Scale, Landmark, Library } from "lucide-react";
 
-export const historyContent = {
-  timeline: [
-    {
-      era: "1626-1827",
-      title: "Colonial Foundations",
-      icon: <Landmark className="h-6 w-6 text-brand-light" />,
-      content: {
-        description:
-          "Dutch and British colonial ordinances established early municipal governance structures.",
-        milestones: [
-          "1648: First fire wardens appointed under Dutch rule",
-          "1686: Dongan Charter creates initial city government framework",
-          "1731: First building regulations enacted",
-        ],
-        sources: [7, 8],
-      },
-    },
-    {
-      era: "1924-1963",
-      title: "Home Rule Era",
-      icon: <Scale className="h-6 w-6 text-brand-light" />,
-      content: {
-        description:
-          "Establishment of modern local legislative authority through state constitutional changes.",
-        keyActs: [
-          "1924 Home Rule Amendment (Article IX, NY Constitution)",
-          "1963 Municipal Home Rule Law",
-          "Statute of Local Governments",
-        ],
-        sources: [1, 8],
-      },
-    },
-    {
-      era: "1980-Present",
-      title: "Modern Codification",
-      icon: <Library className="h-6 w-6 text-brand-light" />,
-      content: {
-        description:
-          "Comprehensive code modernization and landmark safety legislation.",
-        laws: [
-          {
-            name: "Local Law 11/98",
-            description:
-              "Mandatory 5-year façade inspections after fatal collapses",
-          },
-          {
-            name: "Local Law 35/2016",
-            description:
-              "Expanded human rights protections in Administrative Code",
-          },
-        ],
-        sources: [3, 6],
-      },
-    },
-  ],
-  process: [
-    {
-      step: 1,
-      title: "Introduction",
-      description: "Legislation drafted by Council Members with Legal Division",
-      duration: "1-4 weeks",
-    },
-    {
-      step: 2,
-      title: "Committee Review",
-      description: "Public hearings and amendments process",
-      duration: "2-6 months",
-    },
-    {
-      step: 3,
-      title: "Council Vote",
-      description: "Majority approval at Stated Meeting",
-      duration: "1 day",
-    },
-    {
-      step: 4,
-      title: "Mayoral Action",
-      description: "30-day review period for signing/veto",
-      duration: "1 month",
-    },
-    {
-      step: 5,
-      title: "Codification",
-      description: "Added to City Charter/Administrative Code",
-      duration: "3-6 months",
-    },
-  ],
-  documents: [
-    {
-      title: "Bill Drafting Manual",
-      description: "Official guide for crafting local legislation [2]",
-      url: "https://council.nyc.gov/legislation/",
-      icon: <FileText />,
-    },
-    {
-      title: "Adoption Procedures",
-      description: "NY State implementation guidelines [8]",
-      url: "https://dos.ny.gov/adopting-local-laws-nys",
-      icon: <FileText />,
-    },
-  ],
-};
+export const ll152 = [
+  {
+    heading: "LL 152 Your Legal Obligation",
+    body: `
+      <p>New York City Requires all building owners to inspect gas piping systems every 36 months. 
+      Certain Failures to Comply Risks are:</p>
+      <ul>
+        <li>Fines Up To $10K</li>
+        <li>Operational Shutdowns</li>
+        <li>Liability for Gas-Related incidents</li>
+      </ul>
+      <p>Our Team Simplifies Compliance with turn-key inspections, repairs, and documentation.</p>
+    `,
+  },
+  {
+    heading: "We Address What Keeps Property Owners Awake at Night",
+    body: `
+      <p>To Secure your Liability and your Tenant Safety we ensure:</p>
+      <ul>
+        <li>Advanced Leak Detection and preventive maintenance to mitigate risks</li>
+        <li>Clear Deadline Tracking, personalized compliance calendars, and expert guidance</li>
+      </ul>
+    `,
+  },
+  {
+    heading: "What’s included in Gas Piping Inspection Service",
+    body: `
+      <ol>
+        <li><b>Precision Inspections:</b>
+          <ul>
+            <li>Licensed Master Plumbers certified for LL152</li>
+            <li>Advanced Leak detection (Corrosion, improper installations, pressure issues)</li>
+            <li>Full Interior & Exterior Piping Evaluation</li>
+          </ul>
+        </li>
+        <li><b>Compliance-Ready Documentation:</b>
+          <ul>
+            <li>Digitally Archived reports</li>
+            <li>Certified Filing with NYC DOB, NYC FDNY</li>
+            <li>Repair recommendations prioritized by urgency</li>
+          </ul>
+        </li>
+        <li><b>Stress-Free Remediation:</b>
+          <ul>
+            <li>Partner Network for fast, affordable repairs</li>
+            <li>Post-repairs re-inspections</li>
+          </ul>
+        </li>
+      </ol>
+    `,
+  },
+  {
+    heading: "Our Process",
+    body: `
+      <p>Simple, Fast, Non-Disruptive</p>
+      <ul>
+        <li>Schedule Online</li>
+        <li>Expert Inspection</li>
+        <li>Receive your Report</li>
+        <li>File With Confidence</li>
+      </ul>
+      <p>Why it works for you:</p>
+      <ul>
+        <li>Zero Downtime: Inspections conducted during off-hours or in phases for high-traffic buildings</li>
+        <li>Transparent Tracking: Real-time updates and a dedicated compliance dashboard</li>
+        <li>No Paperwork Headaches: We manage permits, filings, and even coordinate repairs if needed</li>
+      </ul>
+    `,
+  },
+  {
+    heading: "CTA Section",
+    body: `
+      <p>Don’t Gamble with Compliance or Safety. A single gas leak or missed deadline can cost thousands. Let our experts protect your property and tenants.</p>
+      <p><b>CTA:</b> Speak to a Compliance Specialist</p>
+    `,
+  },
+  {
+    heading: "TRUST SIGNAL",
+    body: `
+      <ul>
+        <li>FDNY-CERTIFIED</li>
+        <li>DOB-APPROVED</li>
+        <li>NYC APPROVED</li>
+        <li>LICENSED MASTER PLUMBERS</li>
+        <li>LICENSED MASTER ELECTRICIAN</li>
+        <li>NETWORK OF CONTRACTORS</li>
+        <li>4.7/5 Google Reviews</li>
+      </ul>
+    `,
+  },
+];

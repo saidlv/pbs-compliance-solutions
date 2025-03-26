@@ -34,11 +34,11 @@ export const menuItems = [
         link: "/law/local-law",
       },
       {
-        name: "Local Law 126 (Parking)",
-        link: "/law/local-law-152",
+        name: "Local Law  Parking",
+        link: "/law/local-law-parking",
       },
-      { name: "Local Law 126 (Parapet)", link: "/law/local-law-parapet" },
-      { name: "Local Law 152", link: "/law/local-law-parking" },
+      { name: "Local Law  Parapet", link: "/law/local-law-parapet" },
+      { name: "Local Law 152", link: "/law/local-law-152" },
 
     ],
   },
