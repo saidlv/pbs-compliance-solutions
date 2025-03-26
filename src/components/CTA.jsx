@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 const CTA = ({ text, href, styling = "w-[70%]" }) => {
   return (
     <Button
-      className={`bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 mt-10 cursor-pointer ${styling}`}
+      className={`bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 flex flex-col sm:flex-row items-center justify-center gap-2 mt-10 cursor-pointer ${styling}`}
       onClick={() => (window.location.href = href)}
     >
-      <span className="text-lg">{text || "Get Started Now"}</span>
+      <span className="text-lg text-center sm:text-left">{text || "Get Started Now"}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

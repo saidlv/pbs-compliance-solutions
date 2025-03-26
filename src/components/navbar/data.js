@@ -42,7 +42,7 @@ export const menuItems = [
 
     ],
   },
-  { name: "OwnerRepresentative", link: "/OwnerRepresentative" },
+  { name: "Owner Representative", link: "/OwnerRepresentative" },
   {
     name: "Services",
     link: "/services",

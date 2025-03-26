@@ -1,319 +1,191 @@
-"use client"; // Marks this as a client-side component in Next.js
-
-/**
- * @file NYC DOB Codes Page Component
- * @description Displays a searchable, paginated table of NYC Department of Buildings codes and regulations
- * with links to official documentation
- * @requires react - For component functionality and hooks
- * @requires framer-motion - For UI animations
- * @requires lucide-react - For icon components
- * @requires @/components/HeroSection - For page header
- * @requires @/components/ui/pagination - For table pagination controls
- * @requires @/components/ui/table - For structured data display
- * @requires ../data - For DOB codes data
- */
+"use client";
 
 import HeroSection from "@/components/HeroSection";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { useEffect, useState } from "react";
-import { dob } from "../data";
+import { hydrostaticTestingData } from "../data";
 
-/**
- * Create a motion-enabled version of the TableRow component
- * This preserves the table structure while allowing row animations
- * @type {React.ComponentType}
- */
-const MotionTableRow = motion(TableRow);
-
-/**
- * Number of items to display per page in the table
- * @type {number}
- */
-const ITEMS_PER_PAGE = 10;
-
-/**
- * NYC DOB Codes Page Component
- * Renders a searchable, paginated table of NYC Department of Buildings codes
- * with animated UI elements and external links to official documentation
- * @returns {JSX.Element} The rendered NYC DOB Codes page
- */
-const page = () => {
-  /**
-   * State for current page in pagination
-   * @type {[number, Function]} Current page number and setter function
-   */
-  const [currentPage, setCurrentPage] = useState(1);
-
-  /**
-   * State for search input value
-   * @type {[string, Function]} Search term and setter function
-   */
-  const [searchTerm, setSearchTerm] = useState("");
-
-  /**
-   * State for filtered data based on search term
-   * @type {[Array, Function]} Filtered data array and setter function
-   */
-  const [filteredData, setFilteredData] = useState(dob);
-
-  /**
-   * Effect to filter data when search term changes
-   * Filters across all properties of each item and resets to first page
-   */
-  useEffect(() => {
-    const filtered = dob.filter((item) =>
-      Object.values(item).some((value) =>
-        value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    );
-    setFilteredData(filtered);
-    setCurrentPage(1); // Reset to first page when search changes
-  }, [searchTerm]);
-
-  /**
-   * Calculate pagination values
-   * @type {number} Total number of pages based on filtered data
-   */
-  const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-
-  /**
-   * Get current page data slice
-   * @type {Array} Sliced array of data for current page
-   */
-  const currentData = filteredData.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
-
-  /**
-   * Handles pagination navigation
-   * @param {number} newPage - The page number to navigate to
-   * @returns {void}
-   */
-  const handlePaginationClick = (newPage) => {
-    setCurrentPage(newPage);
-  };
-
+const Page = () => {
   return (
-    <div>
-      {/* Hero section with title and introductory text */}
+    <div className="bg-[#101010] min-h-screen">
       <HeroSection
-        heading="NYC DOB Codes"
-        text="Learn about the codes and regulations in New York City."
-        staggerVal={0.1} // Controls staggered animation timing in the hero section
+        heading="Sprinkler Inspection (Hydristatic Test)"
+        text=": Ensuring that your property’s fire sprinkler systems are compliant with New York 
+City’s regulations is crucial for safety and legal adherence."
+        staggerVal={0.1}
       />
 
-      {/* Main content section with dark background and responsive padding */}
-      <div className="bg-[#101010] py-16 px-6 md:px-12 lg:px-24">
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Animated Header Section - Title and description with fade-in and slide-up animation */}
-          <motion.div
-            className="text-center my-12 md:w-[70%] mx-auto"
-            initial={{ opacity: 0, y: 20 }} // Initial invisible state, positioned below final position
-            whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-            viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-            transition={{ duration: 0.6 }} // Animation duration
-          >
-            <h3 className="text-brand-bright font-semibold uppercase tracking-widest mb-2">
-              About
-            </h3>
-            <h1 className="text-5xl md:text-7xl font-gnuolane text-white md:w-1/2 mx-auto">
-              NYC DOB Codes
-            </h1>
-            <p className="text-brand-midGray mt-4">
-              Learn about the codes and regulations in New York City.
-            </p>
-          </motion.div>
-
-          {/* Main content container with responsive width */}
-          <motion.div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:w-[90%] md:w-[70%] lg:w-[90%]">
-            {/* Animated Search Bar - Slides in from right */}
+      <div className="py-16 px-6 md:px-12 lg:px-24">
+        <section className="container mx-auto space-y-16">
+          {hydrostaticTestingData.map((sectionData) => (
             <motion.div
-              className="mb-6 flex justify-end"
-              initial={{ opacity: 0, x: 20 }} // Initial invisible state, positioned right of final position
-              whileInView={{ opacity: 1, x: 0 }} // Animate to full opacity and final position when in view
-              viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-              transition={{ duration: 0.5 }} // Animation duration
+              key={sectionData.section}
+              className="group bg-[#1a1a1a] rounded-2xl border-2 border-gray-800 p-8 md:p-12 shadow-2xl shadow-black/50 hover:border-[#00cc6a]/30 transition-colors duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
             >
-              <input
-                type="text"
-                placeholder="Search..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="bg-gray-800 text-gray-100 px-4 py-2 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-bright w-full md:w-64"
-              />
-            </motion.div>
-
-            {/* Animated Table Container - Fades in */}
-            <motion.div
-              className="mt-8 flow-root"
-              initial={{ opacity: 0 }} // Initial invisible state
-              whileInView={{ opacity: 1 }} // Animate to full opacity when in view
-              viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-              transition={{ duration: 0.6 }} // Animation duration
-            >
-              <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                  <div className="rounded-lg border border-gray-800 dark:border-gray-800 overflow-hidden">
-                    {/* Table of DOB Codes - Structured display of code information */}
-                    <Table className="dark min-w-full divide-y divide-gray-800 dark:divide-gray-800">
-                      {/* Table Header - Column titles */}
-                      <TableHeader className="bg-gray-900 dark:bg-gray-900">
-                        <TableRow className="hover:bg-transparent">
-                          <TableHead className="text-gray-300 dark:text-gray-300 py-3.5 pl-4 pr-3 text-left text-sm font-semibold sm:pl-6">
-                            Chapter/Appendix
-                          </TableHead>
-                          <TableHead className="text-gray-300 dark:text-gray-300 px-3 py-3.5 text-left text-sm font-semibold hidden lg:table-cell">
-                            Title
-                          </TableHead>
-                          <TableHead className="text-gray-300 dark:text-gray-300 px-3 py-3.5 text-left text-sm font-semibold hidden sm:table-cell">
-                            Code Title
-                          </TableHead>
-                          <TableHead className="text-gray-300 dark:text-gray-300 px-3 py-3.5 text-left text-sm font-semibold">
-                            Link
-                          </TableHead>
-                        </TableRow>
-                      </TableHeader>
-
-                      {/* Table Body - Rows of code data with staggered animations */}
-                      <TableBody className="bg-gray-900 dark:bg-gray-900 divide-y divide-gray-800 dark:divide-gray-800">
-                        {currentData.map((item, index) => (
-                          <MotionTableRow
-                            key={`${item.id}-${index}`}
-                            className="hover:bg-gray-800 dark:hover:bg-gray-800 transition-colors"
-                            initial={{ opacity: 0, y: 10 }} // Initial invisible state, positioned below final position
-                            whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                            viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                            transition={{ duration: 0.4, delay: index * 0.1 }} // Animation with delay based on index for staggered effect
-                          >
-                            {/* Chapter/Appendix Cell */}
-                            <TableCell className="text-gray-100 dark:text-gray-100 py-4 pl-4 pr-3 text-sm font-medium sm:pl-6">
-                              {item.chapter_appendix}
-                            </TableCell>
-                            {/* Title Cell - Hidden on small screens */}
-                            <TableCell className="text-gray-400 dark:text-gray-400 px-3 py-4 text-sm hidden lg:table-cell">
-                              {item.title}
-                            </TableCell>
-                            {/* Code Title Cell - Hidden on extra small screens */}
-                            <TableCell className="text-gray-400 dark:text-gray-400 px-3 py-4 text-sm hidden sm:table-cell">
-                              {item.code_title}
-                            </TableCell>
-                            {/* Link Cell - External link to PDF document */}
-                            <TableCell className="text-gray-400 dark:text-gray-400 px-3 py-4 text-sm">
-                              <a
-                                href={item.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 text-brand-bright hover:text-[#00cc6a] transition-colors"
-                              >
-                                <ExternalLink className="h-4 w-4 text-current" />
-                                <span className="sr-only sm:not-sr-only">
-                                  View PDF
-                                </span>
-                              </a>
-                            </TableCell>
-                          </MotionTableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </div>
-
-                  {/* Animated Pagination Controls - Navigation between pages */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }} // Initial invisible state, positioned below final position
-                    whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                    viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                    transition={{ duration: 0.5 }} // Animation duration
-                    className="mt-16"
-                  >
-                    <Pagination className="mt-4 pb-4">
-                      <PaginationContent className="flex-wrap justify-center text-gray-300 dark:text-gray-300">
-                        {/* Previous Page Button */}
-                        <PaginationItem className="">
-                          <PaginationPrevious
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handlePaginationClick(
-                                Math.max(1, currentPage - 1)
-                              );
-                            }}
-                            aria-disabled={currentPage === 1}
-                            className={`dark:hover:bg-gray-800 ${
-                              currentPage === 1
-                                ? "opacity-50 cursor-not-srallowed"
-                                : ""
-                            }`}
-                          />
-                        </PaginationItem>
-
-                        {/* Page Number Buttons */}
-                        {Array.from({ length: totalPages }, (_, i) => (
-                          <PaginationItem key={i + 1} className="">
-                            <PaginationLink
-                              href="#"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handlePaginationClick(i + 1);
-                              }}
-                              isActive={currentPage === i + 1}
-                              className={`dark:hover:bg-gray-800 ${
-                                currentPage === i + 1
-                                  ? "bg-brand-bright text-black hover:bg-[#00cc6a]"
-                                  : ""
-                              }`}
-                            >
-                              {i + 1}
-                            </PaginationLink>
-                          </PaginationItem>
-                        ))}
-
-                        {/* Next Page Button */}
-                        <PaginationItem>
-                          <PaginationNext
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handlePaginationClick(
-                                Math.min(totalPages, currentPage + 1)
-                              );
-                            }}
-                            aria-disabled={currentPage === totalPages}
-                            className={`dark:hover:bg-gray-800 ${
-                              currentPage === totalPages
-                                ? "opacity-50 cursor-not-srallowed"
-                                : ""
-                            }`}
-                          />
-                        </PaginationItem>
-                      </PaginationContent>
-                    </Pagination>
-                  </motion.div>
-                </div>
+              {/* Section Header */}
+              <div className="mb-10 text-center space-y-6">
+                <h1 className="text-3xl md:text-4xl font-gnuolane text-white mb-4 bg-gradient-to-r from-[#00cc6a] to-[#22d3ee] bg-clip-text text-transparent">
+                  {sectionData.headline}
+                </h1>
+                {sectionData.bodyText && (
+                  <p className="text-brand-midGray text-lg max-w-3xl mx-auto leading-relaxed">
+                    {sectionData.bodyText}
+                  </p>
+                )}
               </div>
+
+              {/* Steps Section */}
+              {sectionData.steps && (
+                <div className="space-y-8">
+                  {sectionData.steps.map((step, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start space-x-6 p-6 bg-[#252525] rounded-xl border-2 border-gray-800 hover:border-[#00cc6a]/30 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 bg-[#00cc6a] rounded-full flex items-center justify-center text-black font-bold text-xl">
+                        {index + 1}
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-semibold text-white">{step.step}</h3>
+                        <p className="text-brand-midGray leading-relaxed">{step.details}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Color Codes Table */}
+              {sectionData.colorCodes && (
+                <div className="mt-12 overflow-x-auto rounded-xl border-2 border-gray-800">
+                  <table className="min-w-full bg-[#1a1a1a] divide-y-2 divide-gray-800">
+                    <thead className="bg-gradient-to-r from-[#00cc6a]/20 to-[#22d3ee]/20">
+                      <tr>
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider border-r-2 border-gray-800">
+                          Cap Color
+                        </th>
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider border-r-2 border-gray-800">
+                          System Type
+                        </th>
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider">
+                          Test Focus
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y-2 divide-gray-800">
+                      {sectionData.colorCodes.map((code, index) => (
+                        <tr
+                          key={index}
+                          className="hover:bg-[#252525]/50 transition-colors duration-200"
+                        >
+                          <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800 font-medium">
+                            {code.capColor}
+                          </td>
+                          <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
+                            {code.systemType}
+                          </td>
+                          <td className="py-5 px-8 text-gray-400 align-top">
+                            {code.testFocus}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* Inspection Phases */}
+              {sectionData.inspectionPhases && (
+                <div className="mt-12 space-y-8">
+                  {sectionData.inspectionPhases.map((phase, index) => (
+                    <div
+                      key={index}
+                      className="p-6 bg-[#252525] rounded-xl border-2 border-gray-800 hover:border-[#00cc6a]/30 transition-colors"
+                    >
+                      <h3 className="text-xl font-semibold text-[#00cc6a] mb-4 border-l-4 border-[#00cc6a] pl-4">
+                        {phase.phase}
+                      </h3>
+                      <ul className="space-y-3 pl-6">
+                        {phase.details.map((detail, detailIndex) => (
+                          <li
+                            key={detailIndex}
+                            className="flex items-start space-x-3 text-brand-midGray"
+                          >
+                            <div className="w-2 h-2 bg-[#00cc6a] rounded-full mt-2 flex-shrink-0" />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Features */}
+              {sectionData.features && (
+                <div className="mt-12 p-6 bg-[#252525] rounded-xl border-2 border-gray-800">
+                  <h3 className="text-2xl font-semibold text-white mb-6 bg-gradient-to-r from-[#00cc6a] to-[#22d3ee] bg-clip-text text-transparent">
+                    Key Features
+                  </h3>
+                  <ul className="space-y-4">
+                    {sectionData.features.map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start space-x-3 text-brand-midGray"
+                      >
+                        <div className="w-2 h-2 bg-[#00cc6a] rounded-full mt-2 flex-shrink-0" />
+                        <span className="text-lg">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Call to Action */}
+              {sectionData.callToAction && (
+                <div className="mt-12 text-center space-y-8">
+                  <p className="text-2xl md:text-3xl font-semibold text-white">
+                    {sectionData.callToAction.text}
+                  </p>
+                  <div className="flex flex-col md:flex-row justify-center gap-6">
+                    <a
+                      href={`tel:${sectionData.callToAction.contact.call}`}
+                      className="bg-gradient-to-r from-[#00cc6a] to-[#22d3ee] text-black py-3 px-8 rounded-lg hover:scale-105 transition-all duration-300"
+                    >
+                      📞 {sectionData.callToAction.contact.call}
+                    </a>
+                    <a
+                      href={`mailto:${sectionData.callToAction.contact.email}`}
+                      className="border-2 border-[#00cc6a] text-[#00cc6a] py-3 px-8 rounded-lg hover:bg-[#00cc6a]/10 transition-all duration-300"
+                    >
+                      ✉️ {sectionData.callToAction.contact.email}
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Trust Signals */}
+              {sectionData.trustSignals && (
+                <div className="flex flex-wrap justify-center gap-3 mt-8">
+                  {sectionData.trustSignals.map((signal, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#252525] text-brand-midGray py-2 px-4 rounded-full text-sm flex items-center space-x-2 border border-[#00cc6a]/30"
+                    >
+                      <div className="w-2 h-2 bg-[#00cc6a] rounded-full" />
+                      <span>{signal}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </motion.div>
-          </motion.div>
+          ))}
         </section>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

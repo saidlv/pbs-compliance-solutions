@@ -60,18 +60,17 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className 
    */
   useEffect(() => {
     if (textRef.current) {
-      // Split text into individual characters for animation
       const text = new SplitType(textRef.current, { types: "chars" });
 
-      // Animate characters with a right-to-left reveal effect
+      // Changed from reverse() to natural order for left-to-right animation
       gsap.fromTo(
-        text.chars.reverse(), // Reverse to reveal from last to first
-        { clipPath: "inset(0 0 0 100%)" }, // Hidden state (clipped from right)
+        text.chars, // Removed .reverse() to maintain natural order
+        { clipPath: "inset(0 0 0 100%)" },
         {
-          clipPath: "inset(0 0 0 0%)", // Revealed state (no clipping)
-          duration: 0.1, // Duration of each character animation
-          stagger: staggerVal, // Delay between each character animation
-          ease: "power2.out", // Easing function for smooth animation
+          clipPath: "inset(0 0 0 0%)",
+          duration: 0.1,
+          stagger: staggerVal,
+          ease: "power2.out",
         }
       );
     }

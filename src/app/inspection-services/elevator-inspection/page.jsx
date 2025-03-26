@@ -1,305 +1,194 @@
-"use client"; // Marks this as a client-side component in Next.js
-
-/**
- * @file NYC FDNY Codes Page Component
- * @description Displays a searchable, paginated table of NYC Fire Department codes and regulations
- * with links to official documentation
- * @requires react - For component functionality and hooks
- * @requires framer-motion - For UI animations
- * @requires lucide-react - For icon components
- * @requires @/components/HeroSection - For page header
- * @requires @/components/ui/pagination - For table pagination controls
- * @requires @/components/ui/table - For structured data display
- * @requires ../data - For FDNY codes data
- */
+"use client";
 
 import HeroSection from "@/components/HeroSection";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { fdny } from "../data";
+import { elevatorComplianceData } from "../data";
 
-/**
- * Number of items to display per page in the table
- * @type {number}
- */
-const ITEMS_PER_PAGE = 10;
-
-/**
- * Create a motion-enabled version of the TableRow component
- * This preserves the table structure while allowing row animations
- * @type {React.ComponentType}
- */
-const MotionTableRow = motion(TableRow);
-
-/**
- * NYC FDNY Codes Page Component
- * Renders a searchable, paginated table of NYC Fire Department codes
- * with animated UI elements and external links to official documentation
- * @returns {JSX.Element} The rendered NYC FDNY Codes page
- */
-const page = () => {
-  /**
-   * State for current page in pagination
-   * @type {[number, Function]} Current page number and setter function
-   */
-  const [currentPage, setCurrentPage] = useState(1);
-
-  /**
-   * State for search input value
-   * @type {[string, Function]} Search term and setter function
-   */
-  const [searchTerm, setSearchTerm] = useState("");
-
-  /**
-   * State for filtered data based on search term
-   * @type {[Array, Function]} Filtered data array and setter function
-   */
-  const [filteredData, setFilteredData] = useState(fdny);
-
-  /**
-   * Effect to filter data when search term changes
-   * Filters across all properties of each item and resets to first page
-   */
-  useEffect(() => {
-    const filtered = fdny.filter((item) =>
-      Object.values(item).some((value) =>
-        value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-      )
-    );
-    setFilteredData(filtered);
-    setCurrentPage(1); // Reset to first page on search change
-  }, [searchTerm]);
-
-  /**
-   * Calculate pagination values
-   * @type {number} Total number of pages based on filtered data
-   */
-  const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-
-  /**
-   * Get current page data slice
-   * @type {Array} Sliced array of data for current page
-   */
-  const currentData = filteredData.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
-  );
-
-  /**
-   * Handles pagination navigation
-   * @param {number} newPage - The page number to navigate to
-   * @returns {void}
-   */
-  const handlePaginationClick = (newPage) => {
-    setCurrentPage(newPage);
-  };
-
+const Page = () => {
   return (
-    <div>
-      {/* Hero section with title and introductory text */}
+    <div className="bg-[#101010] min-h-screen">
       <HeroSection
-        heading="NYC FDNY Codes"
-        text="Learn about the codes and regulations in New York City."
-        staggerVal={0.1} // Controls staggered animation timing in the hero section
+        heading="Elevator Inspection"
+        text=":Annual inspections, violation erasure, and emergency repairs—trusted by 
+landlords who refuse to gamble with safety or deadlines."
+        staggerVal={0.1}
       />
 
-      {/* Main content section with dark background and responsive padding */}
-      <div className="bg-[#101010] py-16 px-6 md:px-12 lg:px-24">
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Section - Title and description with fade-in and slide-up animation */}
-          <motion.div
-            className="text-center my-12 md:w-[70%] mx-auto"
-            initial={{ opacity: 0, y: 20 }} // Initial invisible state, positioned below final position
-            whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-            viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-            transition={{ duration: 0.6 }} // Animation duration
-          >
-            <h3 className="text-brand-bright font-semibold uppercase tracking-widest mb-2">
-              Fire Code Chapters
-            </h3>
-            <h1 className="text-5xl md:text-7xl font-gnuolane text-white md:w-1/2 mx-auto">
-              NYC FDNY Codes
-            </h1>
-            <p className="text-brand-midGray mt-4 sm:px-24">
-              Official Fire Department of New York regulations and guidelines
-            </p>
-          </motion.div>
-
-          {/* Search Bar - Animated input field that slides in from right */}
-          <motion.div
-            className="mb-6 flex justify-end"
-            initial={{ opacity: 0, x: 20 }} // Initial invisible state, positioned right of final position
-            whileInView={{ opacity: 1, x: 0 }} // Animate to full opacity and final position when in view
-            viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-            transition={{ duration: 0.5 }} // Animation duration
-          >
-            <input
-              type="text"
-              placeholder="Search chapters..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-gray-800 text-gray-100 px-4 py-2 rounded-md border border-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-bright w-full md:w-64"
-            />
-          </motion.div>
-
-          {/* Table Container - Fades in when scrolled into view */}
-          <motion.div
-            className="mt-8 flow-root"
-            initial={{ opacity: 0 }} // Initial invisible state
-            whileInView={{ opacity: 1 }} // Animate to full opacity when in view
-            viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-            transition={{ duration: 0.6 }} // Animation duration
-          >
-            <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                <div className="rounded-lg border border-gray-800 overflow-hidden">
-                  {/* Table of FDNY Codes - Structured display of code information */}
-                  <Table className="dark min-w-full divide-y divide-gray-800">
-                    {/* Table Header - Column titles */}
-                    <TableHeader className="bg-gray-900">
-                      <TableRow className="hover:bg-transparent">
-                        <TableHead className="text-gray-300 py-3.5 pl-4 pr-3 text-left text-sm font-semibold sm:pl-6">
-                          Chapter
-                        </TableHead>
-                        <TableHead className="text-gray-300 px-3 py-3.5 text-left text-sm font-semibold">
-                          Description
-                        </TableHead>
-                        <TableHead className="text-gray-300 px-3 py-3.5 text-left text-sm font-semibold">
-                          Link
-                        </TableHead>
-                      </TableRow>
-                    </TableHeader>
-
-                    {/* Table Body - Rows of code data with staggered animations */}
-                    <TableBody className="bg-gray-900 divide-y divide-gray-800">
-                      {currentData.map((item, index) => (
-                        <MotionTableRow
-                          key={`${item.id}-${index}`}
-                          className="hover:bg-gray-800 transition-colors"
-                          initial={{ opacity: 0, y: 10 }} // Initial invisible state, positioned below final position
-                          whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                          viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                          transition={{ duration: 0.2, delay: index * 0.1 }} // Animation with delay based on index for staggered effect
-                        >
-                          {/* Chapter Title Cell */}
-                          <TableCell className="text-gray-100 dark:text-gray-100 py-4 pl-4 pr-3 text-sm font-medium sm:pl-6">
-                            {item.title}
-                          </TableCell>
-                          {/* Description Cell */}
-                          <TableCell className="text-gray-400 dark:text-gray-400 px-3 py-4 text-sm">
-                            {item.description}
-                          </TableCell>
-                          {/* Link Cell - External link to PDF document */}
-                          <TableCell className="text-gray-400 dark:text-gray-400 px-3 py-4 text-sm">
-                            <a
-                              href={item.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-brand-bright hover:text-[#00cc6a] transition-colors"
-                            >
-                              <ExternalLink className="h-4 w-4 text-current" />
-                              <span className="sr-only sm:not-sr-only">
-                                View PDF
-                              </span>
-                            </a>
-                          </TableCell>
-                        </MotionTableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </div>
-
-                {/* Pagination Controls - Navigation between pages with animation */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }} // Initial invisible state, positioned below final position
-                  whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                  viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                  transition={{ duration: 0.5 }} // Animation duration
-                  className="mt-16"
-                >
-                  <Pagination className="mt-4 pb-4">
-                    <PaginationContent className="flex-wrap justify-center text-gray-300">
-                      {/* Previous Page Button */}
-                      <PaginationItem>
-                        <PaginationPrevious
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handlePaginationClick(Math.max(1, currentPage - 1));
-                          }}
-                          className={`hover:bg-gray-800 ${
-                            currentPage === 1
-                              ? "opacity-50 cursor-not-allowed" // Disabled styling when on first page
-                              : ""
-                          }`}
-                        />
-                      </PaginationItem>
-
-                      {/* Page Number Buttons */}
-                      {Array.from({ length: totalPages }, (_, i) => (
-                        <PaginationItem key={i + 1}>
-                          <PaginationLink
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handlePaginationClick(i + 1);
-                            }}
-                            isActive={currentPage === i + 1}
-                            className={`hover:bg-gray-800 ${
-                              currentPage === i + 1
-                                ? "bg-brand-bright text-black hover:bg-[#00cc6a]" // Active page styling
-                                : ""
-                            }`}
-                          >
-                            {i + 1}
-                          </PaginationLink>
-                        </PaginationItem>
-                      ))}
-
-                      {/* Next Page Button */}
-                      <PaginationItem>
-                        <PaginationNext
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            handlePaginationClick(
-                              Math.min(totalPages, currentPage + 1)
-                            );
-                          }}
-                          className={`hover:bg-gray-800 ${
-                            currentPage === totalPages
-                              ? "opacity-50 cursor-not-allowed" // Disabled styling when on last page
-                              : ""
-                          }`}
-                        />
-                      </PaginationItem>
-                    </PaginationContent>
-                  </Pagination>
-                </motion.div>
+      <div className="py-32 px-6 md:px-12 lg:px-24">
+        <section className="container mx-auto space-y-16">
+          {elevatorComplianceData.map((sectionData) => (
+            <motion.div
+              key={sectionData.section}
+              className="group bg-[#1a1a1a] rounded-2xl border-2 border-gray-800 p-8 md:p-12 shadow-2xl shadow-black/50 hover:border-brand-bright/30 transition-colors duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Section Header */}
+              <div className="mb-10 text-center space-y-6">
+                <h1 className="text-3xl md:text-4xl font-gnuolane text-white mb-4 bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
+                  {sectionData.headline}
+                </h1>
+                {sectionData.bodyText && (
+                  <p className="text-brand-midGray text-lg max-w-3xl mx-auto leading-relaxed">
+                    {sectionData.bodyText}
+                  </p>
+                )}
               </div>
-            </div>
-          </motion.div>
+
+              {/* Scenarios Table */}
+              {sectionData.scenarios && (
+                <div className="mb-12 overflow-x-auto rounded-xl border-2 border-gray-800">
+                  <table className="min-w-full bg-[#1a1a1a] divide-y-2 divide-gray-800">
+                    <thead className="bg-[#252525]">
+                      <tr>
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider border-r-2 border-gray-800">
+                          Violation
+                        </th>
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider border-r-2 border-gray-800">
+                          Consequences
+                        </th>
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider">
+                          Our Safeguard
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y-2 divide-gray-800">
+                      {sectionData.scenarios.map((scenario, index) => (
+                        <tr
+                          key={index}
+                          className="hover:bg-[#252525]/50 transition-colors duration-200"
+                        >
+                          <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
+                            <div className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>{scenario.consequence}</span>
+                            </div>
+                          </td>
+                          <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
+                            <div className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>{scenario.details}</span>
+                            </div>
+                          </td>
+                          <td className="py-5 px-8 text-gray-400 align-top">
+                            <div className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
+                              <span>{scenario.safeguard}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              {/* Additional Text */}
+              {sectionData.additionalText && (
+                <div className="mb-12 space-y-6">
+                  {sectionData.additionalText.map((text, index) => (
+                    <div key={index} className="flex items-start space-x-4">
+                      <div className="flex-shrink-0 w-3 h-3 bg-brand-bright rounded-full mt-1.5" />
+                      <p className="text-brand-midGray text-lg">{text}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Services */}
+              {sectionData.services && (
+                <div className="space-y-8">
+                  {sectionData.services.map((service, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#252525] rounded-xl p-6 border-2 border-gray-800 hover:border-brand-bright/30 transition-colors"
+                    >
+                      <h3 className="text-2xl font-semibold text-brand-bright mb-4">
+                        {service.title}
+                      </h3>
+
+                      {service.details && (
+                        <div className="space-y-2 pl-6 border-l-2 border-brand-bright/30">
+                          {service.details.map((detail, detailIndex) => (
+                            <div
+                              key={detailIndex}
+                              className="flex items-start space-x-3"
+                            >
+                              <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
+                              <span className="text-brand-midGray">{detail}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Steps */}
+              {sectionData.steps && (
+                <div className="space-y-8 mt-12">
+                  <h3 className="text-2xl font-semibold text-white mb-6 border-l-4 border-brand-bright pl-4">
+                    {sectionData.subHeadline}
+                  </h3>
+                  <div className="space-y-6">
+                    {sectionData.steps.map((step, index) => (
+                      <div
+                        key={index}
+                        className="flex items-start space-x-6 p-6 bg-[#252525] rounded-xl border-2 border-gray-800 hover:border-brand-bright/30 transition-colors"
+                      >
+                        <div className="flex-shrink-0 w-12 h-12 bg-brand-bright rounded-full flex items-center justify-center text-black font-bold text-xl">
+                          {index + 1}
+                        </div>
+                        <div className="space-y-2">
+                          <h4 className="text-xl font-semibold text-white">{step.step}</h4>
+                          <p className="text-brand-midGray leading-relaxed">{step.details}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Call to Action */}
+              {sectionData.callToAction && (
+                <div className="mt-12 text-center space-y-8">
+                  <p className="text-2xl md:text-3xl font-semibold text-white">
+                    {sectionData.callToAction.text}
+                  </p>
+                  <div className="flex flex-col md:flex-row justify-center gap-4">
+                    <a
+                      href={sectionData.callToAction.button1.href}
+                      className="bg-gradient-to-r from-brand-bright to-emerald-400 text-black py-3 px-8 rounded-lg hover:scale-105 transition-all duration-300"
+                    >
+                      {sectionData.callToAction.button1.text}
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Trust Signals */}
+              {sectionData.trustSignals && (
+                <div className="flex flex-wrap justify-center gap-3 mt-8">
+                  {sectionData.trustSignals.map((signal, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#252525] text-brand-midGray py-2 px-4 rounded-full text-sm flex items-center space-x-2 border border-brand-bright/30"
+                    >
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full" />
+                      <span>{signal}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          ))}
         </section>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

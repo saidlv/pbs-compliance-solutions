@@ -1,362 +1,479 @@
-export const dob = [
+export const hydrostaticTestingData = [
   {
-    id: 1,
-    code_title: "GENERAL ADMINISTRATIVE PROVISIONS",
-    chapter_appendix: "CHAPTER 1",
-    title: "ADMINISTRATION",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_AC_Chapter1_Administration.pdf&section=conscode_2014",
+    section: 1,
+    headline: "Why your building needs this test:",
+    bodyText: "FDNY Code § 903.5 Compliance isn’t Optional, it's mandated by NYC regulations to ensure optimal functionality and safety. Moreover it helps you to avoid fines, Operational Freezes and to ensure FDC pipes hold pressure during fires. Above all it's mandatory for all NYC commercial/residential buildings to get this Test done after 5 years.",
   },
   {
-    id: 2,
-    code_title: "GENERAL ADMINISTRATIVE PROVISIONS",
-    chapter_appendix: "CHAPTER 2",
-    title: "ENFORCEMENT",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_AC_Chapter2_Enforcement.pdf&section=conscode_2014",
-  },
-  {
-    id: 3,
-    code_title: "GENERAL ADMINISTRATIVE PROVISIONS",
-    chapter_appendix: "CHAPTER 3",
-    title: "MAINTENANCE OF BUILDINGS",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_AC_Chapter3_Maintenance_of_Buildings.pdf&section=conscode_2014",
-  },
-  // ... (full 111 entries continued below) ...
-  {
-    id: 111,
-    code_title: "BUILDING CODE",
-    chapter_appendix: "APPENDIX S",
-    title: "SUPPLEMENTARY FIGURES FOR LUMINOUS EGRESS PATH MARKINGS",
-    link: "https://www1.nyc.gov/assets/buildings/apps/pdf_viewer/viewer.html?file=2014CC_BC_Appendix_S_Photoluminescent.pdf&section=conscode_2014",
-  },
-];
-
-export const serviceUpdates = [
-  {
-    year: 2022,
-    updates: [
+    section: 2,
+    headline: "Our Hydrostatic Testing Process:",
+    bodyText: "PBS Made FDNY Compliance easy in just 4 steps to Help our Clients understand NYC Complex rulebooks.",
+    steps: [
       {
-        month: "October",
-        notices: [
-          {
-            title:
-              "2022 Construction Codes: Construction Superintendent Not Required on 1-, 2- or 3-Family Buildings",
-            url: "//www1.nyc.gov/assets/buildings/pdf/code_site_safety_1-3_family_sn.pdf",
-            description:
-              "The 2022 Construction Codes, which take effect November 7, 2022, provide that new building, enlargement, major alteration (AltCO), and demolition jobs on 1-, 2-, or 3-family buildings do not require a Construction Superintendent (CS) if the permit holder is registered with the NYC Department of Buildings as a General Contractor (GC). DOB will apply this provision to new building, enlargement, major alteration (AltCO), and demolition jobs on 1-, 2-, or 3-family buildings subject to the 2014 Construction Codes.",
-          },
-          {
-            title:
-              "2022 Construction Codes: Site Safety Requirements for Major Building Site Safety Projects",
-            url: "//www1.nyc.gov/assets/buildings/pdf/site_safety_major_buildings_sn.pdf",
-            description:
-              "The site safety requirements in the 2022 Construction Codes will apply to major building* site safety projects that have not submitted site safety plans to the Department of Buildings before November 7, 2022.",
-          },
-          {
-            title:
-              "Temporary Construction Equipment No Longer Requires a Final Inspection",
-            url: "//www1.nyc.gov/assets/buildings/pdf/ll146of2021_sn.pdf",
-            description:
-              "Beginning November 5, 2022, a Technical Report (TR1) - Final will no longer be required for Sidewalk Shed (SH), Construction Fence (FN), Supported Scaffold (SS) and Protection and Mechanical Means (PMM) work types in DOB NOW: Build. (See Local Law 146 of 2021.) Submission of a notification of removal will sign off the permit and complete the filing.",
-          },
-          {
-            title: "New Location – Brooklyn Borough Office",
-            url: "//www1.nyc.gov/assets/buildings/pdf/bkofficemove-sn.pdf",
-            description:
-              "On Monday, November 21, 2022, the Brooklyn Borough Office will relocate to 345 Adams Street, 3rd Floor. Records requests for Brooklyn properties cannot be submitted from November 16 to November 17. No in-person plan examination appointments will occur for Brooklyn job filings November 21 through November 23.",
-          },
-          {
-            title:
-              "Building Owners Required to Post Building Energy Efficiency Rating Label – Local Law 33 of 2018 as amended by Local Law 95 of 2019",
-            url: "//www1.nyc.gov/assets/buildings/pdf/energy_efficiency_rating_label_sn.pdf",
-            description:
-              "No later than October 31, 2022, owners of buildings over 25,000 square feet – or multiple buildings on a lot that total 100,000 square feet or more – that appear on the NYC Benchmarking Covered Building List for Compliance in 2022 must post the Building Energy Efficiency Rating Label that includes the building’s 2021 energy efficiency grade in a conspicuous location near each public entrance to their buildings.",
-          },
-        ],
+        step: "1- Pre-Test Inspection:",
+        details: "Where we find hidden leaks. Rust, or weak joints before FDNY arrives",
       },
       {
-        month: "September",
-        notices: [
-          {
-            title: "Traffic Control During Crawler Crane Activities",
-            url: "//www1.nyc.gov/assets/buildings/pdf/crawler_crane_activities_sn.pdf",
-            description:
-              "The NYC Fire Department (FDNY) and NYC Emergency Management (NYCEM) will no longer be dispatched for traffic control purposes during the set up/take down of a crawler crane, laying down or jackknifing a crawler crane boom or boom/jib combination, implementation of other special protective measures to secure a crawler crane, raising a crawler crane boom or boom/jib combination from a laid down/ jackknifed position, or removing other special protective measures.",
-          },
-          {
-            title: "DOB to Launch Dedicated Small Business Support Portal",
-            url: "//www1.nyc.gov/assets/buildings/pdf/service_notice_sbs_sn.pdf",
-            description:
-              "Two enhancements are being made to DOB’s systems on September 14, 2022, to make it easier for small business owners to work with the Department.",
-          },
-          {
-            title: "Department Launches Major Projects Development Program",
-            url: "//www1.nyc.gov/assets/buildings/pdf/major_projects-sn.pdf",
-            description:
-              "On September 12, 2022, new functionality will be added to DOB NOW: Build for the Major Projects Development Program (MPP).",
-          },
-        ],
+        step: "2- FDNY Appointment request:",
+        details: "As FDNY requires Master Contractors for thai job so this is where PBS Holds distinction, We handle Fax submissions + We secure your Test ID",
       },
-      // ... Continue with all months and notices for 2022
+      {
+        step: "3- Once we are done with the Appointment request submission, we wait until FDNY approves the inspection",
+        details: "",
+      },
     ],
   },
   {
-    year: 2021,
-    updates: [
+    section: 3,
+    headline: "FDNY Color Codes Decoded:",
+    bodyText: "Know your Fire Department Connection (FDC)",
+    colorCodes: [
       {
-        month: "December",
-        notices: [
-          {
-            title:
-              "Follow-Up #5 - Local Law 152 of 2016: Licensed Master Plumbers Allowed to Certify a Building Does Not Contain Gas Piping; Procedures for Certifying a Building Is Not Supplied with Gas",
-            url: "//www1.nyc.gov/assets/buildings/pdf/ll_152_follow_up5_sn.pdf",
-            description:
-              "Local Law 152 of 2016 has been amended by Local Law 138 of 2021. The changes include:",
-          },
-          // ... Continue with all notices for 2021
-        ],
+        capColor: "Green",
+        systemType: "Fire Sprinklers only",
+        testFocus: "Pipe Integrity, Joint Seals",
       },
-      // ... Continue with all months for 2021
+      {
+        capColor: "Red",
+        systemType: "Standpipes Only",
+        testFocus: "Valve Pressure, Corrosion",
+      },
+      {
+        capColor: "Yellow",
+        systemType: "Combined Sprinkler + Standpipe",
+        testFocus: "Full System Stress Test",
+      },
     ],
   },
-  // ... Continue with years 2020 and 2019
+  {
+    section: 4,
+    headline: "Sprinkler Inspection Services:",
+    bodyText: "Whether you are signing off and need final inspection or you are in the middle of your construction and require underground piping inspection or hydrostatic testing, we got it all as we deal with complete Sprinkler inspection and Hydrostatic testing",
+    inspectionPhases: [
+      {
+        phase: "1- Phase Specific Inspections:",
+        details: [
+          "Underground Piping: Bedding, pitch, materials, protection, flushing",
+          "Roughing Work: Piping, valves, components, size, location, materials, hangers",
+          "Test. Hydrostatic: , flow, alarm, Dry Pipe Valve, Booster Pump",
+          "Finishes: Painting, escutcheons, signage, labeling, chaining of valves, central station monitor assigned",
+          "Final Inspection: Sign-off",
+        ],
+      },
+      {
+        phase: "2- Contractor Self-Certification",
+        details: [
+          "After the Inspection is done, we submit notices & Results of the Inspections via DOB NOW and a complete documentation of Audit-proof. The Sprinkler Enforcement Unit conducts a random audit of all self-certified notices to ensure compliance of inspected work with Code and regulations.",
+        ],
+      },
+      {
+        phase: "3- Repairs",
+        details: ["Through our network of Vetted Contractors we make the repair get easily done"],
+      },
+    ],
+  },
+  {
+    section: 5,
+    headline: "Why Choose Us:",
+    bodyText: "Finding FDNY Certified Professionals is a task for New Yorkers. PBS has all with NYC Department’s certified inspectors Serving in your neighbourhood since 2018 with fast-pace permitting and success ratio.",
+    features: [
+      "FDNY-Certified Master Inspectors",
+      "Hundreds of Systems Tested Annually",
+      "99% Pass Rate",
+    ],
+  },
+  {
+    section: 6,
+    callToAction: {
+      text: "Act before FDNY Notices you, your next test could be due tomorrow",
+      contact: {
+        call: "Call:",
+        email: "Email",
+      },
+    },
+    trustSignals: [
+      "FDNY-CERTIFIED",
+      "DOB-APPROVED",
+      "NYC APPROVED",
+      "LICENSED MASTER PLUMBERS",
+      "LICENSED MASTER ELECTRICIAN",
+      "NETWORK OF CONTRACTORS",
+      "4.7/5 Google Reviews",
+    ],
+  },
 ];
 
-export const fdny = [
+export const InspectionServices = [
   {
-    id: 1,
-    title: "Chapter 1",
-    description: "Administration",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-01.pdf&section=firecode_2014",
+    section: 1,
+    headline: "Ensuring safety, Compliance & Peace of Mind",
+    text: "Maintaining your property isn’t just an obligation, it’s a necessity to protect lives, uphold legal standards, and preserve long-term value. At PBS we turn complexity into clarity with inspections designed to safeguard what matters most.",
+    subSections: [
+      {
+        headline: "Your Building’s Secrets Could be Deadly, We Find them",
+        items: [
+          "Hidden Risks: Like Detectives, We hunt cracks in Facades, Silent Gas Leaks, Crumbling Parapets & Elevator defects before they make headlines",
+          "Disaster-proofing: Proactive inspections aren’t just checklists, they’re shields against lawsuits, injuries, and heartache. Sleep Soundly knowing your building building is in good hands and your walls won’t weep or collapse",
+        ],
+      },
+      {
+        headline: "NYC’s Rulebook is thick, Your Headache doesn’t have to be",
+        items: [
+          "Law Whispers: We Translate Legalese into plain english and Deadlines into done",
+          "Zero-stress Submission: Imagine DOB/FDNY paperwork that files itself. We handle the nitty-gritty, you get a golden “Compliant” Stamp.",
+        ],
+        additionalText: "99% of clients avoid fines by partnering with PBS",
+      },
+      {
+        headline: "We Lose Sleep so you don’t have to",
+        items: [
+          "Decades in your Corner: Our Licensed Pros have seen it all. 25 years of NYC grit means “We Spot risks others Miss”",
+        ],
+        additionalText: "PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
+      },
+    ],
+    cta: {
+      text: "Meet your Building’s Guardians",
+      href: "/about-us", // Dummy href, change as needed
+    },
   },
   {
-    id: 2,
-    title: "Chapter 2",
-    description: "Definitions",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-02.pdf&section=firecode_2014",
+    section: 2,
+    headline: "Our Inspection Services",
+    services: [
+      {
+        id: 1,
+        heading: "Facade Inspection (Local Law 11/FISP)",
+        subheading: "NYC’s Silent Killer",
+        text: "5 Years, 1 Inspection, Zero excuses",
+        items: [
+          "The Risk: A Single Loose brick can lead to $5k + Fines or worse, catastrophic failure",
+          "Our Solution: Certified Engineers inspect masonry, parapets and waterproofing with actionable repair plans delivered to youThe Building we inspect avoid violations with proactive fixes",
+        ],
+        cta: {
+          text: "Learn More about Violations",
+          href: "/about-us", // Dummy href, change as needed
+        },
+      },
+      {
+        id: 2,
+        heading: "Parking Garage Inspections (Local law 126)",
+        subheading: "Your Garage isn’t just Parking, it’s a liability",
+        text: "Concrete cracks, Fines Stack, We Act",
+        items: [
+          "The Problem: Cracks, poor drainage, and fire hazards lurk in aging garages which can lead up to $15K heavy fines.",
+          "What we uncover: Structural Decay, Drainage disasters, Fire Hazards by overall structural integrity assessments",
+        ],
+        additionalText: "Parking Garages require regular checks to ensure safety and avoid violations",
+        cta: {
+          text: "Learn more about Parking Inspections",
+          href: "/about-us", // Dummy href, change as needed
+        },
+      },
+      {
+        id: 3,
+        heading: "Parapet Inspection (Local Law 126)",
+        subheading: "The Wall you never Notices, Falls",
+        text: "Parapets Protect, PBS Perfects",
+        items: [
+          "Why it’s Critical: 70% of Roof Leaks originate from parapet failures, We Check anchoring, Mortar joints, and corrosion and a lot more.",
+          "Winter Warning & Summer Threats: Freeze-thaw cycles widen cracks while UV rays degrade waterproofing",
+        ],
+        additionalText: "Parapet inspections are not Seasonal",
+        cta: {
+          text: "Learn More",
+          href: "/about-us", // Dummy href, change as needed
+        },
+      },
+      {
+        id: 4,
+        heading: "Gas Line Inspections (Local Law 152)",
+        subheading: "Gas Leaks don’t knock, They Explode",
+        text: "Annual Checks aren’t optional, they’re Survival",
+        items: [
+          "Why it Matters: A Single Gas Leak could cost Lives, and $10K in fines",
+          "Our Process: Pressure Testing: We Hunt Leaks with 99% Accuracy, Corrosion Mapping: We Spot Weak points before they burst, DOB Reporting: We file everything, no paperwork for you",
+        ],
+        cta: {
+          text: "Get your Inspection done this year",
+          href: "/about-us", // Dummy href, change as needed
+        },
+      },
+      {
+        id: 5,
+        heading: "Sprinkler Hydrostatic Tests",
+        subheading: "Water Pressure- Your Fire’s First Responder",
+        text: "Weak Pressure = Weak Protection",
+        items: [
+          "FDNY requires hydrostatic testing to ensure sprinkler systems withstand pressure during emergencies",
+          "We inspect Valve, alarm and flow checks to get FDNY Fast Pass",
+          "You will get Certified reports from FDNY",
+        ],
+        cta: {
+          text: "Learn More",
+          href: "/about-us", // Dummy href, change as needed
+        },
+      },
+      {
+        id: 6,
+        heading: "Elevator Inspection",
+        subheading: "Elevators aren’t just Lifts, they’re legal liabilities",
+        text: "Modernize or Penalize",
+        items: [
+          "Annual Elevator Inspections ensure safe operations and compliance with accessibility and emergency standards",
+          "How We Help: Emergency Brake, Lights & Communication Testing, We Expedite filings, so doors stay open",
+        ],
+        additionalText: "Inspections are done with ADA Act in loop",
+        cta: {
+          text: "learn more",
+          href: "/about-us", // Dummy href, change as needed
+        },
+      },
+    ],
+    additionalText: "PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance",
   },
   {
-    id: 3,
-    title: "Chapter 3",
-    description: "General Precautions Against Fire",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-03.pdf&section=firecode_2014",
+    section: "cta",
+    headline: "PBS Handles the Codes, You Handle the Peace",
+    buttons: [
+      { text: "Schedule a Compliance Audit", href: "/about-us" }, // Dummy href, change as needed
+      { text: "Call Our Inspectors (914-316-6956)", href: "/about-us" }, // Dummy href, change as needed
+    ],
+  },
+];
+
+
+
+export const elevatorComplianceData = [
+  {
+    section: 2,
+    headline: "Understanding NYC Elevator Compliance",
+    bodyText: "New York City requires annual inspections of all elevators to ensure they operate safely and efficiently. Failure to comply can result in violations, penalties, and increased liability risks. Our services are designed to assist property owners and managers in meeting these obligations seamlessly.",
+    scenarios: [
+      {
+        consequence: "Late Filing (Per Month)",
+        details: "Residential (J): $50/device, Non-Residential (A): $150-$250/device",
+        safeguard: "Timely Reporting: We prepare and submit all required inspection reports through the DOB NOW: Safety portal, ensuring adherence to filing deadlines and avoiding late penalties.",
+      },
+      {
+        consequence: "Max Annual Late Fees",
+        details: "Residential (J): $600/device, Non-Residential (A): $1,800-$3,000/device",
+        safeguard: "Ongoing Compliance Support: We offer continuous monitoring and reminders for upcoming inspections, helping you maintain compliance year after year.",
+      },
+      {
+        consequence: "Failure to File",
+        details: "Residential (J): $1,000/device, Non-Residential (A): $3,000-$5,000/device",
+        safeguard: "Detailed Inspections: Our licensed professionals conduct thorough evaluations of your elevator systems, identifying any issues that may compromise safety or efficiency.",
+      },
+      {
+        consequence: "Failure to Correct (FTC)",
+        details: "$1,000/device, Non-Residential (A): $3,000/device Plus operational shutdowns, tenant lawsuits, and reputational damage.",
+        safeguard: "Violation Resolution: If violations are identified, we provide guidance on corrective actions and assist in resolving issues promptly to restore compliance.",
+      },
+    ],
+    additionalText: ["The Cost of Non-Compliance: What NYC Doesn’t Tell You (But PBS Does)"],
   },
   {
-    id: 4,
-    title: "Chapter 4",
-    description: "Emergency Planning and Preparedness",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-04.pdf&section=firecode_2014",
+    section: 4,
+    headline: "Our Services: End-to-End Elevator Compliance Solutions",
+    services: [
+      {
+        title: "Mandatory Inspections & Testing",
+        details: [
+          "Stay Ahead of Deadlines",
+          "Periodic Inspections (Annual): Visual checks between Jan 1 – Dec 31. Deadline: File within 14 days. Late after Jan 14 = $1,000 fines. PBS Advantage: Same-day digital submissions to DOB.",
+          "Category 1 (CAT1) Tests: Annual no-load safety tests. Deadline: File within 21 days. Late after Jan 21 = $3k-$5k fines.",
+          "Category 5 (CAT5) Tests: Load/speed tests every 5 years. Deadline: Submit within 21 days. Miss = $5k penalties.",
+        ],
+      },
+      {
+        title: "Violation Resolution",
+        details: [
+          "Affirmation of Correction (AOC): DOB Requirement: Fix defects within 90 days (104-day hard cutoff) → PBS handles repairs + filings.",
+          "DOB/PVT Violation Dismissal: Correct issues in 10-30 days. We submit proof + negotiate waivers.",
+        ],
+      },
+      {
+        title: "Maintenance & Permits",
+        details: [
+          "Avoid 'Failure to Maintain' Violations",
+          "Maintenance Control Programs (MCP): ASME-compliant logs, manufacturer protocols, and 24/7 repair contracts.",
+          "Permit Management: New installations? Major upgrades? We file via DOB NOW: Build.",
+          "Tenant Notifications: Automate outage alerts and post required permits publicly.",
+          "Stay Operational. Protect Tenants. Sleep Soundly.",
+        ],
+      },
+    ],
   },
   {
-    id: 5,
-    title: "Chapter 5",
-    description: "Fire Operations Features",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-05.pdf&section=firecode_2014",
+    section: 5,
+    headline: "How It Works",
+    subHeadline: "Compliance Without Chaos",
+    steps: [
+      {
+        step: "1. Book Online in 60 Seconds",
+        details: "Choose day/night slots. No tenant disruption.",
+      },
+      {
+        step: "2. Inspect & Test",
+        details: "DOB-approved experts conduct checks.",
+      },
+      {
+        step: "3. Repair & File",
+        details: "Fix defects fast. We submit to DOB NOW.",
+      },
+      {
+        step: "4. Rest Easy",
+        details: "Get auto-reminders for next year.",
+      },
+    ],
   },
   {
-    id: 6,
-    title: "Chapter 6",
-    description: "Building Services And Systems",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-06.pdf&section=firecode_2014",
+    section: 6,
+    callToAction: {
+      text: "Act Now or Risk $5k Fines:",
+      button1: { text: "Call (555) 987-6543 (24/7)", href: "tel:5559876543" },
+    },
+    trustSignals: [
+      "FDNY-CERTIFIED",
+      "DOB-APPROVED",
+      "NYC APPROVED",
+      "LICENSED MASTER PLUMBERS",
+      "LICENSED MASTER ELECTRICIAN",
+      "NETWORK OF CONTRACTORS",
+      "4.7/5 Google Reviews",
+    ],
   },
   {
-    id: 7,
-    title: "Chapter 7",
-    description: "Fire-Resistance Rated Construction",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-07.pdf&section=firecode_2014",
-  },
-  {
-    id: 8,
-    title: "Chapter 8",
-    description: "Interior Furnishings, Decorations And Scenery",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-08.pdf&section=firecode_2014",
-  },
-  {
-    id: 9,
-    title: "Chapter 9",
-    description: "Fire Protection Systems",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-09.pdf&section=firecode_2014",
-  },
-  {
-    id: 10,
-    title: "Chapter 10",
-    description: "Means of Egress",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-10.pdf&section=firecode_2014",
-  },
-  {
-    id: 11,
-    title: "Chapter 11",
-    description: "Aviation Facilities And Operations",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-11.pdf&section=firecode_2014",
-  },
-  {
-    id: 12,
-    title: "Chapter 12",
-    description: "Dry Cleaning",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-12.pdf&section=firecode_2014",
-  },
-  {
-    id: 13,
-    title: "Chapter 13",
-    description: "Combustible Dust-Producing Operations",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-13.pdf&section=firecode_2014",
-  },
-  {
-    id: 14,
-    title: "Chapter 14",
-    description: "Fire Safety During Construction, Alteration & Demolition",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-14.pdf&section=firecode_2014",
-  },
-  {
-    id: 15,
-    title: "Chapter 15",
-    description: "Flammable Finishes",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-15.pdf&section=firecode_2014",
-  },
-  {
-    id: 16,
-    title: "Chapter 16",
-    description: "Fruit and Crop Ripening",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-16.pdf&section=firecode_2014",
-  },
-  {
-    id: 17,
-    title: "Chapter 17",
-    description: "Fumigation and Insecticidal Fogging",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-17.pdf&section=firecode_2014",
-  },
-  {
-    id: 18,
-    title: "Chapter 18",
-    description: "Semiconductor Fabrication Facilities",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-18.pdf&section=firecode_2014",
-  },
-  {
-    id: 19,
-    title: "Chapter 19",
-    description: "Lumber Yards and Wood Waste Materials",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-19.pdf&section=firecode_2014",
-  },
-  {
-    id: 20,
-    title: "Chapter 20",
-    description: "Manufacture of Organic Coatings",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-20.pdf&section=firecode_2014",
-  },
-  {
-    id: 21,
-    title: "Chapter 21",
-    description: "Industrial Furnaces",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-21.pdf&section=firecode_2014",
-  },
-  {
-    id: 22,
-    title: "Chapter 22",
-    description: "Motor Fuel - Dispensing Facilities and Repair Garages",
-    url: "https://www1.nyc.gov/assets/fdny/pdfviewer/viewer.html?file=Chapter-22.pdf&section=firecode_2014",
+    section: 7,
+    headline: "Why Choose PBS?",
+    bodyText: "NYC’s Trusted Elevator Compliance Partner",
+    services: [
+      {
+        title: "Expertise",
+        details: [
+          "DOB-licensed inspectors",
+          "15+ years in NYC",
+          "100% pass rate on CAT5, CAT1 tests",
+        ],
+      },
+      {
+        title: "Speed",
+        details: [
+          "24/7 emergency repairs",
+          "Same-week inspections",
+          "90% repairs in <30 days",
+        ],
+      },
+      {
+        title: "Technology",
+        details: [
+          "Real-time compliance app",
+          "Deadline tracker",
+          "Digital maintenance logs",
+        ],
+      },
+    ],
+    additionalText: [
+      "$0 Violation Guarantee: Approved filings or we cover penalties.",
+      "24/7 Emergency Support: Critical repairs done in <8 hours.",
+      "DOB-Approved Experts: 1,200+ elevators compliant since 2018.",
+    ],
   },
 ];
 
 import { ChevronDown, FileText, Scale, Landmark, Library } from "lucide-react";
 
-export const historyContent = {
-  timeline: [
-    {
-      era: "1626-1827",
-      title: "Colonial Foundations",
-      icon: <Landmark className="h-6 w-6 text-brand-light" />,
-      content: {
-        description:
-          "Dutch and British colonial ordinances established early municipal governance structures.",
-        milestones: [
-          "1648: First fire wardens appointed under Dutch rule",
-          "1686: Dongan Charter creates initial city government framework",
-          "1731: First building regulations enacted",
-        ],
-        sources: [7, 8],
+export const boilerComplianceData = [
+  {
+    section: 2,
+    headline: "Why Compliance isn’t Optional",
+    bodyText: "Regular Boiler Inspections are mandated by NYC regulations to maintain safety and compliance. Being compliant with Code is necessary for all stakeholders and if not there are a lot of circumstances everyone faces",
+    scenarios: [
+      {
+        consequence: "Late Filing",
+        details: "$50/Month fines upto 600/Boiler",
+        safeguard: "Auto-reminders + Same-day Filing Guarantee",
       },
-    },
-    {
-      era: "1924-1963",
-      title: "Home Rule Era",
-      icon: <Scale className="h-6 w-6 text-brand-light" />,
-      content: {
-        description:
-          "Establishment of modern local legislative authority through state constitutional changes.",
-        keyActs: [
-          "1924 Home Rule Amendment (Article IX, NY Constitution)",
-          "1963 Municipal Home Rule Law",
-          "Statute of Local Governments",
-        ],
-        sources: [1, 8],
+      {
+        consequence: "Expired Report",
+        details: "$1000/Boiler fine +Operational shutdown",
+        safeguard: "Audit to resolve backlogged violations",
       },
-    },
-    {
-      era: "1980-Present",
-      title: "Modern Codification",
-      icon: <Library className="h-6 w-6 text-brand-light" />,
-      content: {
-        description:
-          "Comprehensive code modernization and landmark safety legislation.",
-        laws: [
-          {
-            name: "Local Law 11/98",
-            description:
-              "Mandatory 5-year façade inspections after fatal collapses",
-          },
-          {
-            name: "Local Law 35/2016",
-            description:
-              "Expanded human rights protections in Administrative Code",
-          },
-        ],
-        sources: [3, 6],
+      {
+        consequence: "Uncorrected Defects",
+        details: "Tenant Lawsuits + Insurance denial",
+        safeguard: "Repair crews with 90-day completion promise",
       },
+    ],
+    additionalText: [
+      `NYC Trusts us because we speak figures, we speak facts, we speak code, We speak deadlines, we guide what NYC says, the reason is we made Boiler compliance simple for you:\n`,
+      `Low-Pressure Boilers: Annual inspections (Jan 1- Dec 31)\n●`,
+      `High-pressure Boilers: Internal + External Inspections (6 Months Apart)\n`,
+      `14-Day Filing rule: Reports due within 2 weeks of inspections`,
+      `90-Day Repair Window: Fix defects fast or face $1000+/Boiler fines\nOur Expert Services help you navigate these requirements efficiently, minimizing risks and potential liabilities`],
+  },
+  {
+    section: 4,
+    headline: "Full-Service Compliance Solutions",
+    services: [
+      {
+        title: "Low Pressure Boiler Inspections",
+        whoNeedsIt: "Residential (6+ units), Commercial & Mixed-Use Buildings",
+        exemptions: "Buildings with <5 Residential units and Single-unit Boilers heating only 1 Apartment are exempted",
+        process: "We Inspect, we report and we connect you with contractors for repairs",
+        details: [
+          "Inspect: Our DOB-Licensed Professionals & Authorized insurance inspectors check for leaks, corrosion, and ASME H/E-Stamp Compliance",
+          "We file the report in DOB NOW within 14 Days to avoid fines",
+          "Through our Vetted Contractors we get your Boiler repaired within 90 Days and if required we request for extensions from DOB on your behalf",
+        ],
+      },
+      {
+        title: "High pressure Boiler Compliance",
+        criticalRequirements: [
+          "Internal Inspections: NYC ask to check boiler interiors for cracks, sediments, and pressure integrity",
+          "External Inspections: Examining of Piping, valves, and safety devices",
+          "We are partnered with authorized insurance inspectors for legal compliance",
+          "We submit 10-Day advance notices to DOB for Internal inspections",
+        ],
+      },
+    ],
+  },
+  {
+    section: 5,
+    headline: "Your Compliance Roadmap:",
+    subHeadline: "3 Simple Steps to avoid fines",
+    steps: [
+      {
+        step: "1- Book Inspection",
+        details: "Choose any slot (Day/Night) for minimal Tenant disruption",
+      },
+      {
+        step: "2- Review & Repair",
+        details: "Get a digital report with photos & repair priorities",
+      },
+      {
+        step: "3- File & Monitor",
+        details: "We submit to DOB and track approvals, receive annual reminder",
+      },
+    ],
+  },
+  {
+    section: 6,
+    callToAction: {
+      text: "Act before deadlines bury you, your next inspection could save $10,000",
+      button1: { text: "Book inspection", href: "/alert" }, // Replace with actual href
+      button2: { text: "Call at 914-316-6956", href: "tel:914-316-6956" }, // Replace with actual href
     },
-  ],
-  process: [
-    {
-      step: 1,
-      title: "Introduction",
-      description: "Legislation drafted by Council Members with Legal Division",
-      duration: "1-4 weeks",
-    },
-    {
-      step: 2,
-      title: "Committee Review",
-      description: "Public hearings and amendments process",
-      duration: "2-6 months",
-    },
-    {
-      step: 3,
-      title: "Council Vote",
-      description: "Majority approval at Stated Meeting",
-      duration: "1 day",
-    },
-    {
-      step: 4,
-      title: "Mayoral Action",
-      description: "30-day review period for signing/veto",
-      duration: "1 month",
-    },
-    {
-      step: 5,
-      title: "Codification",
-      description: "Added to City Charter/Administrative Code",
-      duration: "3-6 months",
-    },
-  ],
-  documents: [
-    {
-      title: "Bill Drafting Manual",
-      description: "Official guide for crafting local legislation [2]",
-      url: "https://council.nyc.gov/legislation/",
-      icon: <FileText />,
-    },
-    {
-      title: "Adoption Procedures",
-      description: "NY State implementation guidelines [8]",
-      url: "https://dos.ny.gov/adopting-local-laws-nys",
-      icon: <FileText />,
-    },
-  ],
-};
+    trustSignals: [
+      "FDNY-CERTIFIED",
+      "DOB-APPROVED",
+      "NYC APPROVED",
+      "LICENSED MASTER PLUMBERS",
+      "LICENSED MASTER ELECTRICIAN",
+      "NETWORK OF CONTRACTORS",
+      "4.7/5 Google Reviews",
+    ],
+  },
+];
+

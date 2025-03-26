@@ -8,8 +8,9 @@ const page = () => {
   return (
     <div className="bg-[#101010] text-white min-h-screen">
       <HeroSection
-        heading="NYC FDNY Codes"
-        text="Learn about the codes and regulations in New York City."
+        heading="LL152 Gas Piping Inspections"
+        text=": Proactive Inspections Every 3 Years to Meet NYC Mandates, ensuring tenant 
+        safety, Legal Compliance, and uninterrupted operations."
         staggerVal={0.1}
       />
 

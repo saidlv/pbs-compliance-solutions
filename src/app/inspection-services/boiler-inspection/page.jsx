@@ -1,278 +1,290 @@
-"use client"; // Marks this as a client-side component in Next.js
-
-/**
- * @file NYC Legislative History Page Component
- * @description Displays the history of NYC local laws with an interactive timeline, legislative process steps,
- * and foundational documents in a visually engaging format with animations
- * @requires react - For component functionality
- * @requires framer-motion - For scroll-based animations and transitions
- * @requires @/components/HeroSection - For page header
- * @requires @/components/ui/badge - For era labels
- * @requires ../data - For history content data
- */
+"use client";
 
 import HeroSection from "@/components/HeroSection";
-import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { historyContent } from "../data";
+import { boilerComplianceData } from "../data";
 
-/**
- * NYC Legislative History Page Component
- * Renders a comprehensive view of NYC's legislative history with animated timeline,
- * process steps, and foundational documents
- * @returns {JSX.Element} The rendered NYC Legislative History page
- */
-const page = () => {
+const Page = () => {
   return (
-    <div className="bg-[#101010]">
-      {/* Hero section with title and introductory text */}
+    <div className="bg-[#101010] min-h-screen">
       <HeroSection
-        heading="NYC Legislative History"
-        text="Tracing four centuries of municipal lawmaking from colonial ordinances to modern code"
-        staggerVal={0.1} // Controls staggered animation timing in the hero section
+        heading="NYC Boiler Inspection"
+        text="Safeguard your Property and Ensure Regulatory Adherence."
+        staggerVal={0.1}
       />
 
-      {/* Main content section with dark background and responsive padding */}
       <div className="py-32 px-6 md:px-12 lg:px-24">
-        <section className="container mx-auto">
-          {/* Header Section - Title and description with gradient text effect */}
+        <section className="container mx-auto space-y-20">
+
+          {/* Compliance Table Section */}
           <motion.div
-            className="text-center mb-16 md:w-[70%] mx-auto"
-            initial={{ opacity: 0, y: 30 }} // Initial invisible state, positioned below final position
-            whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-            viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-            transition={{ duration: 0.6 }} // Animation duration
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl md:text-6xl font-gnuolane text-white mb-4 bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
-              NYC Legislative History
-            </h1>
-            <p className="text-brand-midGray text-lg max-w-2xl mx-auto">
-              Tracing four centuries of municipal lawmaking from colonial
-              ordinances to modern code
-            </p>
+            <div className="mb-12 space-y-4">
+              <h1 className="text-3xl md:text-4xl font-gnuolane text-white bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
+                {boilerComplianceData[0].headline}
+              </h1>
+              <p className="text-brand-midGray text-lg max-w-3xl mx-auto">
+                {boilerComplianceData[0].bodyText}
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-xl border border-gray-800 shadow-2xl shadow-black/50">
+              <table className="min-w-full bg-[#1a1a1a] divide-y divide-gray-800">
+                <thead className="bg-[#252525]">
+                  <tr>
+                    <th className="py-5 px-6 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider">
+                      Scenario
+                    </th>
+                    <th className="py-5 px-6 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider">
+                      Consequences
+                    </th>
+                    <th className="py-5 px-6 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider">
+                      Our Safeguard
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-800">
+                  {boilerComplianceData[0].scenarios.map((scenario, index) => (
+                    <tr
+                      key={index}
+                      className="hover:bg-[#252525]/50 transition-colors duration-200"
+                    >
+                      <td className="py-5 px-6 text-gray-400 align-top">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
+                          <span>{scenario.consequence}</span>
+                        </div>
+                      </td>
+                      <td className="py-5 px-6 text-gray-400 align-top">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
+                          <span>{scenario.details}</span>
+                        </div>
+                      </td>
+                      <td className="py-5 px-6 text-gray-400 align-top">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
+                          <span>{scenario.safeguard}</span>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Enhanced Additional Text Section */}
+            <div className="verflow-x-auto rounded-xl border border-gray-800 shadow-2xl shadow-black/50">
+              <p className="text-brand-midGray text-lg mb-8 font-light">
+                {boilerComplianceData[0].additionalText[0]}
+              </p>
+
+              <div className="space-y-6">
+                {boilerComplianceData[0].additionalText.slice(1).map((text, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-3 h-3 bg-emerald-400 rounded-full mt-1.5" />
+                    </div>
+                    <div className="flex-1">
+                      {text.split('\n').map((line, lineIndex) => (
+                        <div key={lineIndex} className="flex items-start space-x-3">
+                          {line.startsWith('●') ? (
+                            <>
+                              <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
+                              <span className="text-brand-midGray text-base">
+                                {line.replace('●', '').trim()}
+                              </span>
+                            </>
+                          ) : (
+                            <span className="text-brand-midGray text-base">
+                              {line}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
-          <div className="container mx-auto sm:w-[80%] lg:w-[95%]">
-            {/* Timeline Section - Vertical timeline with alternating content */}
+          {/* Compliance Solutions Section */}
+          {boilerComplianceData[1] && (
             <motion.div
-              className="relative max-w-4xl mx-auto mb-20"
-              initial={{ opacity: 0 }} // Initial invisible state
-              whileInView={{ opacity: 1 }} // Animate to full opacity when in view
-              viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-              transition={{ duration: 0.6 }} // Animation duration
+              className="bg-[#1a1a1a] rounded-2xl border border-gray-800 p-8 md:p-12 shadow-2xl shadow-black/50"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
             >
-              {/* Vertical Line - Creates the timeline backbone */}
-              <div className="absolute left-4 xl:left-1/2 h-full w-0.5 bg-[#1f1f1f] -z-10" />
+              <div className="space-y-12">
+                <h2 className="text-3xl md:text-4xl font-gnuolane text-center bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
+                  {boilerComplianceData[1].headline}
+                </h2>
 
-              {/* Map through timeline eras to create timeline entries */}
-              {historyContent.timeline.map((era, index) => (
-                <motion.div
-                  key={era.era}
-                  className="flex gap-8 mb-12 group"
-                  initial={{ opacity: 0, y: 30 }} // Initial invisible state, positioned below final position
-                  whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                  viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                  transition={{ duration: 0.5, delay: index * 0.2 }} // Animation with delay based on index for staggered effect
-                >
-                  {/* Left side content - Only visible on large screens for even-indexed items */}
-                  <div className="hidden xl:block w-1/2 mt-4">
-                    {index % 2 === 0 && <EraContent era={era} />}
-                  </div>
-
-                  {/* Timeline node - Contains era title, icon and badge */}
-                  <div className="flex-1 relative">
-                    <motion.div
-                      className={`xl:absolute xl:w-96 ${
-                        index % 2 === 0 ? "left-0 " : "right-0 pt-4"
-                      } top-0 xl:translate-x-4`}
-                      initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }} // Initial invisible state, positioned left/right based on index
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to full opacity and centered position when in view
-                      viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                      transition={{ duration: 0.5 }} // Animation duration
+                <div className="space-y-8">
+                  {boilerComplianceData[1].services.map((service, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#252525] rounded-xl p-6 md:p-8 border border-gray-800"
                     >
-                      <div className="flex items-center gap-4 hover:bg-gray-900/50 transition-colors p-4 rounded-lg">
-                        {/* Era icon with styled container */}
-                        <div className="bg-[#1a1a1a] p-3 rounded-lg border border-brand-bright/20">
-                          {era.icon}
-                        </div>
-                        <div>
-                          {/* Era title */}
-                          <h3 className="text-2xl text-brand-bright mb-2 font-semibold">
-                            {era.title}
-                          </h3>
-                          {/* Era year range badge */}
-                          <Badge
-                            variant="outline"
-                            className="border-brand-bright/30 text-brand-bright bg-brand-bright/10 hover:bg-brand-bright/20"
-                          >
-                            {era.era}
-                          </Badge>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Right side content - Only visible on large screens for odd-indexed items */}
-                  <div className="hidden xl:block w-1/2 mt-4">
-                    {index % 2 !== 0 && <EraContent era={era} />}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Legislative Process Section - Grid of process steps */}
-            <motion.div
-              className="grid md:grid-cols-2 md:w-[80%] mx-auto lg:grid-cols-3 xl:w-[90%] xl:grid-cols-3 2xl:grid-cols-5 gap-6 mb-20"
-              initial={{ opacity: 0, y: 30 }} // Initial invisible state, positioned below final position
-              whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-              viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-              transition={{ duration: 0.5, staggerChildren: 0.1 }} // Animation with staggered children
-            >
-              {/* Map through process steps to create step cards */}
-              {historyContent.process.map((step) => (
-                <motion.div
-                  key={step.step}
-                  className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-brand-bright/30 transition-all group"
-                  initial={{ opacity: 0, y: 20 }} // Initial invisible state, positioned below final position
-                  whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                  transition={{ duration: 0.5 }} // Animation duration
-                  viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                >
-                  {/* Step number with leading zero */}
-                  <div className="text-brand-bright text-2xl mb-4 font-mono">
-                    0{step.step}
-                  </div>
-                  {/* Step title */}
-                  <h3 className="text-xl font-semibold mb-2 text-gray-100">
-                    {step.title}
-                  </h3>
-                  {/* Step description */}
-                  <p className="text-gray-400 text-sm mb-3">
-                    {step.description}
-                  </p>
-                  {/* Step duration/timeline */}
-                  <div className="text-xs text-brand-bright/70">
-                    {step.duration}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Foundational Documents Section - Grid of document links */}
-            <motion.div
-              className="grid md:grid-cols-2 gap-6 lg:w-[80%] mx-auto"
-              initial={{ opacity: 0, y: 30 }} // Initial invisible state, positioned below final position
-              whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-              viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-              transition={{ duration: 0.5, staggerChildren: 0.1 }} // Animation with staggered children
-            >
-              {/* Map through documents to create document cards with links */}
-              {historyContent.documents.map((doc) => (
-                <motion.a
-                  key={doc.title}
-                  href={doc.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-brand-bright/50 transition-all group"
-                  initial={{ opacity: 0, y: 20 }} // Initial invisible state, positioned below final position
-                  whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and final position when in view
-                  transition={{ duration: 0.5 }} // Animation duration
-                  viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-                >
-                  <div className="flex items-start gap-4">
-                    {/* Document icon with styled container */}
-                    <div className="bg-gray-900 p-3 rounded-lg text-brand-bright border border-brand-bright/20">
-                      {doc.icon}
-                    </div>
-                    <div>
-                      {/* Document title with hover effect */}
-                      <h3 className="text-xl font-semibold mb-2 text-gray-100 group-hover:text-brand-bright transition-colors">
-                        {doc.title}
+                      <h3 className="text-2xl font-semibold text-brand-bright mb-4">
+                        {service.title}
                       </h3>
-                      {/* Document description */}
-                      <p className="text-gray-400 text-sm">{doc.description}</p>
+
+                      <div className="space-y-4 text-brand-midGray text-base">
+                        {service.whoNeedsIt && (
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
+                            <p><strong>Who needs it:</strong> {service.whoNeedsIt}</p>
+                          </div>
+                        )}
+
+                        {service.exemptions && (
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
+                            <p><strong>Exemptions:</strong> {service.exemptions}</p>
+                          </div>
+                        )}
+
+                        {service.process && (
+                          <div className="flex items-start space-x-3">
+                            <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                            <p><strong>Process:</strong> {service.process}</p>
+                          </div>
+                        )}
+
+                        {service.details && (
+                          <div className="space-y-3 pl-5 border-l-2 border-brand-bright/30 ml-2">
+                            {service.details.map((detail, detailIndex) => (
+                              <div
+                                key={detailIndex}
+                                className="flex items-start space-x-3"
+                              >
+                                <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
+                                <span>{detail}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {service.criticalRequirements && (
+                          <div className="mt-4 space-y-3 pl-5 border-l-2 border-red-400/30 ml-2">
+                            <p className="text-sm text-red-400 font-semibold mb-2">
+                              Critical Requirements:
+                            </p>
+                            {service.criticalRequirements.map((requirement, reqIndex) => (
+                              <div
+                                key={reqIndex}
+                                className="flex items-start space-x-3"
+                              >
+                                <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
+                                <span>{requirement}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </motion.a>
-              ))}
+                  ))}
+                </div>
+              </div>
             </motion.div>
-          </div>
+          )}
+
+          {/* Compliance Roadmap Section */}
+          {boilerComplianceData[2] && (
+            <motion.div
+              className="bg-[#1a1a1a] rounded-2xl border border-gray-800 p-8 md:p-12 shadow-2xl shadow-black/50"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="space-y-12">
+                <div className="text-center space-y-2">
+                  <h2 className="text-3xl md:text-4xl font-gnuolane bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
+                    {boilerComplianceData[2].headline}
+                  </h2>
+                  <h3 className="text-xl text-brand-midGray">
+                    {boilerComplianceData[2].subHeadline}
+                  </h3>
+                </div>
+
+                <div className="space-y-6 max-w-3xl mx-auto">
+                  {boilerComplianceData[2].steps.map((step, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start space-x-6 p-6 bg-[#252525] rounded-xl border border-gray-800 hover:border-brand-bright/30 transition-colors"
+                    >
+                      <div className="flex-shrink-0 w-12 h-12 bg-brand-bright rounded-full flex items-center justify-center text-black font-bold text-xl">
+                        {index + 1}
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="text-xl font-semibold text-white">{step.step}</h4>
+                        <p className="text-brand-midGray leading-relaxed">{step.details}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* CTA Section */}
+          {boilerComplianceData[3] && (
+            <motion.div
+              className="bg-[#1a1a1a] rounded-2xl border border-gray-800 p-8 md:p-12 text-center shadow-2xl shadow-black/50"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="space-y-8">
+                <p className="text-2xl md:text-3xl font-semibold text-white">
+                  {boilerComplianceData[3].callToAction.text}
+                </p>
+
+                <div className="flex flex-col md:flex-row justify-center gap-4">
+                  <a
+                    href={boilerComplianceData[3].callToAction.button1.href}
+                    className="bg-brand-bright text-black py-3 px-8 rounded-lg hover:bg-emerald-400 transition-all duration-300 transform hover:scale-105"
+                  >
+                    {boilerComplianceData[3].callToAction.button1.text}
+                  </a>
+                  <a
+                    href={boilerComplianceData[3].callToAction.button2.href}
+                    className="border-2 border-brand-bright text-brand-bright py-3 px-8 rounded-lg hover:bg-brand-bright/10 transition-all duration-300 transform hover:scale-105"
+                  >
+                    {boilerComplianceData[3].callToAction.button2.text}
+                  </a>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-3 mt-6">
+                  {boilerComplianceData[3].trustSignals.map((signal, index) => (
+                    <div
+                      key={index}
+                      className="bg-[#252525] text-brand-midGray py-2 px-4 rounded-full text-sm flex items-center space-x-2"
+                    >
+                      <div className="w-2 h-2 bg-emerald-400 rounded-full" />
+                      <span>{signal}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+
         </section>
       </div>
     </div>
   );
 };
 
-/**
- * EraContent Component
- * Renders detailed information about a specific legislative era including description,
- * milestones, key acts, laws, and sources
- *
- * @param {Object} props - Component props
- * @param {Object} props.era - Era data object containing content information
- * @param {Object} props.era.content - Content details for the era
- * @param {string} props.era.content.description - General description of the era
- * @param {Array<string>} [props.era.content.milestones] - Optional list of key milestones during the era
- * @param {Array<string>} [props.era.content.keyActs] - Optional list of key legislative acts
- * @param {Array<Object>} [props.era.content.laws] - Optional list of specific laws with name and description
- * @param {Array<string>} props.era.content.sources - List of reference sources
- * @returns {JSX.Element} The rendered era content
- */
-const EraContent = ({ era }) => (
-  <motion.div
-    className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800 hover:border-brand-bright/30 transition-colors"
-    initial={{ opacity: 0, x: -20 }} // Initial invisible state, positioned left of final position
-    whileInView={{ opacity: 1, x: 0 }} // Animate to full opacity and final position when in view
-    viewport={{ once: true, margin: "-100px" }} // Only animate once when scrolled into view
-    transition={{ duration: 0.5 }} // Animation duration
-  >
-    {/* Era description */}
-    <p className="text-gray-300 mb-4">{era.content.description}</p>
-
-    {/* Milestones list with bullet points - Conditionally rendered */}
-    {era.content.milestones && (
-      <ul className="space-y-3">
-        {era.content.milestones.map((milestone, idx) => (
-          <li key={idx} className="flex items-start gap-2 text-gray-400">
-            {/* Green dot bullet point */}
-            <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
-            <span className="leading-relaxed">{milestone}</span>
-          </li>
-        ))}
-      </ul>
-    )}
-
-    {/* Key Acts section - Conditionally rendered */}
-    {era.content.keyActs && (
-      <div className="space-y-3 mt-4">
-        {era.content.keyActs.map((act, idx) => (
-          <div
-            key={idx}
-            className="p-3 bg-gray-900 rounded-lg border border-gray-800"
-          >
-            <p className="text-sm text-gray-300">{act}</p>
-          </div>
-        ))}
-      </div>
-    )}
-
-    {/* Laws section with left border accent - Conditionally rendered */}
-    {era.content.laws && (
-      <div className="space-y-4 mt-4">
-        {era.content.laws.map((law, idx) => (
-          <div key={idx} className="border-l-4 border-brand-bright pl-4">
-            <h4 className="font-semibold text-gray-200">{law.name}</h4>
-            <p className="text-sm text-gray-400 mt-1">{law.description}</p>
-          </div>
-        ))}
-      </div>
-    )}
-
-    {/* Sources citation */}
-    <div className="mt-4 text-xs text-brand-bright/70">
-      Sources: {era.content.sources.join(", ")}
-    </div>
-  </motion.div>
-);
-
-export default page;
+export default Page;
