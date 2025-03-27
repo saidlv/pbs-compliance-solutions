@@ -5,23 +5,8 @@ import HeroSection from "@/components/HeroSection";
 import { parapetData } from "../data"; // Import parapetData
 
 const page = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
-    <div className="bg-[#101010] text-white min-h-screen">
+    <div className="bg-brand-darkest text-white min-h-screen">
       <HeroSection
         heading="Comply with LL 126 Parapet Inspection"
         text="Prevent Hazards, avoid Penalties by the help our licensed experts"
@@ -31,7 +16,7 @@ const page = () => {
       <div className="py-16 px-6 md:px-12 lg:px-24">
         <section className="container mx-auto sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]">
           <motion.div
-            className="bg-[#1a1a1a] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#4CAF50]"
+            className="bg-brand-dark1 p-8 rounded-lg shadow-md mb-8 border-l-4 border-green-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -41,12 +26,12 @@ const page = () => {
             </h2>
             <div
               dangerouslySetInnerHTML={{ __html: parapetData[0].body }}
-              className="text-[#9ca3af]"
+              className="text-brand-midGray"
             />
           </motion.div>
 
           <motion.div
-            className="bg-[#262626] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#2196F3]"
+            className="bg-brand-dark2 p-8 rounded-lg shadow-md mb-8 border-l-4 border-blue-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -56,12 +41,12 @@ const page = () => {
             </h2>
             <div
               dangerouslySetInnerHTML={{ __html: parapetData[1].body }}
-              className="text-[#9ca3af]"
+              className="text-brand-midGray"
             />
           </motion.div>
 
           <motion.div
-            className="bg-[#333333] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#FF9800]"
+            className="bg-brand-dark3 p-8 rounded-lg shadow-md mb-8 border-l-4 border-orange-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -71,14 +56,12 @@ const page = () => {
             </h2>
             <div
               dangerouslySetInnerHTML={{ __html: parapetData[2].body }}
-              className="text-[#9ca3af]"
+              className="text-brand-midGray"
             />
           </motion.div>
 
-
-
           <motion.div
-            className="bg-[#4d4d4d] p-8 rounded-lg shadow-md border-l-4 border-[#9C27B0]"
+            className="bg-brand-dark5 p-8 rounded-lg shadow-md mb-8 border-l-4 border-purple-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
@@ -88,12 +71,12 @@ const page = () => {
             </h2>
             <div
               dangerouslySetInnerHTML={{ __html: parapetData[3].body }}
-              className="text-[#9ca3af]"
+              className="text-brand-midGray"
             />
           </motion.div>
 
           <motion.div
-            className="bg-[#5a5a5a] p-8 rounded-lg shadow-md border-l-4 border-[#673AB7]"
+            className="bg-brand-dark6 p-8 rounded-lg shadow-md border-l-4 border-deep-purple-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.2 }}
@@ -103,7 +86,7 @@ const page = () => {
             </h2>
             <div
               dangerouslySetInnerHTML={{ __html: parapetData[4].body }}
-              className="text-[#9ca3af]"
+              className="text-brand-midGray"
             />
           </motion.div>
         </section>

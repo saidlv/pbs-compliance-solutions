@@ -16,23 +16,24 @@ export default {
         conthrax: ["var(--font-conthrax)", "sans-serif"],
       },
       colors: {
+        // Directly using the colors from your image
+        'brand-dark': '#38403e',
+        'brand-light': '#dce2e1',
+        'brand-gray1': '#505a56',
+        'brand-gray2': '#6b7771',
+        'brand-gray3': '#889991',
+        'brand-green1': '#516b66',
+        'brand-green2': '#6c837d',
+        'brand-green3': '#89a097',
+        'brand-black': '#000000',
+        'brand-darkGray': '#414042',
+        'brand-midGray': '#939598',
+        'brand-white': '#ffffff',
+        'brand-bright': '#00FF85', // If you still need it
+
+        // Tailwind CSS default colors (if you need them)
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        brand: {
-          dark: "#38403e",
-          gray1: "#505a56",
-          gray2: "#6b7771",
-          gray3: "#889991",
-          green1: "#516b66",
-          green2: "#6c837d",
-          green3: "#89a097",
-          light: "#dce2e1",
-          black: "#000000",
-          darkGray: "#414042",
-          midGray: "#939598",
-          white: "#ffffff",
-          bright: "#00FF85",
-        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

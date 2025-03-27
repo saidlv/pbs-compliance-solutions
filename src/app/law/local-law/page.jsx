@@ -6,23 +6,21 @@ import { localLaw } from "../data"; // Assuming data.js is in the same directory
 
 const page = () => {
   return (
-    <div className="bg-[#101010]">
+    <div className="bg-brand-darkest">
       {/* Hero section as full-width header */}
-      {/* <div className="bg-[#282828] py-16 px-6 md:px-12 lg:px-24 w-full"> */}
       <HeroSection
         heading="Avoid Fines, Prevent Disasters, Protect your Legacy"
         text="Local Law 11 Compliance isn’t just a mandate, it’s your building lifeline. Let PBS 
-         Handle the complexities while you focus on what matters."
+          Handle the complexities while you focus on what matters."
         staggerVal={0.1}
       />
-      {/* </div> */}
 
       {/* Body content */}
       <div className="py-16 px-6 md:px-12 lg:px-24">
         <section className="container mx-auto sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]">
           {/* Why Local Law 11 Matters */}
           <motion.div
-            className="bg-[#1a1a1a] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#4CAF50]"
+            className="bg-brand-dark1 p-8 rounded-lg shadow-md mb-8 border-l-4 border-green-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -30,17 +28,20 @@ const page = () => {
             <h2 className="text-2xl font-semibold mb-4 text-white">
               {localLaw.whyLl11.heading}
             </h2>
-            <p className="text-lg text-[#9ca3af] mb-4">
-              <span className="font-bold text-[#4CAF50]">
+            <p className="text-lg text-brand-midGray mb-4">
+              <span className="font-bold text-green-500">
                 {localLaw.whyLl11.subheadline}
               </span>
             </p>
-            <div dangerouslySetInnerHTML={{ __html: localLaw.whyLl11.body }} className="text-[#9ca3af]" />
+            <div
+              dangerouslySetInnerHTML={{ __html: localLaw.whyLl11.body }}
+              className="text-brand-midGray"
+            />
           </motion.div>
 
           {/* Our Services */}
           <motion.div
-            className="bg-[#262626] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#2196F3]"
+            className="bg-brand-dark2 p-8 rounded-lg shadow-md mb-8 border-l-4 border-blue-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -48,8 +49,8 @@ const page = () => {
             <h2 className="text-2xl font-semibold mb-4 text-white">
               {localLaw.ourServices.heading}
             </h2>
-            <p className="text-lg text-[#9ca3af] mb-4">
-              <span className="font-bold text-[#2196F3]">
+            <p className="text-lg text-brand-midGray mb-4">
+              <span className="font-bold text-blue-500">
                 {localLaw.ourServices.subheadline}
               </span>
             </p>
@@ -59,12 +60,12 @@ const page = () => {
                   {service.heading}
                 </h3>
                 {service.subheading && (
-                  <h4 className="text-lg font-medium mb-2 text-[#9ca3af]">
+                  <h4 className="text-lg font-medium mb-2 text-brand-midGray">
                     {service.subheading}
                   </h4>
                 )}
                 {service.items && (
-                  <ul className="list-disc list-inside text-[#9ca3af]">
+                  <ul className="list-disc list-inside text-brand-midGray">
                     {service.items.map((item, itemIndex) => (
                       <li key={itemIndex} className="text-lg">
                         {item}
@@ -73,7 +74,10 @@ const page = () => {
                   </ul>
                 )}
                 {service.body && (
-                  <div dangerouslySetInnerHTML={{ __html: service.body }} className="text-[#9ca3af]" />
+                  <div
+                    dangerouslySetInnerHTML={{ __html: service.body }}
+                    className="text-brand-midGray"
+                  />
                 )}
               </div>
             ))}
@@ -81,7 +85,7 @@ const page = () => {
 
           {/* The PBS Process */}
           <motion.div
-            className="bg-[#333333] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#FF9800]"
+            className="bg-brand-dark3 p-8 rounded-lg shadow-md mb-8 border-l-4 border-orange-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -89,12 +93,15 @@ const page = () => {
             <h2 className="text-2xl font-semibold mb-4 text-white">
               {localLaw.pbsProcess.heading}
             </h2>
-            <div dangerouslySetInnerHTML={{ __html: localLaw.pbsProcess.description }} className="text-[#9ca3af]" />
+            <div
+              dangerouslySetInnerHTML={{ __html: localLaw.pbsProcess.description }}
+              className="text-brand-midGray"
+            />
           </motion.div>
 
           {/* Why Choose PBS */}
           <motion.div
-            className="bg-[#404040] p-8 rounded-lg shadow-md mb-8 border-l-4 border-[#E91E63]"
+            className="bg-brand-dark4 p-8 rounded-lg shadow-md mb-8 border-l-4 border-pink-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
@@ -102,7 +109,7 @@ const page = () => {
             <h2 className="text-2xl font-semibold mb-4 text-white">
               {localLaw.whyChoosePbs.heading}
             </h2>
-            <ul className="list-disc list-inside text-[#9ca3af]">
+            <ul className="list-disc list-inside text-brand-midGray">
               {localLaw.whyChoosePbs.points.map((point, index) => (
                 <li key={index} className="text-lg">
                   {point}
@@ -113,7 +120,7 @@ const page = () => {
 
           {/* CTA Section */}
           <motion.div
-            className="bg-[#4d4d4d] p-8 rounded-lg shadow-md border-l-4 border-[#9C27B0]"
+            className="bg-brand-dark5 p-8 rounded-lg shadow-md border-l-4 border-purple-500"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.0 }}
@@ -125,7 +132,7 @@ const page = () => {
               {localLaw.ctaSection.trustSignals.map((signal, index) => (
                 <span
                   key={index}
-                  className="bg-[#e9ecef] px-4 py-2 rounded-full text-sm text-[#333]"
+                  className="bg-gray-200 px-4 py-2 rounded-full text-sm text-gray-800"
                 >
                   {signal}
                 </span>

@@ -57,7 +57,7 @@ const SectionList = () => {
   };
 
   return (
-    <section className="relative bg-[#252525] text-[#E5E7EB] py-12 px-4 md:py-16 md:px-12 lg:px-24">
+    <section className="relative bg-brand-darkGray text-brand-midGray py-12 px-4 md:py-16 md:px-12 lg:px-24">
       {/* Background Image with Lazy Loading and Fade-in Effect */}
       <div
         className="absolute inset-0 transition-opacity duration-700 ease-in-out"
@@ -82,11 +82,11 @@ const SectionList = () => {
           <div className="text-center my-12 xl:mb-8 py-6">
             <div className="text-brand-bright flex flex-col md:flex-row items-center justify-center gap-2 mb-4 md:mb-6">
               {/* <Building className="w-8 h-8" /> */}
-              <h3 className="text-4xl md:text-5xl font-conthrax sm:w-5/6 md:w-[70%] mx-auto text-[#2d8b6f] ">
+              <h3 className="text-4xl md:text-5xl font-conthrax sm:w-5/6 md:w-[70%] mx-auto text-brand-green2 ">
                 We Serve Across NYC’s Departments
               </h3>
             </div>
-            <h1 className="text-[#f3f4f6] text-lg font-gnuolane uppercase tracking-widest mb-2">
+            <h1 className="text-brand-light text-lg font-gnuolane uppercase tracking-widest mb-2">
               We don't only deal with these departments for your Alerts but we also deal with these
               departments for your permitting and inspection work.
             </h1>
@@ -118,13 +118,13 @@ const SectionList = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                className={`relative cursor-pointer bg-[#252525] rounded-2xl shadow-2xl ${expandedId === section.id ? "border-brand-bright" : ""
+                className={`relative cursor-pointer bg-brand-darkGray rounded-2xl shadow-2xl ${expandedId === section.id ? "border-brand-bright" : ""
                   } sm:w-[80%] md:w-[65%] lg:w-[80%] xl:w-[75%] mx-auto`}
               >
                 {/* Section Card Header - Always Visible */}
                 <motion.div
                   layout
-                  className={`flex flex-col lg:flex-row items-center md:mx-auto justify-center xl:gap-16 bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden rounded-full`}
+                  className={`flex flex-col lg:flex-row items-center md:mx-auto justify-center xl:gap-16 bg-brand-dark1 rounded-lg shadow-lg overflow-hidden rounded-full`}
                 >
                   {/* Section Image */}
                   <div className="w-full lg:w-2/5 2xl:w-1/5 h-48 lg:h-64">
@@ -172,7 +172,7 @@ const SectionList = () => {
                       className="mt-8 md:my-32 xl:my-16 container ml-4 sm:ml-8 md:ml-[-10%] xl:ml-10 2xl:ml-16 w-[105%] sm:w-[115%] md:w-[120%] xl:w-[120%] overflow-hidden"
                     >
                       {/* Expanded Content Container with Green Border Accent */}
-                      <div className="bg-[#1a1a1a] p-6 rounded-lg border-l-4 border-brand-bright shadow-xl">
+                      <div className="bg-brand-dark1 p-6 rounded-lg border-l-4 border-brand-bright shadow-xl">
                         <motion.div
                           layout="position"
                           initial={{ opacity: 0 }}
@@ -282,7 +282,7 @@ const SectionList = () => {
                             <motion.div
                               initial={{ opacity: 0 }}
                               whileInView={{ opacity: 1 }}
-                              className={`mb-16 py-6 rounded-xl bg-[#1A1A1A]`}
+                              className={`mb-16 py-6 rounded-xl bg-brand-dark1`}
                             >
                               <div className="flex items-center gap-3 mb-6">
                                 {React.createElement(
@@ -356,7 +356,7 @@ const SectionList = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="text-center bg-[#252525] p-6 md:p-8 rounded-xl"
+          className="text-center bg-brand-darkGray p-6 md:p-8 rounded-xl"
         >
           <Phone className="w-10 h-10 md:w-12 md:h-12 text-brand-bright mx-auto mb-4" />
           <h2 className="text-xl md:text-2xl font-bold text-white mb-4">

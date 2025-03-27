@@ -103,7 +103,7 @@ const page = () => {
       />
 
       {/* Services Grid Section */}
-      <section className="relative bg-black text-[#E5E7EB] py-32 px-6 md:px-12 lg:px-24">
+      <section className="relative bg-brand-darkGray text-brand-midGray py-32 px-6 md:px-12 lg:px-24">
         {/* Semi-transparent Background Image */}
         <div className="absolute inset-0 bg-[url('/PBS%20Assets/better-assets/Bg/Post%202%20a.webp')] bg-cover bg-center opacity-[0.07]"></div>
 
@@ -137,7 +137,7 @@ const page = () => {
                 whileInView="visible"
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="bg-[#1A1A1A] rounded-lg p-6 shadow-md border border-green-600 hover:border-brand-bright transition-all duration-300 text-center flex flex-col justify-center items-center gap-8 sm:w-[80%] md:w-[85%] lg:w-[90%] mx-auto"
+                className="bg-brand-dark1 rounded-lg p-6 shadow-md border border-green-600 hover:border-brand-bright transition-all duration-300 text-center flex flex-col justify-center items-center gap-8 sm:w-[80%] md:w-[85%] lg:w-[90%] mx-auto"
               >
                 {/* Service Icon */}
                 <div className="mb-4 text-2xl">{service.icon}</div>

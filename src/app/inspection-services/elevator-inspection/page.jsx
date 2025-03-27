@@ -9,8 +9,7 @@ const Page = () => {
     <div className="bg-[#101010] min-h-screen">
       <HeroSection
         heading="Elevator Inspection"
-        text=":Annual inspections, violation erasure, and emergency repairs—trusted by 
-landlords who refuse to gamble with safety or deadlines."
+        text="Annual inspections, violation erasure, and emergency repairs—trusted by landlords who refuse to gamble with safety or deadlines."
         staggerVal={0.1}
       />
 
@@ -27,11 +26,11 @@ landlords who refuse to gamble with safety or deadlines."
             >
               {/* Section Header */}
               <div className="mb-10 text-center space-y-6">
-                <h1 className="text-3xl md:text-4xl font-gnuolane text-white mb-4 bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
+                <h1 className="text-4xl font-gnuolane text-white mb-4 bg-gradient-to-r from-brand-bright to-emerald-400 bg-clip-text text-transparent">
                   {sectionData.headline}
                 </h1>
                 {sectionData.bodyText && (
-                  <p className="text-brand-midGray text-lg max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-lg text-brand-midGray max-w-3xl mx-auto leading-relaxed">
                     {sectionData.bodyText}
                   </p>
                 )}
@@ -43,13 +42,13 @@ landlords who refuse to gamble with safety or deadlines."
                   <table className="min-w-full bg-[#1a1a1a] divide-y-2 divide-gray-800">
                     <thead className="bg-[#252525]">
                       <tr>
-                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider border-r-2 border-gray-800">
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase tracking-wider border-r-2 border-gray-800">
                           Violation
                         </th>
-                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider border-r-2 border-gray-800">
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase tracking-wider border-r-2 border-gray-800">
                           Consequences
                         </th>
-                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase text-sm tracking-wider">
+                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase tracking-wider">
                           Our Safeguard
                         </th>
                       </tr>
@@ -63,19 +62,19 @@ landlords who refuse to gamble with safety or deadlines."
                           <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
                             <div className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
-                              <span>{scenario.consequence}</span>
+                              <span className="leading-relaxed">{scenario.consequence}</span>
                             </div>
                           </td>
                           <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
                             <div className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
-                              <span>{scenario.details}</span>
+                              <span className="leading-relaxed">{scenario.details}</span>
                             </div>
                           </td>
                           <td className="py-5 px-8 text-gray-400 align-top">
                             <div className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
-                              <span>{scenario.safeguard}</span>
+                              <span className="leading-relaxed">{scenario.safeguard}</span>
                             </div>
                           </td>
                         </tr>
@@ -91,7 +90,7 @@ landlords who refuse to gamble with safety or deadlines."
                   {sectionData.additionalText.map((text, index) => (
                     <div key={index} className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-3 h-3 bg-brand-bright rounded-full mt-1.5" />
-                      <p className="text-brand-midGray text-lg">{text}</p>
+                      <p className="text-lg text-brand-midGray leading-relaxed">{text}</p>
                     </div>
                   ))}
                 </div>
@@ -117,7 +116,7 @@ landlords who refuse to gamble with safety or deadlines."
                               className="flex items-start space-x-3"
                             >
                               <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
-                              <span className="text-brand-midGray">{detail}</span>
+                              <span className="text-brand-midGray leading-relaxed">{detail}</span>
                             </div>
                           ))}
                         </div>
@@ -155,7 +154,7 @@ landlords who refuse to gamble with safety or deadlines."
               {/* Call to Action */}
               {sectionData.callToAction && (
                 <div className="mt-12 text-center space-y-8">
-                  <p className="text-2xl md:text-3xl font-semibold text-white">
+                  <p className="text-3xl font-semibold text-white leading-relaxed">
                     {sectionData.callToAction.text}
                   </p>
                   <div className="flex flex-col md:flex-row justify-center gap-4">
@@ -171,7 +170,7 @@ landlords who refuse to gamble with safety or deadlines."
 
               {/* Trust Signals */}
               {sectionData.trustSignals && (
-                <div className="flex flex-wrap justify-center gap-3 mt-8">
+                <div className="flex flex-wrapjustify-center gap-3 mt-8">
                   {sectionData.trustSignals.map((signal, index) => (
                     <div
                       key={index}
