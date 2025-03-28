@@ -42,13 +42,13 @@ const Page = () => {
                   <table className="min-w-full bg-[#1a1a1a] divide-y-2 divide-gray-800">
                     <thead className="bg-[#252525]">
                       <tr>
-                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase tracking-wider border-r-2 border-gray-800">
+                        <th className="py-5 px-4 md:px-8 text-left text-gray-300 font-semibold uppercase tracking-wider border-r-2 border-gray-800">
                           Violation
                         </th>
-                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase tracking-wider border-r-2 border-gray-800">
+                        <th className="py-5 px-4 md:px-8 text-left text-gray-300 font-semibold uppercase tracking-wider border-r-2 border-gray-800">
                           Consequences
                         </th>
-                        <th className="py-5 px-8 text-left text-gray-300 font-semibold uppercase tracking-wider">
+                        <th className="py-5 px-4 md:px-8 text-left text-gray-300 font-semibold uppercase tracking-wider">
                           Our Safeguard
                         </th>
                       </tr>
@@ -59,19 +59,19 @@ const Page = () => {
                           key={index}
                           className="hover:bg-[#252525]/50 transition-colors duration-200"
                         >
-                          <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
+                          <td className="py-5 px-4 md:px-8 text-gray-400 align-top border-r-2 border-gray-800">
                             <div className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
                               <span className="leading-relaxed">{scenario.consequence}</span>
                             </div>
                           </td>
-                          <td className="py-5 px-8 text-gray-400 align-top border-r-2 border-gray-800">
+                          <td className="py-5 px-4 md:px-8 text-gray-400 align-top border-r-2 border-gray-800">
                             <div className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0" />
                               <span className="leading-relaxed">{scenario.details}</span>
                             </div>
                           </td>
-                          <td className="py-5 px-8 text-gray-400 align-top">
+                          <td className="py-5 px-4 md:px-8 text-gray-400 align-top">
                             <div className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2 flex-shrink-0" />
                               <span className="leading-relaxed">{scenario.safeguard}</span>
@@ -170,7 +170,7 @@ const Page = () => {
 
               {/* Trust Signals */}
               {sectionData.trustSignals && (
-                <div className="flex flex-wrapjustify-center gap-3 mt-8">
+                <div className="flex flex-wrap justify-center gap-3 mt-8">
                   {sectionData.trustSignals.map((signal, index) => (
                     <div
                       key={index}

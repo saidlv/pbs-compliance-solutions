@@ -166,7 +166,7 @@ export const InspectionServices = [
         ],
         additionalText: "Parking Garages require regular checks to ensure safety and avoid violations",
         cta: {
-          text: "Learn more about Parking Inspections",
+          text: "Learn about Parking Inspections",
           href: "/about-us", // Dummy href, change as needed
         },
       },
@@ -195,7 +195,7 @@ export const InspectionServices = [
           "Our Process: Pressure Testing: We Hunt Leaks with 99% Accuracy, Corrosion Mapping: We Spot Weak points before they burst, DOB Reporting: We file everything, no paperwork for you",
         ],
         cta: {
-          text: "Get your Inspection done this year",
+          text: "Get Inspection done this year",
           href: "/about-us", // Dummy href, change as needed
         },
       },
