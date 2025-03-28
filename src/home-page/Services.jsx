@@ -89,9 +89,9 @@ const Services = () => {
               className="service-card text-center md:text-left"
             >
               <div className="flex justify-center md:justify-start text-green-600">
-                <item.icon className="w-12 h-12" aria-hidden="true" />
+                <item.icon className="w-12 h-12" style={{ paddingLeft: '10px' }} aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-semibold border-b-[3px] border-brand-gray1 inline-block pb-[2px] mt-4">
+              <h3 className="text-xl font-semibold border-b-[3px] border-brand-gray1 inline-block pb-[2px] mt-4" style={{ paddingLeft: '10px' }}>
                 {item.heading}
               </h3>
 
@@ -105,13 +105,15 @@ const Services = () => {
               )}
 
               {index === 0 ? (
-                <ul className="text-gray-400 space-y-2 mt-4">
+                <ul className="text-gray-400 space-y-4 mt-2">
                   {item.text.map((point, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      {point}
+                    <li key={i} className="flex items-center gap-2" style={{ paddingLeft: '10px' }}> {/* ADDED paddingLeft HERE */}
+                      <span style={{ minWidth: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#6B7280', marginRight: '5px' }}></span> {point}
                     </li>
                   ))}
-                  <CTA text="Our Offerings" href="/services" styling="mt-4" />
+                  <div className="text-center mt-4" style={{ paddingLeft: '10px' }}>
+                    <CTA text="Our Offerings " href="/services" />
+                  </div>
                 </ul>
               ) : (
                 <ol className="text-gray-400 space-y-2 mt-4">

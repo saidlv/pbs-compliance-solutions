@@ -98,8 +98,9 @@ const page = () => {
     <div>
       {/* Hero Section - Page Title and Introduction */}
       <HeroSection
-        heading="Your Trusted Partner in Property Compliance, Safety,and Management"
+        heading="Your Trusted Partner in Property Compliance, Safety, and Management"
         text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your project stays on time, on budget and above board"
+        className="max-w-5xl mx-auto break-keep hyphens-none text-balance"
       />
 
       {/* Services Grid Section */}

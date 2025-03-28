@@ -8,8 +8,8 @@ const Page = () => {
   return (
     <div className="bg-[#101010] min-h-screen">
       <HeroSection
-        heading="Sprinkler Inspection (Hydristatic Test)"
-        text=": Ensuring that your property’s fire sprinkler systems are compliant with New York 
+        heading="Sprinkler Inspection Hydrostatic Test"
+        text="Ensuring that your property’s fire sprinkler systems are compliant with New York 
 City’s regulations is crucial for safety and legal adherence."
         staggerVal={0.1}
       />
@@ -144,6 +144,7 @@ City’s regulations is crucial for safety and legal adherence."
               )}
 
               {/* Call to Action */}
+              {/* Call to Action */}
               {sectionData.callToAction && (
                 <div className="mt-12 text-center space-y-8">
                   <p className="text-2xl md:text-3xl font-semibold text-white">
@@ -152,15 +153,15 @@ City’s regulations is crucial for safety and legal adherence."
                   <div className="flex flex-col md:flex-row justify-center gap-6">
                     <a
                       href={`tel:${sectionData.callToAction.contact.call}`}
-                      className="bg-gradient-to-r from-[#00cc6a] to-[#22d3ee] text-black py-3 px-8 rounded-lg hover:scale-105 transition-all duration-300"
+                      className="border-2 border-[#00cc6a] text-[#00cc6a] py-3 px-8 rounded-lg hover:bg-[#00cc6a]/10 transition-all duration-300"
                     >
-                      📞 {sectionData.callToAction.contact.call}
+                      {sectionData.callToAction.contact.call}
                     </a>
                     <a
                       href={`mailto:${sectionData.callToAction.contact.email}`}
                       className="border-2 border-[#00cc6a] text-[#00cc6a] py-3 px-8 rounded-lg hover:bg-[#00cc6a]/10 transition-all duration-300"
                     >
-                      ✉️ {sectionData.callToAction.contact.email}
+                      {sectionData.callToAction.contact.email}
                     </a>
                   </div>
                 </div>

@@ -79,41 +79,44 @@ const Page = () => {
             </div>
 
             {/* Enhanced Additional Text Section */}
-            <div className="verflow-x-auto rounded-xl border border-gray-800 shadow-2xl shadow-black/50">
-              <p className="text-brand-midGray text-lg mb-8 font-light">
-                {boilerComplianceData[0].additionalText[0]}
-              </p>
+            <div className="mt-12 bg-[#1a1a1a] rounded-xl border border-gray-800 shadow-2xl shadow-black/50 p-8 md:p-12">
+              <div className="space-y-8">
+                <p className="text-brand-midGray text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
+                  {boilerComplianceData[0].additionalText[0]}
+                </p>
 
-              <div className="space-y-6">
-                {boilerComplianceData[0].additionalText.slice(1).map((text, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-3 h-3 bg-emerald-400 rounded-full mt-1.5" />
-                    </div>
-                    <div className="flex-1">
-                      {text.split('\n').map((line, lineIndex) => (
-                        <div key={lineIndex} className="flex items-start space-x-3">
-                          {line.startsWith('●') ? (
-                            <>
+                <div className="space-y-8 md:space-y-6">
+                  {boilerComplianceData[0].additionalText.slice(1).map((text, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start space-x-6 p-4 md:p-6 bg-[#252525]/30 rounded-lg hover:bg-[#252525]/50 transition-colors"
+                    >
+                      <div className="flex-shrink-0">
+                        <div className="w-4 h-4 bg-emerald-400 rounded-full mt-1" />
+                      </div>
+                      <div className="flex-1 space-y-3">
+                        {text.split('\n').map((line, lineIndex) => (
+                          <div
+                            key={lineIndex}
+                            className="flex items-start space-x-4 text-base md:text-lg"
+                          >
+                            {line.startsWith('●') && (
                               <div className="w-2 h-2 bg-brand-bright rounded-full mt-2 flex-shrink-0" />
-                              <span className="text-brand-midGray text-base">
-                                {line.replace('●', '').trim()}
-                              </span>
-                            </>
-                          ) : (
-                            <span className="text-brand-midGray text-base">
-                              {line}
+                            )}
+                            <span className="text-brand-midGray">
+                              {line.replace('●', '').trim()}
                             </span>
-                          )}
-                        </div>
-                      ))}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
 
+          {/* Rest of the code remains unchanged */}
           {/* Compliance Solutions Section */}
           {boilerComplianceData[1] && (
             <motion.div

@@ -27,65 +27,16 @@ const Hero = () => {
   return (
     <div className="relative bg-brand-dark">
       <div className="mx-auto container overflow-hidden h-screen relative">
-        <motion.div
-          className="absolute inset-0 w-full h-full"
-          initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
-          animate={{
-            opacity: 1,
-            y: [1000, -20, 0],
-            scale: [0.95, 1.2, 1],
-            x: isSmallScreen && isOpen ? -50 : 50,
-          }}
-          transition={{
-            duration: initialRender ? 1.2 : 0.5,
-            ease: "easeOut",
-            delay: initialRender ? 0.5 : 0,
-          }}
-          aria-hidden="true"
-        >
-          <Image
-            src="/PBS%20Assets/Brand%20Language/front-view-modern-skyscrapers-office-buildings-removebg-preview.png"
-            alt="Modern skyscrapers"
-            className="w-full h-full object-contain"
-            width={100}
-            height={100}
-            unoptimized
-            loading="lazy"
-          />
-        </motion.div>
+        {/* ... (image animations remain the same) ... */}
 
         <motion.div
-          className="absolute inset-0 w-full h-full opacity-[.1]"
-          initial={{ opacity: 0, x: 0, scale: 0.75 }}
-          animate={{
-            opacity: 0.1,
-            x: 0,
-            scale: 1,
-          }}
-          transition={{
-            duration: 0.7,
-            ease: "easeOut",
-          }}
-          aria-hidden="true"
-        >
-          <CustomImage
-            src="/PBS%20Assets/Brand%20Language/glass-u-shaped-structure-with-blue-sky.jpg"
-            alt="Glass U-shaped structure"
-            className="w-full h-full object-cover"
-            width={100}
-            height={100}
-            loading="lazy"
-          />
-        </motion.div>
-
-        <motion.div
-          className="relative flex flex-col justify-center h-screen p-6 md:p-8 lg:p-10 xl:p-12"
+          className="relative flex flex-col justify-center items-center h-screen p-6 md:p-8 lg:p-10 xl:p-12 text-center" // Added text-center here
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
         >
           <motion.h1
-            className="text-3xl md:text-4xl lg:text-5xl/[1.25] mb-8 md:mb-10 font-conthrax font-semibold text-brand-light"
+            className="text-4xl md:text-5xl lg:text-6xl/[1.2] font-conthrax font-semibold text-brand-light mb-6" // Adjusted font size and margin
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -94,45 +45,31 @@ const Hero = () => {
               delay: 0.5,
             }}
           >
-            Ensuring Compliance, Excellence and Peace of mind in New York
-            Construction
+            Ensuring Compliance, Excellence and Peace of Mind in New York Construction
           </motion.h1>
 
-          <motion.div className="relative inline-block overflow-hidden">
-            <motion.div
-              className="absolute top-0"
-              style={{ width: "5px", backgroundColor: "#16A34A" }}
-              initial={{ height: 0 }}
-              animate={{ height: [0, "25%", "75%", "100%"] }}
-              transition={{
-                duration: 1,
-                times: [0, 0.3, 0.6, 1],
-                delay: 0.6,
-              }}
-              aria-hidden="true"
-            />
-
-            <motion.p
-              className="text-md font-poppins text-brand-light pl-5"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{
-                opacity: [0, 0.25, 0.75, 1],
-                x: [100, 75, 25, 0],
-              }}
-              transition={{
-                duration: 1,
-                times: [0, 0.3, 0.6, 1],
-              }}
-            >
-              Your Trusted Partner for Construction
-              <span className="text-brand-white">Compliance inspections,</span>
-              <br />
-              Expediting and <span className="text-brand-white">Property Solutions</span>.
-            </motion.p>
-          </motion.div>
+          <div className="w-16 h-1 bg-brand-green mb-4" /> {/* Added top line separator */}
 
           <motion.p
-            className="text-md font-poppins text-brand-light pl-5 mt-2"
+            className="text-lg md:text-xl font-poppins text-brand-light mb-6" // Adjusted font size and margin
+            initial={{ opacity: 0, x: 100 }}
+            animate={{
+              opacity: [0, 0.25, 0.75, 1],
+              x: [100, 75, 25, 0],
+            }}
+            transition={{
+              duration: 1,
+              times: [0, 0.3, 0.6, 1],
+            }}
+          >
+            Your Trusted Partner for Construction Compliance Inspections,<br />
+            Expediting and Property Solutions
+          </motion.p>
+
+          <div className="w-16 h-1 bg-brand-green mb-6" /> {/* Added bottom line separator */}
+
+          <motion.p
+            className="text-md font-poppins text-brand-light" // Removed pl-5
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],

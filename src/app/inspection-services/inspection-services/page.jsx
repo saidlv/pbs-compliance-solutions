@@ -142,7 +142,7 @@ const ParkingPage = () => {
                           </p>
                         )}
                       </div>
-                      <div className="mt-4 text-center">
+                      <div className="mt-4 flex justify-center">
                         {service.cta && (
                           <CTA text={service.cta.text} href={service.cta.href} />
                         )}
@@ -153,7 +153,7 @@ const ParkingPage = () => {
               )}
 
               {sectionData.buttons && (
-                <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <div className="flex flex-wrap justify-center gap-4 mt-8 text-center">
                   {sectionData.buttons.map((button, buttonIndex) => (
                     <CTA
                       key={`button-${sectionIndex}-${buttonIndex}`}
@@ -165,7 +165,7 @@ const ParkingPage = () => {
               )}
 
               {sectionData.cta && sectionData.cta.text && (
-                <div className="mt-8 text-center">
+                <div className="mt-8 flex justify-center">
                   <CTA text={sectionData.cta.text} href={sectionData.cta.href} />
                 </div>
               )}

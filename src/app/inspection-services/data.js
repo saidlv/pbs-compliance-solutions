@@ -408,7 +408,7 @@ export const boilerComplianceData = [
     ],
     additionalText: [
       `NYC Trusts us because we speak figures, we speak facts, we speak code, We speak deadlines, we guide what NYC says, the reason is we made Boiler compliance simple for you:\n`,
-      `Low-Pressure Boilers: Annual inspections (Jan 1- Dec 31)\n●`,
+      `Low-Pressure Boilers: Annual inspections (Jan 1- Dec 31)\n`,
       `High-pressure Boilers: Internal + External Inspections (6 Months Apart)\n`,
       `14-Day Filing rule: Reports due within 2 weeks of inspections`,
       `90-Day Repair Window: Fix defects fast or face $1000+/Boiler fines\nOur Expert Services help you navigate these requirements efficiently, minimizing risks and potential liabilities`],
