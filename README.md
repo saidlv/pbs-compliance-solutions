@@ -58,13 +58,6 @@ We welcome contributions to improve PBS Compliance Solutions. Please follow thes
 
 ## License
 
-
-
-## Contact
-
-* Website: Parkash
-* Address: Karachi
-* Phone:03450466818
 =======
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
