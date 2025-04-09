@@ -72,7 +72,7 @@ const Hero = () => {
           aria-hidden="true"
         >
           <Image
-            src="/pics/building.png"
+            src="/pics/Building.png"
             alt="Modern skyscrapers"
             className="w-full h-full object-contain absolute -left-0 md:-left-12"
             width={500}
