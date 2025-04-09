@@ -24,7 +24,7 @@ const Page = () => {
       </div>
 
       <div className="w-full flex justify-center items-center mt-10 text-sm text-[#89A096]">
-        <p>Meet the professionals driving our success.</p>
+        <p>Meet the professionals driving our success...</p>
       </div>
 
       <div className="py-10 px-6 md:px-12 lg:px-16">
