@@ -25,9 +25,9 @@ export const aboutContent = [
         tagline: "Building Futures, Delivering Certainty",
         body: "At PBS, we exist to create mutual success. We deliver 'value for value' by uniting administrative precision, decades of construction mastery, and unparalleled craftsmanship—turning complex visions into reality, faster and clearer than anyone else.",
         impacts: {
-            clients: "Transparent budgets, accelerated timelines, and a single point of accountability for your project's success",
-            teams: "Empowerment through training, cutting-edge tools, and collaborative support to perform at your peak",
-            industry: "Raising the bar for ethical, efficient, and future-focused development practices"
+            "For Clients": "Transparent budgets, accelerated timelines, and a single point of accountability for your project's success",
+            "teams & Partners": "Empowerment through training, cutting-edge tools, and collaborative support to perform at your peak",
+            "The Industry": "Raising the bar for ethical, efficient, and future-focused development practices"
         }
     },
     {

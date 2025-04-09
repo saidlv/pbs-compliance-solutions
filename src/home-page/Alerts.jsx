@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Send } from "lucide-react";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,26 +156,22 @@ const Alerts = () => {
                   never miss any critical step again. Free for the first 3
                   months
                 </p>
-                <div className="relative flex items-center gap-4 pt-6">
-                  <div className="relative">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-green2/20 opacity-75"></span>
-                    <span
-                      className="relative inline-block text-5xl font-bold animate-bounce text-brand-green2"
-                      aria-hidden="true"
-                    >
-                      ↓
-                    </span>
-                  </div>
-                  <span className="text-lg font-semibold bg-gradient-to-r from-brand-green2 to-brand-green3 bg-clip-text text-transparent">
+                <div className="relative flex flex-col lg:flex-row items-center gap-4 pt-6">
+                  <div>
+                  <div className="w-full bg-[#8AD5B7] rounded-full h-1"></div>
+                  <span className="text-lg font-semibold text-white">
                     SIGN UP BELOW
                   </span>
-                </div>
-              </div>
+                  </div>
+                
               <CTA
                 text="Get your Property registered for Free"
                 href="/alert"
-                styling="w-full h-12 mt-8"
+                styling="w-full h-12 mt-8 rounded-full bg-[#8AD5B7] text-black"
               />
+                </div>
+              </div>
+              
             </div>
 
             <div ref={formRef}>
@@ -182,14 +179,29 @@ const Alerts = () => {
                 steps={formSteps}
                 buttonObj={button}
                 onSubmit={(data) => console.log(data)}
-                containerClass="space-y-6 relative z-10 backdrop-blur-lg rounded-3xl p-6 md:p-8 transition-all duration-300 group/form"
+                containerClass="space-y-6 relative z-10 backdrop-blur-lg rounded-3xl p-6 md:p-4 transition-all duration-300 group/form"
                 inputClass="w-full rounded-xl text-brand-light placeholder-brand-gray3 focus:border-brand-light focus:ring-2 focus:ring-brand-light transition-all"
                 buttonClass="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-green2 to-brand-green1 hover:from-brand-green1 hover:to-brand-green2 text-brand-light font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-brand-green1/20"
                 errorClass="text-rose-400 mt-2 text-sm"
               />
             </div>
           </div>
+           <div>
+           </div>
         </div>
+
+        <div className="bg-[#2E3432] p-4 md:p-6 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 my-4">
+      <p className="text-white text-sm md:text-base font-poppins text-center md:text-left">
+        Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
+      </p>
+
+      <Link
+        href="/tutorial" // Change to your video/tutorial link
+        className="bg-[#9BF5CB] text-[#1A2A2D] px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap hover:brightness-105 transition"
+      >
+        Click to watch now &rsaquo;
+      </Link>
+    </div>
       </div>
     </div>
   );

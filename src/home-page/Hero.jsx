@@ -26,15 +26,43 @@ const Hero = () => {
 
   return (
     <div className="relative bg-brand-dark">
-      <div className="mx-auto container overflow-hidden h-screen relative">
+      <div className="mx-auto container h-screen relative flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-24">
+        {/* Background Image - Optional */}
+
         <motion.div
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full opacity-[.1]"
+          initial={{ opacity: 0, x: 0, scale: 0.75 }}
+          animate={{
+            opacity: 1,
+            x: isSmallScreen && isOpen ? -50 : 0,
+            scale: [0.75, 1.05, 1],
+          }}
+          transition={{
+            duration: initialRender ? 1.2 : 0.5,
+            ease: "easeOut",
+            delay: initialRender ? 0.5 : 0,
+          }}
+          aria-hidden="true"
+        >
+          <CustomImage
+            src="/pics/homebg.png"
+            alt="Modern skyscrapers"
+            className="w-full h-full object-contain"
+            width={100}
+            height={100}
+            unoptimized
+            loading="lazy"
+          />
+        </motion.div>
+        {/* Left Side - Image */}
+        <motion.div
+          className="w-full lg:w-1/3 h-full flex items-center justify-start relative"
           initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
           animate={{
             opacity: 1,
             y: [1000, -20, 0],
             scale: [0.95, 1.2, 1],
-            x: isSmallScreen && isOpen ? -50 : 50,
+            x: isSmallScreen && isOpen ? -50 : 0,
           }}
           transition={{
             duration: initialRender ? 1.2 : 0.5,
@@ -44,48 +72,26 @@ const Hero = () => {
           aria-hidden="true"
         >
           <Image
-            src="/PBS%20Assets/Brand%20Language/front-view-modern-skyscrapers-office-buildings-removebg-preview.png"
+            src="/pics/building.png"
             alt="Modern skyscrapers"
-            className="w-full h-full object-contain"
-            width={100}
-            height={100}
+            className="w-full h-full object-contain absolute -left-0 md:-left-12"
+            width={500}
+            height={500}
             unoptimized
             loading="lazy"
           />
         </motion.div>
 
+        {/* Right Side - Text Content */}
         <motion.div
-          className="absolute inset-0 w-full h-full opacity-[.1]"
-          initial={{ opacity: 0, x: 0, scale: 0.75 }}
-          animate={{
-            opacity: 0.1,
-            x: 0,
-            scale: 1,
-          }}
-          transition={{
-            duration: 0.7,
-            ease: "easeOut",
-          }}
-          aria-hidden="true"
-        >
-          <CustomImage
-            src="/PBS%20Assets/Brand%20Language/glass-u-shaped-structure-with-blue-sky.jpg"
-            alt="Glass U-shaped structure"
-            className="w-full h-full object-cover"
-            width={100}
-            height={100}
-            loading="lazy"
-          />
-        </motion.div>
-
-        <motion.div
-          className="relative flex flex-col justify-center items-center h-screen p-6 md:p-8 lg:p-10 xl:p-12 text-center"
+          className="w-full lg:w-2/3 flex flex-col justify-center items-start text-left mt-10 p-6 md:p-8 lg:p-10"
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
         >
+          {/* Main Heading */}
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl/[1.2] font-conthrax font-semibold text-brand-light mb-6"
+            className="text-xl md:text-2xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 max-w-lg"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -97,10 +103,12 @@ const Hero = () => {
             Ensuring Compliance, Excellence and Peace of Mind in New York Construction
           </motion.h1>
 
-          <div className="w-16 h-1 bg-brand-green mb-4" />
+          <div className="w-[30%] h-1 bg-[#7CE2B8] mb-4"></div>
 
+
+          {/* Subheading */}
           <motion.p
-            className="text-lg md:text-xl font-poppins text-brand-light mb-6"
+            className="text-base md:text-lg font-poppins text-[#8AD5B7] mb-8 max-w-md"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
@@ -111,28 +119,17 @@ const Hero = () => {
               times: [0, 0.3, 0.6, 1],
             }}
           >
-            Your Trusted Partner for Construction Compliance Inspections,<br />
-            Expediting and Property Solutions
+            Your Trusted Partner for Construction Compliance Inspections, Expediting and Property Solutions
+            <br />
+            More than 30+ Years Combined Experience in the industry.
           </motion.p>
 
-          <div className="w-16 h-1 bg-brand-green mb-6" />
-
-          <motion.p
-            className="text-md font-poppins text-brand-light"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{
-              opacity: [0, 0.25, 0.75, 1],
-              x: [100, 75, 25, 0],
-            }}
-            transition={{
-              duration: 1,
-              times: [0, 0.3, 0.6, 1],
-            }}
-          >
-            More than 100 Years Combined Experience in the industry.
-          </motion.p>
-
-          <CTA text="Schedule your Consultation Today" href="/contacts" />
+          {/* CTA Button */}
+          <CTA
+            text="Schedule your Consulting Today"
+            href="/contacts"
+            styling="rounded-full bg-gradient-to-r from-brand-green2 to-brand-green1 hover:from-brand-green1 hover:to-brand-green2 text-brand-light font-semibold px-8 py-4 transition-colors"
+          />
         </motion.div>
       </div>
     </div>

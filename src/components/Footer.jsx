@@ -72,11 +72,11 @@ const Footer = () => {
    */
 
   return (
-    <div className="bg-brand-gray1 text-white py-16 ">
-      <div className="md:w-[90%] mx-auto">
+    <div className="bg-brand-gray1 text-white py-10  lg:pb-0 lg:pt-5">
+      <div className="w-full md:w-[90%] mx-auto">
         <div className="md:w-[80vw] lg:w-[85vw] mx-auto lg:mx-0">
           {/* Top Section - Menu Columns and Subscription Form */}
-          <div className="container mx-auto px-[75px] flex flex-col xl:flex-row justify-between gap-10 ">
+          <div className="container mx-auto px-[35px] md:px-[75px] flex flex-col xl:flex-row justify-between gap-10 ">
             {/* Menu Columns - Responsive Grid Layout */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {menu.map((section) => (
@@ -97,13 +97,13 @@ const Footer = () => {
             </div>
 
             {/* Subscribe Section - Hidden on medium screens, visible on small and large screens */}
-            <div className="flex flex-col items-center md:items-start mx-auto my-8 hidden md:block lg:hidden xl:block">
+            <div className="flex flex-col items-center md:items-start mx-auto my-8 md:block lg:hidden xl:block">
               <h3 className="text-lg font-bold mb-4">Subscribe</h3>
               <p className="text-gray-400 mb-4">
                 Join our community to receive updates
               </p>
               {/* Email Subscription Form */}
-              <form className="flex items-center w-full max-w-md ">
+              <form className="flex justify-start items-center w-full max-w-md ">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -130,12 +130,12 @@ const Footer = () => {
           {/* Bottom Section - Logo, Copyright, and Privacy Links */}
           <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center">
             {/* Logo - Hidden on mobile, visible on larger screens */}
-            <div className="flex items-center gap-4 mb-4 md:mb-0 hidden md:block">
+            <div className="flex items-center gap-4 mb-4 md:mb-0 md:block">
               <CustomImage
                 src="/PBS Assets/Brand Language/Steel Mockup.png"
                 alt="Logo"
-                width={100}
-                height={100}
+                width={150}
+                height={150}
                 className="w-[150px]"
               />
             </div>

@@ -46,71 +46,117 @@ const AboutCompany = () => {
     },
   ];
 
+  const services = [
+    "Compliance Inspections",
+    "Annual Filings",
+    "Facade Management",
+    "Projects",
+  ];
+
+  const reasons = [
+    "30+ years of Combined expertise in the industry in navigating NYC’s Complex & ever-changing regulatory landscape.",
+    "Pro-active audits of compliance gaps pre official inspections to ensure compliance & avoid penalties.",
+    "Full transparency certifications, handling every step of the process for you.",
+    "One-Stop-Shop streamlined services covering the needs of code compliance.",
+    "360° Compliance Guardians full spectrum plan offerings, from design to final inspections, ensuring no stone is left unturned.",
+    "One-Stop Documentation multi disciplines, and experts for full transparency.",
+    "Proactive Approach we anticipate challenges, mitigate risks, and navigate regulatory complexities to keep your project on track.",
+  ];
+
   return (
     <div className="bg-brand-dark text-brand-light py-16 md:py-32" ref={containerRef}>
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 flex flex-col xl:flex-row-reverse justify-between">
-        <div className="xl:border-l border-brand-gray1 md:w-full xl:w-1/2 mb-16 xl:mb-0 xl:pl-8 2xl:pl-16 gsap-animate">
-          <Heading main="Services" subpart="What we can" />
-          <div className="text-brand-gray3 space-y-6 mt-6">
-            <p>
-              We will promptly and efficiently fulfill any of your orders, from
-              planning to execution, ensuring high-quality results on time and
-              within budget.
-            </p>
-            <p>
-              Ready to perform any amount of work quickly and efficiently,
-              whether it's new construction, renovations, or site preparation.
-            </p>
-          </div>
-          <div className="mt-10">
-            <button
-              className="flex items-center gap-2 text-brand-light bg-transparent border border-brand-green2 px-6 py-2 rounded-full hover:bg-brand-green2 transition duration-300"
-              aria-label="Get in touch with our team"
-            >
-              Get in touch
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 10l9 9m0 0l9-9m-9 9V3"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div className="md:w-full xl:w-1/2 gsap-animate">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16 flex flex-col xl:flex-row justify-between gap-16 bg-brand-green1 rounded-2xl border-2 border-brand-gray1/50 mb-6">
+        {/* Left Side - Numbers That Matter */}
+        <div className="lg:w-2/3 gsap-animate p-2">
+          <h2 className="text-lg md:text-xl font-conthrax font-semibold text-brand-light mb-3">
+            Numbers That Matter
+          </h2>
+          <p className="text-brand-gray3 text-base mb-3">
+            We have ensured the success across all projects, bringing 30+ years of experience to leasing proactive alert systems.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-stone-900 rounded-xl p-3 min-h-44">
             {aboutItems.map((item, index) => (
-              <div
-                key={index}
-                className="text-center"
-              >
+              <div key={index} className="text-center">
                 <div className="flex justify-center">
                   <item.icon
-                    className="text-brand-green2 w-10 h-10 md:w-12 md:h-12"
+                    className="text-brand-green2 w-8 h-8 md:w-10 md:h-10"
                     aria-hidden="true"
                   />
                 </div>
-                <h3 className="text-lg md:text-xl text-brand-gray2 font-semibold border-b-[3px] border-brand-gray1 inline-block pb-[2px] mt-4">
+                <h3 className="text-base text-brand-gray2 font-semibold border-b-[3px] border-brand-gray1 inline-block pb-[2px] mt-4">
                   {item.title}
                 </h3>
-                <p className="text-brand-light text-xl md:text-2xl pt-4">
+                <p className="text-brand-light md:text-xl font-bold pt-4">
                   {item.amount.toLocaleString()}
                 </p>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Right Side - Why NYC Trusts PBS? */}
+        <div className="lg:w-1/3 gsap-animate py-2">
+          {/* What we Specialize in */}
+          <div className="mb-12 ">
+            <h2 className="text-xl md:text-xl font-conthrax font-semibold text-brand-light mb-3">
+              What we Specialize in
+            </h2>
+            <p className="mb-9 text-base text-brand-gray3">Precision Trust vision Transformation</p>
+            <ul className="text-brand-gray3 space-y-4 bg-stone-900 min-h-44 rounded-xl p-3">
+              {services.map((service, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <span className="w-3 h-3 bg-brand-green2 rounded-full"></span>
+                  <span className="text-base">{service}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6">
+              <a
+                href="#"
+                className="flex items-center gap-2 text-brand-green2 font-poppins font-semibold text-lg hover:underline"
+              >
+                Our Offerings
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+         
+        </div>
+
+ 
+
       </div>
+      {/* Why NYC Trusts PBS? */}
+ <div>
+            <h2 className="text-3xl text-center md:text-4xl font-conthrax font-semibold text-brand-light mb-6">
+              Why NYC Trusts PBS?
+            </h2>
+               {/* Underline heading line */}
+        <div className="w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-6"></div>
+            <div className="text-brand-gray3 max-w-full flex justify-center items-center gap-6 flex-wrap">
+              {reasons.map((reason, index) => (
+                <div key={index} className="min-h-32 flex items-center  gap-3 w-2/3 lg:w-1/3 rounded-xl p-3 bg-stone-900">
+                  <span className="w-3 h-3 rounded-full mt-2"></span>
+                  <span className="text-base">{reason}</span>
+                </div>
+              ))}
+            </div>
+          </div>
     </div>
   );
 };

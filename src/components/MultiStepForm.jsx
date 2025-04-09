@@ -45,7 +45,7 @@ const ProgressTracker = ({ currentStep, totalSteps, color }) => {
   };
 
   return (
-    <div className="w-full relative py-8 px-4">
+    <div className="w-full relative py-4 px-4">
       <div className="flex items-center justify-between relative">
         <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-700 -translate-y-1/2" />
 
@@ -177,7 +177,7 @@ const MultiStepForm = ({
             <Input
               type={steps[currentStep].type}
               placeholder={steps[currentStep].placeholder}
-              className={`text-white  w-full ${inputClass ? inputClass : ""}`}
+              className={`text-white  text-2xl w-full ${inputClass ? inputClass : ""}`}
               value={
                 formData[
                   steps[currentStep].name ||
@@ -207,6 +207,11 @@ const MultiStepForm = ({
               </p>
             )}
           </motion.div>
+          <ProgressTracker
+          color={progressLineColor}
+          currentStep={currentStep}
+          totalSteps={steps.length}
+        />
           <div className="flex justify-between">
             <Button
               type="button"
@@ -242,11 +247,7 @@ const MultiStepForm = ({
             )}
           </div>
         </form>
-        <ProgressTracker
-          color={progressLineColor}
-          currentStep={currentStep}
-          totalSteps={steps.length}
-        />
+        
       </div>
     </motion.div>
   );

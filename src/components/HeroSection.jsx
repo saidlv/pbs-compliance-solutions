@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 
-const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className }) => {
+const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className, isLine = false}) => {
   const [bgImage, setBgImage] = useState("");
   const textRef = useRef(null);
 
@@ -35,7 +35,7 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className 
   }, [staggerVal]);
 
   return (
-    <section className="relative bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8">
+    <section className="relative h-[35vh] lg:h-[60vh] bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -64,6 +64,10 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className 
         >
           {heading}
         </motion.h1>
+
+        {isLine && ( 
+          <div className="w-[15%] mb-6 bg-[#8AD5B7] rounded-full h-1"></div>
+        )}
 
         {text && (
           <motion.p

@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import CTA from "@/components/CTA";
 import { aboutContent } from "./data";
 import { Dot, DotIcon } from "lucide-react";
-import { conthrax } from "@/lib/fonts";
 
 const AboutPage = () => {
   // Extracting content from static data
@@ -21,7 +20,7 @@ const AboutPage = () => {
         heading="Built by New Yorkers, For New York"
         text="For Decades, we’ve followed the rules of Inspection, Expediting and portfolio management, Not as Outsiders, but as neighbors, collaborators, and guardians of this city’s skyline."
         className="font-conthrax"
-        img="/About Assets/COVER 1.png"
+        img="/pics/COVER 1.png"
       />
 
       {/* Custom 'About Us' Label Divider */}
@@ -39,7 +38,7 @@ const AboutPage = () => {
           <div className="relative w-full h-auto lg:w-1/2 flex justify-center">
             <div className="w-[300px] h-[300px] bg-[#8AD5B7] rounded-full relative">
               <Image
-                src="/About Assets/ba 1.png"
+                src="/pics/ba 1.png"
                 alt="PBS"
                 width={275}
                 height={300}
@@ -58,21 +57,45 @@ const AboutPage = () => {
       </section>
 
       {/* Vision Section */}
-      <section className="w-3/4 rounded-lg mx-auto bg-[#2B3331] py-5 my-10 px-3 lg:px-6">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold font-conthrax text-[#8AD5B7] mb-6">{vision?.tagline}</h2>
+      <section className="my-10 w-[90%] mx-auto">
+        <div className=" text-center w-full py-5 px-3 lg:px-6  rounded-lg bg-[#2B3331]">
+          <h2 className="text-3xl font-bold font-conthrax text-[#8AD5B7] mb-3">Our Vision</h2>
+          <p className="text-[#7A8E85] mb-3">{vision?.tagline}</p>
           <div className="mx-auto w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
           <p className="text-white text-lg text-balance my-8">{vision?.body}</p>
+        </div>
 
-          {/* Vision pillars as bullet points */}
-          <div className="text-left">
+        {/* Vision pillars as bullet points */}
+          <div className="text-left my-5 px-3 lg:px-6">
+            <h2 className="text-[#8AD5B7] font-semibold">How We'll get there</h2>
             {Object.entries(vision?.pillars || {}).map(([key, value], index) => (
-              <div key={index}>
-                <p className="text-white flex gap-3 "><Dot /> {value}</p>
+              <div key={index} className="text-white flex gap-3">
+               <Dot /> <p className="text-[#7A8E85]" >
+                <span className="text-white font-semibold">{value.split(":")[0] + ":"}</span> {value.split(":")[1]}</p>
               </div>
             ))}
           </div>
+      </section>
+
+       {/* Mission Section */}
+       <section className="my-10 w-[90%] mx-auto">
+        <div className=" text-center w-full py-5 px-3 lg:px-6  rounded-lg bg-[#2B3331]">
+          <h2 className="text-3xl font-bold font-conthrax text-[#8AD5B7] mb-3">Our Mission</h2>
+          <p className="text-[#7A8E85] mb-3">{mission?.tagline}</p>
+          <div className="mx-auto w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
+          <p className="text-white text-lg text-balance my-8">{mission?.body}</p>
         </div>
+
+        {/* Vision pillars as bullet points */}
+          <div className="text-left my-5 px-3 lg:px-6">
+            <h2 className="text-[#8AD5B7] font-semibold">What this means for you</h2>
+            {Object.entries(mission?.impacts || {}).map(([key, value], index) => (
+              <div key={index} className="text-white flex gap-3">
+               <Dot /> <p className="text-[#7A8E85]">
+                <span className="font-semibold text-white">{key + ":"}</span> {value}</p>
+              </div>
+            ))}
+          </div>
       </section>
 
       {/* Mission Section */}
@@ -81,7 +104,7 @@ const AboutPage = () => {
           
           {/* Mission image */}
           <Image
-            src="/About Assets/Asset 2 2.png"
+            src="/pics/Asset 2 2.png"
             alt="PBS"
             width={380}
             height={500}
@@ -113,12 +136,7 @@ const AboutPage = () => {
 
       {/* Service Areas Section */}
       <section className="py-10 px-6 md:px-16">
-        <h2 className="text-3xl font-bold font-conthrax text-left kg:text-center text-white mb-12">
-          {service?.headline}
-        </h2>
-        <p className="text-[#89A096] text-base max-w-4xl mx-auto text-left lg:text-center mb-12">
-          {service?.body}
-        </p>
+        
 
         {/* Locations and Building Types - reversed flex */}
         <div className="flex flex-col lg:flex-row-reverse gap-12">
@@ -127,7 +145,7 @@ const AboutPage = () => {
             <h3 className="text-lg text-[#8AD5B7] font-semibold mb-4">Building Types</h3>
             <ul className="space-y-2 text-white">
               {service?.buildingTypes.map((bt, i) => (
-                <li className="flex text-xl" key={i}>
+                <li className="flex text-base" key={i}>
                   <DotIcon /> {bt}
                 </li>
               ))}
@@ -135,16 +153,28 @@ const AboutPage = () => {
           </div>
 
           {/* Locations */}
-          <div className="bg-[#2B3331] p-6 rounded-lg shadow-md w-full lg:w-1/3">
+          <div className="bg-[#2B3331] p-6 rounded-lg shadow-md w-full lg:w-1/3 flex flex-col justify-between">
+          <div>
             <h3 className="text-lg text-[#8AD5B7] font-semibold mb-4">Locations</h3>
             <ul className="space-y-2 text-white">
               {service?.locations.map((loc, i) => (
-                <li className="flex text-xl" key={i}>
+                <li className="flex text-base" key={i}>
                   <DotIcon /> {loc}
                 </li>
               ))}
             </ul>
+            </div>
+            <img src="/pics/world-map.png" alt="" className="mb-16" />
           </div>
+
+          <div>
+        <h2 className="text-3xl font-bold font-conthrax text-left kg:text-center text-white mb-12">
+          {service?.headline}
+        </h2>
+        <p className="text-[#89A096] text-base max-w-4xl mx-auto text-left lg:text-center mb-12">
+          {service?.body}
+        </p>
+        </div>
         </div>
 
         {/* Client Types */}

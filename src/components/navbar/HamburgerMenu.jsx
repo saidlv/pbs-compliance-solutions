@@ -92,7 +92,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
     <div className="">
       {/* Hamburger Icon Button */}
       <button
-        className="fixed top-[45px] right-5 z-50 flex flex-col items-end space-y-1"
+        className="fixed top-[45px] right-12 z-50 flex flex-col items-end space-y-1"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
