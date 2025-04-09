@@ -153,7 +153,7 @@ const AboutPage = () => {
           </div>
 
           {/* Locations */}
-          <div className="bg-[#2B3331] p-6 rounded-lg shadow-md w-full lg:w-1/3 flex flex-col justify-between">
+          <div className="bg-[#2B3331] p-6 rounded-lg shadow-md w-full lg:w-1/3 flex flex-col gap-6 justify-between">
           <div>
             <h3 className="text-lg text-[#8AD5B7] font-semibold mb-4">Locations</h3>
             <ul className="space-y-2 text-white">
