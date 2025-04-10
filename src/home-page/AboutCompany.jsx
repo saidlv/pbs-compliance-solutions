@@ -80,7 +80,7 @@ const AboutCompany = () => {
           </p>
           <div className="flex justify-center items-center bg-[#1E2322] rounded-2xl p-3 min-h-[40vh] mb-0">
             <Image
-              src="/pics/group9.png"
+              src="/pics/Group9.png"
               alt="Underline"
               width={618}
               height={191}
@@ -110,7 +110,7 @@ const AboutCompany = () => {
               ))}
             </ul>
             <div className="w-full py-2 md:py-0 md:w-1/3 flex flex-col items-center justify-center gap-3">
-              <img src="/pics/asset61.png" alt="" width={80}/>
+              <img src="/pics/Asset61.png" alt="green man" width={80}/>
               <CTA text={"Our Offerings"} href="/services" styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 text-base font-semibold w-full md:px-20 px-4 py-4 transition-colors mt-0" />
             </div>
             </div>
