@@ -1,11 +1,21 @@
 "use client";
 
 import CTA from "@/components/CTA";
+import Image from "next/image"; // assuming you're using Next.js for image optimization
 import { cn } from "@/lib/utils"; // assuming you use a utility for className merge
 
 const Services = () => {
   return (
-    <section className="relative bg-[#2A3532] text-white py-20 px-6 text-center overflow-hidden">
+    <section className="relative text-white py-20 px-6 text-center overflow-hidden">
+      <Image
+        src="/pics/pattern1.png"
+        alt="Background Image"
+        layout="fill"
+        className="absolute inset-0 z-20 object-cover opacity-100"
+        priority={true}
+        quality={100}
+      />
+
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Underline heading line */}
         <div className="w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-4"></div>
@@ -30,7 +40,11 @@ const Services = () => {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <CTA text="Know more about us" href="/about-us" styling="bg-[#7CE2B8]" />
+        <CTA
+            text="Know more about us"
+            href="/about-us"
+            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold px-8 py-4 transition-colors mt-0"
+          />
         </div>
       </div>
 

@@ -16,21 +16,21 @@ const Solutions = () => {
       description:
         "PBS offers tiered subscription models for clients, providing compliance alerts, consultancy access and priority support to proactively manage regulatory updates and project risks.",
       image:
-        "/PBS%20Assets/Stationery/a6a8e2b7-4d7c-4f3b-bf09-915bd686df24%20copy.png",
+        "/pics/Rectangle15.png",
     },
     {
       title: "Planning",
       description:
         "PBS designs risk-mitigated project roadmaps with compliance checkpoints, adaptive timelines, and proactive strategies to address evolving regulations and avoid delays or penalties.",
       image:
-        "/PBS%20Assets/Brand%20Language/monochromatic-urban-minimal-landscapes.jpg",
+        "/pics/Rectangle16.png",
     },
     {
       title: "Development",
       description:
         "PBS innovates through enhanced owner representation services and partnerships with General contractors to deliver cutting-edge solutions in complex construction environments.",
       image:
-        "/PBS%20Assets/Brand%20Language/foggy-city-skyline-with-boat-water.jpg",
+        "/pics/Rectangle17.png",
     },
   ];
 
@@ -89,7 +89,7 @@ const Solutions = () => {
           {SolutionsItems.map((item) => (
             <div
               key={item.title}
-              className="w-full solution-card bg-black p-8 rounded-2xl border-2 border-brand-gray1/50"
+              className="w-full solution-card bg-[#1E2322] p-8 rounded-2xl border-2 border-brand-gray1/50"
             >
               <CustomImage
                 src={item.image}
@@ -101,7 +101,7 @@ const Solutions = () => {
               <h3 className="text-xl md:text-2xl text-center font-conthrax font-semibold text-brand-light mb-4">
                 {item.title}
               </h3>
-              <p className="text-brand-gray3 text-center text-sm font-poppins leading-relaxed">
+              <p className="text-brand-gray3 text-left text-sm font-poppins leading-relaxed">
                 {item.description}
               </p>
             </div>

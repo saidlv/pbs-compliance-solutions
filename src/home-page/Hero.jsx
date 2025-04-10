@@ -26,7 +26,7 @@ const Hero = () => {
 
   return (
     <div className="relative bg-brand-dark">
-      <div className="mx-auto container h-screen relative flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-24">
+      <div className="mx-auto container h-screen relative flex flex-col lg:flex-row items-center justify-between px-2 sm:px-6 md:px-12 lg:px-24">
         {/* Background Image - Optional */}
 
         <motion.div
@@ -47,11 +47,11 @@ const Hero = () => {
           <CustomImage
             src="/pics/homebg.png"
             alt="Modern skyscrapers"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             width={100}
             height={100}
-            unoptimized
-            loading="lazy"
+            priority={true}
+            quality={100}
           />
         </motion.div>
         {/* Left Side - Image */}
@@ -108,7 +108,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-base md:text-lg font-poppins text-[#8AD5B7] mb-8 max-w-md"
+            className="text-base md:text-lg font-poppins text-[#8AD5B7] mb-6 max-w-md"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
@@ -120,7 +120,20 @@ const Hero = () => {
             }}
           >
             Your Trusted Partner for Construction Compliance Inspections, Expediting and Property Solutions
-            <br />
+          </motion.p>
+
+          <motion.p
+            className="text-base md:text-lg font-poppins text-[#8AD5B7] mb-2 max-w-md"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{
+              opacity: [0, 0.25, 0.75, 1],
+              x: [100, 75, 25, 0],
+            }}
+            transition={{
+              duration: 1,
+              times: [0, 0.3, 0.6, 1],
+            }}
+          >
             More than 30+ Years Combined Experience in the industry.
           </motion.p>
 
@@ -128,7 +141,7 @@ const Hero = () => {
           <CTA
             text="Schedule your Consulting Today"
             href="/contacts"
-            styling="rounded-full bg-gradient-to-r from-brand-green2 to-brand-green1 hover:from-brand-green1 hover:to-brand-green2 text-brand-light font-semibold px-8 py-4 transition-colors"
+            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold px-8 py-4 transition-colors mt-0"
           />
         </motion.div>
       </div>

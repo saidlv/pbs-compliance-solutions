@@ -99,15 +99,15 @@ const Footer = () => {
             {/* Subscribe Section - Hidden on medium screens, visible on small and large screens */}
             <div className="flex flex-col items-center md:items-start mx-auto my-8 md:block lg:hidden xl:block">
               <h3 className="text-lg font-bold mb-4">Subscribe</h3>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-400 mb-4 text-wrap text-sm md:text-base">
                 Join our community to receive updates
               </p>
               {/* Email Subscription Form */}
-              <form className="flex justify-start items-center w-full max-w-md ">
+              <form className="overflow-hidden flex justify-start items-center w-full max-w-md ">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-grow px-4 py-2 rounded-l-full bg-gray-800 text-white focus:outline-none"
+                  className="flex-grow px-4 py-2 rounded-l-full bg-gray-800 text-white focus:outline-none w-1/2 md:w-2/3"
                   aria-label="Email address"
                   required
                 />

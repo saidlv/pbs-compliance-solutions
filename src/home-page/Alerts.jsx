@@ -126,7 +126,7 @@ const Alerts = () => {
 
   return (
     <div className="bg-brand-dark py-16" ref={ref}>
-      <div className="container mx-auto px-6 md:px-12 lg:px-24">
+      <div className="container mx-auto px-3 sm:px-6 md:px-12 lg:px-24">
         <div className="flex flex-col lg:flex-row lg:justify-center gap-16">
           <div ref={leftRef} className="lg:w-1/2 relative hidden lg:block">
             <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-brand-gray1/50 bg-gradient-to-br from-brand-darkGray/30 to-brand-green1/20">
@@ -156,18 +156,21 @@ const Alerts = () => {
                   never miss any critical step again. Free for the first 3
                   months
                 </p>
-                <div className="relative flex flex-col lg:flex-row items-center gap-4 pt-6">
-                  <div>
+                <div className="flex flex-col lg:flex-row items-center gap-4">
+                <div className="flex flex-col justify-center"> 
                   <div className="w-full bg-[#8AD5B7] rounded-full h-1"></div>
-                  <span className="text-lg font-semibold text-white">
-                    SIGN UP BELOW
+                  
+                  <span className="text-lg font-semibold text-white text-nowrap">
+                    SIGN UP 
                   </span>
+                  <span className="text-lg font-semibold text-white">BELOW </span>
                   </div>
+              
                 
               <CTA
                 text="Get your Property registered for Free"
                 href="/alert"
-                styling="w-full h-12 mt-8 rounded-full bg-[#8AD5B7] text-black"
+                styling="w-full mt-0 h-12 rounded-full bg-[#8AD5B7] text-black px-0 md:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm md:text-base"
               />
                 </div>
               </div>
