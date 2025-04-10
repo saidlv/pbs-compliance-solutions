@@ -35,7 +35,29 @@ export const aboutContent = [
         type: "service",
         headline: "More Than a Neighbor, We're Your Advocates",
         body: "New York doesn't compromise, and neither do we. From the first permit to the final walkthrough, our vision and mission ensure:",
-        locations: ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"],
+        locations: [
+            {
+                cityName: "Manhattan",
+                cityImage: "/pics/Manhattan.png"
+            },
+            {
+                cityName: "Brooklyn",
+                cityImage: "/pics/Brooklyn.png"
+            },
+            {
+                cityName: "Queens",
+                cityImage: "/pics/Queens.png"
+            },
+            {
+                cityName: "Bronx",
+                cityImage: "/pics/Bronx.png"
+            },
+            {
+                cityName: "Staten Island",
+                cityImage: "/pics/Staten-Island.png"
+            }
+        ]
+        ,
         buildingTypes: [
             "Private homes",
             "co-ops",
