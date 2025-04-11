@@ -34,21 +34,21 @@
 const Heading = ({ main, subpart, styling }) => {
   return (
     <div
-      className={`${styling ? styling : ""} xl:mb-10 flex items-start flex-col`}
+      className={`${styling ? styling : ""} xl:mb-6 flex items-start flex-col`}
     >
       <div className="flex h-full">
         {/* Vertical accent bar - creates visual emphasis */}
         <div className={`h-[100px] bg-[#8AD5B7] text-green-600`}>
-          <p>&nbsp;&nbsp;&nbsp;</p>
+          <p>&nbsp;&nbsp;</p>
         </div>
 
         {/* Heading content container */}
         <div className="pl-5 text-start">
           {/* Optional subtitle - only rendered if provided */}
-          {subpart && <p className="font-conthrax text-lg mb-3">{subpart}</p>}
+          {subpart && <p className="font-conthrax text-base font-semibold mb-3">{subpart}</p>}
 
           {/* Main heading - uses responsive text sizing */}
-          <h1 className="text-5xl md:text-6xl font-conthrax font-bold mb-10">
+          <h1 className="text-3xl md:text-5xl font-conthrax font-semibold mb-3">
             {main}
           </h1>
         </div>

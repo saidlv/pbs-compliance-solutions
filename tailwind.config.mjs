@@ -14,6 +14,9 @@ export default {
         poppins: ["var(--font-poppins)", "sans-serif"],
         gnuolane: ["var(--font-gnuolane)", "sans-serif"],
         conthrax: ["var(--font-conthrax)", "sans-serif"],
+        boxShadow: {
+          'custom': '3px 5px 16.6px 2px #00000040', // Custom shadow
+        },
       },
       colors: {
         // Directly using the colors from your image

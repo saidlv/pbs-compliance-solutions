@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"; // assuming you use a utility for className me
 
 const Services = () => {
   return (
-    <section className="relative text-white py-20 px-6 text-center overflow-hidden">
+    <section className="relative text-white py-10 px-6 text-center overflow-hidden">
       <Image
         src="/pics/pattern1.png"
         alt="Background Image"
@@ -18,23 +18,22 @@ const Services = () => {
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Underline heading line */}
-        <div className="w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-4"></div>
 
         {/* Main Title */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold font-conthrax">
-          <span className="block text-white">Introduction to</span>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-conthrax">
+          <span className="block text-2xl lg:text-4xl text-white">Introduction to</span>
           <span className="block text-[#E4F3ED] font-extrabold mt-1">
             PROACTIVE BUILDING <br /> SOLUTIONS
           </span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-gray-300 mt-4 text-sm sm:text-base font-medium">
+        <p className="text-gray-300 mt-4 text-sm font-medium">
           Compliance Made Simple, Projects Done Right
         </p>
 
         {/* Description */}
-        <p className="text-gray-400 mt-6 text-sm sm:text-base leading-relaxed">
+        <p className="text-gray-400 mt-6 text-sm leading-relaxed">
           Proactive Building Solutions is a collaboration of its core team members and fellow New Yorkers, each representing a crucial subdivision that together form the foundation for the PBS network. PBS has honed the skills and built the relationships necessary to revolutionize the industry.
         </p>
 
@@ -43,7 +42,7 @@ const Services = () => {
         <CTA
             text="Know more about us"
             href="/about-us"
-            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold px-8 py-4 transition-colors mt-0"
+            styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold px-4 lg:px-8 py-4 transition-colors mt-0 w-[75%] lg:w-[45%]"
           />
         </div>
       </div>

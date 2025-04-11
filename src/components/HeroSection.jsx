@@ -39,9 +39,9 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className,
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: bgImage ? 0.2 : 0 }}
+        animate={{ opacity: bgImage ? 1 : 0 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-right-top bg-cover md:bg-top"
         style={{ backgroundImage: `url(${bgImage || "/PBS%20Assets/Brand%20Language/placeholder.jpg"})` }}
         aria-hidden="true"
       ></motion.div>
@@ -71,7 +71,7 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className,
 
         {text && (
           <motion.p
-            className="text-lg md:text-xl text-gray-300 tracking-wide mb-6 max-w-3xl"
+            className="text-lg text-gray-300 mb-6 max-w-4xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >

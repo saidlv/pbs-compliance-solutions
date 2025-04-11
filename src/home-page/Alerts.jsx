@@ -126,10 +126,10 @@ const Alerts = () => {
 
   return (
     <div className="bg-brand-dark py-16" ref={ref}>
-      <div className="container mx-auto px-3 sm:px-6 md:px-12 lg:px-24">
-        <div className="flex flex-col lg:flex-row lg:justify-center gap-16">
+      <div className="px-6 lg:px-0">
+        <div className="lg:pl-24 pl-0 flex flex-col lg:flex-row lg:justify-center gap-8 lg:gap-16">
           <div ref={leftRef} className="lg:w-1/2 relative hidden lg:block">
-            <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-brand-gray1/50 bg-gradient-to-br from-brand-darkGray/30 to-brand-green1/20">
+            <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-[#8AD5B7]">
               <CustomImage
                 src="/PBS%20Assets/better-assets/Images%20Without%20Bg/Facebook%20Cover.webp"
                 height={100}
@@ -141,15 +141,15 @@ const Alerts = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/2">
+          <div className="lg:w-3/5">
             <div ref={textRef} className="mb-8">
               <Heading
                 main="Alert System:"
                 subpart="Never Miss a Critical step for property again"
-                styling="mb-6 text-brand-light"
+                styling="mb-4 text-brand-light"
               />
               <div className="text-brand-gray3 space-y-6">
-                <p className="text-lg leading-relaxed">
+                <p className="text-sm font-semibold leading-relaxed">
                   Revolutionizing the industry by providing access to every
                   demographic of data in real-time. Our enhanced alert system
                   covers all relevant departments in New York City to ensure you
@@ -158,12 +158,12 @@ const Alerts = () => {
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-4">
                 <div className="flex flex-col justify-center"> 
-                  <div className="w-full bg-[#8AD5B7] rounded-full h-1"></div>
+                  <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-2"></div>
                   
-                  <span className="text-lg font-semibold text-white text-nowrap">
+                  <span className="text-lg font-semibold font-conthrax text-white text-nowrap">
                     SIGN UP 
                   </span>
-                  <span className="text-lg font-semibold text-white">BELOW </span>
+                  <span className="text-lg font-semibold text-white font-conthrax">BELOW </span>
                   </div>
               
                 
@@ -193,17 +193,19 @@ const Alerts = () => {
            </div>
         </div>
 
-        <div className="bg-[#2E3432] p-4 md:p-6 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 my-4">
-      <p className="text-white text-sm md:text-base font-poppins text-center md:text-left">
+<div className="py-3 text-2xl lg:text-3xl relative my-6 mb-48 lg:mb-16">
+        <div className="bg-[#2E3432] p-4 md:p-6 rounded-xl lg:rounded-none lg:rounded-tl-xl lg:rounded-bl-xl flex flex-col md:flex-row items-center justify-between gap-4 my-4 w-[94%] absolute right-0">
+      <p className="text-white w-full lg:w-3/4 font-poppins text-center md:text-left">
         Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
       </p>
-
+      
       <Link
         href="/tutorial" // Change to your video/tutorial link
         className="bg-[#9BF5CB] text-[#1A2A2D] px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap hover:brightness-105 transition"
       >
         Click to watch now &rsaquo;
       </Link>
+    </div>
     </div>
       </div>
     </div>

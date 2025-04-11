@@ -26,37 +26,36 @@ const Hero = () => {
 
   return (
     <div className="relative bg-brand-dark">
-      <div className="mx-auto container h-screen relative flex flex-col lg:flex-row items-center justify-between px-2 sm:px-6 md:px-12 lg:px-24">
+      <div className="min-h-screen relative flex flex-col lg:flex-row items-center justify-between">
         {/* Background Image - Optional */}
 
+          <motion.div
+            className="absolute w-full inset-0 h-full"
+            initial={{ opacity: 0, x: 0, scale: 0.75 }}
+            animate={{
+              opacity: 1,
+              x: isSmallScreen && isOpen ? -50 : 0,
+              scale: [0.75, 1.05, 1],
+            }}
+            transition={{
+              duration: initialRender ? 1.2 : 0.5,
+              ease: "easeOut",
+              delay: initialRender ? 0.5 : 0,
+            }}
+            aria-hidden="true"
+          >
+            <CustomImage
+              src="/pics/homebg.png"
+              alt="Modern skyscrapers"
+              className="w-full h-full object-cover"
+              layout="fill"
+              priority={true}
+              quality={100}
+            />
+          </motion.div>
+          {/* Left Side - Image */}
         <motion.div
-          className="absolute inset-0 w-full h-full opacity-[.1]"
-          initial={{ opacity: 0, x: 0, scale: 0.75 }}
-          animate={{
-            opacity: 1,
-            x: isSmallScreen && isOpen ? -50 : 0,
-            scale: [0.75, 1.05, 1],
-          }}
-          transition={{
-            duration: initialRender ? 1.2 : 0.5,
-            ease: "easeOut",
-            delay: initialRender ? 0.5 : 0,
-          }}
-          aria-hidden="true"
-        >
-          <CustomImage
-            src="/pics/homebg.png"
-            alt="Modern skyscrapers"
-            className="w-full h-full object-cover"
-            width={100}
-            height={100}
-            priority={true}
-            quality={100}
-          />
-        </motion.div>
-        {/* Left Side - Image */}
-        <motion.div
-          className="w-full lg:w-1/3 h-full flex items-center justify-start relative"
+          className="w-full lg:w-1/3 max-h-full flex items-center justify-start relative"
           initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
           animate={{
             opacity: 1,
@@ -74,9 +73,9 @@ const Hero = () => {
           <Image
             src="/pics/Building.png"
             alt="Modern skyscrapers"
-            className="w-full h-full object-contain absolute -left-0 md:-left-12"
-            width={500}
-            height={500}
+            className="w-full h-full object-cover "
+            width={400}
+            height={300}
             unoptimized
             loading="lazy"
           />
@@ -91,7 +90,7 @@ const Hero = () => {
         >
           {/* Main Heading */}
           <motion.h1
-            className="text-xl md:text-2xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 max-w-lg"
+            className="text-xl md:text-2xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 max-w-2xl"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -141,7 +140,7 @@ const Hero = () => {
           <CTA
             text="Schedule your Consulting Today"
             href="/contacts"
-            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold px-8 py-4 transition-colors mt-0"
+            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-conthrax px-8 py-4 transition-colors mt-0 min-w-[60%]"
           />
         </motion.div>
       </div>

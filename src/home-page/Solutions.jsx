@@ -67,25 +67,26 @@ const Solutions = () => {
   }, []);
 
   return (
-    <div className="bg-brand-dark py-16 md:py-24 lg:py-32">
+    <div className="bg-brand-dark py-16 lg:py-12">
       <div
         className="container mx-auto px-6 md:px-12 lg:px-24"
         ref={containerRef}
       >
         {/* Heading and Subheading */}
         <div className="text-center mb-12 md:mb-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-conthrax font-bold text-brand-light mb-4">
+          <h1 className="text-3xl lg:text-5xl font-conthrax font-bold text-[#8AD5B7] mb-4">
             Solutions
           </h1>
-          <div className="max-w-3xl mx-auto text-brand-gray3">
-            <p className="text-lg md:text-xl font-poppins">
+          <div className="w-[25%] mx-auto bg-[#8AD5B7] rounded-full h-1 my-3"></div>
+          <div className="max-w-3xl mx-auto text-white">
+            <p className="text-base font-semibold md:text-lg font-poppins">
               Compliance Secured, Strategy Defined, Future Built
             </p>
           </div>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 w-full pl-0 lg:pl-24">
           {SolutionsItems.map((item) => (
             <div
               key={item.title}
