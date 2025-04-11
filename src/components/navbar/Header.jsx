@@ -96,7 +96,7 @@ const Header = () => {
       {/* Header Container with GSAP Animation */}
       <motion.div
         ref={ref}
-        className="bg-[#6C837D] flex flex-row justify-between items-center w-full h-[100px] sticky top-0"
+        className="bg-[#6C837D] flex flex-row justify-center md:justify-between items-center w-full h-[100px] sticky top-0"
         initial={{ height: "100px" }}
       >
         {/* Logo Container with Click Navigation */}
@@ -111,10 +111,10 @@ const Header = () => {
           <motion.div ref={imageRef} initial={{ scale: 1 }}>
             <CustomImage
               src="/PBS Assets/Brand Language/Steel Mockup.png"
-              width={250}
-              height={250}
+              width={200}
+              height={200}
               alt="Website Logo"
-              className="md:w-[250] md:h-auto relative left-[-50px] md:left-0"
+              className="md:w-[250] md:h-auto relative lg:left-[-50px] md:left-0"
             />
           </motion.div>
         </div>

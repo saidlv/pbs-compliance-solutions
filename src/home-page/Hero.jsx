@@ -55,7 +55,7 @@ const Hero = () => {
           </motion.div>
           {/* Left Side - Image */}
         <motion.div
-          className="w-full lg:w-1/3 max-h-full flex items-center justify-start relative"
+          className="w-full lg:w-1/3 h-[400] lg:h-[600] max-h-full flex items-center justify-start relative"
           initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
           animate={{
             opacity: 1,
@@ -140,7 +140,7 @@ const Hero = () => {
           <CTA
             text="Schedule your Consulting Today"
             href="/contacts"
-            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-conthrax px-8 py-4 transition-colors mt-0 min-w-[60%]"
+            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-conthrax px-8 py-4 transition-colors mt-0 min-w-[60%] lg:w-[40%]"
           />
         </motion.div>
       </div>

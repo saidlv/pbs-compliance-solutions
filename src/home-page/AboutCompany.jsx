@@ -63,7 +63,8 @@ const AboutCompany = () => {
 "Pre-inspection audits: Identification and resolving of compliance gaps before official inspections to guarantee first-time approval",
 "Real-time documentations:Digital tracking of permits, revisions, and approvals for full transparency and audit readiness",
 "End-to-End Solutions: From blueprint reviews to occupancy certificates, handling of every step to save time and stress",
-"Proactive Approach: We anticipate challenges, mitigate risks, and adapt to regulatory changes before they impact your project"
+"Proactive Approach: We anticipate challenges, mitigate risks, and adapt to regulatory changes before they impact your project",
+"One-Stop Shop: Streamlined services covering your needs for codes regulation"
   ];
 
   return (
@@ -123,15 +124,15 @@ const AboutCompany = () => {
 
       </div>
       {/* Why NYC Trusts PBS? */}
- <div>
+ <div className="">
             <h2 className="text-3xl text-center md:text-4xl font-conthrax font-semibold text-brand-light mb-6">
               Why NYC Trusts PBS?
             </h2>
                {/* Underline heading line */}
         <div className="w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-6"></div>
-            <div className="text-white max-w-full flex justify-center items-center gap-6 flex-wrap">
+            <div className="text-white max-w-full grid grid-cols-1 lg:grid-cols-2 gap-3 flex-wrap">
               {reasons.map((reason, index) => (
-                <div key={index} className="min-h-32 flex flex-col justify-center items-start gap-3 w-full lg:w-1/3 rounded-xl py-2 px-3 bg-[#2B3331]">
+                <div key={index} className={`min-h-32 flex flex-col justify-center items-start gap-3 w-full  rounded-xl py-2 px-3 bg-[#2B3331] ${index === 6 ? "ml-0 lg:ml-[300]":""} `}>
                   <p className="text-left text-sm font-extrabold">{reason.split(":")[0] + ":"}</p>
                   <p className="text-sm">{reason.split(":")[1]}</p>
                 </div>

@@ -103,7 +103,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
             key={index}
             initial={{ width }}
             animate={{ width: isOpen ? (index % 2 === 0 ? 20 : 30) : width }}
-            className="h-1 bg-brand-green2 rounded-md"
+            className="h-1 bg-[#dce2e1] rounded-md"
             transition={{ type: "spring", stiffness: 100 }}
           />
         ))}
