@@ -99,7 +99,7 @@ const AboutCompany = () => {
             <h2 className="text-sm lg:text-3xl font-conthrax font-semibold text-brand-light mb-3">
               What we Specialize in
             </h2>
-            <p className="mb-7 text-sm text-brand-gray3">Precision Trust vision Transformation</p>
+            <p className="mb-8 text-sm text-brand-gray3">Precision Trust vision Transformation</p>
             <div className="w-full flex flex-col lg:flex-row justify-evenly lg:justify-between px-6 text-white  min-h-40 lg:min-h-[56vh] bg-[#1E2322] rounded-xl pt-8 pb-5">
             <ul className="flex flex-col justify-center items-start gap-3 w-full lg:w-1/2">
               {services.map((service, index) => (
