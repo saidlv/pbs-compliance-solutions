@@ -128,7 +128,7 @@ const Alerts = () => {
     <div className="bg-brand-dark py-16" ref={ref}>
       <div className="px-6 lg:px-0">
         <div className="lg:pl-24 pl-0 flex flex-col lg:flex-row lg:justify-center gap-8 lg:gap-16">
-          <div ref={leftRef} className="lg:w-1/2 relative hidden lg:block">
+          <div ref={leftRef} className="lg:w-2/5 relative hidden lg:block">
             <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-[#8AD5B7]">
               <CustomImage
                 src="/PBS%20Assets/better-assets/Images%20Without%20Bg/Facebook%20Cover.webp"
@@ -141,7 +141,7 @@ const Alerts = () => {
             </div>
           </div>
 
-          <div className="lg:w-3/5">
+          <div className="lg:w-3/5 flex flex-col justify-center">
             <div ref={textRef} className="mb-8">
               <Heading
                 main="Alert System:"
@@ -170,7 +170,7 @@ const Alerts = () => {
               <CTA
                 text="Get your Property registered for Free"
                 href="/alert"
-                styling="w-full mt-0 h-12 rounded-full bg-[#8AD5B7] text-black px-0 md:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm md:text-base"
+                styling="w-full mt-0 h-12 rounded-full bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
               />
                 </div>
               </div>
@@ -182,7 +182,7 @@ const Alerts = () => {
                 steps={formSteps}
                 buttonObj={button}
                 onSubmit={(data) => console.log(data)}
-                containerClass="space-y-6 relative z-10 backdrop-blur-lg rounded-3xl p-6 md:p-4 transition-all duration-300 group/form"
+                containerClass="space-y-6 relative z-10 backdrop-blur-lg rounded-3xl p-6 lg:p-4 transition-all duration-300 group/form"
                 inputClass="w-full rounded-xl text-brand-light placeholder-brand-gray3 focus:border-brand-light focus:ring-2 focus:ring-brand-light transition-all"
                 buttonClass="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-green2 to-brand-green1 hover:from-brand-green1 hover:to-brand-green2 text-brand-light font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-brand-green1/20"
                 errorClass="text-rose-400 mt-2 text-sm"
@@ -194,14 +194,14 @@ const Alerts = () => {
         </div>
 
 <div className="py-3 text-2xl lg:text-3xl relative my-6 mb-48 lg:mb-16">
-        <div className="bg-[#2E3432] p-4 md:p-6 rounded-xl lg:rounded-none lg:rounded-tl-xl lg:rounded-bl-xl flex flex-col md:flex-row items-center justify-between gap-4 my-4 w-[94%] absolute right-0">
-      <p className="text-white w-full lg:w-3/4 font-poppins text-center md:text-left">
+        <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl lg:rounded-none lg:rounded-tl-xl lg:rounded-bl-xl flex flex-col lg:flex-row items-center justify-between gap-4 my-4 w-[95%] absolute right-0">
+      <p className="text-white w-full lg:w-3/4 font-poppins text-center lg:text-left">
         Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
       </p>
       
       <Link
         href="/tutorial" // Change to your video/tutorial link
-        className="bg-[#9BF5CB] text-[#1A2A2D] px-6 py-2 rounded-full text-sm font-semibold whitespace-nowrap hover:brightness-105 transition"
+        className="bg-[#9BF5CB] text-[#1A2A2D] p-6 rounded-full text-3xl font-semibold whitespace-nowrap hover:brightness-105 transition w-auto text-center"
       >
         Click to watch now &rsaquo;
       </Link>

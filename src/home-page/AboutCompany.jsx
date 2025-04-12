@@ -68,17 +68,17 @@ const AboutCompany = () => {
   ];
 
   return (
-    <div className="bg-brand-dark text-brand-light py-8 md:py-10 px-4 lg:px-0 lg:pl-24" ref={containerRef}>
-      <div className="container mx-auto px-6 md:px-10 pt-8 lg:px-12 flex flex-col xl:flex-row justify-between gap-8 lg:gap-16 bg-[#1E2322] bg-opacity-25 rounded-3xl lg:rounded-none lg:rounded-bl-3xl lg:rounded-tl-3xl  border-2 border-brand-gray1/50 mb-16">
+    <div className="bg-brand-dark text-brand-light py-8 lg:py-10 px-4 lg:px-0 lg:pl-24" ref={containerRef}>
+      <div className="container mx-auto px-6 pt-8 lg:px-12 flex flex-col lg:flex-row justify-between gap-8 lg:gap-16 bg-[#1E2322] bg-opacity-25 rounded-3xl lg:rounded-none lg:rounded-bl-3xl lg:rounded-tl-3xl  border-2 border-brand-gray1/50 mb-16">
         {/* Left Side - Numbers That Matter */}
         <div className="lg:w-1/2 gsap-animate p-2">
-          <h2 className="text-lg md:text-3xl font-conthrax font-semibold text-brand-light mb-3">
+          <h2 className="text-lg lg:text-3xl font-conthrax font-semibold text-brand-light mb-3">
             Numbers That Matter
           </h2>
           <p className="text-brand-gray3 text-sm mb-3">
             We have ensured the success across all projects, bringing 30+ years of experience to leasing proactive alert systems.
           </p>
-          <div className="flex justify-center items-center bg-[#1E2322] rounded-2xl p-3 min-h-[40vh] mb-0">
+          <div className="flex justify-center items-center bg-[#1E2322] rounded-2xl p-3 min-h-[40vh] lg:min-h-[56vh] mb-0">
             <Image
               src="/pics/Group9.png"
               alt="Underline"
@@ -92,16 +92,16 @@ const AboutCompany = () => {
           </div>
         </div>
 
-        {/* Right Side - Why NYC Trusts PBS? */}
+        {/* Right Side */}
         <div className="lg:w-1/2 gsap-animate p-2">
           {/* What we Specialize in */}
           <div className="mb-12">
-            <h2 className="text-sm md:text-4xl font-conthrax font-semibold text-brand-light mb-3">
+            <h2 className="text-sm lg:text-3xl font-conthrax font-semibold text-brand-light mb-3">
               What we Specialize in
             </h2>
             <p className="mb-7 text-sm text-brand-gray3">Precision Trust vision Transformation</p>
-            <div className="w-full flex flex-col md:flex-row justify-between gap-6 px-6 text-brand-gray3 min-h-[40vh] bg-[#1E2322] rounded-xl py-3">
-            <ul className="space-y-2 w-full md:w-2/3">
+            <div className="w-full flex flex-col lg:flex-row justify-evenly lg:justify-between px-6 text-white  min-h-40 lg:min-h-[56vh] bg-[#1E2322] rounded-xl pt-8 pb-5">
+            <ul className="flex flex-col justify-center items-start gap-3 w-full lg:w-1/2">
               {services.map((service, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <DotIcon/>
@@ -109,9 +109,9 @@ const AboutCompany = () => {
                 </li>
               ))}
             </ul>
-            <div className="w-full py-2 md:py-0 md:w-1/3 flex flex-col items-center justify-center gap-3">
-              <img src="/pics/Asset61.png" alt="green man" width={80}/>
-              <CTA text={"Our Offerings"} href="/services" styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 text-base font-semibold w-full md:px-20 px-4 py-4 transition-colors mt-0" />
+            <div className="w-full py-2 lg:py-0 lg:w-1/2 flex flex-col items-center justify-center gap-6">
+              <img src="/pics/Asset61.png" alt="green man" width={100}/>
+              <CTA text={"Our Offerings"} href="/services" styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 text-base font-semibold w-full lg:px-20 px-4 py-4 transition-colors mt-0" />
             </div>
             </div>
            
@@ -125,14 +125,14 @@ const AboutCompany = () => {
       </div>
       {/* Why NYC Trusts PBS? */}
  <div className="">
-            <h2 className="text-3xl text-center md:text-4xl font-conthrax font-semibold text-brand-light mb-6">
+            <h2 className="text-3xl text-center lg:text-4xl font-conthrax font-semibold text-brand-light mb-6">
               Why NYC Trusts PBS?
             </h2>
                {/* Underline heading line */}
         <div className="w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-6"></div>
-            <div className="text-white max-w-full grid grid-cols-1 lg:grid-cols-2 gap-3 flex-wrap">
+            <div className="text-white max-w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
               {reasons.map((reason, index) => (
-                <div key={index} className={`min-h-32 flex flex-col justify-center items-start gap-3 w-full  rounded-xl py-2 px-3 bg-[#2B3331] ${index === 6 ? "ml-0 lg:ml-[300]":""} `}>
+                <div key={index} className={`min-h-32 flex flex-col justify-center items-start gap-3 w-full  rounded-xl py-2 px-3 bg-[#2B3331] ${index === 6 ? "relative left-0 lg:left-[50%]":""} `}>
                   <p className="text-left text-sm font-extrabold">{reason.split(":")[0] + ":"}</p>
                   <p className="text-sm">{reason.split(":")[1]}</p>
                 </div>

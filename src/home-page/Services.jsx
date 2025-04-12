@@ -20,7 +20,7 @@ const Services = () => {
         {/* Underline heading line */}
 
         {/* Main Title */}
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-conthrax">
+        <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax">
           <span className="block text-2xl lg:text-4xl text-white">Introduction to</span>
           <span className="block text-[#E4F3ED] font-extrabold mt-1">
             PROACTIVE BUILDING <br /> SOLUTIONS

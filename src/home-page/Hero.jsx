@@ -83,14 +83,14 @@ const Hero = () => {
 
         {/* Right Side - Text Content */}
         <motion.div
-          className="w-full lg:w-2/3 flex flex-col justify-center items-start text-left mt-10 p-6 md:p-8 lg:p-10"
+          className="w-full lg:w-2/3 flex flex-col justify-center items-start text-left mt-10 p-6 lg:p-10"
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
         >
           {/* Main Heading */}
           <motion.h1
-            className="text-xl md:text-2xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 max-w-2xl"
+            className="text-xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 max-w-2xl"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -107,7 +107,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-base md:text-lg font-poppins text-[#8AD5B7] mb-6 max-w-md"
+            className="text-base lg:text-lg font-poppins text-[#8AD5B7] mb-6 max-w-md"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
@@ -122,7 +122,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.p
-            className="text-base md:text-lg font-poppins text-[#8AD5B7] mb-2 max-w-md"
+            className="text-base lg:text-lg font-poppins text-[#8AD5B7] mb-2 max-w-md"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],

@@ -73,13 +73,13 @@ const Solutions = () => {
         ref={containerRef}
       >
         {/* Heading and Subheading */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-12 lg:mb-16">
           <h1 className="text-3xl lg:text-5xl font-conthrax font-bold text-[#8AD5B7] mb-4">
             Solutions
           </h1>
           <div className="w-[25%] mx-auto bg-[#8AD5B7] rounded-full h-1 my-3"></div>
           <div className="max-w-3xl mx-auto text-white">
-            <p className="text-base font-semibold md:text-lg font-poppins">
+            <p className="text-base font-semibold lg:text-lg font-poppins">
               Compliance Secured, Strategy Defined, Future Built
             </p>
           </div>
@@ -99,7 +99,7 @@ const Solutions = () => {
                 height={100}
                 className="w-full h-32 object-cover rounded-xl mb-6"
               />
-              <h3 className="text-xl md:text-2xl text-center font-conthrax font-semibold text-brand-light mb-4">
+              <h3 className="text-xl lg:text-2xl text-center font-conthrax font-semibold text-brand-light mb-4">
                 {item.title}
               </h3>
               <p className="text-brand-gray3 text-left text-sm font-poppins leading-relaxed">
