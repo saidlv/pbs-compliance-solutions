@@ -1,4 +1,5 @@
 import CustomImage from "@/app/CustomImage";
+import { DotIcon } from "lucide-react";
 
 /**
  * @typedef {Object} MenuSection
@@ -72,13 +73,13 @@ const Footer = () => {
    */
 
   return (
-    <div className="bg-brand-gray1 text-white py-10  lg:pb-0 lg:pt-5">
-      <div className="w-full md:w-[90%] mx-auto">
-        <div className="md:w-[80vw] lg:w-[85vw] mx-auto lg:mx-0">
+    <div className="bg-brand-gray1 text-white py-10  lg:pb-0 lg:pt-10">
+      
+        <div className="md:w-[80vw] lg:w-full mx-auto">
           {/* Top Section - Menu Columns and Subscription Form */}
-          <div className="container mx-auto px-[35px] md:px-[75px] flex flex-col xl:flex-row justify-between gap-10 ">
+          <div className="container mx-auto px-[35px] md:px-[50px] flex flex-col lg:flex-row justify-between gap-10 ">
             {/* Menu Columns - Responsive Grid Layout */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="w-[70%] grid grid-cols-2 lg:grid-cols-4 gap-8">
               {menu.map((section) => (
                 <div key={section.title}>
                   <h3 className="text-lg font-bold mb-4">{section.title}</h3>
@@ -86,9 +87,10 @@ const Footer = () => {
                     {section.links.map((link, index) => (
                       <li
                         key={index}
-                        className="hover:text-white transition duration-300"
+                        className="hover:text-white transition duration-300 flex gap-2 items-center text-sm"
                       >
-                        {link}
+                        <DotIcon/>
+                        <span className="cursor-pointer">{link}</span>
                       </li>
                     ))}
                   </ul>
@@ -97,9 +99,9 @@ const Footer = () => {
             </div>
 
             {/* Subscribe Section - Hidden on medium screens, visible on small and large screens */}
-            <div className="flex flex-col items-center md:items-start mx-auto my-8 md:block lg:hidden xl:block">
-              <h3 className="text-lg font-bold mb-4">Subscribe</h3>
-              <p className="text-gray-400 mb-4 text-wrap text-sm md:text-base">
+            <div className="w-[30%] flex flex-col items-center md:items-start mx-auto my-8 md:block">
+              <h3 className="text-2xl font-semibold mb-4 text-center">Subscribe</h3>
+              <p className="text-white mb-4 text-sm">
                 Join our community to receive updates
               </p>
               {/* Email Subscription Form */}
@@ -107,18 +109,18 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-grow px-4 py-2 rounded-l-full bg-gray-800 text-white focus:outline-none w-1/2 md:w-2/3"
+                  className="flex-grow text-base px-4 py-2 rounded-full bg-white text-gray-600 focus:outline-none w-1/2 md:w-4/5"
                   aria-label="Email address"
                   required
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-brand-green3 text-white rounded-r-full hover:bg-blue-700 transition duration-300"
+                  className="relative -left-8 px-6 py-2 bg-brand-green3 text-white rounded-full hover:bg-[#8AD5B7] transition duration-300"
                 >
                   Subscribe
                 </button>
               </form>
-              <p className="text-sm text-gray-400 mt-2">
+              <p className="text-sm text-white mt-2">
                 By subscribing, you agree to our Privacy Policy
               </p>
             </div>
@@ -130,18 +132,18 @@ const Footer = () => {
           {/* Bottom Section - Logo, Copyright, and Privacy Links */}
           <div className="container mx-auto px-8 flex flex-col md:flex-row justify-between items-center">
             {/* Logo - Hidden on mobile, visible on larger screens */}
-            <div className="flex items-center gap-4 mb-4 md:mb-0 md:block">
+            <div className="flex items-center gap-4 mb-4 md:mb-0 md:block pb-4">
               <CustomImage
-                src="/PBS Assets/Brand Language/Steel Mockup.png"
+                src="/pics/LOGO.png"
                 alt="Logo"
-                width={150}
-                height={150}
-                className="w-[150px]"
+                width={100}
+                height={100}
+                className="w-[80px]"
               />
             </div>
 
             {/* Copyright Notice - Automatically updates with current year */}
-            <p className="text-center text-sm text-brand-green2 ">
+            <p className="text-center text-sm text-white ">
               © {new Date().getFullYear()} PBS NYC. All rights reserved
             </p>
 
@@ -204,7 +206,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+  
   );
 };
 

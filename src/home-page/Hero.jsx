@@ -26,7 +26,7 @@ const Hero = () => {
 
   return (
     <div className="relative bg-brand-dark">
-      <div className="min-h-screen relative flex flex-col lg:flex-row items-center justify-between">
+      <div className="min-h-screen relative flex flex-col lg:flex-row items-center justify-center lg:justify-between">
         {/* Background Image - Optional */}
 
           <motion.div
@@ -47,7 +47,7 @@ const Hero = () => {
             <CustomImage
               src="/pics/homebg.png"
               alt="Modern skyscrapers"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover z-0"
               layout="fill"
               priority={true}
               quality={100}
@@ -55,7 +55,7 @@ const Hero = () => {
           </motion.div>
           {/* Left Side - Image */}
         <motion.div
-          className="w-full lg:w-1/3 h-[400] lg:h-[600] max-h-full flex items-center justify-start relative"
+          className="w-full lg:w-1/3 h-[400] lg:h-[700] max-h-full flex items-center justify-start lg:justify-center relative z-20"
           initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
           animate={{
             opacity: 1,
@@ -73,7 +73,7 @@ const Hero = () => {
           <Image
             src="/pics/Building.png"
             alt="Modern skyscrapers"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover md:object-contain lg:object-cover object-top"
             width={400}
             height={300}
             unoptimized
@@ -83,7 +83,7 @@ const Hero = () => {
 
         {/* Right Side - Text Content */}
         <motion.div
-          className="w-full lg:w-2/3 flex flex-col justify-center items-start text-left mt-10 p-6 lg:p-10"
+          className="z-20 w-full lg:w-2/3 flex flex-col justify-center items-start text-left mt-10 p-6 lg:p-10"
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
@@ -102,12 +102,12 @@ const Hero = () => {
             Ensuring Compliance, Excellence and Peace of Mind in New York Construction
           </motion.h1>
 
-          <div className="w-[30%] h-1 bg-[#7CE2B8] mb-4"></div>
+          <div className="w-[30%] h-1 bg-[#8AD5B7] mb-4 rounded-full"></div>
 
 
           {/* Subheading */}
           <motion.p
-            className="text-base lg:text-lg font-poppins text-[#8AD5B7] mb-6 max-w-md"
+            className="text-base lg:text-lg font-poppins text-[#89A096] mb-6 max-w-xl"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
@@ -122,7 +122,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.p
-            className="text-base lg:text-lg font-poppins text-[#8AD5B7] mb-2 max-w-md"
+            className="text-base lg:text-lg font-poppins text-[#89A096] mb-2 max-w-xl"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
@@ -140,7 +140,7 @@ const Hero = () => {
           <CTA
             text="Schedule your Consulting Today"
             href="/contacts"
-            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-conthrax px-8 py-4 transition-colors mt-0 min-w-[60%] lg:w-[40%]"
+            styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-conthrax px-8 py-4 transition-colors mt-0 max-w-full lg:max-w-xl my-6"
           />
         </motion.div>
       </div>

@@ -67,9 +67,9 @@ const Solutions = () => {
   }, []);
 
   return (
-    <div className="bg-brand-dark py-16 lg:py-12">
+    <div className="bg-brand-dark py-16">
       <div
-        className="container mx-auto px-6 md:px-12 lg:px-24"
+        className="container mx-auto px-6 md:px-12 lg:px-16"
         ref={containerRef}
       >
         {/* Heading and Subheading */}
@@ -86,7 +86,7 @@ const Solutions = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 w-full pl-0 lg:pl-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 w-full px-8">
           {SolutionsItems.map((item) => (
             <div
               key={item.title}

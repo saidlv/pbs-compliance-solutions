@@ -89,7 +89,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
   };
 
   return (
-    <div className="">
+    <div className="w-screen">
       {/* Hamburger Icon Button */}
       <button
         className="fixed top-[45px] right-12 z-50 flex flex-col items-end space-y-1"
@@ -115,7 +115,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
         transition={{ type: "tween", duration: 0.5 }}
-        className="fixed top-0 right-0 w-64 h-full bg-black text-white flex flex-col items-start pt-24 px-6 space-y-6"
+        className="fixed top-0 right-0 w-1/2 h-full bg-black text-white flex flex-col items-start pt-24 px-6 space-y-6"
         aria-hidden={!isOpen}
       >
         {/* Menu Items */}

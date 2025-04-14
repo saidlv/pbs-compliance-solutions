@@ -28,6 +28,7 @@ gsap.registerPlugin(ScrollTrigger);
  *
  * @returns {JSX.Element} The rendered Header component
  */
+
 const Header = () => {
   /**
    * Access menu state from context
@@ -96,7 +97,7 @@ const Header = () => {
       {/* Header Container with GSAP Animation */}
       <motion.div
         ref={ref}
-        className="bg-[#6C837D] flex flex-row justify-center md:justify-between items-center w-full h-[100px] sticky top-0"
+        className="bg-[#6C837D] flex flex-row justify-center lg:justify-between items-center w-full h-[100px] sticky top-0"
         initial={{ height: "100px" }}
       >
         {/* Logo Container with Click Navigation */}
@@ -110,11 +111,11 @@ const Header = () => {
           {/* Animated Logo Container */}
           <motion.div ref={imageRef} initial={{ scale: 1 }}>
             <CustomImage
-              src="/PBS Assets/Brand Language/Steel Mockup.png"
-              width={200}
-              height={200}
+              src="/pics/LOGO.png"
+              width={100}
+              height={100}
               alt="Website Logo"
-              className="md:w-[250] md:h-auto relative lg:left-[-50px] md:left-0"
+              className="w-[80] lg:h-auto relative lg:left-[50px] md:left-0"
             />
           </motion.div>
         </div>

@@ -36,9 +36,9 @@ const Heading = ({ main, subpart, styling }) => {
     <div
       className={`${styling ? styling : ""} xl:mb-6 flex items-start flex-col`}
     >
-      <div className="flex h-full">
+      <div className="flex items-center h-full">
         {/* Vertical accent bar - creates visual emphasis */}
-        <div className={`h-[100px] bg-[#8AD5B7] text-green-600`}>
+        <div className={`h-[120px] bg-[#8AD5B7] text-green-600`}>
           <p>&nbsp;&nbsp;</p>
         </div>
 

@@ -1,17 +1,18 @@
 "use client";
 
+import CTA2 from "@/components/CTA2";
 import CTA from "@/components/CTA";
 import Image from "next/image"; // assuming you're using Next.js for image optimization
 import { cn } from "@/lib/utils"; // assuming you use a utility for className merge
 
 const Services = () => {
   return (
-    <section className="relative text-white py-10 px-6 text-center overflow-hidden">
+    <section className="relative text-white  px-16 text-center overflow-hidden">
       <Image
         src="/pics/pattern1.png"
         alt="Background Image"
         layout="fill"
-        className="absolute inset-0 z-20 object-cover opacity-100"
+        className="absolute inset-0 z-0 object-cover opacity-100"
         priority={true}
         quality={100}
       />
@@ -38,8 +39,8 @@ const Services = () => {
         </p>
 
         {/* CTA */}
-        <div className="mt-10 flex justify-center">
-        <CTA
+        <div className="my-10 flex justify-center">
+        <CTA2
             text="Know more about us"
             href="/about-us"
             styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold px-4 lg:px-8 py-4 transition-colors mt-0 w-[75%] lg:w-[45%]"
@@ -47,8 +48,9 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Background Skyline (optional) */}
+      {/* Background Skyline (optional) 
       <div className="absolute inset-0 z-0 bg-[url('/images/skyline.svg')] bg-bottom bg-no-repeat opacity-20"></div>
+      */}
     </section>
   );
 };

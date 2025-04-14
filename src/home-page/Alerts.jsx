@@ -2,6 +2,7 @@
 
 import CustomImage from "@/app/CustomImage";
 import CTA from "@/components/CTA";
+import CTA2 from "@/components/CTA2";
 import Heading from "@/components/Heading";
 import MultiStepForm from "@/components/MultiStepForm";
 import gsap from "gsap";
@@ -126,9 +127,9 @@ const Alerts = () => {
 
   return (
     <div className="bg-brand-dark py-16" ref={ref}>
-      <div className="px-6 lg:px-0">
-        <div className="lg:pl-24 pl-0 flex flex-col lg:flex-row lg:justify-center gap-8 lg:gap-16">
-          <div ref={leftRef} className="lg:w-2/5 relative hidden lg:block">
+      <div className="px-6 lg:px-16">
+        <div className="px-8 flex flex-col lg:flex-row lg:justify-between">
+          <div ref={leftRef} className="lg:w-[45%] relative hidden lg:block">
             <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-[#8AD5B7]">
               <CustomImage
                 src="/PBS%20Assets/better-assets/Images%20Without%20Bg/Facebook%20Cover.webp"
@@ -141,7 +142,7 @@ const Alerts = () => {
             </div>
           </div>
 
-          <div className="lg:w-3/5 flex flex-col justify-center">
+          <div className="lg:pt-12 lg:pb-6 lg:w-[55%] flex flex-col justify-center lg:ml-12">
             <div ref={textRef} className="mb-8">
               <Heading
                 main="Alert System:"
@@ -158,7 +159,7 @@ const Alerts = () => {
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-4">
                 <div className="flex flex-col justify-center"> 
-                  <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-2"></div>
+                  <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-4"></div>
                   
                   <span className="text-lg font-semibold font-conthrax text-white text-nowrap">
                     SIGN UP 
@@ -167,10 +168,10 @@ const Alerts = () => {
                   </div>
               
                 
-              <CTA
+              <CTA2
                 text="Get your Property registered for Free"
                 href="/alert"
-                styling="w-full mt-0 h-12 rounded-full bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+                styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-black px-0 lg:px-3 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
               />
                 </div>
               </div>
@@ -193,18 +194,17 @@ const Alerts = () => {
            </div>
         </div>
 
-<div className="py-3 text-2xl lg:text-3xl relative my-6 mb-48 lg:mb-16">
-        <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl lg:rounded-none lg:rounded-tl-xl lg:rounded-bl-xl flex flex-col lg:flex-row items-center justify-between gap-4 my-4 w-[95%] absolute right-0">
+<div className="text-2xl lg:text-3xl relative mt-8">
+        <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl flex flex-col lg:flex-row items-center justify-between gap-4 w-full">
       <p className="text-white w-full lg:w-3/4 font-poppins text-center lg:text-left">
         Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
       </p>
       
-      <Link
-        href="/tutorial" // Change to your video/tutorial link
-        className="bg-[#9BF5CB] text-[#1A2A2D] p-6 rounded-full text-3xl font-semibold whitespace-nowrap hover:brightness-105 transition w-auto text-center"
-      >
-        Click to watch now &rsaquo;
-      </Link>
+      <CTA2
+                text="Click to watch now  "
+                href="/tutorial"
+                styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+              />
     </div>
     </div>
       </div>

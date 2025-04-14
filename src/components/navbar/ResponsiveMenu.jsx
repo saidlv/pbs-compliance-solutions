@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useMediaQuery } from "../../hooks/UseMediaQuery";
 import HamburgerMenu from "./HamburgerMenu";
 import VerticalMenu from "./VerticalMenu";
+import HorizontalMenu from "./HorizontalMenu";
 
 /**
  * AnimatedArrow Component
@@ -14,6 +15,7 @@ import VerticalMenu from "./VerticalMenu";
  *
  * @returns {JSX.Element} The animated arrow component
  */
+
 const AnimatedArrow = () => {
   return (
     <motion.div
@@ -69,6 +71,8 @@ const RightSideMenu = () => {
   );
 };
 
+
+
 /**
  * ResponsiveMenu Component
  *
@@ -84,19 +88,16 @@ const RightSideMenu = () => {
  * @param {Function} props.setIsOpen - Function to update the open/closed state of the mobile menu
  * @returns {JSX.Element} The appropriate menu component for the current screen size
  */
-const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
-  /**
-   * Boolean indicating if the current viewport is mobile-sized (< 768px)
-   * @type {boolean}
-   */
-  const isMobile = useMediaQuery(768);
 
-  // Conditionally render either the mobile or desktop menu based on screen size
+const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
+  const isMobile = useMediaQuery(1024);
+
   return isMobile ? (
     <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
   ) : (
-    <RightSideMenu />
+    <HorizontalMenu isOpen={isOpen} setIsOpen={setIsOpen} />
   );
 };
+
 
 export default ResponsiveMenu;
