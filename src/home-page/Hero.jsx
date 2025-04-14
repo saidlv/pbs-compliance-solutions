@@ -56,7 +56,7 @@ const Hero = () => {
       <div className="relative h-screen flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-24">
         {/* Left Side - Image */}
         <motion.div
-          className="w-full lg:w-1/3 h-[400px] lg:h-[850px] flex items-center justify-start relative z-20"
+          className="w-full lg:w-1/3 h-[50vh] lg:h-[80vh] flex items-center justify-start relative z-20"
           initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
           animate={{
             opacity: 1,
