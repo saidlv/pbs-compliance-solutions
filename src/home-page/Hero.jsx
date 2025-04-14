@@ -75,7 +75,7 @@ const Hero = () => {
             alt="Modern skyscrapers"
             className="w-full h-full object-cover md:object-contain lg:object-cover object-top"
             width={400}
-            height={300}
+            height={700}
             loading="lazy"
           />
         </motion.div>
