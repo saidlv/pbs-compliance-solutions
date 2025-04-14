@@ -70,12 +70,12 @@ const Hero = () => {
           }}
           aria-hidden="true"
         >
-          <Image
+          <img
             src="/pics/Building.png"
             alt="Modern skyscrapers"
             className="w-full h-full object-cover md:object-contain lg:object-cover object-top"
-            width={400}
-            height={700}
+            width={500}
+            height={300}
             loading="lazy"
           />
         </motion.div>

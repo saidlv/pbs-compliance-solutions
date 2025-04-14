@@ -35,7 +35,7 @@ const AboutPage = () => {
       </div>
 
       {/* The PBS Story Section */}
-      <section className="py-10 px-6 lg:px-12 bg-[#37403D] text-white mb-12">
+      <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-white mb-12">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           {/* Story image in a circular background */}
           <div className="relative w-full h-auto lg:w-1/2 flex justify-center items-center">
