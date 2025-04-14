@@ -79,7 +79,7 @@ const Footer = () => {
           {/* Top Section - Menu Columns and Subscription Form */}
           <div className="container mx-auto px-[35px] md:px-[50px] flex flex-col lg:flex-row justify-between gap-10 ">
             {/* Menu Columns - Responsive Grid Layout */}
-            <div className="w-[70%] grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="w-full lg:w-[70%] grid grid-cols-2 lg:grid-cols-4 gap-8">
               {menu.map((section) => (
                 <div key={section.title}>
                   <h3 className="text-lg font-bold mb-4">{section.title}</h3>
@@ -99,17 +99,17 @@ const Footer = () => {
             </div>
 
             {/* Subscribe Section - Hidden on medium screens, visible on small and large screens */}
-            <div className="w-[30%] flex flex-col items-center md:items-start mx-auto my-8 md:block">
+            <div className="w-full lg:w-[30%] flex flex-col items-center md:items-start mx-auto my-8 md:block">
               <h3 className="text-2xl font-semibold mb-4 text-center">Subscribe</h3>
-              <p className="text-white mb-4 text-sm">
+              <p className="text-white mb-4 text-sm text-center">
                 Join our community to receive updates
               </p>
               {/* Email Subscription Form */}
-              <form className="overflow-hidden flex justify-start items-center w-full max-w-md ">
+              <form className="overflow-hidden flex justify-start items-center w-full  lg:max-w-md ">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-grow text-base px-4 py-2 rounded-full bg-white text-gray-600 focus:outline-none w-1/2 md:w-4/5"
+                  className="flex-grow text-base px-4 py-2 rounded-full bg-white text-gray-600 focus:outline-none lg:w-1/2 w-full "
                   aria-label="Email address"
                   required
                 />
@@ -120,7 +120,7 @@ const Footer = () => {
                   Subscribe
                 </button>
               </form>
-              <p className="text-sm text-white mt-2">
+              <p className="text-sm text-white mt-2 text-center">
                 By subscribing, you agree to our Privacy Policy
               </p>
             </div>

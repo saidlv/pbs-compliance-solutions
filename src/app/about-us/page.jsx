@@ -67,10 +67,10 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission Section */}
-      <div className="flex items-start justify-center lg:justify-evenly gap-12 flex-col lg:flex-row  text-white px-3 lg:px-6">
+      <div className="flex items-start justify-center lg:justify-evenly gap-12 flex-col lg:flex-row  text-white px-3 lg:px-16 mb-24">
         {/* Vision Section */}
-        <section className="relative mb-10 w-full">
-          <div className=" min-h-[600] text-center w-full py-10 px-5 rounded-lg bg-[#2B3331]">
+        <section className="relative w-full">
+          <div className=" min-h-[600] text-center w-full py-6 px-5 rounded-lg bg-[#2B3331]">
             <div className="flex items-start justify-start gap-3">
             <img
             src="/pics/Group 19.png"
@@ -111,8 +111,8 @@ const AboutPage = () => {
         </section>
 
         {/* Mission Section */}
-        <section className="relative mb-10 w-full">
-          <div className=" min-h-[600] text-center w-full py-10 px-5 rounded-lg bg-[#2B3331]">
+        <section className="relative w-full">
+          <div className=" min-h-[600] text-center w-full py-6 px-5 rounded-lg bg-[#2B3331]">
             <div className="flex items-start justify-start gap-3">
             <img
             src="/pics/Layer_1.png"
@@ -138,9 +138,9 @@ const AboutPage = () => {
               </h2>
               {Object.entries(mission?.impacts || []).map(
                 ([key, value], index) => (
-                  <div key={index} className="text-white flex gap-2 mb-2">
+                  <div key={index} className="text-white flex gap-0.5 mb-2">
                     <Dot />
-                    <div className="flex justify-evenly gap-1 w-full">
+                    <div className="flex justify-evenly gap-0.5 w-full">
                       <span className="w-1/3 text-white font-semibold text-base">
                         {key + ":"}
                       </span>
@@ -157,7 +157,15 @@ const AboutPage = () => {
       </div>
 
       {/* Redefining section */}
-      <section className="px-6 lg:px-6">
+      <section className="relative px-6 lg:px-6">
+        <Image
+        src="/pics/pattern1.png"
+        alt=""
+        className="opacity-35 w-full h-full object-contain rounded-xl filter grayscale shadow-custom absolute -top-24"
+        width={700}
+        height={500}
+        loading="lazy"
+        />
       <div className="bg-[#1E2322] rounded-xl w-full flex flex-col items-center justify-center py-3 px-6">
         <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-4xl w-[70%] mx-auto my-6">
           Redefining Excellence in NYC Construction
@@ -183,7 +191,7 @@ const AboutPage = () => {
 
       {/* Mission Section */}
       <section className="bg-[#37403D] py-10 px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-16">
           {/* Mission image */}
           <Image
             src="/pics/Asset 2 2.png"
@@ -336,7 +344,7 @@ const AboutPage = () => {
         <p className="max-w-2xl text-[#89A096] mx-auto font-semibold text-sm mb-4">
           {cta?.text}
         </p>
-        <CTA text={cta?.buttonText} href="#" styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-bold w-[50%] rounded-full mx-auto my-0" />
+        <CTA text={cta?.buttonText} href="#" styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-bold w-full lg:w-[50%] rounded-full mx-auto my-0" />
       </section>
     </div>
   );
