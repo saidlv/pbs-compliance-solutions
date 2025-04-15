@@ -35,7 +35,7 @@ const Page = () => {
         </p>
       </div>
 
-      <div className="py-16 px-6 md:px-12 xl:px-16">
+      <div className="py-10 xl:py-16 px-6 md:px-12 xl:px-16">
         <section className="w-[100%]">
           {/* Leadership Team Section */}
           <div className="mb-16 w-full flex flex-col justify-center items-center">
