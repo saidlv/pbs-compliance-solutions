@@ -18,7 +18,7 @@ const Page = () => {
         img="/pics/Team 1.png"
         isLine={true}
         className="font-conthrax"
-        bgStyle="bg-center md:bg-bottom"
+        bgStyle="bg-top md:bg-bottom bg-cover"
       />
 
       {/* Custom 'About Us' Label Divider */}
@@ -58,8 +58,8 @@ const Page = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="bg-[#ffff] aspect-square h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                  <div className="w-[75%] xl:w-[60%] p-0 flex flex-col items-start justify-center gap-1">
+                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+                  <div className="w-full pr-6 flex flex-col items-start justify-center gap-1">
                     <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                       {member.name}
                     </h3>
@@ -99,7 +99,7 @@ const Page = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="bg-[#ffff] aspect-square h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+                <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
                 <div className="w-[75%] xl:w-[60%] p-0 flex flex-col items-start justify-center gap-1">
                   <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                     {member.name}
@@ -140,7 +140,7 @@ const Page = () => {
                viewport={{ once: true, margin: "-100px" }}
                transition={{ duration: 0.5, delay: index * 0.1 }}
              >
-               <div className="bg-[#ffff] aspect-square h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+               <div className="bg-[#ffff] flex-shrink-0 aspect-square h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
                <div className="w-[75%] xl:w-[60%] p-0 flex flex-col items-start justify-center gap-1">
                  <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                    {member.name}

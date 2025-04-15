@@ -5,6 +5,9 @@ import { aboutContent } from "./data";
 import { ChevronLeft, ChevronRight, Dot, DotIcon } from "lucide-react";
 import { useState } from "react";
 import CTA from "@/components/CTA";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const AboutPage = () => {
   // Extracting content from static data
@@ -14,7 +17,44 @@ const AboutPage = () => {
   const vision = aboutContent.find((s) => s.id === "our-vision");
   const cta = aboutContent.find((s) => s.id === "cta");
 
-  const [clientNum, setClientNum] = useState(0);
+  // const [clientNum, setClientNum] = useState(0);
+
+  function SampleNextArrow(props) {
+    const { onClick } = props;
+    return (
+      <button
+        onClick={onClick}
+        className="absolute -right-10 lg:-right-16 top-1/2 transform -translate-y-1/2 rounded-full p-2 hover:bg-[#8AD5B7] transition duration-300"
+      >
+        <ChevronRight className="text-white" />
+      </button>
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { onClick } = props;
+    return (
+      <button
+        onClick={onClick}
+        className="absolute -left-10 lg:-left-16 top-1/2 transform -translate-y-1/2 p-2 rounded-full hover:bg-[#8AD5B7] transition duration-300"
+      >
+        <ChevronLeft className="text-white" />
+      </button>
+    );
+  }
+
+  const settings2 = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
 
   return (
     <div className="bg-[#37403D] overflow-hidden">
@@ -23,6 +63,7 @@ const AboutPage = () => {
         heading="Built by New Yorkers, For New York"
         text="For Decades, we’ve followed the rules of Inspection, Expediting and portfolio management, Not as Outsiders, but as neighbors, collaborators, and guardians of this city’s skyline."
         className="font-conthrax max-w-4xl"
+        bgStyle="bg-top md:bg-bottom bg-cover"
         img="/pics/COVER 1.png"
       />
 
@@ -38,18 +79,18 @@ const AboutPage = () => {
       <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-white">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           {/* Story image in a circular background */}
-          <div className="relative w-full h-[450px] lg:h-[550px] lg:w-1/2 flex justify-center items-end lg:items-start">
-              <Image
-                src="/pics/Cloud-02.png"
-                alt="PBS"
-                width={705}
-                height={644}
-                className="filter w-full h-full grayscale object-cover md:object-contain lg:object-cover object-top drop-shadow-lg"
-              />
+          <div className="relative w-full h-[480px] xl:h-[530px] md:w-1/3 xl:w-1/2 flex justify-center items-start">
+            <Image
+              src="/pics/Cloud-02.png"
+              alt="PBS"
+              width={500}
+              height={300}
+              className="filter w-full h-full grayscale object-cover md:object-contain lg:object-cover object-top"
+            />
           </div>
 
           {/* Story text content */}
-          <div className="w-full lg:w-1/2 space-y-6">
+          <div className="w-full md:w-2/3 xl:w-1/2 space-y-6">
             <h2 className="text-5xl font-semibold font-conthrax text-[#8AD5B7] mb-2">
               {story.headline}
             </h2>
@@ -58,7 +99,10 @@ const AboutPage = () => {
             </span>
             <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
             {story?.body.map((text, index) => (
-              <p key={index} className="text-white font-semibold text-lg text-balance pr-6 my-8">
+              <p
+                key={index}
+                className="text-white font-semibold text-lg text-balance pr-6 my-8"
+              >
                 {text}
               </p>
             ))}
@@ -68,94 +112,106 @@ const AboutPage = () => {
 
       {/* Vision & Mission Section */}
       <div className="flex items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-white px-3 lg:px-16 pb-24">
-  {/* Vision Section */}
-  <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
-    <div className="flex items-start justify-start gap-3">
-      <img src="/pics/Group 19.png" alt="light" className="w-16 h-16" />
-      <div className="mb-3">
-        <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
-          Our Vision
-        </h2>
-        <p className="text-[#7A8E85] mb-3 text-left">{vision?.tagline}</p>
-      </div>
-    </div>
-    <p className="text-white text-left text-lg">{vision?.body}</p>
-    <div className="text-left my-5">
-      <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">How We'll get there</h2>
-      {(vision?.pillars || []).map((value, index) => (
-        <div key={index} className="text-white flex gap-2 mb-2">
-          <Dot />
-          <div className="flex justify-evenly w-full">
-            <span className="w-[45%] text-white font-semibold text-base">
-              {value.split(":")[0] + ":"}
-            </span>
-            <span className="w-[55%] text-[#7A8E85] text-base">
-              {value.split(":")[1]}
-            </span>
+        {/* Vision Section */}
+        <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+          <div className="flex items-start justify-start gap-3">
+            <img src="/pics/Group 19.png" alt="light" className="w-16 h-16" />
+            <div className="mb-3">
+              <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
+                Our Vision
+              </h2>
+              <p className="text-[#7A8E85] mb-3 text-left">{vision?.tagline}</p>
+            </div>
+          </div>
+          <p className="text-white text-left text-lg">{vision?.body}</p>
+          <div className="text-left my-5">
+            <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
+              How We'll get there
+            </h2>
+            {(vision?.pillars || []).map((value, index) => (
+              <div key={index} className="text-white flex gap-2 mb-2">
+                <Dot />
+                <div className="flex justify-evenly w-full">
+                  <span className="w-[45%] text-white font-semibold text-base">
+                    {value.split(":")[0] + ":"}
+                  </span>
+                  <span className="w-[55%] text-[#7A8E85] text-base">
+                    {value.split(":")[1]}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
 
-  {/* Mission Section */}
-  <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
-    <div className="flex items-start justify-start gap-3">
-      <img src="/pics/Layer_1.png" alt="arrow" className="w-14 h-14" />
-      <div className="mb-3">
-        <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
-          Our Mission
-        </h2>
-        <p className="text-[#7A8E85] text-base text-left">{mission?.tagline}</p>
-      </div>
-    </div>
-    <p className="text-white text-lg text-left">{mission?.body}</p>
-    <div className="text-left my-5">
-      <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">How We'll get there</h2>
-      {Object.entries(mission?.impacts || []).map(([key, value], index) => (
-        <div key={index} className="text-white flex gap-0.5 mb-2">
-          <Dot />
-          <div className="flex justify-evenly gap-0.5 w-full">
-            <span className="w-1/3 text-white font-semibold text-base">{key + ":"}</span>
-            <span className="w-2/3 text-[#7A8E85] text-base">{value}</span>
+        {/* Mission Section */}
+        <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+          <div className="flex items-start justify-start gap-3">
+            <img src="/pics/Layer_1.png" alt="arrow" className="w-14 h-14" />
+            <div className="mb-3">
+              <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
+                Our Mission
+              </h2>
+              <p className="text-[#7A8E85] text-base text-left">
+                {mission?.tagline}
+              </p>
+            </div>
+          </div>
+          <p className="text-white text-lg text-left">{mission?.body}</p>
+          <div className="text-left my-5">
+            <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
+              How We'll get there
+            </h2>
+            {Object.entries(mission?.impacts || []).map(
+              ([key, value], index) => (
+                <div key={index} className="text-white flex gap-0.5 mb-2">
+                  <Dot />
+                  <div className="flex justify-evenly gap-0.5 w-full">
+                    <span className="w-1/3 text-white font-semibold text-base">
+                      {key + ":"}
+                    </span>
+                    <span className="w-2/3 text-[#7A8E85] text-base">
+                      {value}
+                    </span>
+                  </div>
+                </div>
+              )
+            )}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
       {/* Redefining section */}
       <section className="relative px-6 lg:px-6 pb-16">
         <Image
-        src="/pics/pattern1.png"
-        alt=""
-        className="opacity-60 w-full h-full object-contain rounded-xl filter grayscale shadow-custom absolute -top-24"
-        width={700}
-        height={500}
-        loading="lazy"
+          src="/pics/pattern1.png"
+          alt=""
+          className="opacity-60 w-full h-full object-contain rounded-xl filter grayscale shadow-custom absolute -top-24"
+          width={700}
+          height={500}
+          loading="lazy"
         />
-      <div className="bg-[#1E2322] rounded-xl w-full flex flex-col items-center justify-center py-3 px-6">
-        <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-4xl w-[70%] mx-auto my-6">
-          Redefining Excellence in NYC Construction
-        </h2>
-        <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
+        <div className="bg-[#1E2322] rounded-xl w-full flex flex-col items-center justify-center py-3 px-6">
+          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-4xl w-[70%] mx-auto my-6">
+            Redefining Excellence in NYC Construction
+          </h2>
+          <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
 
-        <p className="text-white text-lg font-semibold text-center mt-6">
-          We are committed to becoming the New York Metropolitan area's most
-          trusted partner in your Compliance, Expediting and consulting—where
-          growth harmonizes with mastery, and innovation elevates every project
-          from blueprint to completion.
-        </p>
-        <p className="text-white flex font-semibold text-lg gap-3 mt-5">
-          <Dot /> Standardized Excellence: Meticulous, end-to-end project
-          management frameworks tailored to NYC's dynamic landscape
-        </p>
-        <p className="text-white flex font-semibold text-lg gap-3 mb-5">
-          <Dot /> Value-Driven Culture: Intentional collaboration,
-          data-powered decisions, and unwavering ownership at every level
-        </p>
-      </div>
+          <p className="text-white text-lg font-semibold text-center mt-6">
+            We are committed to becoming the New York Metropolitan area's most
+            trusted partner in your Compliance, Expediting and consulting—where
+            growth harmonizes with mastery, and innovation elevates every
+            project from blueprint to completion.
+          </p>
+          <p className="text-white flex font-semibold text-lg gap-3 mt-5">
+            <Dot /> Standardized Excellence: Meticulous, end-to-end project
+            management frameworks tailored to NYC's dynamic landscape
+          </p>
+          <p className="text-white flex font-semibold text-lg gap-3 mb-5">
+            <Dot /> Value-Driven Culture: Intentional collaboration,
+            data-powered decisions, and unwavering ownership at every level
+          </p>
+        </div>
       </section>
 
       {/* Mission Section */}
@@ -165,14 +221,14 @@ const AboutPage = () => {
           <Image
             src="/pics/Asset 2 2.png"
             alt="PBS"
-            width={400}
+            width={450}
             height={300}
             className="object-contain"
           />
 
           {/* Mission content with vertical accent line */}
-          <div className="w-full lg:w-1/2 pt-12">
-            <div className="flex items-center lg:justify-start h-20 rounded-lg mb-12 gap-4">
+          <div className="w-full lg:w-3/5 pt-12">
+            <div className="flex items-center lg:justify-start h-36 rounded-lg mb-12 gap-4">
               <div className="bg-[#8AD5B7] w-2 h-full rounded-lg"></div>
               <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-white flex flex-col gap-1">
                 <span className="">{mission?.tagline.split(",")[1]}</span>
@@ -180,7 +236,9 @@ const AboutPage = () => {
               </h2>
             </div>
 
-            <p className="text-[#89A096] mt-3 font-semibold text-sm">{mission?.body}</p>
+            <p className="text-[#89A096] mt-3 font-semibold text-sm">
+              {mission?.body}
+            </p>
             <div className="mx-auto w-[30%] bg-[#8AD5B7] rounded-full h-1 my-8"></div>
 
             {/* Mission impact highlights */}
@@ -218,94 +276,92 @@ const AboutPage = () => {
 
       {/* Service Area section */}
       <section className="px-6 lg:px-12">
-      <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 mb-12">
-    {/* Left Content */}
-    <div className="bg-[#2B3331] rounded-xl flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-16 w-full lg:w-3/5 h-auto lg:h-[65vh] px-4 py-6">
-      <div className="h-auto lg:h-full flex flex-col items-center lg:items-start justify-between gap-6">
-        <h2 className="text-[#8AD5B7] font-extrabold text-5xl flex flex-col mb-4 lg:mb-0 gap-3">
-          <span>Buildings</span> <span>We deal in:</span>
-        </h2>
-        <img
-          src="pics/world-map.png"
-          alt="map"
-          className="w-32 lg:w-auto h-auto"
-        />
-      </div>
-      <div className="w-full lg:w-2/5 flex flex-row flex-wrap lg:flex-col items-start justify-center gap-4 lg:gap-0">
-        {service?.buildingTypes.map((location, index) => (
-          <p key={index} className="text-white text-base flex gap-2">
-            <DotIcon /> {location}
-          </p>
-        ))}
-      </div>
-    </div>
-        <div className="w-full lg:w-auto h-auto lg:h-[70vh]">
-          <img src="/pics/Rectangle 52.png" alt="" className="w-full h-full object-contain rounded-xl filter grayscale shadow-custom"/>
-        </div>
-      </div>
-
-
-      <div className="w-full flex flex-col justify-center items-center mb-12 px-16">
-        <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">
-          Service Areas
-        </h2>
-        <p className="text-[#89A096] font-semibold text-sm mb-4 text-center">
-          Serving All NYC Boroughs with Local Expertise
-        </p>
-        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 my-4">
-          {service?.locations.map((location, index) => {
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center gap-2 my-4"
-              >
-                <div className="rounded-full border-4 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
-                  <Image
-                    src={location.cityImage}
-                    alt={location.cityName}
-                    width={150}
-                    height={150}
-                    className="filter grayscale hover:grayscale-0 transition duration-300"
-                  />
-                </div>
-                <p className="text-white">{location.cityName}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className=" flex flex-col items-center gap-8">
-        <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">Who we serve</h2>
-
-        <div className="w-full flex justify-center items-center gap-8 mb-12 px-16">
-          <button
-            onClick={() =>
-              setClientNum(() => {
-                if (clientNum === 0) return service.clientTypes.length - 1;
-                return clientNum - 1;
-              })
-            }
-          >
-            <ChevronLeft className="text-white" />
-          </button>
-          <div className="bg-[#2B3331] rounded-xl p-6 w-[90%]">
-            <h4 className="text-white font-semibold text-lg">
-              {clientNum + 1 + "- " + service.clientTypes[clientNum].title}
-            </h4>
-            <p className="text-base text-[#89A096]">
-              {service.clientTypes[clientNum].description}
-            </p>
+        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 mb-12">
+          {/* Left Content */}
+          <div className="bg-[#2B3331] rounded-xl flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-16 w-full lg:w-3/5 h-auto lg:h-[65vh] px-4 py-6">
+            <div className="h-auto lg:h-full flex flex-col items-center lg:items-start justify-between gap-6">
+              <h2 className="text-[#8AD5B7] font-extrabold text-5xl flex flex-col mb-4 lg:mb-0 gap-3">
+                <span>Buildings</span> <span>We deal in:</span>
+              </h2>
+              <img
+                src="pics/world-map.png"
+                alt="map"
+                className="w-32 lg:w-auto h-auto"
+              />
+            </div>
+            <div className="w-full lg:w-2/5 flex flex-row flex-wrap lg:flex-col items-start justify-center gap-4 lg:gap-0">
+              {service?.buildingTypes.map((location, index) => (
+                <p key={index} className="text-white text-base flex gap-2">
+                  <DotIcon /> {location}
+                </p>
+              ))}
+            </div>
           </div>
-          <button
-            onClick={() =>
-              setClientNum((clientNum + 1) % service.clientTypes.length)
-            }
-          >
-            <ChevronRight className="text-white" />
-          </button>
+          <div className="w-full lg:w-auto h-auto lg:h-[70vh]">
+            <img
+              src="/pics/Rectangle 52.png"
+              alt=""
+              className="w-full h-full object-contain rounded-xl filter grayscale shadow-custom"
+            />
+          </div>
         </div>
-      </div>
+
+        <div className="w-full flex flex-col justify-center items-center mb-12 px-16">
+          <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">
+            Service Areas
+          </h2>
+          <p className="text-[#89A096] font-semibold text-sm mb-4 text-center">
+            Serving All NYC Boroughs with Local Expertise
+          </p>
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 my-4">
+            {service?.locations.map((location, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center gap-2 my-4"
+                >
+                  <div className="rounded-full border-4 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
+                    <Image
+                      src={location.cityImage}
+                      alt={location.cityName}
+                      width={150}
+                      height={150}
+                      className="filter grayscale hover:grayscale-0 transition duration-300"
+                    />
+                  </div>
+                  <p className="text-white">{location.cityName}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className=" flex flex-col items-center gap-12 px-6 lg:px-16">
+          <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">
+            Who we serve
+          </h2>
+          <div className="slider-container w-full bg-[#2B3331] rounded-xl">
+            <Slider {...settings2}>
+             
+              {service?.clientTypes?.map((client, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="lg:py-6 lg:px-12 p-3 full"
+                  >
+                    <h4 className="text-white font-semibold text-lg">
+                      {index + 1 + "- " + client.title}
+                    </h4>
+                    <p className="text-base text-[#89A096]">
+                      {client.description}
+                    </p>
+                  </div>
+                );
+              })}
+
+            </Slider>
+          </div>
+        </div>
       </section>
 
       {/* Call to Action Section */}
@@ -313,7 +369,11 @@ const AboutPage = () => {
         <p className="max-w-2xl text-[#89A096] mx-auto font-semibold text-sm mb-4">
           {cta?.text}
         </p>
-        <CTA text={cta?.buttonText} href="#" styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-bold w-full lg:w-[50%] rounded-full mx-auto my-0" />
+        <CTA
+          text={cta?.buttonText}
+          href="#"
+          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-bold w-full lg:w-[50%] rounded-full mx-auto my-0"
+        />
       </section>
     </div>
   );

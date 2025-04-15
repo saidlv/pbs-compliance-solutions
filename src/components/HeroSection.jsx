@@ -35,13 +35,13 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className,
   }, [staggerVal]);
 
   return (
-    <section className="relative h-[45vh] md:[50vh] lg:h-[60vh] bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
+    <section className="relative h-[50vh] md:[60vh] lg:h-[80vh] bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: bgImage ? 1 : 0 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-        className={`absolute inset-0 bg-bottom bg-cover md:bg-top ${bgStyle}`} 
+        className={`absolute inset-0 ${bgStyle}`} 
         style={{ backgroundImage: `url(${bgImage || "/PBS%20Assets/Brand%20Language/placeholder.jpg"})` }}
         aria-hidden="true"
       ></motion.div>
