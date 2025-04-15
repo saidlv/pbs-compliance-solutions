@@ -99,7 +99,7 @@ const Solutions = () => {
                 height={100}
                 className="w-full h-32 object-cover rounded-xl mb-6"
               />
-              <h3 className="text-xl lg:text-2xl text-center font-conthrax font-semibold text-brand-light mb-4">
+              <h3 className="text-xl xl:text-2xl text-center font-conthrax font-semibold text-brand-light mb-4">
                 {item.title}
               </h3>
               <p className="text-brand-gray3 text-left text-sm font-poppins leading-relaxed">

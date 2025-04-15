@@ -35,16 +35,16 @@ const AboutPage = () => {
       </div>
 
       {/* The PBS Story Section */}
-      <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-white mb-12">
+      <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-white">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           {/* Story image in a circular background */}
-          <div className="relative w-full h-auto lg:w-1/2 flex justify-center items-center">
+          <div className="relative w-full h-[450px] lg:h-[550px] lg:w-1/2 flex justify-center items-end lg:items-start">
               <Image
                 src="/pics/Cloud-02.png"
                 alt="PBS"
-                width={605}
-                height={544}
-                className="filter grayscale object-contain"
+                width={705}
+                height={644}
+                className="filter w-full h-full grayscale object-cover md:object-contain lg:object-cover object-top drop-shadow-lg"
               />
           </div>
 
@@ -67,101 +67,70 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission Section */}
-      <div className="flex items-start justify-center lg:justify-evenly gap-12 flex-col lg:flex-row  text-white px-3 lg:px-16 mb-24">
-        {/* Vision Section */}
-        <section className="relative w-full">
-          <div className=" min-h-[600] text-center w-full py-6 px-5 rounded-lg bg-[#2B3331]">
-            <div className="flex items-start justify-start gap-3">
-            <img
-            src="/pics/Group 19.png"
-            alt="light"
-            className="w-16 h-16"
-          />
-          <div className="mb-3">
-          <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
-              Our Vision
-            </h2>
-            <p className="text-[#7A8E85] mb-3 text-left">{vision?.tagline}</p>
-            </div>
-          </div>
-           
-            <p className="text-white text-left text-lg">
-              {vision?.body}
-            </p>
-
-            <div className="text-left my-5">
-              <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
-                How We'll get there
-              </h2>
-              {(vision?.pillars || []).map((value, index) => (
-                <div key={index} className="text-white flex gap-2 mb-2">
-                  <Dot />
-                  <div className="flex justify-evenly w-full">
-                    <span className="w-[45%] text-white font-semibold text-base">
-                      {value.split(":")[0] + ":"}
-                    </span>
-                    <span className="w-[55%] text-[#7A8E85] text-base">
-                      {value.split(":")[1]}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Mission Section */}
-        <section className="relative w-full">
-          <div className=" min-h-[600] text-center w-full py-6 px-5 rounded-lg bg-[#2B3331]">
-            <div className="flex items-start justify-start gap-3">
-            <img
-            src="/pics/Layer_1.png"
-            alt="arrow"
-            className="w-14 h-14"
-          />
-          <div className="mb-3">
-          <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
-              Our Mission
-            </h2>
-            <p className="text-[#7A8E85] text-base text-left">{mission?.tagline}</p>
-            </div>
-            </div>
-            
-            
-            <p className="text-white text-lg text-left">
-              {mission?.body}
-            </p>
-
-            <div className="text-left my-5">
-              <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
-                How We'll get there
-              </h2>
-              {Object.entries(mission?.impacts || []).map(
-                ([key, value], index) => (
-                  <div key={index} className="text-white flex gap-0.5 mb-2">
-                    <Dot />
-                    <div className="flex justify-evenly gap-0.5 w-full">
-                      <span className="w-1/3 text-white font-semibold text-base">
-                        {key + ":"}
-                      </span>
-                      <span className="w-2/3 text-[#7A8E85] text-base">
-                        {value}
-                      </span>
-                    </div>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-        </section>
+      <div className="flex items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-white px-3 lg:px-16 pb-24">
+  {/* Vision Section */}
+  <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+    <div className="flex items-start justify-start gap-3">
+      <img src="/pics/Group 19.png" alt="light" className="w-16 h-16" />
+      <div className="mb-3">
+        <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
+          Our Vision
+        </h2>
+        <p className="text-[#7A8E85] mb-3 text-left">{vision?.tagline}</p>
       </div>
+    </div>
+    <p className="text-white text-left text-lg">{vision?.body}</p>
+    <div className="text-left my-5">
+      <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">How We'll get there</h2>
+      {(vision?.pillars || []).map((value, index) => (
+        <div key={index} className="text-white flex gap-2 mb-2">
+          <Dot />
+          <div className="flex justify-evenly w-full">
+            <span className="w-[45%] text-white font-semibold text-base">
+              {value.split(":")[0] + ":"}
+            </span>
+            <span className="w-[55%] text-[#7A8E85] text-base">
+              {value.split(":")[1]}
+            </span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Mission Section */}
+  <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+    <div className="flex items-start justify-start gap-3">
+      <img src="/pics/Layer_1.png" alt="arrow" className="w-14 h-14" />
+      <div className="mb-3">
+        <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
+          Our Mission
+        </h2>
+        <p className="text-[#7A8E85] text-base text-left">{mission?.tagline}</p>
+      </div>
+    </div>
+    <p className="text-white text-lg text-left">{mission?.body}</p>
+    <div className="text-left my-5">
+      <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">How We'll get there</h2>
+      {Object.entries(mission?.impacts || []).map(([key, value], index) => (
+        <div key={index} className="text-white flex gap-0.5 mb-2">
+          <Dot />
+          <div className="flex justify-evenly gap-0.5 w-full">
+            <span className="w-1/3 text-white font-semibold text-base">{key + ":"}</span>
+            <span className="w-2/3 text-[#7A8E85] text-base">{value}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
       {/* Redefining section */}
-      <section className="relative px-6 lg:px-6">
+      <section className="relative px-6 lg:px-6 pb-16">
         <Image
         src="/pics/pattern1.png"
         alt=""
-        className="opacity-35 w-full h-full object-contain rounded-xl filter grayscale shadow-custom absolute -top-24"
+        className="opacity-60 w-full h-full object-contain rounded-xl filter grayscale shadow-custom absolute -top-24"
         width={700}
         height={500}
         loading="lazy"
@@ -190,7 +159,7 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-[#37403D] py-10 px-6 md:px-12">
+      <section className="bg-[#37403D] pb-10 px-6 md:px-12">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-16">
           {/* Mission image */}
           <Image
