@@ -1,7 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { menuItems } from "./data";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 /**
  * HamburgerMenu Component
@@ -88,14 +90,31 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
     }
   };
 
+  const burgerRef = useRef(null);
+
+  useEffect(() => {
+    if (burgerRef.current) {
+      gsap.to(burgerRef.current, {
+        top: "35px", // lifts the hamburger up
+        scrollTrigger: {
+          trigger: burgerRef.current,
+          start: "top top", // Starts when the top of the header reaches the top of the viewport
+          end: "+=10", // Ends after scrolling 10px
+          scrub: true, // Smooth animation that follows scroll position
+        },
+      });
+    }
+  });
+
   return (
-    <div className="w-screen">
+    <div className="w-screen"> 
       {/* Hamburger Icon Button */}
       <button
         className="fixed top-[45px] right-12 z-50 flex flex-col items-end space-y-1"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
+        ref={burgerRef}
       >
         {/* Animated Hamburger Icon Bars */}
         {[30, 20, 30].map((width, index) => (

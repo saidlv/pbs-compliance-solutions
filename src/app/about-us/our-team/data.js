@@ -48,20 +48,30 @@ export const leadershipTeam = [
 
 export const projectManagers = [
     {
-        name: "Uzair",
+        name: "Uzair Tariq",
         title: "Assistant Project Manager",
         description: "",
     },
     {
-        name: "Mahnoor",
+        name: "Mahnoor Jahangir",
         title: "Assistant Project Manager",
         description: "",
     },
     {
-        name: "Samia",
+        name: "Samia Saleemi",
         title: "Assistant Project Manager",
         description: "",
     },
+    {
+        name: "Bill",
+        title: "Onsite Project Manager",
+        description: "",
+    },
+    {
+        name: "Lucian",
+        title: "Assistant site Supervisor",
+        description: "",
+    }
 ];
 
 export const specialists = [

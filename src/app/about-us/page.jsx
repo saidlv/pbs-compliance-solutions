@@ -29,7 +29,7 @@ const AboutPage = () => {
       {/* Custom 'About Us' Label Divider */}
       <div className="w-screen relative mb-12">
         <div className="bg-[#8AD5B7] w-full text-white py-1" />
-        <div className="bg-[#8AD5B7] w-1/2 lg:w-1/4 absolute left-[25%] lg:left-[38%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl">
+        <div className="bg-[#8AD5B7] w-1/2 lg:w-1/3 absolute left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl">
           About Us
         </div>
       </div>
