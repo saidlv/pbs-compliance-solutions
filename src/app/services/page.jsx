@@ -2,8 +2,11 @@
 
 import HeroSection from "@/components/HeroSection";
 import { motion } from "framer-motion";
-import { Building, FileText, Rocket, Home } from "lucide-react";
+import { Building, FileText, Rocket, Home, DotIcon } from "lucide-react";
 import ExpandableSections from "./ExpandableSections"; // Import ExpandableSections
+import Image from "next/image";
+import CTA from "@/components/CTA2";
+import CTA2 from "@/components/CTA2";
 
 /**
  * @typedef {Object} Service
@@ -12,7 +15,7 @@ import ExpandableSections from "./ExpandableSections"; // Import ExpandableSecti
  * @property {string} description - Brief description of the service
  * @property {string[]} sections - Array of sections with detailed information
  * @property {string} cta - Call to action text (optional)
- */ 
+ */
 
 /**
  * Array of services offered by the company
@@ -23,45 +26,52 @@ import ExpandableSections from "./ExpandableSections"; // Import ExpandableSecti
  */
 const services = [
   {
+    id:1,
     title: "Owner Representatives",
-    icon: <Building className="w-12 h-12 text-brand-bright" />,
+    icon: "/pics/service1.png",
     description:
-      "We act as your voice in property management, advocating for your interests in compliance, inspections, and cost optimization.",
+      "We act as your voice in property management, advocating for your interests in compliance, inspections, and cost optimization. From liaising with contractors to resolving violations, we simplify complexity.",
     sections: [
-      "From liaising with contractors to resolving violations, we simplify complexity.",
-      "Key Features:\nLocal Law Compliance: Manage deadlines for LL11, LL126, and LL152.\nCost-Saving Strategies: Negotiate contractor rates and avoid fines.\nTransparent Reporting: Real-time updates via client portal.",
+      "Local Law Compliance: Manage deadlines for LL11, LL126, and LL152",
+      "\nCost-Saving Strategies: Negotiate contractor rates and avoid fines",
+      "\nTransparent Reporting: Real-time updates via client portal.",
     ],
     cta: "Learn more (redirect to Owner representation page)",
   },
   {
+    id:2,
     title: "Compliance Inspection Services",
-    icon: <FileText className="w-12 h-12 text-brand-bright" />,
+    icon: "/pics/service2.png",
     description:
       "Stay ahead of NYC’s stringent building codes with our certified inspections for facades, elevators, gas lines, and fire safety systems.",
     sections: [
-      "PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
-      "PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
+      ":PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
+      ":PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
     ],
   },
   {
+    id:3,
     title: "Expediting Services",
-    icon: <Rocket className="w-12 h-12 text-brand-bright" />,
+    icon: "/pics/service3.png",
     description:
-      "Fast-track permits and approvals for construction projects, renovations, and system upgrades.",
+      "Fast-track permits and approvals for construction projects, renovations, and system upgrades. PBS expedites the permit approval process, providing clients with a faster route to project completion, eliminating bottlenecks, and ensuring adherence to project timelines.",
     sections: [
-      "Overview:\nPBS expedites the permit approval process, providing clients with a faster route to project completion, eliminating bottlenecks, and ensuring adherence to project timelines.",
-      "Key Benefits:\nSpeed: 50% faster permit approvals vs. DIY filings.\nAccuracy: Error-free submissions to avoid rejections.\nFull-Service: DOB, FDNY, DOT, and zoning filings.",
+      "Speed: 50% faster permit approvals vs. DIY filings",
+      "\nAccuracy: Error-free submissions to avoid rejections",
+      "\nFull-Service: DOB, FDNY, DOT, and zoning filings.",
     ],
     cta: "Learn more about our range of Expediting services",
   },
   {
+    id:4,
     title: "Property Management",
-    icon: <Home className="w-12 h-12 text-brand-bright" />,
+    icon: "/pics/service4.png",
     description:
-      "End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
+      "End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
     sections: [
-      "Overview:\nEnd-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
-      "Key Features:\nFinancial Oversight: Rent collection, budgeting, and reporting.\nMaintenance: 24/7 emergency repairs and preventive care.\nLegal Compliance: Lease agreements and safety audits.",
+      "Financial Oversight: Rent collection, budgeting, and reporting.",
+      "\nMaintenance: 24/7 emergency repairs and preventive care.",
+      "\nLegal Compliance: Lease agreements and safety audits.",
     ],
   },
 ];
@@ -115,60 +125,87 @@ const Page = () => {
         </div>
       </div>
 
-
       {/* Services Grid Section */}
-      <section className="w-screen overflow-hidden relative bg-[#37403D] text-brand-midGray py-32 px-6 md:px-12 lg:px-24" style={{
-        backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}>
-        {/* Semi-transparent Background Image */}
-        {/* <div className="absolute inset-0 bg-[url('/PBS%20Assets/better-assets/Bg/Post%202%20a.webp')] bg-cover bg-center opacity-[0.07]"></div> */}
-
-        {/* Content Container */}
-        <div className="relative container mx-auto px-4 sm:px-8 md:p-32 lg:p-16 xl:px-16">
-          {/* Section Header with Animation */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
-          >
-            <h3 className="text-brand-bright font-semibold uppercase tracking-wide mb-2">
-              Our Services
-            </h3>
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+      <section
+        className="w-screen overflow-hidden relative bg-[#37403D] py-16 px-6 md:px-12 lg:px-16"
+        style={{
+          backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="w-full overflow-hidden relative">
+          {/* Moved title section here and fixed spacing */}
+          <div className="text-center my-2 mb-10 py-2">
+            <h1 className="text-[#DCE2E2] text-4xl font-conthrax tracking-widest mb-6">
               Comprehensive Property Services
             </h1>
-            <p className="text-brand-midGray max-w-xl mx-auto">
-              From compliance to management, we deliver end-to-end solutions for your property needs.
+            <p className="text-base font-poppins font-semibold px-10 text-[#DCE2E2] max-w-2xl mx-auto">
+              From compliance to management, we deliver end-to-end solutions for
+              your property needs.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Services Grid with Animated Cards and Green Border */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:pt-10">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                className="bg-brand-dark1 rounded-lg p-6 shadow-md border border-green-600 hover:border-brand-bright transition-all duration-300 text-center flex flex-col justify-center items-center gap-8 sm:w-[80%] md:w-[85%] lg:w-[90%] mx-auto"
-              >
-                {/* Service Icon */}
-                <div className="mb-4 text-2xl">{service.icon}</div>
-
-                {/* Service Title and Description */}
-                <div>
-                  <h2 className="text-xl font-bold text-white mb-2">
-                    {service.title}
-                  </h2>
-                  <p className="text-brand-midGray">{service.description}</p>
+          <div className="w-full flex flex-col items-center gap-6 sm:gap-8">
+            {services.map((service, index) => {
+              return (
+                <div
+                  key={index}
+                  className={`w-full flex flex-col md:${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center md:items-start justify-between gap-12 p-4`}
+                >
+                  <div className="w-full md:w-1/2 flex justify-center items-center">
+                    <Image
+                      src={service.icon}
+                      alt={service.title}
+                      width={100}
+                      height={100}
+                      priority
+                      className="md:w-full object-cover mix-blend-luminosity"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-4 w-full md:w-1/2">
+                    <h2 className="text-4xl font-semibold text-[#8AD5B7] font-conthrax">
+                      {service.title}
+                    </h2>
+                    <p className="text-[#89A096] text-base font-semibold">
+                      {service.description}
+                    </p>
+                    <div className="flex gap-8 items-stretch">
+                      <div className={`w-1.5 bg-[#8AD5B7]`}></div>
+                      <ul>
+                        {service.sections.map((section, idx) => {
+                          return (
+                            <li
+                              key={idx}
+                              className="text-[#DCE2E2] text-base font-semibold mb-2"
+                            >
+                               <h4 className="text-sm font-semibold">
+                                {service.id !== 2 ? (section?.split(":")[0] + ": ") : ""}
+                              </h4>
+                              <p className="flex gap-3 test-xs font-semibold text-[#89A096]">
+                              {service.id !== 2 && <DotIcon />}
+                                <span>{section?.split(":")[1]}</span>
+                              </p>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                    <CTA2  text="Read More..."
+                    isArrow  = {false}
+                href="/tutorial"
+                styling="w-2/5 rounded-xl mt-3 h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax"/>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              );
+            })}
+          </div>
+          <div className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mb-6`}></div>
+
+          <div className="text-[#DCE2E2] text-center">
+            <h4 className="text-4xl font-semibold font-conthrax mb-6">We Serve Across NYC’s Departments</h4>
+            <p className="text-base font-semibold max-w-3xl mx-auto">We don't only deal with these departments for your Alerts but we also deal with these departments for your permitting and inspection work
+            </p>
           </div>
         </div>
       </section>
