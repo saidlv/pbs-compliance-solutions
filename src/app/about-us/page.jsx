@@ -77,7 +77,7 @@ const AboutPage = () => {
 
       {/* The PBS Story Section */}
       <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-white">
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+        <div className="mt-16 flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
           {/* Story image in a circular background */}
           <div className="relative w-full h-[480px] xl:h-[530px] md:w-1/3 xl:w-1/2 flex justify-center items-start">
             <Image
