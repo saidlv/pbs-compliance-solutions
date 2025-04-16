@@ -43,7 +43,7 @@ const Page = () => {
         <div className="container mx-auto">
           {/* Moved title section here and fixed spacing */}
           <div className="text-center my-2 mb-10 py-2">
-            <h3 className="text-[#DCE2E2] text-xl font-poppins tracking-widest mb-3">
+            <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3">
               <span className="uppercase">The PBS Promise:</span> Six Pillars of
               Excellence
             </h3>

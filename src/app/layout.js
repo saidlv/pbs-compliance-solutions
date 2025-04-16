@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/icon.png" />
       </head>
       <body
-        className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased`}
+        className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased overflow-x-hidden`}
       >
         <MenuProvider>
           <CustomErrorBoundary>

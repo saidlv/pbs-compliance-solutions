@@ -18,6 +18,9 @@ export default {
           'custom': '3px 5px 16.6px 2px #00000040', // Custom shadow
         },
       },
+      mixBlendMode: {
+        luminosity: 'luminosity',
+      },
       colors: {
         // Directly using the colors from your image
         'brand-dark': '#38403e',
