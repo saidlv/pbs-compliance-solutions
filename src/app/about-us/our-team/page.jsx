@@ -19,12 +19,13 @@ const Page = () => {
         isLine={true}
         className="font-conthrax"
         bgStyle="bg-top md:bg-bottom bg-cover"
+        textStyle="text-xl font-semibold"
       />
 
       {/* Custom 'About Us' Label Divider */}
       <div className="w-[100vw] relative">
-        <div className="bg-[#8AD5B7] w-full text-white py-1" />
-        <div className="bg-[#8AD5B7] w-1/2 lg:w-1/3 absolute left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl">
+        <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
+        <div className="bg-[#8AD5B7] w-[60%] sm:w-1/2 lg:w-1/3 absolute left-[20%] sm:left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
           Our Team
         </div>
       </div>
@@ -46,7 +47,7 @@ const Page = () => {
               {leadershipTeam.map((member, index) => (
                 <motion.div
                   key={index}
-                  className={`w-full h-[175px] bg-[#1E2322] flex items-center justify-start gap-3 xl:gap-8 box-border p-3 rounded-2xl md:rounded-full ${
+                  className={`w-full md:h-[30vh] lg:h-[40vh] xl:h-[35vh] bg-[#1E2322] flex items-center justify-start gap-3 xl:gap-8 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
                     index === leadershipTeam.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
@@ -58,8 +59,8 @@ const Page = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                  <div className="w-full pr-6 flex flex-col items-start justify-center gap-1">
+                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full lg:h-2/3 xl:h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+                  <div className="w-full md:pr-6 flex flex-col items-start justify-center gap-1">
                     <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                       {member.name}
                     </h3>

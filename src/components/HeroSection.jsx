@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 
-const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className, isLine = false, bgStyle = ""}) => {
+const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0.15, className, isLine = false, bgStyle = ""}) => {
   const [bgImage, setBgImage] = useState("");
   const textRef = useRef(null);
 
@@ -35,7 +35,7 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className,
   }, [staggerVal]);
 
   return (
-    <section className="relative h-[50vh] md:[60vh] lg:h-[80vh] bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
+    <section className="relative h-[60vh] md:[60vh] lg:h-[70vh] bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -48,13 +48,13 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className,
 
       {/* Content Wrapper */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center max-w-5xl mx-auto"
+        className="relative z-10 flex flex-col items-center justify-center max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <motion.h1
-          className={`text-4xl md:text-6xl font-bold mb-6 ${className || ""}`}
+          className={`text-3xl md:text-6xl font-bold mb-6 ${className || ""}`}
           ref={textRef}
           style={{
             wordBreak: "keep-all",
@@ -66,12 +66,12 @@ const HeroSection = ({ heading, text, button, img, staggerVal = 0.15, className,
         </motion.h1>
 
         {isLine && ( 
-          <div className="w-[30%] mb-6 bg-[#8AD5B7] rounded-full h-1"></div>
+          <div className="w-[50%] lg:w-[30%] mb-6 bg-[#8AD5B7] rounded-full h-1"></div>
         )}
 
         {text && (
           <motion.p
-            className="text-lg text-gray-300 mb-6 max-w-4xl"
+            className={`text-lg text-[#DCE2E2] mb-6 max-w-4xl ${textStyle}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >

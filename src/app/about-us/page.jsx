@@ -63,14 +63,14 @@ const AboutPage = () => {
         heading="Built by New Yorkers, For New York"
         text="For Decades, we’ve followed the rules of Inspection, Expediting and portfolio management, Not as Outsiders, but as neighbors, collaborators, and guardians of this city’s skyline."
         className="font-conthrax max-w-4xl"
-        bgStyle="bg-top md:bg-bottom bg-cover"
+        bgStyle="bg-top md:bg-top bg-cover"
         img="/pics/COVER 1.png"
       />
 
       {/* Custom 'About Us' Label Divider */}
-      <div className="w-screen relative mb-12">
-        <div className="bg-[#8AD5B7] w-full text-white py-1" />
-        <div className="bg-[#8AD5B7] w-1/2 lg:w-1/3 absolute left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl">
+      <div className="w-[100vw] relative">
+        <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
+        <div className="bg-[#8AD5B7] w-[60%] sm:w-1/2 lg:w-1/3 absolute left-[20%] sm:left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
           About Us
         </div>
       </div>

@@ -15,21 +15,7 @@ export const coreValues = [
       `Streamline Processes: Eliminate bottlenecks with pre-emptive planning.`,
       `Cost Savings: Avoid delays that blow budgets.`
     ],
-    icon: (
-      <svg
-        className="w-12 h-12 text-[#00FF85]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-        />
-      </svg>
-    ),
+    icon: "/pics/Isolation_Mode (4).png"
   },
   {
     id: 2,
@@ -41,21 +27,7 @@ export const coreValues = [
         `Risk Mitigation`,
         `Consultation & Owner representation`
       ],
-    icon: (
-      <svg
-        className="w-12 h-12 text-[#00FF85]"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-        />
-      </svg>
-    ),
+    icon: "/pics/Layer_1 (2).png"
   },
 
 ];
@@ -73,7 +45,7 @@ export const features = [
     id: 1,
     title: "Preventative Solutions",
     tagline: "Proactive Protection for your project",
-
+    img: "/pics/Isolation_Mode.png",
     description: [
       `Anticipate Risks: Identify compliance hurdles before they derail timelines`,
       `Streamline Processes: Eliminate bottlenecks with pre-emptive planning.`,
@@ -98,7 +70,7 @@ export const features = [
   {
     id: 2,
     title: "Total Transparency",
-
+    img: "/pics/Isolation_Mode (2).png",
     tagline: "Clarity you can trust, 24/7.",
     description: [
       `Real - Time Client Portal: We prioritize your pet's safety and comfort, providing a nurturing and secure setting for them to thriv.`,
@@ -127,6 +99,7 @@ export const features = [
     id: 3,
     title: "Dependability",
     tagline: "Your Project, Our Obsession",
+    img: "/pics/Isolation_Mode (1).png",
     description: [
       `Meticulous Inspections: Routine checks + hidden risk assessments.`,
       `Emergency Response: 24/7 support for unexpected challenges.`,
@@ -153,6 +126,7 @@ export const features = [
     id: 4,
     title: "No-Excuse Accountability",
     tagline: 'Your Project, Our Obsession',
+    img: "/pics/Isolation_Mode (3).png",
     description: [
       `On-Time Guarantee: Late delivery? We cover penalties`,
       `Rigorous Quality Checks: Triple-verified compliance.`,
@@ -179,6 +153,7 @@ export const features = [
     id: 5,
     title: "Smarter Connection",
     tagline: 'Tailored to You, Controlled by You.',
+    img: "/pics/Group 30.png",
     description: [
       `Priority Alerts: Choose updates for inspections, approvals, or emergencies`,
       `Dedicated Liaison: Single point of contact for seamless coordination.`,
@@ -205,6 +180,7 @@ export const features = [
     id: 6,
     title: "Precision",
     tagline: 'Accuracy Meets Efficency',
+    img: "/pics/Layer_1 (1).png",
     description: [
       `Laser-Focused Expertise: Cut through complexity with ASME/DOB-certified pros.`,
       `Proactive Streamlining: Accelerate timelines by resolving issues at the source.`,
