@@ -11,7 +11,7 @@ const Services = () => {
       <Image
         src="/pics/pattern1.png"
         alt="Background Image"
-        layout="fill"
+        fill
         className="absolute inset-0 z-0 object-cover opacity-100"
         priority={true}
         quality={100}

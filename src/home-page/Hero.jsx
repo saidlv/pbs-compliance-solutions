@@ -48,7 +48,7 @@ const Hero = () => {
               src="/pics/homebg.png"
               alt="Modern skyscrapers"
               className="w-full h-full object-cover z-0"
-              layout="fill"
+              fill
               priority={true}
               quality={100}
             />
