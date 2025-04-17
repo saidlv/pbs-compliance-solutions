@@ -13,7 +13,7 @@ export const aboutContent = [
         id: "our-vision",
         type: "vision",
         tagline: "Redefining Excellence in NYC Construction",
-        body: "We are committed to becoming the New York Metropolitan area's most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.",
+        body: "We are committed to becoming the New York Metropolitan area’s most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.",
         pillars: [
             "Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape",
             "Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level"
@@ -23,7 +23,7 @@ export const aboutContent = [
         id: "our-mission",
         type: "mission",
         tagline: "Building Futures, Delivering Certainty",
-        body: "At PBS, we exist to create mutual success. We deliver 'value for value' by uniting administrative precision, decades of construction mastery, and unparalleled craftsmanship—turning complex visions into reality, faster and clearer than anyone else.",
+        body: "At PBS, we exist to create mutual success. We deliver \"value for value\" by uniting administrative precision, decades of construction mastery, and unparalleled craftsmanship—turning complex visions into reality, faster and clearer than anyone else.",
         impacts: {
             "For Clients": "Transparent budgets, accelerated timelines, and a single point of accountability for your project's success",
             "teams & Partners": "Empowerment through training, cutting-edge tools, and collaborative support to perform at your peak",

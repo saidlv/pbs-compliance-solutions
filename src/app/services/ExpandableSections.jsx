@@ -17,7 +17,7 @@ import { mainSections, sections } from "./data";
  *
  * Each section displays a summary view initially and expands to show detailed information
  * including overview, importance, process steps, regulations, and FAQs when clicked.
- *
+ * 
  * @returns {JSX.Element} The rendered SectionList component
  */
 const SectionList = () => {
@@ -124,7 +124,7 @@ const SectionList = () => {
                 {/* Section Card Header - Always Visible */}
                 <motion.div
                   layout
-                  className={`flex flex-col lg:flex-row items-center md:mx-auto justify-center xl:gap-16 bg-brand-dark1 rounded-lg shadow-lg overflow-hidden rounded-full`}
+                  className={`flex flex-col lg:flex-row items-center md:mx-auto justify-center xl:gap-16 bg-brand-dark1 shadow-lg overflow-hidden rounded-full`}
                 >
                   {/* Section Image */}
                   <div className="w-full lg:w-2/5 2xl:w-1/5 h-48 lg:h-64">

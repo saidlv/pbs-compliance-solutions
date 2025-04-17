@@ -198,18 +198,13 @@ const AboutPage = () => {
           <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
 
           <p className="text-white text-lg font-semibold text-center mt-6">
-            We are committed to becoming the New York Metropolitan area's most
-            trusted partner in your Compliance, Expediting and consulting—where
-            growth harmonizes with mastery, and innovation elevates every
-            project from blueprint to completion.
+          We are committed to becoming the New York Metropolitan area's most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.
           </p>
           <p className="text-white flex font-semibold text-lg gap-3 mt-5">
-            <Dot /> Standardized Excellence: Meticulous, end-to-end project
-            management frameworks tailored to NYC's dynamic landscape
+            <Dot /> Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape
           </p>
           <p className="text-white flex font-semibold text-lg gap-3 mb-5">
-            <Dot /> Value-Driven Culture: Intentional collaboration,
-            data-powered decisions, and unwavering ownership at every level
+            <Dot /> Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level
           </p>
         </div>
       </section>

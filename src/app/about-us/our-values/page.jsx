@@ -21,8 +21,7 @@ const Page = () => {
     <div className="bg-[#37403D] min-h-screen overflow-hidden">
       <HeroSection
         heading="Building Compliance, Trust, and results in the heart of new york"
-        text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your 
-        project stays on time, on budget and above board."
+        text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your project stays on time, on budget and above board."
         className="text-3xl md:text-5xl font-conthrax font-semibold "
         img="/pics/Rectangle 123.png"
         isLine={true}
@@ -40,84 +39,77 @@ const Page = () => {
 
       {/* Fixed Section 1: Moved title outside the motion div */}
       <section className="bg-[#37403D] pt-10 pb-20 px-6 md:px-12 xl:px-16">
-        <div className="container mx-auto">
-          {/* Moved title section here and fixed spacing */}
-          <div className="text-center my-2 mb-10 py-2">
-            <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3">
-              <span className="uppercase">The PBS Promise:</span> Six Pillars of
-              Excellence
-            </h3>
-            <h1 className="lg:text-4xl text-3xl font-conthrax px-10 text-[#f3f4f6]">
-              Principles we hold are Built on Integrity, Driven by Excellence
-            </h1>
+  <div className="container mx-auto">
+    <div className="text-center my-2 mb-10 py-2">
+      <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3">
+        <span className="uppercase">The PBS Promise:</span> Six Pillars of Excellence
+      </h3>
+      <h1 className="lg:text-4xl text-3xl font-conthrax px-10 text-[#f3f4f6]">
+        Principles we hold are Built on Integrity, Driven by Excellence
+      </h1>
+    </div>
+
+    <motion.div
+      className="flex flex-col items-center gap-6 sm:gap-8"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      {features.map((feature, index) => (
+        <motion.div
+          key={index}
+          className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-4 sm:gap-6 lg:gap-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, delay: index * 0.1 }}
+        >
+          {/* Greenish Background Div with Image */}
+          <div className="hidden lg:flex lg:w-[25vw] lg:max-w-[400px] lg:aspect-square rounded-3xl bg-[#8AD5B7] justify-center items-center overflow-hidden">
+            <Image
+              src={feature.img}
+              alt={feature.title}
+              width={400}
+              height={400}
+              className="w-1/2 h-1/2 object-contain"
+            />
           </div>
 
-          <motion.div
-            className="flex flex-col items-center gap-6 sm:gap-8"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-4 sm:gap-6 lg:gap-8"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true, delay: index * 0.1 }}
-              >
-                {/* Greenish Background Div with Image (Hidden on smaller screens, Perfect Square on larger screens) */}
-                <div className="hidden lg:flex w-full lg:w-[300px] flex-shrink-0 h-auto lg:h-[300px] rounded-3xl bg-[#8AD5B7] justify-center items-center overflow-hidden">
-                  <Image
-                    src={feature.img}
-                    alt={feature.title}
-                    width={400}
-                    height={400}
-                    className="w-1/2 h-1/2 object-contain"
-                  />
+          {/* Dark Background Div */}
+          <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-start lg:items-center text-left rounded-3xl bg-[#1E2322] p-4 xl:p-6 box-border shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
+              <h2 className="text-xl sm:text-2xl xl:text-4xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
+                {feature.title}
+              </h2>
+              <p className="w-full text-center lg:text-left text-sm sm:text-base font-semibold text-[#DCE2E2]">
+                {feature.tagline}
+              </p>
+            </div>
+
+            <div className="w-full lg:w-[2%] flex justify-center items-center mb-4 lg:mb-0">
+              <div className="w-full lg:w-2 h-1 lg:h-52 bg-[#D9D9D9] rounded-full"></div>
+            </div>
+
+            <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3">
+              {feature.description.map((item, index) => (
+                <div className="text-[#DCE2E2]" key={index}>
+                  <h4 className="flex justify-start items-center text-sm sm:text-base pb-1 sm:pb-2">
+                    <DotIcon className="text-[#DCE2E2]" />
+                    <span className="font-semibold">{item.split(":")[0]}</span>
+                  </h4>
+                  <p className="text-xs font-semibold text-[#89A096] mb-2 pl-5">
+                    {item}
+                  </p>
                 </div>
-
-                {/* Dark Background Div */}
-                <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-start lg:items-center text-left rounded-3xl bg-[#1E2322] p-4 xl:p-6 h-auto lg:h-[300px] box-border shadow-lg hover:shadow-xl transition-all duration-300">
-                  {/* Title and Tagline */}
-                  <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
-                    <h2 className="text-xl sm:text-2xl xl:text-4xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
-                      {feature.title}
-                    </h2>
-                    <p className="w-full text-center lg:text-left text-sm sm:text-base font-semibold text-[#DCE2E2]">
-                      {feature.tagline}
-                    </p>
-                  </div>
-
-                  {/* Divider */}
-                  <div className="w-full lg:w-[2%] flex justify-center items-center mb-4 lg:mb-0">
-                    <div className="w-full lg:w-2 h-1 lg:h-52 bg-[#D9D9D9] rounded-full"></div>
-                  </div>
-
-                  {/* Description List */}
-                  <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3">
-                    {feature.description.map((item, index) => (
-                      <div className="text-[#DCE2E2]" key={index}>
-                        <h4 className="flex justify-start items-center text-sm sm:text-base pb-1 sm:pb-2">
-                          <DotIcon className="text-[#DCE2E2]" />
-                          <span className="font-semibold">
-                            {item.split(":")[0]}
-                          </span>
-                        </h4>
-                        <p className="text-xs font-semibold text-[#89A096] mb-2 pl-5">
-                          {item}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* Fixed Section 2: Why pillars matter */}
       <motion.section

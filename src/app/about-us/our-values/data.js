@@ -11,15 +11,15 @@ export const coreValues = [
     id: 1,
     title: "",
     description: [
-      `Anticipate Risks: Identify compliance hurdles before they derail timelines`,
-      `Streamline Processes: Eliminate bottlenecks with pre-emptive planning.`,
-      `Cost Savings: Avoid delays that blow budgets.`
+      "Anticipate Risks: Identify compliance hurdles before they derail timelines",
+      "Streamline Processes: Eliminate bottlenecks with pre-emptive planning",
+      "Cost Savings: Avoid delays that blow budgets",
     ],
     icon: "/pics/Isolation_Mode (4).png"
   },
   {
     id: 2,
-    title: "We Don’t Just Meet Standards—We Redefine Them",
+    title: "We Don’t Just Meet Standards We Redefine Them",
     description:
       [
         `Construction Compliance`,
@@ -47,9 +47,9 @@ export const features = [
     tagline: "Proactive Protection for your project",
     img: "/pics/Isolation_Mode.png",
     description: [
-      `Anticipate Risks: Identify compliance hurdles before they derail timelines`,
-      `Streamline Processes: Eliminate bottlenecks with pre-emptive planning.`,
-      `Cost Savings: Avoid delays that blow budgets.`
+      `Anticipate Risks: We Identify potential compliance hurdles (Permits, regulations) before they derail timelines.`,
+      `Streamline Processes: We optimize workflows through pre-emptive planning to eliminate bottlenecks.  `,
+      `Cost Savings: To prevent budget overruns we address risks before they escalate or blow your budgets.`
     ],
     // icon: (
     //   <svg
@@ -73,9 +73,10 @@ export const features = [
     img: "/pics/Isolation_Mode (2).png",
     tagline: "Clarity you can trust, 24/7.",
     description: [
-      `Real - Time Client Portal: We prioritize your pet's safety and comfort, providing a nurturing and secure setting for them to thriv.`,
-      `Daily Progress Reports: Track inspections, permits, and approvals.`,
-      `Open Communication: Weekly check-ins with your dedicated team.`,
+      `Real - Time Client Portal:Instant access to project updates, documents, and compliance milestones.  `,
+      `Daily Progress Reports: Track inspections, permits, and approvals in real time  `,
+      `Open Communication: Weekly check-ins with your dedicated team to ensure alignment
+Full visibility into project status at all times, never wonder about the status of your project again.`,
 
     ]
     ,
@@ -101,9 +102,10 @@ export const features = [
     tagline: "Your Project, Our Obsession",
     img: "/pics/Isolation_Mode (1).png",
     description: [
-      `Meticulous Inspections: Routine checks + hidden risk assessments.`,
-      `Emergency Response: 24/7 support for unexpected challenges.`,
-      `Trusted Expertise: 15+ years safeguarding NYC projects.`,
+      `Meticulous Inspections:Routine checks + hidden risk assessments to catch issues early  `,
+      `Emergency Response:24/7 support for unexpected challenges.  `,
+      `Trusted Expertise: 30+ years of experience navigating NYC’s complex compliance landscape.
+Consider it done as we handle the obvious and the Over-Looked through our comprehensive coverage of all project aspects `,
 
     ],
     // icon: (
@@ -128,10 +130,9 @@ export const features = [
     tagline: 'Your Project, Our Obsession',
     img: "/pics/Isolation_Mode (3).png",
     description: [
-      `On-Time Guarantee: Late delivery? We cover penalties`,
-      `Rigorous Quality Checks: Triple-verified compliance.`,
-      `Budget Discipline: Zero hidden fees.`,
-
+      `On-Time Guarantee: Late delivery? We cover penalties.  `,
+      `Rigorous Quality Checks: Triple-verified compliance to avoid rework  `,
+      `Budget Discipline: Fixed pricing with zero hidden fees`,
     ],
     // icon: (
     //   <svg
@@ -155,9 +156,10 @@ export const features = [
     tagline: 'Tailored to You, Controlled by You.',
     img: "/pics/Group 30.png",
     description: [
-      `Priority Alerts: Choose updates for inspections, approvals, or emergencies`,
-      `Dedicated Liaison: Single point of contact for seamless coordination.`,
-      `No Spam, Ever: Only what matters to your project.`,
+      `Priority Alerts:Choose updates for inspections, approvals, or emergencies. Customize your updates based on your needs`,
+      `Dedicated Liaison:Single point of contact for seamless coordination.  `,
+      `No Spam, Ever: Only what matters to your project and actionable updates
+Informed, never overwhelmed as you will control the frequency and type of communication`,
 
     ],
     // icon: (
@@ -182,9 +184,9 @@ export const features = [
     tagline: 'Accuracy Meets Efficency',
     img: "/pics/Layer_1 (1).png",
     description: [
-      `Laser-Focused Expertise: Cut through complexity with ASME/DOB-certified pros.`,
-      `Proactive Streamlining: Accelerate timelines by resolving issues at the source.`,
-      `Compliant Solutions: Pass inspections on the first try.`,
+      `Focused Expertise: Cut through complexity with ASME/DOB-certified professionals `,
+      `Proactive Streamlining: We solve issues at their root to accelerate timelines.`,
+      `Compliant Solutions: Guaranteed first-time approval for inspections.`,
 
     ],
     // icon: (

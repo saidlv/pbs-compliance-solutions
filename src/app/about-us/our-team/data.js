@@ -10,12 +10,12 @@ export const leadershipTeam = [
         description: "A Strategic & Visionary Leader in PBS, Ali oversees PBS’s operational excellence and brings passion & strategic insight to PBS, her dedication to innovation and teamwork drives the company’s mission to Life.",
     },
     {
-        name: "Amanda",
+        name: "Amanda Rojas",
         title: "Construction manager & Head Expediting Consultant",
         description: "Amanda Leads complex NYC projects with a focus on Code compliance and deadline mastery, As Head Expediting Consultant, she navigates DOB Hurdles, Securing approvals faster than industry averages.",
     },
     {
-        name: "Ehsan",
+        name: "Ehsan Akram",
         title: "Finance Manager, Operations Manager",
         description: "Ehsan Bridges financial rigor with operational efficiency, managing budgets, cost optimizations and cross-department workflows.",
     },
@@ -48,6 +48,16 @@ export const leadershipTeam = [
 
 export const projectManagers = [
     {
+        name: "Bill",
+        title: "Onsite Project Manager",
+        description: "",
+    },
+    {
+        name: "Lucian",
+        title: "Assistant site Supervisor",
+        description: "",
+    },
+    {
         name: "Uzair Tariq",
         title: "Assistant Project Manager",
         description: "",
@@ -62,102 +72,87 @@ export const projectManagers = [
         title: "Assistant Project Manager",
         description: "",
     },
-    {
-        name: "Bill",
-        title: "Onsite Project Manager",
-        description: "",
-    },
-    {
-        name: "Lucian",
-        title: "Assistant site Supervisor",
-        description: "",
-    }
 ];
 
 export const specialists = [
+    {
+        name: "Amanda Rojas",
+        title: "Head Expediting Consultant",
+        description: "",
+    },
     {
         name: "Said",
         title: "Alert Service Specialist",
         description: "",
     },
     {
-        name: "Amanda",
-        title: "Head Expediting Consultant",
-        description: "Amanda as head consultant for expediting.",
-    },
-    {
-        name: "Sumayya",
+        name: "Sumayya Ahmad",
         title: "Oath Hearing/Violations & Filing Job Application Specialist",
-        description: "Sumayya as oath hearing/violations specialists, Filing job application specialists etc.",
+        description: "",
     },
     {
-        name: "Haania",
+        name: "Haania Zahoor",
         title: "Expeditor",
         description: "",
     },
     {
-        name: "Faizan",
+        name: "Faizan Ahmad",
         title: "Expeditor",
         description: "",
     },
     {
-        name: "Keyla",
-        title: "Front Desk Admin",
-        description: "",
-    },
-    {
-        name: "Karlis",
+        name: "Karlis Alejandra Chirino",
         title: "Construction Controller",
         description: "",
     },
     {
-        name: "Andrea",
+        name: "Andrea Estrada",
         title: "Admin Assistant",
         description: "",
     },
     {
-        name: "Nida",
+        name: "Nida Fatima",
         title: "Compliance Associate",
         description: "",
     },
     {
-        name: "Laiba",
+        name: "Laiba Aamir",
         title: "AP Assistant, Job Costing",
         description: "",
     },
     {
-        name: "Jannat",
+        name: "Jannat Amir",
         title: "AP Assistant, Expense Tracker",
         description: "",
     },
     {
-        name: "Heiba",
+        name: "Hieba Mustafa",
         title: "Staff Accountant, AR Associate",
         description: "",
     },
     {
-        name: "Ifrah",
+        name: "Ifrah Noor",
         title: "Senior Accountant",
         description: "",
     },
     {
-        name: "Zobia",
-        title: "Staff accountant, AP Associate",
+        name: "Zobia Naveed",
+        title: "Staff Accountant, AP Associate",
         description: "",
     },
     {
-        name: "Bill",
-        title: "Onsite Project Manager",
-        description: "",
-    },
-    {
-        name: "Lucian",
-        title: "Assistant Site Supervisor",
-        description: "",
-    },
-    {
-        name: "Aila",
+        name: "Ailla Nadeem",
         title: "Construction Admin/Purchaser",
+        description: "",
+    },
+    {
+        name: "Ans Ijaz",
+        title: "Branding & Social Media Designer",
+        description: "",
+    },
+    {
+        name: "Ali Aqdas",
+        title: "Digital Marketing Specialist",
         description: "",
     },
 ];

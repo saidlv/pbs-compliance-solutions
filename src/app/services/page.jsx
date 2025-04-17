@@ -1,12 +1,14 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
+import { services, sections, whyPBS } from "./data"; // Importing services data
 import { motion } from "framer-motion";
 import { Building, FileText, Rocket, Home, DotIcon } from "lucide-react";
-import ExpandableSections from "./ExpandableSections"; // Import ExpandableSections
 import Image from "next/image";
-import CTA from "@/components/CTA2";
 import CTA2 from "@/components/CTA2";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 /**
  * @typedef {Object} Service
@@ -24,57 +26,6 @@ import CTA2 from "@/components/CTA2";
  *
  * @type {Service[]}
  */
-const services = [
-  {
-    id:1,
-    title: "Owner Representatives",
-    icon: "/pics/service1.png",
-    description:
-      "We act as your voice in property management, advocating for your interests in compliance, inspections, and cost optimization. From liaising with contractors to resolving violations, we simplify complexity.",
-    sections: [
-      "Local Law Compliance: Manage deadlines for LL11, LL126, and LL152",
-      "\nCost-Saving Strategies: Negotiate contractor rates and avoid fines",
-      "\nTransparent Reporting: Real-time updates via client portal.",
-    ],
-    cta: "Learn more (redirect to Owner representation page)",
-  },
-  {
-    id:2,
-    title: "Compliance Inspection Services",
-    icon: "/pics/service2.png",
-    description:
-      "Stay ahead of NYC’s stringent building codes with our certified inspections for facades, elevators, gas lines, and fire safety systems.",
-    sections: [
-      ":PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
-      ":PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
-    ],
-  },
-  {
-    id:3,
-    title: "Expediting Services",
-    icon: "/pics/service3.png",
-    description:
-      "Fast-track permits and approvals for construction projects, renovations, and system upgrades. PBS expedites the permit approval process, providing clients with a faster route to project completion, eliminating bottlenecks, and ensuring adherence to project timelines.",
-    sections: [
-      "Speed: 50% faster permit approvals vs. DIY filings",
-      "\nAccuracy: Error-free submissions to avoid rejections",
-      "\nFull-Service: DOB, FDNY, DOT, and zoning filings.",
-    ],
-    cta: "Learn more about our range of Expediting services",
-  },
-  {
-    id:4,
-    title: "Property Management",
-    icon: "/pics/service4.png",
-    description:
-      "End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
-    sections: [
-      "Financial Oversight: Rent collection, budgeting, and reporting.",
-      "\nMaintenance: 24/7 emergency repairs and preventive care.",
-      "\nLegal Compliance: Lease agreements and safety audits.",
-    ],
-  },
-];
 
 /**
  * Services Page Component
@@ -104,15 +55,36 @@ const Page = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+  };
+
+  const settings2 = {
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+  };
+
   return (
     <div className="w-screen overflow-hidden">
       {/* Hero Section - Page Title and Introduction */}
       <HeroSection
         heading="Your Trusted Partner in Property Compliance, Safety, and Management"
-        text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your project stays on time, on budget and above board"
         className="font-conthrax max-w-4xl lg:max-w-5xl text-3xl lg:text-5xl font-semibold"
         bgStyle="bg-top md:bg-top bg-cover mix-blend-luminosity"
-        isLine={true}
+        isLine={false}
         textStyle="text-xl font-semibold"
         img="/pics/ServiceHeroBg.png"
       />
@@ -137,81 +109,344 @@ const Page = () => {
         <div className="w-full overflow-hidden relative">
           {/* Moved title section here and fixed spacing */}
           <div className="text-center my-2 mb-10 py-2">
-            <h1 className="text-[#DCE2E2] text-4xl font-conthrax tracking-widest mb-6">
-              Comprehensive Property Services
+            <h1 className="text-[#DCE2E2] text-4xl font-conthrax tracking-widest mb-4">
+            PBS delivers expert solutions 
             </h1>
             <p className="text-base font-poppins font-semibold px-10 text-[#DCE2E2] max-w-2xl mx-auto">
-              From compliance to management, we deliver end-to-end solutions for
-              your property needs.
+            to navigate NYC’s complex regulations, streamline operations, and protect your property investments.
             </p>
           </div>
 
-          <div className="w-full flex flex-col items-center gap-6 sm:gap-8">
+          <div className="w-[95%] flex flex-col items-center gap-6 sm:gap-16 mb-16">
             {services.map((service, index) => {
               return (
-                <div
-                  key={index}
-                  className={`w-full flex flex-col md:${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} items-center md:items-start justify-between gap-12 p-4`}
-                >
-                  <div className="w-full md:w-1/2 flex justify-center items-center">
-                    <Image
-                      src={service.icon}
-                      alt={service.title}
-                      width={100}
-                      height={100}
-                      priority
-                      className="md:w-full object-cover mix-blend-luminosity"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-4 w-full md:w-1/2">
-                    <h2 className="text-4xl font-semibold text-[#8AD5B7] font-conthrax">
-                      {service.title}
-                    </h2>
-                    <p className="text-[#89A096] text-base font-semibold">
-                      {service.description}
-                    </p>
-                    <div className="flex gap-8 items-stretch">
-                      <div className={`w-1.5 bg-[#8AD5B7]`}></div>
-                      <ul>
-                        {service.sections.map((section, idx) => {
-                          return (
-                            <li
-                              key={idx}
-                              className="text-[#DCE2E2] text-base font-semibold mb-2"
-                            >
-                               <h4 className="text-sm font-semibold">
-                                {service.id !== 2 ? (section?.split(":")[0] + ": ") : ""}
-                              </h4>
-                              <p className="flex gap-3 test-xs font-semibold text-[#89A096]">
-                              {service.id !== 2 && <DotIcon />}
-                                <span>{section?.split(":")[1]}</span>
-                              </p>
-                            </li>
-                          );
-                        })}
-                      </ul>
+                <div key={index}>
+                  <div
+                    className={`w-full flex flex-col md:${
+                      index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                    } items-center md:items-stretch lg:items-stretch justify-between gap-12 p-4 lg:p-6`}
+                  >
+                    <div className="w-full md:w-1/2 aspect-aquare flex justify-center items-center">
+                      <Image
+                        src={service.icon}
+                        alt={service.title}
+                        width={100}
+                        height={100}
+                        priority
+                        className="w-full md:h-full object-cover object-top-right mix-blend-luminosity rounded-[10%]"
+                      />
                     </div>
-                    <CTA2  text="Read More..."
-                    isArrow  = {false}
-                href="/tutorial"
-                styling="w-2/5 rounded-xl mt-3 h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax"/>
+                    <div className="flex flex-col gap-4 w-full md:w-1/2">
+                      <h2 className="text-3xl md:text-4xl font-semibold text-[#8AD5B7] font-conthrax w-4/5">
+                        {service.title}
+                      </h2>
+                      <p className="text-[#89A096] text-base font-semibold w-4/5">
+                        {service.description}
+                      </p>
+                      <div className="flex gap-8 items-stretch">
+                        <div className={`w-1.5 bg-[#8AD5B7]`}></div>
+                        <ul className="w-4/5">
+                          {service.sections.map((section, idx) => {
+                            return (
+                              <li
+                                key={idx}
+                                className="text-[#DCE2E2] text-base font-semibold mb-2"
+                              >
+                                <h4 className="text-base font-semibold">
+                                  {service.id !== 2
+                                    ? section?.split(":")[0] + ": "
+                                    : ""}
+                                </h4>
+                                <p className="flex gap-3 test-xs font-semibold text-[#89A096]">
+                                  {service.id !== 2 && <DotIcon />}
+                                  <span>{section?.split(":")[1]}</span>
+                                </p>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <CTA2
+                      text="Read More..."
+                      isArrow={false}
+                      href="/tutorial"
+                      styling={`w-full md:w-2/5 lg:w-1/5 mt-0 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax md:${
+                        index % 2 === 0
+                          ? "absolute left-[52%] top-0"
+                          : "absolute left-[2%] top-0"
+                      }`}
+                    />
                   </div>
                 </div>
               );
             })}
           </div>
-          <div className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mb-6`}></div>
+          <div
+            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-4 lg:mt-0 mb-6`}
+          ></div>
 
           <div className="text-[#DCE2E2] text-center">
-            <h4 className="text-4xl font-semibold font-conthrax mb-6">We Serve Across NYC’s Departments</h4>
-            <p className="text-base font-semibold max-w-3xl mx-auto">We don't only deal with these departments for your Alerts but we also deal with these departments for your permitting and inspection work
+            <h4 className="text-4xl font-semibold font-conthrax mb-6">
+              We Serve Across NYC’s Departments
+            </h4>
+            <p className="text-base font-semibold max-w-3xl mx-auto">
+              We don't only deal with these departments for your Alerts but we
+              also deal with these departments for your permitting and
+              inspection work
             </p>
           </div>
         </div>
       </section>
 
-      {/* Expandable Detailed Sections Component with service data */}
-      <ExpandableSections services={services} />
+      <section
+        className="w-screen overflow-hidden relative bg-[#37403D] py-16"
+        style={{
+          backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="w-full flex flex-col items-center gap-6 sm:gap-16">
+          {sections.map((section, index) => {
+            return (
+              <div key={index} className="flex flex-col gap-8 md:gap-16">
+                <div className="w-full py-8 px-16 bg-[#2E3734] mx-auto flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-16">
+                  <div className="w-full flex justify-center md:w-[40%] lg:w-[25%]">
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      width={100}
+                      height={100}
+                      priority
+                      className="w-[70%] md:w-full md:h-full object-cover object-top-right mix-blend-luminosity rounded-[10%]"
+                    />
+                  </div>
+
+                  <div className="w-full md:w-[50%] lg:w-[75%] flex flex-col gap-4">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl text-center md:text-left font-semibold font-conthrax text-[#8AD5B7]">
+                      {section.title}
+                    </h2>
+                    <p className="text-xl text-center md:text-left font-semibold text-[#89A096]">
+                      {section.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-0">
+                  {section.details.map((detail, idx) => {
+                    return (
+                      <div
+                        key={idx}
+                        className="flex items-stretch w-full md:w-1/2"
+                      >
+                        <div className="w-full flex flex-col md:justify-between gap-4">
+                          <div className="space-y-4">
+                            <h2 className="text-3xl  font-semibold text-[#8AD5B7]">
+                              {detail.title}
+                            </h2>
+                            <div>
+                              {detail.description.map((desc, index) => {
+                                return (
+                                  <p
+                                    key={index}
+                                    className="text-base text-[#89A096] font-semibold"
+                                  >
+                                    {desc}
+                                  </p>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                        {/* Add a white vertical line between the two sections, visible only in md and above */}
+                        {idx === 0 && (
+                          <div className="hidden md:block w-2 bg-white mx-8"></div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="w-[95%] px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-16 mt-16 mb-16 lg:mb-0">
+          <div className="w-full lg:w-[50%] flex items-start">
+            <Image
+              src="/pics/service-building.png"
+              alt="building"
+              width={600}
+              height={800}
+              priority
+              className="w-full h-auto object-cover object-top mix-blend-luminosity rounded-[10%]"
+            />
+          </div>
+
+          <div className="w-full lg:w-[50%] flex flex-col justify-center h-auto">
+            <div className="w-full h-auto flex items-start justify-between">
+              <div className="w-2 h-full bg-[#8AD5B7] mr-6"></div>
+              <div className="w-[90%] h-auto flex flex-col gap-6">
+                <h1 className="text-3xl text-center md:text-5xl lg:text-left font-semibold font-conthrax text-[#DCE2E2] tracking-wide uppercase">
+                  WHY PBS?
+                </h1>
+                <div className="text-base text-center lg:text-left text-[#DCE2E2] font-semibold space-y-2">
+                  <p>
+                    30+ Years of Experience: Trusted by NYC property owners.
+                  </p>
+                  <p>100% Compliance Rate: Zero fines for clients in 2023.</p>
+                  <p>
+                    Dedicated Support: Single point of contact for all services.
+                    Certified experts: Licensed inspectors familiar with NYC
+                    DOB, FDNY and other departments code.
+                  </p>
+                </div>
+                <div className="text-xl font-semibold text-[#DCE2E2] flex flex-col gap-2">
+                  <span>Ready to Simplify Property Compliance?</span>
+                  <span>Schedule a consultation with PBS today.</span>
+                </div>
+              </div>
+            </div>
+            <div className="w-full flex flex-col items-center gap-4 mt-8">
+              <CTA2
+                text="Get Started Now"
+                isArrow={false}
+                href="/tutorial"
+                styling={`w-full lg:w-2/3 mx-auto mt-0 rounded-full h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-xl font-conthrax `}
+              />
+              <p className="text-[#DCE2E2] text-base font-semibold">
+                Call Us: 914-316-6956
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#1E2322] w-full flex flex-col items-center py-16 px-6 md:px-12 lg:px-16">
+          <h2 className="text-3xl md:text-5xl mb-6 md:mb-10 font-semibold text-[#DCE2E2] font-conthrax text-center w-full">
+            TRUST SIGNALS{" "}
+          </h2>
+
+        
+<div className="hidden lg:block slider-container w-full rounded-xl overflow-hidden pt-16 max-h-[50vh] min-h-[20vh] lg:min-h-[30vh]">
+  <Slider {...settings}>
+    <div className="flex justify-center items-center ">
+      <img
+        src="/pics/service group 37.png"
+        alt="Slide 1"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center gap-4 ">
+      <img
+        src="/pics/serviceVector.png"
+        alt="Slide 2 - Vector"
+        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
+      />
+      <img
+        src="/pics/service group 46.png"
+        alt="Slide 2 - Group 46"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center gap-4 ">
+      <img
+        src="/pics/serviceVector.png"
+        alt="Slide 3 - Vector"
+        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
+      />
+      <img
+        src="/pics/service group 48.png"
+        alt="Slide 3 - Group 48"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center ">
+      <img
+        src="/pics/service group 40.png"
+        alt="Slide 4"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+   
+    <div className="flex justify-center items-center ">
+      <img
+        src="/pics/service group 42.png"
+        alt="Slide 6"
+        className="max-h-full max-w-full object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center">
+      <img
+        src="/pics/service group 43.png"
+        alt="Slide 7"
+        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
+      />
+    </div>
+  </Slider>
+</div>
+
+<div className="lg:hidden slider-container w-full rounded-xl overflow-hidden pt-16 max-h-[50vh] min-h-[20vh] lg:min-h-[30vh]">
+  <Slider {...settings2}>
+    <div className="flex justify-center items-center ">
+      <img
+        src="/pics/service group 37.png"
+        alt="Slide 1"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center gap-4 ">
+      <img
+        src="/pics/serviceVector.png"
+        alt="Slide 2 - Vector"
+        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
+      />
+      <img
+        src="/pics/service group 46.png"
+        alt="Slide 2 - Group 46"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center gap-4 ">
+      <img
+        src="/pics/serviceVector.png"
+        alt="Slide 3 - Vector"
+        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
+      />
+      <img
+        src="/pics/service group 48.png"
+        alt="Slide 3 - Group 48"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center ">
+      <img
+        src="/pics/service group 40.png"
+        alt="Slide 4"
+        className="max-h-full max-w-3xl object-contain mx-auto"
+      />
+    </div>
+   
+    <div className="flex justify-center items-center ">
+      <img
+        src="/pics/service group 42.png"
+        alt="Slide 6"
+        className="max-h-full max-w-full object-contain mx-auto"
+      />
+    </div>
+    <div className="flex justify-center items-center">
+      <img
+        src="/pics/service group 43.png"
+        alt="Slide 7"
+        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
+      />
+    </div>
+  </Slider>
+</div>
+        </div>
+      </section>
     </div>
   );
 };
