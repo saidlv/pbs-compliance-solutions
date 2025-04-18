@@ -272,20 +272,20 @@ const AboutPage = () => {
 
       {/* Service Area section */}
       <section className="px-6 lg:px-12">
-        <div className="w-full flex flex-col lg:flex-row justify-center items-center gap-8 mb-12">
+        <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-stretch gap-8 mb-12">
           {/* Left Content */}
-          <div className="bg-[#2B3331] rounded-xl flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-16 w-full lg:w-3/5 h-auto lg:h-[65vh] px-4 py-6">
-            <div className="h-auto lg:h-full flex flex-col items-center lg:items-start justify-between gap-6">
-              <h2 className="text-[#8AD5B7] font-extrabold text-5xl flex flex-col mb-4 lg:mb-0 gap-3">
+          <div className="bg-[#2B3331] rounded-[10%] flex flex-col lg:flex-row items-center justify-center gap-6 w-full lg:w-[55%] p-6">
+            <div className="w-full lg:w-[50%] flex flex-col items-start justify-start gap-6">
+              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-col mb-4 lg:mb-0 gap-3">
                 <span>Buildings</span> <span>We deal in:</span>
               </h2>
               <img
                 src="pics/world-map.png"
-                alt="map"
-                className="w-32 lg:w-auto h-auto"
+                alt="map" 
+                className="lg:w-auto h-auto"
               />
             </div>
-            <div className="w-full lg:w-2/5 flex flex-row flex-wrap lg:flex-col items-start justify-center gap-4 lg:gap-0">
+            <div className="w-full lg:w-[50%] flex flex-row flex-wrap lg:flex-col items-start justify-center gap-4 lg:gap-0">
               {service?.buildingTypes.map((location, index) => (
                 <p key={index} className="text-[#DCE2E2] text-base flex gap-2">
                   <DotIcon /> {location}
@@ -293,11 +293,13 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-auto h-auto lg:h-[70vh]">
-            <img
+          <div className="w-full lg:w-[45%] h-auto">
+            <Image
               src="/pics/Rectangle 52.png"
               alt=""
-              className="w-full h-full object-contain rounded-xl filter grayscale shadow-custom"
+              className="w-full h-full object-cover mix-blend-luminosity rounded-2xl"
+              width={500}
+              height={400}
             />
           </div>
         </div>
