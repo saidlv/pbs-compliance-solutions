@@ -145,7 +145,7 @@ const Alerts = () => {
           <div className="lg:pt-12 lg:pb-6 lg:w-[55%] flex flex-col justify-center lg:ml-12">
             <div ref={textRef} className="mb-8">
               <Heading
-                main="Alert System:"
+                main="Alert System"
                 subpart="Never Miss a Critical step for property again"
                 styling="mb-4 text-brand-light"
               />
@@ -161,10 +161,10 @@ const Alerts = () => {
                 <div className="flex flex-col justify-center"> 
                   <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-4"></div>
                   
-                  <span className="text-lg font-semibold font-conthrax text-white text-nowrap">
+                  <span className="text-lg font-semibold font-conthrax text-[#DCE2E2] text-nowrap">
                     SIGN UP 
                   </span>
-                  <span className="text-lg font-semibold text-white font-conthrax">BELOW </span>
+                  <span className="text-lg font-semibold text-[#DCE2E2] font-conthrax">BELOW </span>
                   </div>
               
                 
@@ -196,7 +196,7 @@ const Alerts = () => {
 
 <div className="text-2xl lg:text-3xl relative mt-8">
         <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl flex flex-col lg:flex-row items-center justify-between gap-4 w-full">
-      <p className="text-white w-full lg:w-3/4 font-poppins text-center lg:text-left">
+      <p className="text-[#DCE2E2] w-full lg:w-3/4 text-3xl font-medium font-poppins text-center lg:text-left">
         Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
       </p>
       

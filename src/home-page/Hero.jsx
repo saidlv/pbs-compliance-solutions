@@ -26,7 +26,7 @@ const Hero = () => {
 
   return (
     <div className="relative bg-brand-dark">
-      <div className="min-h-screen relative flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+      <div className="min-h-screen relative flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-between py-8 lg:px-16">
         {/* Background Image - Optional */}
 
           <motion.div
@@ -55,7 +55,7 @@ const Hero = () => {
           </motion.div>
           {/* Left Side - Image */}
         <motion.div
-          className="w-full lg:w-1/3 h-[500px] lg:h-[700px] flex items-end justify-start lg:justify-center relative z-20"
+          className="relative w-full md:w-3/5 flex justify-center items-start"
           initial={{ opacity: 0, y: 1000, scale: 0.95, x: 0 }}
           animate={{
             opacity: 1,
@@ -71,9 +71,9 @@ const Hero = () => {
           aria-hidden="true"
         >
           <Image
-            src="/pics/Building.png"
+            src="/pics/Cloud-02.png"
             alt="Modern skyscrapers"
-            className="w-full h-full object-cover md:object-contain lg:object-cover object-top"
+            className="filter w-full h-full grayscale object-cover md:object-cover object-top-right"
             width={700}
             height={500}
             loading="lazy"
@@ -82,7 +82,7 @@ const Hero = () => {
 
         {/* Right Side - Text Content */}
         <motion.div
-          className="z-20 w-full lg:w-2/3 flex flex-col justify-center items-start text-left mt-10 p-6 lg:p-10"
+          className="z-20 w-full lg:w-[65%] flex flex-col justify-center items-start text-left p-6 lg:px-10"
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.2 }}

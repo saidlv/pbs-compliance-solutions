@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"; // assuming you use a utility for className me
 
 const Services = () => {
   return (
-    <section className="relative text-white  px-16 text-center overflow-hidden">
+    <section className="relative text-[#DCE2E2]  px-16 text-center overflow-hidden">
       <Image
         src="/pics/pattern1.png"
         alt="Background Image"
@@ -22,19 +22,19 @@ const Services = () => {
 
         {/* Main Title */}
         <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax">
-          <span className="block text-2xl lg:text-4xl text-white">Introduction to</span>
-          <span className="block text-[#E4F3ED] font-extrabold mt-1">
+          <span className="block text-2xl lg:text-[40px]">Introduction to</span>
+          <span className="block font-extrabold mt-1">
             PROACTIVE BUILDING <br /> SOLUTIONS
           </span>
         </h2>
 
         {/* Subtitle */}
-        <p className="text-gray-300 mt-4 text-sm font-medium">
+        <p className="text-[#89A096] mt-4 text-sm font-semibold">
           Compliance Made Simple, Projects Done Right
         </p>
 
         {/* Description */}
-        <p className="text-gray-400 mt-6 text-sm leading-relaxed">
+        <p className="text-[#89A096] mt-6 text-sm leading-relaxed font-semibold">
           Proactive Building Solutions is a collaboration of its core team members and fellow New Yorkers, each representing a crucial subdivision that together form the foundation for the PBS network. PBS has honed the skills and built the relationships necessary to revolutionize the industry.
         </p>
 

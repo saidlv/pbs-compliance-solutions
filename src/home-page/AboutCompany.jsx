@@ -72,10 +72,10 @@ const AboutCompany = () => {
       <div className="container mx-auto px-6 pt-16 lg:px-12 flex flex-col lg:flex-row justify-between gap-8 lg:gap-8 bg-[#1E2322] bg-opacity-25 rounded-3xl  border-2 border-brand-gray1/50 pb-12 mb-16">
         {/* Left Side - Numbers That Matter */}
         <div className="lg:w-[55%] gsap-animate p-2">
-          <h2 className="text-lg lg:text-3xl font-conthrax font-semibold text-brand-light mb-3">
+          <h2 className="text-lg lg:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
             Numbers That Matter
           </h2>
-          <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-brand-gray3 text-sm">
+          <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-[#89A096] text-sm">
           Trusted by Hundred of clients, PBS has ensured 100% compliance success across all projects, leveraging 30+ years of expertise & issuing proactive alerts to safeguard timelines and standards
           </p>
           <div className="flex justify-center items-center bg-[#1E2322] rounded-2xl p-3 min-h-[40vh] lg:min-h-[46vh]">
@@ -95,16 +95,15 @@ const AboutCompany = () => {
         {/* Right Side */}
         <div className="lg:w-[45%] gsap-animate p-2">
           {/* What we Specialize in */}
-            <h2 className="text-sm md:text-2xl xl:text-3xl font-conthrax font-semibold text-brand-light mb-3">
+            <h2 className="text-sm md:text-2xl xl:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
               What we Specialize in
             </h2>
-            <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-brand-gray3">Precision Trust vision Transformation</p>
-            <div className="w-full flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between px-6 text-white  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl pt-8 pb-5 box-border">
+            <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-[#89A096]">Precision Trust vision Transformation</p>
+            <div className="w-full flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between px-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl pt-8 pb-5 box-border">
             <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 w-full lg:w-2/5 xl:w-3/5">
               {services.map((service, index) => (
-                <li key={index} className="flex justify-start items-start gap-3">
-                  <Dot/>
-                  <span className="text-sm">{service}</span>
+                <li key={index} className="flex justify-start items-start">
+                  <span className="text-sm font-semibold">{service}</span>
                 </li>
               ))}
             </ul>
@@ -119,12 +118,12 @@ const AboutCompany = () => {
 
       {/* Why NYC Trusts PBS? */}
  <div className="pb-16">
-            <h2 className="text-3xl text-center lg:text-4xl font-conthrax font-semibold text-brand-light mb-3">
+            <h2 className="text-3xl text-center lg:text-5xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
               Why NYC Trusts PBS?
             </h2>
                {/* Underline heading line */}
         <div className="w-[30%] h-1 bg-[#7CE2B8] mx-auto mb-8"></div>
-            <div className="text-white max-w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
+            <div className="text-[#D9D9D9] max-w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
               {reasons.map((reason, index) => (
                 <div key={index} className={`min-h-28 flex flex-col justify-center items-start gap-3 w-full  rounded-xl py-2 px-3 bg-[#2B3331] ${index === 6 ? "relative left-0 lg:left-[50%]":""} `}>
                   <p className="text-left text-sm font-extrabold">{reason.split(":")[0] + ":"}</p>

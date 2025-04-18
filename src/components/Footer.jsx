@@ -62,7 +62,7 @@ const Footer = () => {
    * Commented out background image implementation
    * Preserved for potential future use
    *
-   * <div className="text-white py-16 relative bg-cover bg-center"
+   * <div className="text-[#DCE2E2] py-16 relative bg-cover bg-center"
    * style={{
    *   backgroundImage: `url('/PBS Assets/Brand Language/sky-scraper-building-hong-kong-cityscape.jpg')`,
    *   // Mobile image as default
@@ -73,7 +73,7 @@ const Footer = () => {
    */
 
   return (
-    <div className="bg-brand-gray1 text-white py-10  lg:pb-0 lg:pt-10">
+    <div className="bg-brand-gray1 text-[#DCE2E2] py-10  lg:pb-0 lg:pt-10">
       
         <div className="md:w-[80vw] lg:w-full mx-auto">
           {/* Top Section - Menu Columns and Subscription Form */}
@@ -83,11 +83,11 @@ const Footer = () => {
               {menu.map((section) => (
                 <div key={section.title}>
                   <h3 className="text-lg font-bold mb-4">{section.title}</h3>
-                  <ul className="space-y-2 text-gray-400">
+                  <ul className="space-y-2 text-[#b9c0bf]">
                     {section.links.map((link, index) => (
                       <li
                         key={index}
-                        className="hover:text-white transition duration-300 flex gap-2 items-center text-sm"
+                        className="hover:text-[#DCE2E2] transition duration-300 flex gap-2 font-semibold items-center text-sm"
                       >
                         <DotIcon/>
                         <span className="cursor-pointer">{link}</span>
@@ -101,7 +101,7 @@ const Footer = () => {
             {/* Subscribe Section - Hidden on medium screens, visible on small and large screens */}
             <div className="w-full lg:w-[30%] flex flex-col items-center md:items-start mx-auto my-8 md:block">
               <h3 className="text-2xl font-semibold mb-4 text-center">Subscribe</h3>
-              <p className="text-white mb-4 text-sm text-center">
+              <p className="text-[#DCE2E2] mb-4 font-semibold text-sm text-center">
                 Join our community to receive updates
               </p>
               {/* Email Subscription Form */}
@@ -115,12 +115,12 @@ const Footer = () => {
                 />
                 <button
                   type="submit"
-                  className="relative -left-8 px-6 py-2 bg-brand-green3 text-white rounded-full hover:bg-[#8AD5B7] transition duration-300"
+                  className="relative -left-8 px-6 py-2 bg-brand-green3 text-[#DCE2E2] rounded-full hover:bg-[#8AD5B7] transition duration-300"
                 >
                   Subscribe
                 </button>
               </form>
-              <p className="text-sm text-white mt-2 text-center">
+              <p className="text-sm font-semibold text-[#DCE2E2] mt-2 text-center">
                 By subscribing, you agree to our Privacy Policy
               </p>
             </div>
@@ -143,61 +143,61 @@ const Footer = () => {
             </div>
 
             {/* Copyright Notice - Automatically updates with current year */}
-            <p className="text-center text-sm text-white ">
+            <p className="text-center text-sm text-[#b9c0bf] font-semibold">
               © {new Date().getFullYear()} PBS NYC. All rights reserved
             </p>
 
             {/* Social Icons - Commented out but preserved for future use
-            <div className="flex items-center gap-4 text-gray-400">
+            <div className="flex items-center gap-4 text-[#b9c0bf]">
               <a
                 href="#"
                 aria-label="Facebook"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
               >
                 <i className="fab fa-facebook-f"></i>
               </a>
               <a
                 href="#"
                 aria-label="Twitter"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
               >
                 <i className="fab fa-twitter"></i>
               </a>
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
               >
                 <i className="fab fa-linkedin-in"></i>
               </a>
               <a
                 href="#"
                 aria-label="YouTube"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
               >
                 <i className="fab fa-youtube"></i>
               </a>
             </div> */}
 
             {/* Privacy Links - Terms, Privacy, and Cookie policies */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400 mt-4 md:mt-0">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-[#b9c0bf] mt-4 md:mt-0">
               <a
                 href="#"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
                 aria-label="View Privacy Policy"
               >
                 Privacy Policy
               </a>
               <a
                 href="#"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
                 aria-label="View Terms of Service"
               >
                 Terms of Service
               </a>
               <a
                 href="#"
-                className="hover:text-white transition duration-300"
+                className="hover:text-[#DCE2E2] transition duration-300"
                 aria-label="View Cookie Policy"
               >
                 Cookie Policy
