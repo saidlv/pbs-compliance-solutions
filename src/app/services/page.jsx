@@ -284,7 +284,7 @@ const Page = () => {
         </div>
 
         {/* why PBS */}
-        <div className="w-full px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-8 lg:gap-10 mt-10 mb-10 lg:mb-0 lg:h-[120vh]">
+        <div className="w-full px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-8 lg:gap-10 mt-10 mb-10 lg:mb-0 lg:h-screen">
           <div className="w-full lg:w-[45%] flex items-start">
             <Image
               src="/pics/service-building.png"
@@ -296,7 +296,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[55%] flex flex-col justify-end h-full py-10">
+          <div className="w-full lg:w-[55%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
             <div className="w-full h-auto flex items-start justify-between">
               <div className="w-2 h-full bg-[#8AD5B7] mr-6"></div>
               <div className="w-[90%] h-auto flex flex-col gap-6">
