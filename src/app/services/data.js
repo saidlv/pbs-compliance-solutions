@@ -87,7 +87,7 @@ export const sections = [
     title: "DOB",
     description: `The DOB maintains strict oversight over all constructions, renovations, and occupancy processes in NYC. From structural work to inspections, even minor oversights can trigger violations. Proper documentation and scheduling are essential for seamless project execution and long-term compliance.`,
     image:
-      "/pics/service-section3.png",
+      "/pics/service section3-2.png",
     details: [
       {
         title: "Consequences of overlooking Compliance",
@@ -110,7 +110,7 @@ export const sections = [
     title: "ECB",
     description: `The Environmental Control Board, otherwise known as OATH, handles hearings for over a dozen NYC agencies, including DOB, DOT, FDNY, and more. Many building owners aren’t aware that missing just one hearing can result in default penalties, liens, or added fees. It's essential to have a structured system to track and respond to ECB notices.`,
     image:
-      "/pics/service-section3.png",
+      "/pics/service section-3-3.png",
     details: [
       {
         title: "What Can Go Wrong",
@@ -133,7 +133,7 @@ export const sections = [
     title: "FDNY",
     description: `FDNY Compliance isn’t just legal–it’s about life safety. Fire suppression systems, emergency exits, and alarms must meet evolving codes. The Fire Department has many certificates, permits, and periodic inspection requirements. The department's major requirements include, but are not limited to, a five-year sprinkler flow test, annual backflow inspections, fire alarm approvals, Certificates of Fitness, letters of approval, and Certificates of Corrections.`,
     image:
-      "/pics/service-section3.png",
+      "/pics/service section-3-4.png",
     details: [
       {
         title: "Impact of Non-Compliance",
@@ -156,7 +156,7 @@ export const sections = [
     title: "HPD",
     description: `The Housing Preservation & Development violations often stem from tenant complaints or random inspections. The department emphasizes safe, livable conditions in multifamily housing. HPD requires annual registration with many codes to abide by.`,
     image:
-      "/pics/service-section3.png",
+      "/pics/service section3-5.png",
     details: [
       {
         title: "Why It Matters",
@@ -179,7 +179,7 @@ export const sections = [
     title: "DOT",
     description: `The Department of Transportation controls access to public spaces like streets and sidewalks. Whether it's placing a dumpster, installing a scaffold, or fixing a curb, proper DOT permits and compliance documentation are mandatory.`,
     image:
-      "/pics/service-section3.png",
+      "/pics/service section3-6.png",
     details: [
       {
         title: "Delays & Fines Without Proper Handling",
@@ -204,6 +204,16 @@ export const whyPBS = {
   description:"30+ Years of Experience: Trusted by NYC property owners. 100% Compliance Rate: Zero fines for clients in 2023. Dedicated Support: Single point of contact for all services. Certified experts: Licensed inspectors familiar with NYC DOB, FDNY and other departments code",
   tagline: "Ready to Simplify Property Compliance? Schedule a consultation with PBS today."
 }
+
+export const imgCarousel = [
+  ["/pics/service group 37.png"],
+  ["/pics/serviceVector.png","/pics/service group 46.png"],
+  ["/pics/serviceVector.png", "/pics/service group 48.png"],
+  ["/pics/service group 40.png"],
+  ["/pics/service group 45.png","/pics/service group 45-1.png"],
+  ["/pics/service group 42.png"],
+  ["/pics/service group 43.png"]
+]
 
 // export const mainSections = [
 //   {

@@ -1,7 +1,7 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
-import { services, sections, whyPBS } from "./data"; // Importing services data
+import { services, sections, whyPBS, imgCarousel } from "./data"; // Importing services data
 import { motion } from "framer-motion";
 import { Building, FileText, Rocket, Home, DotIcon } from "lucide-react";
 import Image from "next/image";
@@ -56,29 +56,35 @@ const Page = () => {
   };
 
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-  };
-
-  const settings2 = {
-    dots: false,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    dots: false, // Show navigation dots
+    infinite: true, // Loop slides
+    speed: 500, // Transition speed
+    slidesToShow: 5, // Show one slide at a time
+    slidesToScroll: 1, // Scroll one slide at a time
+    centerPadding: "0%", // Add padding to show partial next/prev slides
+    arrows: false, // Hide arrows for mobile
+    autoplay: true, // Optional: Auto-scroll slides
+    autoplaySpeed: 2000, // Optional: 3 seconds per slide
+    responsive: [
+      {
+        breakpoint: 720, // Adjust for very small screens
+        settings: {
+          centerPadding: "5%",
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 1024, // Adjust for very small screens
+        settings: {
+          centerPadding: "5%",
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
 
   return (
-    <div className="w-screen overflow-hidden">
+    <div className="w-screen overflow-hidden box-border">
       {/* Hero Section - Page Title and Introduction */}
       <HeroSection
         heading="Your Trusted Partner in Property Compliance, Safety, and Management"
@@ -110,10 +116,11 @@ const Page = () => {
           {/* Moved title section here and fixed spacing */}
           <div className="text-center my-2 mb-10 py-2">
             <h1 className="text-[#DCE2E2] text-4xl font-conthrax tracking-widest mb-4">
-            PBS delivers expert solutions 
+              PBS delivers expert solutions
             </h1>
             <p className="text-base font-poppins font-semibold px-10 text-[#DCE2E2] max-w-2xl mx-auto">
-            to navigate NYC’s complex regulations, streamline operations, and protect your property investments.
+              to navigate NYC’s complex regulations, streamline operations, and
+              protect your property investments.
             </p>
           </div>
 
@@ -122,21 +129,22 @@ const Page = () => {
               return (
                 <div key={index}>
                   <div
-                    className={`w-full flex flex-col md:${
-                      index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                    } items-center md:items-stretch lg:items-stretch justify-between gap-12 p-4 lg:p-6`}
+                    className={`w-full flex flex-col ${
+                      service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
+                    } items-center lg:items-stretch lg:justify-between gap-12 p-4 lg:p-6`}
                   >
-                    <div className="w-full md:w-1/2 aspect-aquare flex justify-center items-center">
+                    <div className="w-full lg:w-2/5 xl:w-1/2 aspect-aquare flex justify-center items-center">
                       <Image
                         src={service.icon}
                         alt={service.title}
-                        width={100}
-                        height={100}
+                        width={600}
+                        height={600}
                         priority
-                        className="w-full md:h-full object-cover object-top-right mix-blend-luminosity rounded-[10%]"
+                        quality={100}
+                        className="w-full h-full object-cover object-top-right mix-blend-luminosity rounded-[10%]"
                       />
                     </div>
-                    <div className="flex flex-col gap-4 w-full md:w-1/2">
+                    <div className="flex flex-col gap-4 w-full lg:w-3/5 xl:w-1/2 justify-start">
                       <h2 className="text-3xl md:text-4xl font-semibold text-[#8AD5B7] font-conthrax w-4/5">
                         {service.title}
                       </h2>
@@ -173,10 +181,10 @@ const Page = () => {
                       text="Read More..."
                       isArrow={false}
                       href="/tutorial"
-                      styling={`w-full md:w-2/5 lg:w-1/5 mt-0 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax md:${
-                        index % 2 === 0
-                          ? "absolute left-[52%] top-0"
-                          : "absolute left-[2%] top-0"
+                      styling={`w-full md:w-2/5 lg:w-1/5 mt-0 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax ${
+                        service.id % 2 === 1
+                          ? "lg:absolute lg:left-[52%] lg:top-0"
+                          : "lg:absolute lg:left-[2%] lg:top-0"
                       }`}
                     />
                   </div>
@@ -201,8 +209,9 @@ const Page = () => {
         </div>
       </section>
 
+      {/* Sections */}
       <section
-        className="w-screen overflow-hidden relative bg-[#37403D] py-16"
+        className="w-screen overflow-hidden relative bg-[#37403D] "
         style={{
           backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
           backgroundSize: "cover",
@@ -274,26 +283,27 @@ const Page = () => {
           })}
         </div>
 
-        <div className="w-[95%] px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-16 mt-16 mb-16 lg:mb-0">
-          <div className="w-full lg:w-[50%] flex items-start">
+        {/* why PBS */}
+        <div className="w-full px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-8 lg:gap-10 mt-10 mb-10 lg:mb-0 lg:h-[120vh]">
+          <div className="w-full lg:w-[45%] flex items-start">
             <Image
               src="/pics/service-building.png"
               alt="building"
               width={600}
               height={800}
               priority
-              className="w-full h-auto object-cover object-top mix-blend-luminosity rounded-[10%]"
+              className="w-full h-auto lg:h-full object-cover object-top mix-blend-luminosity rounded-[10%]"
             />
           </div>
 
-          <div className="w-full lg:w-[50%] flex flex-col justify-center h-auto">
+          <div className="w-full lg:w-[55%] flex flex-col justify-end h-full py-10">
             <div className="w-full h-auto flex items-start justify-between">
               <div className="w-2 h-full bg-[#8AD5B7] mr-6"></div>
               <div className="w-[90%] h-auto flex flex-col gap-6">
-                <h1 className="text-3xl text-center md:text-5xl lg:text-left font-semibold font-conthrax text-[#DCE2E2] tracking-wide uppercase">
+                <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#DCE2E2] tracking-wide uppercase">
                   WHY PBS?
                 </h1>
-                <div className="text-base text-center lg:text-left text-[#DCE2E2] font-semibold space-y-2">
+                <div className="text-sm xl:text-base text-center lg:text-left text-[#DCE2E2] font-semibold space-y-2">
                   <p>
                     30+ Years of Experience: Trusted by NYC property owners.
                   </p>
@@ -304,7 +314,7 @@ const Page = () => {
                     DOB, FDNY and other departments code.
                   </p>
                 </div>
-                <div className="text-xl font-semibold text-[#DCE2E2] flex flex-col gap-2">
+                <div className="text-lg xl:text-xl text-center lg:text-left font-semibold text-[#DCE2E2] flex flex-col gap-2">
                   <span>Ready to Simplify Property Compliance?</span>
                   <span>Schedule a consultation with PBS today.</span>
                 </div>
@@ -324,127 +334,31 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#1E2322] w-full flex flex-col items-center py-16 px-6 md:px-12 lg:px-16">
+        <div className="bg-[#1E2322] w-full flex flex-col items-center py-10 px-6 md:px-12 lg:px-16">
           <h2 className="text-3xl md:text-5xl mb-6 md:mb-10 font-semibold text-[#DCE2E2] font-conthrax text-center w-full">
             TRUST SIGNALS{" "}
           </h2>
 
-        
-<div className="hidden lg:block slider-container w-full rounded-xl overflow-hidden pt-16 max-h-[50vh] min-h-[20vh] lg:min-h-[30vh]">
-  <Slider {...settings}>
-    <div className="flex justify-center items-center ">
-      <img
-        src="/pics/service group 37.png"
-        alt="Slide 1"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center gap-4 ">
-      <img
-        src="/pics/serviceVector.png"
-        alt="Slide 2 - Vector"
-        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
-      />
-      <img
-        src="/pics/service group 46.png"
-        alt="Slide 2 - Group 46"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center gap-4 ">
-      <img
-        src="/pics/serviceVector.png"
-        alt="Slide 3 - Vector"
-        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
-      />
-      <img
-        src="/pics/service group 48.png"
-        alt="Slide 3 - Group 48"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center ">
-      <img
-        src="/pics/service group 40.png"
-        alt="Slide 4"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-   
-    <div className="flex justify-center items-center ">
-      <img
-        src="/pics/service group 42.png"
-        alt="Slide 6"
-        className="max-h-full max-w-full object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center">
-      <img
-        src="/pics/service group 43.png"
-        alt="Slide 7"
-        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
-      />
-    </div>
-  </Slider>
-</div>
-
-<div className="lg:hidden slider-container w-full rounded-xl overflow-hidden pt-16 max-h-[50vh] min-h-[20vh] lg:min-h-[30vh]">
-  <Slider {...settings2}>
-    <div className="flex justify-center items-center ">
-      <img
-        src="/pics/service group 37.png"
-        alt="Slide 1"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center gap-4 ">
-      <img
-        src="/pics/serviceVector.png"
-        alt="Slide 2 - Vector"
-        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
-      />
-      <img
-        src="/pics/service group 46.png"
-        alt="Slide 2 - Group 46"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center gap-4 ">
-      <img
-        src="/pics/serviceVector.png"
-        alt="Slide 3 - Vector"
-        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
-      />
-      <img
-        src="/pics/service group 48.png"
-        alt="Slide 3 - Group 48"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center ">
-      <img
-        src="/pics/service group 40.png"
-        alt="Slide 4"
-        className="max-h-full max-w-3xl object-contain mx-auto"
-      />
-    </div>
-   
-    <div className="flex justify-center items-center ">
-      <img
-        src="/pics/service group 42.png"
-        alt="Slide 6"
-        className="max-h-full max-w-full object-contain mx-auto"
-      />
-    </div>
-    <div className="flex justify-center items-center">
-      <img
-        src="/pics/service group 43.png"
-        alt="Slide 7"
-        className="max-h-full max-w-3xl object-contain my-6 mx-auto"
-      />
-    </div>
-  </Slider>
-</div>
+          {/* img corousel */}
+          <div className=" slider-container w-full rounded-xl overflow-hidden">
+            <Slider {...settings} className="flex justify-evenly items-center">
+              {imgCarousel.map((img, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-between items-center gap-4 p-4 h-auto"
+                >
+                  {img.map((item, idx) => (
+                    <img
+                      key={idx}
+                      src={item}
+                      alt={`Slide ${index + 1} - Image ${idx + 1}`}
+                      className="mb-6 object-contain filter grayscale"
+                    />
+                  ))}
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </section>
     </div>
