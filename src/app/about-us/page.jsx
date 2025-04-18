@@ -26,7 +26,7 @@ const AboutPage = () => {
         onClick={onClick}
         className="absolute -right-10 lg:-right-16 top-1/2 transform -translate-y-1/2 rounded-full p-2 hover:bg-[#8AD5B7] transition duration-300"
       >
-        <ChevronRight className="text-white" />
+        <ChevronRight className="text-[#DCE2E2]" />
       </button>
     );
   }
@@ -38,7 +38,7 @@ const AboutPage = () => {
         onClick={onClick}
         className="absolute -left-10 lg:-left-16 top-1/2 transform -translate-y-1/2 p-2 rounded-full hover:bg-[#8AD5B7] transition duration-300"
       >
-        <ChevronLeft className="text-white" />
+        <ChevronLeft className="text-[#DCE2E2]" />
       </button>
     );
   }
@@ -60,48 +60,49 @@ const AboutPage = () => {
     <div className="bg-[#37403D] overflow-hidden">
       {/* Hero Section */}
       <HeroSection
-        heading="Built by New Yorkers, For New York"
+        heading="Built by New Yorkers For New York"
         text="For Decades, we’ve followed the rules of Inspection, Expediting and portfolio management, Not as Outsiders, but as neighbors, collaborators, and guardians of this city’s skyline."
         className="font-conthrax max-w-4xl"
+        isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
         img="/pics/COVER 1.png"
       />
 
       {/* Custom 'About Us' Label Divider */}
       <div className="w-[100vw] relative">
-        <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
+        <div className="bg-[#8AD5B7] w-full text-[#DCE2E2] py-1"></div>
         <div className="bg-[#8AD5B7] w-[60%] sm:w-1/2 lg:w-1/3 absolute left-[20%] sm:left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
           About Us
         </div>
       </div>
 
       {/* The PBS Story Section */}
-      <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-white">
-        <div className="mt-16 flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+      <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-[#DCE2E2]">
+        <div className="mt-16 flex flex-col lg:flex-row items-start lg:items-stretch gap-12 lg:gap-16">
           {/* Story image in a circular background */}
-          <div className="relative w-full h-[480px] xl:h-[530px] md:w-1/3 xl:w-1/2 flex justify-center items-start">
+          <div className="relative w-full lg:w-1/2 flex justify-center items-center">
             <Image
-              src="/pics/Cloud-02.png"
+              src="/pics/Building.png"
               alt="PBS"
               width={500}
-              height={300}
+              height={600}
               className="filter w-full h-full grayscale object-cover md:object-contain lg:object-cover object-top"
             />
           </div>
 
           {/* Story text content */}
-          <div className="w-full md:w-2/3 xl:w-1/2 space-y-6">
-            <h2 className="text-5xl font-semibold font-conthrax text-[#8AD5B7] mb-2">
+          <div className="w-full xl:w-1/2 space-y-6">
+            <h2 className="text-3xl lg:text-[55px] text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-2">
               {story.headline}
             </h2>
-            <span className="text-[#7A8E85] text-base font-semibold">
+            <span className="text-[#7A8E85] text-base font-semibold block lg:inline text-center lg:text-left">
               More than a Company, A Collective Legacy
             </span>
-            <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
+            <div className="w-[30%] mx-auto lg:mx-0 bg-[#8AD5B7] rounded-full h-1"></div>
             {story?.body.map((text, index) => (
               <p
                 key={index}
-                className="text-white font-semibold text-lg text-balance pr-6 my-8"
+                className="font-semibold text-lg text-balance pr-6 my-8 text-center lg:text-left"
               >
                 {text}
               </p>
@@ -111,7 +112,7 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission Section */}
-      <div className="flex items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-white px-3 lg:px-16 pb-24">
+      <div className="flex items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16 pb-24">
         {/* Vision Section */}
         <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
           <div className="flex items-start justify-start gap-3">
@@ -123,16 +124,16 @@ const AboutPage = () => {
               <p className="text-[#7A8E85] mb-3 text-left">{vision?.tagline}</p>
             </div>
           </div>
-          <p className="text-white text-left text-lg">{vision?.body}</p>
+          <p className="text-[#DCE2E2] text-left text-lg">{vision?.body}</p>
           <div className="text-left my-5">
             <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
               How We'll get there
             </h2>
             {(vision?.pillars || []).map((value, index) => (
-              <div key={index} className="text-white flex gap-2 mb-2">
+              <div key={index} className="text-[#DCE2E2] flex gap-2 mb-2">
                 <Dot />
                 <div className="flex justify-evenly w-full">
-                  <span className="w-[45%] text-white font-semibold text-base">
+                  <span className="w-[45%] text-[#DCE2E2] font-semibold text-base">
                     {value.split(":")[0] + ":"}
                   </span>
                   <span className="w-[55%] text-[#7A8E85] text-base">
@@ -157,17 +158,17 @@ const AboutPage = () => {
               </p>
             </div>
           </div>
-          <p className="text-white text-lg text-left">{mission?.body}</p>
+          <p className="text-[#DCE2E2] text-lg text-left">{mission?.body}</p>
           <div className="text-left my-5">
             <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
               How We'll get there
             </h2>
             {Object.entries(mission?.impacts || []).map(
               ([key, value], index) => (
-                <div key={index} className="text-white flex gap-0.5 mb-2">
+                <div key={index} className="text-[#DCE2E2] flex gap-0.5 mb-2">
                   <Dot />
                   <div className="flex justify-evenly gap-0.5 w-full">
-                    <span className="w-1/3 text-white font-semibold text-base">
+                    <span className="w-1/3 text-[#DCE2E2] font-semibold text-base">
                       {key + ":"}
                     </span>
                     <span className="w-2/3 text-[#7A8E85] text-base">
@@ -192,19 +193,19 @@ const AboutPage = () => {
           loading="lazy"
         />
         <div className="bg-[#1E2322] rounded-xl w-full flex flex-col items-center justify-center py-3 px-6">
-          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-4xl w-[70%] mx-auto my-6">
+          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] w-[70%] mx-auto my-6">
             Redefining Excellence in NYC Construction
           </h2>
           <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
 
-          <p className="text-white text-lg font-semibold text-center mt-6">
+          <p className="text-[#DCE2E2] text-lg font-semibold text-center mt-6">
           We are committed to becoming the New York Metropolitan area's most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.
           </p>
-          <p className="text-white flex font-semibold text-lg gap-3 mt-5">
-            <Dot /> Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape
+          <p className="text-[#DCE2E2] font-semibold text-lg mt-5">
+             Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape
           </p>
-          <p className="text-white flex font-semibold text-lg gap-3 mb-5">
-            <Dot /> Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level
+          <p className="text-[#DCE2E2] font-semibold text-lg mb-5">
+             Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level
           </p>
         </div>
       </section>
@@ -225,9 +226,9 @@ const AboutPage = () => {
           <div className="w-full lg:w-3/5 pt-12">
             <div className="flex items-center lg:justify-start h-36 rounded-lg mb-12 gap-4">
               <div className="bg-[#8AD5B7] w-2 h-full rounded-lg"></div>
-              <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-white flex flex-col gap-1">
-                <span className="">{mission?.tagline.split(",")[1]}</span>
-                <span className="">{mission?.tagline.split(",")[0] + ","}</span>
+              <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax text-[#DCE2E2] flex flex-col gap-1">
+                <span className="">{mission?.tagline.split(",")[1] + ","}</span>
+                <span className="">{mission?.tagline.split(",")[0] }</span>
               </h2>
             </div>
 
@@ -241,7 +242,7 @@ const AboutPage = () => {
               {Object.entries(mission?.impacts || {}).map(
                 ([key, value], index) => (
                   <div key={index}>
-                    <h3 className="text-white text-sm font-semibold mb-2">
+                    <h3 className="text-[#DCE2E2] text-sm font-semibold mb-2">
                       {key}
                     </h3>
                     <p className="text-[#89A096] text-sm">{value}</p>
@@ -255,12 +256,12 @@ const AboutPage = () => {
 
       {/* Redefining section */}
       <div className="rounded-xl w-full lg:w-[60%] mx-auto flex flex-col items-center justify-start lg:justify-center mb-6 py-3 px-6 md:px-12">
-        <h2 className="text-[#8AD5B7] lg:text-center font-conthrax text-3xl lg:text-5xl my-6">
+        <h2 className="text-[#8AD5B7] lg:text-center font-conthrax font-semibold text-3xl lg:text-5xl my-6">
           Areas we Serve
         </h2>
         <div className="w-[55%] bg-[#8AD5B7] rounded-full h-1"></div>
 
-        <p className="text-white mt-5 font-semibold text-lg font-conthrax">
+        <p className="text-[#DCE2E2] mt-5 font-semibold text-lg font-conthrax">
           More Than a Neighbor, We’re Your Advocates
         </p>
         <p className="text-[#89A096] flex gap-3 font-semibold text-sm mt-3 text-center">
@@ -286,7 +287,7 @@ const AboutPage = () => {
             </div>
             <div className="w-full lg:w-2/5 flex flex-row flex-wrap lg:flex-col items-start justify-center gap-4 lg:gap-0">
               {service?.buildingTypes.map((location, index) => (
-                <p key={index} className="text-white text-base flex gap-2">
+                <p key={index} className="text-[#DCE2E2] text-base flex gap-2">
                   <DotIcon /> {location}
                 </p>
               ))}
@@ -324,7 +325,7 @@ const AboutPage = () => {
                       className="filter grayscale hover:grayscale-0 transition duration-300"
                     />
                   </div>
-                  <p className="text-white">{location.cityName}</p>
+                  <p className="text-[#DCE2E2]">{location.cityName}</p>
                 </div>
               );
             })}
@@ -344,7 +345,7 @@ const AboutPage = () => {
                     key={index}
                     className="lg:py-6 lg:px-12 p-3 full"
                   >
-                    <h4 className="text-white font-semibold text-lg">
+                    <h4 className="text-[#DCE2E2] font-semibold text-lg">
                       {index + 1 + "- " + client.title}
                     </h4>
                     <p className="text-base text-[#89A096]">
@@ -360,14 +361,14 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="text-white py-10 px-6 md:px-24 text-center">
+      <section className="text-[#DCE2E2] py-10 px-6 md:px-24 text-center">
         <p className="max-w-2xl text-[#89A096] mx-auto font-semibold text-sm mb-4">
           {cta?.text}
         </p>
         <CTA
           text={cta?.buttonText}
-          href="#"
-          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-bold w-full lg:w-[50%] rounded-full mx-auto my-0"
+          href="/contacts"
+          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[20px] lg:text-[24px] w-full lg:w-[50%] rounded-full mx-auto my-0"
         />
       </section>
     </div>

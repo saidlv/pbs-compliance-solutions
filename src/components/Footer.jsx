@@ -109,7 +109,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-grow text-base px-4 py-2 rounded-full bg-white text-gray-600 focus:outline-none lg:w-1/2 w-full "
+                  className="flex-grow text-base px-4 py-2 rounded-full bg-white text-[#7A8E85] focus:outline-none lg:w-1/2 w-full "
                   aria-label="Email address"
                   required
                 />
@@ -180,7 +180,7 @@ const Footer = () => {
             </div> */}
 
             {/* Privacy Links - Terms, Privacy, and Cookie policies */}
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-[#b9c0bf] mt-4 md:mt-0">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-[#7A8E85] mt-4 md:mt-0">
               <a
                 href="#"
                 className="hover:text-[#DCE2E2] transition duration-300"

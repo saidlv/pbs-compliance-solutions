@@ -35,7 +35,7 @@ const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0
   }, [staggerVal]);
 
   return (
-    <section className="relative [60vh] lg:h-[70vh] bg-[#37403D] text-white overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
+    <section className="relative [60vh] lg:h-[70vh] bg-[#37403D] text-[#DCE2E2] overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}

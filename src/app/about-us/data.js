@@ -22,7 +22,7 @@ export const aboutContent = [
     {
         id: "our-mission",
         type: "mission",
-        tagline: "Building Futures, Delivering Certainty",
+        tagline: "Delivering Certainty, Building Futures",
         body: "At PBS, we exist to create mutual success. We deliver \"value for value\" by uniting administrative precision, decades of construction mastery, and unparalleled craftsmanship—turning complex visions into reality, faster and clearer than anyone else.",
         impacts: {
             "For Clients": "Transparent budgets, accelerated timelines, and a single point of accountability for your project's success",

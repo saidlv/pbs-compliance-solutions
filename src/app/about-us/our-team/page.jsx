@@ -68,7 +68,7 @@ const Page = () => {
                     <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
                       {member.title}
                     </p>
-                    <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
+                    <p className="text-xs text-[#89A096] text-semibold text-ellipsis md:pr-3">
                       {member.description}
                     </p>
                   </div>

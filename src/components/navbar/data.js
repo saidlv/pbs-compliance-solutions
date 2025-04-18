@@ -47,7 +47,6 @@ export const menuItems = [
       { name: "About", link: "/about-us" },
       { name: "Our Team", link: "/about-us/our-team" },
       { name: "Our Values", link: "/about-us/our-values" },
-      { name: "Our History", link: "/about-us/our-history" },
     ],
   },
   { name: "Contacts", link: "/contacts" },
