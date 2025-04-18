@@ -47,7 +47,7 @@ const Page = () => {
               {leadershipTeam.map((member, index) => (
                 <motion.div
                   key={index}
-                  className={`w-full md:h-[30vh] lg:h-[40vh] xl:h-[32vh] bg-[#1E2322] flex items-center justify-start gap-3 xl:gap-6 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
+                  className={`w-full h-auto min-h-[25vh] bg-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
                     index === leadershipTeam.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
@@ -59,16 +59,16 @@ const Page = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full lg:h-2/3 xl:h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                  <div className="w-full h-full flex flex-col items-start justify-start gap-1">
-                    <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
+                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+                  <div className="w-full flex flex-col items-start justify-center gap-1">
+                    <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                       {member.name}
                     </h3>
 
                     <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
                       {member.title}
                     </p>
-                    <p className="text-xs text-[#89A096] text-semibold break-all md:pr-6">
+                    <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
                       {member.description}
                     </p>
                   </div>
@@ -87,33 +87,33 @@ const Page = () => {
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
               {projectManagers.map((member, index) => (
                 <motion.div
-                key={index}
-                className={`w-full h-[175px] bg-[#1E2322] flex items-center justify-start gap-3 xl:gap-6 box-border p-3 rounded-2xl md:rounded-full ${
-                  index === projectManagers.length - 1
-                    ? index % 2 === 0
-                      ? "relative left-0 lg:left-[50%]"
+                  key={index}
+                  className={`w-full h-auto min-h-[25vh] bg-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
+                    index === projectManagers.length - 1
+                      ? index % 2 === 0
+                        ? "relative left-0 lg:left-[50%]"
+                        : ""
                       : ""
-                    : ""
-                }`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                <div className="w-[75%] xl:w-[60%] p-0 flex flex-col items-start justify-center gap-1">
-                  <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
-                    {member.name}
-                  </h3>
+                  }`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+                  <div className="w-full flex flex-col items-start justify-center gap-1">
+                    <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
+                      {member.name}
+                    </h3>
 
-                  <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
-                    {member.title}
-                  </p>
-                  <p className="text-xs text-[#89A096] text-semibold break-all">
-                    {member.description}
-                  </p>
-                </div>
-              </motion.div>
+                    <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
+                      {member.title}
+                    </p>
+                    <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
+                      {member.description}
+                    </p>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -127,34 +127,34 @@ const Page = () => {
             </h2>
             <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6">
               {specialists.map((member, index) => (
-               <motion.div
-               key={index}
-               className={`w-full h-[175px] bg-[#1E2322] flex items-center justify-start gap-3 xl:gap-6 box-border p-3 rounded-2xl md:rounded-full ${
-                 index === specialists.length - 1
-                   ? index % 2 === 0
-                     ? "relative left-0 lg:left-[50%]"
-                     : ""
-                   : ""
-               }`}
-               initial={{ opacity: 0, y: 50 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true, margin: "-100px" }}
-               transition={{ duration: 0.5, delay: index * 0.1 }}
-             >
-               <div className="bg-[#ffff] flex-shrink-0 aspect-square h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-               <div className="w-[75%] xl:w-[60%] p-0 flex flex-col items-start justify-center gap-1">
-                 <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
-                   {member.name}
-                 </h3>
+                <motion.div
+                  key={index}
+                  className={`w-full h-auto min-h-[25vh] bg-[#1E2322] flex items-center md:items-stretch justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
+                    index === specialists.length - 1
+                      ? index % 2 === 0
+                        ? "relative left-0 lg:left-[50%]"
+                        : ""
+                      : ""
+                  }`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
+                  <div className="w-full flex flex-col items-start justify-center gap-1">
+                    <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
+                      {member.name}
+                    </h3>
 
-                 <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
-                   {member.title}
-                 </p>
-                 <p className="text-xs text-[#89A096] text-semibold break-all">
-                   {member.description}
-                 </p>
-               </div>
-             </motion.div>
+                    <p className="text-[#ffff] text-xs xl:text-sm font-semibold">
+                      {member.title}
+                    </p>
+                    <p className="text-xs text-[#89A096] text-semibold text-ellipsis break-all md:pr-3">
+                      {member.description}
+                    </p>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
