@@ -68,7 +68,7 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
     >
       {menuItems.map((item) => (
         <motion.div
-          className="text-[#EAEEEE] hover:text-gray-300 text-lg font-semibold cursor-pointer relative"
+          className="text-[#EAEEEE] hover:text-[#8AD5B7] text-lg font-semibold cursor-pointer relative"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleItemClick(item)}

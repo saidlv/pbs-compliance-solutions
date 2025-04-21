@@ -41,8 +41,8 @@ const Page = () => {
       <section className="bg-[#37403D] pt-10 pb-20 px-6 md:px-12 xl:px-16">
   <div className="container mx-auto">
     <div className="text-center my-2 mb-10 py-2">
-      <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3">
-        <span className="uppercase">The PBS Promise:</span> Six Pillars of Excellence
+      <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3 flex flex-col">
+        <span className="uppercase">The PBS Promise</span> <span>Six Pillars of Excellence</span>
       </h3>
       <h1 className="lg:text-4xl text-3xl font-conthrax px-10 text-[#f3f4f6]">
         Principles we hold are Built on Integrity, Driven by Excellence
@@ -77,7 +77,7 @@ const Page = () => {
           </div>
 
           {/* Dark Background Div */}
-          <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-start lg:items-center text-left rounded-3xl bg-[#1E2322] p-4 xl:p-6 box-border shadow-lg hover:shadow-xl transition-all duration-300">
+          <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-3xl bg-[#1E2322] p-4 xl:px-6 xl:py-0 box-border shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
               <h2 className="text-xl sm:text-2xl xl:text-4xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
                 {feature.title}
@@ -87,18 +87,17 @@ const Page = () => {
               </p>
             </div>
 
-            <div className="w-full lg:w-[2%] flex justify-center items-center mb-4 lg:mb-0">
-              <div className="w-full lg:w-2 h-1 lg:h-52 bg-[#D9D9D9] rounded-full"></div>
+            <div className="w-full lg:w-2 flex justify-center items-center mb-4 lg:mb-0">
+              <div className="w-full h-1 lg:h-2/3 bg-[#D9D9D9] rounded-full"></div>
             </div>
 
             <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3">
               {feature.description.map((item, index) => (
                 <div className="text-[#DCE2E2]" key={index}>
                   <h4 className="flex justify-start items-center text-sm sm:text-base pb-1 sm:pb-2">
-                    <DotIcon className="text-[#DCE2E2]" />
                     <span className="font-semibold">{item.split(":")[0]}</span>
                   </h4>
-                  <p className="text-xs font-semibold text-[#89A096] mb-2 pl-5">
+                  <p className="text-xs font-semibold text-[#89A096] mb-2">
                     {item}
                   </p>
                 </div>
@@ -142,12 +141,12 @@ const Page = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 key={index}
-                className="flex flex-col items-start justify-around w-full gap-4 sm:gap-6 lg:gap-8 bg-[#37403D] rounded-3xl p-4 sm:p-4 lg:p-6 "
+                className="flex flex-col items-start justify-start w-full gap-4 sm:gap-6 lg:gap-8 bg-[#37403D] rounded-3xl p-4 sm:p-4 lg:p-6 "
               >
-                <div className="w-full flex justify-center items-center h-1/3">
-                  <img src={value.icon} alt="icon" className="w-24 h-24" />
+                <div className="w-full flex justify-center items-center h-[30%]">
+                  <img src={value.icon} alt="icon" className="w-24 h-24 object-contain" />
                 </div>
-                <div className="w-full h-2/3 flex flex-col items-start justify-end gap-2 sm:gap-3 mb-4 lg:mb-0">
+                <div className="w-full h-2/3 flex flex-col items-start justify-start gap-2 sm:gap-3 mb-4 lg:mb-0">
                   {value.title && (
                     <h2 className="text-xl lg:text-2xl font-semibold font-conthrax text-[#8AD5B7] flex flex-col ">
                       <span>{value.title.split("—")[0]}</span>
@@ -155,13 +154,13 @@ const Page = () => {
                     </h2>
                   )}
                   <ul className="w-full list-decimal text-left space-y-1">
-                    {value.description.map((item, index) => {
+                    {value.description.map((item, idx) => {
                       return (
                         <li
-                          key={index}
+                          key={idx}
                           className="w-full text-sm sm:text-base font-semibold flex gap-2 justify-start"
                         >
-                          <DotIcon className="" />
+                          {(value.id === 2 && idx ===0) ?"": <DotIcon className="" />}
                           <span className="w-[90%]">{item}</span>
                         </li>
                       );

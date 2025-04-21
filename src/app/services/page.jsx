@@ -166,7 +166,6 @@ const Page = () => {
                                     : ""}
                                 </h4>
                                 <p className="flex gap-3 test-xs font-semibold text-[#89A096]">
-                                  {service.id !== 2 && <DotIcon />}
                                   <span>{section?.split(":")[1]}</span>
                                 </p>
                               </li>
@@ -285,20 +284,20 @@ const Page = () => {
 
         {/* why PBS */}
         <div className="w-full px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-8 lg:gap-10 mt-10 mb-10 lg:mb-0 lg:h-screen">
-          <div className="w-full lg:w-[45%] flex items-start">
+          <div className="w-full lg:w-[48%] flex items-start">
             <Image
               src="/pics/service-building.png"
               alt="building"
               width={600}
               height={800}
               priority
-              className="w-full h-auto lg:h-full object-cover object-top mix-blend-luminosity rounded-[10%]"
+              className="relative w-full -left-8 md:-left-16 lg:left-0 h-auto lg:h-full object-cover object-top mix-blend-luminosity rounded-[10%]"
             />
           </div>
 
-          <div className="w-full lg:w-[55%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
-            <div className="w-full h-auto flex items-start justify-between">
-              <div className="w-2 h-full bg-[#8AD5B7] mr-6"></div>
+          <div className="w-full lg:w-[52%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
+            <div className="w-full h-auto flex items-start justify-start lg:justify-between">
+              <div className="w-2 h-full bg-[#8AD5B7] mr-6 hidden lg:block"></div>
               <div className="w-[90%] h-auto flex flex-col gap-6">
                 <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#DCE2E2] tracking-wide uppercase">
                   WHY PBS?
@@ -345,14 +344,14 @@ const Page = () => {
               {imgCarousel.map((img, index) => (
                 <div
                   key={index}
-                  className="flex flex-col justify-between items-center gap-4 p-4 h-auto"
+                  className={`w-full flex flex-col justify-between items-center gap-4 p-4 h-auto fliter ${img.length>1?"":"grayscale" } hover:grayscale-0 transition duration-300 ease-in-out`}
                 >
                   {img.map((item, idx) => (
                     <img
                       key={idx}
                       src={item}
                       alt={`Slide ${index + 1} - Image ${idx + 1}`}
-                      className="mb-6 object-contain filter grayscale"
+                      className="mb-6 object-contain mx-auto"
                     />
                   ))}
                 </div>

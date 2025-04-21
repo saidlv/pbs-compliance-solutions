@@ -274,9 +274,9 @@ const AboutPage = () => {
       <section className="px-6 lg:px-12">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-stretch gap-8 mb-12">
           {/* Left Content */}
-          <div className="bg-[#2B3331] rounded-[10%] flex flex-col lg:flex-row items-center justify-center gap-6 w-full lg:w-[55%] p-6">
-            <div className="w-full lg:w-[50%] flex flex-col items-start justify-start gap-6">
-              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-col mb-4 lg:mb-0 gap-3">
+          <div className="bg-[#2B3331] rounded-[5%] lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-start gap-6 w-full lg:w-[60%] p-6">
+            <div className="w-full lg:w-[50%] flex flex-row lg:flex-col items-center lg:items-center justify-between xl:justify-center gap-6 xl:gap-32">
+              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-row lg:flex-col mb-4 lg:mb-0 gap-3">
                 <span>Buildings</span> <span>We deal in:</span>
               </h2>
               <img
@@ -285,7 +285,7 @@ const AboutPage = () => {
                 className="lg:w-auto h-auto"
               />
             </div>
-            <div className="w-full lg:w-[50%] flex flex-row flex-wrap lg:flex-col items-start justify-center gap-4 lg:gap-0">
+            <div className="w-full lg:w-[50%] flex flex-row flex-wrap lg:flex-col items-start justify-center lg:justify-end gap-4 lg:gap-2 xl:gap-4 pt-8">
               {service?.buildingTypes.map((location, index) => (
                 <p key={index} className="text-[#DCE2E2] text-base flex gap-2">
                   <DotIcon /> {location}
@@ -293,13 +293,13 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-[45%] h-auto">
+          <div className="w-full lg:w-[40%]">
             <Image
-              src="/pics/Rectangle 52.png"
+              src="/pics/Rectangle 52-1.png"
               alt=""
-              className="w-full h-full object-cover mix-blend-luminosity rounded-2xl"
-              width={500}
-              height={400}
+              className="w-full h-auto lg:h-full lg:object-cover mix-blend-luminosity rounded-[10%]"
+              width={300}
+              height={300}
             />
           </div>
         </div>
