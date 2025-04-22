@@ -224,7 +224,7 @@ const InspectionServices = () => {
 
         {/* Items Section */}
         <div className="px-8 lg:pr-16 lg:pl-40 flex flex-col lg:flex-row gap-8">
-          <div className="w-full xl:w-[70%] 2xl:mx-auto flex flex-col lg:flex-row gap-8 my-10">
+          <div className="w-full 2xl:w-[70%] 2xl:mx-auto flex flex-col lg:flex-row gap-8 my-10">
             {section.items.map((item, idx) => {
               // Simplify additionalText visibility logic
               const showAdditionalText =
