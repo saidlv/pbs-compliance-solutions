@@ -1,9 +1,9 @@
 "use client";
 
-import HeroSection from "../../components/HeroSection";
+import HeroSection from "../../src/components/HeroSection";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import Testimonials from "./Testimonials";
+import Testimonials from "../../src/app/owner-representative/Testimonials";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

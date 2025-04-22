@@ -46,20 +46,20 @@ const InspectionServices = () => {
           designed to safeguard what matters most.
         </p>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full">
           <Image
             src="/pics/Inspection-services-pic1.png"
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-full lg:w-[40%] h-auto object-cover rounded-lg mb-6 lg:mb-0 mx-auto"
+            cclassName="w-[80%] lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
           />
-          <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-center text-center lg:text-left px-4 lg:px-0">
+          <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-end text-center lg:text-left px-4 lg:px-0">
             <h1 className="text-[#8AD5B7] text-3xl lg:text-[55px] font-semibold font-conthrax mb-2 leading-tight">
               Why Compliance Matter
             </h1>
             <div className="bg-[#8AD5B7] w-full lg:w-[40%] text-[#DCE2E2] h-2 mb-6"></div>
-            <p className="text-base lg:text-lg font-semibold">
+            <p className="text-base lg:text-lg font-semibold 2xl w-full 2xl:w-[75%]">
               A single oversight can risk lives, reputations, and legal
               standing. Regular inspections aren’t just about ticking boxes,
               they’re about proactive problem solving. When Safety and
@@ -101,7 +101,7 @@ const InspectionServices = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col gap-3 justify-between p-6 shadow-lg rounded-2xl bg-opacity-10 bg-[#89A096]"
+                className="flex flex-col gap-3 justify-between p-6 shadow-lg rounded-2xl bg-opacity-5 bg-[#89A096]"
                 style={{
                   backgroundImage: `url(${service.bg})`,
                   backgroundSize: "cover",

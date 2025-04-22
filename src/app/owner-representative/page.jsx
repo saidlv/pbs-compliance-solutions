@@ -76,10 +76,10 @@ const howWeWork = [
 ];
 
 const whyChoosePBS = [
-  "NYC-Native Expertise - We know every borough’s quirks with Deep Knowledge of local laws and agencies",
-  "Licensed & Insured - Certified Professionals you can trust with full accountability and zero risks",
-  "Transparent Pricing - Hourly, Project-based, or retainer without any surprises",
-  "Quick response - Vetted contractors on speed dial",
+  "NYC-Native Expertise:We know every borough’s quirks with Deep Knowledge of local laws and agencies",
+  "Licensed & Insured:Certified Professionals you can trust with full accountability and zero risks",
+  "Transparent Pricing:Hourly, Project-based, or retainer without any surprises",
+  "Quick response:Vetted contractors on speed dial",
 ];
 
 const Page = () => {
@@ -213,7 +213,7 @@ const Page = () => {
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-start gap-8 sm:gap-12 w-full mt-8 sm:mt-10">
           <div className="w-full flex flex-col items-center justify-start gap-3 sm:gap-4">
-            <h3 className="bg-[#1E2322] p-2 sm:p-3 rounded-lg text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center">
+            <h3 className="bg-[#1E2322] p-2 sm:p-3 rounded-lg text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center lg:text-left">
               Compliance & Risk Management
             </h3>
             <ul className="list-disc list-inside text-base sm:text-lg md:text-lg lg:text-xl text-[#89A096] font-semibold p-3 sm:p-4 flex flex-col gap-1 sm:gap-2">
@@ -233,7 +233,7 @@ const Page = () => {
           </div>
 
           <div className="w-full flex flex-col items-center justify-start gap-3 sm:gap-4">
-            <h3 className="bg-[#1E2322] p-2 sm:p-3 rounded-lg text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center">
+            <h3 className="bg-[#1E2322] p-2 sm:p-3 rounded-lg text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-semibold text-[#8AD5B7] font-conthrax text-center lg:text-left">
               Financial Oversight & Savings
             </h3>
             <ul className="text-base sm:text-lg md:text-lg lg:text-xl text-[#89A096] font-semibold p-3 sm:p-4 flex flex-col gap-1 sm:gap-2">
@@ -315,7 +315,7 @@ const Page = () => {
       <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-10 text-[#DCE2E2]">
         {/* Dark Background Div */}
         <div
-          className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-2xl bg-[#89A096] bg-opacity-10 p-4 box-border shadow-lg hover:shadow-xl transition-all duration-300 mb-10"
+          className="w-full 2xl:w-[70%] mx-auto lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-2xl bg-[#89A096] bg-opacity-5 p-4 lg:p-8 box-border shadow-lg hover:shadow-xl transition-all duration-300 mb-10"
           style={{
             backgroundImage: `url('/pics/owner-repre-3.png')`,
             backgroundSize: "cover",
@@ -339,28 +339,26 @@ const Page = () => {
 
           <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3">
             {whyChoosePBS.map((item, index) => (
-              <div className="text-[#DCE2E2]" key={index}>
-                <h4 className="flex justify-start items-center text-sm sm:text-base pb-1 sm:pb-2">
-                  <span className="font-semibold">
-                    {item.split("-")[0] + "- "}
-                  </span>
-                </h4>
-                <p className="text-xs font-semibold text-[#89A096] mb-2">
-                  {item.split("-")[1]}
-                </p>
-              </div>
+              <p className="font-semibold text-[#89A096] mb-2 flex-1 justify-start items-center gap-2" key={index}>
+              <span className="font-semibold text-[#DCE2E2] text-nowrap">
+                {item.trim().split(":")[0] + "- "}
+              </span>
+              <span className="">
+              {item.trim().split(":")[1]}
+              </span>
+            </p>
             ))}
           </div>
         </div>
 
         <div>
-          <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between w-full lg:w-[90%] mx-auto">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full lg:w-[90%] mx-auto">
             <Image
               src="/pics/owner-repre-4.png"
               alt="Inspection Services"
               width={500}
               height={500}
-              className="w-[80%] lg:w-[40%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
+              className="pt-[30px] lg:pt-[48px] w-[80%] lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
             />
             <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-start justify-center text-center lg:text-left px-4 lg:px-0">
               <h1 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-6">
