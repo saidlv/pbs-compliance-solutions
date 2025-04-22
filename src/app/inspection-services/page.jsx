@@ -48,7 +48,7 @@ const InspectionServices = () => {
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full">
           <Image
-            src="/pics/Inspection-services-pic1.png"
+            src="/pics/inspection-services-pic1.png"
             alt="Inspection Services"
             width={500}
             height={500}
