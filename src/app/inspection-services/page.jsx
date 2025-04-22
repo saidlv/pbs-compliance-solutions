@@ -35,7 +35,7 @@ const InspectionServices = () => {
       </div>
 
       {/* Section 01 */}
-      <section className="px-6 md:px-10 lg:px-16 py-10 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 lg:px-16 pb-10 pt-16 text-[#DCE2E2]">
         <h2 className="text-4xl font-semibold font-conthrax w-2/3 mx-auto text-center mb-3 lg:mb-6">
           Ensuring safety, Compliance & Peace of Mind
         </h2>
@@ -264,14 +264,14 @@ const InspectionServices = () => {
 "
               isArrow={false}
               href="/tutorial"
-              styling={`w-2/3 lg:w-1/2 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+              styling={`w-[90%] md:w-2/3 lg:w-1/2 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
             />
             <CTA2
               text="Call Our Inspectors (914-316-6956)
  "
               isArrow={false}
               href="/tutorial"
-              styling={`w-2/3 lg:w-1/2 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+              styling={`w-[90%] md:w-2/3 lg:w-1/2 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
             />
           </div>
         </div>

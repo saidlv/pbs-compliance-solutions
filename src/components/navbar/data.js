@@ -36,7 +36,7 @@ export const menuItems = [
       { name: "Local Law 152", link: "/law/local-law-152" },
     ],
   },
-  { name: "Owner Representative", link: "/OwnerRepresentative" },
+  { name: "Owner Representative", link: "/owner-representative" },
   {
     name: "Services",
     link: "/services",

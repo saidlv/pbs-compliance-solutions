@@ -248,14 +248,14 @@ const page = () => {
       bgStyle="bg-top md:bg-top bg-cover mix-blend-luminosity"
       isLine={false}
       textStyle="text-xl font-semibold text-[#89A096]"
-      img="/pics/ServiceHeroBg.png"
+      img="/pics/owner-representative-hero.png"
     />
 
     {/* Custom 'About Us' Label Divider */}
     <div className="w-[100vw] relative">
       <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
-      <div className="bg-[#8AD5B7] w-[60%] sm:w-1/2 lg:w-1/3 absolute left-[20%] sm:left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
-        Our Services
+      <div className="bg-[#8AD5B7] w-[80%] md:w-[70%] lg:w-[60%] absolute left-[10%] md:left-[15%] lg:left-[20%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-xl md:text-2xl lg:text-4xl z-20">
+        Owner Representative
       </div>
     </div>
 
