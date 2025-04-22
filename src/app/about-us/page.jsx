@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../components/HeroSection";
 import { aboutContent } from "./data";
 import { ChevronLeft, ChevronRight, Dot, DotIcon } from "lucide-react";
 import { useState } from "react";
@@ -65,6 +65,7 @@ const AboutPage = () => {
         className="font-conthrax max-w-4xl"
         isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
+        textStyle="text-[#DCE2E2] font-semibold text-xl" 
         img="/pics/COVER 1.png"
       />
 

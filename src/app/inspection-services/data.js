@@ -103,10 +103,10 @@ export const hydrostaticTestingData = [
   },
 ];
 
-export const InspectionServices = [
+export const inspectionServices = [
   {
     section: 1,
-    headline: "Ensuring safety, Compliance & Peace of Mind",
+    headline: "PBS Handles the Codes You Handle the Peace",
     text: "Maintaining your property isn’t just an obligation, it’s a necessity to protect lives, uphold legal standards, and preserve long-term value. At PBS we turn complexity into clarity with inspections designed to safeguard what matters most.",
     subSections: [
       {
@@ -115,6 +115,7 @@ export const InspectionServices = [
           "Hidden Risks: Like Detectives, We hunt cracks in Facades, Silent Gas Leaks, Crumbling Parapets & Elevator defects before they make headlines",
           "Disaster-proofing: Proactive inspections aren’t just checklists, they’re shields against lawsuits, injuries, and heartache. Sleep Soundly knowing your building building is in good hands and your walls won’t weep or collapse",
         ],
+        img: "/pics/Inspection-service-3-1.png"
       },
       {
         headline: "NYC’s Rulebook is thick, Your Headache doesn’t have to be",
@@ -123,6 +124,7 @@ export const InspectionServices = [
           "Zero-stress Submission: Imagine DOB/FDNY paperwork that files itself. We handle the nitty-gritty, you get a golden “Compliant” Stamp.",
         ],
         additionalText: "99% of clients avoid fines by partnering with PBS",
+        img: "/pics/Inspection-service-3-2.png"
       },
       {
         headline: "We Lose Sleep so you don’t have to",
@@ -130,6 +132,7 @@ export const InspectionServices = [
           "Decades in your Corner: Our Licensed Pros have seen it all. 25 years of NYC grit means “We Spot risks others Miss”",
         ],
         additionalText: "PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
+        img: "/pics/Inspection-service-3-3.png"
       },
     ],
     cta: {
@@ -143,94 +146,99 @@ export const InspectionServices = [
     services: [
       {
         id: 1,
-        heading: "Facade Inspection (Local Law 11/FISP)",
+        heading: "1- Facade Inspection (Local Law 11/FISP)",
         subheading: "NYC’s Silent Killer",
         text: "5 Years, 1 Inspection, Zero excuses",
         items: [
-          "The Risk: A Single Loose brick can lead to $5k + Fines or worse, catastrophic failure",
-          "Our Solution: Certified Engineers inspect masonry, parapets and waterproofing with actionable repair plans delivered to youThe Building we inspect avoid violations with proactive fixes",
+          "The Risk: Structural degradation or falling debris could injure pedestrians, trigger lawsuits, or result in huge fines for non-compliance",
+          "Our Solution: Certified Engineers inspect masonry, parapets and waterproofing with actionable repair plans with streamlined reporting plan to meet NYC deadlines, keeping your building safe and legally protected.",
         ],
         cta: {
-          text: "Learn More about Violations",
+          text: "The Building we inspect avoid violations with proactive fixes",
           href: "/about-us", // Dummy href, change as needed
         },
+        bg: "/pics/Inspection-service-2-1.png"
       },
       {
         id: 2,
-        heading: "Parking Garage Inspections (Local law 126)",
+        heading: "2- Parking Garage Inspections (Local law 126)",
         subheading: "Your Garage isn’t just Parking, it’s a liability",
         text: "Concrete cracks, Fines Stack, We Act",
         items: [
-          "The Problem: Cracks, poor drainage, and fire hazards lurk in aging garages which can lead up to $15K heavy fines.",
-          "What we uncover: Structural Decay, Drainage disasters, Fire Hazards by overall structural integrity assessments",
+          "The Problem: Cracks, poor drainage, corroded rebar or crumbling concrete could cause collapses, endangering vehicles and pedestrians, also poor drainage accelerates decay leading to million-dollar repairs.",
+          "What we uncover: Structural integrity evaluations focussing on load-bearing columns, slabs, and water proofing with custom repair strategies to reinforce weak points and extend your garage’s lifespan by decades.",
         ],
         additionalText: "Parking Garages require regular checks to ensure safety and avoid violations",
         cta: {
-          text: "Learn about Parking Inspections",
+          text: "Parking Garages require regular checks to ensure safety and avoid violations",
           href: "/about-us", // Dummy href, change as needed
         },
+        bg: "/pics/Inspection-service-2-2.png"
       },
       {
         id: 3,
-        heading: "Parapet Inspection (Local Law 126)",
+        heading: "3- Parapet Inspection (Local Law 126)",
         subheading: "The Wall you never Notices, Falls",
         text: "Parapets Protect, PBS Perfects",
         items: [
-          "Why it’s Critical: 70% of Roof Leaks originate from parapet failures, We Check anchoring, Mortar joints, and corrosion and a lot more.",
-          "Winter Warning & Summer Threats: Freeze-thaw cycles widen cracks while UV rays degrade waterproofing",
+          "Why it’s Critical: Aging parapets can loosen or detach due to weathering, hidden corrosion, or poor construction, risking collapse and endangering pedestrians below",
+          "Winter Warning & Summer Threats: Our certified inspectors inspect your parapets with attention to detail and we provide actionable repair plans and documentation to resolve issues swiftly, ensuring your parapets meet safety codes.",
         ],
         additionalText: "Parapet inspections are not Seasonal",
         cta: {
-          text: "Learn More",
+          text: "Parapet inspections are not Seasonal",
           href: "/about-us", // Dummy href, change as needed
         },
+        bg: "/pics/Inspection-service-2-3.png"
       },
       {
         id: 4,
-        heading: "Gas Line Inspections (Local Law 152)",
+        heading: "4- Gas Line Inspections (Local Law 152)",
         subheading: "Gas Leaks don’t knock, They Explode",
         text: "Annual Checks aren’t optional, they’re Survival",
         items: [
-          "Why it Matters: A Single Gas Leak could cost Lives, and $10K in fines",
-          "Our Process: Pressure Testing: We Hunt Leaks with 99% Accuracy, Corrosion Mapping: We Spot Weak points before they burst, DOB Reporting: We file everything, no paperwork for you",
+          "Risk: Aging or corroded gas lines can develop undetected leaks, risking explosions, carbon monoxide poisoning, or fire hazards can endanger occupants and property.",
+          "Our Solution: Pressure Testing: We Hunt Leaks with 99% Accuracy. Corrosion Mapping: We Spot Weak points before they burst. DOB Reporting: We file everything, no paperwork for you",
         ],
         cta: {
-          text: "Get Inspection done this year",
+          text: "Meet NYC’s 5-year cycle deadlines",
           href: "/about-us", // Dummy href, change as needed
         },
+        bg: "/pics/Inspection-service-2-4.png"
       },
       {
         id: 5,
-        heading: "Sprinkler Hydrostatic Tests",
+        heading: "5- Sprinkler Hydrostatic Tests",
         subheading: "Water Pressure- Your Fire’s First Responder",
         text: "Weak Pressure = Weak Protection",
         items: [
-          "FDNY requires hydrostatic testing to ensure sprinkler systems withstand pressure during emergencies",
-          "We inspect Valve, alarm and flow checks to get FDNY Fast Pass",
-          "You will get Certified reports from FDNY",
+          "The Risk: Clogged sprinkler heads or low water pressure could render systems useless during a fire, risking lives and property & non-compliance with NFPA standards may void insurance coverage or trigger liability claims",
+          "Our Solution: Full System testing under real-world conditions to ensure 24/7 readiness with fast repairs and recertification to keep your insurance valid and occupants protected, We inspect Valve, alarm and flow checks to get FDNY Fast Pass. You will get Certified reports from FDNY.",
         ],
         cta: {
-          text: "Learn More",
+          text: "Get your sprinkler compliant with NFPA Standard",
           href: "/about-us", // Dummy href, change as needed
         },
+        bg: "/pics/Inspection-service-2-5.png"
       },
       {
         id: 6,
-        heading: "Elevator Inspection",
+        heading: "6- Elevator Inspection",
         subheading: "Elevators aren’t just Lifts, they’re legal liabilities",
         text: "Modernize or Penalize",
         items: [
-          "Annual Elevator Inspections ensure safe operations and compliance with accessibility and emergency standards",
-          "How We Help: Emergency Brake, Lights & Communication Testing, We Expedite filings, so doors stay open",
+          "The Risk: Malfunctioning brakes or misaligned doors could trap passengers, spur panic, or lead to injury lawsuits, outdated systems may violate accessibility laws (ADA), exposing you to discrimination claims",
+          "How We Help: Comprehensive checks of mechanical, electrical and safety systems (e.g., emergency lighting, alarms), also upgrading and recertification to meet ASME/ADA standards is what we do to ensure smooth, lawsuit-proof operations.",
         ],
         additionalText: "Inspections are done with ADA Act in loop",
         cta: {
-          text: "learn more",
+          text: "Inspection to comply ASME/ADA Standards",
           href: "/about-us", // Dummy href, change as needed
         },
+        bg: "/pics/Inspection-service-2-6.png"
       },
     ],
-    additionalText: "PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance",
+    additionalText: "PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance. With PBS, you’re not just complying with regulations; you’re investing in peace of mind for your family, tenants, stakeholders and community.",
   },
   {
     section: "cta",

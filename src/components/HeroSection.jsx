@@ -71,7 +71,7 @@ const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0
 
         {text && (
           <motion.p
-            className={`text-lg text-[#DCE2E2] mb-6 max-w-4xl ${textStyle}`}
+            className={`text-lg mb-6 max-w-4xl ${textStyle}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >

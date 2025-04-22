@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../components/HeroSection";
 import MultiStepForm from "@/components/MultiStepForm";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

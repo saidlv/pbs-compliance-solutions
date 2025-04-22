@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../src/components/HeroSection";
 import { motion } from "framer-motion";
 import { Info, ShieldCheck, DollarSign } from "lucide-react";
 import { InspectionServices } from "../data";

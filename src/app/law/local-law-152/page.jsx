@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../components/HeroSection";
 import { motion } from "framer-motion";
 import { ll152 } from "../data"; // Import the data
 

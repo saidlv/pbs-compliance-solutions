@@ -1,8 +1,8 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../src/components/HeroSection";
 import { motion } from "framer-motion";
-import { boilerComplianceData } from "../data";
+import { boilerComplianceData } from "../../../src/app/inspection-services/data";
 
 const Page = () => {
   return (

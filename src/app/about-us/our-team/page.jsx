@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../components/HeroSection";
 import { motion } from "framer-motion";
 import {
   teamMembers,
@@ -19,7 +19,7 @@ const Page = () => {
         isLine={true}
         className="font-conthrax"
         bgStyle="bg-top md:bg-bottom bg-cover"
-        textStyle="text-xl font-semibold"
+        textStyle="text-xl font-semibold text-[#DCE2E2]"
       />
 
       {/* Custom 'About Us' Label Divider */}

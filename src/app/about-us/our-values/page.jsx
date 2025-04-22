@@ -1,6 +1,6 @@
 "use client";
 import CustomImage from "@/app/CustomImage";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../components/HeroSection";
 import { motion } from "framer-motion";
 import React from "react";
 import { coreValues, features } from "./data";
@@ -26,7 +26,7 @@ const Page = () => {
         img="/pics/Rectangle 123.png"
         isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
-        textStyle="text-xl font-semibold"
+        textStyle="text-xl font-semibold text-[#DCE2E2]"
       />
 
       {/* Custom 'About Us' Label Divider */}

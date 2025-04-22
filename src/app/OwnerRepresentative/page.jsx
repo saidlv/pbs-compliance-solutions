@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../components/HeroSection";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Testimonials from "./Testimonials";
@@ -239,10 +239,25 @@ const page = () => {
   }, []);
 
   return (
-    <div>
-      {/* Hero section with title */}
-      <HeroSection heading="Focus on your Vision, We’ll handle the Complexity" text="PBS Owner Representatives act as your eyes,ears, and voice, ensuring 
-compliance, cost efficiency, and seamless operations for your property" />
+    <div className="w-screen overflow-hidden box-border">
+    {/* Hero Section - Page Title and Introduction */}
+    <HeroSection
+      heading="Your Trusted Partner in Property Advocacy & Strategic Management"
+      text="Focus on your Vision, We’ll handle the Complexity"
+      className="font-conthrax max-w-4xl lg:max-w-5xl text-3xl lg:text-5xl font-semibold"
+      bgStyle="bg-top md:bg-top bg-cover mix-blend-luminosity"
+      isLine={false}
+      textStyle="text-xl font-semibold text-[#89A096]"
+      img="/pics/ServiceHeroBg.png"
+    />
+
+    {/* Custom 'About Us' Label Divider */}
+    <div className="w-[100vw] relative">
+      <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
+      <div className="bg-[#8AD5B7] w-[60%] sm:w-1/2 lg:w-1/3 absolute left-[20%] sm:left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
+        Our Services
+      </div>
+    </div>
 
       {/* Portfolio Content Section */}
       <motion.section

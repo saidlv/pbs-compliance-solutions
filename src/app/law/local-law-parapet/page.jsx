@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../components/HeroSection";
 import { parapetData } from "../data"; // Import parapetData
 
 const page = () => {

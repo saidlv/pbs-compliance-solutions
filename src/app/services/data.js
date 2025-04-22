@@ -205,16 +205,6 @@ export const whyPBS = {
   tagline: "Ready to Simplify Property Compliance? Schedule a consultation with PBS today."
 }
 
-export const imgCarousel = [
-  ["/pics/service group 37.png"],
-  ["/pics/serviceVector.png","/pics/service group 46.png"],
-  ["/pics/serviceVector.png", "/pics/service group 48.png"],
-  ["/pics/service group 40.png"],
-  ["/pics/service group 45.png","/pics/service group 45-1.png"],
-  ["/pics/service group 42.png"],
-  ["/pics/service group 43.png"]
-]
-
 // export const mainSections = [
 //   {
 //     overview: {

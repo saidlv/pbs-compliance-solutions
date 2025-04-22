@@ -1,14 +1,10 @@
 "use client";
-
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../components/HeroSection";
 import { services, sections, whyPBS, imgCarousel } from "./data"; // Importing services data
 import { motion } from "framer-motion";
-import { Building, FileText, Rocket, Home, DotIcon } from "lucide-react";
 import Image from "next/image";
 import CTA2 from "@/components/CTA2";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ImageCarousel from "@/components/ImageCarousel";
 
 /**
  * @typedef {Object} Service
@@ -55,33 +51,7 @@ const Page = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const settings = {
-    dots: false, // Show navigation dots
-    infinite: true, // Loop slides
-    speed: 500, // Transition speed
-    slidesToShow: 5, // Show one slide at a time
-    slidesToScroll: 1, // Scroll one slide at a time
-    centerPadding: "0%", // Add padding to show partial next/prev slides
-    arrows: false, // Hide arrows for mobile
-    autoplay: true, // Optional: Auto-scroll slides
-    autoplaySpeed: 2000, // Optional: 3 seconds per slide
-    responsive: [
-      {
-        breakpoint: 720, // Adjust for very small screens
-        settings: {
-          centerPadding: "5%",
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 1024, // Adjust for very small screens
-        settings: {
-          centerPadding: "5%",
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
+ 
 
   return (
     <div className="w-screen overflow-hidden box-border">
@@ -108,7 +78,7 @@ const Page = () => {
         className="w-screen overflow-hidden relative bg-[#37403D] py-16 px-6 md:px-12 lg:px-16"
         style={{
           backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
         }}
       >
@@ -213,7 +183,7 @@ const Page = () => {
         className="w-screen overflow-hidden relative bg-[#37403D] "
         style={{
           backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
         }}
       >
@@ -289,7 +259,7 @@ const Page = () => {
               src="/pics/service-building.png"
               alt="building"
               width={600}
-              height={800}
+              height={800} 
               priority
               className="relative w-full -left-8 md:-left-16 lg:left-0 h-auto lg:h-full object-cover object-top mix-blend-luminosity rounded-[10%]"
             />
@@ -333,32 +303,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#1E2322] w-full flex flex-col items-center py-10 px-6 md:px-12 lg:px-16">
-          <h2 className="text-3xl md:text-5xl mb-6 md:mb-10 font-semibold text-[#DCE2E2] font-conthrax text-center w-full">
-            TRUST SIGNALS{" "}
-          </h2>
-
           {/* img corousel */}
-          <div className=" slider-container w-full rounded-xl overflow-hidden">
-            <Slider {...settings} className="flex justify-evenly items-center">
-              {imgCarousel.map((img, index) => (
-                <div
-                  key={index}
-                  className={`w-full flex flex-col justify-between items-center gap-4 p-4 h-auto fliter ${img.length>1?"":"grayscale" } hover:grayscale-0 transition duration-300 ease-in-out`}
-                >
-                  {img.map((item, idx) => (
-                    <img
-                      key={idx}
-                      src={item}
-                      alt={`Slide ${index + 1} - Image ${idx + 1}`}
-                      className="mb-6 object-contain mx-auto"
-                    />
-                  ))}
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </div>
+           <ImageCarousel />
       </section>
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../../components/HeroSection";
 import { localLaw } from "../data"; // Assuming data.js is in the same directory
 
 const page = () => {

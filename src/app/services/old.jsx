@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "../../components/HeroSection";
 import { motion } from "framer-motion";
 import { Building, FileText, Rocket, Home } from "lucide-react";
 import ExpandableSections from "./ExpandableSections"; // Import ExpandableSections
