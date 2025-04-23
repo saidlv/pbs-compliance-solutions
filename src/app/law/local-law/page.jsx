@@ -327,7 +327,7 @@ const Page = () => {
 
         {/* why PBS */}
         <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:items-end gap-3 sm:gap-6 my-10 lg:mb-0">
-          <div className="w-full lg:w-[40%] 2xl:w-[50%] flex items-end">
+          <div className="w-full lg:w-[40%] 2xl:w-[50%] flex items-end ">
             <Image
               src={whyPBS.img}
               alt="building"
