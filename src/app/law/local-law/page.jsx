@@ -112,6 +112,7 @@ const Page = () => {
       {/*Section 01  */}
       <section className="px-6 md:px-10 xl:px-16 pt-16 lg:pt-24 text-[#DCE2E2]">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full">
+        
           <Image
             src="/pics/local-law-11-pic1.png"
             alt="Inspection Services"
@@ -242,7 +243,11 @@ const Page = () => {
             {services.map((service, index) => {
               return (
                 <div key={index}>
-                  <div
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     className={`relative w-full flex flex-col lg:flex-row ${
                       service.id % 2 === 1
                         ? "lg:left-0"
@@ -294,12 +299,17 @@ const Page = () => {
                         })}
                       </ul>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               );
             })}
           </div>
-          <div className="w-full mt-6 sm:mt-10">
+          <motion.div className="w-full mt-6 sm:mt-10"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 3 * 0.1 }}
+          >
             <p className="text-[#DCE2E2] text-base font-medium italic mb-2 flex-1 text-center lg:text-left relative lg:left-[60%] 2xl:left-[60%] p-6 bg-[#2D3533] rounded-lg w-2/3 md:w-1/2 lg:w-1/3 2xl:w-1/4 mx-auto lg:mx-0">
               <span className="font-semibold">
                 SWARMP ANALYSIS {" "}
@@ -309,13 +319,18 @@ const Page = () => {
                 </span>
               </span>
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Section 03 */}
       <section className="px-6 md:px-10 lg:px-16 2xl:px-24 pt-16 text-[#DCE2E2] flex flex-col items-center justify-between">
-       <div className="w-full mb-16">
+       <motion.div className="w-full mt-6 sm:mt-10 mb-16"
+            initial={{ opacity: 0, scale:0.8 }}
+            whileInView={{ opacity: 1, scale:1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 3 * 0.1 }}
+          >
         <Image
           src="/pics/local-law-11-pic6.png"
           alt="Inspection Services"
@@ -323,18 +338,18 @@ const Page = () => {
           height={500}
           className="w-[90%] lg:w-full h-auto object-contain lg:mx-0 mx-auto"
         />
-        </div>
+        </motion.div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:items-end gap-3 sm:gap-6 my-10 lg:mb-0">
-          <div className="w-full lg:w-[40%] 2xl:w-[50%] flex items-end ">
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:items-center gap-3 sm:gap-6 my-10 lg:mb-0">
+          <div className="w-full lg:w-[40%] 2xl:w-[50%] flex items-end">
             <Image
               src={whyPBS.img}
               alt="building"
               width={600}
               height={800}
               priority
-              className="relative w-1/2 mx-auto lg:w-full -left-0 lg:left-0 h-auto lg:h-full object-cover object-top mix-blend-luminosity"
+              className="relative w-1/2 mx-auto lg:w-full -left-0 lg:left-0 h-auto lg:h-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
             />
           </div>
 
