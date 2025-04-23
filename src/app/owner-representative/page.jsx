@@ -66,7 +66,7 @@ const challenges = [
       "Negotiation with contractors, agencies",
       "Boost ROR with Proactive Strategies",
     ],
-  },
+  }, 
 ];
 
 const howWeWork = [
@@ -353,7 +353,7 @@ const Page = () => {
 
         <div>
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full lg:w-[90%] mx-auto">
-            <Image
+            <Image  
               src="/pics/owner-repre-4.png"
               alt="Inspection Services"
               width={500}

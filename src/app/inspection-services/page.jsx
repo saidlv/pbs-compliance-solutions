@@ -52,7 +52,7 @@ const InspectionServices = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            cclassName="w-[80%] lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
+            className="w-[80%] lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
           />
           <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-end text-center lg:text-left px-4 lg:px-0">
             <h1 className="text-[#8AD5B7] text-3xl lg:text-[55px] font-semibold font-conthrax mb-2 leading-tight">

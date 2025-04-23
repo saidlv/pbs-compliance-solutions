@@ -3,146 +3,391 @@
 import { motion } from "framer-motion";
 import HeroSection from "../../../components/HeroSection";
 import { localLaw } from "../data"; // Assuming data.js is in the same directory
+import Image from "next/image";
+import CTA2 from "../../../components/CTA2";
+import ImageCarousel from "../../../components/ImageCarousel"; // Assuming ImageCarousel is in the same directory
+import { DotIcon } from "lucide-react";
 
-const page = () => {
+const Page = () => {
+  const section01 = {
+    title: "Facade Inspection (Local Law 11/FISP)",
+    heading: "NYC’s Silent Killer",
+    text: "5 Years, 1 Inspection, Zero excuses",
+    items: [
+      "The Risk:Structural degradation or falling debris could injure pedestrians, trigger lawsuits, or result in huge fines for non-compliance",
+      "Our Solution:Certified Engineers inspect masonry, parapets and waterproofing with actionable repair plans with streamlined reporting plan to meet NYC deadlines, keeping your building safe and legally protected",
+    ],
+    additionalText:
+      "The Building we inspect avoid violations with proactive fixes",
+  };
+
+  const stakes = {
+    title: "The Stakes",
+    items: [
+      "Fines:Up to $18K for missed deadlines or unsafe conditions",
+      "Liability:Falling debris risks lawsuits and reputational ruin",
+      "Safety:Protect pedestrians, tenants, and your property’s Value",
+    ],
+  };
+
+  const services = [
+    {
+      id: 1,
+      heading: "FACADE INSPECTIONS",
+      text: "YOUR BUILDING’S HEALTH CHECKUP",
+      items: [
+        "QEWI-CERTIFIED EXPERTS: Our inspectors blend decades of experience with cutting-edge tools.",
+        "360° ASSESSMENT: We cover every single aspect of your building for facade Code compliance",
+        "VISUAL & PHYSICAL EXAMS: We uncover cracks, spalling, and corrosion",
+      ],
+      img: "/pics/local-law-11-pic5.png", // Placeholder image name
+    },
+    {
+      id: 2,
+      heading: "REPAIR & MAINTENANCE PLANNING",
+      text: "WE FIX IT ONCE & FIX IT RIGHT THROUGH OUR",
+      items: [
+        "TAILORED STRATEGIES where we prioritize repairs by urgency and budget",
+        "NETWORK OF VETTED TRUSTED CONTRACTORS & SPECIALISTS for Seamless Execution",
+      ],
+      img: "/pics/local-law-11-pic3.png", // Placeholder image name
+    },
+    {
+      id: 3,
+      heading: "COMPLIANCE REPORTING",
+      text: "WE MAKE YOUR PAPERWORK, PAINLESS",
+      items: [
+        "DOB-READY FILINGS: We submit error-free reports electronically, no last minute scrambles",
+        "TRANSPARENT TRACKING: We Monitor your Compliance status in real-time via our Client Portal",
+      ],
+      img: "/pics/local-law-11-pic4.png", // Placeholder image name
+    },
+  ];
+
+  const whyPBS = {
+    img: "/pics/local-law-11-pic7.png",
+    title: "Why Choose PBS",
+    text: "PBS Handles your Challenges and fix them by taking your pain points on board",
+    list1: [
+      "30+, Years in NYC 1300+ Facades Inspected",
+      "Our DOB Certified experience for your Full DOB acceptance",
+      "Emergencies don't wait, neither do we",
+    ],
+    list2: [
+      "You will never miss your deadlines by partnering with PBS as we have an automated Alert system which reminds you before any deadline.",
+      "Our Alert System has increased the on-time filing rate by 95%",
+      "Transparent Pricing without any hidden surprises",
+      "PBS-Partnered Contractors with a good portfolio of Repair and Maintenance work",
+    ],
+  }
+
   return (
-    <div className="bg-brand-darkest">
-      {/* Hero section as full-width header */}
+    <div
+      className="bg-[#37403D]"
+      style={{
+        backgroundImage: `url('/pics/Brand Patterns-01 1.png')`,
+        backgroundSize: "contain",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Hero Section */}
       <HeroSection
         heading="Avoid Fines, Prevent Disasters, Protect your Legacy"
-        text="Local Law 11 Compliance isn’t just a mandate, it’s your building lifeline. Let PBS 
-          Handle the complexities while you focus on what matters."
-        staggerVal={0.1}
+        text="Local Law 11 Compliance isn’t just a mandate, it’s your building lifeline. Let PBS Handle the complexities while you focus on what matters"
+        className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"
+        bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"
+        isLine={false}
+        textStyle="text-base sm:text-lg md:text-xl font-semibold text-[#89A096]"
+        img="/pics/local-law-hero.png"
       />
 
-      {/* Body content */}
-      <div className="py-16 px-6 md:px-12 lg:px-24">
-        <section className="container mx-auto sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%]">
-          {/* Why Local Law 11 Matters */}
-          <motion.div
-            className="bg-brand-dark1 p-8 rounded-lg shadow-md mb-8 border-l-4 border-green-500"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <h2 className="text-2xl font-semibold mb-4 text-white">
-              {localLaw.whyLl11.heading}
-            </h2>
-            <p className="text-lg text-brand-midGray mb-4">
-              <span className="font-bold text-green-500">
-                {localLaw.whyLl11.subheadline}
-              </span>
-            </p>
-            <div
-              dangerouslySetInnerHTML={{ __html: localLaw.whyLl11.body }}
-              className="text-brand-midGray"
-            />
-          </motion.div>
-
-          {/* Our Services */}
-          <motion.div
-            className="bg-brand-dark2 p-8 rounded-lg shadow-md mb-8 border-l-4 border-blue-500"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <h2 className="text-2xl font-semibold mb-4 text-white">
-              {localLaw.ourServices.heading}
-            </h2>
-            <p className="text-lg text-brand-midGray mb-4">
-              <span className="font-bold text-blue-500">
-                {localLaw.ourServices.subheadline}
-              </span>
-            </p>
-            {localLaw.ourServices.services.map((service, index) => (
-              <div key={index} className="mb-6">
-                <h3 className="text-xl font-semibold mb-2 text-white">
-                  {service.heading}
-                </h3>
-                {service.subheading && (
-                  <h4 className="text-lg font-medium mb-2 text-brand-midGray">
-                    {service.subheading}
-                  </h4>
-                )}
-                {service.items && (
-                  <ul className="list-disc list-inside text-brand-midGray">
-                    {service.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-lg">
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {service.body && (
-                  <div
-                    dangerouslySetInnerHTML={{ __html: service.body }}
-                    className="text-brand-midGray"
-                  />
-                )}
-              </div>
-            ))}
-          </motion.div>
-
-          {/* The PBS Process */}
-          <motion.div
-            className="bg-brand-dark3 p-8 rounded-lg shadow-md mb-8 border-l-4 border-orange-500"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <h2 className="text-2xl font-semibold mb-4 text-white">
-              {localLaw.pbsProcess.heading}
-            </h2>
-            <div
-              dangerouslySetInnerHTML={{ __html: localLaw.pbsProcess.description }}
-              className="text-brand-midGray"
-            />
-          </motion.div>
-
-          {/* Why Choose PBS */}
-          <motion.div
-            className="bg-brand-dark4 p-8 rounded-lg shadow-md mb-8 border-l-4 border-pink-500"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            <h2 className="text-2xl font-semibold mb-4 text-white">
-              {localLaw.whyChoosePbs.heading}
-            </h2>
-            <ul className="list-disc list-inside text-brand-midGray">
-              {localLaw.whyChoosePbs.points.map((point, index) => (
-                <li key={index} className="text-lg">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* CTA Section */}
-          <motion.div
-            className="bg-brand-dark5 p-8 rounded-lg shadow-md border-l-4 border-purple-500"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.0 }}
-          >
-            <h2 className="text-2xl font-semibold mb-4 text-white">
-              {localLaw.ctaSection.heading}
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {localLaw.ctaSection.trustSignals.map((signal, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-200 px-4 py-2 rounded-full text-sm text-gray-800"
-                >
-                  {signal}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </section>
+      {/* Custom 'About Us' Label Divider */}
+      <div className="w-[100vw] relative">
+        <div className="bg-[#8AD5B7] w-full text-[#DCE2E2] py-1"></div>
+        <div className="bg-[#8AD5B7] w-[60%] lg:w-1/2 absolute left-[20%] lg:left-[25%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
+          Local Law 11
+        </div>
       </div>
+
+      {/*Section 01  */}
+      <section className="px-6 md:px-10 xl:px-16 pt-16 lg:pt-24 text-[#DCE2E2]">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full">
+          <Image
+            src="/pics/local-law-11-pic1.png"
+            alt="Inspection Services"
+            width={500}
+            height={500}
+            className="w-[80%] lg:w-[40%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
+          />
+          <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
+            <span className="bg-[#1E2322] w-4/5 rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+              {section01.title}
+            </span>
+            <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax">
+              {section01.heading}
+            </h2>
+            <p className="text-base font-semibold text-[#89A096]">
+              {section01.text}
+            </p>
+
+            <div className="flex items-stretch justify-start gap-6">
+              <div className="bg-[#8AD5B7] w-2 h-auto"></div>
+              <div className="space-y-2 w-[98%]">
+                {section01.items.map((item, index) => {
+                  // Count the number of colons in the item to identify multi-colon item
+                  const colonCount = (item.match(/:/g) || []).length;
+                  const isMultiColon = colonCount > 1;
+
+                  const heading = item.substring(0, item.indexOf(":"));
+                  const description = item.substring(item.indexOf(":") + 1);
+
+                  return (
+                    <div key={index} className="space-y-1">
+                      {/* Heading: Always the part before the first colon */}
+                      <h4 className="text-sm font-semibold text-[#DCE2E2]">
+                        {heading + ":"}
+                      </h4>
+
+                      {isMultiColon ? (
+                        <ul className="space-y-2">
+                          {description.split(".").map((pair, idx) => {
+                            return (
+                              <li
+                                key={idx}
+                                className="text-xs font-semibold text-[#89A096]"
+                              >
+                                <span className="font-semibold">
+                                  {pair.substring(0, pair.indexOf(":")).trim() +
+                                    ":"}
+                                </span>{" "}
+                                {pair.substring(pair.indexOf(":") + 1).trim()}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      ) : (
+                        // Single-colon item: Render description as a paragraph
+                        <p className="text-xs font-semibold text-[#89A096]">
+                          {description.trim()}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <p className="text-[#89A096] text-base font-semibold text-center lg:text-left w-full lg:w-2/3">
+              {section01.additionalText}
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 my-10"></div>
+
+        <div className="flex flex-col lg:flex-row items-stretch justify-between w-full rounded-lg bg-[#2E3734] py-3 px-6 lg:py-6 lg:px-12 gap-6 lg:gap-12 ">
+          <div className="flex-1 w-full lg:w-[50%] flex flex-col justify-between items-center lg:items-start gap-3 rounded-2xl">
+            <Image
+              src="/pics/local-law-11-pic2.png"
+              alt="Inspection Services"
+              width={500}
+              height={500}
+              className="w-full sm:max-h-[250px] lg:max-h-[200px] object-contain mx-auto lg:mx-0 mix-blend-luminosity relative left-[10%] md:left-0 rotate-[-5deg]"
+            />
+            <h2 className="text-2xl sm:text-3xl lg:text-[40px] text-center md:text-left font-semibold text-[#DCE2E2] font-conthrax uppercase">
+              The Backstory
+            </h2>
+            <p className="text-sm sm:text-base lg:text-base text-center lg:text-left font-semibold text-[#89A096] flex-1 max-w-[90%]">
+              Enacted in 1980 after a fatal masonry collapse, LL11 (FISP)
+              ensures NYC’s facades never become headlines again
+            </p>
+          </div>
+
+          <div className="flex-1 w-full lg:w-[50%] flex flex-col justify-center items-center lg:items-start gap-4 p-4 sm:p-6 lg:p-6 bg-[#1E2322] rounded-lg">
+            <div className="w-full flex flex-col gap-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-semibold text-[#DCE2E2] font-conthrax uppercase">
+                {stakes.title}
+              </h2>
+              <div className="flex-1 flex flex-col gap-3">
+                {stakes.items.map((item, index) => (
+                  <div key={index} className="space-y-1">
+                    <h3 className="text-lg lg:text-xl font-semibold text-[#DCE2E2] font-conthrax">
+                      {item.split(":")[0] + ":"}
+                    </h3>
+                    <p className="text-sm sm:text-base lg:text-base font-semibold text-[#89A096]">
+                      {item.split(":")[1]}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 02 */}
+      <section className="px-6 md:px-10 lg:px-16 2xl:px-24 pb-10 pt-16 text-[#DCE2E2]">
+        <div className="w-full overflow-hidden relative">
+          {/* Moved title section here and fixed spacing */}
+          <div className="text-center my-2 mb-10 py-2">
+            <h1 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-4">
+              Our Services
+            </h1>
+            <p className="text-base lg:text-xl font-semibold text-[#89A096] max-w-2xl mx-auto">
+               From Inspection to Action, We’ve got you covered
+            </p>
+          </div>
+
+          <div className="w-full flex flex-col items-center gap-6 sm:gap-16">
+            {services.map((service, index) => {
+              return (
+                <div key={index}>
+                  <div
+                    className={`relative w-full flex flex-col lg:flex-row ${
+                      service.id % 2 === 1
+                        ? "lg:left-0"
+                        : "lg:left-[20%] xl:left-[35%]"
+                    } items-center lg:items-stretch lg:justify-between gap-12`}
+                  >
+                    {service?.img && (
+                      <div className="w-full lg:w-1/3 flex justify-center items-center">
+                        <Image
+                          src={service.img}
+                          alt={service.heading}
+                          width={100}
+                          height={100}
+                          className="w-1/2 lg:w-full h-1/2 lg:h-full object-contain mix-blend-luminosity"
+                        />
+                      </div>
+                    )}
+                    <div
+                      className={`flex flex-col gap-4 w-full lg:w-2/3 justify-center`}
+                    >
+                      <h2 className="text-2xl lg:text-3xl text-center lg:w-4/5 lg:text-left font-semibold text-[#8AD5B7]">
+                        {service.heading}
+                      </h2>
+                      <p className="text-[#DCE2E2] text-base lg:w-4/6 2xl:w-full font-semibold text-center lg:text-left ">
+                        {service.text}
+                      </p>
+
+                      <ul
+                        className={`${
+                          service.id == 2 ? "lg:w-[65%]" : "lg:w-[90%]"
+                        } 2xl:w-full`}
+                      >
+                        {service?.items?.map((item, idx) => {
+                          return (
+                            <li
+                              key={idx}
+                              className="text-[#DCE2E2] text-base font-medium italic mb-2 text-center lg:text-left"
+                            >
+                              <span className="font-semibold">
+                                {service.id !== 2 ? item?.split(":")[0] : ""}
+                                <span className="test-xs font-semibold text-[#89A096]">
+                                  {service.id !== 2
+                                    ? item?.split(":")[1]
+                                    : item}
+                                </span>
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="w-full mt-6 sm:mt-10">
+            <p className="text-[#DCE2E2] text-base font-medium italic mb-2 flex-1 text-center lg:text-left relative lg:left-[60%] 2xl:left-[60%] p-6 bg-[#2D3533] rounded-lg w-2/3 md:w-1/2 lg:w-1/3 2xl:w-1/4 mx-auto lg:mx-0">
+              <span className="font-semibold">
+                SWARMP ANALYSIS {" "}
+                <span className="test-xs font-semibold text-[#89A096]">
+                  ACCORDING TO NYC LL11 CODE, FACADES ARE CLASSIFIED INTO 3
+                  CATEGORIES (SAFE, SWARMP, UNSAFE).
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 03 */}
+      <section className="px-6 md:px-10 lg:px-16 2xl:px-24 pt-16 text-[#DCE2E2] flex flex-col items-center justify-between">
+       <div className="w-full mb-16">
+        <Image
+          src="/pics/local-law-11-pic6.png"
+          alt="Inspection Services"
+          width={500}
+          height={500}
+          className="w-[90%] lg:w-full h-auto object-contain lg:mx-0 mx-auto"
+        />
+        </div>
+
+        {/* why PBS */}
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:items-end gap-3 sm:gap-6 my-10 lg:mb-0">
+          <div className="w-full lg:w-[40%] 2xl:w-[50%] flex items-end">
+            <Image
+              src={whyPBS.img}
+              alt="building"
+              width={600}
+              height={800}
+              priority
+              className="relative w-1/2 mx-auto lg:w-full -left-0 lg:left-0 h-auto lg:h-full object-cover object-top mix-blend-luminosity"
+            />
+          </div>
+
+          <div className="w-full lg:w-[60%] 2xl:w-[50%] flex flex-col md:justify-end 2xl:justify-end lg:pb-6 h-full">
+            <div className="w-full h-auto flex items-start justify-start lg:justify-between">
+              <div className="w-full h-auto flex flex-col gap-6 2xl:gap-12">
+                <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
+                 {whyPBS.title}
+                </h1>
+                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left text-[#89A096] font-semibold space-y-1">
+                  <div className="flex flex-col gap-2">
+                    {whyPBS.list1.map((item, index) => {
+                      return (
+                        <span key={index} className="flex gap-2">
+                          <DotIcon className="text-[#DCE2E2] w-[5%]" />
+                          {index==0 ? <span><span className="text-[#DCE2E2]"> {item.split(",")[0]}</span> {item.trim().split(",")[1]}</span>: item}
+                          
+                        </span>
+                      );
+                    })}
+                   </div>
+                </div>
+
+                <div className="flex justify-start items-stretch gap-3 p-3">
+                <div className="w-4 h-auto bg-[#8AD5B7] hidden lg:block"></div>
+                 <p className="text-2xl lg:text-3xl text-center md:text-left font-semibold text-[#DCE2E2]">{whyPBS.text}</p>
+                </div>
+
+                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold text-[#89A096] flex flex-col gap-2">
+                  <div>
+                    {whyPBS.list2.map((item, index) => {
+                      return (
+                        <p key={index} className="flex gap-2">
+                        <DotIcon className="w-[5%]" />{" "}
+                        <span className="w-[90%]">
+                       {item}
+                        </span>
+                      </p>
+                      );
+                    })}
+                  </div>
+               
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* img corousel */}
+       <ImageCarousel />
     </div>
   );
 };
 
-export default page;
+export default Page;
