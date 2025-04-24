@@ -121,7 +121,7 @@ const Page = () => {
             className="w-[80%] lg:w-[40%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-4/5 rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
               {section01.title}
             </span>
             <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax">
