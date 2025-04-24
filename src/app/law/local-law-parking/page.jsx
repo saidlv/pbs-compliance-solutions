@@ -301,17 +301,17 @@ const Page = () => {
           </h2>
 
           <div className="flex flex-col items-start justify-center gap-6 lg:gap-10">
-            <div className="w-full flex flex-col md:flex-row items-stretch text-center md:text-left justify-start gap-6 md:w-[70%]">
-              <h2 className="text-[#DCE2E2] text-2xl md:text-3xl font-semibold w-full mx-auto md:w-[50%] xl:w-1/2">
+            <div className="w-full flex flex-col md:flex-row items-stretch text-center md:text-left justify-start gap-6 lg:w-[70%]">
+              <h2 className="text-[#DCE2E2] text-2xl md:text-3xl font-semibold w-full mx-auto lg:w-[50%] xl:w-[40%] xl:mx-0">
                 {WhatThisMeans.first.title}
               </h2>
-              <p className="text-[#89A096] text-lg lg:text-xl text-left font-semibold w-full md:w-[50%] xl:w-[50%]">
+              <p className="text-[#89A096] text-lg lg:text-xl text-left font-semibold w-full lg:w-[50%] xl:w-[45%]">
                 {WhatThisMeans.first.text}
               </p>
             </div>
 
-            <div className="flex flex-col md:flex-row items-start justify-start gap-6 w-full md:w-[85%]">
-              <h4 className="text-[#DCE2E2] text-2xl md:text-3xl text-center md:text-left font-semibold w-full md:w-[55%] xl:w-[45%]">
+            <div className="flex flex-col md:flex-row items-start justify-start gap-6 w-full lg:w-[85%]">
+              <h4 className="text-[#DCE2E2] text-2xl md:text-3xl text-center md:text-left font-semibold w-full lg:w-[55%] xl:w-[45%]">
                 {WhatThisMeans.second.title}
               </h4>
               <ul className="list-disc list-inside w-full">
