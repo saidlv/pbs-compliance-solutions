@@ -96,7 +96,7 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
                 {item.submenu.map((subItem) => (
                   <motion.div
                     key={subItem.name}
-                    className="cursor-pointer hover:text-gray-300 text-nowrap font-medium"
+                    className="cursor-pointer hover:hover:text-[#8AD5B7] text-nowrap font-medium"
                     variants={itemVariants}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}

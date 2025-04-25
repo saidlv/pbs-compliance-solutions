@@ -72,9 +72,9 @@ const Page = () => {
     second: {
       title: "2- Act before your window closes",
       items: [
-        "Sub-Cycle A: Past Due - Schedule repairs/re-inspections immediately if not compliant",
-        "Sub-Cycle B: Deadlines approaching - Inspections must be completed by 31st January 2025",
-        "Sub-Cycle C: Prepare Early - Proactive Inspections recommended to avoid delays",
+        "Sub-Cycle A: Past Due _ Schedule repairs/re-inspections immediately if not compliant",
+        "Sub-Cycle B: Deadlines approaching _ Inspections must be completed by 31st January 2025",
+        "Sub-Cycle C: Prepare Early _ Proactive Inspections recommended to avoid delays",
       ],
     },
   };
@@ -212,7 +212,7 @@ const Page = () => {
         <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 my-10"></div>
 
         <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 w-full lg:w-[80%] mx-auto">
-          <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax">
+          <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center">
             Know About LL 126
           </h2>
           <p className="text-[#89A096] text-lg lg:text-xl text-center font-semibold">
@@ -295,8 +295,8 @@ const Page = () => {
           </table>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 w-full lg:w-[95%] mx-auto pb-10">
-          <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center">
+        <div className="flex flex-col items-center 2xl:items-start justify-center gap-6 lg:gap-10 w-full lg:w-[95%] mx-auto pb-10">
+          <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center w-full">
             What This Means for you
           </h2>
 
@@ -314,12 +314,20 @@ const Page = () => {
               <h4 className="text-[#DCE2E2] text-2xl md:text-3xl text-center md:text-left font-semibold w-full lg:w-[55%] xl:w-[45%]">
                 {WhatThisMeans.second.title}
               </h4>
-              <ul className="list-disc list-inside w-full">
+              <ul className="w-full">
                 {WhatThisMeans.second.items.map((subItem, subIndex) => {
                   return (
                     <li key={subIndex} className="flex gap-2 text-[#89A096]">
-                      <DotIcon className="text-[#89A096] w-[5%]" size={32} />
-                      <span className="w-[95%]">{subItem}</span>
+                      <DotIcon className="text-[#ffff] w-[5%]" size={32} />
+                      <span className="w-[85%] 2xl:w-[70%] text-base lg:text-xl font-semibold">
+                        <span className="text-[#ffff] italic">
+                          {subItem.split(":")[0] + ": "}
+                        </span>
+                        <span className="text-[#8AD5B7]">
+                          {subItem.split(":")[1].split("_")[0] + " - "}
+                        </span>
+                        <span>{subItem.split("_")[1]}</span>
+                      </span>
                     </li>
                   );
                 })}
@@ -338,21 +346,18 @@ const Page = () => {
           />
           <div className="text-left w-full lg:w-[60%] xl:w-[70%] 2xl:w-[70%] flex flex-col items-start justify-center gap-3 sm:gap-6 p-6 bg-[#2D3533] rounded-3xl">
             {/* Heading */}
-            <h2 className="text-[#8AD5B7] text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 lg:mb-8">
+            <h2 className="text-[#8AD5B7] text-2xl lg:text-3xl font-semibold">
               Key Take-aways
             </h2>
 
             {/* List */}
-            <ul className="flex flex-col gap-3 sm:gap-4 lg:gap-5">
+            <ul className="flex flex-col">
               {keyTakeaways.map((item, index) => (
                 <li
                   key={index}
-                  className="flex gap-2 sm:gap-3 items-start text-[#89A096]"
+                  className="flex gap-2 sm:gap-3 items-center text-[#89A096]"
                 >
-                  <DotIcon
-                    className="text-[#89A096] w-4 sm:w-5 flex-shrink-0 mt-1"
-                    size={32}
-                  />
+                  <DotIcon className="w-4 sm:w-5 flex-shrink-0" size={32} />
                   <span className="text-sm italic lg:text-base font-semibold">
                     {item}
                   </span>
@@ -389,8 +394,12 @@ const Page = () => {
           </div>
         </div>
 
-        <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2"> How It Works</h2>
-        <p className="text-[#89A096] text-sm lg:text-base text-center font-semibold mb-6 lg:mb-10">Your Path to Compliance in 4 Easy Steps
+        <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2">
+          {" "}
+          How It Works
+        </h2>
+        <p className="text-[#89A096] text-sm lg:text-base text-center font-semibold mb-6 lg:mb-10">
+          Your Path to Compliance in 4 Easy Steps
         </p>
 
         <div className="relative flex flex-col items-center w-full py-4 sm:py-6 lg:py-8">
@@ -404,42 +413,20 @@ const Page = () => {
   {timelineItems.map((item, index) => (
     <div
       key={index}
-      className={`relative flex flex-col sm:flex-row w-full max-w-3xl ${
-        item.position === "left" ? "sm:justify-start" : "sm:justify-end"
+      className={`relative flex flex-col w-full max-w-3xl ${
+        item.position === "left" ? "sm:items-start" : "sm:items-end"
       } mb-6 sm:mb-8 lg:mb-10`}
     >
-      {/* Horizontal Line and Circle (Mobile: Centered, Desktop: Positioned) */}
-      <div
-        className={`relative w-full sm:w-1/2 h-px rounded-full bg-[#DCE2E2] flex sm:hidden justify-center mb-2 sm:mb-0 sm:absolute sm:top-1/2 sm:transform sm:-translate-y-1/2 ${
-          item.position === "left" ? "sm:right-0" : "sm:left-0"
-        }`}
-      >
-        <div className="w-3 h-3 rounded-full bg-[#8AD5B7] absolute -top-2"></div>
-      </div>
-
-      <div
-        className={`hidden sm:flex sm:absolute sm:top-1/2 sm:transform sm:-translate-y-1/2 sm:w-1/2 h-2 rounded-full bg-[#DCE2E2] ${
-          item.position === "left" ? "sm:right-0" : "sm:left-0"
-        }`}
-      ></div>
-
-      {/* Circle on the Text Side (Desktop Only) */}
-      <div
-        className={`hidden sm:block absolute top-1/2 transform -translate-y-1/2 w-6 h-6 z-50 rounded-full bg-[#8AD5B7] ${
-          item.position === "left" ? "right-0" : "left-0"
-        }`}
-      ></div>
-
       {/* Content */}
       <div
-        className={`flex items-center sm:items-start w-full sm:w-1/2 ${
+        className={`flex items-center w-full sm:w-1/2 ${
           item.position === "left" ? "sm:pr-4 lg:pr-6" : "sm:pl-4 lg:pl-6"
         }`}
       >
         {/* Text */}
         <div
           className={`flex flex-col gap-1 sm:gap-1 lg:gap-2 w-full ${
-            item.position === "left" ? "text-center sm:text-left" : "text-center sm:text-right"
+            item.position === "left" ? "text-center sm:text-right" : "text-center sm:text-left"
           }`}
         >
           <h4 className="text-[#DCE2E2] text-lg sm:text-xl lg:text-2xl font-semibold">
@@ -447,6 +434,17 @@ const Page = () => {
           </h4>
           <p className="text-[#89A096] text-sm sm:text-base">{item.description}</p>
         </div>
+      </div>
+
+      {/* Horizontal Line and Circle (Mobile: Centered, Desktop: Positioned Below Content) */}
+      <div
+        className={`relative w-full sm:w-1/2 h-2 rounded-full bg-[#DCE2E2] flex justify-center mt-4 z-10`}
+      >
+        <div
+          className={`w-6 h-6 rounded-full bg-[#8AD5B7] absolute -top-2 sm:top-[-10px] ${
+            item.position === "left" ? "sm:left-0" : "sm:right-0"
+          }`}
+        ></div>
       </div>
     </div>
   ))}
@@ -479,8 +477,8 @@ const Page = () => {
         </div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:items-center 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-10">
-          <div className="w-full lg:w-[40%] xl:w-1/2 2xl:w-[60%] flex items-end">
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-10">
+          <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] flex items-end">
             <Image
               src={whyPBS.img}
               alt="building"
@@ -491,84 +489,84 @@ const Page = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[65%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full">
-              <div className="w-full h-auto flex flex-col gap-2 2xl:gap-6">
-                <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
-                  {whyPBS.title}
-                </h1>
-                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left text-[#89A096] font-semibold space-y-1">
-                  <div className="flex flex-col gap-2">
-                    {whyPBS.list1.map((item, index) => {
-                      return (
-                        <span key={index} className="flex gap-2 text-left">
-                          <DotIcon className="text-[#DCE2E2] w-[5%]" />
-                          {index == 0 ? (
-                            <span>
-                              <span className="text-[#DCE2E2]">
-                                {" "}
-                                {item.split(",")[0]}
-                              </span>{" "}
-                              {item.trim().split(",")[1]}
-                            </span>
-                          ) : (
-                            item
-                          )}
-                        </span>
-                      );
-                    })}
-                  </div>
+          <div className="w-full lg:w-[65%] 2xl:w-[50%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
+            <div className="w-full h-auto flex flex-col gap-2 2xl:gap-6">
+              <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
+                {whyPBS.title}
+              </h1>
+              <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left text-[#89A096] font-semibold space-y-1">
+                <div className="flex flex-col gap-2">
+                  {whyPBS.list1.map((item, index) => {
+                    return (
+                      <span key={index} className="flex gap-2 text-left">
+                        <DotIcon className="text-[#DCE2E2] w-[5%]" />
+                        {index == 0 ? (
+                          <span>
+                            <span className="text-[#DCE2E2]">
+                              {" "}
+                              {item.split(",")[0]}
+                            </span>{" "}
+                            {item.trim().split(",")[1]}
+                          </span>
+                        ) : (
+                          item
+                        )}
+                      </span>
+                    );
+                  })}
                 </div>
+              </div>
 
-                <div className="flex justify-start items-stretch gap-3 px-3">
-                  <p className="text-2xl lg:text-3xl text-center md:text-left font-semibold text-[#DCE2E2]">
-                    PA's
-                  </p>
+              <div className="flex justify-start items-stretch gap-3 px-3">
+                <p className="w-full text-2xl lg:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2]">
+                  PA's
+                </p>
+              </div>
+
+              <div className="text-sm lg:text-base 2xl:text-xl text-center lg:text-left font-semibold text-[#89A096] flex flex-col gap-2">
+                <div>
+                  {whyPBS.list2.map((item, index) => {
+                    return (
+                      <p key={index} className="w-[90%] 2xl:w-[70%] pl-[3%]">
+                        {item}
+                      </p>
+                    );
+                  })}
                 </div>
+              </div>
 
-                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold text-[#89A096] flex flex-col gap-2">
-                  <div>
-                    {whyPBS.list2.map((item, index) => {
-                      return (
-                        <p key={index} className="w-[90%] pl-[3%]">
-                          {item}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </div>
+              <div className="w-[30%] h-2 bg-[#8AD5B7] hidden lg:block mt-6"></div>
 
-                <div className="w-[30%] h-2 bg-[#8AD5B7] hidden lg:block mt-6"></div>
+              <div className="space-y-1">
+                <p className="text-[#89A096] text-sm lg:text-base 2xl:text-xl text-center lg:text-left font-semibold">
+                  {whyPBS.text1}
+                </p>
+                <p className="text-[#89A096] text-sm lg:text-base 2xl:text-xl text-center lg:text-left font-semibold">
+                  {" "}
+                  Schedule your inspection and get a quote in 24 Hour
+                </p>
+              </div>
 
-                <div className="space-y-1">
-                  <p className="text-[#89A096] text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold">
-                    {whyPBS.text1}
-                  </p>
-                  <p className="text-[#89A096] text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold">
-                    {" "}
-                    Schedule your inspection and get a quote in 24 Hour
-                  </p>
-                </div>
-
-                <div className="mt-6 flex flex-col xl:flex-row gap-6 items-center justify-start">
-                  <CTA2
-                    text="Book Your Slot Now"
-                    isArrow={false}
-                    href="/tutorial"
-                    styling={`w-[90%] md:w-2/3 lg:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
-                  />
-                  <CTA2
-                    text="Call Our Inspectors (914-316-6956)"
-                    isArrow={false}
-                    href="/tutorial"
-                    styling={`w-[90%] md:w-2/3 lg:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
-                  />
-                </div>
+              <div className="w-full mt-6 flex flex-col xl:flex-row gap-6 items-center justify-start">
+                <CTA2
+                  text="Book Your Slot Now"
+                  isArrow={false}
+                  href="/tutorial"
+                  styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+                />
+                <CTA2
+                  text="Call Our Inspectors (914-316-6956)"
+                  isArrow={false}
+                  href="/tutorial"
+                  styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax`}
+                />
               </div>
             </div>
           </div>
+        </div>
       </section>
 
-      <ImageCarousel/>
+      <ImageCarousel />
     </div>
   );
 };

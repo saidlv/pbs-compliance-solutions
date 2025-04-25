@@ -146,7 +146,7 @@ const Page = () => {
                     <div key={index} className="space-y-1">
                       {/* Heading: Always the part before the first colon */}
                       <h4 className="text-sm font-semibold text-[#DCE2E2]">
-                        {heading + ":"}
+                        {heading}
                       </h4>
 
                       {isMultiColon ? (
