@@ -15,10 +15,9 @@ const Page = () => {
     heading: "The Wall you never Notices, Falls",
     text: "Parapets Protect, PBS Perfects",
     items: [
-      "Why it's Critical:Aging parapets can loosen or detach due to weathering, hidden corrosion, or poor construction, risking collapse and endangering pedestrians below",
-      "Winter Warning & Summer Threats:Our certified inspectors inspect your parapets with attention to detail and we provide actionable repair plans and documentation to resolve issues swiftly, ensuring your parapets meet safety codes.",
+      "It looks fine from the ground, but hidden deterioration lurks behind the surface. You walk past them everyday, those unassuming walls lining rooftops, shielding buildings from weather, and blending into the city’s skyline. Parapets, they go unnoticed until a brick cracks, mortar crumbles, or worse, a collapse puts lives at risk",
     ],
-    additionalText: "Parapet inspections are not Seasonal",
+    additionalText: "Parapet inspections are not Seasonal!What seems solid today could be one storm away from failure.",
   };
 
   const Div2_Sec1 = {
@@ -49,20 +48,9 @@ const Page = () => {
   };
 
   const complianceDetails = [
-    {
-      title: "Who's Affected",
-      description:
-        "Commercial, residential, and mixed-use buildings. (Detached 1-2 family homes, certain low-rise buildings)",
-    },
-    {
-      title: "Deadlines",
-      description:
-        "Unsafe conditions MUST be fixed within 90 DAYS Get the property/Portfolio registered in PBS Alert to get timely Alerts",
-    },
-    {
-      title: "Penalties",
-      description: "Fines up to $25K for Non-Compliance or Late Repairs",
-    },
+    "Starting 1 January, every year, NYC mandates annual parapet inspections for buildings with parapets facing public right-of-ways",
+    "Inspection must be completed and observation report kept on file by December 31 of each year, deadlines Unsafe conditions must be fixed within 90 Days",
+    "The penalty for failing to provide the required annual parapet observation report upon request is a minimum of $1250, with a maximum penalty of $10K"
   ];
 
   const Process = {
@@ -158,77 +146,48 @@ const Page = () => {
 
       {/*Section 01  */}
       <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-16 lg:pt-24 text-[#DCE2E2]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-10">
-          <Image
-            src="/pics/local-law-parapet-pic2.png"
-            alt="Inspection Services"
-            width={500}
-            height={500}
-            className="w-[80%] lg:w-[40%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
-          />
-          <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
-              {section01.title}
-            </span>
-            <h2 className="text-3xl lg:text-[40px] font-semibold text-[#8AD5B7] font-conthrax">
-              {section01.heading}
-            </h2>
-            <p className="text-base font-semibold text-[#89A096]">
-              {section01.text}
-            </p>
-
-            <div className="flex items-stretch justify-start gap-6">
-              <div className="bg-[#8AD5B7] w-2 h-auto"></div>
-              <div className="space-y-2 w-[98%]">
-                {section01.items.map((item, index) => {
-                  // Count the number of colons in the item to identify multi-colon item
-                  const colonCount = (item.match(/:/g) || []).length;
-                  const isMultiColon = colonCount > 1;
-
-                  const heading = item.substring(0, item.indexOf(":"));
-                  const description = item.substring(item.indexOf(":") + 1);
-
-                  return (
-                    <div key={index} className="space-y-1">
-                      {/* Heading: Always the part before the first colon */}
-                      <h4 className="text-sm font-semibold text-[#DCE2E2]">
-                        {heading}
-                      </h4>
-
-                      {isMultiColon ? (
-                        <ul className="space-y-2">
-                          {description.split(".").map((pair, idx) => {
-                            return (
-                              <li
-                                key={idx}
-                                className="text-xs font-semibold text-[#89A096]"
-                              >
-                                <span className="font-semibold">
-                                  {pair.substring(0, pair.indexOf(":")).trim() +
-                                    ":"}
-                                </span>{" "}
-                                {pair.substring(pair.indexOf(":") + 1).trim()}
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      ) : (
-                        // Single-colon item: Render description as a paragraph
-                        <p className="text-xs font-semibold text-[#89A096]">
-                          {description.trim()}
-                        </p>
-                      )}
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
+                  <Image
+                    src="/pics/local-law-parapet-pic2.png"
+                    alt="Inspection Services"
+                    width={500}
+                    height={500}
+                    className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
+                  />
+                  <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
+                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+                      {section01.title}
+                    </span>
+                    <h2 className="text-2xl lg:text-4xl 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax">
+                      {section01.heading}
+                    </h2>
+                    <p className="text-base font-semibold text-[#89A096]">
+                      {section01.text}
+                    </p>
+        
+                    <div className="flex items-stretch justify-start gap-6">
+                      <div className="space-y-2 w-[98%]">
+                        {section01.items.map((item, index) => {
+                          return (
+                            <p
+                              key={index}
+                              className="text-xs text-center lg:text-left font-semibold text-[#89A096]"
+                            >
+                              {item}
+                            </p>
+                          );
+                        })}
+                      </div>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            <p className="text-[#89A096] text-base font-semibold text-center lg:text-left w-full lg:w-2/3">
-              {section01.additionalText}
-            </p>
-          </div>
-        </div>
+                    <div className="flex items-stretch justify-start gap-3">
+                      <div className="bg-[#8AD5B7] w-2 h-auto hidden lg:block"></div>
+                      <p className="text-[#89A096] text-base font-semibold text-center lg:text-left w-full lg:w-2/3 flex flex-col">
+                        <span className="text-[#8AD5B7]">{section01.additionalText.split("!")[0] + "!"}</span>
+                        <span className="">{section01.additionalText.split("!")[1]}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
         <div className="bg-[#2E3734] rounded-lg p-6 lg:p-10 flex flex-col lg:flex-row lg:items-stretch justify-center lg:justify-between gap-6">
           <div className="w-full lg:w-[65%] 2xl:w-[60%] h-auto flex flex-col justify-center items-center gap-6">
@@ -326,11 +285,8 @@ const Page = () => {
                 key={index}
                 className="relative bg-[#1E2322] rounded-lg p-3 sm:p-4 lg:p-5 w-full sm:w-3/4 lg:w-full flex flex-col gap-2 sm:gap-3"
               >
-                <h3 className="text-[#DCE2E2] text-lg sm:text-xl lg:text-2xl font-semibold text-center">
-                  {item.title}
-                </h3>
                 <p className="text-[#89A096] text-sm sm:text-base lg:text-lg font-semibold text-center">
-                  {item.description}
+                  {item}
                 </p>
               </div>
             ))}
@@ -352,7 +308,7 @@ const Page = () => {
             {Process.heading}
           </h2>
 
-          <div className="flex flex-col lg:flex-row flex-wrap items-center lg:items-stretch justify-between w-full gap-6 lg:gap-8">
+          <div className="flex flex-col lg:flex-row flex-wrap items-center lg:items-stretch justify-between w-full gap-6">
             {Process.items.map((item, index) => (
               <div
                 key={index}
@@ -371,20 +327,20 @@ const Page = () => {
                     className={`absolute inset-0 rounded-full border-4 border-[#8AD5B7]`}
                     style={{
                       clipPath:
-                        "polygon(0 0, 0 0, 50% 50%, 0 60%, 0 100%, 75% 100%, 75% 75%, 25% 75%, 25% 25%, 0 0)",
+                        "polygon(0 0, 0 0, 50% 50%, 0 40%, 0 100%, 85% 100%, 75% 75%, 25% 75%, 25% 25%, 0 0)",
                     }}
                   ></div>
 
                   {/* Content */}
                   <div className="flex items-center gap-2 sm:gap-3 w-full">
-                    <div className="rounded-full border-2 border-[#8AD5B7] w-36 h-36 aspect-square flex items-center justify-center text-6xl font-semibold text-[#DCE2E2]">
+                    <div className="rounded-full border-4 border-[#8AD5B7] w-28 h-28 aspect-square flex items-center justify-center text-6xl font-semibold text-[#DCE2E2]">
                       {index + 1}
                     </div>
                     <p className="flex flex-col 2xl:max-w-xl">
                       <span className="italic text-base lg:text-lg xl:text-2xl font-semibold text-[#DCE2E2]">
                         {item.split(":")[0]}
                       </span>
-                      <span className="text-base lg:text-lg xl:text-2xl font-semibold text-[#89A096]">
+                      <span className="text-base lg:text-xl 2xl:text-2xl font-semibold text-[#89A096]">
                         {item.split(":")[1]}
                       </span>
                     </p>
@@ -399,7 +355,7 @@ const Page = () => {
 
         <div className="w-full lg:w-[90%] mx-auto overflow-hidden relative text-[#DCE2E2] py-6 sm:py-8 lg:py-10">
           {/* Moved title section here and fixed spacing */}
-          <div className="text-center">
+          <div className="text-center mb-5 lg:mb-8">
             <h1 className="text-[#8AD5B7] text-3xl lg:text-5xl font-conthrax tracking-widest mb-4">
               {WhyPBS.heading}
             </h1>
@@ -409,22 +365,22 @@ const Page = () => {
           </div>
 
           {/* Content Items */}
-          <div className="w-full flex flex-col gap-6 lg:gap-8">
+          <div className="w-full flex flex-col gap-6 lg:gap-8 mb-6 lg:mb-10">
             {WhyPBS.items.map((item, index) => (
               <div
                 key={index}
                 className={`flex flex-col ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                } items-center md:items-stretch md:justify-between rounded-lg p-4 sm:p-6 lg:p-8 gap-4 md:gap-6 lg:gap-8`}
+                } items-center md:items-stretch md:justify-between rounded-lg gap-4 md:gap-6 lg:gap-8`}
               >
                 {/* Image */}
-                <div className="w-[30%] xl:w-[20%] h-auto flex-shrink-0 flex items-center">
+                <div className={`w-[30%] ${index==0?"xl:w-[30%]":"xl:w-[20%]"} h-auto flex-shrink-0 flex items-center`}>
                   <Image
                     src={item.img}
                     alt={item.data.title}
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain mix-blend-luminosity"
+                    className={`w-full h-full object-contain ${index==0?"":"mix-blend-luminosity"}`}
                   />
                 </div>
 
