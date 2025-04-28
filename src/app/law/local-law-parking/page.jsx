@@ -405,7 +405,7 @@ const Page = () => {
 
           <div className="relative flex flex-col items-center w-full py-4 sm:py-6 lg:py-8">
             {/* Vertical Line with Circles at Both Ends (Hidden on Mobile) */}
-            <div className="hidden sm:flex absolute top-0 -bottom-16 w-2 bg-[#DCE2E2] flex-col justify-between items-center">
+            <div className="hidden sm:flex absolute top-0 -bottom-16 w-2 bg-[#DCE2E2] flex-col justify-between items-center rounded-full">
               <div className="w-6 h-6 rounded-full bg-[#8AD5B7]"></div>
               <div className="w-6 h-6 rounded-full bg-[#8AD5B7]"></div>
             </div>
@@ -414,9 +414,9 @@ const Page = () => {
             {timelineItems.map((item, index) => (
               <div
                 key={index}
-                className={`relative flex flex-col w-full max-w-3xl ${
+                className={`relative flex flex-col w-full max-w-3xl ${ 
                   item.position === "left" ? "sm:items-start" : "sm:items-end"
-                } mb-6 md:-mb-6`}
+                } mb-6 sm:-mb-6`}
               >
                 {/* Content */}
                 <div
@@ -456,7 +456,7 @@ const Page = () => {
               </div>
             ))}
           </div>
-          <p className="text-base font-semibold max-w-lg lg:max-w-sm text-center mx-auto mt-6">
+          <p className="text-base font-semibold max-w-lg lg:max-w-sm text-center mx-auto mt-24">
             We handle repairs, reports, and agency submissions{" "}
           </p>
         </div>
