@@ -403,7 +403,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div>
+        <div className="w-[90%] lg:w-[80%] mx-auto">
           <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2">
             Our Process
           </h2>
