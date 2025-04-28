@@ -456,7 +456,7 @@ const Page = () => {
               </div>
             ))}
           </div>
-          <p className="text-base font-semibold max-w-lg lg:max-w-sm text-center mx-auto mt-24">
+          <p className="text-base font-semibold max-w-lg lg:max-w-sm text-center mx-auto mt-3 sm:mt-24">
             We handle repairs, reports, and agency submissions{" "}
           </p>
         </div>
