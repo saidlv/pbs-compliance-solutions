@@ -176,7 +176,7 @@ const Page = () => {
             className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-center text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
               {section01.title}
             </span>
             <h2 className="text-2xl lg:text-4xl 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax">
@@ -227,7 +227,7 @@ const Page = () => {
                 What’s Reviewed During this Inspection
               </h2>
             </div>
-            <div className="w-full lg:w-[45%]">
+            <div className="w-full lg:w-[45%] space-y-6 md:space-y-0">
               {List_Sec1.map((list, index) => {
                 return (
                   <div
@@ -259,7 +259,7 @@ const Page = () => {
       {/*Section 02 */}
       <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-16 text-[#DCE2E2]">
         <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 w-full lg:w-[90%] mx-auto pb-10">
-          <h2 className="text-center text-3xl lg:text-5xl font-semibold font-conthrax text-[#8AD5B7]">
+          <h2 className="text-center text-2xl md:text-3xl lg:text-5xl font-semibold font-conthrax text-[#8AD5B7]">
             {Compliance_Deadlines.title}
           </h2>
           <p className="text-[#89A096] text-base font-semibold text-center">
@@ -394,61 +394,72 @@ const Page = () => {
           </div>
         </div>
 
-        <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2">
-          {" "}
-          How It Works
-        </h2>
-        <p className="text-[#89A096] text-sm lg:text-base text-center font-semibold mb-6 lg:mb-10">
-          Your Path to Compliance in 4 Easy Steps
-        </p>
+        <div>
+          <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2">
+            {" "}
+            How It Works
+          </h2>
+          <p className="text-[#89A096] text-sm lg:text-base text-center font-semibold mb-6 lg:mb-10">
+            Your Path to Compliance in 4 Easy Steps
+          </p>
 
-        <div className="relative flex flex-col items-center w-full py-4 sm:py-6 lg:py-8">
-  {/* Vertical Line with Circles at Both Ends (Hidden on Mobile) */}
-  <div className="hidden sm:flex absolute top-0 bottom-0 w-2 bg-[#DCE2E2] flex-col justify-between items-center">
-    <div className="w-6 h-6 rounded-full bg-[#8AD5B7]"></div>
-    <div className="w-6 h-6 rounded-full bg-[#8AD5B7]"></div>
-  </div>
+          <div className="relative flex flex-col items-center w-full py-4 sm:py-6 lg:py-8">
+            {/* Vertical Line with Circles at Both Ends (Hidden on Mobile) */}
+            <div className="hidden sm:flex absolute top-0 -bottom-16 w-2 bg-[#DCE2E2] flex-col justify-between items-center">
+              <div className="w-6 h-6 rounded-full bg-[#8AD5B7]"></div>
+              <div className="w-6 h-6 rounded-full bg-[#8AD5B7]"></div>
+            </div>
 
-  {/* Timeline Items */}
-  {timelineItems.map((item, index) => (
-    <div
-      key={index}
-      className={`relative flex flex-col w-full max-w-3xl ${
-        item.position === "left" ? "sm:items-start" : "sm:items-end"
-      } mb-6 sm:mb-8 lg:mb-10`}
-    >
-      {/* Content */}
-      <div
-        className={`flex items-center w-full sm:w-1/2 ${
-          item.position === "left" ? "sm:pr-4 lg:pr-6" : "sm:pl-4 lg:pl-6"
-        }`}
-      >
-        {/* Text */}
-        <div
-          className={`flex flex-col gap-1 sm:gap-1 lg:gap-2 w-full ${
-            item.position === "left" ? "text-center sm:text-right" : "text-center sm:text-left"
-          }`}
-        >
-          <h4 className="text-[#DCE2E2] text-lg sm:text-xl lg:text-2xl font-semibold">
-            {item.title}
-          </h4>
-          <p className="text-[#89A096] text-sm sm:text-base">{item.description}</p>
+            {/* Timeline Items */}
+            {timelineItems.map((item, index) => (
+              <div
+                key={index}
+                className={`relative flex flex-col w-full max-w-3xl ${
+                  item.position === "left" ? "sm:items-start" : "sm:items-end"
+                } mb-6 md:-mb-6`}
+              >
+                {/* Content */}
+                <div
+                  className={`flex items-center w-full sm:w-1/2 ${
+                    item.position === "left"
+                      ? "sm:pr-4 lg:pr-6"
+                      : "sm:pl-4 lg:pl-6"
+                  }`}
+                >
+                  {/* Text */}
+                  <div
+                    className={`flex flex-col gap-1 sm:gap-1 lg:gap-2 w-full ${
+                      item.position === "left"
+                        ? "text-center sm:text-right"
+                        : "text-center sm:text-left"
+                    }`}
+                  >
+                    <h4 className="text-[#DCE2E2] text-lg sm:text-xl lg:text-2xl font-semibold">
+                      {item.title}
+                    </h4>
+                    <p className="text-[#89A096] text-sm sm:text-base">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Horizontal Line and Circle (Mobile: Centered, Desktop: Positioned Below Content) */}
+                <div
+                  className={`relative w-full sm:w-1/2 h-2 rounded-full bg-[#DCE2E2] flex justify-center mt-4 z-10`}
+                >
+                  <div
+                    className={`w-6 h-6 rounded-full bg-[#8AD5B7] absolute -top-2 sm:top-[-10px] ${
+                      item.position === "left" ? "sm:left-0" : "sm:right-0"
+                    }`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-base font-semibold max-w-lg lg:max-w-sm text-center mx-auto mt-6">
+            We handle repairs, reports, and agency submissions{" "}
+          </p>
         </div>
-      </div>
-
-      {/* Horizontal Line and Circle (Mobile: Centered, Desktop: Positioned Below Content) */}
-      <div
-        className={`relative w-full sm:w-1/2 h-2 rounded-full bg-[#DCE2E2] flex justify-center mt-4 z-10`}
-      >
-        <div
-          className={`w-6 h-6 rounded-full bg-[#8AD5B7] absolute -top-2 sm:top-[-10px] ${
-            item.position === "left" ? "sm:left-0" : "sm:right-0"
-          }`}
-        ></div>
-      </div>
-    </div>
-  ))}
-</div>
       </section>
 
       {/* Section 04 */}

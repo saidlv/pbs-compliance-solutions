@@ -155,7 +155,7 @@ const Page = () => {
                     className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
                   />
                   <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
                       {section01.title}
                     </span>
                     <h2 className="text-2xl lg:text-4xl 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax">
@@ -194,7 +194,7 @@ const Page = () => {
             <h2 className="text-2xl md:text-4xl xl:text-5xl text-[#8AD5B7] font-semibold font-conthrax">
               {Div2_Sec1.left.heading}
             </h2>
-            <p className="text-[#89A096] text-base lg:text-xl font-semibold">
+            <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left">
               {Div2_Sec1.left.text}
             </p>
           </div>
@@ -218,7 +218,7 @@ const Page = () => {
               text={Div2_Sec1.right.CTA}
               isArrow={false}
               href="/tutorial"
-              styling={`w-48 md:w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax ml-6`}
+              styling={`w-48 md:w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax lg:ml-6 mx-auto`}
             />
           </div>
         </div>
@@ -294,15 +294,15 @@ const Page = () => {
           <CTA
             text="Get Timely Alerts"
             href="/tutorial"
-            styling={`w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax ml-6`}
+            styling={`w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax lg:ml-6`}
           />
         </div>
       </section>
 
-      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2"></div>
+      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 mt-6 lg:mt-10"></div>
 
       {/* Section 03 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-6 lg:pt-10 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-10 text-[#DCE2E2]">
         <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-[90%] mx-auto py-4 sm:py-6 lg:py-10">
           <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax text-center">
             {Process.heading}
@@ -320,11 +320,11 @@ const Page = () => {
               >
                 {/* Outer Circular Div with Custom Border */}
                 <div
-                  className={`relative rounded-full w-full flex items-center p-3 sm:p-4 lg:p-5 bg-transparent overflow-hidden`}
+                  className={`relative md:rounded-full w-full flex items-center p-3 sm:p-4 lg:p-5 bg-transparent overflow-hidden`}
                 >
                   {/* Border Div with Clip-Path */}
                   <div
-                    className={`absolute inset-0 rounded-full border-4 border-[#8AD5B7]`}
+                    className={`hidden md:block absolute inset-0 rounded-full border-4 border-[#8AD5B7]`}
                     style={{
                       clipPath:
                         "polygon(0 0, 0 0, 50% 50%, 0 40%, 0 100%, 85% 100%, 75% 75%, 25% 75%, 25% 25%, 0 0)",
@@ -332,15 +332,15 @@ const Page = () => {
                   ></div>
 
                   {/* Content */}
-                  <div className="flex items-center gap-2 sm:gap-3 w-full">
-                    <div className="rounded-full border-4 border-[#8AD5B7] w-28 h-28 aspect-square flex items-center justify-center text-6xl font-semibold text-[#DCE2E2]">
+                  <div className="flex flex-col md:flex-row items-center gap-6 md:gap-3 w-full">
+                    <div className="rounded-full md:border-4 border-[#8AD5B7] md:w-28 md:h-28 aspect-square flex items-center justify-center text-4xl md:text-6xl font-semibold text-[#DCE2E2]">
                       {index + 1}
                     </div>
-                    <p className="flex flex-col 2xl:max-w-xl">
+                    <p className="flex flex-col items-center md:items-start 2xl:max-w-xl">
                       <span className="italic text-base lg:text-lg xl:text-2xl font-semibold text-[#DCE2E2]">
                         {item.split(":")[0]}
                       </span>
-                      <span className="text-base lg:text-xl 2xl:text-2xl font-semibold text-[#89A096]">
+                      <span className="text-base lg:text-xl text-center md:text-left 2xl:text-2xl font-semibold text-[#89A096]">
                         {item.split(":")[1]}
                       </span>
                     </p>
@@ -413,7 +413,7 @@ const Page = () => {
           </div>
           <p className="text-center text-base font-semibold text-[#89A096]">{WhyPBS.text2}</p>
 
-          <div className="w-full mt-6 flex justify-center gap-6 items-center">
+          <div className="w-full mt-6 flex flex-col lg:flex-row justify-center gap-6 items-center">
                           <CTA2
                             text="Book Your Slot Now"
                             isArrow={false}

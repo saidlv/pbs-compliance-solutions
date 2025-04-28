@@ -105,17 +105,17 @@ const Footer = () => {
                 Join our community to receive updates
               </p>
               {/* Email Subscription Form */}
-              <form className="overflow-hidden flex justify-start items-center w-full  lg:max-w-md ">
+              <form className="overflow-hidden flex justify-center md:justify-start items-center w-full  lg:max-w-md ">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-grow text-base px-4 py-2 rounded-3xl bg-white text-[#7A8E85] focus:outline-none lg:w-1/2 w-full "
+                  className="flex text-base px-4 py-2 rounded-3xl bg-white text-[#7A8E85] focus:outline-none lg:w-1/2 w-full"
                   aria-label="Email address"
                   required
                 />
                 <button
                   type="submit"
-                  className="relative -left-16 px-6 py-2 bg-[#37403D] text-[#DCE2E2] rounded-3xl hover:bg-[#8AD5B7] transition duration-300"
+                  className="relative -left-6 md:-left-16 px-6 py-2 bg-[#37403D] text-[#DCE2E2] rounded-3xl hover:bg-[#8AD5B7] transition duration-300"
                 >
                   Subscribe
                 </button>
