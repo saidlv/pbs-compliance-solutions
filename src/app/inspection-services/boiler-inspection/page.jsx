@@ -108,57 +108,6 @@ const Page = () => {
       "Your safety is our mission, your trust is our reward-Don’t Gamble with Compliance or Safety",
   };
 
-  const timelineItems = [
-    {
-      title: "1- Documentation Review",
-      description:
-        "In the very first stage we verify Logbooks, maintenance records, past repairs.",
-      position: "left",
-    },
-    {
-      title: "2- Exterior Inspection",
-      description:
-        "Initial inspection phase starts from checking for leaks, corrosion, or damage to the boiler shell/piping.",
-      position: "right",
-    },
-    {
-      title: "3- Safety Device Testing",
-      description:
-        "We validate pressure relief valves, low-water cutoffs, and flame sensors.",
-      position: "left",
-    },
-    {
-      title: "4- Burner & Combustion Analysis",
-      description:
-        "We inspect for wear, combustion efficiency, and flame patterns.",
-      position: "right",
-    },
-    {
-      title: "5- Control System Checks",
-      description:
-        "We test limit switches, temperature controls, and pressure gauges.",
-      position: "left",
-    },
-    {
-      title: "6- Code Compliance Verification",
-      description:
-        "We ensure adherence to NYC Building Code and national standards.",
-      position: "right",
-    },
-    {
-      title: "7- Detailed Reporting & Repairs",
-      description:
-        "We provide you with actionable findings and recommendations for contractors and repairs are completed.",
-      position: "left",
-    },
-    {
-      title: "8- Piping & Component Inspection",
-      description:
-        "We Assess valves, pumps, and associated systems for proper function.",
-      position: "right",
-    },
-  ];
-
   return (
     <div
       className="bg-[#37403D]"
@@ -202,7 +151,7 @@ const Page = () => {
             <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
               {section01.title}
             </span>
-            <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight">
+            <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight xl:max-w-[80%] 2xl:max-w-[70%]">
               {section01.heading}
             </h2>
             <p className="text-base font-semibold text-[#89A096]">
@@ -294,7 +243,7 @@ const Page = () => {
             ))}
           </div>
 
-          <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center">
+          <p className="w-[90%] lg:w-[85%] 2xl:w-[75%] mx-auto text-[#89A096] text-base lg:text-xl font-semibold text-center">
             {Div2_Sec1.text2}
           </p>
         </div>
