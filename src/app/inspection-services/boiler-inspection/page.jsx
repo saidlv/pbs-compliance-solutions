@@ -319,11 +319,11 @@ const Page = () => {
       <section className="px-6 md:px-10 xl:px-16 text-[#DCE2E2] w-full pt-6 md:pt-10 lg:pt-16">
         <div className="flex flex-col items-center justify-center gap-8 lg:gap-16 w-full h-full pb-6 lg:pb-10">
           <div className="space-y-2 lg:space-y-4">
-          <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center max-w-3xl mx-auto">
+          <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl 2xl:text-6xl font-semibold font-conthrax text-center max-w-3xl mx-auto">
             Your Compliance Roadmap
           </h2>
 
-          <p className="text-[#89A096] text-lg lg:text-xl font-semibold text-center max-w-2xl mx-auto">
+          <p className="text-[#89A096] text-lg lg:text-xl 2xl:text-2xl font-semibold text-center max-w-2xl mx-auto">
             PBS Follows a rigorous 8-step evaluation to ensure code compliance,
             safety, and efficiency.
           </p>
@@ -335,7 +335,7 @@ const Page = () => {
             width={600}
             height={800}
             priority
-            className="w-2/3 lg:w-[90%] 2xl:w-[75%] mx-auto h-auto object-contain object-top"
+            className="w-2/3 lg:w-[90%] 2xl:w-[60%] mx-auto h-auto object-contain object-top"
           />
         </div>
 
