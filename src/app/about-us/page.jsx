@@ -65,7 +65,7 @@ const AboutPage = () => {
         className="font-conthrax max-w-4xl"
         isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
-        textStyle="text-[#DCE2E2] font-semibold text-xl" 
+        textStyle="text-[#DCE2E2] font-semibold text-xl max-w-5xl" 
         img="/pics/COVER 1.png"
       />
 

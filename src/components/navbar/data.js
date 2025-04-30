@@ -1,25 +1,24 @@
 export const menuItems = [
   {
     name: "Inspection Services",
-    link: "/inspection-services",
-    // submenu: [
-    //   {
-    //     name: "Inspection Services",
-    //     link: "/inspection-services/inspection-services",
-    //   },
-    //   {
-    //     name: "Boiler Inspection",
-    //     link: "/inspection-services/boiler-inspection",
-    //   },
-    //   {
-    //     name: "Sprinkler Hydrostatic inspection",
-    //     link: "/inspection-services/sh-inspection",
-    //   },
-    //   {
-    //     name: "Elevator Inspection",
-    //     link: "/inspection-services/elevator-inspection",
-    //   },
-    // ],
+    submenu: [
+      {
+        name: "Inspection Services",
+        link: "/inspection-services",
+      },
+      {
+        name: "Boiler Inspection",
+        link: "/inspection-services/boiler-inspection",
+      },
+      {
+        name: "Sprinkler Hydrostatic inspection",
+        link: "/inspection-services/sh-inspection",
+      },
+      {
+        name: "Elevator Inspection",
+        link: "/inspection-services/elevator-inspection",
+      },
+    ],
   },
   {
     name: "Law",

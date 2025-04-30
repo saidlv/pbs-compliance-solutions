@@ -1,3 +1,15 @@
+// Parking Garage Inspection Page Component
+// Renders Local Law 126 Parking Garage Inspections (Parking Structures) page.
+// Data Objects:
+// - section01: hero and introductory section data
+// - List_Sec1: list of documentation requirements
+// - Compliance_Deadlines: table of compliance deadlines
+// - WhatThisMeans: steps to act
+// - keyTakeaways: key compliance takeaways
+// - WhyItMatter: reasons compliance matters
+// - whyPBS: 'Why Choose PBS' section data
+// - timelineItems: process timeline items
+
 "use client";
 
 import { motion } from "framer-motion";

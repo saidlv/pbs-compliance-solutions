@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 
-const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0.15, className, isLine = false, bgStyle = ""}) => {
+const HeroSection = ({ heading, text,text2="", textStyle ="", button, img, staggerVal = 0.15, className, isLine = false, bgStyle = ""}) => {
   const [bgImage, setBgImage] = useState("");
   const textRef = useRef(null);
 
@@ -54,7 +54,7 @@ const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <motion.h1
-          className={`text-3xl md:text-6xl font-bold mb-6 ${className || ""}`}
+          className={`text-3xl md:text-6xl 2xl:text-6xl font-bold mb-6 ${className || ""}`}
           ref={textRef}
           style={{
             wordBreak: "keep-all",
@@ -71,11 +71,12 @@ const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0
 
         {text && (
           <motion.p
-            className={`text-lg mb-6 max-w-4xl ${textStyle}`}
+            className={`text-lg mb-6 max-w-4xl flex flex-col ${textStyle}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            {text}
+            <span>{text}</span>
+            <span>{text2}</span>
           </motion.p>
         )}
 
@@ -89,6 +90,7 @@ const HeroSection = ({ heading, text, textStyle ="", button, img, staggerVal = 0
           </motion.div>
         )}
       </motion.div>
+      
     </section>
   );
 };

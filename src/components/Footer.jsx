@@ -109,13 +109,13 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex text-base px-4 py-2 rounded-3xl bg-white text-[#7A8E85] focus:outline-none lg:w-1/2 w-full"
+                  className="flex text-base px-4 py-2 rounded-3xl bg-white text-[#7A8E85] focus:outline-none lg:w-5/6 w-full"
                   aria-label="Email address"
                   required
                 />
                 <button
                   type="submit"
-                  className="relative -left-6 md:-left-16 px-6 py-2 bg-[#37403D] text-[#DCE2E2] rounded-3xl hover:bg-[#8AD5B7] transition duration-300"
+                  className="relative -left-6 md:-left-16 md:w-1/2 px-6 py-2 bg-[#37403D] text-[#DCE2E2] rounded-3xl hover:bg-[#8AD5B7] transition duration-300"
                 >
                   Subscribe
                 </button>

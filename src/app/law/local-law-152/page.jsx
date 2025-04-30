@@ -1,3 +1,15 @@
+// Local Law 152 Gas Piping Inspection Page Component
+// Renders the Local Law 152 Gas Line Inspections page.
+// Data Objects:
+// - section01: hero section content for gas piping inspections
+// - Div2_Sec1: description and data array for LL152 overview
+// - Compliance_Deadlines: penalties, schedule table data
+// - LocalLaw152: legal obligation details and items
+// - Address: liability and safety feature list
+// - WhatsIncluded: service inclusions list
+// - timelineItems: step-by-step process items
+// - whyPBS: 'Why Choose PBS' section data
+
 "use client";
 
 import HeroSection from "../../../components/HeroSection";
@@ -183,7 +195,7 @@ const Page = () => {
                     <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
                       {section01.title}
                     </span>
-                    <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax">
+                    <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight">
                       {section01.heading}
                     </h2>
                     <p className="text-base font-semibold text-[#89A096]">

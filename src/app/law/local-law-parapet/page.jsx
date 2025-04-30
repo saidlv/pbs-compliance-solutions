@@ -1,3 +1,13 @@
+// Local Law Parapet Inspection Page Component
+// Renders the Local Law 126 Parapet Inspection page.
+// Data Objects:
+// - section01: hero section content and items
+// - Div2_Sec1: dual content section data
+// - WhoNeedsInspections: eligibility criteria content
+// - complianceDetails: compliance timeline cards data
+// - Process: inspection process steps
+// - WhyPBS: benefits section data
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -158,7 +168,7 @@ const Page = () => {
                     <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
                       {section01.title}
                     </span>
-                    <h2 className="text-2xl lg:text-4xl 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax">
+                    <h2 className="text-2xl lg:text-[40px] leading-tight text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax ">
                       {section01.heading}
                     </h2>
                     <p className="text-base font-semibold text-[#89A096]">
@@ -197,7 +207,7 @@ const Page = () => {
             <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left">
               {Div2_Sec1.left.text}
             </p>
-          </div>
+          </div>   
           <div className="w-full lg:w-[35%] flex flex-col justify-end gap-6">
             <div className="space-y-1">
               {Div2_Sec1.right.items.map((list, index) => {
