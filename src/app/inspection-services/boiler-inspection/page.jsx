@@ -129,16 +129,18 @@ const Page = () => {
         img="/pics/boiler-inspection-hero.png"
       />
 
-      {/* Custom 'About Us' Label Divider */}
-      <div className="w-[100vw] relative">
-        <div className="bg-[#8AD5B7] w-full text-[#DCE2E2] py-1"></div>
-        <div className="bg-[#8AD5B7] w-[50%] md:w-[60%] absolute left-[25%] md:left-[20%] -top-8 md:-top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-center text-xl md:text-2xl lg:text-4xl z-20">
-          Boiler Inspection
-        </div>
-      </div>
+       {/* Custom 'About Us' Label Divider */}
+  <div className="w-[100vw] relative flex justify-center">
+    <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
+    <div
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] lg:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
+    >
+      Boiler Inspection
+    </div>
+  </div>
 
       {/*Section 01  */}
-      <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
+      <section className="px-6 md:px-10 xl:px-16 pt-10 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
           <Image
             src="/pics/boiler-inspection-pic1.png"

@@ -104,13 +104,15 @@ const Page = () => {
         img="/pics/owner-representative-hero.png"
       />
 
-      {/* Custom 'About Us' Label Divider */}
-      <div className="w-full relative">
-        <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
-        <div className="bg-[#8AD5B7] w-[80%] md:w-[70%] lg:w-[60%] absolute left-[10%] md:left-[15%] lg:left-[20%] -top-4 sm:-top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-lg sm:text-xl md:text-2xl lg:text-4xl z-20">
-          Owner Representative
-        </div>
-      </div>
+        {/* Custom 'About Us' Label Divider */}
+  <div className="w-[100vw] relative flex justify-center">
+    <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
+    <div
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] lg:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
+    >
+      Owner Representative
+    </div>
+  </div>
 
       {/* Section 01 */}
       <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-16 text-[#DCE2E2]">

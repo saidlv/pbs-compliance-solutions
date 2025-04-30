@@ -29,13 +29,15 @@ const Page = () => {
         textStyle="text-xl font-semibold text-[#DCE2E2]"
       />
 
-      {/* Custom 'About Us' Label Divider */}
-      <div className="w-[100vw] relative">
-        <div className="bg-[#8AD5B7] w-full text-white py-1"></div>
-        <div className="bg-[#8AD5B7] w-[60%] sm:w-1/2 lg:w-1/3 absolute left-[20%] sm:left-[25%] lg:left-[33%] -top-5 lg:-top-6 rounded-full text-[#37403D] p-2 flex justify-center items-center font-conthrax text-2xl lg:text-4xl z-20">
-          Our Values
-        </div>
-      </div>
+        {/* Custom 'About Us' Label Divider */}
+  <div className="w-[100vw] relative flex justify-center">
+    <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
+    <div
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] lg:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-3xl z-20"
+    >
+      Our Values
+    </div>
+  </div>
 
       {/* Fixed Section 1: Moved title outside the motion div */}
       <section className="bg-[#37403D] pt-10 pb-20 px-6 md:px-12 xl:px-16">
