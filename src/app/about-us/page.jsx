@@ -81,31 +81,31 @@ const AboutPage = () => {
 
       {/* The PBS Story Section */}
       <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-[#DCE2E2]">
-        <div className="mt-16 flex flex-col lg:flex-row items-start lg:items-stretch gap-12 lg:gap-16">
+        <div className="mt-16 flex flex-col lg:flex-row items-start lg:items-center justify-center gap-12 lg:gap-16">
           {/* Story image in a circular background */}
-          <div className="relative w-full lg:w-1/2 flex justify-center items-center">
+          <div className="relative w-full lg:w-[37%] xl:w-[28%] 2xl:w-[22%] flex justify-center items-center">
             <Image
               src="/pics/Building.png"
               alt="PBS"
               width={500}
               height={600}
-              className="filter w-full h-full grayscale object-cover md:object-contain lg:object-cover object-top"
+              className="w-full h-full mix-blend-luminosity object-cover md:object-contain lg:object-cover object-top"
             />
           </div>
 
           {/* Story text content */}
-          <div className="w-full xl:w-1/2 space-y-6">
-            <h2 className="text-3xl lg:text-[55px] text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-2">
+          <div className="w-full lg:w-[60%] xl:w-[50%] 2xl:w-[40%] space-y-6">
+            <h2 className="text-3xl xl:text-[55px] text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-2">
               {story.headline}
             </h2>
-            <span className="text-[#7A8E85] text-base font-semibold block lg:inline text-center lg:text-left">
+            <span className="text-[#7A8E85] text-lg xl:text-xl font-semibold block lg:inline text-center lg:text-left">
               More than a Company, A Collective Legacy
             </span>
             <div className="w-[30%] mx-auto lg:mx-0 bg-[#8AD5B7] rounded-full h-1"></div>
             {story?.body.map((text, index) => (
               <p
                 key={index}
-                className="font-semibold text-lg text-balance pr-6 my-8 text-center lg:text-left"
+                className="font-semibold text-lg xl:text-xl text-balance pr-6 my-8 text-center lg:text-left max-w-2xl"
               >
                 {text}
               </p>
@@ -215,7 +215,7 @@ const AboutPage = () => {
 
       {/* Mission Section */}
       <section className="bg-[#37403D] pb-10 px-6 md:px-12">
-        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch xl:items-center justify-center gap-16">
           {/* Mission image */}
           <Image
             src="/pics/Asset 2 2.png"
@@ -288,7 +288,7 @@ const AboutPage = () => {
                 className="lg:w-auto h-auto"
               />
             </div>
-            <div className="w-full lg:w-[50%] flex flex-row flex-wrap lg:flex-col items-start justify-center lg:justify-end gap-4 lg:gap-2 xl:gap-4 pt-8">
+            <div className="w-full lg:w-[50%] flex flex-row flex-wrap lg:flex-col items-start justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4 pt-8">
               {service?.buildingTypes.map((location, index) => (
                 <p key={index} className="text-[#DCE2E2] text-base flex gap-2">
                   <DotIcon /> {location}
