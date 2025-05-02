@@ -412,8 +412,8 @@ const page = () => {
           </p>
         </div>
 
-        <div className="w-full lg:w-[90%] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-10 items-center lg:items-stretch pb-6 lg:pb-10" >
-           <div className="w-full lg:w-[45%] flex flex-col items-center justify-center gap-6 2xl:gap-8">
+        <div className="w-full lg:w-[90%] mx-auto flex flex-col lg:flex-row items-center lg:items-stretch pb-6 lg:pb-10" >
+           <div className="w-full lg:w-[45%] 2xl:w-[35%] flex flex-col items-center justify-center gap-6 2xl:gap-8">
             <h2 className="text-3xl lg:text-4xl xl:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center">How It Works</h2>
             <p className="text-lg lg:text-xl font-semibold text-[#89A096]">Compliance Without Chaos</p>
            </div>
@@ -422,7 +422,7 @@ const page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] lg:w-[55%] h-auto object-cover mx-auto" 
+            className="w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto" 
           />
         </div>
       </section>
