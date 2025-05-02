@@ -73,10 +73,9 @@ const Hero = () => {
           <Image
             src="/pics/Cloud-02.png"
             alt="Modern skyscrapers"
-            className="filter w-full h-full grayscale object-cover md:object-cover object-top-right"
+            className="w-full h-full mix-blend-luminosity object-cover object-top-right"
             width={700}
             height={500}
-            loading="lazy"
           />
         </motion.div>
 
@@ -106,7 +105,7 @@ const Hero = () => {
 
           {/* Subheading */}
           <motion.p
-            className="text-base lg:text-lg font-poppins text-[#89A096] mb-6 max-w-xl"
+            className="text-base lg:text-lg font-semibold font-poppins text-[#89A096] mb-6 max-w-xl"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],

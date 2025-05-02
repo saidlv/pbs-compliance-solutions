@@ -69,9 +69,9 @@ const AboutCompany = () => {
 
   return (
     <div className="bg-brand-dark text-brand-light px-16" ref={containerRef}>
-      <div className="container mx-auto px-6 pt-16 lg:px-12 flex flex-col lg:flex-row justify-between gap-8 lg:gap-8 bg-[#1E2322] bg-opacity-25 rounded-3xl  border-2 border-brand-gray1/50 pb-12 mb-16">
+      <div className="container mx-auto px-6 pt-16 lg:px-12 flex flex-col lg:flex-row justify-between gap-5 xl:gap-8 bg-[#1E2322] bg-opacity-25 rounded-3xl  border-2 border-brand-gray1/50 pb-12 mb-16">
         {/* Left Side - Numbers That Matter */}
-        <div className="lg:w-[55%] gsap-animate p-2">
+        <div className="lg:w-[50%] xl:w-[55%] gsap-animate p-2">
           <h2 className="text-lg lg:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
             Numbers That Matter
           </h2>
@@ -93,23 +93,25 @@ const AboutCompany = () => {
         </div>
 
         {/* Right Side */}
-        <div className="lg:w-[45%] gsap-animate p-2">
+        <div className="lg:w-[50%] xl:w-[45%] gsap-animate p-2 flex flex-col justify-between ">
           {/* What we Specialize in */}
+          <div>
             <h2 className="text-sm md:text-2xl xl:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
               What we Specialize in
             </h2>
             <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-[#89A096]">Precision Trust vision Transformation</p>
-            <div className="w-full flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between px-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl pt-8 pb-5 box-border">
-            <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 w-full lg:w-2/5 xl:w-3/5">
+            </div>
+            <div className="w-full flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl box-border">
+            <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 w-full lg:w-3/5">
               {services.map((service, index) => (
                 <li key={index} className="flex justify-start items-start">
-                  <span className="text-sm font-semibold">{service}</span>
+                  <span className="text-xs xl:text-sm font-semibold">{service}</span>
                 </li>
               ))}
             </ul>
-            <div className="w-full py-2 lg:py-0 lg:w-3/5 xl:w-2/5 flex flex-col items-center justify-start gap-6">
-              <img src="/pics/Asset61.png" alt="green man" width={100}/>
-              <CTA2 text={"Our Offerings"} href="/services" styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 text-lg font-semibold w-full lg:px-20 px-4 py-4 transition-colors mt-0" />
+            <div className="w-full py-2 lg:py-0 lg:w-2/5 flex flex-col items-center justify-start xl:gap-6">
+              <img src="/pics/Asset61.png" alt="green man" width={100} className="object-contain"/>
+              <CTA2 text={"Our Offerings"} href="/services" styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-full transition-colors mt-0" />
             </div>
             </div>
 
