@@ -9,7 +9,7 @@ import ImageCarousel from "@/components/ImageCarousel";
 
 const Page = () => {
   const section01 = {
-    title: "5- Sprinkler Hydrostatic Tests",
+    title: "6- Sprinkler Hydrostatic Tests",
     heading: "Water Pressure Your Fire’s First Responder",
     text: "Weak Pressure = Weak Protection",
     items: [
@@ -161,7 +161,7 @@ const Page = () => {
             </p>
 
             <div className="flex items-stretch justify-start gap-6">
-              <div className="space-y-2 w-[98%]">
+              <div className="space-y-2 w-[90%] lg:w-[70%] 2xl:w-[60%]">
                 {section01.items.map((item, index) => {
                   return (
                     <p
@@ -288,13 +288,13 @@ const Page = () => {
         <PhaseItem
           title={SprinklerInspection.inspectionPhases.firstRow[0].title}
           description={SprinklerInspection.inspectionPhases.firstRow[0].description}
-          titleWidth="w-[75%] sm:w-[70%] lg:w-[80%] 2xl:w-[70%]"
+          titleWidth="w-[80%] md:w-[75%] lg:w-[90%] xl:w-[75%] 2xl:w-[70%]"
           isFormatted={true}
         />
         <PhaseItem
           title={SprinklerInspection.inspectionPhases.firstRow[1].title}
           description={SprinklerInspection.inspectionPhases.firstRow[1].description}
-          titleWidth="w-[80%] sm:w-[75%] lg:w-[85%] 2xl:w-[75%]"
+          titleWidth="w-[80%] md:w-[75%] lg:w-full xl:w-[80%] 2xl:w-[75%]"
         />
       </div>
 
@@ -303,7 +303,7 @@ const Page = () => {
         <PhaseItem
           title={SprinklerInspection.inspectionPhases.secondRow.title}
           description={SprinklerInspection.inspectionPhases.secondRow.description}
-          titleWidth="w-[55%] sm:w-[50%] lg:w-[55%] 2xl:w-[50%]"
+          titleWidth="w-[80%] md:w-[75%] lg:w-[55%] 2xl:w-[50%]"
         />
       </div>
     </div>
@@ -312,7 +312,7 @@ const Page = () => {
 
       {/*Section 04 */}
       <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-10 xl:pt-16 text-[#DCE2E2] w-full">
-        <div className="w-[90%] mx-auto flex flex-col items-center justify-center gap-3 2xl:gap-6 pb-6 lg:pb-10">
+        <div className="w-[90%] mx-auto flex flex-col items-center justify-center gap-3 2xl:gap-6 pb-6 lg:pb-10 ">
 
           <div className="w-full h-full lg:w-[75%] xl:w-[80%] flex flex-col gap-3 justify-center items-end lg:items-end 2xl:justify-end 2xl:gap-6 lg:ml-[20%] xl:ml-[15%]">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-center font-semibold text-[#8AD5B7] font-conthrax w-full">
@@ -323,16 +323,16 @@ const Page = () => {
           </p>
           </div>
           
-          <div className="flex flex-col-reverse lg:flex-row items-center xl:items-stretch justify-center lg:justify-between 2xl:justify-center gap-6 sm:gap-8 lg:gap-10 2xl:gap-12 w-full lg:w-[90%]">
+          <div className="flex flex-row items-center xl:items-stretch justify-center lg:justify-between 2xl:justify-center gap-6 sm:gap-8 lg:gap-10 2xl:gap-12 w-full lg:w-[90%]">
           <Image
             src={FDNYColorCodes.img}
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[30%] lg:w-[20%] object-contain object-top rounded-[10%] mx-auto"
+            className="hidden md:flex w-[20%] object-contain object-top rounded-[10%] mx-auto"
           />
 
-          <table className="border-collapse border border-[#8AD5B7] w-full lg:w-[80%] mx-auto">
+<table className="border-collapse border border-[#8AD5B7] w-full lg:w-[80%] mx-auto">
             <thead className="text-[#DCE2E2]">
               <tr>
                 {FDNYColorCodes.table.headers.map((header, index) => (
