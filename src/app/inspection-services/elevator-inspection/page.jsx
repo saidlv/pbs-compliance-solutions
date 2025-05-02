@@ -184,7 +184,7 @@ const page = () => {
             <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
               {section01.title}
             </span>
-            <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight xl:max-w-[80%] 2xl:max-w-[70%]">
+            <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight xl:max-w-[95%] 2xl:max-w-[75%]">
               {section01.heading}
             </h2>
             <p className="text-base font-semibold text-[#89A096]">
@@ -422,11 +422,10 @@ const page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto" 
-          />
-        </div>
-      </section>
-
+            className="w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto"
+          /> 
+        </div>             
+      </section>       
       <ImageCarousel />
     </div>
   );
