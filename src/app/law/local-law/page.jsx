@@ -342,29 +342,29 @@ const Page = () => {
         </motion.div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:items-center gap-3 sm:gap-6 my-10 lg:mb-0">
-          <div className="w-full lg:w-[40%] 2xl:w-[50%] flex items-end">
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch xl:items-end 3xl:items-center my-10 lg:mb-0 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
+          <div className="w-full lg:w-[45%] xl:w-[45%] 2xl:w-[40%] 3xl:w-[30%] flex items-end">
             <Image
               src={whyPBS.img}
               alt="building"
               width={600}
               height={800}
               priority
-              className="relative w-1/2 mx-auto lg:w-full -left-0 lg:left-0 h-auto lg:h-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
+              className="relative w-1/2 mx-auto lg:w-full h-auto lg:h-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
             />
           </div>
 
-          <div className="w-full lg:w-[60%] 2xl:w-[50%] flex flex-col md:justify-end 2xl:justify-end lg:pb-6 h-full">
-            <div className="w-full h-auto flex items-start justify-start lg:justify-between">
-              <div className="w-full h-auto flex flex-col gap-6 2xl:gap-12">
-                <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
+          <div className="w-full lg:w-[55%] xl:w-[55%] 2xl:w-[60%] 3xl:w-[50%] flex flex-col lg:pb-6 h-auto">
+            <div className="w-full 3xl:w-[80%] h-full flex items-end 3xl:items-center justify-start lg:justify-between">
+              <div className="w-full h-auto flex flex-col gap-1 xl:gap-3 2xl:gap-6">
+                <h1 className="text-3xl text-center lg:text-4xl xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
                  {whyPBS.title}
                 </h1>
                 <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left text-[#89A096] font-semibold space-y-1">
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col xl:gap-2">
                     {whyPBS.list1.map((item, index) => {
                       return (
-                        <span key={index} className="flex gap-2">
+                        <span key={index} className="flex gap-2 text-sm xl:text-base">
                           <DotIcon className="text-[#DCE2E2] w-[5%]" />
                           {index==0 ? <span><span className="text-[#DCE2E2]"> {item.split(",")[0]}</span> {item.trim().split(",")[1]}</span>: item}
                           
@@ -374,16 +374,16 @@ const Page = () => {
                    </div>
                 </div>
 
-                <div className="flex justify-start items-stretch gap-3 p-3">
+                <div className="flex justify-start items-stretch gap-3 pl-3">
                 <div className="w-4 h-auto bg-[#8AD5B7] hidden lg:block"></div>
-                 <p className="text-2xl lg:text-3xl text-center md:text-left font-semibold text-[#DCE2E2]">{whyPBS.text}</p>
+                 <p className="text-xl xl:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2]">{whyPBS.text}</p>
                 </div>
 
-                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold text-[#89A096] flex flex-col gap-2">
-                  <div>
+                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold text-[#89A096] flex flex-col xl:gap-2">
+                 
                     {whyPBS.list2.map((item, index) => {
                       return (
-                        <p key={index} className="flex gap-2">
+                        <p key={index} className="flex gap-2 xl:text-base text-sm">
                         <DotIcon className="w-[5%]" />{" "}
                         <span className="w-[90%]">
                        {item}
@@ -391,7 +391,7 @@ const Page = () => {
                       </p>
                       );
                     })}
-                  </div>
+                  
                
                 </div>
               </div>

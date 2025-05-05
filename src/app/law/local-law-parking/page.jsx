@@ -503,7 +503,7 @@ const Page = () => {
 
         {/* why PBS */}
         <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-10">
-          <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] flex items-end">
+          <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] 3xl:w-[35%] flex items-end">
             <Image
               src={whyPBS.img}
               alt="building"
@@ -514,7 +514,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[65%] 2xl:w-[50%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
+          <div className="w-full lg:w-[65%] 2xl:w-[50%] 3xl:w-[40%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
             <div className="w-full h-auto flex flex-col gap-2 2xl:gap-6">
               <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
                 {whyPBS.title}
