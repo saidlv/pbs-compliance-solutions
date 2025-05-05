@@ -101,11 +101,11 @@ const Page = () => {
               return (
                 <div key={index}>
                   <div
-                    className={`w-full flex flex-col ${
+                    className={`flex flex-col ${
                       service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } items-center lg:items-stretch xl:items-center lg:justify-between gap-12 p-4 lg:p-6`}
+                    } items-center lg:items-stretch xl:items-center lg:justify-between 2xl:justify-center gap-12 p-4 lg:p-6`}
                   >
-                    <div className="w-full h-auto lg:w-2/5 xl:w-[45%] aspect-square flex justify-center items-center">
+                    <div className="w-[80%] lg:w-[45%] 2xl:w-[40%] flex justify-center items-center">
                       <Image
                         src={service.icon}
                         alt={service.title}
@@ -113,14 +113,14 @@ const Page = () => {
                         height={500}
                         priority
                         quality={100}
-                        className="w-full h-full object-cover xl:object-contain object-top-right mix-blend-luminosity rounded-[10%]"
+                        className="w-full h-full object-cover xl:object-contain 2xl:object-cover object-top-right mix-blend-luminosity rounded-[10%]"
                       />
                     </div>
-                    <div className="flex flex-col gap-3 w-full lg:w-3/5 xl:w-[55%] justify-start">
+                    <div className="flex flex-col gap-3 w-full lg:w-[45%] 2xl:w-[40%] justify-start">
                       <h2 className="text-3xl md:text-4xl font-semibold text-[#8AD5B7] font-conthrax w-4/5">
                         {service.title}
                       </h2>
-                      <p className="text-[#89A096] text-base font-semibold w-4/5 xl:w-full">
+                      <p className="text-[#89A096] text-base font-semibold w-4/5 xl:w-full 2xl:w-4/5 3xl:w-3/5">
                         {service.description}
                       </p>
                       <div className="flex gap-8 items-stretch">
@@ -155,8 +155,8 @@ const Page = () => {
                       href="/tutorial"
                       styling={`w-full md:w-2/5 lg:w-1/5 mt-0 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax ${
                         service.id % 2 === 1
-                          ? "lg:absolute lg:left-[45%] lg:top-0"
-                          : "lg:absolute lg:left-[2%] lg:top-0"
+                          ? "lg:absolute lg:left-[55%] 2xl:left-[50%] lg:top-0"
+                          : "lg:absolute lg:left-[2%] 2xl:left-[10%] lg:top-0"
                       }`}
                     />
                   </div>
@@ -165,7 +165,7 @@ const Page = () => {
             })}
           </div>
           <div
-            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-4 lg:mt-0 mb-6`}
+            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-8 lg:mt-8 mb-6`}
           ></div>
 
           <div className="text-[#DCE2E2] text-center">
@@ -194,7 +194,7 @@ const Page = () => {
           {sections.map((section, index) => {
             return (
               <div key={index} className="flex flex-col gap-8 md:gap-16">
-                <div className="w-full py-8 px-16 bg-[#2E3734] mx-auto flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-16">
+                <div className="w-full py-8 px-16 bg-[#2E3734] mx-auto flex flex-col md:flex-row items-stretch xl:items-center gap-6 sm:gap-8 md:gap-16">
                   <div className="w-full flex justify-center md:w-[40%] lg:w-[25%]">
                     <Image
                       src={section.image}
@@ -216,12 +216,13 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-0">
+                <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between md:items-stretch gap-8 md:gap-0">
                   {section.details.map((detail, idx) => {
                     return (
+                      idx === 1 ? <div className="hidden md:block w-2 bg-white"></div> :
                       <div
                         key={idx}
-                        className="flex items-stretch w-full md:w-1/2"
+                        className="flex items-stretch w-full md:w-[45%]"
                       >
                         <div className="w-full flex flex-col md:justify-between gap-4">
                           <div className="space-y-4">
@@ -242,10 +243,6 @@ const Page = () => {
                             </div>
                           </div>
                         </div>
-                        {/* Add a white vertical line between the two sections, visible only in md and above */}
-                        {idx === 0 && (
-                          <div className="hidden md:block w-2 bg-white mx-8"></div>
-                        )}
                       </div>
                     );
                   })}
@@ -257,21 +254,21 @@ const Page = () => {
 
         {/* why PBS */}
         <div className="w-full px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-8 lg:gap-10 mt-10 mb-10 lg:mb-0 lg:h-screen">
-          <div className="w-full lg:w-[48%] flex items-start">
+          <div className="w-full lg:w-[48%] xl:w-[48%] flex items-start">
             <Image
               src="/pics/service-building.png"
               alt="building"
               width={600}
               height={800} 
               priority
-              className="relative w-full -left-8 md:-left-16 lg:left-0 h-auto lg:h-full object-cover object-top mix-blend-luminosity rounded-[10%]"
+              className="relative w-full -left-8 md:-left-16 lg:left-0 h-auto lg:h-full object-cover object-top mix-blend-luminosity"
             />
           </div>
 
-          <div className="w-full lg:w-[52%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
-            <div className="w-full h-auto flex items-start justify-start lg:justify-between">
-              <div className="w-2 h-full bg-[#8AD5B7] mr-6 hidden lg:block"></div>
-              <div className="w-[90%] h-auto flex flex-col gap-6">
+          <div className="w-full lg:w-[50%] xl:w-[52%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
+            <div className="w-full h-auto flex items-start justify-start gap-2 xl:gap-0 xl:justify-between">
+              <div className="w-2 h-full bg-[#8AD5B7] mr-2 xl:mr-6 hidden lg:block"></div>
+              <div className="w-[90%] h-auto flex flex-col lg:gap-3 xl:gap-6">
                 <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#DCE2E2] tracking-wide uppercase">
                   WHY PBS?
                 </h1>
@@ -292,12 +289,12 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full flex flex-col items-center gap-4 mt-8">
+            <div className="w-full flex flex-col items-center gap-4 mt-4 xl:mt-8">
               <CTA2
                 text="Get Started Now"
                 isArrow={false}
                 href="/tutorial"
-                styling={`w-full lg:w-2/3 mx-auto mt-0 rounded-full h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-xl font-conthrax `}
+                styling={`w-full lg:w-auto mx-auto mt-0 rounded-full h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-base xl:text-xl font-conthrax `}
               />
               <p className="text-[#DCE2E2] text-base font-semibold">
                 Call Us: 914-316-6956

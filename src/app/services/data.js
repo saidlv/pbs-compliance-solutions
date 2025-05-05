@@ -71,6 +71,9 @@ export const sections = [
           ["Violations can stem from noise complaints, improper garbage disposal, or health hazards and may lead to heavy penalties or service disruptions. Even a single unresolved issue can snowball into multiple fines or litigation."],
       },
       {
+        id:2
+      },
+      {
         title: "How PBS Helps",
         description: [
           "1- Violation investigation and response",
@@ -93,6 +96,9 @@ export const sections = [
         title: "Consequences of overlooking Compliance",
         description:
           ["Unpermitted work, expired documents, or missed inspections can lead to stop-work orders, violations, and legal consequences. DOB violations can also affect building value and refinancing"],
+      },
+      {
+        id:2
       },
       {
         title: "How PBS Helps",
@@ -118,6 +124,9 @@ export const sections = [
          [ "Failure to appear at hearings or respond to notices can result in default penalties, doubled fines, property liens, and collections. Every violation needs timely action."],
       },
       {
+        id:2
+      },
+      {
         title: "How PBS Helps",
         description: [
           "1- Complete Case study with documents",
@@ -139,6 +148,9 @@ export const sections = [
         title: "Impact of Non-Compliance",
         description:
          [ "Non-Compliance with FDNY codes can result in violation orders, closures, and massive liability in the event of an incident. Certain businesses even need specific FDNY certifications to operate."],
+      },
+      {
+        id:2
       },
       {
         title: "How PBS Helps",
@@ -164,6 +176,9 @@ export const sections = [
           ["HPD violations can make your property ineligible for refinancing or new tenants. Repeated or unaddressed issues can lead to court cases and severe penalties."],
       },
       {
+        id:2
+      },
+      {
         title: "How PBS Helps",
         description: [
           "1- Managing of Tenant Complaints",
@@ -185,6 +200,9 @@ export const sections = [
         title: "Delays & Fines Without Proper Handling",
         description:
           ["Work in public spaces without DOT permits can bring immediate violations, stop orders, and project delays. These violations are costly and public-facing"],
+      },
+      {
+        id:2
       },
       {
         title: "How PBS Helps",
