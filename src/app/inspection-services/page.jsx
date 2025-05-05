@@ -19,7 +19,7 @@ const InspectionServices = () => {
       <HeroSection
         heading="Turn Building Codes from Foe to Friend"
         text="We Decode NYC’s Labyrinth of Laws into actionable solutions, so your Property stays safe,compliant, and penalty-free"
-        className="font-conthrax max-w-5xl text-[#DCE2E2] mix-blend-luminosity"
+        className="font-conthrax max-w-4xl 2xl:max-w-5xl text-3xl lg:text-5xl text-[#DCE2E2] mix-blend-luminosity"
         bgStyle="bg-top md:bg-top bg-cover"
         img="/pics/Inspection-services-hero.png"
         isLine={true}
@@ -41,7 +41,7 @@ const InspectionServices = () => {
         <h2 className="text-4xl font-semibold font-conthrax w-2/3 mx-auto text-center mb-3 lg:mb-6">
           Ensuring safety, Compliance & Peace of Mind
         </h2>
-        <p className="text-xl font-semibold text-[#89A096] w-5/6 mx-auto text-center mb-3 lg:mb-6">
+        <p className="text-xl font-semibold text-[#89A096] w-5/6 mx-auto text-center mb-6 lg:mb-10">
            Maintaining your property isn’t just an obligation, it’s a necessity
           to protect lives, uphold legal standards, and preserve long-term
           value. At PBS we turn complexity into clarity with inspections
@@ -93,7 +93,7 @@ const InspectionServices = () => {
       <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 mb-10"></div>
 
       {/* Section 2 */}
-      <section className="px-8 lg:px-16 pb-10">
+      <section className="px-8 xl:px-16 pb-10">
         <h2 className="text-3xl lg:text-5xl font-semibold text-[#DCE2E2] text-center font-conthrax mb-10">
           {inspectionServices[1].headline}
         </h2>
@@ -103,7 +103,7 @@ const InspectionServices = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col gap-3 justify-between p-6 shadow-lg rounded-2xl bg-opacity-5 bg-[#89A096]"
+                className="flex flex-col gap-3 justify-between p-6 shadow-lg rounded-2xl bg-opacity-50 bg-[#1E2322]"
                 style={{
                   backgroundImage: `url(${service.bg})`,
                   backgroundSize: "cover",
@@ -112,7 +112,7 @@ const InspectionServices = () => {
                   backgroundBlendMode: "luminosity",
                 }}
               >
-                <p className="bg-[#1E2322] w-2/3 lg:w-full 2xl:w-[80%] rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+                <p className="bg-[#1E2322] w-auto mr-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
                   {service.heading}
                 </p>
                 <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax">
