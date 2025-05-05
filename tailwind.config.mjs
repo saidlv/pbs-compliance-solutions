@@ -10,6 +10,11 @@ export default {
   safelist: [],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+        '4xl': '2560px',
+        // Add more as needed
+      },
       fontFamily: {
         poppins: ["var(--font-poppins)", "sans-serif"],
         gnuolane: ["var(--font-gnuolane)", "sans-serif"],

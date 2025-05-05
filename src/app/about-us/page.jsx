@@ -101,11 +101,11 @@ const AboutPage = () => {
             <span className="text-[#7A8E85] text-lg xl:text-xl font-semibold block lg:inline text-center lg:text-left">
               More than a Company, A Collective Legacy
             </span>
-            <div className="w-[30%] mx-auto lg:mx-0 bg-[#8AD5B7] rounded-full h-1"></div>
+            <div className="w-[30%] mx-auto lg:mx-0 lg:text-left text-center bg-[#8AD5B7] rounded-full h-1"></div>
             {story?.body.map((text, index) => (
               <p
                 key={index}
-                className="font-semibold text-lg xl:text-xl text-balance pr-6 my-8 text-center lg:text-left max-w-2xl"
+                className="font-semibold text-lg xl:text-xl text-balance pr-6 my-8 text-center lg:text-left lg:max-w-2xl"
               >
                 {text}
               </p>
@@ -115,9 +115,9 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission Section */}
-      <div className="flex items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16 pb-24">
+      <div className="flex lg:items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16 pb-24">
         {/* Vision Section */}
-        <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+        <div className="lg:min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
           <div className="flex items-start justify-start gap-3">
             <img src="/pics/Group 19.png" alt="light" className="w-16 h-16" />
             <div className="mb-3">
@@ -149,7 +149,7 @@ const AboutPage = () => {
         </div>
 
         {/* Mission Section */}
-        <div className="min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+        <div className="lg:min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
           <div className="flex items-start justify-start gap-3">
             <img src="/pics/Layer_1.png" alt="arrow" className="w-14 h-14" />
             <div className="mb-3">
@@ -277,30 +277,30 @@ const AboutPage = () => {
       <section className="px-6 lg:px-12">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-stretch gap-8 mb-12">
           {/* Left Content */}
-          <div className="bg-[#2B3331] rounded-[5%] lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-start gap-6 w-full lg:w-[60%] p-6">
+          <div className="bg-[#2B3331] rounded-[5%] lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-around gap-6 w-[80%] mx-auto lg:w-[60%] 2xl:w-[70%] p-6">
             <div className="w-full lg:w-[50%] flex flex-row lg:flex-col items-center lg:items-center justify-between xl:justify-center gap-6 xl:gap-32">
-              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-row lg:flex-col mb-4 lg:mb-0 gap-3">
+              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-row lg:flex-col 2xl:flex-row mb-4 lg:mb-0 gap-3">
                 <span>Buildings</span> <span>We deal in:</span>
               </h2>
               <img
                 src="pics/world-map.png"
                 alt="map" 
-                className="lg:w-auto h-auto"
+                className="lg:w-auto 2xl:w-full h-auto"
               />
             </div>
-            <div className="w-full lg:w-[50%] flex flex-row flex-wrap lg:flex-col items-start justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4 pt-8">
+            <div className="w-full lg:w-[40%] 2xl:w-[30%] flex flex-row flex-wrap lg:flex-col items-start 2xl:items-right justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4 pt-8">
               {service?.buildingTypes.map((location, index) => (
-                <p key={index} className="text-[#DCE2E2] text-base flex gap-2">
+                <p key={index} className="text-[#DCE2E2] text-base 2xl:text-lg flex gap-2">
                   <DotIcon /> {location}
                 </p>
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-[40%]">
+          <div className="w-[80%] mx-auto lg:w-[40%]">
             <Image
               src="/pics/Rectangle 52-1.png"
               alt=""
-              className="w-full h-auto lg:h-full lg:object-cover mix-blend-luminosity rounded-[10%]"
+              className="w-full h-auto lg:h-full object-cover mix-blend-luminosity rounded-[5%] lg:rounded-[10%]"
               width={300}
               height={300}
             />
