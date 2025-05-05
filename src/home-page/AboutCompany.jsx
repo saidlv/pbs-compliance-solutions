@@ -78,7 +78,7 @@ const AboutCompany = () => {
           <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-[#89A096] text-sm">
           Trusted by Hundred of clients, PBS has ensured 100% compliance success across all projects, leveraging 30+ years of expertise & issuing proactive alerts to safeguard timelines and standards
           </p>
-          <div className="flex justify-center items-center bg-[#1E2322] rounded-2xl p-3 min-h-[40vh] lg:min-h-[46vh]">
+          <div className="flex justify-center items-center bg-[#1E2322] bg-opacity-45 rounded-2xl p-3 min-h-[40vh] lg:min-h-[46vh]">
             <Image
               src="/pics/Group9.png"
               alt="Underline"
@@ -101,7 +101,7 @@ const AboutCompany = () => {
             </h2>
             <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-[#89A096]">Precision Trust vision Transformation</p>
             </div>
-            <div className="w-full flex flex-col md:flex-row gap-3 lg:items-center lg:justify-between p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl box-border">
+            <div className="w-full flex flex-col md:flex-row gap-3 lg:items-center lg:justify-between p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#282F2E] rounded-2xl box-border">
             <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 2xl:gap-3 w-full lg:w-3/5">
               {services.map((service, index) => (
                 <li key={index} className="flex justify-start items-start">
@@ -111,7 +111,7 @@ const AboutCompany = () => {
             </ul>
             <div className="w-full py-2 lg:py-0 lg:w-2/5 flex flex-col items-center justify-start xl:gap-6">
               <img src="/pics/Asset61.png" alt="green man" width={100} className="object-contain"/>
-              <CTA2 text={"Our Offerings"} href="/services" styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-full transition-colors mt-0" />
+              <CTA2 text={"Our Offerings"} href="/services" styling="rounded-none bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-full transition-colors mt-0" />
             </div>
             </div>
 

@@ -96,31 +96,31 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="w-[95%] flex flex-col items-center gap-6 sm:gap-16 mb-16">
+          <div className="w-full flex flex-col items-center gap-6 sm:gap-16 mb-16">
             {services.map((service, index) => {
               return (
                 <div key={index}>
                   <div
                     className={`w-full flex flex-col ${
                       service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } items-center lg:items-stretch lg:justify-between gap-12 p-4 lg:p-6`}
+                    } items-center lg:items-stretch xl:items-center lg:justify-between gap-12 p-4 lg:p-6`}
                   >
-                    <div className="w-full lg:w-2/5 xl:w-1/2 aspect-square flex justify-center items-center">
+                    <div className="w-full h-auto lg:w-2/5 xl:w-[45%] aspect-square flex justify-center items-center">
                       <Image
                         src={service.icon}
                         alt={service.title}
                         width={600}
-                        height={600}
+                        height={500}
                         priority
                         quality={100}
-                        className="w-full h-full object-cover object-top-right mix-blend-luminosity rounded-[10%]"
+                        className="w-full h-full object-cover xl:object-contain object-top-right mix-blend-luminosity rounded-[10%]"
                       />
                     </div>
-                    <div className="flex flex-col gap-4 w-full lg:w-3/5 xl:w-1/2 justify-start">
+                    <div className="flex flex-col gap-3 w-full lg:w-3/5 xl:w-[55%] justify-start">
                       <h2 className="text-3xl md:text-4xl font-semibold text-[#8AD5B7] font-conthrax w-4/5">
                         {service.title}
                       </h2>
-                      <p className="text-[#89A096] text-base font-semibold w-4/5">
+                      <p className="text-[#89A096] text-base font-semibold w-4/5 xl:w-full">
                         {service.description}
                       </p>
                       <div className="flex gap-8 items-stretch">
@@ -147,6 +147,7 @@ const Page = () => {
                       </div>
                     </div>
                   </div>
+
                   <div className="relative">
                     <CTA2
                       text="Read More..."
@@ -154,7 +155,7 @@ const Page = () => {
                       href="/tutorial"
                       styling={`w-full md:w-2/5 lg:w-1/5 mt-0 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax ${
                         service.id % 2 === 1
-                          ? "lg:absolute lg:left-[52%] lg:top-0"
+                          ? "lg:absolute lg:left-[45%] lg:top-0"
                           : "lg:absolute lg:left-[2%] lg:top-0"
                       }`}
                     />

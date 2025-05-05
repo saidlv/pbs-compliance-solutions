@@ -171,7 +171,7 @@ const Alerts = () => {
               <CTA2
                 text="Get your Property registered for Free"
                 href="/alert"
-                styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-black px-0 lg:px-3 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+                styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-3 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
               />
                 </div>
               </div>
@@ -201,9 +201,9 @@ const Alerts = () => {
       </p>
       
       <CTA2
-                text="Click to watch now  "
+                text="Click to watch now"
                 href="/tutorial"
-                styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+                styling="w-full lg:w-auto mt-0 h-16 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 font-semibold whitespace-nowrap hover:brightness-105 transition text-sm xl:text-3xl"
               />
     </div>
     </div>

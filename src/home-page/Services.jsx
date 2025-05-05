@@ -43,7 +43,7 @@ const Services = () => {
         <CTA2
             text="Know more about us"
             href="/about-us"
-            styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold px-4 lg:px-8 py-4 transition-colors mt-0 w-[75%] lg:w-[45%]"
+            styling="rounded-full bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold px-4 text-xl py-4 transition-colors mt-0 w-[75%] lg:w-auto"
           />
         </div>
       </div>

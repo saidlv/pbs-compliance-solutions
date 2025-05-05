@@ -8,7 +8,7 @@ const CTA2 = ({ text, href, styling = "", isArrow = true }) => {
       onClick={() => (window.location.href = href)}
     >
       <span className="">{text || "Get Started Now"}</span> {/* Adjusted text size and added whitespace-nowrap */}
-      {isArrow && <ChevronRight size={32} />}
+      {isArrow && <ChevronRight size={48} className="" />}
     </Button>
   );
 };

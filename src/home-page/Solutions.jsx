@@ -86,23 +86,23 @@ const Solutions = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 lg:gap-16 w-full px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-8">
           {SolutionsItems.map((item) => (
             <div
               key={item.title}
-              className="w-full solution-card bg-[#1E2322] p-8 rounded-2xl border-2 border-brand-gray1/50"
+              className="w-full bg-[#1E2322] p-3 lg:p-5 rounded-2xl border-2 border-brand-gray1/50"
             >
               <CustomImage
                 src={item.image}
                 alt={item.title}
                 width={100}
                 height={100}
-                className="w-full h-32 object-cover rounded-xl mb-6"
+                className="w-full object-cover rounded-xl mb-6"
               />
-              <h3 className="text-xl xl:text-2xl text-center font-conthrax font-semibold text-brand-light mb-4">
+              <h3 className="text-xl xl:text-2xl font-conthrax font-semibold text-[#DCE2E2] mb-4">
                 {item.title}
               </h3>
-              <p className="text-brand-gray3 text-left text-sm font-poppins leading-relaxed">
+              <p className="text-[#89A096] text-left text-sm lg:text-base font-poppins leading-relaxed">
                 {item.description}
               </p>
             </div>
