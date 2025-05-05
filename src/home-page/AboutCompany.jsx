@@ -101,8 +101,8 @@ const AboutCompany = () => {
             </h2>
             <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-[#89A096]">Precision Trust vision Transformation</p>
             </div>
-            <div className="w-full flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl box-border">
-            <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 w-full lg:w-3/5">
+            <div className="w-full flex flex-col md:flex-row gap-3 lg:items-center lg:justify-between p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#1E2322] rounded-2xl box-border">
+            <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 2xl:gap-3 w-full lg:w-3/5">
               {services.map((service, index) => (
                 <li key={index} className="flex justify-start items-start">
                   <span className="text-xs xl:text-sm font-semibold">{service}</span>

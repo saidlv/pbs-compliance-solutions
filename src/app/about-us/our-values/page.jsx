@@ -22,7 +22,7 @@ const Page = () => {
       <HeroSection
         heading="Building Compliance, Trust, and results in the heart of new york"
         text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your project stays on time, on budget and above board."
-        className="text-3xl md:text-5xl font-conthrax font-semibold "
+        className="text-3xl lg:text-5xl font-conthrax font-semibold "
         img="/pics/Rectangle 123.png"
         isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
@@ -68,7 +68,7 @@ const Page = () => {
           viewport={{ once: true, delay: index * 0.1 }}
         >
           {/* Greenish Background Div with Image */}
-          <div className="hidden lg:flex lg:w-[25vw] lg:max-w-[400px] lg:aspect-square rounded-3xl bg-[#8AD5B7] justify-center items-center overflow-hidden">
+          <div className="hidden lg:flex lg:w-[25vw] 2xl:w-[20%] 3xl:w-[15%] aspect-square rounded-3xl bg-[#8AD5B7] justify-center items-center overflow-hidden">
             <Image
               src={feature.img}
               alt={feature.title}
@@ -81,7 +81,7 @@ const Page = () => {
           {/* Dark Background Div */}
           <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-3xl bg-[#1E2322] p-4 xl:px-6 xl:py-0 box-border shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
-              <h2 className="text-xl sm:text-2xl xl:text-4xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
+              <h2 className="text-xl sm:text-2xl xl:text-4xl 2xl:text-5xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
                 {feature.title}
               </h2>
               <p className="w-full text-center lg:text-left text-sm sm:text-base font-semibold text-[#DCE2E2]">
@@ -134,7 +134,7 @@ const Page = () => {
           Reputations.
         </p>
 
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 sm:gap-8 lg:gap-12 text-[#DCE2E2] w-[96%] mx-auto">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 sm:gap-8 lg:gap-12 text-[#DCE2E2] w-[95%] mx-auto">
           {coreValues?.map((value, index) => {
             return (
               <motion.div
@@ -143,7 +143,7 @@ const Page = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 key={index}
-                className="flex flex-col items-start justify-start w-full gap-4 sm:gap-6 lg:gap-8 bg-[#37403D] rounded-3xl p-4 sm:p-4 lg:p-6 "
+                className="flex flex-col items-start justify-start w-full 2xl:w-[45%] 3xl:w-[35%] gap-4 sm:gap-6 lg:gap-8 bg-[#37403D] rounded-3xl p-4 sm:p-4 lg:p-6 "
               >
                 <div className="w-full flex justify-center items-center h-[30%]">
                   <img src={value.icon} alt="icon" className="w-24 h-24 object-contain" />

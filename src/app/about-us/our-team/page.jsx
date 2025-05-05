@@ -49,7 +49,7 @@ const Page = () => {
               {leadershipTeam.map((member, index) => (
                 <motion.div
                   key={index}
-                  className={`w-full h-auto min-h-[25vh] lg:min-h-[40vh] xl:min-h-[25vh] bg-[#1E2322] flex items-center justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
+                  className={`w-full 3xl:w-[85%] h-auto min-h-[25vh] lg:min-h-[45vh] xl:min-h-[30vh] bg-[#1E2322] flex  items-center justify-start gap-3 xl:gap-2 box-border p-6 md:p-3 rounded-2xl md:rounded-full ${
                     index === leadershipTeam.length - 1
                       ? index % 2 === 0
                         ? "relative left-0 lg:left-[50%]"
@@ -62,7 +62,7 @@ const Page = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full lg:h-2/3 xl:h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                  <div className="w-full flex flex-col items-start justify-center gap-1">
+                  <div className="w-full text-wrap flex flex-col items-start justify-center gap-1 lg:gap-2 2xl:gap-3">
                     <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                       {member.name}
                     </h3>

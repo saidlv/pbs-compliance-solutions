@@ -35,7 +35,7 @@ const HeroSection = ({ heading, text,text2="", textStyle ="", button, img, stagg
   }, [staggerVal]);
 
   return (
-    <section className="relative [60vh] lg:h-[70vh] bg-[#37403D] text-[#DCE2E2] overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
+    <section className="relative [60vh] lg:h-[75vh] bg-[#37403D] text-[#DCE2E2] overflow-hidden text-center py-16 px-4 md:px-6 lg:px-8 flex items-center">
       {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ const HeroSection = ({ heading, text,text2="", textStyle ="", button, img, stagg
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <motion.h1
-          className={`text-3xl md:text-6xl 2xl:text-6xl font-bold mb-6 ${className || ""}`}
+          className={`text-3xl 2xl:text-6xl font-bold mb-6 ${className || ""}`}
           ref={textRef}
           style={{
             wordBreak: "keep-all",

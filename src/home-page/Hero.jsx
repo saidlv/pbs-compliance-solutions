@@ -81,14 +81,14 @@ const Hero = () => {
 
         {/* Right Side - Text Content */}
         <motion.div
-          className="z-20 w-full lg:w-[65%] 2xl:w-[40%] flex flex-col justify-center items-start text-left p-6 lg:px-10"
+          className="z-20 w-full lg:w-[65%] 2xl:w-[40%] flex flex-col justify-center items-center lg:items-start text-center lg:text-left p-6 lg:px-10"
           initial="hidden"
           animate="visible"
           transition={{ staggerChildren: 0.2 }}
         >
           {/* Main Heading */}
           <motion.h1
-            className="text-xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 max-w-2xl"
+            className="text-xl lg:text-3xl font-conthrax font-semibold text-brand-light mb-6 lg:max-w-2xl"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{
@@ -100,12 +100,12 @@ const Hero = () => {
             Ensuring Compliance, Excellence and Peace of Mind in New York Construction
           </motion.h1>
 
-          <div className="w-[30%] h-1 bg-[#8AD5B7] mb-4 rounded-full"></div>
+          <div className="w-[50%] lg:w-[30%] mx-auto lg:mx-0 h-1 bg-[#8AD5B7] mb-4 rounded-full"></div>
 
 
           {/* Subheading */}
           <motion.p
-            className="text-base lg:text-lg font-semibold font-poppins text-[#89A096] mb-6 max-w-xl"
+            className="text-base lg:text-lg font-semibold font-poppins text-[#89A096] mb-6 lg:max-w-xl"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
@@ -120,7 +120,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.p
-            className="text-base lg:text-lg font-poppins text-[#89A096] mb-2 max-w-xl"
+            className="text-base lg:text-lg font-poppins text-[#89A096] mb-2 lg:max-w-xl"
             initial={{ opacity: 0, x: 100 }}
             animate={{
               opacity: [0, 0.25, 0.75, 1],
