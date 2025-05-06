@@ -29,7 +29,7 @@ const HeroCarousel = () => {
     <Slider {...settings} className="flex justify-evenly items-center">
       {heroSections.map((img, index) => (
          <div key={index} className="relative bg-brand-dark">
-         <div className="relative flex items-center lg:items-end justify-center lg:justify-between 2xl:justify-center 2xl:gap-16 py-8">
+         <div className="relative min-h-[85vh] flex items-center lg:items-end justify-center lg:justify-start p-8">
            {/* Background Image - Optional */}
    
              <div
@@ -47,12 +47,12 @@ const HeroCarousel = () => {
    
            {/* Right Side - Text Content */}
            <div
-             className="relative z-20 w-full lg:w-[60%] lg:left-[40%] 2xl:w-[65%] 2xl:left-[25%] 3xl:left-[20%] flex flex-col gap-3 3xl:gap-6 justify-center items-start text-center lg:text-left p-6 lg:px-10"
+             className="relative z-20 w-full lg:w-[60%] lg:left-[40%] 2xl:w-[55%] 3xl:w-[65%] flex flex-col gap-3 2xl:gap-6 justify-center items-start text-center lg:text-left p-6 lg:px-10"
             
            >
              {/* Main Heading */}
              <h1
-               className="text-xl lg:text-2xl xl:text-3xl 3xl:text-5xl font-conthrax font-semibold text-brand-light xl:max-w-2xl 3xl:max-w-5xl"
+               className="text-xl lg:text-2xl xl:text-3xl 3xl:text-5xl font-conthrax font-semibold text-brand-light xl:max-w-2xl 3xl:max-w-6xl"
                
              >
                Ensuring Compliance, Excellence and Peace of Mind in New York Construction
