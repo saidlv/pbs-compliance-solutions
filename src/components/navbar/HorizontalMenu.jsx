@@ -48,7 +48,7 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
 
   return (
     <nav
-      className={`w-[80%] xl:w-[70%] absolute top-0 h-[100px] lg:flex items-center justify-between gap-5 xl:gap-8 right-6 xl:right-12 z-50 transition-transform duration-500`}
+      className={`w-[80%] xl:w-[70%] absolute top-0 h-[100px] lg:flex items-center justify-between gap-5 xl:gap-8 right-6 xl:right-12 z-50`}
       role="navigation max-w-[70vw]"
       aria-label="Main navigation"
     >
