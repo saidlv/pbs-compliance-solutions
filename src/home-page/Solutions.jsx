@@ -90,7 +90,7 @@ const Solutions = () => {
           {SolutionsItems.map((item) => (
             <div
               key={item.title}
-              className="w-full bg-[#1E2322] p-3 lg:p-5 rounded-2xl border-2 border-brand-gray1/50"
+              className="w-full solution-card bg-[#1E2322] p-3 lg:p-5 rounded-2xl border-2 border-brand-gray1/50"
             >
               <CustomImage
                 src={item.image}
