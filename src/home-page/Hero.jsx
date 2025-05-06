@@ -22,14 +22,14 @@ const HeroCarousel = () => {
     slidesToScroll: 1, 
     centerPadding: "0%", 
     arrows: false, 
-    autoplay: true, 
+    autoplay: false, 
     autoplaySpeed: 2000, 
   };
   return (
     <Slider {...settings} className="flex justify-evenly items-center">
       {heroSections.map((img, index) => (
          <div key={index} className="relative bg-brand-dark">
-         <div className="relative min-h-[90vh] flex items-center lg:items-end justify-center lg:justify-start p-8">
+         <div className="relative min-h-screen flex items-center lg:items-end justify-center lg:justify-start p-8">
            {/* Background Image - Optional */}
    
              <div
