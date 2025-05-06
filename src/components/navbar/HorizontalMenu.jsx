@@ -8,7 +8,6 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
   const router = useRouter();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const menuRef = useRef(null);
-  const ref = useRef(null);
 
   const handleItemHover = (item) => {
     if (item.submenu) {
@@ -47,24 +46,11 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
     },
   };
 
-  useEffect(() => {
-    gsap.to(ref.current, {
-      height: "80px", // Shrinks header height
-      scrollTrigger: {
-        trigger: ref.current,
-        start: "top top", // Starts when the top of the header reaches the top of the viewport
-        end: "+=200", // Ends after scrolling 200px
-        scrub: true, // Smooth animation that follows scroll position
-      },
-    });
-  })
-
   return (
     <nav
-      className="w-[80%] xl:w-[70%] absolute top-0 hidden h-[100px] lg:flex items-center justify-between gap-5 xl:gap-8 right-6 xl:right-12 z-50"
+      className={`w-[80%] xl:w-[70%] absolute top-0 h-[100px] lg:flex items-center justify-between gap-5 xl:gap-8 right-6 xl:right-12 z-50 transition-transform duration-500`}
       role="navigation max-w-[70vw]"
       aria-label="Main navigation"
-      ref={ref}
     >
       {menuItems.map((item) => (
         <motion.div

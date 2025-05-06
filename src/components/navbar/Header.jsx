@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from "react";
 import CustomImage from "@/app/CustomImage";
 import { useMenu } from "@/context/MenuContext";
 import { motion } from "framer-motion";
@@ -17,24 +17,41 @@ const Header = () => {
   const router = useRouter();
   const ref = useRef(null);
   const imageRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current) {
+        setIsVisible(false); // Hide on scroll down
+      } else {
+        setIsVisible(true); // Show on scroll up
+      }
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (!ref.current || !imageRef.current) return;
 
     // Set initial background color inline to ensure GSAP can animate it
-    gsap.set(ref.current, { backgroundColor: "#6C837D" });
+    // gsap.set(ref.current, { backgroundColor: "#6C837D" });
 
     // Animation for header height and background transparency
-    gsap.to(ref.current, {
-      height: "80px",
-      backgroundColor: "rgba(108, 131, 125, 0)", // Fully transparent (using rgba for clarity)
-      scrollTrigger: {
-        trigger: ref.current,
-        start: "top top",
-        end: "+=200",
-        scrub: true,
-      },
-    });
+    // gsap.to(ref.current, {
+    //   height: "80px",
+    //   backgroundColor: "rgba(108, 131, 125, 0)", // Fully transparent (using rgba for clarity)
+    //   scrollTrigger: {
+    //     trigger: ref.current,
+    //     start: "top top",
+    //     end: "+=200",
+    //     scrub: true,
+    //   },
+    // });
 
     // Animation for logo scaling
     gsap.to(imageRef.current, {
@@ -52,12 +69,17 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 right-0 z-50 w-full">
+    <div
+      className={`sticky top-0 right-0 z-50 w-full ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } transition-transform duration-500`}
+      ref={ref}
+    >
       {/* Header Container with GSAP Animation */}
       <motion.div
-        ref={ref}
-        className="flex flex-row justify-center lg:justify-between items-center w-full h-[100px]"
+        className="flex flex-row justify-center lg:justify-between items-center w-full h-[100px] bg-[#6C837D]"
         initial={{ height: "100px" }}
+        
       >
         {/* Logo Container with Click Navigation */}
         <div
