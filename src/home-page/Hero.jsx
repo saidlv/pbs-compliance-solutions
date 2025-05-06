@@ -29,11 +29,11 @@ const HeroCarousel = () => {
     <Slider {...settings} className="flex justify-evenly items-center">
       {heroSections.map((img, index) => (
          <div key={index} className="relative bg-brand-dark">
-         <div className="min-h-screen relative flex items-center lg:items-end justify-center lg:justify-between 2xl:justify-center 2xl:gap-16 py-8">
+         <div className="relative flex items-center lg:items-end justify-center lg:justify-between 2xl:justify-center 2xl:gap-16 py-8">
            {/* Background Image - Optional */}
    
              <div
-               className="absolute w-full inset-0 h-full"
+               className="absolute w-full inset-0"
              >
                <CustomImage
                  src={img}
