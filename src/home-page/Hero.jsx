@@ -22,7 +22,7 @@ const HeroCarousel = () => {
     slidesToScroll: 1, 
     centerPadding: "0%", 
     arrows: false, 
-    autoplay: false, 
+    autoplay: true, 
     autoplaySpeed: 2000, 
   };
   return (
