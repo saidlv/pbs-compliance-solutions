@@ -68,14 +68,14 @@ const AboutCompany = () => {
   ];
 
   return (
-    <div className="bg-brand-dark text-brand-light px-16" ref={containerRef}>
+    <div className="bg-brand-dark text-brand-light px-8 lg:px-16" ref={containerRef}>
       <div className="container mx-auto px-6 pt-16 lg:px-12 flex flex-col lg:flex-row justify-between gap-5 xl:gap-8 bg-[#1E2322] bg-opacity-25 rounded-3xl  border-2 border-brand-gray1/50 pb-12 mb-16">
         {/* Left Side - Numbers That Matter */}
         <div className="lg:w-[50%] xl:w-[55%] gsap-animate p-2">
           <h2 className="text-lg lg:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
             Numbers That Matter
           </h2>
-          <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-[#89A096] text-sm">
+          <p className="lg:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-[#89A096] text-sm">
           Trusted by Hundred of clients, PBS has ensured 100% compliance success across all projects, leveraging 30+ years of expertise & issuing proactive alerts to safeguard timelines and standards
           </p>
           <div className="flex justify-center items-center bg-[#1E2322] bg-opacity-45 rounded-2xl p-3 min-h-[40vh] lg:min-h-[46vh]">
@@ -99,9 +99,9 @@ const AboutCompany = () => {
             <h2 className="text-sm md:text-2xl xl:text-3xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
               What we Specialize in
             </h2>
-            <p className="md:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-[#89A096]">Precision Trust vision Transformation</p>
+            <p className="lg:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-sm text-[#89A096]">Precision Trust vision Transformation</p>
             </div>
-            <div className="w-full flex flex-col md:flex-row gap-3 lg:items-center lg:justify-between p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#282F2E] rounded-2xl box-border">
+            <div className="w-full flex flex-col md:flex-row gap-3 lg:items-center lg:justify-between p-5 lg:p-3 xl:p-6 text-[#D9D9D9]  min-h-40 lg:min-h-[46vh] bg-[#282F2E] rounded-2xl box-border">
             <ul className="flex flex-col justify-start items-start gap-3 lg:gap-1 2xl:gap-3 w-full lg:w-3/5">
               {services.map((service, index) => (
                 <li key={index} className="flex justify-start items-start">
