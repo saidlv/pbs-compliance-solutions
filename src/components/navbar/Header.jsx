@@ -77,11 +77,11 @@ const Header = () => {
     >
       {/* Header Container with GSAP Animation */}
       <motion.div
-        className="flex flex-row justify-center lg:justify-between items-center w-full h-[100px]"
+        className="flex flex-row justify-center lg:justify-between items-start lg:items-center w-full pt-2 lg:pt-0 h-[100px]"
       >
         {/* Logo Container with Click Navigation */}
         <div
-          className="cursor-pointer p-4 pl-0"
+          className="cursor-pointer lg:p-4 pl-0"
           onClick={() => {
             setIsOpen(false);
             router.push("/");
@@ -94,7 +94,7 @@ const Header = () => {
               width={100}
               height={100}
               alt="Website Logo"
-              className="w-[80px] lg:h-auto relative lg:left-[50px] md:left-0"
+              className="w-[50px] lg:w-[80px] object-contain lg:h-auto relative lg:left-[50px] md:left-0"
             />
           </motion.div>
         </div>

@@ -16,21 +16,21 @@ import HorizontalMenu from "./HorizontalMenu";
  * @returns {JSX.Element} The animated arrow component
  */
 
-const AnimatedArrow = () => {
-  return (
-    <motion.div
-      className="absolute top-1/2 transform -translate-y-1/2 right-0 cursor-pointer pr-16"
-      animate={{ x: [0, -10, 0] }} // Simple horizontal nudge animation
-      transition={{
-        repeat: Infinity, // Animation repeats forever
-        duration: 1, // Each animation cycle takes 1 second
-      }}
-      aria-hidden="true" // Hide from screen readers as it's decorative
-    >
-      <ChevronLeft size={48} className="text-gray-400" />
-    </motion.div>
-  );
-};
+// const AnimatedArrow = () => {
+//   return (
+//     <motion.div
+//       className="absolute top-1/2 transform -translate-y-1/2 right-0 cursor-pointer pr-16"
+//       animate={{ x: [0, -10, 0] }} // Simple horizontal nudge animation
+//       transition={{
+//         repeat: Infinity, // Animation repeats forever
+//         duration: 1, // Each animation cycle takes 1 second
+//       }}
+//       aria-hidden="true" // Hide from screen readers as it's decorative
+//     >
+//       <ChevronLeft size={48} className="text-gray-400" />
+//     </motion.div>
+//   );
+// };
 
 /**
  * RightSideMenu Component
@@ -46,32 +46,30 @@ const AnimatedArrow = () => {
  *
  * @returns {JSX.Element} The right side menu component
  */
-const RightSideMenu = () => {
-  /**
-   * State to track whether the hover area is currently being hovered
-   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
-   */
-  const [isHovered, setIsHovered] = useState(false);
+// const RightSideMenu = () => {
+//   /**
+//    * State to track whether the hover area is currently being hovered
+//    * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
+//    */
+//   const [isHovered, setIsHovered] = useState(false);
 
-  return (
-    <div
-      className="fixed top-0 right-0 h-full z-50"
-      style={{ width: "20vw" }} // Right 20% of viewport width
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => {
-        // Add delay before hiding menu to prevent accidental closures
-        // when the user briefly moves cursor outside the hover area
-        setTimeout(() => setIsHovered(false), 500); // 500ms exit delay
-      }}
-      role="navigation"
-      aria-label="Side navigation menu"
-    >
-      {isHovered ? <VerticalMenu /> : <AnimatedArrow />}
-    </div>
-  );
-};
-
-
+//   return (
+//     <div
+//       className="fixed top-0 right-0 h-full z-50"
+//       style={{ width: "20vw" }} // Right 20% of viewport width
+//       onMouseEnter={() => setIsHovered(true)}
+//       onMouseLeave={() => {
+//         // Add delay before hiding menu to prevent accidental closures
+//         // when the user briefly moves cursor outside the hover area
+//         setTimeout(() => setIsHovered(false), 500); // 500ms exit delay
+//       }}
+//       role="navigation"
+//       aria-label="Side navigation menu"
+//     >
+//       {isHovered ? <VerticalMenu /> : <AnimatedArrow />}
+//     </div>
+//   );
+// };
 
 /**
  * ResponsiveMenu Component

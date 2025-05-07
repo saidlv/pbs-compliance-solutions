@@ -110,7 +110,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
     <div className="w-screen"> 
       {/* Hamburger Icon Button */}
       <button
-        className="fixed top-[45px] right-12 z-50 flex flex-col items-end space-y-1"
+        className="fixed top-[25px] right-12 z-50 flex flex-col items-end space-y-1"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
@@ -134,9 +134,10 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
         transition={{ type: "tween", duration: 0.5 }}
-        className="fixed top-0 right-0 w-1/2 h-full bg-black text-white flex flex-col items-start pt-24 px-6 space-y-6"
+        className="fixed top-0 right-0 w-1/2 lg:h-full bg-black text-white flex flex-col items-start pt-24"
         aria-hidden={!isOpen}
       >
+        <div className="w-full p-6 space-y-6 bg-black rounded-lg">
         {/* Menu Items */}
         {menuItems.map((item) => (
           <div key={item.name} className="w-full">
@@ -199,6 +200,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
             </AnimatePresence>
           </div>
         ))}
+        </div>
       </motion.div>
     </div>
   );

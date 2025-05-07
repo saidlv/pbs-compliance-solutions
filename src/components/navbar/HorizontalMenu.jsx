@@ -48,20 +48,20 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
 
   return (
     <nav
-      className={`w-[80%] xl:w-[70%] absolute top-0 h-[100px] lg:flex items-center justify-end gap-10 right-6 xl:right-12 z-50`}
+      className={`w-[80%] xl:w-[80%] absolute top-0 h-[100px] lg:flex items-center justify-end gap-6 xl:gap-10 right-6 xl:right-12 z-50`}
       role="navigation max-w-[70vw]"
       aria-label="Main navigation"
     >
-      {menuItems.map((item) => (
+      {menuItems.map((item,index) => (
         <motion.div
-          className="text-[#EAEEEE] hover:text-[#8AD5B7] text-base xl:text-lg font-semibold cursor-pointer relative"
+          className={`${index === menuItems.length-1 ? "text-[#37403D] hover:text-[#EAEEEE] bg-[#8AD5B7] rounded-full p-2" :"text-[#EAEEEE] hover:text-[#8AD5B7]"} text-base xl:text-lg font-semibold cursor-pointer relative`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleItemClick(item)}
           role="button"
           aria-expanded={activeDropdown === item.name}
           aria-controls={item.submenu ? `submenu-${item.name}` : undefined}
-          key={item.name}
+          key={index}
           onMouseEnter={() => handleItemHover(item)}
         >
           {item.name}
