@@ -164,6 +164,7 @@ const Page = () => {
               );
             })}
           </div>
+
           <div
             className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-8 lg:mt-8 mb-6`}
           ></div>
@@ -194,23 +195,24 @@ const Page = () => {
           {sections.map((section, index) => {
             return (
               <div key={index} className="flex flex-col gap-8 md:gap-16">
-                <div className="w-full py-8 px-16 bg-[#2E3734] mx-auto flex flex-col md:flex-row items-stretch xl:items-center gap-6 sm:gap-8 md:gap-16">
-                  <div className="w-full flex justify-center md:w-[40%] lg:w-[25%]">
+                <div className="w-full py-8 px-8 lg:px-16 bg-[#2E3734] mx-auto flex flex-col md:flex-row items-stretch xl:items-center gap-6 sm:gap-8 xl:gap-16">
+                  <div className="w-full flex justify-center md:w-[40%] xl:w-[25%]">
                     <Image
                       src={section.image}
                       alt={section.title}
                       width={100}
                       height={100}
                       priority
-                      className="w-[70%] md:w-full md:h-full object-cover object-top-right mix-blend-luminosity rounded-[10%]"
+                      quality={100}
+                      className="w-[70%] md:w-full md:h-full md:object-cover xl:object-contain object-center mix-blend-luminosity rounded-[10%]"
                     />
                   </div>
 
-                  <div className="w-full md:w-[50%] lg:w-[75%] flex flex-col gap-4">
+                  <div className="w-full md:w-[60%] xl:w-[75%] flex flex-col gap-4">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl text-center md:text-left font-semibold font-conthrax text-[#8AD5B7]">
                       {section.title}
                     </h2>
-                    <p className="text-xl text-center md:text-left font-semibold text-[#89A096]">
+                    <p className="text-sm lg:text-xl text-center md:text-left font-semibold text-[#89A096]">
                       {section.description}
                     </p>
                   </div>
@@ -219,7 +221,7 @@ const Page = () => {
                 <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between md:items-stretch gap-8 md:gap-0">
                   {section.details.map((detail, idx) => {
                     return (
-                      idx === 1 ? <div className="hidden md:block w-2 bg-white"></div> :
+                      idx === 1 ? <div key={idx} className="hidden md:block w-2 bg-white"></div> :
                       <div
                         key={idx}
                         className="flex items-stretch w-full md:w-[45%]"
@@ -254,7 +256,7 @@ const Page = () => {
 
         {/* why PBS */}
         <div className="w-full px-8 md:px-16 flex flex-col lg:flex-row items-center md:items-stretch gap-6 sm:gap-8 lg:gap-10 mt-10 mb-10 lg:mb-0 lg:h-screen">
-          <div className="w-full lg:w-[48%] xl:w-[48%] flex items-start">
+          <div className="w-full lg:w-[48%] xl:w-[50%] flex items-start">
             <Image
               src="/pics/service-building.png"
               alt="building"
@@ -265,7 +267,7 @@ const Page = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[50%] xl:w-[52%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
+          <div className="w-full lg:w-[50%] xl:w-[50%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
             <div className="w-full h-auto flex items-start justify-start gap-2 xl:gap-0 xl:justify-between">
               <div className="w-2 h-full bg-[#8AD5B7] mr-2 xl:mr-6 hidden lg:block"></div>
               <div className="w-[90%] h-auto flex flex-col lg:gap-3 xl:gap-6">

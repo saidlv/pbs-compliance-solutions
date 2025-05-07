@@ -298,7 +298,7 @@ const AboutPage = () => {
           </div>
           <div className="w-[80%] mx-auto lg:w-[40%]">
             <Image
-              src="/pics/Rectangle 52-1.png"
+              src="/pics/Rectangle 52.png"
               alt=""
               className="w-full h-auto lg:h-full object-cover mix-blend-luminosity rounded-[5%] lg:rounded-[10%]"
               width={300}
@@ -321,7 +321,7 @@ const AboutPage = () => {
                   key={index}
                   className="flex flex-col items-center gap-2 my-4"
                 >
-                  <div className="rounded-full border-4 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
+                  <div className="rounded-full border-2 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
                     <Image
                       src={location.cityImage}
                       alt={location.cityName}
