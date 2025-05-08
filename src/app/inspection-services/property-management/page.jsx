@@ -6,7 +6,7 @@ import { whyPBS } from "@/app/services/data";
 import CTA2 from "@/components/CTA2";
 import ImageCarousel from "@/components/ImageCarousel";
 
-const page = () => {
+const Page = () => {
   const section01 = {
     heading: "Welcome to PBS Property Management",
     items: [
@@ -171,7 +171,7 @@ const page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] h-auto object-cover mx-auto"
+            className="w-[80%] h-auto object-contain mx-auto"
           />
         </div>
       </section>
@@ -191,14 +191,14 @@ const page = () => {
               alt="Inspection Services"
               width={500}
               height={500}
-              className="w-[50%] lg:w-1/2 2xl:w-1/3 3xl:w-1/4 object-contain mix-blend-luminosity mx-auto"
+              className="w-[50%] lg:w-1/3 3xl:w-1/4 object-contain mr-0"
             />
-            <div className="flex flex-col items-center lg:items-start justify-center gap-5 xl:gap-6 2xl:gap-8 w-[80%] lg:w-1/2 mx-auto">
-              <h3 className="w-full text-2xl xl:text-3xl font-conthrax text-center lg:text-left font-semibold text-[#DCE2E2] lg:max-w-sm">
+            <div className="flex flex-col items-center lg:items-start justify-center gap-5 xl:gap-6 2xl:gap-8 w-[80%] lg:w-[55%] xl:w-[55%] 3xl:w-[50%] ml-0">
+              <h3 className="w-full text-2xl lg:text-3xl font-conthrax text-center lg:text-left font-semibold text-[#DCE2E2] lg:max-w-sm">
                 {compliance_alert.subheading}
               </h3>
 
-              <div className="space-y-2 w-[90%] lg:w-full 2xl:w-[80%] 3xl:w-[70%] mx-auto lg:mx-0">
+              <div className="space-y-2 w-[90%] lg:w-full 2xl:w-[85%] mx-auto lg:mx-0">
                 {compliance_alert.items.map((item, index) => {
                   return (
                     <p
@@ -280,4 +280,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
