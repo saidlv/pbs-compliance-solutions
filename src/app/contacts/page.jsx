@@ -169,7 +169,7 @@ Contact PBS Compliance Solutions"
             return (
               <motion.div
                 key={index}
-                className="w-full space-y-8 h-full flex flex-col justify-between rounded-xl bg-[#1E2322] py-4 px-8"
+                className="w-full space-y-8 h-full flex flex-col justify-between rounded-xl bg-[#1E2322] py-4 px-6 xl:py-6 xl:px-10"
                 initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-100px" }}
