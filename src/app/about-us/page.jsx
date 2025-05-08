@@ -314,7 +314,8 @@ const AboutPage = () => {
           <p className="text-[#89A096] font-semibold text-sm mb-4 text-center">
             Serving All NYC Boroughs with Local Expertise
           </p>
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 my-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 my-4 w-full">
             {service?.locations.map((location, index) => {
               return (
                 <div
@@ -373,7 +374,7 @@ const AboutPage = () => {
         <CTA
           text={cta?.buttonText}
           href="/contacts"
-          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[20px] lg:text-[24px] w-full lg:w-[50%] rounded-full mx-auto my-0"
+          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[20px] lg:text-[24px] w-full lg:w-[75%] xl:w-[60%] 2xl:w-[50%] rounded-full mx-auto my-0"
         />
       </section>
     </div>

@@ -94,7 +94,7 @@ const Header = () => {
               width={100}
               height={100}
               alt="Website Logo"
-              className="w-[50px] lg:w-[80px] object-contain lg:h-auto relative lg:left-[50px] md:left-0"
+              className="w-[50px] lg:w-[80px] object-contain lg:h-auto relative xl:left-[50px] md:left-0"
             />
           </motion.div>
         </div>

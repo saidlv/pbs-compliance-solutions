@@ -36,6 +36,7 @@ export const menuItems = [
     ],
   },
   { name: "Owner Representative", link: "/owner-representative" },
+  { name: "Property Management", link: "/inspection-services/property-management"},
   {
     name: "Services",
     link: "/services",

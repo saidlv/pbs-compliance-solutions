@@ -149,7 +149,7 @@ Contact PBS Compliance Solutions"
         bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"
         isLine={true}
         textStyle="text-base sm:text-lg md:text-xl font-semibold text-[#DCE2E2]"
-        img="/pics/local-law-hero.png"
+        img="/pics/contact-hero.png"
       />
 
       {/* Custom 'About Us' Label Divider */}
