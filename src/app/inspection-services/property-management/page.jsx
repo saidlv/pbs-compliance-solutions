@@ -4,6 +4,7 @@ import Image from "next/image";
 import HeroSection from "@/components/HeroSection";
 import { whyPBS } from "@/app/services/data";
 import CTA2 from "@/components/CTA2";
+import ImageCarousel from "@/components/ImageCarousel";
 
 const page = () => {
   const section01 = {
@@ -170,7 +171,7 @@ const page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] h-auto object-cover mix-blend-luminosity mx-auto"
+            className="w-[80%] h-auto object-cover mx-auto"
           />
         </div>
       </section>
@@ -273,6 +274,8 @@ const page = () => {
 
         </div>
       </section>
+
+      <ImageCarousel/>
     </div>
   );
 };
