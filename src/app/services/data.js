@@ -63,7 +63,7 @@ export const sections = [
     id: 1,
     title: "DEP/DOH/DSNY",
     description: `These departments often issue violations based on inspections, environmental data, or public complaints to regulate health, environmental, and sanitation standards in NYC. Failure to respond can lead to escalated enforcement actions, legal complications, or operational halts for buildings and businesses. Staying proactive is crucial in avoiding surprises`,
-    image: "/pics/service-section3.png",
+    image: "/pics/service-section3.jpg",
     details: [
       {
         title: "Risks of Non-Compliance",

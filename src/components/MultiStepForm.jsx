@@ -160,13 +160,13 @@ const MultiStepForm = ({
 
   return (
     <motion.div
-      className={`mx-auto px-7 py-3 bg-[#141414] flex flex-col justify-around ${
+      className={`mx-auto w-full px-7 py-3 bg-[#141414] flex flex-col justify-around ${
         styling ? styling : ""
       } ${containerClass ? containerClass : ""}`}
       initial="hidden"
       animate="visible"
     >
-      <div className="space-y-4 sm:mx-auto md:mx-0 lg:mr-[300px] lg:w-full">
+      <div className="space-y-4 sm:mx-auto md:mx-0 lg:w-full">
         <form className="space-y-3" onSubmit={handleFormSubmit} noValidate>
           <motion.div
             key={currentStep}
