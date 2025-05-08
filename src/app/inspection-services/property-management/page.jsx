@@ -100,7 +100,7 @@ const Page = () => {
 
       {/*Section 01  */}
       <section className="px-6 md:px-10 xl:px-16 pt-10 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center gap-10 2xl:gap-16 w-full pb-6 lg:pb-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center lg:gap-10 2xl:gap-16 w-full pb-6 lg:pb-10">
           <Image
             src="/pics/p-management-pic3.png"
             alt="Inspection Services"
