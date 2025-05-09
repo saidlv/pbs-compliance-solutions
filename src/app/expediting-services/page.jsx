@@ -265,7 +265,7 @@ const Page = () => {
                   index % 2 === 0 ? "items-start" : "items-start lg:items-end"
                 } rounded-2xl flex flex-col justify-center gap-4`}
               >
-                <div className="w-full lg:w-2/3 2xl:w-1/2 flex items-stretch justify-center gap-5 xl:gap-6">
+                <div className="w-full lg:w-2/3 3xl:w-1/2 flex items-stretch justify-center gap-5 xl:gap-6">
                   <span className="w-[10%] flex items-center text-[100px] flex-shrink-0 lg:text-[128px] text-[#8AD5B7] font-semibold">
                     {item.step}
                   </span>
@@ -277,7 +277,7 @@ const Page = () => {
                     <p className="text-base lg:text-xl text-left font-semibold italic">
                       {item?.text}
                     </p>
-                    <p className="text-base lg:text-xl text-left font-semibold text-[#89A096]">
+                    <p className="text-base lg:text-xl text-left font-semibold text-[#89A096] 2xl:w-[90%]">
                       {item.description}
                     </p>
                     <ul className="">
