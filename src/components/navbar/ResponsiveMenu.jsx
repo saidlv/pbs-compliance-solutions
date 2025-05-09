@@ -88,7 +88,7 @@ import HorizontalMenu from "./HorizontalMenu";
  */
 
 const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
-  const isMobile = useMediaQuery(1024);
+  const isMobile = useMediaQuery(1024); //1280
 
   return isMobile ? (
     <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />

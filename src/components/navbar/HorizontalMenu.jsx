@@ -48,13 +48,13 @@ const HorizontalMenu = ({ isOpen, setIsOpen }) => {
 
   return (
     <nav
-      className={`w-[87%] xl:w-[80%] absolute top-0 h-[100px] lg:flex items-center justify-end gap-3 xl:gap-6 right-2 xl:right-6 z-50`}
+      className={`w-[87%] xl:w-[85%] absolute top-0 h-[100px] lg:flex items-center justify-end gap-5 xl:gap-6 2xl:gap-8 right-2 xl:right-6 z-50`}
       role="navigation max-w-[70vw]"
       aria-label="Main navigation"
     >
       {menuItems.map((item,index) => (
         <motion.div
-          className={`${index === menuItems.length-1 ? "text-[#37403D] hover:text-[#EAEEEE] bg-[#8AD5B7] rounded-full p-2" :"text-[#EAEEEE] hover:text-[#8AD5B7]"} text-base font-semibold cursor-pointer relative`}
+          className={`${index === menuItems.length-1 ? "text-[#37403D] hover:text-[#EAEEEE] bg-[#8AD5B7] rounded-full p-2 flex-shrink-0" :"text-[#EAEEEE] hover:text-[#8AD5B7]"} text-xs xl:text-sm 2xl:text-lg font-semibold cursor-pointer relative`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => handleItemClick(item)}

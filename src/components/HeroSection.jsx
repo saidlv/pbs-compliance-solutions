@@ -48,7 +48,7 @@ const HeroSection = ({ heading, text,text2="", textStyle ="", button, img, stagg
 
       {/* Content Wrapper */}
       <motion.div
-        className="relative z-10 flex flex-col items-center justify-center max-w-6xl mx-auto"
+        className="relative z-10 flex flex-col items-center justify-center mx-auto"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
