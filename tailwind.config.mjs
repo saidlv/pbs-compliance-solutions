@@ -20,7 +20,7 @@ export default {
         gnuolane: ["var(--font-gnuolane)", "sans-serif"],
         conthrax: ["var(--font-conthrax)", "sans-serif"],
         boxShadow: {
-          'custom': '3px 5px 16.6px 2px #00000040', // Custom shadow
+          'custom': '3px 5px 16.6px 2px rgba(0, 0, 0, 0.25)',
         },
       },
       mixBlendMode: {

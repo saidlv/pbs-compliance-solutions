@@ -62,10 +62,10 @@ const AboutPage = () => {
       <HeroSection
         heading="Built by New Yorkers For New York"
         text="For Decades, we’ve followed the rules of Inspection, Expediting and portfolio management, Not as Outsiders, but as neighbors, collaborators, and guardians of this city’s skyline."
-        className="font-conthrax max-w-4xl"
+        className="font-conthrax max-w-4xl text-5xl xl:text-[64px] leading-tight"
         isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
-        textStyle="text-[#DCE2E2] font-semibold text-xl max-w-5xl" 
+        textStyle="text-[#DCE2E2] font-semibold text-sm max-w-5xl" 
         img="/pics/COVER 1.png"
       />
 
@@ -115,9 +115,9 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission Section */}
-      <div className="flex lg:items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16 pb-24">
+      <div className="flex lg:items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16 pb-28">
         {/* Vision Section */}
-        <div className="lg:min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+        <div className="lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
           <div className="flex items-start justify-start gap-3">
             <img src="/pics/Group 19.png" alt="light" className="w-16 h-16" />
             <div className="mb-3">
@@ -149,7 +149,7 @@ const AboutPage = () => {
         </div>
 
         {/* Mission Section */}
-        <div className="lg:min-h-[600px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
+        <div className="lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
           <div className="flex items-start justify-start gap-3">
             <img src="/pics/Layer_1.png" alt="arrow" className="w-14 h-14" />
             <div className="mb-3">
@@ -190,24 +190,24 @@ const AboutPage = () => {
         <Image
           src="/pics/pattern1.png"
           alt=""
-          className="opacity-60 w-full h-full object-contain rounded-xl filter grayscale shadow-custom absolute -top-24"
+          className="opacity-45 3xl:opacity-100 w-full h-full object-cover rounded-xl filter grayscale shadow-custom absolute -top-32"
           width={700}
           height={500}
           loading="lazy"
         />
-        <div className="bg-[#1E2322] rounded-xl w-full flex flex-col items-center justify-center py-3 px-6">
+        <div className="bg-[#1E2322] bg-opacity-100 rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6">
           <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] w-[70%] mx-auto my-6">
             Redefining Excellence in NYC Construction
           </h2>
           <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
 
-          <p className="text-[#DCE2E2] text-lg font-semibold text-center mt-6">
+          <p className="text-[#DCE2E2] text-base xl:text-lg font-semibold text-center mt-6">
           We are committed to becoming the New York Metropolitan area's most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.
           </p>
-          <p className="text-[#DCE2E2] font-semibold text-lg mt-5">
+          <p className="text-[#DCE2E2] font-semibold text-base xl:text-lg mt-5">
              Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape
           </p>
-          <p className="text-[#DCE2E2] font-semibold text-lg mb-5">
+          <p className="text-[#DCE2E2] font-semibold text-base xl:text-lg mb-5">
              Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level
           </p>
         </div>
@@ -300,7 +300,7 @@ const AboutPage = () => {
             <Image
               src="/pics/Rectangle 52.png"
               alt=""
-              className="w-full h-auto lg:h-full object-cover mix-blend-luminosity rounded-[5%] lg:rounded-[10%]"
+              className="w-full h-auto lg:h-full object-cover mix-blend-luminosity rounded-[5%] lg:rounded-[10%] shadow-[3px_5px_35px_rgba(0,0,0,0.25)]"
               width={300}
               height={300}
             />

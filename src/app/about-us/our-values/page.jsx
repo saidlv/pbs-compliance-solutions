@@ -8,21 +8,13 @@ import Image from "next/image";
 import { DotIcon } from "lucide-react";
 
 const Page = () => {
-  const colors = {
-    background: "#2d2d2d",
-    cardBg: "#3a3a3a",
-    textPrimary: "#f3f4f6",
-    textSecondary: "#d1d5db",
-    accent: "#2d8b6f",
-    border: "#6b5f54",
-  };
 
   return (
     <div className="bg-[#37403D] min-h-screen overflow-hidden">
       <HeroSection
         heading="Building Compliance, Trust, and results in the heart of new york"
         text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your project stays on time, on budget and above board."
-        className="text-3xl lg:text-5xl font-conthrax font-semibold "
+        className="text-3xl lg:text-5xl font-conthrax font-semibold max-w-4xl mx-auto"
         img="/pics/Rectangle 123.png"
         isLine={true}
         bgStyle="bg-top md:bg-top bg-cover"
@@ -40,8 +32,8 @@ const Page = () => {
   </div>
 
       {/* Fixed Section 1: Moved title outside the motion div */}
-      <section className="bg-[#37403D] pt-10 pb-20 px-6 md:px-12 xl:px-16">
-  <div className="container mx-auto">
+      <section className="bg-[#37403D] py-10 px-6 md:px-8 xl:px-16">
+  <div className="w-full">
     <div className="text-center my-2 mb-10 py-2">
       <h3 className="text-[#DCE2E2] text-xl font-semibold font-poppins tracking-widest mb-3 flex flex-col">
         <span className="uppercase">The PBS Promise</span> <span>Six Pillars of Excellence</span>
@@ -61,26 +53,26 @@ const Page = () => {
       {features.map((feature, index) => (
         <motion.div
           key={index}
-          className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-4 sm:gap-6 lg:gap-8"
+          className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-4 sm:gap-6 xl:gap-8"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, delay: index * 0.1 }}
         >
           {/* Greenish Background Div with Image */}
-          <div className="hidden lg:flex lg:w-[25vw] 2xl:w-[20%] 3xl:w-[15%] aspect-square rounded-3xl bg-[#8AD5B7] justify-center items-center overflow-hidden">
+          <div className="hidden lg:flex lg:w-[25%] 2xl:w-[20%] 3xl:w-[15%] aspect-square rounded-3xl bg-[#8AD5B7] justify-center items-center overflow-hidden">
             <Image
               src={feature.img}
               alt={feature.title}
               width={400}
               height={400}
-              className="w-1/2 h-1/2 object-contain"
+              className="w-1/2 h-1/2 object-contain rounded-[30px]"
             />
           </div>
 
           {/* Dark Background Div */}
-          <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-3xl bg-[#1E2322] p-4 xl:px-6 xl:py-0 box-border shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
+          <div className="w-full lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-[35px] bg-[#1E2322] py-4 px-6 box-border shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-full lg:w-[35%] xl:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3 mb-4 lg:mb-0">
               <h2 className="text-xl sm:text-2xl xl:text-4xl 2xl:text-5xl w-full text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7]">
                 {feature.title}
               </h2>
@@ -93,13 +85,13 @@ const Page = () => {
               <div className="w-full h-1 lg:h-2/3 bg-[#D9D9D9] rounded-full"></div>
             </div>
 
-            <div className="w-full lg:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3">
+            <div className="w-full lg:w-[55%] xl:w-[45%] flex flex-col items-start justify-center gap-2 sm:gap-3">
               {feature.description.map((item, index) => (
                 <div className="text-[#DCE2E2]" key={index}>
                   <h4 className="flex justify-start items-center text-sm sm:text-base pb-1 sm:pb-2">
                     <span className="font-semibold">{item.split(":")[0]}</span>
                   </h4>
-                  <p className="text-xs font-semibold text-[#89A096] mb-2">
+                  <p className="text-xs font-semibold text-[#89A096]">
                     {item}
                   </p>
                 </div>

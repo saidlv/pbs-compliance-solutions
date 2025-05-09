@@ -244,8 +244,9 @@ const Page = () => {
 
         <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2"></div>
 
+        {/* Why PBS */}
         <div className="flex flex-col items-center justify-between 2xl:justify-center gap-3 xl:gap-6 3xl:gap-12 w-full 3xl:w-[80%] mx-auto py-6 lg:py-10">
-         <h2 className="w-full text-3xl lg:text-5xl leading-tight font-conthrax text-center font-semibold text-[#8AD5B7] max-w-xl mx-auto">{whyPBS.heading}</h2>
+         <h2 className="w-full text-3xl lg:text-[48px] leading-tight font-conthrax text-center font-semibold text-[#8AD5B7] max-w-xl mx-auto">{whyPBS.heading}</h2>
             <div className="space-y-2 w-[90%] lg:w-full 2xl:w-[80%] 3xl:w-[70%] mx-auto lg:mx-0">
                 {whyPBS.items.map((item, index) => {
                 return (
