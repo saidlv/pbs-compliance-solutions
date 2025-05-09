@@ -235,7 +235,7 @@ const Page = () => {
             evaluations ensure structural integrity, identify hazards, and keep
             your property compliant with evolving safety regulations
           </p>
-          <div className="bg-[#2E3734] rounded-lg p-6 lg:p-10 flex flex-col lg:flex-row lg:items-stretch justify-center lg:justify-between gap-6 lg:gap-0">
+          <div className="bg-[#2E3734] rounded-2xl p-6 lg:p-10 flex flex-col lg:flex-row lg:items-stretch justify-center lg:justify-between gap-6 lg:gap-0">
             <div className="w-full lg:w-[53%] 2xl:w-[40%] h-auto flex justify-center items-center">
               <h2 className="text-2xl md:text-3xl xl:text-4xl text-[#DCE2E2] font-semibold">
                 What’s Reviewed During this Inspection
@@ -490,7 +490,7 @@ const Page = () => {
             return (
               <div
                 key={index}
-                className="flex items-center bg-[#1E232261] border-2 border-[#8AD5B7] justify-start gap-6 w-full rounded-lg p-6"
+                className="flex items-center bg-[#1E232261] border-2 border-[#8AD5B7] justify-start gap-6 w-full rounded-2xl p-6"
               >
                 <img src="/pics/arrow.png" />
                 <p className="text-[#89A096] text-lg lg:text-xl font-semibold w-full">
@@ -510,11 +510,11 @@ const Page = () => {
               width={600}
               height={800}
               priority
-              className="relative w-1/2 lg:w-full mx-auto h-auto lg:h-full object-contain lg:object-cover object-top rounded-[20%] mix-blend-luminosity"
+              className="relative w-1/2 lg:w-full mx-auto h-auto lg:h-full object-contain lg:object-cover object-top rounded-[16%] mix-blend-luminosity"
             />
           </div>
 
-          <div className="w-full lg:w-[65%] 2xl:w-[50%] 3xl:w-[40%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
+          <div className="w-full lg:w-[50%] xl:w-[55%] 2xl:w-[50%] 3xl:w-[40%] flex flex-col md:justify-end 2xl:justify-center lg:pb-6 h-full 2xl:h-auto">
             <div className="w-full h-auto flex flex-col gap-2 2xl:gap-6">
               <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
                 {whyPBS.title}
@@ -572,18 +572,18 @@ const Page = () => {
                 </p>
               </div>
 
-              <div className="w-full mt-6 flex flex-col xl:flex-row gap-6 items-center justify-start">
+              <div className="w-full mt-6 flex flex-col xl:flex-row gap-3 2xl:gap-6 items-center justify-start">
                 <CTA2
                   text="Book Your Slot Now"
                   isArrow={false}
                   href="/tutorial"
-                  styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+                  styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 xl:px-3 2xl:px-6 py-2 text-xs font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}
                 />
                 <CTA2
                   text="Call Our Inspectors (914-316-6956)"
                   isArrow={false}
                   href="/tutorial"
-                  styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax`}
+                  styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 xl:px-3 2xl:px-6 py-2 text-xs font-semibold hover:brightness-105 transition xl:text-base font-conthrax`}
                 />
               </div>
             </div>

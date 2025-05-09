@@ -96,16 +96,16 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="w-full flex flex-col items-center gap-6 sm:gap-16 mb-16">
+          <div className="w-full flex flex-col items-center gap-6 sm:gap-10 mb-10">
             {services.map((service, index) => {
               return (
                 <div key={index}>
                   <div
                     className={`flex flex-col ${
                       service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } items-center lg:items-stretch xl:items-center lg:justify-between 2xl:justify-center gap-12 p-4 lg:p-6`}
+                    } items-center lg:items-stretch 3xl:items-center lg:justify-between 2xl:justify-center gap-12 p-4 lg:p-6`}
                   >
-                    <div className="w-[80%] lg:w-[45%] 2xl:w-[40%] flex justify-center items-center">
+                    <div className="w-[80%] lg:w-[45%] 2xl:w-[40%] h-full flex justify-center items-start 2xl:items-center">
                       <Image
                         src={service.icon}
                         alt={service.title}
@@ -117,10 +117,10 @@ const Page = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-3 w-full lg:w-[45%] 2xl:w-[40%] justify-start">
-                      <h2 className="text-3xl md:text-4xl font-semibold text-[#8AD5B7] font-conthrax w-4/5">
+                      <h2 className="text-3xl md:text-4xl xl:text-[40px] leading-tight font-semibold text-[#8AD5B7] font-conthrax 3xl:w-4/5">
                         {service.title}
                       </h2>
-                      <p className="text-[#89A096] text-base font-semibold w-4/5 xl:w-full 2xl:w-4/5 3xl:w-3/5">
+                      <p className="text-[#89A096] text-base font-semibold w-4/5 xl:w-full 2xl:w-5/6 3xl:w-3/5">
                         {service.description}
                       </p>
                       <div className="flex gap-8 items-stretch">
@@ -145,20 +145,15 @@ const Page = () => {
                           })}
                         </ul>
                       </div>
-                    </div>
-                  </div>
 
-                  <div className="relative">
-                    <CTA2
+                      <CTA2
                       text="Read More..."
                       isArrow={false}
                       href="/tutorial"
-                      styling={`w-full md:w-2/5 lg:w-1/5 mt-0 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax ${
-                        service.id % 2 === 1
-                          ? "lg:absolute lg:left-[55%] 2xl:left-[50%] lg:top-0"
-                          : "lg:absolute lg:left-[2%] 2xl:left-[10%] lg:top-0"
-                      }`}
+                      styling={`w-full md:w-3/5 lg:w-2/5 mt-3 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax`}
                     />
+
+                    </div>
                   </div>
                 </div>
               );
@@ -267,14 +262,14 @@ const Page = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[50%] xl:w-[50%] flex flex-col justify-end lg:pb-5 xl:pb-10 h-full">
+          <div className="w-full lg:w-[50%] xl:w-[50%] flex flex-col justify-end 2xl:justify-center lg:pb-5 xl:pb-10 h-full">
             <div className="w-full h-auto flex items-start justify-start gap-2 xl:gap-0 xl:justify-between">
               <div className="w-2 h-full bg-[#8AD5B7] mr-2 xl:mr-6 hidden lg:block"></div>
               <div className="w-[90%] h-auto flex flex-col lg:gap-3 xl:gap-6">
                 <h1 className="text-3xl text-center xl:text-5xl lg:text-left font-semibold font-conthrax text-[#DCE2E2] tracking-wide uppercase">
                   WHY PBS?
                 </h1>
-                <div className="text-sm xl:text-base text-center lg:text-left text-[#DCE2E2] font-semibold space-y-2">
+                <div className="text-sm xl:text-base 2xl:text-xl text-center lg:text-left text-[#DCE2E2] font-semibold space-y-2 2xl:max-w-2xl">
                   <p>
                     30+ Years of Experience: Trusted by NYC property owners.
                   </p>
@@ -285,7 +280,7 @@ const Page = () => {
                     DOB, FDNY and other departments code.
                   </p>
                 </div>
-                <div className="text-lg xl:text-xl text-center lg:text-left font-semibold text-[#DCE2E2] flex flex-col gap-2">
+                <div className="text-lg xl:text-xl 2xl:text-2xl text-center lg:text-left font-semibold text-[#DCE2E2] flex flex-col gap-2">
                   <span>Ready to Simplify Property Compliance?</span>
                   <span>Schedule a consultation with PBS today.</span>
                 </div>

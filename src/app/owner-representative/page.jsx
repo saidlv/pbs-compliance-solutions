@@ -108,7 +108,7 @@ const Page = () => {
   <div className="w-[100vw] relative flex justify-center">
     <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
     <div
-      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] lg:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] sm:w-[60%] xl:w-[50%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
     >
       Owner Representative
     </div>
@@ -141,7 +141,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-[80%] mx-auto mt-8 sm:mt-10 flex flex-col items-center justify-center text-center">
+        <div className="w-full lg:w-[80%] mx-auto mt-10 sm:mt-16 flex flex-col items-center justify-center text-center">
           <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12 w-full mb-8 sm:mb-10">
             <Image
               src="/pics/owner-repre-2.png"
@@ -195,7 +195,7 @@ const Page = () => {
 
       {/* Section 02 */}
       <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-10 text-[#DCE2E2]">
-        <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-full mb-6 sm:mb-8">
+        <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-full mb-4 sm:mb-6">
           <h2 className="text-[#DCE2E2] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-conthrax font-semibold">
             What We Do
           </h2>

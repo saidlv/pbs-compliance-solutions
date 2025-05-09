@@ -18,6 +18,8 @@ import { DotIcon } from "lucide-react";
 import CTA2 from "@/components/CTA2";
 import CTA from "@/components/CTA";
 import ImageCarousel from "@/components/ImageCarousel";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Page = () => {
   const section01 = {
@@ -251,7 +253,7 @@ const Page = () => {
             return (
               <div
                 key={index}
-                className="flex items-center bg-[#1E232261] border-2 border-[#8AD5B7] justify-start gap-6 w-full rounded-lg p-6"
+                className="flex items-center bg-[#1E232261] border-2 border-[#8AD5B7] justify-start gap-6 w-full rounded-2xl p-6"
               >
                 <img src="/pics/arrow.png" />
                 <p className="text-[#89A096] text-lg lg:text-xl font-semibold w-full">
@@ -266,7 +268,7 @@ const Page = () => {
           </p>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-full mx-auto py-4 sm:py-6 lg:py-10">
+        <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-full mx-auto pt-4 sm:pt-6 lg:pt-10">
           {/* Heading */}
           <h2 className="text-[#8AD5B7] text-2xl sm:text-3xl lg:text-5xl font-semibold font-conthrax text-center w-[80%] xl:w-[65%] mx-auto">
             Key Compliance Details you should know
@@ -303,11 +305,28 @@ const Page = () => {
               </div>
             ))}
           </div>
-          <CTA
-            text="Get Timely Alerts"
-            href="/tutorial"
-            styling={`w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax lg:ml-6`}
-          />
+          
+          <Link href={"/tutorial"}
+           className="w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-end lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
+          >
+            <span className="">Get Timely Alerts</span>
+            <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="ml-1"
+      >
+        <line x1="-15" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+          </Link>
+
         </div>
       </section>
 
@@ -315,7 +334,7 @@ const Page = () => {
 
       {/* Section 03 */}
       <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-10 text-[#DCE2E2]">
-        <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-[90%] mx-auto py-4 sm:py-6 lg:py-10">
+        <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-[90%] mx-auto pb-4 sm:pb-6 lg:pb-10">
           <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax text-center">
             {Process.heading}
           </h2>
@@ -339,7 +358,7 @@ const Page = () => {
                     className={`hidden md:block absolute inset-0 rounded-full border-4 border-[#8AD5B7]`}
                     style={{
                       clipPath:
-                        "polygon(0 0, 0 0, 50% 50%, 0 40%, 0 100%, 85% 100%, 75% 75%, 25% 75%, 25% 25%, 0 0)",
+                        "polygon(0 0, 0 0, 50% 50%, 0 60%, 0 100%, 60% 100%, 60% 25%, 25% 75%, 25% 25%, 0 0)",
                     }}
                   ></div>
 

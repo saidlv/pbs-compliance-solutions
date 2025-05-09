@@ -337,12 +337,12 @@ const Page = () => {
           alt="Inspection Services"
           width={500}
           height={500}
-          className="w-[90%] lg:w-full h-auto object-contain lg:mx-0 mx-auto"
+          className="w-[90%] 3xl:w-[75%] lg:w-full h-auto object-contain mx-auto"
         />
         </motion.div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch xl:items-end 3xl:items-center my-10 lg:mb-0 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch xl:items-end 2xl:items-center my-10 lg:mb-0 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
           <div className="w-full lg:w-[45%] xl:w-[45%] 2xl:w-[40%] 3xl:w-[30%] flex items-end">
             <Image
               src={whyPBS.img}
