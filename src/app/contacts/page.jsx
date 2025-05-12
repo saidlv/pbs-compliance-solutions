@@ -10,52 +10,63 @@ import { aboutContent } from "@/app/about-us/data";
 import Image from "next/image";
 
 const Page = () => {
-  const [mapLoaded, setMapLoaded] = useState(false);
+  const [mapLoaded, setMapLoaded] = useState(true);
   const leftColumnRef = useRef(null);
   const rightColumnRef = useRef(null);
   const service = aboutContent.find((item) => item.id === "service-areas");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const mapSection = document.getElementById("map-container");
-      if (mapSection) {
-        const rect = mapSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          setMapLoaded(true);
-          window.removeEventListener("scroll", handleScroll);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const mapSection = document.getElementById("map-container");
+  //     if (mapSection) {
+  //       const rect = mapSection.getBoundingClientRect();
+  //       if (rect.top < window.innerHeight) {
+  //         setMapLoaded(true);
+  //         window.removeEventListener("scroll", handleScroll);
+  //       }
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
-    // if (leftColumnRef.current) {
-    //   gsap.from(leftColumnRef.current, {
-    //     scrollTrigger: {
-    //       trigger: leftColumnRef.current,
-    //       start: "top -50%",
-    //       toggleActions: "play none none reverse",
-    //     },
-    //     opacity: 0,
-    //     x: -50,
-    //     duration: 1,
-    //   });
-    // }
-    // if (rightColumnRef.current) {
-    //   gsap.from(rightColumnRef.current, {
-    //     scrollTrigger: {
-    //       trigger: rightColumnRef.current,
-    //       start: "top -50%",
-    //       toggleActions: "play none none reverse",
-    //     },
-    //     opacity: 0,
-    //     x: 50,
-    //     duration: 1,
-    //   });
-    // }
+    gsap.registerPlugin(ScrollTrigger);
+    if (leftColumnRef.current) {
+      gsap.fromTo(
+        leftColumnRef.current,
+        { opacity: 0, x: -50 },
+        {
+          scrollTrigger: {
+            trigger: leftColumnRef.current,
+            start: "top 00%", // Adjust this to control when it starts appearing
+            end: "top 50%", // Adjust this to control when it fully appears
+            toggleActions: "play none none reverse",
+          },
+          opacity: 1,
+          x: 0,
+          duration: 1,
+        }
+      );
+    }
+
+    if (rightColumnRef.current) {
+      gsap.fromTo(
+        rightColumnRef.current,
+        { opacity: 0, x: 50 },
+        {
+          scrollTrigger: {
+            trigger: rightColumnRef.current,
+            start: "top 0%", // Adjust this to control when it starts appearing
+            end: "top 50%", // Adjust this to control when it fully appears
+            toggleActions: "play none none reverse",
+          },
+          opacity: 1,
+          x: 0,
+          duration: 1,
+        }
+      );
+    }
   }, []);
 
   const formSteps = [
@@ -145,14 +156,19 @@ Contact PBS Compliance Solutions"
       {/* Section 1*/}
       <section className="w-full px-6 md:px-10 xl:px-16 pb-16 text-[#DCE2E2]">
         <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 xl:gap-16 h-full w-full 2xl:w-[85%]">
-        <div className="mx-auto flex flex-col items-center justify-center gap-16 h-full w-full lg:w-1/2"  ref={leftColumnRef}>
+          <div
+            className="mx-auto flex flex-col items-center justify-center gap-16 h-full w-full lg:w-1/2"
+            ref={leftColumnRef}
+          >
             <div className="bg-[#1E2322] w-full h-full rounded-xl flex flex-col items-center justify-center relative">
-                <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[30%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
-                  Contact Us
-                </div>
-            
+              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[30%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+                Contact Us
+              </div>
+
               <div className="w-[90%] flex flex-col items-start justify-center gap-10 pt-16 pb-6 mx-auto">
-                <p className="w-full text-center font-conthrax font-semibold text-[#89A096] text-lg lg:text-xl">Hours: Mon - Fri  |  8 AM – 6 PM</p>
+                <p className="w-full text-center font-conthrax font-semibold text-[#89A096] text-lg lg:text-xl">
+                  Hours: Mon - Fri | 8 AM – 6 PM
+                </p>
                 <div className="flex items-center gap-2">
                   <PhoneCall color="#8ad5b7" size={32} />
                   <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">
@@ -183,12 +199,12 @@ Contact PBS Compliance Solutions"
               </div>
             </div>
 
-          <div className="bg-[#141414] w-full rounded-xl flex flex-col items-center justify-center relative">
-             <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[80%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
-                  Send us a message
-                </div>
+            <div className="bg-[#141414] w-full rounded-xl flex flex-col items-center justify-center relative">
+              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[80%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+                Send us a message
+              </div>
 
-          <MultiStepForm
+              <MultiStepForm
                 steps={formSteps}
                 buttonObj={button}
                 onSubmit={(data) => console.log(data)}
@@ -201,14 +217,16 @@ Contact PBS Compliance Solutions"
             </div>
           </div>
 
-          <div ref={rightColumnRef} className="w-full lg:w-1/2 h-auto relative flex flex-col gap-10">
-
-           <div className="w-full bg-[#1E2322] rounded-full p-3 2xl:p-6 flex items-center justify-center">
-            <p className="font-conthrax font-semibold text-[#8AD5B7] text-2xl xl:text-3xl text-center">
-              <span className="text-[#DCE2E2] block">Visit our Office</span>Meet Compliance Experts In-Person
-            </p>
-
-           </div>
+          <div
+            ref={rightColumnRef}
+            className="w-full lg:w-1/2 h-auto relative flex flex-col gap-10"
+          >
+            <div className="w-full bg-[#1E2322] rounded-full p-3 2xl:p-6 flex items-center justify-center">
+              <p className="font-conthrax font-semibold text-[#8AD5B7] text-2xl xl:text-3xl text-center">
+                <span className="text-[#DCE2E2] block">Visit our Office</span>
+                Meet Compliance Experts In-Person
+              </p>
+            </div>
 
             <div className="bg-[#1E2322] rounded-xl p-6 h-[50vh] lg:h-full">
               <div
@@ -231,7 +249,7 @@ Contact PBS Compliance Solutions"
           </div>
         </div>
       </section>
-      
+
       {/* Section 2*/}
       <section className="w-full px-6 md:px-10 xl:px-16 pb-16 lg:pb-24 text-[#DCE2E2]">
         <div className="w-full flex flex-col justify-center items-center px-16">
@@ -242,27 +260,27 @@ Contact PBS Compliance Solutions"
             Serving All NYC Boroughs with Local Expertise
           </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 my-4 w-full">
-          {service?.locations.map((location, index) => {
-            return (
-              <div
-                key={index}
-                className="flex flex-col items-center gap-2 my-4"
-              >
-                <div className="rounded-full border-2 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
-                  <Image
-                    src={location.cityImage}
-                    alt={location.cityName}
-                    width={150}
-                    height={150}
-                    className="filter grayscale hover:grayscale-0 transition duration-300"
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 my-4 w-full">
+            {service?.locations.map((location, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center gap-2 my-4"
+                >
+                  <div className="rounded-full border-2 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
+                    <Image
+                      src={location.cityImage}
+                      alt={location.cityName}
+                      width={150}
+                      height={150}
+                      className="filter grayscale hover:grayscale-0 transition duration-300"
+                    />
+                  </div>
+                  <p className="text-[#DCE2E2]">{location.cityName}</p>
                 </div>
-                <p className="text-[#DCE2E2]">{location.cityName}</p>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </div>

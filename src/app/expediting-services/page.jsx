@@ -187,7 +187,7 @@ const Page = () => {
       {/* Custom 'About Us' Label Divider */}
       <div className="w-[100vw] relative flex justify-center">
         <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
-        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] sm:w-[60%] lg:w-[50%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
+        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] sm:w-[60%] lg:w-[50%] 2xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
           Expediting Services
         </div>
       </div>
@@ -251,10 +251,10 @@ const Page = () => {
       {/* Section 3 */}
       <section className="w-full mx-auto px-6 md:px-10 xl:px-16 pb-6 flex flex-col gap-6 text-[#DCE2E2]">
         <h3 className="text-2xl lg:text-4xl xl:text-[40px] leading-tight text-center font-semibold text-[#8AD5B7] font-conthrax">
-          {section01.heading}
+          Flexible Services For Every Need
         </h3>
-        <p className="text-xl xl:text-2xl text-center font-semibold text-[#89A096] mb-6 lg:mb-10">
-          {section01.text}
+        <p className="text-xl xl:text-2xl max-w-[90%] 2xl:max-w-[65%] mx-auto text-center font-semibold text-[#89A096] mb-6 lg:mb-10">
+          No matter the size, scope, or complexity of your NYC project, PBS provides tailored solutions to keep you compliant and on schedule, here's how we simplify permits and approvals for every situation.
         </p>
         <div className="flex flex-col w-full gap-10 xl:gap-16 3xl:gap-10">
           {section3.map((item, index) => {
