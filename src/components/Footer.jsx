@@ -50,7 +50,7 @@ const Footer = () => {
     // },
     {
       title: "Resources",
-      links: ["Blog", "Press","Local Law guide","Alert System guide", "Events", "Community", "Social Media"],
+      links: ["Blog", "Press","Local Law guide","Alert System guide", /*"Events", "Community", "Social Media"*/],
     },
     {
       title: "Services & Solutions",

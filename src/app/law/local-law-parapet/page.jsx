@@ -346,12 +346,12 @@ const Page = () => {
                             href="/contacts"
                             styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
                           />
-                          <CTA2
+                          {/* <CTA2
                             text="Call Our Inspectors (914-316-6956)"
                             isArrow={false}
                             href="/contacts"
                             styling={`w-[90%] md:w-2/3 lg:w-full xl:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax`}
-                          />
+                          /> */}
                         </div>
         </div>
       </section>
