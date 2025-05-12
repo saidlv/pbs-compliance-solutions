@@ -44,13 +44,13 @@ const Footer = () => {
         "Privacy Policy",
       ],
     },
-    {
-      title: "Careers",
-      links: ["Blog", "Press", "Partnerships", "Support", "Help Center"],
-    },
+    // {
+    //   title: "Careers",
+    //   links: ["Blog", "Press", "Partnerships", "Support", "Help Center"],
+    // },
     {
       title: "Resources",
-      links: ["Events", "Community", "Social Media"],
+      links: ["Blog", "Press","Local Law guide","Alert System guide", "Events", "Community", "Social Media"],
     },
     {
       title: "Services & Solutions",
@@ -79,7 +79,7 @@ const Footer = () => {
           {/* Top Section - Menu Columns and Subscription Form */}
           <div className="container mx-auto px-[35px] md:px-[50px] flex flex-col lg:flex-row justify-between gap-10 ">
             {/* Menu Columns - Responsive Grid Layout */}
-            <div className="w-full lg:w-[70%] grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="w-full lg:w-[70%] grid grid-cols-2 lg:grid-cols-3 gap-8">
               {menu.map((section) => (
                 <div key={section.title}>
                   <h3 className="text-lg font-bold mb-4">{section.title}</h3>
