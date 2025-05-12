@@ -1,5 +1,4 @@
 "use client";
-
 import HeroSection from "../../components/HeroSection";
 import MultiStepForm from "@/components/MultiStepForm";
 import { gsap } from "gsap";
@@ -7,35 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { House, Mail, MapPin, Phone, PhoneCall, Send } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { aboutContent } from "@/app/about-us/data";
+import Image from "next/image";
 
 const Page = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
   const leftColumnRef = useRef(null);
   const rightColumnRef = useRef(null);
-  const topSectionRef = useRef(null);
-
-  const section01 = [
-    ["1- For Consultation:"],
-    [
-      "2. For FDNY/DOB Violations,",
-      "Inspections, or Structural Hazards",
-      "Call:",
-      "Email:",
-    ],
-    ["3- For Expediting & Permitting Services:"],
-    [
-      "4. Office Visit",
-      "Meet Our Compliance Experts In-Person*",
-      "Address: 22 E 41st Street, Third Floor New York NY 10017",
-      "Hours: Mon-Fri 8 AM – 6 PM",
-    ],
-    [
-      "5. General Inquiries",
-      "Inspections, Quotes, or Compliance Strategy",
-      "Email: info@pbs.nyc",
-      "Contact Form",
-    ],
-  ];
+  const service = aboutContent.find((item) => item.id === "service-areas");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,31 +31,31 @@ const Page = () => {
   }, []);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (leftColumnRef.current) {
-      gsap.from(leftColumnRef.current, {
-        scrollTrigger: {
-          trigger: leftColumnRef.current,
-          start: "top 50%",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        x: -50,
-        duration: 1,
-      });
-    }
-    if (rightColumnRef.current) {
-      gsap.from(rightColumnRef.current, {
-        scrollTrigger: {
-          trigger: rightColumnRef.current,
-          start: "top 50%",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        x: 50,
-        duration: 1,
-      });
-    }
+    // gsap.registerPlugin(ScrollTrigger);
+    // if (leftColumnRef.current) {
+    //   gsap.from(leftColumnRef.current, {
+    //     scrollTrigger: {
+    //       trigger: leftColumnRef.current,
+    //       start: "top -50%",
+    //       toggleActions: "play none none reverse",
+    //     },
+    //     opacity: 0,
+    //     x: -50,
+    //     duration: 1,
+    //   });
+    // }
+    // if (rightColumnRef.current) {
+    //   gsap.from(rightColumnRef.current, {
+    //     scrollTrigger: {
+    //       trigger: rightColumnRef.current,
+    //       start: "top -50%",
+    //       toggleActions: "play none none reverse",
+    //     },
+    //     opacity: 0,
+    //     x: 50,
+    //     duration: 1,
+    //   });
+    // }
   }, []);
 
   const formSteps = [
@@ -155,113 +133,136 @@ Contact PBS Compliance Solutions"
       {/* Custom 'About Us' Label Divider */}
       <div className="w-[100vw] relative flex justify-center">
         <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
-        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] lg:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
+        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] lg:w-[50%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
           How to Contact Us
         </div>
       </div>
-      {/*Section 01  */}
-      <section className="px-6 md:px-10 xl:px-16 pt-16 lg:pt-24 text-[#DCE2E2]">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-6 xl:gap-10 h-full w-[90%]">
-          
-          <h1 className="w-full text-center text-[#DCE2E2] font-conthrax text-3xl xl:text-4xl font-semibold">Choose Your Convenience</h1>
 
-          {section01.map((item, index) => {
-            return (
-              <motion.div
-                key={index}
-                className="w-full space-y-8 h-full flex flex-col justify-between rounded-xl bg-[#1E2322] py-4 px-6 xl:py-6 xl:px-10"
-                initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  
-              >
-                {item.map((text, i) => {
-                  return (
-                    <span
-                      key={i}
-                      className="flex items-center gap-4 text-xl lg:text-2xl xl:text-3xl font-semibold font-conthrax text-[#8AD5B7]"
-                    >
-                      {text}
-                    </span>
-                  );
-                })}
-              </motion.div>
-            );
-          })}
-        </div>
-      </section>
+      <h1 className="w-full text-center text-[#8AD5B7] font-conthrax text-3xl xl:text-4xl font-semibold px-6 md:px-10 xl:px-16 py-16 lg:py-20">
+        Choose Your Convenience
+      </h1>
 
-      {/* Section 2*/}
-      <section className="w-full px-6 md:px-10 xl:px-16 py-16 lg:py-24 text-[#DCE2E2]">
-        <div className="container mx-auto flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-10 xl:gap-16 h-full w-full">
-          <div
-            ref={leftColumnRef}
-            className="w-full xl:w-1/2 space-y-8 h-full flex flex-col justify-between"
-          >
-            <div className="bg-[#141414] rounded-xl flex flex-col items-center justify-center relative">
-              <div className="w-full relative flex justify-center">
-                <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[80%] xl:w-[70%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-4xl z-20">
+      {/* Section 1*/}
+      <section className="w-full px-6 md:px-10 xl:px-16 pb-16 text-[#DCE2E2]">
+        <div className="mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 xl:gap-16 h-full w-full 2xl:w-[85%]">
+        <div className="mx-auto flex flex-col items-center justify-center gap-16 h-full w-full lg:w-1/2"  ref={leftColumnRef}>
+            <div className="bg-[#1E2322] w-full h-full rounded-xl flex flex-col items-center justify-center relative">
+                <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[30%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
                   Contact Us
                 </div>
-              </div>
-
-              <div className="w-[90%] flex flex-col items-start justify-center gap-6 pt-16 mx-auto">
+            
+              <div className="w-[90%] flex flex-col items-start justify-center gap-10 pt-16 pb-6 mx-auto">
+                <p className="w-full text-center font-conthrax font-semibold text-[#89A096] text-lg lg:text-xl">Hours: Mon - Fri  |  8 AM – 6 PM</p>
                 <div className="flex items-center gap-2">
-                <PhoneCall color="#8ad5b7" size={32}/>
-                  <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">Call:</span>
-                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">212-271-6837</p>
+                  <PhoneCall color="#8ad5b7" size={32} />
+                  <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">
+                    Call:
+                  </span>
+                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">
+                    212-271-6837
+                  </p>
                 </div>
                 <div className="flex items-center gap-2">
-                <Mail color="#8ad5b7" size={32}/>
-                  <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">Email:</span>
-                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">info@pbs.nyc</p>
+                  <Mail color="#8ad5b7" size={32} />
+                  <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">
+                    Email:
+                  </span>
+                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">
+                    info@pbs.nyc
+                  </p>
                 </div>
-                <div className="flex items-start gap-2">
-                <House color="#8ad5b7" size={32} className="flex-shrink-0"/>
-                  <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">Address:</span>
-                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">22 E 41st Street, Third Floor
-                  New York, NY 10017</p>
+                <div className="flex items-start gap-2 2xl:max-w-[90%]">
+                  <House color="#8ad5b7" size={32} className="flex-shrink-0" />
+                  <span className="text-xl lg:text-2xl xl:text-3xl text-[#8AD5B7] font-semibold">
+                    Address:
+                  </span>
+                  <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-medium">
+                    22 E 41st Street, Third Floor New York, NY 10017
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <MultiStepForm
+          <div className="bg-[#141414] w-full rounded-xl flex flex-col items-center justify-center relative">
+             <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[80%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+                  Send us a message
+                </div>
+
+          <MultiStepForm
                 steps={formSteps}
                 buttonObj={button}
                 onSubmit={(data) => console.log(data)}
-                containerClass="relative z-10 backdrop-blur-lg bg-[#171717] focus-within:border focus-within:border-white rounded-xl transition-all"
+                containerClass="relative z-10 backdrop-blur-lg bg-[#1E2322] focus-within:border focus-within:border-white rounded-xl transition-all w-full"
                 inputClass="w-full rounded-xl text-white placeholder-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-500/30 transition-all"
                 buttonClass="md:w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-emerald-800/20 ml-6 md:ml-16 lg:ml-48"
                 errorClass="text-rose-400 mt-2 text-sm"
                 progressLineColor={"white"}
-                
               />
             </div>
           </div>
 
-          <div ref={rightColumnRef} className="w-full xl:w-1/2 h-auto relative">
-            <div className="absolute inset-y-0 left-[50%] w-[2px] bg-gradient-to-b from-transparent via-white/20 to-transparent blur-md"></div>
+          <div ref={rightColumnRef} className="w-full lg:w-1/2 h-auto relative flex flex-col gap-10">
 
+           <div className="w-full bg-[#1E2322] rounded-full p-3 2xl:p-6 flex items-center justify-center">
+            <p className="font-conthrax font-semibold text-[#8AD5B7] text-2xl xl:text-3xl text-center">
+              <span className="text-[#DCE2E2] block">Visit our Office</span>Meet Compliance Experts In-Person
+            </p>
 
-           <div className="bg-[#141414] rounded-xl p-3 h-[50vh] xl:h-full">
-            <div
-              id="map-container"
-              className="w-full h-full filter invert-[90%] hue-rotate-180 grayscale-[20%] contrast-90"
-            >
-              {mapLoaded ? (
-                <iframe
-                  title="New York Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24184.00445395243!2d-74.0060152!3d40.7127281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3168c5e9ab%3A0x9e94b7b5b7f9b5c8!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1617221740848"
-                  className="rounded-lg shadow-lg w-full h-full"
-                />
-              ) : (
-                <div className="w-full h-[90vh] flex items-center justify-center bg-gray-800 rounded-lg">
-                  <p>Loading map...</p>
-                </div>
-              )}
-            </div>
+           </div>
+
+            <div className="bg-[#1E2322] rounded-xl p-6 h-[50vh] lg:h-full">
+              <div
+                id="map-container"
+                className="w-full h-full filter invert-[90%] hue-rotate-180 grayscale-[20%] contrast-90"
+              >
+                {mapLoaded ? (
+                  <iframe
+                    title="New York Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24184.00445395243!2d-74.0060152!3d40.7127281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3168c5e9ab%3A0x9e94b7b5b7f9b5c8!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1617221740848"
+                    className="rounded-lg shadow-lg w-full h-full"
+                  />
+                ) : (
+                  <div className="w-full h-[90vh] flex items-center justify-center bg-gray-800 rounded-lg">
+                    <p>Loading map...</p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+      
+      {/* Section 2*/}
+      <section className="w-full px-6 md:px-10 xl:px-16 pb-16 lg:pb-24 text-[#DCE2E2]">
+        <div className="w-full flex flex-col justify-center items-center px-16">
+          <h2 className="text-[#8AD5B7] font-extrabold text-5xl mb-2 text-center">
+            Service Areas
+          </h2>
+          <p className="text-[#89A096] font-semibold text-sm mb-4 text-center">
+            Serving All NYC Boroughs with Local Expertise
+          </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 my-4 w-full">
+          {service?.locations.map((location, index) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-col items-center gap-2 my-4"
+              >
+                <div className="rounded-full border-2 border-[#8AD5B7] w-[150] h-[150] flex items-center justify-center">
+                  <Image
+                    src={location.cityImage}
+                    alt={location.cityName}
+                    width={150}
+                    height={150}
+                    className="filter grayscale hover:grayscale-0 transition duration-300"
+                  />
+                </div>
+                <p className="text-[#DCE2E2]">{location.cityName}</p>
+              </div>
+            );
+          })}
+        </div>
         </div>
       </section>
     </div>
