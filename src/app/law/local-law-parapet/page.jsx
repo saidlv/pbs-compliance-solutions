@@ -126,7 +126,7 @@ const Page = () => {
             <CTA2
               text={Div2_Sec1.right.CTA}
               isArrow={false}
-              href="/tutorial"
+              href="/contacts"
               styling={`w-48 md:w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax lg:ml-6 mx-auto`}
             />
           </div>
@@ -201,7 +201,7 @@ const Page = () => {
             ))}
           </div>
           
-          <Link href={"/tutorial"}
+          <Link href={"/alert"}
            className="w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-end lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
           >
             <span className="">Get Timely Alerts</span>

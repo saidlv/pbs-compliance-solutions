@@ -149,10 +149,9 @@ const Page = () => {
                       <CTA2
                       text="Read More..."
                       isArrow={false}
-                      href="/tutorial"
+                      href={service.cta}
                       styling={`w-full md:w-3/5 lg:w-2/5 mt-3 rounded-xl h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base font-conthrax`}
                     />
-
                     </div>
                   </div>
                 </div>
@@ -290,7 +289,7 @@ const Page = () => {
               <CTA2
                 text="Get Started Now"
                 isArrow={false}
-                href="/tutorial"
+                href="/contacts"
                 styling={`w-full lg:w-auto mx-auto mt-0 rounded-full h-12 bg-[#8AD5B7] text-black px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-base xl:text-xl font-conthrax `}
               />
               <p className="text-[#DCE2E2] text-base font-semibold">

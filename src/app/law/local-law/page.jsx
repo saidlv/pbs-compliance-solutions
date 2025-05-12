@@ -305,8 +305,8 @@ const Page = () => {
                 </div>
 
                 <div className="flex justify-start items-stretch gap-3 pl-3">
-                <div className="w-4 h-auto bg-[#8AD5B7] hidden lg:block"></div>
-                 <p className="text-xl xl:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2]">{whyPBS.text}</p>
+                <div className="w-2 h-auto bg-[#8AD5B7] hidden lg:block"></div>
+                 <p className="text-xl xl:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2] max-w-xl">{whyPBS.text}</p>
                 </div>
 
                 <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold text-[#89A096] flex flex-col xl:gap-2">

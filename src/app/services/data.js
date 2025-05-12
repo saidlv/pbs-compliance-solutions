@@ -10,7 +10,7 @@ export const services = [
   {
     id: 1,
     title: "Owner Representatives",
-    icon: "/pics/service1.png",
+    icon: "/pics/service1.png", 
     description:
       "We act as your voice in property management, advocating for your interests in compliance, inspections, and cost optimization. From liaising with contractors to resolving violations, we simplify complexity.",
     sections: [
@@ -18,7 +18,7 @@ export const services = [
       "\nCost-Saving Strategies: Negotiate contractor rates and avoid fines",
       "\nTransparent Reporting: Real-time updates via client portal.",
     ],
-    cta: "Learn more (redirect to Owner representation page)",
+    cta: "/owner-representative",
   },
   {
     id: 2,
@@ -30,6 +30,7 @@ export const services = [
       ":PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
       ":PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
     ],
+    cta: "/"
   },
   {
     id: 3,
@@ -42,7 +43,7 @@ export const services = [
       "\nAccuracy: Error-free submissions to avoid rejections",
       "\nFull-Service: DOB, FDNY, DOT, and zoning filings.",
     ],
-    cta: "Learn more about our range of Expediting services",
+    cta: "/expediting-services",
   },
   {
     id: 4,
@@ -55,6 +56,7 @@ export const services = [
       "\nMaintenance: 24/7 emergency repairs and preventive care.",
       "\nLegal Compliance: Lease agreements and safety audits.",
     ],
+    cta: "/property-management",
   },
 ];
 

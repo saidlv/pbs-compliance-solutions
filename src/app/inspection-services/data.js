@@ -155,7 +155,7 @@ export const inspectionServices = [
         ],
         cta: {
           text: "The Building we inspect avoid violations with proactive fixes",
-          href: "/about-us", // Dummy href, change as needed
+          href: "/law/local-law", // Dummy href, change as needed
         },
         bg: "/pics/Inspection-service-2-1.png"
       },
@@ -171,7 +171,7 @@ export const inspectionServices = [
         additionalText: "Parking Garages require regular checks to ensure safety and avoid violations",
         cta: {
           text: "Parking Garages require regular checks to ensure safety and avoid violations",
-          href: "/about-us", // Dummy href, change as needed
+          href: "/law/local-law-parking", // Dummy href, change as needed
         },
         bg: "/pics/Inspection-service-2-2.png"
       },
@@ -187,7 +187,7 @@ export const inspectionServices = [
         additionalText: "Parapet inspections are not Seasonal",
         cta: {
           text: "Parapet inspections are not Seasonal",
-          href: "/about-us", // Dummy href, change as needed
+          href: "/law/local-law-parapet", // Dummy href, change as needed
         },
         bg: "/pics/Inspection-service-2-3.png"
       },
@@ -202,7 +202,7 @@ export const inspectionServices = [
         ],
         cta: {
           text: "Meet NYC’s 5-year cycle deadlines",
-          href: "/about-us", // Dummy href, change as needed
+          href: "/law/local-law-152", // Dummy href, change as needed
         },
         bg: "/pics/Inspection-service-2-4.png"
       },
@@ -217,7 +217,7 @@ export const inspectionServices = [
         ],
         cta: {
           text: "Get your sprinkler compliant with NFPA Standard",
-          href: "/about-us", // Dummy href, change as needed
+          href: "/inspection-services/sh-inspection", // Dummy href, change as needed
         },
         bg: "/pics/Inspection-service-2-5.png"
       },
@@ -233,7 +233,7 @@ export const inspectionServices = [
         additionalText: "Inspections are done with ADA Act in loop",
         cta: {
           text: "Inspection to comply ASME/ADA Standards",
-          href: "/about-us", // Dummy href, change as needed
+          href: "/inspection-services/elevator-inspection", // Dummy href, change as needed
         },
         bg: "/pics/Inspection-service-2-6.png"
       },

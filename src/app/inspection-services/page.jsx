@@ -181,7 +181,7 @@ const InspectionServices = () => {
                   <CTA2
                     text="Learn More"
                     isArrow={false}
-                    href="/tutorial"
+                    href={service.cta.href}
                     styling={`w-1/2 lg:w-1/3 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
                   />
                 </div>

@@ -39,8 +39,8 @@ const Page = () => {
         {
           scrollTrigger: {
             trigger: leftColumnRef.current,
-            start: "top 00%", // Adjust this to control when it starts appearing
-            end: "top 50%", // Adjust this to control when it fully appears
+            start: "top 70%", // Adjust this to control when it starts appearing
+            end: "top 100%", // Adjust this to control when it fully appears
             toggleActions: "play none none reverse",
           },
           opacity: 1,
@@ -57,8 +57,8 @@ const Page = () => {
         {
           scrollTrigger: {
             trigger: rightColumnRef.current,
-            start: "top 0%", // Adjust this to control when it starts appearing
-            end: "top 50%", // Adjust this to control when it fully appears
+            start: "top 70%", // Adjust this to control when it starts appearing
+            end: "top 100%", // Adjust this to control when it fully appears
             toggleActions: "play none none reverse",
           },
           opacity: 1,
@@ -144,7 +144,7 @@ Contact PBS Compliance Solutions"
       {/* Custom 'About Us' Label Divider */}
       <div className="w-[100vw] relative flex justify-center">
         <div className="bg-[#8AD5B7] w-full h-2 sm:h-3 lg:h-4"></div>
-        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] lg:w-[50%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
+        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] lg:w-[50%] 2xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
           How to Contact Us
         </div>
       </div>
@@ -200,7 +200,7 @@ Contact PBS Compliance Solutions"
             </div>
 
             <div className="bg-[#141414] w-full rounded-xl flex flex-col items-center justify-center relative">
-              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[80%] xl:w-[80%] 2xl:w-[70%] 3xl:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[85%] 2xl:w-[75%] 3xl:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
                 Send us a message
               </div>
 
