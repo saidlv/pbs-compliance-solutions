@@ -339,7 +339,7 @@ const Page = () => {
           </div>
           <p className="text-center text-base font-semibold text-[#89A096]">{WhyPBS.text2}</p>
 
-          <div className="w-full mt-6 flex flex-col lg:flex-row justify-center gap-6 items-center">
+          <div className="w-full mt-6 flex flex-col lg:flex-row justify-start gap-6 items-center">
                           <CTA2
                             text="Book Your Slot Now"
                             isArrow={false}

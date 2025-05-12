@@ -303,7 +303,7 @@ const Page = () => {
                 </p>
              
 
-              <div className="w-full mt-6 flex flex-col xl:flex-row gap-6 items-center justify-center">
+              <div className="w-full mt-6 flex flex-col xl:flex-row gap-6 items-center justify-start">
                 <CTA2
                   text="Book Your Slot Now"
                   isArrow={false}
