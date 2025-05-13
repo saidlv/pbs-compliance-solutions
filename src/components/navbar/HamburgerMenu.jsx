@@ -1,267 +1,204 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-import { useState, useRef } from "react";
-import { menuItems, directLinks } from "./data";
-import { useEffect } from "react";
-import gsap from "gsap";
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { AlignJustify, X } from "lucide-react";
 
-/**
- * HamburgerMenu Component
- *
- * A responsive mobile navigation menu that slides in from the right side of the screen.
- * Features include:
- * - Animated hamburger icon that transforms when clicked
- * - Slide-in animation for the menu panel
- * - Expandable dropdown submenus with smooth animations
- * - Navigation handling with Next.js router
- *
- * @param {Object} props - Component props
- * @param {boolean} props.isOpen - Controls whether the menu is currently open or closed
- * @param {Function} props.setIsOpen - Function to update the open/closed state of the menu
- * @returns {JSX.Element} The rendered HamburgerMenu component
- */
-const HamburgerMenu = ({ isOpen, setIsOpen }) => {
-  const router = useRouter();
+const HamburgerMenu = ({ menuItems, directLinks }) => {
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState(null);
+  const mobileMenuRef = useRef(null);
 
-  /**
-   * State to track which dropdown submenu is currently active/expanded
-   * @type {[string|null, Function]} State and setter for the active dropdown
-   */
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [activeSubDropdown, setActiveSubDropdown] = useState(null);
-
-  /**
-   * Animation variants for the main menu panel
-   * Controls the slide-in/out animation from the right side
-   * @type {Object}
-   */
-  const menuVariants = {
-    open: { x: 0, opacity: 1 },
-    closed: { x: "100%", opacity: 0 },
+  const handleHamburgerClick = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
   };
 
-  /**
-   * Animation variants for dropdown submenus
-   * Controls the fade and slide animations when expanding/collapsing
-   * @type {Object}
-   */
-  const dropdownVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 },
-    },
-    closed: {
-      opacity: 0,
-      y: -20,
-      transition: { duration: 0.2 },
-    },
-  };
+  // const handleHamburgerClick = () => {
+    //   setIsHamburgerOpen(!isHamburgerOpen);
+    // };
+  
+    // const handleMobileItemClick = (item, index) => {
+    //   if (item.submenu) {
+    //     setOpenDropdown(openDropdown === index ? null : index);
+    //   } else {
+    //     setIsHamburgerOpen(false);
+    //     setOpenDropdown(null);
+    //     setOpenSubDropdown(null);
+    //     window.location.href = item.link;
+    //   }
+    // };
+  
+    // // Animate mobile menu and hamburger bars when isHamburgerOpen changes
+    // useEffect(() => {
+    //   // Initialize refs for burger bars
+    //   if (burgerBarRefs.current.length === 0) {
+    //     burgerBarRefs.current = Array(3).fill().map(() => null);
+    //   }
+  
+    //   if (mobileMenuRef.current && burgerBarRefs.current.every(ref => ref)) {
+    //     if (isHamburgerOpen) {
+    //       gsap.to(mobileMenuRef.current, {
+    //         x: 0,
+    //         opacity: 1,
+    //         duration: 0.5,
+    //         ease: "power2.inOut",
+    //       });
+    //       gsap.to(burgerBarRefs.current[0], { y: 6, rotation: 45, duration: 0.3, ease: "power2.inOut" });
+    //       gsap.to(burgerBarRefs.current[1], { opacity: 0, duration: 0.3, ease: "power2.inOut" });
+    //       gsap.to(burgerBarRefs.current[2], { y: -6, rotation: -45, duration: 0.3, ease: "power2.inOut" });
+    //     } else {
+    //       gsap.to(mobileMenuRef.current, {
+    //         x: "100%",
+    //         opacity: 0,
+    //         duration: 0.5,
+    //         ease: "power2.inOut",
+    //       });
+    //       gsap.to(burgerBarRefs.current[0], { y: 0, rotation: 0, duration: 0.3, ease: "power2.inOut" });
+    //       gsap.to(burgerBarRefs.current[1], { opacity: 1, duration: 0.3, ease: "power2.inOut" });
+    //       gsap.to(burgerBarRefs.current[2], { y: 0, rotation: 0, duration: 0.3, ease: "power2.inOut" });
+    //     }
+    //   }
+    // }, [isHamburgerOpen]);
 
-  /**
-   * Animation variants for individual submenu items
-   * Controls the fade and slide animations for each item
-   * @type {Object}
-   */
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 300, delay: 0.1 },
-    },
-    closed: { opacity: 0, x: -20 },
-  };
-
-  /**
-   * Handles clicks on menu items
-   * If the item has a submenu, it toggles the dropdown
-   * If the item is a direct link, it navigates to that page and closes the menu
-   *
-   * @param {Object} item - The menu item that was clicked
-   * @param {string} item.name - The name of the menu item
-   * @param {string} [item.link] - The link to navigate to (if not a dropdown)
-   * @param {Array} [item.submenu] - Array of submenu items (if a dropdown)
-   */
-  const handleItemClick = (item) => {
+  const handleMobileItemClick = (item, index) => {
     if (item.submenu) {
-      setActiveDropdown(activeDropdown === item.name ? null : item.name);
+      setOpenDropdown(openDropdown === index ? null : index);
     } else {
-      setIsOpen(false);
-      router.push(item.link);
+      setIsHamburgerOpen(false);
+      setOpenDropdown(null);
+      setOpenSubDropdown(null);
+      window.location.href = item.link;
     }
   };
 
-  const burgerRef = useRef(null);
-
+  // Animate mobile menu when isHamburgerOpen changes
   useEffect(() => {
-    if (burgerRef.current) {
-      gsap.to(burgerRef.current, {
-        top: "35px", // lifts the hamburger up
-        scrollTrigger: {
-          trigger: burgerRef.current,
-          start: "top top", // Starts when the top of the header reaches the top of the viewport
-          end: "+=10", // Ends after scrolling 10px
-          scrub: true, // Smooth animation that follows scroll position
-        },
-      });
+    if (mobileMenuRef.current) {
+      if (isHamburgerOpen) {
+        gsap.to(mobileMenuRef.current, {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.inOut",
+        });
+      } else {
+        gsap.to(mobileMenuRef.current, {
+          x: "100%",
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.inOut",
+        });
+      }
     }
-  });
+  }, [isHamburgerOpen]);
 
-   // Combine menuItems and directLinks, with menuItems first
+  // Combine menuItems and directLinks for dropdown
   const allItems = [...menuItems, ...directLinks];
 
   return (
-    <div className="w-screen h-full "> 
-      {/* Hamburger Icon Button */}
+    <div className="relative group h-full">
       <button
-        className="h-full w-full relative z-50 flex flex-col items-end justify-center pr-6 space-y-1"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Close menu" : "Open menu"}
-        aria-expanded={isOpen}
-        ref={burgerRef}
+        className="px-3 py-2 text-sm font-medium relative flex items-center h-full text-[#DCE2E2] hover:bg-[#37403D] hover:text-[#8AD5B7]"
+        onClick={handleHamburgerClick}
+        aria-label={isHamburgerOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isHamburgerOpen}
       >
-        {/* Animated Hamburger Icon Bars */}
-        {[30, 20, 30].map((width, index) => (
-          <motion.div
-            key={index}
-            initial={{ width }}
-            animate={{ width: isOpen ? (index % 2 === 0 ? 20 : 30) : width }}
-            className="h-1 bg-[#dce2e1] rounded-md"
-            transition={{ type: "spring", stiffness: 100 }}
-          />
-        ))}
+        {isHamburgerOpen ? <X className="h-5 w-5" /> : <AlignJustify className="h-5 w-5" />}
       </button>
 
-      {/* Slide-in Menu Panel */}
-      <motion.div
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-        variants={menuVariants}
-        transition={{ type: "tween", duration: 0.5 }}
-        className="fixed top-0 right-0 w-1/2 lg:h-full bg-black text-white flex flex-col items-start pt-20 overflow-y-auto"
-        aria-hidden={!isOpen}
-      >
-        <div className="w-full p-6 space-y-6 bg-black rounded-lg">
-        {/* Menu Items */}
-        {allItems.map((item) => (
-          <div key={item.name} className="w-full">
-            {/* Menu Item Header */}
-            <motion.div
-              className="text-lg font-medium cursor-pointer flex justify-between items-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => handleItemClick(item)}
-              role="button"
-              aria-expanded={activeDropdown === item.name}
-              aria-controls={item.submenu ? `submenu-${item.name}` : undefined}
-            >
-              {item.name}
-              {/* Dropdown Indicator Arrow */}
-              {item.submenu && (
-                <motion.span
-                  className="text-sm ml-2"
-                  animate={{ rotate: activeDropdown === item.name ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  aria-hidden="true"
-                >
-                  ▼
-                </motion.span>
-              )}
-            </motion.div>
-
-            {/* Submenu Dropdown (conditionally rendered) */}
-            <AnimatePresence>
-              {item.submenu && activeDropdown === item.name && (
-                <motion.div
-                  id={`submenu-${item.name}`}
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  variants={dropdownVariants}
-                  className="pl-4 w-full space-y-4 mt-2"
-                  role="menu"
-                  aria-label={`${item.name} submenu`}
-                >
-                  {/* Submenu Items */}
-                  {item.submenu.map((subItem) => (
-                    <div
-                      key={subItem.name}
-                      className="relative"
-                      onMouseLeave={() => subItem.submenu && setActiveSubDropdown(null)}
-                    >
-                      <motion.div
-                        className="text-base cursor-pointer flex justify-between items-center"
-                        variants={itemVariants}
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                        role="menuitem"
-                        onClick={(e) => {
-                          e.stopPropagation();
+      {isHamburgerOpen && (
+        <div
+          ref={mobileMenuRef}
+          className="fixed top-[60px] xl:top-[100px] right-0 w-full bg-[#37403D] text-[#DCE2E2] flex flex-col items-start p-6 z-50"
+        >
+          {allItems.map((item, index) => (
+            <div key={item.name} className="w-full py-2">
+              <div
+                className={`flex items-center justify-between px-4 py-2 text-sm font-medium cursor-pointer
+                  ${openDropdown === index ? "bg-[#37403D] text-[#8AD5B7]" : "text-[#DCE2E2]"}`}
+                onClick={() => handleMobileItemClick(item, index)}
+              >
+                {item.name}
+                {item.submenu && (
+                  <svg
+                    className={`h-4 w-4 ${openDropdown === index ? "text-[#8AD5B7]" : "text-[#DCE2E2]"}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ transform: openDropdown === index ? "rotate(180deg)" : "rotate(0deg)" }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                )}
+              </div>
+              {item.submenu && openDropdown === index && (
+                <div className="pl-4 w-full space-y-2 mt-2">
+                  {item.submenu.map((subItem, subIndex) => (
+                    <div key={subItem.name} className="relative">
+                      <div
+                        className={`flex items-center justify-between px-4 py-2 text-sm cursor-pointer
+                          ${openSubDropdown === subIndex ? "bg-gray-100 text-[#8AD5B7]" : "text-[#DCE2E2]"}`}
+                        onClick={() => {
                           if (subItem.submenu) {
-                            setActiveSubDropdown(
-                              activeSubDropdown === subItem.name ? null : subItem.name
-                            );
+                            setOpenSubDropdown(openSubDropdown === subIndex ? null : subIndex);
                           } else {
-                            setIsOpen(false);
-                            setActiveDropdown(null);
-                            setActiveSubDropdown(null);
-                            router.push(subItem.link);
+                            setIsHamburgerOpen(false);
+                            setOpenDropdown(null);
+                            setOpenSubDropdown(null);
+                            window.location.href = subItem.link;
                           }
                         }}
                       >
                         {subItem.name}
                         {subItem.submenu && (
-                          <motion.span
-                            className="ml-2"
-                            animate={{ rotate: activeSubDropdown === subItem.name ? 180 : 0 }}
-                            transition={{ duration: 0.2 }}
-                            aria-hidden="true"
+                          <svg
+                            className={`h-4 w-4 ${openSubDropdown === subIndex ? "text-[#8AD5B7]" : "text-[#DCE2E2]"}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style={{ transform: openSubDropdown === subIndex ? "rotate(180deg)" : "rotate(0deg)" }}
                           >
-                            ▼
-                          </motion.span>
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
                         )}
-                      </motion.div>
-                      <AnimatePresence>
-                        {subItem.submenu && activeSubDropdown === subItem.name && (
-                          <motion.div
-                            initial="closed"
-                            animate="open"
-                            exit="closed"
-                            variants={dropdownVariants}
-                            className="pl-4 space-y-2 mt-2"
-                            role="menu"
-                            aria-label={`${subItem.name} submenu`}
-                          >
-                            {subItem.submenu.map((child) => (
-                              <motion.div
-                                key={child.name}
-                                className="text-base cursor-pointer"
-                                variants={itemVariants}
-                                whileHover={{ scale: 1.03 }}
-                                whileTap={{ scale: 0.97 }}
-                                role="menuitem"
-                                onClick={() => {
-                                  setIsOpen(false);
-                                  setActiveDropdown(null);
-                                  setActiveSubDropdown(null);
-                                  router.push(child.link);
-                                }}
-                              >
-                                {child.name}
-                              </motion.div>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
+                      </div>
+                      {subItem.submenu && openSubDropdown === subIndex && (
+                        <div className="pl-4 w-full space-y-2 mt-2">
+                          {subItem.submenu.map((nestedItem) => (
+                            <div
+                              key={nestedItem.name}
+                              className="px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 hover:text-[#1E232261] cursor-pointer"
+                              onClick={() => {
+                                setIsHamburgerOpen(false);
+                                setOpenDropdown(null);
+                                setOpenSubDropdown(null);
+                                window.location.href = nestedItem.link;
+                              }}
+                            >
+                              {nestedItem.name}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ))}
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
-          </div>
-        ))}
+            </div>
+          ))}
         </div>
-      </motion.div>
+      )}
     </div>
   );
 };

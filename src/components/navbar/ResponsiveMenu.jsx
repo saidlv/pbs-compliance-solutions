@@ -5,6 +5,7 @@ import { useMediaQuery } from "../../hooks/UseMediaQuery";
 import HamburgerMenu from "./HamburgerMenu";
 import VerticalMenu from "../../../extra/navbar/VerticalMenu";
 import HorizontalMenu from "./HorizontalMenu";
+import { directLinks, menuItems } from "./data";
 
 /**
  * AnimatedArrow Component
@@ -91,7 +92,7 @@ const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
   const isMobile = useMediaQuery(1024); //1280
 
   return isMobile ?
-    <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+    <HamburgerMenu directLinks={directLinks} menuItems={menuItems} />
      :   <div className="hidden lg:block h-full">
           <HorizontalMenu />
         </div>

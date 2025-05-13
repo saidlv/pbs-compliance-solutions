@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { menuItems, directLinks } from "./data";
 import { gsap } from "gsap";
+import HamburgerMenu from "./HamburgerMenu";
 
 const HorizontalMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -68,26 +69,26 @@ const HorizontalMenu = () => {
     setOpenSubDropdown(null);
   };
 
-  // Combine menuItems and directLinks, with menuItems first
+  // Combine menuItems and directLinks for mobile dropdown only
   const allItems = [...menuItems, ...directLinks];
 
   return (
     <nav className="inline-flex items-center text-[#DCE2E2] h-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
-          {/* Menu Items and Direct Links */}
+          {/* Menu Items, Hamburger, and Direct Links */}
           <div className="flex items-center justify-evenly h-full">
-            {allItems.map((item, index) => (
+            {/* Menu Items with Submenus */}
+            {menuItems.map((item, index) => (
               <div
                 key={item.name}
                 className="relative group h-full"
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                {/* Menu Item */}
                 <Link
                   href={item.link || "#"}
-                  className={`px-3 py-2 text-sm font-medium relative transition-all duration-300 ease-in-out group-hover:scale-105 flex items-center h-full
+                  className={`px-3 py-2 text-base xl:text-lg 2xl:text-xl  font-medium relative transition-all duration-300 ease-in-out group-hover:scale-105 flex items-center h-full
                     ${
                       item.submenu
                         ? openDropdown === index
@@ -111,18 +112,9 @@ const HorizontalMenu = () => {
                       style={{ width: 0 }}
                     ></span>
                   )}
-                  {/* Blue Underline for items without submenu */}
-                  {!item.submenu && (
-                    <span
-                      ref={(el) => (lineRefs.current[index] = el)}
-                      className={`absolute bottom-1/3 left-[10%] h-0.5 bg-[#8AD5B7]
-                        ${openDropdown === index ? "opacity-100" : "opacity-0"}`}
-                      style={{ width: 0 }}
-                    ></span>
-                  )}
                 </Link>
 
-                {/* Dropdown */}
+                {/* Desktop Dropdown */}
                 {item.submenu && openDropdown === index && (
                   <div className="absolute -left-[15vw] w-[40vw] bg-[#37403D] rounded-md shadow-lg z-10">
                     {item.submenu.map((subItem, subIndex) => (
@@ -174,6 +166,37 @@ const HorizontalMenu = () => {
                     ))}
                   </div>
                 )}
+              </div>
+            ))}
+
+            {/* Hamburger Menu */}
+            <HamburgerMenu menuItems={menuItems} directLinks={directLinks} />
+
+            {/* Direct Links */}
+            {directLinks.map((item, index) => (
+              <div
+                key={item.name}
+                className="relative group h-full"
+                onMouseEnter={() => handleMouseEnter(index + menuItems.length)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  href={item.link || "#"}
+                  className="px-3 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out group-hover:scale-105 flex items-center h-full text-[#DCE2E2]"
+                  style={{
+                    transitionProperty: "background-color, color, transform",
+                    transitionDuration: "300ms",
+                    transitionTimingFunction: "ease-in-out",
+                  }}
+                >
+                  {item.name}
+                  <span
+                    ref={(el) => (lineRefs.current[index + menuItems.length] = el)}
+                    className={`absolute bottom-1/3 left-[10%] h-0.5 bg-[#8AD5B7]
+                      ${openDropdown === index + menuItems.length ? "opacity-100" : "opacity-0"}`}
+                    style={{ width: 0 }}
+                  ></span>
+                </Link>
               </div>
             ))}
           </div>
