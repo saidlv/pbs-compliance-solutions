@@ -3,7 +3,7 @@ import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { useMediaQuery } from "../../hooks/UseMediaQuery";
 import HamburgerMenu from "./HamburgerMenu";
-import VerticalMenu from "../../../extra/navbar/VerticalMenu";
+import VerticalMenu from "../../../old/navbar/VerticalMenu";
 import HorizontalMenu from "./HorizontalMenu";
 import { directLinks, menuItems } from "./data";
 

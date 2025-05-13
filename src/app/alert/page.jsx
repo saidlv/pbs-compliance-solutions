@@ -1,332 +1,235 @@
-"use client"; // Marks this as a client-side component in Next.js
+"use client";
+import React from "react";
+import HeroSection from "@/components/HeroSection";
+import Image from "next/image";
+import { DotIcon } from "lucide-react";
+import CTA2 from "@/components/CTA2";
+import { section01, section2 } from "./data";
+import { useMenu } from "@/context/MenuContext";
+import { useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-/**
- * @file Alert Page Component
- * @description Provides a form for users to subscribe to property alerts by registering their contact information
- * and selecting properties they're interested in monitoring
- * @requires react - For component functionality and hooks
- * @requires axios - For API requests
- * @requires react-tag-input - For managing selected properties as tags
- * @requires use-debounce - For debouncing search input
- */
 
-import { getBoroId, getIdFromBoro } from "@/utils/borough";
-import { apiRequest } from "@/utils/csrfHandler";
-import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
-import { WithContext as ReactTags } from "react-tag-input";
-import { useDebounce } from "use-debounce";
+const Page = () => {
 
-// Configure axios defaults for all requests
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://localhost/pbs/public";
-
-/**
- * Alert Component
- * Allows users to subscribe for property alerts by providing contact information
- * and selecting properties from a searchable database
- * @returns {JSX.Element} The rendered Alert subscription form
- */
-const Alert = () => {
-  // Form State - Tracks user input for contact information
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
-  const [email, setEmail] = useState("");
-  const [properties, setProperties] = useState([]); // Selected properties as tags
-  const [addProperties, setAddProperties] = useState(false); // Toggle for property selection UI
-
-  // Property Search State - Manages the property search functionality
-  const [borough, setBorough] = useState(""); // Selected borough for property search
-  const [houseNumber, setHouseNumber] = useState(""); // House number for property search
-  const [streetSearch, setStreetSearch] = useState(""); // Street name search input
-  const [searchResults, setSearchResults] = useState([]); // Results from property search
-  const [debouncedSearch] = useDebounce(streetSearch, 500); // Debounced search term to limit API calls
-  const [isSearching, setIsSearching] = useState(false); // Loading state for search
-
-  /**
-   * Fetches matching streets based on search criteria
-   * @param {string} inputValue - The street name to search for
-   * @returns {Promise<void>}
-   */
-  const fetchStreets = useCallback(
-    async (inputValue) => {
-      // Don't search if required fields are missing or search term is too short
-      if (!borough || !houseNumber || inputValue.length < 4) {
-        setSearchResults([]);
-        return;
-      }
-
-      setIsSearching(true);
-      try {
-        // Call API to search for properties matching criteria
-        const data = await apiRequest("post", "/api/search-property", {
-          borough: getBoroId(borough), // Convert borough name to ID
-          house: houseNumber,
-          term: inputValue,
-        });
-
-        setSearchResults(data);
-      } catch (error) {
-        console.error("Search Error:", error);
-        setSearchResults([]);
-      } finally {
-        setIsSearching(false);
-      }
-    },
-    [borough, houseNumber]
-  );
-
-  // Effect to trigger search when debounced value changes
-  useEffect(() => {
-    fetchStreets(debouncedSearch);
-  }, [debouncedSearch, fetchStreets]);
-
-  /**
-   * Adds a property to the selected properties list
-   * @param {Object} tag - The property tag to add
-   */
-  const handleAddition = (tag) => {
-    setProperties([...properties, tag]);
-  };
-
-  /**
-   * Removes a property from the selected properties list
-   * @param {number} index - The index of the property to remove
-   */
-  const handleDelete = (index) => {
-    setProperties(properties.filter((_, i) => i !== index));
-  };
-
-  /**
-   * Handles form submission to register for alerts
-   * @param {React.FormEvent} e - The form submission event
-   * @returns {Promise<void>}
-   */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Submit alert registration data to API
-      const data = await apiRequest("post", "/api/register-for-alerts", {
-        name,
-        contact,
-        email,
-        properties: properties,
-      });
-
-      console.log("Subscription Data:", data);
-
-      // Reset form after successful submission
-      setName("");
-      setContact("");
-      setEmail("");
-      setProperties([]);
-      setAddProperties(false);
-      setBorough("");
-      setHouseNumber("");
-      setStreetSearch("");
-      setSearchResults([]);
-
-      alert("You have successfully subscribed for alerts!");
-    } catch (error) {
-      console.error("Subscription Error:", error);
-      alert("An error occurred while subscribing for alerts!");
-    }
-  };
-
+   const settings = {
+        dots: false, // Show navigation dots
+        infinite: true, // Loop slides
+        speed: 500, // Transition speed
+        slidesToShow: 5, // Show one slide at a time
+        slidesToScroll: 1, // Scroll one slide at a time
+        centerPadding: "0%", // Add padding to show partial next/prev slides
+        arrows: false, // Hide arrows for mobile
+        autoplay: true, // Optional: Auto-scroll slides
+        autoplaySpeed: 2000, // Optional: 3 seconds per slide
+        responsive: [
+          {
+            breakpoint: 720, // Adjust for very small screens
+            settings: {
+              centerPadding: "5%",
+              slidesToShow: 1,
+            },
+          },
+          {
+            breakpoint: 1024, // Adjust for very small screens
+            settings: {
+              centerPadding: "5%",
+              slidesToShow: 3,
+            },
+          },
+        ],
+      };
+      
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Basic Contact Information Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            type="text"
-            placeholder="First and Last Name"
-            className="p-2 border rounded"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
+    <div className="bg-[#37403D]">
+      {/* Hero Section */}
+      <HeroSection
+        heading="Real-Time Compliance Alerts for NYC Property Professionals"
+        text="Stay Ahead of Deadlines, Violations, and Zoning Changes with NYC’s Most Advanced Property Management & Alert Service Platform"
+        className="font-conthrax max-w-[90%] md:max-w-full xl:max-w-[95%] text-2xl sm:text-3xl 4xl:max-w-[70%] lg:text-4xl xl:text-5xl font-semibold"
+        bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"
+        isLine={false}
+        textStyle="text-base sm:text-lg md:text-xl font-semibold"
+        img="/pics/alert-hero.png"
+      />
+
+      {/* Custom 'About Us' Label Divider */}
+      <div className="w-[100vw] relative flex justify-center">
+        <div className="bg-[#8AD5B7] w-full h-2"></div>
+        <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[40%] 2xl:w-[30%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20">
+          Alert System
+        </div>
+      </div>
+
+      {/*Section 01  */}
+      <section className="px-6 md:px-10 xl:px-16 pt-16 md:pt-16 lg:pt-24 flex flex-col gap-6 lg:gap-10 text-[#DCE2E2]">
+        <div className="flex flex-col items-center lg:items-stretch justify-between 2xl:justify-center gap-6 2xl:gap-8 w-full">
+          <h2 className="text-[#8AD5B7] font-conthrax text-3xl xl:text-5xl font-semibold text-center">
+            {section01.div1.heading}
+          </h2>
+          <p className="text-[#89A096] text-lg lg:text-xl xl:text-2xl font-semibold text-center">
+            {section01.div1.text1}
+          </p>
+          <CTA2
+            isArrow={false}
+            text={section01.div1.CTA.text}
+            href={section01.div1.CTA.href}
+            styling={`w-auto mt-3 mx-auto rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-3 2xl:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}
           />
-          <input
-            type="tel"
-            placeholder="Contact Number"
-            className="p-2 border rounded"
-            value={contact}
-            onChange={(e) => setContact(e.target.value)}
-            required
+          <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center max-w-md mx-auto">
+            {section01.div1.text2}
+          </p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch 2xl:items-center justify-between 2xl:justify-center 2xl:gap-16 w-full">
+          <div className="w-full md:w-[80%] lg:w-[60%] 2xl:max-w-[50%] 3xl:max-w-[40%] flex flex-col justify-center items-center 2xl:justify-center gap-6 p-6 rounded-2xl">
+            <h2 className="text-[#8AD5B7] font-conthrax text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center xl:max-w-[90%]">
+              {section01.div2.heading}
+            </h2>
+            <p className="text-[#DCE2E2] text-lg lg:text-xl xl:text-2xl font-semibold text-center">
+              {section01.div2.text1}
+            </p>
+            <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center">
+              {section01.div2.text2}
+            </p>
+          </div>
+          <Image
+            src="/pics/alert-pic1.png"
+            alt="Inspection Services"
+            width={500}
+            height={500}
+            className="w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
           />
         </div>
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          className="w-full p-2 border rounded"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        {/* Property Selection Toggle Button */}
-        <button
-          type="button"
-          onClick={() => setAddProperties(!addProperties)}
-          className="w-full py-2 text-left border-b"
-        >
-          {addProperties ? "▼" : "▶"} I want to add my properties now!
-        </button>
-
-        {/* Collapsible Property Selection Section */}
-        {addProperties && (
-          <div className="space-y-4">
-            {/* Property Search Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Borough Selection Dropdown */}
-              <select
-                className="p-2 border rounded"
-                value={borough}
-                onChange={(e) => setBorough(e.target.value)}
+        <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10">
+          {section01.div2.imgArray.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className="flex flex-col items-center lg:items-stretch justify-between 2xl:justify-center gap-3 2xl:gap-8 w-full"
               >
-                <option value="">Select Borough</option>
-                {["MANHATTAN", "BRONX", "BROOKLYN", "QUEENS", "STATEN IS"].map(
-                  (b) => (
-                    <option key={b} value={b}>
-                      {b}
-                    </option>
-                  )
-                )}
-              </select>
-
-              {/* House Number Input */}
-              <input
-                type="text"
-                placeholder="House Number"
-                className="p-2 border rounded"
-                value={houseNumber}
-                onChange={(e) => setHouseNumber(e.target.value)}
-              />
-
-              {/* Street Search Input with Loading Indicator */}
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search Street"
-                  className="p-2 border rounded w-full"
-                  value={streetSearch}
-                  onChange={(e) => setStreetSearch(e.target.value)}
+                <Image
+                  src={item.img}
+                  alt="Inspection Services"
+                  width={500}
+                  height={500}
+                  className="w-[80%] lg:w-full h-auto object-contain object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
                 />
-                {/* Loading Spinner - Shows when search is in progress */}
-                {isSearching && (
-                  <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                    <svg
-                      className="animate-spin h-5 w-5 text-gray-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                  </div>
-                )}
+
+                <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center flex flex-col items-center">
+                  <span className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2] itlaic">
+                    {item.text.split(":")[0]}
+                  </span>
+                  {item.text.substring(item.text.indexOf(":") + 1)}
+                </p>
               </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Section 02 */}
+      <section className="px-6 md:px-10 xl:px-16 pt-16 md:pt-16 lg:pt-16 flex flex-col gap-6 lg:gap-10 text-[#DCE2E2]">
+        <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 2xl:gap-8 w-full md:w-[90%] mx-auto">
+            <div className="flex justify-center items-center">
+              <h2 className="text-3xl md:text-4xl xl:text-5xl text-center font-semibold text-[#8AD5B7] font-conthrax">
+                {section2.div1.heading}
+              </h2>
             </div>
 
-            {/* Search Results Container - Shows matching properties */}
-            {(searchResults.length > 0 || isSearching) && (
-              <div className="border rounded p-2 space-y-2 max-h-60 overflow-y-auto">
-                {isSearching && searchResults.length === 0 ? (
-                  <div className="p-2 text-gray-500 text-center">
-                    Searching...
+            <div className="bg-[#2E3734] p-6 rounded-2xl flex flex-col justify-center gap-2">
+              {section2.div1.items.map((item, index) => {
+                return (
+                  <div key={index} className="flex items-start">
+                    <DotIcon
+                      size={32}
+                      className="inline-block mr-2 flex-shrink-0"
+                    />
+                    <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096]">
+                      <span className="text-[#DCE2E2] itlaic">
+                        {item.split(":")[0] + ": "}
+                      </span>
+                      {item.substring(item.indexOf(":") + 1)}
+                    </p>
                   </div>
-                ) : (
-                  // Filter out properties that are already selected
-                  searchResults
-                    .filter(
-                      (result) =>
-                        !properties.some(
-                          (property) => property.id === result.bin
-                        )
-                    )
-                    .map((result) => (
-                      <div
-                        key={result.bin}
-                        className="p-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => {
-                          // Add property to selected properties when clicked
-                          handleAddition({
-                            id: result.bin,
-                            text: `${result.bin}: ${result.lhnd}to${
-                              result.hhnd
-                            }, ${result.stname}, ${getIdFromBoro(
-                              Number(result.boro)
-                            )} `,
-                            ...result,
-                          });
-                          // setStreetSearch("");
-                        }}
-                      >
-                        {result.bin}: {result.lhnd}
-                        {" to"}
-                        {result.hhnd}, {result.stname}
-                      </div>
-                    ))
-                )}
-                {/* No results message */}
-                {!isSearching &&
-                  searchResults.length === 0 &&
-                  debouncedSearch.length >= 4 && (
-                    <div className="p-2 text-gray-500 text-center">
-                      No results found
-                    </div>
-                  )}
-              </div>
-            )}
-
-            {/* Selected Properties Container - Shows properties user has selected */}
-            <div className="max-h-60 overflow-y-auto border rounded p-2 mt-4">
-              <ReactTags
-                tags={properties}
-                handleAddition={handleAddition}
-                handleDelete={handleDelete}
-                inputFieldPosition="bottom"
-                allowAdditionFromPaste={false}
-                allowDragDrop={false}
-                // readOnly={true}
-                inputProps={{
-                  className: "hidden", // Hide the input field
-                  placeholder: "",
-                }}
-                classNames={{
-                  tags: "space-y-4", // Increased vertical spacing between tags
-                  tagInput: "w-full hidden", // Hide the tag input container
-                  tag: "bg-blue-100 px-2 py-1 rounded mr-2 block mb-3 flex justify-between items-center select-none", // Added select-none
-                  remove: "cursor-pointer bg-red-500 text-white px-1 rounded", // Removed ml-2 as it's no longer needed
-                }}
-              />
+                );
+              })}
             </div>
           </div>
-        )}
+          <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096] text-center">
+            {section2.div1.text}
+          </p>
+        </div>
 
-        {/* Form Submission Button */}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
-        >
-          Subscribe for Alerts
-        </button>
-      </form>
+        <div className="w-full flex flex-col items-center justify-center gap-6 2xl:gap-8">
+          <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight xl:max-w-3xl text-center font-semibold text-[#8AD5B7] font-conthrax">{section2.div2.heading}</h2>
+          <div className="mt-3">
+          <span className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2]">{section2.div2.text1}</span>
+          <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096]">{section2.div2.text2}</p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center lg:items-end 4xl:items-center justify-start gap-8 2xl:gap-16 w-full">
+            <div className="w-full flex flex-col justify-center items-center md:items-center gap-8 ">
+              <h2 className="text-3xl lg:text-4xl xl:text-[40px] xl:leading-tight xl:max-w-3xl text-center md:text-left font-semibold text-[#8AD5B7] font-conthrax">{section2.div2.title}</h2>
+             <Slider {...settings} className="flex justify-evenly items-center w-full">
+              {section2.div2.items.map((item, index) => {
+                return (
+                  <div key={index} className="w-full flex flex-col items-center gap-3">
+                    <div className="w-[90%] aspect-square rounded-lg bg-[#D9D9D9]"></div>
+                    <p className="w-[90%] text-lg lg:text-xl xl:text-2xl text-[#89A096] text-center">
+                      <span className="text-[#DCE2E2] itlaic">
+                        {item.split(":")[0] + ": "}
+                      </span>
+                      {item.substring(item.indexOf(":") + 1)}
+                    </p>
+                  </div>
+                );
+              })}
+             </Slider>
+            </div>
+          </div>
+        </div>
+        
+        <div className="w-full flex flex-col items-center justify-center gap-6 2xl:gap-8">
+          <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight xl:max-w-3xl text-center font-semibold text-[#8AD5B7] font-conthrax">{section2.div3.heading}</h2>
+          <div className="mt-3">
+          <span className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2]">{section2.div3.text1}</span>
+          <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096]">{section2.div3.text2}</p>
+          </div>
+
+          <div className="bg-[#2E3734] p-3 rounded-2xl flex flex-col justify-center gap-2">
+              {section2.div3.items.map((item, index) => {
+                return (
+                  <div key={index} className="flex items-start">
+                    <DotIcon
+                      size={32}
+                      className="inline-block mr-2 flex-shrink-0"
+                    />
+                    <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096]">
+                      <span className="text-[#DCE2E2] itlaic">
+                        {item.split(":")[0] + ": "}
+                      </span>
+                      {item.substring(item.indexOf(":") + 1)}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+        </div>  
+      </section>
+
+      <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 my-10"></div>
+
+      {/* Section 03 */}
+      <section className="px-6 md:px-10 xl:px-16 pt-16 md:pt-16 lg:pt-16 flex flex-col gap-6 lg:gap-10 text-[#DCE2E2]">
+
+      </section>
     </div>
   );
 };
 
-export default Alert;
+export default Page;
