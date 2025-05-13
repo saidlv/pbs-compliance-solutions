@@ -90,7 +90,9 @@ const HorizontalMenu = () => {
                   className={`px-3 py-2 text-sm font-medium relative transition-all duration-300 ease-in-out group-hover:scale-105 flex items-center h-full
                     ${
                       item.submenu
-                        ? "text-[#DCE2E2] hover:bg-[#37403D] hover:text-[#8AD5B7]"
+                        ? openDropdown === index
+                          ? "bg-[#37403D] text-[#8AD5B7]"
+                          : "text-[#DCE2E2] hover:bg-[#37403D] hover:text-[#8AD5B7]"
                         : "text-[#DCE2E2]"
                     }`}
                   style={{
