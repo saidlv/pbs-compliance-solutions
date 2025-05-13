@@ -1,56 +1,72 @@
 export const menuItems = [
   {
-    name: "Inspection Services",
+    name: "Services",
     submenu: [
+      {
+        name: "Services",
+        link: "/services",
+      },
+      { name: "Owner Representative", link: "/owner-representative" },
+      { name: "Property Management", link: "/property-management" },
+      { name: "Expediting Services", link: "/expediting-services" },
+      {
+        name: "Local Laws",
+        submenu: [
+          {
+            name: "Local Law 11",
+            link: "/law/local-law",
+          },
+          {
+            name: "Local Law Parking",
+            link: "/law/local-law-parking",
+          },
+          { name: "Local Law Parapet", link: "/law/local-law-parapet" },
+          { name: "Local Law 152", link: "/law/local-law-152" },
+        ],
+      },
       {
         name: "Inspection Services",
-        link: "/inspection-services",
-      },
-      {
-        name: "Boiler Inspection",
-        link: "/inspection-services/boiler-inspection",
-      },
-      {
-        name: "Sprinkler Hydrostatic inspection",
-        link: "/inspection-services/sh-inspection",
-      },
-      {
-        name: "Elevator Inspection",
-        link: "/inspection-services/elevator-inspection",
+        submenu: [
+          {
+            name: "Inspection Services",
+            link: "/inspection-services",
+          },
+          {
+            name: "Boiler Inspection",
+            link: "/inspection-services/boiler-inspection",
+          },
+          {
+            name: "Sprinkler Hydrostatic inspection",
+            link: "/inspection-services/sh-inspection",
+          },
+          {
+            name: "Elevator Inspection",
+            link: "/inspection-services/elevator-inspection",
+          },
+        ],
       },
     ],
   },
   {
-    name: "Law",
+    name: "Resources",
     submenu: [
-      {
-        name: "Local Law 11",
-        link: "/law/local-law",
-      },
-      {
-        name: "Local Law  Parking",
-        link: "/law/local-law-parking",
-      },
-      { name: "Local Law  Parapet", link: "/law/local-law-parapet" },
-      { name: "Local Law 152", link: "/law/local-law-152" },
+      { name: "Blogs", link: "/blog" },
+      { name: "Press", link: "/" },
+      { name: "Local Law Guide", link: "/" },
+      { name: "Alert System Guide", link: "/" },
     ],
-  },
-  { name: "Owner Representative", link: "/owner-representative" },
-  { name: "Property Management", link: "/property-management"},
-  { name: "Expediting Services", link: "/expediting-services"},
-  {
-    name: "Services",
-    link: "/services",
   },
   {
     name: "About Us",
-    // link: "/about-us",
     submenu: [
       { name: "About", link: "/about-us" },
       { name: "Our Team", link: "/about-us/our-team" },
       { name: "Our Values", link: "/about-us/our-values" },
     ],
   },
+];
+
+export const directLinks = [
+  { name: "Alert Systems", link: "/alert" },
   { name: "Contact us", link: "/contacts" },
-  // { name: "Blog", link: "/blog" },
 ];

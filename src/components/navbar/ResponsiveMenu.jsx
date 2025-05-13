@@ -3,7 +3,7 @@ import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { useMediaQuery } from "../../hooks/UseMediaQuery";
 import HamburgerMenu from "./HamburgerMenu";
-import VerticalMenu from "./VerticalMenu";
+import VerticalMenu from "../../../extra/navbar/VerticalMenu";
 import HorizontalMenu from "./HorizontalMenu";
 
 /**
@@ -90,11 +90,12 @@ import HorizontalMenu from "./HorizontalMenu";
 const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
   const isMobile = useMediaQuery(1024); //1280
 
-  return isMobile ? (
+  return isMobile ?
     <HamburgerMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-  ) : (
-    <HorizontalMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-  );
+     :   <div className="hidden lg:block h-full">
+          <HorizontalMenu />
+        </div>
+
 };
 
 

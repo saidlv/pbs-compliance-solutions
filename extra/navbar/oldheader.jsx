@@ -7,8 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-import ResponsiveMenu from "./ResponsiveMenu";
-import HorizontalMenu from "./HorizontalMenu";
+import ResponsiveMenu from "../../src/components/navbar/ResponsiveMenu";
 
 // Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -78,7 +77,7 @@ const Header = () => {
     >
       {/* Header Container with GSAP Animation */}
       <motion.div
-        className="flex flex-row justify-between items-center w-full h-[60px] xl:h-[100px]"
+        className="flex flex-row justify-center lg:justify-between items-start lg:items-center w-full pt-2 lg:pt-0 h-[100px]"
       >
         {/* Logo Container with Click Navigation */}
         <div
@@ -95,14 +94,14 @@ const Header = () => {
               width={100}
               height={100}
               alt="Website Logo"
-              className="w-[50px] xl:w-[80px] object-contain h-auto relative xl:left-[50px] left-[25px]"
+              className="w-[50px] lg:w-[80px] object-contain lg:h-auto relative xl:left-[50px] md:left-0"
             />
           </motion.div>
         </div>
-
-        {/* Mobile / Side Menu for small screens */}
-      <ResponsiveMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       </motion.div>
+
+      {/* Responsive Menu Component */}
+      <ResponsiveMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };

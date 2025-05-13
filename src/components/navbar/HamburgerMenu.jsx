@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useState, useRef } from "react";
-import { menuItems } from "./data";
+import { menuItems, directLinks } from "./data";
 import { useEffect } from "react";
 import gsap from "gsap";
 
@@ -28,6 +28,7 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
    * @type {[string|null, Function]} State and setter for the active dropdown
    */
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeSubDropdown, setActiveSubDropdown] = useState(null);
 
   /**
    * Animation variants for the main menu panel
@@ -106,11 +107,14 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
     }
   });
 
+   // Combine menuItems and directLinks, with menuItems first
+  const allItems = [...menuItems, ...directLinks];
+
   return (
-    <div className="w-screen"> 
+    <div className="w-screen h-full "> 
       {/* Hamburger Icon Button */}
       <button
-        className="fixed top-[25px] right-6 z-50 flex flex-col items-end space-y-1"
+        className="h-full w-full relative z-50 flex flex-col items-end justify-center pr-6 space-y-1"
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close menu" : "Open menu"}
         aria-expanded={isOpen}
@@ -134,12 +138,12 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
         transition={{ type: "tween", duration: 0.5 }}
-        className="fixed top-0 right-0 w-1/2 lg:h-full bg-black text-white flex flex-col items-start pt-20"
+        className="fixed top-0 right-0 w-1/2 lg:h-full bg-black text-white flex flex-col items-start pt-20 overflow-y-auto"
         aria-hidden={!isOpen}
       >
         <div className="w-full p-6 space-y-6 bg-black rounded-lg">
         {/* Menu Items */}
-        {menuItems.map((item) => (
+        {allItems.map((item) => (
           <div key={item.name} className="w-full">
             {/* Menu Item Header */}
             <motion.div
@@ -180,20 +184,76 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
                 >
                   {/* Submenu Items */}
                   {item.submenu.map((subItem) => (
-                    <motion.div
+                    <div
                       key={subItem.name}
-                      className="text-base cursor-pointer"
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.97 }}
-                      onClick={() => {
-                        setIsOpen(false);
-                        router.push(subItem.link);
-                      }}
-                      role="menuitem"
+                      className="relative"
+                      onMouseLeave={() => subItem.submenu && setActiveSubDropdown(null)}
                     >
-                      {subItem.name}
-                    </motion.div>
+                      <motion.div
+                        className="text-base cursor-pointer flex justify-between items-center"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.03 }}
+                        whileTap={{ scale: 0.97 }}
+                        role="menuitem"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (subItem.submenu) {
+                            setActiveSubDropdown(
+                              activeSubDropdown === subItem.name ? null : subItem.name
+                            );
+                          } else {
+                            setIsOpen(false);
+                            setActiveDropdown(null);
+                            setActiveSubDropdown(null);
+                            router.push(subItem.link);
+                          }
+                        }}
+                      >
+                        {subItem.name}
+                        {subItem.submenu && (
+                          <motion.span
+                            className="ml-2"
+                            animate={{ rotate: activeSubDropdown === subItem.name ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
+                            aria-hidden="true"
+                          >
+                            ▼
+                          </motion.span>
+                        )}
+                      </motion.div>
+                      <AnimatePresence>
+                        {subItem.submenu && activeSubDropdown === subItem.name && (
+                          <motion.div
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            variants={dropdownVariants}
+                            className="pl-4 space-y-2 mt-2"
+                            role="menu"
+                            aria-label={`${subItem.name} submenu`}
+                          >
+                            {subItem.submenu.map((child) => (
+                              <motion.div
+                                key={child.name}
+                                className="text-base cursor-pointer"
+                                variants={itemVariants}
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
+                                role="menuitem"
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setActiveDropdown(null);
+                                  setActiveSubDropdown(null);
+                                  router.push(child.link);
+                                }}
+                              >
+                                {child.name}
+                              </motion.div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   ))}
                 </motion.div>
               )}

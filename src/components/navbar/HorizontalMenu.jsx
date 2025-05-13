@@ -1,106 +1,182 @@
-import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
-import { menuItems } from "./data";
-import { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
+import Link from "next/link";
+import { useState, useRef } from "react";
+import { menuItems, directLinks } from "./data";
+import { gsap } from "gsap";
 
-const HorizontalMenu = ({ isOpen, setIsOpen }) => {
-  const router = useRouter();
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const menuRef = useRef(null);
+const HorizontalMenu = () => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState(null);
+  const lineRefs = useRef([]);
+  const arrowRefs = useRef([]);
 
-  const handleItemHover = (item) => {
-    if (item.submenu) {
-      setActiveDropdown(item.name);
+  const handleMouseEnter = (index) => {
+    setOpenDropdown(index);
+    const line = lineRefs.current[index];
+    if (line) {
+      gsap.to(line, {
+        width: line.classList.contains("submenu-line") ? "100%" : "80%",
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.inOut",
+        transformOrigin: "left",
+      });
     }
   };
 
-  const handleItemClick = (item) => {
-    if (item.submenu) {
-      setActiveDropdown(activeDropdown === item.name ? null : item.name);
-    } else {
-      setIsOpen(false);
-      router.push(item.link);
+  const handleMouseLeave = () => {
+    const currentIndex = openDropdown;
+    if (currentIndex !== null) {
+      const line = lineRefs.current[currentIndex];
+      if (line) {
+        gsap.to(line, {
+          width: 0,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.inOut",
+          transformOrigin: "right",
+        });
+      }
+    }
+    setOpenDropdown(null);
+    setOpenSubDropdown(null);
+  };
+
+  const handleSubMouseEnter = (subIndex) => {
+    setOpenSubDropdown(subIndex);
+    const arrow = arrowRefs.current[subIndex];
+    if (arrow) {
+      gsap.to(arrow, {
+        rotation: 180,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
     }
   };
 
-  const itemVariants = {
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: { type: "spring", stiffness: 300, delay: 0.1 },
-    },
-    closed: { opacity: 0, x: -20 },
+  const handleSubMouseLeave = () => {
+    const currentSubIndex = openSubDropdown;
+    if (currentSubIndex !== null) {
+      const arrow = arrowRefs.current[currentSubIndex];
+      if (arrow) {
+        gsap.to(arrow, {
+          rotation: 0,
+          duration: 0.3,
+          ease: "power2.inOut",
+        });
+      }
+    }
+    setOpenSubDropdown(null);
   };
 
-  const dropdownVariants = {
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 300, damping: 24 },
-    },
-    closed: {
-      opacity: 0,
-      y: -20,
-      transition: { duration: 0.2 },
-    },
-  };
+  // Combine menuItems and directLinks, with menuItems first
+  const allItems = [...menuItems, ...directLinks];
 
   return (
-    <nav
-      className={`w-[87%] xl:w-[85%] absolute top-0 h-[100px] lg:flex items-center justify-end gap-5 xl:gap-6 2xl:gap-8 right-2 xl:right-6 z-50`}
-      role="navigation max-w-[70vw]"
-      aria-label="Main navigation"
-    >
-      {menuItems.map((item,index) => (
-        <motion.div
-          className={`${index === menuItems.length-1 ? "text-[#37403D] hover:text-[#EAEEEE] bg-[#8AD5B7] rounded-full p-2 flex-shrink-0" :"text-[#EAEEEE] hover:text-[#8AD5B7]"} text-xs xl:text-sm 2xl:text-lg font-semibold cursor-pointer relative`}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => handleItemClick(item)}
-          role="button"
-          aria-expanded={activeDropdown === item.name}
-          aria-controls={item.submenu ? `submenu-${item.name}` : undefined}
-          key={index}
-          onMouseEnter={() => handleItemHover(item)}
-        >
-          {item.name}
-          <AnimatePresence>
-            {item.submenu && activeDropdown === item.name && (
-              <motion.div
-                id={`submenu-${item.name}`}
-                initial="closed"
-                animate="open"
-                exit="closed"
-                variants={dropdownVariants}
-                onMouseLeave={() => setActiveDropdown(null)}
-                ref={menuRef}
-                className="absolute top-6 bg-gray-800 text-[#EAEEEE] rounded-md shadow-lg p-4 mt-3 text-base space-y-2"
-                role="menu"
-                aria-label={`${item.name} submenu`}
+    <nav className="inline-flex items-center text-[#DCE2E2] h-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex justify-between items-center h-full">
+          {/* Menu Items and Direct Links */}
+          <div className="flex items-center justify-evenly h-full">
+            {allItems.map((item, index) => (
+              <div
+                key={item.name}
+                className="relative group h-full"
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
               >
-                {item.submenu.map((subItem) => (
-                  <motion.div
-                    key={subItem.name}
-                    className="cursor-pointer hover:hover:text-[#8AD5B7] text-nowrap font-medium"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    role="menuitem"
-                    onClick={() => {
-                      setIsOpen(false);
-                      setActiveDropdown(null);
-                      router.push(subItem.link);
-                    }}
-                  >
-                    {subItem.name}
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-      ))}
+                {/* Menu Item */}
+                <Link
+                  href={item.link || "#"}
+                  className={`px-3 py-2 text-sm font-medium relative transition-all duration-300 ease-in-out group-hover:scale-105 flex items-center h-full
+                    ${
+                      item.submenu
+                        ? "text-[#DCE2E2] hover:bg-[#37403D] hover:text-[#8AD5B7]"
+                        : "text-[#DCE2E2]"
+                    }`}
+                  style={{
+                    transitionProperty: "background-color, color, transform",
+                    transitionDuration: "300ms",
+                    transitionTimingFunction: "ease-in-out",
+                  }}
+                >
+                  {item.name}
+                  {/* Sliding Line for items with submenu */}
+                  {item.submenu && (
+                    <span
+                      ref={(el) => (lineRefs.current[index] = el)}
+                      className={`absolute top-2 left-0 h-1 bg-[#8AD5B7] submenu-line
+                        ${openDropdown === index ? "opacity-100" : "opacity-0"}`}
+                      style={{ width: 0 }}
+                    ></span>
+                  )}
+                  {/* Blue Underline for items without submenu */}
+                  {!item.submenu && (
+                    <span
+                      ref={(el) => (lineRefs.current[index] = el)}
+                      className={`absolute bottom-1/3 left-[10%] h-0.5 bg-[#8AD5B7]
+                        ${openDropdown === index ? "opacity-100" : "opacity-0"}`}
+                      style={{ width: 0 }}
+                    ></span>
+                  )}
+                </Link>
+
+                {/* Dropdown */}
+                {item.submenu && openDropdown === index && (
+                  <div className="absolute -left-[15vw] w-[40vw] bg-[#37403D] rounded-md shadow-lg z-10">
+                    {item.submenu.map((subItem, subIndex) => (
+                      <div
+                        key={subItem.name}
+                        className="relative"
+                        onMouseEnter={() => handleSubMouseEnter(subIndex)}
+                        onMouseLeave={handleSubMouseLeave}
+                      >
+                        <Link
+                          href={subItem.link || "#"}
+                          className="flex items-center gap-2 justify-between px-4 py-2 text-sm text-[#DCE2E2] hover:bg-gray-100 group hover:group-hover:text-[#8AD5B7]"
+                        >
+                          {subItem.name}
+                          {subItem.submenu && (
+                            <svg
+                              ref={(el) => (arrowRefs.current[subIndex] = el)}
+                              className="h-4 w-4 mr-1"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          )}
+                        </Link>
+
+                        {/* Nested Submenu */}
+                        {subItem.submenu && openSubDropdown === subIndex && (
+                          <div className="mt-0 pl-4 w-full shadow-lg z-10">
+                            {subItem.submenu.map((nestedItem) => (
+                              <Link
+                                key={nestedItem.name}
+                                href={nestedItem.link || "#"}
+                                className="block px-4 py-2 text-sm text-[#DCE2E2] hover:text-[#1E232261] hover:bg-gray-100"
+                              >
+                                {nestedItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };

@@ -54,7 +54,7 @@ const Footer = () => {
     },
     {
       title: "Services & Solutions",
-      links: ["Alerts", "Property Management", "Property Development"],
+      links: ["Property Management", "Owner Representative", "Inspection Services", "Expediting Services","Alert Service"],
     },
   ];
 
