@@ -21,15 +21,18 @@ export const section01 = {
     ],
     img: "/pics/alert-pic1.png",
     imgArray: [
-      { img: "/pics/alert-pic2.png",
-        text: "Coverage:All relevant NYC agencies (DOB, HPD, FDNY, etc.)"
-       },
-      { img: "/pics/alert-pic3.png",
-        text: "Customization: Alerts are ranked by urgency or department."
-       },
-      { img: "/pics/alert-pic4.png",
-        text: "Multi-Channel Delivery: Receive alerts via email, SMS, or directly in your portal"
-       },
+      {
+        img: "/pics/alert-pic2.png",
+        text: "Coverage:All relevant NYC agencies (DOB, HPD, FDNY, etc.)",
+      },
+      {
+        img: "/pics/alert-pic3.png",
+        text: "Customization: Alerts are ranked by urgency or department.",
+      },
+      {
+        img: "/pics/alert-pic4.png",
+        text: "Multi-Channel Delivery: Receive alerts via email, SMS, or directly in your portal",
+      },
     ],
   },
 };
@@ -47,7 +50,8 @@ export const section2 = {
   div2: {
     heading: "Add/Remove Property, Portfolio Management",
     text1: "Build Your Portfolio in Minutes, Not Days",
-    text2: "Add properties individually or in bulk, using our user-friendly portal, search by address, BIN, or let our dedicated agents assist you, Remove properties with a single click.",
+    text2:
+      "Add properties individually or in bulk, using our user-friendly portal, search by address, BIN, or let our dedicated agents assist you, Remove properties with a single click.",
     title: "Ways to add or remove your properties",
     items: [
       "Address Search: Enter an address for instant results.",
@@ -55,7 +59,7 @@ export const section2 = {
       "Agent Assistance: Request help from our PBS team",
       "Bulk Upload: Add multiple properties via CSV for large portfolios.",
       "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
-    ]
+    ],
   },
   div3: {
     heading: "Centralize Data with the Property Card",
@@ -72,4 +76,127 @@ export const section2 = {
   },
 };
 
-export const section3 = {};
+export const section3 = {
+  div1: {
+    heading: "Automated Customizable Reports",
+    text1: "From Data to Decisions in One click",
+    text2:
+      "Upon signing up, instantly receive a summary report of your property portfolio. Then, choose weekly or monthly updates tailored to your needs.",
+    text3:
+      "Report Types: Compliance Status, Upcoming deadlines, violation summaries.",
+    itemHeading: "Sample Reports:",
+    items: [
+      "Weekly Violation Digest: Open vs resolved violations, cure deadlines, and associated fines",
+      "Monthly Permit Expiration Tracker: Renewal costs and submission links for expiring permits",
+      "Custom Executive Summaries: Share high-level compliance stats with stakeholders.",
+    ],
+    text4: "Export Options: Download as PDF, Excel, or share via link.",
+    text5: "Schedule Alerts: Get notified when reports are ready",
+  },
+
+  div2: {
+    heading: "Custom Property Inspections",
+    text1: "Track deadlines your way",
+    text2:
+      "Create unlimited inspection profiles or templates with bespoke checklists for NYC-mandated deadlines, reminders, or internal processes.",
+    text3:
+      "Unlimited inspections: Fire safety, elevator, plumbing, and more; Photo Uploads: Attach time-stamped images to inspection records",
+    text4:
+      "Multi-Step Alerts: Set reminders 30, 15 and 3 days before deadlines",
+    img: "/pics/alert-pic5.png",
+  },
+
+  div3: {
+    img: "/pics/alert-pic6.png",
+    text1: "Secure, Centralized, Always Available",
+    text2:
+      "Manage your properties anytime, anywhere from any device as our secure member portal gives you round-the-clock access to:",
+    itemHeading: "Dashboard Features:",
+    items: [
+      "Live Agency Feed: Stream updates from DOB, HPD, FDNY and other relevant departments",
+      "Web Application: Our Web portal allows you to scan violation stickers or permits to auto-update your property card",
+    ],
+    divList: [
+      "Download historical records and permits",
+      "Communicate with PBS support team",
+      "Track inspection progress",
+      "View and update property details",
+    ],
+  },
+
+  div4: {
+    heading: "How It Works",
+    text1: "Three Simple Steps to Stress-Free Compliance",
+    signup_confirm: {
+      heading: "Sign Up & Confirm",
+      items: [
+        "Complete a 2-minute registration form.",
+        "Welcome Email: You’ll receive instant confirmation with a link to download our mobile app",
+        "Property Setup: Add buildings by address, BIN, or upload a CSV file.",
+      ],
+    },
+    act_fast: {
+      heading: "Act Fast with PBS Support",
+      items: [
+        "Membership Portal Access: Log in to view detailed alerts, property data, and agency documents.",
+        "Auto-Generated Checklists: Every alert triggers a step-by-step remediation plan",
+        "Team Action: A PBS specialist starts resolving issue immediately (e.g., filing violations, scheduling inspections)",
+      ],
+    },
+    monitoring_begins: {
+      heading: "24/7 Monitoring Begins",
+      items: [
+        "Real-Time Tracking: Our System scans all relevant NYC agencies (DOB, HPD, FDNY, ECB, etc.) for updates tied to your property.",
+        "Instant Alerts: Get notified via email and push notifications on the PBS mobile app for:",
+      ],
+      list: [
+        "New Violations",
+        "Inspection Deadlines",
+        "Zoning Changes",
+        "Permit expirations",
+      ],
+    },
+  },
+};
+
+export const section4 = {
+  div1: {
+    left: {
+      heading: "Pricing & Plans",
+      text: "1- Free Alert Service (First 3 Months) $0/Month for unlimited alerts and mobile app access.",
+    },
+    right: [
+      {
+        heading: "This Includes",
+        items: [
+          "Basic monitoring for violations, deadlines, and permits.",
+          "Email + app notifications",
+          "24/7 emergency support",
+        ],
+      },
+      {
+        heading: "Post-Trial Plan ($9 /Building /Month)",
+        items: [
+          "All Free Features, Plus",
+          "Priority Alerts: Urgency-ranked notifications",
+          "Historical Data Access: Full violation/Inspection history",
+        ],
+      },
+    ],
+  },
+
+  div2: {
+    heading: "Why Register Today:",
+    items: [
+      "Free for 3 Months: $0 upfront, pay only $9/Building/Month after your trial ends",
+      "Instant Portal Access: Track Violations, deadlines, and PBS’s progress in real time",
+    ],
+  },
+  div3: {
+    text: "Register Your Property now to activate 24/7 monitoring & Unlock full access to your Membership Portal.",
+    cta: {
+      text: "Register Now",
+      link: "/contacts",
+    },
+  },
+};
