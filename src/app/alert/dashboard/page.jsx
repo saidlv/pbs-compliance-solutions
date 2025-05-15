@@ -51,7 +51,7 @@ const Page = () => {
         })}
       </div>
 
-      <div className="w-full flex flex-col justify-center items-center mt-10">
+      <div className="w-full flex flex-col justify-center items-center mt-6">
         <div className="flex justify-between items-center w-[90%] mx-auto text-[#89A096] font-semibold text-lg xl:text-xl p-2 rounded-full">
           <div className="flex items-center text-white p-2 rounded-md">
             <span className="mr-2 text-[#89A096]">Show</span>
@@ -77,10 +77,10 @@ const Page = () => {
           </div>
         </div>
 
-      <div className="p-10 bg-[#2E3734] rounded-xl w-[90%] mx-auto mt-10">
-      <table className="text-[#D9D9D9]  overflow-hidden w-full text-center border-collapse border-4 border-[#2E3734]">
+      <div className="p-10 bg-[#2E3734] rounded-xl w-[90%] mx-auto mt-4">
+      <table className="text-[#D9D9D9]  overflow-hidden w-full text-center">
       <thead>
-        <tr className="border-b border-[#89A096] text-[#8AD5B7] text-2xl font-semibold">
+        <tr className="border-b-2 border-[#8AD5B7] text-[#8AD5B7] text-2xl font-semibold">
           <th className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]">Address</th>
           <th className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]">Sync Status</th>
           <th className="w-1/5 px-2 py-6">View</th>
@@ -90,7 +90,7 @@ const Page = () => {
         {Array(9)
           .fill("")
           .map((_, index) => (
-            <tr key={index} className="border-b border-[#89A096] text-[#D9D9D9] text-lg font-semibold">
+            <tr key={index} className={`${index != 8 ? "border-b-2" : ""} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}>
               <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
               <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
               <td className="w-1/5 px-2 py-6"></td>

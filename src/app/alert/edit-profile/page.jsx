@@ -115,7 +115,7 @@ return(
       </div>
 
       {/* Help Center and Logout */}
-      <div className="w-full max-w-2xl px-6 py-6 text-left flex justify-center gap-10">
+      <div className="w-full max-w-2xl px-6 pb-6 pt-10 text-left flex justify-center gap-10">
           <button className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all w-[35%] md:w-[25%]"
            onClick={handleSave}
           >
