@@ -60,7 +60,7 @@ return(
           <td className="w-2/3 py-6">
             <input
               type="text"
-              value={profileData.Name}
+              value={profileData.Name ?? ""}
               onChange={(e) => setProfileData({ ...profileData, Name: e.target.value })}
               className="px-10 bg-transparent border-none outline-none w-full text-[#89A096] font-semibold text-xl"
             />
@@ -71,7 +71,7 @@ return(
           <td className="w-2/3 py-6">
             <input
               type="email"
-              value={profileData.Email}
+              value={profileData.Email ?? ""}
               onChange={(e) => setProfileData({ ...profileData, Email: e.target.value })}
               className="px-10 bg-transparent border-none outline-none w-full text-[#89A096] font-semibold text-xl"
             />
@@ -82,7 +82,7 @@ return(
           <td className="w-2/3 py-6">
             <input
               type="text"
-              value={profileData.Company}
+              value={profileData.Company ?? ""}
               onChange={(e) => setProfileData({ ...profileData, Company: e.target.value })}
               className="px-10 bg-transparent border-none outline-none w-full text-[#89A096] font-semibold text-xl"
             />
@@ -93,7 +93,7 @@ return(
           <td className="w-2/3 py-6">
             <input
               type="text"
-              value={profileData.Address}
+              value={profileData.Address ?? ""}
               onChange={(e) => setProfileData({ ...profileData, Address: e.target.value })}
               className="px-10 bg-transparent border-none outline-none w-full text-[#89A096] font-semibold text-xl"
             />
@@ -104,7 +104,7 @@ return(
           <td className="w-2/3 py-6">
             <input
               type="tel"
-              value={profileData.Phone}
+              value={profileData.Phone ?? ""}
               onChange={(e) => setProfileData({ ...profileData, Phone: e.target.value })}
               className="px-10 bg-transparent border-none outline-none w-full text-[#89A096] font-semibold text-xl"
             />
