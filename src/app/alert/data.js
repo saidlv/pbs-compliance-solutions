@@ -161,28 +161,26 @@ export const section3 = {
 
 export const section4 = {
   div1: {
+    heading: "Pricing & Plans",
     left: {
-      heading: "Pricing & Plans",
-      text: "1- Free Alert Service (First 3 Months) $0/Month for unlimited alerts and mobile app access.",
-    },
-    right: [
-      {
-        heading: "This Includes",
-        items: [
+      heading: "Free Alert Service",
+      text1: "1- Free Alert Service (First 3 Months) $0/Month for unlimited alerts and mobile app access.",
+      text2: "This Includes",
+      items: [
           "Basic monitoring for violations, deadlines, and permits.",
           "Email + app notifications",
           "24/7 emergency support",
         ],
-      },
-      {
-        heading: "Post-Trial Plan ($9 /Building /Month)",
+    },
+    right: {
+        heading: "Post-Trial Plan",
+        text: "($9 /Building /Month)",
         items: [
           "All Free Features, Plus",
           "Priority Alerts: Urgency-ranked notifications",
           "Historical Data Access: Full violation/Inspection history",
         ],
       },
-    ],
   },
 
   div2: {

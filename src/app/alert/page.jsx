@@ -385,7 +385,7 @@ const Page = () => {
 
           <div className="w-full flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-6 2xl:gap-8">
             <div className="flex flex-col justify-center items-center lg:justify-between gap-5 lg:gap-8 w-[80%] lg:w-[50%]">
-              <div className="flex flex-col justify-center items-center lg:justify-start gap-3 p-6 rounded-2xl w-full bg-[#2B3331]">
+              <div className="flex flex-col justify-center items-center lg:justify-start gap-3 p-6 rounded-3xl w-full bg-[#2B3331]">
                 <h3 className="text-2xl lg:text-3xl font-semibold text-left w-full">
                   {section3.div4.signup_confirm.heading}
                 </h3>
@@ -410,7 +410,7 @@ const Page = () => {
                   })}
                 </div>
               </div>
-              <div className="flex flex-col justify-center items-center lg:justify-start gap-3 p-6 rounded-2xl w-full bg-[#2B3331]">
+              <div className="flex flex-col justify-center items-center lg:justify-start gap-3 p-6 rounded-3xl w-full bg-[#2B3331]">
                 <h3 className="text-2xl lg:text-3xl font-semibold text-left w-full">
                   {section3.div4.act_fast.heading}
                 </h3>
@@ -436,7 +436,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col justify-center items-center lg:justify-start gap-3 lg:gap-6 p-6 rounded-2xl w-full lg:w-[50%] bg-[#2B3331]">
+            <div className="flex flex-col justify-center items-center lg:justify-start gap-3 lg:gap-6 p-6 rounded-3xl w-full lg:w-[50%] bg-[#2B3331]">
               <h3 className="text-2xl lg:text-3xl font-semibold text-center w-full">
                 {section3.div4.monitoring_begins.heading}
               </h3>
@@ -490,46 +490,69 @@ const Page = () => {
 
       {/* Section 04 */}
       <section className="px-6 md:px-10 xl:px-16 flex flex-col gap-6 lg:gap-10 text-[#DCE2E2]">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-6 2xl:gap-8 w-full">
-          <div className="flex flex-col justify-center items-center lg:items-start gap-3 lg:gap-5 lg:p-6 w-[80%] mx-auto lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight text-left font-semibold text-[#8AD5B7] font-conthrax">
-              {section4.div1.left.heading}
-            </h2>
-            <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096] font-semibold text-center lg:text-left">
-              {section4.div1.left.text}
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center gap-3 lg:gap-5 lg:p-6 w-[80%] mx-auto lg:w-1/2">
-            {section4.div1.right.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col justify-center items-center lg:items-start gap-3 lg:gap-5 w-full"
-                >
-                  <h3 className="text-2xl 2xl:text-3xl font-semibold text-center lg:text-left w-auto ml-0 bg-[#1E2322] rounded-xl p-3">
-                    {item.heading}
-                  </h3>
-                  <div className="w-full flex flex-col gap-1">
-                    {item.items.map((subItem, subIndex) => {
-                      return (
-                        <div
-                          key={subIndex}
-                          className="flex flex-col gap-1 items-center lg:items-start"
-                        >
-                          <p className="text-lg lg:text-xl 2xl:text-2xl text-[#89A096] font-semibold">
-                            {subItem}
-                          </p>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })}
+        <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8 w-[80%] md:w-[75%] xl:w-[65%] mx-auto">
+          <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight text-center font-semibold text-[#8AD5B7] font-conthrax  lg:max-w-lg lg:mx-auto">
+            {section4.div1.heading}
+          </h2>
+          <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-6 2xl:gap-8 w-full mx-auto">
+            <div className="bg-[#2C3432] p-6 rounded-2xl flex-shrink-0 flex flex-col gap-3 md:gap-6 items-center justify-start h-auto w-[80%] md:w-1/2">
+              <h2 className="text-2xl xl:text-3xl p-3 text-[#DCE2E2] text-center bg-[#1E2322] rounded-lg ">
+                {section4.div1.left.heading}
+              </h2>
+              <div>
+              <p className="text-lg lg:text-xl font-semibold text-[#89A096]">
+                {section4.div1.left.text1}
+              </p>
+              <span className="text-lg lg:text-xl font-semibold text-[#DCE2E2] w-full">
+                {section4.div1.left.text2}
+              </span>
+              <div className="w-full flex flex-col gap-1">
+                {section4.div1.left.items.map((item, index) => {
+                  return (
+                    <p
+                      key={index}
+                      className="text-lg lg:text-xl 2xl:text-2xl text-[#89A096] font-semibold"
+                    >
+                      {item.includes(":") && (
+                        <span className="text-[#DCE2E2] itlaic">
+                          {item.split(":")[0] + ": "}
+                        </span>
+                      )}
+                      {item.substring(item.indexOf(":") + 1)}
+                    </p>
+                  );
+                })}
+              </div>
+              </div>
+            </div>
+
+             <div className="bg-[#2C3432] p-6 rounded-2xl flex-shrink-0 flex flex-col gap-3 md:gap-6 items-center justify-start h-auto w-[80%] md:w-1/2">
+               <h2 className="text-2xl xl:text-3xl p-3 text-[#DCE2E2] text-center bg-[#1E2322] rounded-lg ">
+                {section4.div1.right.heading}
+              </h2>
+              <div>
+              <span className="text-lg lg:text-xl font-semibold text-[#DCE2E2] w-full">
+                {section4.div1.right.text}
+              </span>
+
+              <div className="w-full flex flex-col gap-1">
+                {section4.div1.right.items.map((item, index) => {
+                  return (
+                    <p
+                      key={index}
+                      className="text-lg lg:text-xl 2xl:text-2xl text-[#89A096] font-semibold"
+                    >
+                      {item}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 2xl:gap-8 w-full mx-auto rounded-xl bg-[#2E3734] p-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 2xl:gap-8 w-full mx-auto rounded-xl">
           <div className="w-full lg:w-1/2">
             <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight text-center font-semibold text-[#8AD5B7] font-conthrax  lg:max-w-lg lg:mx-auto">
               {section4.div2.heading}
@@ -539,7 +562,7 @@ const Page = () => {
           <div className="flex flex-col gap-1 w-full lg:w-1/2">
             {section4.div2.items.map((item, index) => {
               return (
-                <div key={index} className="flex items-start">
+                <div key={index} className="flex items-start lg:max-w-[80%] 3xl:max-w-[90%]">
                   <DotIcon
                     size={32}
                     className="inline-block mr-2 flex-shrink-0 text-[#89A096]"
@@ -553,21 +576,12 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8 w-full mx-auto">
-          <p className="text-lg lg:text-xl 2xl:text-2xl font-semibold max-w-2xl text-center mx-auto">
+          <p className="text-lg lg:text-xl 2xl:text-2xl font-semibold max-w-2xl text-center mx-auto mb-10">
             {section4.div3.text}
           </p>
-
-          <CTA2
-            isArrow={false}
-            text={section4.div3.cta.text}
-            href={section4.div3.cta.link}
-            styling={`w-[90%] lg:w-auto mt-0 mx-auto mb-10 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 xl:px-3 2xl:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}
-          />
-        </div>
       </section>
 
-      <ImageCarousel/>
+      <ImageCarousel />
     </div>
   );
 };
