@@ -6,6 +6,7 @@ import { conthrax, gnuolane, poppins } from "@/lib/fonts";
 import { Suspense } from "react";
 import PageLoader from "@/components/PageLoader";
 import CustomErrorBoundary from "@/components/ErrorBoundary";
+import Header from "@/components/navbar2/Header";
 
 export default function DashboardLayout({ children }) {
   return (
@@ -17,6 +18,7 @@ export default function DashboardLayout({ children }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
+            <Header />
             {children}
             <Footer2 />
           </motion.div>

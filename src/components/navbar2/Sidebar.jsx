@@ -2,6 +2,8 @@
 import { X, Menu } from "lucide-react";
 import Image from "next/image";
 import "./Sidebar.css"; // Import your CSS file for styles
+import SidebarMenu from "./SidebarMenu";
+import { useState } from "react";
 
 const Sidebar = () => {
   const iconList = [
@@ -16,28 +18,34 @@ const Sidebar = () => {
     "/pics/alert-sidebar-9.png",
   ];
 
+  const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
-    <div
-      className="fixed top-0 left-0 h-screen w-[10vw] lg:w-[5vw] bg-[#1E2322] z-50 flex flex-col items-center justify-around gap-6 lg:gap-10"
-    >
+    <div className="fixed top-0 left-0 h-screen w-[10vw] lg:w-[5vw] bg-[#1E2322] z-50 flex flex-col items-center justify-around gap-10">
       {/* Burger Icon */}
-        <button  className="text-[#D9D9D9] p-2 flex-shrink-0 h-[60px] lg:h-[100px] flex items-center">
-          <Menu className="w-8 h-8" />
-        </button>
+      <button
+        onClick={() => setToggleMenu(!toggleMenu)}
+        className="text-[#D9D9D9] p-2 flex-shrink-0 h-[60px] lg:h-[100px] flex items-center"
+      >
+        <Menu className="lg:w-8 w-6 h-6 lg:h-8" />
+      </button>
 
       {/* Icon List */}
-      <div className="flex flex-col items-center justify-start gap-3 xl:gap-5 w-full h-full overflow-y-auto custom-scrollbar">
-        {iconList.map((icon, index) => (
-          <Image
-            src={icon}
-            alt={`Icon ${index + 1}`}
-            width={100}
-            height={100}
-            className="mx-auto object-contain w-1/3 h-auto"
-            key={index}
-          />
-        ))}
-      </div>
+        <SidebarMenu setToggleMenu={setToggleMenu} toggleMenu={toggleMenu}/>
+     
+        <div className="flex flex-col items-center justify-start gap-10 xl:gap-5 w-full h-full">
+          {iconList.map((icon, index) => (
+            <Image
+              src={icon}
+              alt={`Icon ${index + 1}`}
+              width={100}
+              height={100}
+              className="mx-auto object-contain w-1/3 h-auto"
+              key={index}
+            />
+          ))}
+        </div>
+      
     </div>
   );
 };

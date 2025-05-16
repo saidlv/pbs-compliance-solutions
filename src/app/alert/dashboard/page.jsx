@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import Sidebar from "@/components/navbar2/Sidebar";
-import Header from "@/components/navbar2/Header";
 
 const Page = () => {
   const [entries, setEntries] = useState(20);
@@ -26,8 +25,6 @@ const Page = () => {
 
   return (
     <div className="relative bg-[#37403D] w-full">
-      {/* Header */}
-      <Header />
 
       {/* Sidebar (Always Visible) */}
       <Sidebar />
@@ -101,7 +98,7 @@ const Page = () => {
             <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full mt-4">
               <table className="text-[#D9D9D9] text-center w-full">
                 <thead>
-                  <tr className="border-b-2 border-[#8AD5B7] text-[#8AD5B7] text-2xl font-semibold">
+                  <tr className="border-b-2 border-[#8AD5B7] text-[#8AD5B7] text-lg sm:text-xl lg:text-2xl font-semibold">
                     <th className="w-2/5 lg:px-2 py-6 border-r-2 border-[#8AD5B7]">Address</th>
                     <th className="w-1/5 lg:px-2 py-6 border-r-2 border-[#8AD5B7]">Sync Status</th>
                     <th className="w-1/5 lg:px-2 py-6">View</th>

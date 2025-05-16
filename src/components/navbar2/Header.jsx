@@ -10,7 +10,7 @@ import { Menu } from "lucide-react";
 // Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-const Header = ({ toggleSidebar }) => {
+const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const ref = useRef(null);
   const imageRef = useRef(null);
@@ -62,7 +62,7 @@ const Header = ({ toggleSidebar }) => {
         transition={{ duration: 0.5 }}
       >
 
-        <div className="w-[55%] flex justify-between items-center">
+        <div className="w-[60%] sm:w-[55%] flex justify-between items-center">
           <div
             className="cursor-pointer lg:p-4 pl-0"
             onClick={() => {
@@ -75,7 +75,7 @@ const Header = ({ toggleSidebar }) => {
                 width={100}
                 height={100}
                 alt="Website Logo"
-                className="w-[40px] md:w-[45px] xl:w-[60px] object-contain h-auto relative xl:left-[50px] lg:left-[25px]"
+                className="w-[40px] md:w-[45px] xl:w-[60px] object-contain h-auto relative"
               />
             </motion.div>
           </div>
@@ -84,7 +84,7 @@ const Header = ({ toggleSidebar }) => {
             <p className="text-[#89A096] text-base md:text-lg xl:text-xl font-semibold">
               USER @PBS
             </p>
-            <div className="aspect-square rounded-full w-10 md:w-12 xl:w-16 bg-[#D9D9D9]"></div>
+            <div className="aspect-square rounded-full w-8 sm:w-12 xl:w-16 bg-[#D9D9D9]"></div>
           </div>
         </div>
       </motion.div>
