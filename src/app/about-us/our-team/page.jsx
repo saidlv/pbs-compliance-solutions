@@ -100,8 +100,7 @@ const Page = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                  <div className="w-full flex flex-col items-start justify-center gap-1">
+                  <div className="w-full flex flex-col items-center justify-center gap-1">
                     <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                       {member.name}
                     </h3>
@@ -141,8 +140,7 @@ const Page = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="bg-[#ffff] aspect-square flex-shrink-0 h-full rounded-full shadow-lg transition-transform hover:scale-105 hidden md:block"></div>
-                  <div className="w-full flex flex-col items-start justify-center gap-1">
+                  <div className="w-full flex flex-col items-center justify-center gap-1">
                     <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
                       {member.name}
                     </h3>

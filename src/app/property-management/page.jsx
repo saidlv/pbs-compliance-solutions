@@ -72,12 +72,12 @@ const Page = () => {
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 2xl:gap-16 w-full py-6 lg:py-10">
           <div className="bg-[#2E3734] rounded-xl p-4 lg:p-6 w-[80%] lg:w-1/2 2xl:w-[40%] flex 3xl:items-center">
-            <p className="text-[#89A096] text-xl xl:text-2xl font-semibold text-center">
+            <p className="text-[#89A096] text-xl xl:text-2xl font-semibold text-center lg:text-left">
               {Div2_Section1.left}
             </p>
           </div>
           <div className="bg-[#2E3734] rounded-xl p-4 lg:p-6 w-[80%] lg:w-1/2 flex flex-col items-center justify-between">
-            <p className="text-[#89A096] text-xl xl:text-2xl font-semibold text-center">
+            <p className="text-[#89A096] text-xl xl:text-2xl font-semibold text-center lg:text-left">
               {Div2_Section1.right}
             </p>
             <Image

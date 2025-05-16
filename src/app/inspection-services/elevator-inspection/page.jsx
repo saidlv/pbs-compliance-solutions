@@ -1,10 +1,12 @@
+'use client';
 import React from "react";
 import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
 import { DotIcon } from "lucide-react";
 import ImageCarousel from "@/components/ImageCarousel";
+import CTA2 from "@/components/CTA2";
 
-const page = () => {
+const Page = () => {
   const section01 = {
     title: "7- Elevator Inspection",
     heading: "Elevators aren’t just Lifts, they’re legal liabilities",
@@ -424,11 +426,34 @@ const page = () => {
             height={500}
             className="w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto"
           /> 
-        </div>             
+        </div>            
+
+        <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col justify-center items-center gap-3 lg:gap-6 box-border pb-10 lg:pb-16">
+          <div className="w-full flex flex-col items-center justify-center gap-3">
+          <p className="text-[#89A096] text-lg lg:text-xl font-semibold">Final Call to Action</p>  
+          <p className="text-[#89A096] text-lg lg:text-xl font-semibold">Act Now or Risk $5k Fines: </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 2xl:gap-10">
+            <CTA2
+              text="Book Your Slot Today"
+              isArrow={false}
+              href="/contacts"
+              styling={`w-[90%] md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
+            />
+
+            <CTA2
+              text="Call Our Inspectors (914-316-6956)"
+              isArrow={false}
+              href="/contacts"
+              styling={`w-[90%] md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
+            />
+          </div>
+        </div> 
       </section>       
       <ImageCarousel />
     </div>
   );
 };
 
-export default page;
+export default Page;

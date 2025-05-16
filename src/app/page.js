@@ -12,8 +12,9 @@ export default function Home() {
       <div className="bg-brand-dark">
         <div className="lg:w-[100%] mx-auto overflow-hidden">
           <Hero />
-          <Alerts />
           <Services />
+          <Alerts />
+          
           <Solutions />
           <AboutCompany />
         </div>

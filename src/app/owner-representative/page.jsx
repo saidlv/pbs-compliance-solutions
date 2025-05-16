@@ -317,7 +317,7 @@ const Page = () => {
               bureaucratic red tape, and contractors. Let PBS protect your
               investment and peace of mind
             </p>
-            <div className="max-w-4xl mx-auto mt-10 flex flex-col lg:flex-row gap-12 items-center justify-start">
+            <div className="max-w-4xl mx-auto mt-10 flex flex-col lg:flex-row gap-12 items-center justify-center">
               <CTA2
                 text="Get Started today"
                 isArrow={false}

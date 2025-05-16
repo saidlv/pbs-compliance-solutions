@@ -1,8 +1,8 @@
 "use client";
 
-import HeroSection from "../../../src/components/HeroSection";
+import HeroSection from "../../../../src/components/HeroSection";
 import { motion } from "framer-motion";
-import { elevatorComplianceData } from "../../../src/app/inspection-services/data";
+import { elevatorComplianceData } from "../../../../src/app/inspection-services/data";
 
 const Page = () => {
   return (

@@ -92,7 +92,7 @@ const Page = () => {
                     <span className="font-semibold">{item.split(":")[0]}</span>
                   </h4>
                   <p className="text-xs font-semibold text-[#89A096]">
-                    {item}
+                    {item.split(":")[1]}
                   </p>
                 </div>
               ))}

@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { AlignJustify, X } from "lucide-react";
 
-const HamburgerMenu = ({ menuItems, directLinks }) => {
+const HamburgerMenu = ({ navItems }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
@@ -92,7 +92,7 @@ const HamburgerMenu = ({ menuItems, directLinks }) => {
   }, [isHamburgerOpen]);
 
   // Combine menuItems and directLinks for dropdown
-  const allItems = [...menuItems, ...directLinks];
+  const allItems = navItems;
 
   return (
     <div className="relative group h-full">

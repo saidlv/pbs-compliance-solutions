@@ -1,90 +1,78 @@
-import React from 'react';
-import Slider from 'react-slick';
-import Image from 'next/image';
-import Link from 'next/link';
-import "slick-carousel/slick/slick.css";
+"use client";
+import React from "react";
+import Slider from "react-slick";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick-theme.css";
-import CTA from '@/components/CTA';
-import CustomImage from '@/app/CustomImage';
+import "slick-carousel/slick/slick.css";
+import CustomImage from "@/app/CustomImage";
 
-// Define the hero sections array with 5 sets of images
+// Define the hero sections array with 3 images
 const heroSections = [
-  "/pics/home-hero-1.png","/pics/home-hero-2.png","/pics/home-hero-3.png","/pics/home-hero-4.png","/pics/home-hero-5.png" 
+  "/pics/home-hero-1.png",
+  "/pics/home-hero-2.png",
+  "/pics/home-hero-3.png",
 ];
+
+// Custom Next Arrow Component
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-6 top-1/2 transform -translate-y-1/2 rounded-full p-2 bg-transparent hover:bg-[#8AD5B7] transition duration-300 z-20"
+    >
+      <ChevronRight className="text-[#DCE2E2] w-8 h-8" />
+    </button>
+  );
+}
+
+// Custom Prev Arrow Component
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-6 top-1/2 transform -translate-y-1/2 rounded-full p-2 bg-transparent hover:bg-[#8AD5B7] transition duration-300 z-20"
+    >
+      <ChevronLeft className="text-[#DCE2E2] w-8 h-8" />
+    </button>
+  );
+}
 
 const HeroCarousel = () => {
   // Slick carousel settings
   const settings = {
-    dots: false, 
-    infinite: true, 
-    speed: 500, 
-    slidesToShow: 1, 
-    slidesToScroll: 1, 
-    centerPadding: "0%", 
-    arrows: false, 
-    autoplay: true, 
-    autoplaySpeed: 2000, 
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true, // Enable arrows
+    autoplay: true,
+    autoplaySpeed: 2000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
+
   return (
-    <Slider {...settings} className="flex justify-evenly items-center">
+    <Slider {...settings} className="relative">
       {heroSections.map((img, index) => (
-         <div key={index} className="relative bg-brand-dark">
-         <div className="relative min-h-screen flex items-center lg:items-end justify-center lg:justify-start p-8">
-           {/* Background Image - Optional */}
-   
-             <div
-               className="absolute w-full inset-0"
-             >
-               <CustomImage
-                 src={img}
-                 alt="Modern skyscrapers"
-                 className="w-full h-full object-cover z-0"
-                 fill
-                 priority={true}
-                 quality={100}
-               />
-             </div>
-   
-           {/* Right Side - Text Content */}
-           <div
-             className="relative z-20 w-full lg:w-[60%] lg:left-[40%] 2xl:w-[55%] 3xl:w-[65%] flex flex-col gap-3 2xl:gap-6 justify-center items-start text-center lg:text-left p-6 lg:px-10"
-            
-           >
-             {/* Main Heading */}
-             <h1
-               className="text-xl lg:text-2xl xl:text-3xl 3xl:text-5xl font-conthrax font-semibold text-brand-light xl:max-w-2xl 3xl:max-w-6xl"
-               
-             >
-               Ensuring Compliance, Excellence and Peace of Mind in New York Construction
-             </h1>
-   
-             <div className="w-[50%] lg:w-[30%] mx-auto lg:mx-0 h-1 bg-[#8AD5B7] rounded-full"></div>
-   
-   
-             {/* Subheading */}
-             <p
-               className="text-base lg:text-lg 3xl:text-xl font-semibold font-poppins text-[#89A096] xl:max-w-xl"
-              
-             >
-               Your Trusted Partner for Construction Compliance Inspections, Expediting and Property Solutions
-             </p>
-   
-             <p
-               className="text-base lg:text-lg 3xl:text-xl font-poppins text-[#89A096] xl:max-w-xl"
-               
-             >
-               More than 30+ Years Combined Experience in the industry.
-             </p>
-   
-             {/* CTA Button */}
-             <CTA
-               text="Schedule your Consulting Today"
-               href="/contacts"
-               styling="rounded-full bg-[#8AD5B7] text-black hover:from-brand-green1 hover:to-brand-green2 font-semibold font-conthrax px-8 py-4 3xl:py-8 3xl:text-2xl transition-colors mt-0 max-w-full lg:max-w-xl 3xl:max-w-2xl my-6"
-             />
-           </div>
-         </div>
-       </div>
+        <div key={index} className="relative bg-[#1E2322]">
+          <div className="relative min-h-screen flex items-center lg:items-end justify-center lg:justify-start">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <CustomImage
+                src={img}
+                alt={`Hero Image ${index + 1}`}
+                className="w-full h-full object-cover z-0"
+                fill
+                priority={true}
+                quality={100}
+              />
+            </div>
+          </div>
+        </div>
       ))}
     </Slider>
   );

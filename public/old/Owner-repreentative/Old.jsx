@@ -1,6 +1,6 @@
 "use client";
 
-import HeroSection from "../../src/components/HeroSection";
+import HeroSection from "../../../src/components/HeroSection";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Testimonials from "../../src/app/owner-representative/Testimonials";

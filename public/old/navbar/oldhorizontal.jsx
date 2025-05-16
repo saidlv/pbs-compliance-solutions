@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { menuItems } from "../../src/components/navbar/data";
+import { menuItems } from "../../../src/components/navbar/data";
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 

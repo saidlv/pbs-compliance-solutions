@@ -204,10 +204,10 @@ const Page = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-between 2xl:justify-center gap-8 2xl:gap-16 w-full h-full pb-6 lg:pb-10">
-          <p className=" bg-[#1E2322] rounded-2xl text-[#DCE2E2] text-xl lg:text-3xl font-semibold text-center lg:text-left py-3 px-6 2xl:p-10 w-[80%] lg:w-[30%] 2xl:w-[40%]">
+          <p className=" bg-[#1E2322] rounded-2xl text-[#DCE2E2] text-xl lg:text-3xl font-semibold text-center lg:text-left py-3 px-6 2xl:p-10 w-full lg:w-[50%] 2xl:w-[40%]">
             {CriticalRequirements.text1}
           </p>
-          <div className="h-auto w-[80%] lg:w-[70%] 2xl:w-[60%] flex flex-col items-center 2xl:gap-6 gap-5 pt-6">
+          <div className="h-auto w-full lg:w-[50%] flex flex-col items-center 2xl:gap-6 gap-5 pt-6">
             <h4 className="text-[#8AD5B7] text-3xl lg:text-[40px] italic font-semibold">
               {CriticalRequirements.title}
             </h4>

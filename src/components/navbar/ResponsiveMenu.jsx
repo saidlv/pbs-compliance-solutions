@@ -3,9 +3,9 @@ import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { useMediaQuery } from "../../hooks/UseMediaQuery";
 import HamburgerMenu from "./HamburgerMenu";
-import VerticalMenu from "../../../old/navbar/VerticalMenu";
+import VerticalMenu from "../../../public/old/navbar/VerticalMenu";
 import HorizontalMenu from "./HorizontalMenu";
-import { directLinks, menuItems } from "./data";
+import { navItems } from "./data";
 
 /**
  * AnimatedArrow Component
@@ -92,7 +92,7 @@ const ResponsiveMenu = ({ isOpen, setIsOpen }) => {
   const isMobile = useMediaQuery(1024); //1280
 
   return isMobile ?
-    <HamburgerMenu directLinks={directLinks} menuItems={menuItems} />
+    <HamburgerMenu navItems={navItems} />
      :   <div className="hidden lg:block h-full">
           <HorizontalMenu />
         </div>

@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
-import ResponsiveMenu from "../../src/components/navbar/ResponsiveMenu";
+import ResponsiveMenu from "../../../src/components/navbar/ResponsiveMenu";
 
 // Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);

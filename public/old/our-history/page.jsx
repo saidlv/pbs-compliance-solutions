@@ -9,7 +9,7 @@
  */
 
 import CustomImage from "@/app/CustomImage";
-import HeroSection from "../../src/components/HeroSection";
+import HeroSection from "../../../src/components/HeroSection";
 import { motion } from "framer-motion";
 
 /**

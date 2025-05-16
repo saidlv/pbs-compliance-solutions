@@ -158,27 +158,41 @@ const Alerts = () => {
                   months
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-4">
-                <div className="flex flex-col justify-center"> 
-                  <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-4"></div>
-                  
-                  <span className="text-lg font-semibold font-conthrax text-[#DCE2E2] text-nowrap">
-                    SIGN UP 
-                  </span>
-                  <span className="text-lg font-semibold text-[#DCE2E2] font-conthrax">BELOW </span>
+                  <div className="flex flex-col justify-center">
+                    <div className="w-full bg-[#8AD5B7] rounded-full h-1 mb-4"></div>
+
+                    <span className="text-lg font-semibold font-conthrax text-[#DCE2E2] text-nowrap">
+                      SIGN UP
+                    </span>
+                    <span className="text-lg font-semibold text-[#DCE2E2] font-conthrax">
+                      BELOW{" "}
+                    </span>
                   </div>
-              
-                
-              <CTA2
-                text="Get your Property registered for Free"
-                href="/alert"
-                styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-3 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
-              />
+
+                  <CTA2
+                    text="Get your Property registered for Free"
+                    href="/alert"
+                    styling="w-full lg:w-auto mt-3 h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-3 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition text-sm lg:text-base"
+                  />
                 </div>
               </div>
-              
             </div>
 
-            <div ref={formRef}>
+                    <div className="text-2xl lg:text-3xl relative">
+        <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl flex flex-col items-center justify-between gap-4 w-full">
+      <p className="text-[#DCE2E2] w-full text-lg lg:text-xl font-medium text-center">
+        Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
+      </p>
+      
+      <CTA2
+                text="Click to watch now"
+                href="/contacts"
+                styling="w-full lg:w-auto mt-0 h-10 xl:h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 font-semibold whitespace-nowrap hover:brightness-105 transition text-xl xl:text-2xl"
+              />
+    </div>
+    </div>
+
+            {/* <div ref={formRef}>
               <MultiStepForm
                 steps={formSteps}
                 buttonObj={button}
@@ -188,13 +202,12 @@ const Alerts = () => {
                 buttonClass="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-green2 to-brand-green1 hover:from-brand-green1 hover:to-brand-green2 text-brand-light font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-brand-green1/20"
                 errorClass="text-rose-400 mt-2 text-sm"
               />
-            </div>
+            </div> */}
           </div>
-           <div>
-           </div>
+          <div></div>
         </div>
 
-<div className="text-2xl lg:text-3xl relative mt-8">
+        {/* <div className="text-2xl lg:text-3xl relative mt-8">
         <div className="bg-[#2E3432] p-4 lg:p-6 rounded-xl flex flex-col lg:flex-row items-center justify-between gap-4 w-full">
       <p className="text-[#DCE2E2] w-full lg:w-3/4 text-3xl font-medium font-poppins text-center lg:text-left">
         Watch our step-by-step tutorial to ensure your alerts are set up flawlessly. Stay prepared
@@ -206,7 +219,7 @@ const Alerts = () => {
                 styling="w-full lg:w-auto mt-0 h-16 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 font-semibold whitespace-nowrap hover:brightness-105 transition text-sm xl:text-3xl"
               />
     </div>
-    </div>
+    </div> */}
       </div>
     </div>
   );

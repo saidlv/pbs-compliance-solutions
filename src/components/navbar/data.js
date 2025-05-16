@@ -1,6 +1,6 @@
-export const menuItems = [
+export const navItems = [
   {
-    name: "Services",
+    name: "Our Services",
     submenu: [
       {
         name: "Services",
@@ -56,6 +56,7 @@ export const menuItems = [
       { name: "Alert System Guide", link: "/" },
     ],
   },
+   { name: "Alert Systems", link: "/alert" },
   {
     name: "About Us",
     submenu: [
@@ -64,9 +65,6 @@ export const menuItems = [
       { name: "Our Values", link: "/about-us/our-values" },
     ],
   },
-];
-
-export const directLinks = [
-  { name: "Alert Systems", link: "/alert" },
-  { name: "Contact us", link: "/contacts" },
+   { name: "Contact us", link: "/contacts" },
+ {name: "Member Login", link: "/alert/dashboard"},
 ];

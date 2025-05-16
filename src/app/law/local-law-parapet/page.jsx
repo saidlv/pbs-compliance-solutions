@@ -123,12 +123,7 @@ const Page = () => {
                 );
               })}
             </div>
-            <CTA2
-              text={Div2_Sec1.right.CTA}
-              isArrow={false}
-              href="/contacts"
-              styling={`w-48 md:w-[50%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax lg:ml-6 mx-auto`}
-            />
+            
           </div>
         </div>
       </section>
@@ -339,7 +334,7 @@ const Page = () => {
           </div>
           <p className="text-center text-base font-semibold text-[#89A096]">{WhyPBS.text2}</p>
 
-          <div className="w-full mt-6 flex flex-col lg:flex-row justify-start gap-6 items-center">
+          <div className="w-full mt-6 flex flex-col lg:flex-row justify-center gap-6 items-center">
                           <CTA2
                             text="Book Your Slot Now"
                             isArrow={false}

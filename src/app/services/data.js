@@ -30,7 +30,7 @@ export const services = [
       ":PBS ensures clients comply with local and state construction regulations, including managing paperwork, permits and adherence to zoning codes.",
       ":PBS simplifies the regulatory process, helping clients avoid fines, delays and project interruptions through expert compliance management and guidance.",
     ],
-    cta: "/"
+    cta: "/inspection-services",
   },
   {
     id: 3,

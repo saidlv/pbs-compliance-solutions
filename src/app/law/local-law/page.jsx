@@ -272,62 +272,67 @@ const Page = () => {
         </motion.div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch xl:items-end 2xl:items-center my-10 lg:mb-0 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
-          <div className="w-full lg:w-[45%] xl:w-[45%] 2xl:w-[40%] 3xl:w-[30%] flex items-end">
-            <Image
-              src={whyPBS.img}
-              alt="building"
-              width={600}
-              height={800}
-              priority
-              className="relative w-1/2 mx-auto lg:w-full h-auto lg:h-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
-            />
-          </div>
+        <div className="flex flex-col lg:flex-row items-center xl:items-end 2xl:items-center my-10 lg:mb-0 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
+  {/* Image Section */}
+  <div className="lg:w-[45%] 2xl:w-[40%] 3xl:w-[30%] flex items-end">
+    <Image
+      src={whyPBS.img}
+      alt="building"
+      width={600}
+      height={800}
+      priority
+      className="w-1/2 mx-auto lg:w-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
+    />
+  </div>
 
-          <div className="w-full lg:w-[55%] xl:w-[55%] 2xl:w-[60%] 3xl:w-[50%] flex flex-col lg:pb-6 h-auto">
-            <div className="w-full 3xl:w-[80%] h-full flex items-end 3xl:items-center justify-start lg:justify-between">
-              <div className="w-full h-auto flex flex-col gap-1 xl:gap-3 2xl:gap-6">
-                <h1 className="text-3xl text-center lg:text-4xl xl:text-5xl lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
-                 {whyPBS.title}
-                </h1>
-                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left text-[#89A096] font-semibold space-y-1">
-                  <div className="flex flex-col xl:gap-2">
-                    {whyPBS.list1.map((item, index) => {
-                      return (
-                        <span key={index} className="flex gap-2 text-sm xl:text-base">
-                          <DotIcon className="text-[#DCE2E2] w-[5%]" />
-                          {index==0 ? <span><span className="text-[#DCE2E2]"> {item.split(",")[0]}</span> {item.trim().split(",")[1]}</span>: item}
-                          
-                        </span>
-                      );
-                    })}
-                   </div>
-                </div>
+  {/* Text Content Section */}
+  <div className="lg:w-[55%] 2xl:w-[60%] 3xl:w-[50%] flex flex-col justify-end lg:pb-6">
+    <h1 className="text-3xl lg:text-4xl xl:text-5xl text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] tracking-wide uppercase">
+      {whyPBS.title}
+    </h1>
 
-                <div className="flex justify-start items-stretch gap-3 pl-3">
-                <div className="w-2 h-auto bg-[#8AD5B7] hidden lg:block"></div>
-                 <p className="text-xl xl:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2] max-w-xl">{whyPBS.text}</p>
-                </div>
+    <div className="text-sm lg:text-base 2xl:text-xl text-center lg:text-left text-[#89A096] font-semibold space-y-1 mt-1 xl:mt-3 2xl:mt-6">
+      {whyPBS.list1.map((item, index) => (
+        <span key={index} className="flex gap-2">
+          <DotIcon className="text-[#DCE2E2] w-[5%]" />
+          {index === 0 ? (
+            <span>
+              <span className="text-[#DCE2E2]">{item.split(",")[0]}</span>
+              {item.trim().split(",")[1]}
+            </span>
+          ) : (
+            item
+          )}
+        </span>
+      ))}
+    </div>
 
-                <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left font-semibold text-[#89A096] flex flex-col xl:gap-2">
-                 
-                    {whyPBS.list2.map((item, index) => {
-                      return (
-                        <p key={index} className="flex gap-2 xl:text-base text-sm">
-                        <DotIcon className="w-[5%]" />{" "}
-                        <span className="w-[90%]">
-                       {item}
-                        </span>
-                      </p>
-                      );
-                    })}
-                  
-               
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex items-stretch gap-3 pl-3 mt-3 xl:mt-6">
+      <div className="w-2 bg-[#8AD5B7] hidden lg:block"></div>
+      <p className="text-xl xl:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2] max-w-xl">
+        {whyPBS.text}
+      </p>
+    </div>
+
+    <div className="text-sm lg:text-base 2xl:text-xl text-center lg:text-left text-[#89A096] font-semibold mb-3 xl:mt-6 space-y-1">
+      {whyPBS.list2.map((item, index) => (
+        <p key={index} className="flex gap-2">
+          <DotIcon className="w-[5%]" />
+          <span className="w-[90%]">{item}</span>
+        </p>
+      ))}
+    </div>
+
+  <div className="w-full mt-0 flex flex-col xl:flex-row gap-6 items-start justify-start">
+    <CTA2
+      isArrow={false}
+      text="Book your Slot Today"
+      href="/contacts"
+      styling="w-[90%] lg:w-auto mx-auto lg:ml-0 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-3 2xl:px-6 py-2 text-sm xl:text-base font-semibold font-conthrax hover:brightness-105 transition"
+    />
+    </div>
+  </div>
+</div>
       </section>
 
        {/* img corousel */}

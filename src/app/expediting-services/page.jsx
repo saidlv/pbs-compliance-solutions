@@ -180,7 +180,7 @@ const Page = () => {
 
         <CTA2
          isArrow={false}
-         text ="Whether you’re fixing a violation or building a legacy, PBS is your partner in precision."
+         text ="Get your Permits Fast"
          href="/"
                   styling={`w-[90%] lg:w-auto mt-0 mx-auto mb-10 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 xl:px-3 2xl:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}  
         />

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { menuItems } from "../../src/components/navbar/data";
+// import { menuItems } from "../../../src/components/navbar/data";
 
 /**
  * VerticalMenu Component
