@@ -262,12 +262,11 @@ const Page = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 3 * 0.1 }}
           >
-        <Image
+        <img
           src="/pics/local-law-11-pic6.png"
           alt="Inspection Services"
-          width={500}
-          height={500}
-          className="w-[90%] 3xl:w-[75%] lg:w-full h-auto object-contain mx-auto"
+          
+          className="w-[90%] 3xl:w-[75%] object-contain mx-auto"
         />
         </motion.div>
 
@@ -281,7 +280,7 @@ const Page = () => {
       width={600}
       height={800}
       priority
-      className="w-1/2 mx-auto lg:w-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
+      className="w-2/3 mx-auto lg:w-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
     />
   </div>
 

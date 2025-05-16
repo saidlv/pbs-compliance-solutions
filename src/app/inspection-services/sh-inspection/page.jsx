@@ -154,12 +154,12 @@ const Page = () => {
           </p>
         </div>
 
-        <Image
+        <img
           src="/pics/sh-inspection-pic4.png"
           alt="Inspection Services"
           width={500}
           height={500}
-          className="w-[90%] xl:w-[80%] 2xl:w-[70%] h-auto object-cover object-top xl:object-contain mx-auto mb-6 lg:mb-0"
+          className="w-[90%] xl:w-[80%] 2xl:w-[70%] h-auto object-cover object-top lg:object-contain mx-auto mb-6 lg:mb-0"
         />
       </section>
 

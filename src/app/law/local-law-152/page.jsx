@@ -259,7 +259,7 @@ const Page = () => {
       <h2 className="text-2xl lg:text-3xl font-semibold text-center text-[#8AD5B7]">
       There are few common inspection failures that we resolve with proactive approach and maintenance
       </h2>
-      <Image 
+      <img 
         src="/pics/local-law-152-pic2.png"
         alt="Inspection Services"
         width={500}
@@ -349,7 +349,7 @@ const Page = () => {
       <div className="w-[90%] lg:w-[80%] mx-auto flex flex-col items-center justify-center gap-6 lg:gap-12 pb-6 lg:pb-10">
         <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax">Why it works for you</h2>
 
-        <Image 
+        <img 
         src="/pics/local-law-152-pic3.png"
         alt="Inspection Services"
         width={500}

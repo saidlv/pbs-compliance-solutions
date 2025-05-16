@@ -274,7 +274,7 @@ const Page = () => {
             <h2 className="text-3xl lg:text-5xl text-[#8AD5B7] font-semibold font-conthrax max-w-2xl">
               Our Process to make you complaint
             </h2>
-            <Image
+            <img
               src="/pics/elevator-inspection-pic2.png"
               alt="Inspection Services"
               width={500}
@@ -419,7 +419,7 @@ const Page = () => {
             <h2 className="text-3xl lg:text-4xl xl:text-5xl text-[#8AD5B7] font-semibold font-conthrax text-center">How It Works</h2>
             <p className="text-lg lg:text-xl font-semibold text-[#89A096]">Compliance Without Chaos</p>
            </div>
-           <Image
+           <img
             src="/pics/elevator-inspection-pic3.png"
             alt="Inspection Services"
             width={500}

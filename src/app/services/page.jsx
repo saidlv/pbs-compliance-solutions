@@ -191,14 +191,13 @@ const Page = () => {
               <div key={index} className="flex flex-col gap-8 md:gap-16">
                 <div className="w-full py-8 px-8 lg:px-16 bg-[#2E3734] mx-auto flex flex-col md:flex-row items-stretch xl:items-center gap-6 sm:gap-8 xl:gap-16">
                   <div className="w-full flex justify-center md:w-[40%] xl:w-[25%]">
-                    <Image
+                    <img
                       src={section.image}
                       alt={section.title}
                       width={100}
                       height={100}
-                      priority
-                      quality={100}
-                      className="w-[70%] md:w-full md:h-full md:object-cover xl:object-contain object-center mix-blend-luminosity rounded-[10%]"
+                      
+                      className="w-[70%] md:w-full md:h-full object-cover object-center mix-blend-luminosity rounded-[10%]"
                     />
                   </div>
 

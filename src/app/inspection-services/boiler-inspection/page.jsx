@@ -193,7 +193,7 @@ const Page = () => {
             <h4 className="text-[#8AD5B7] text-3xl lg:text-[40px] font-semibold">
               {Compliance_Solution.subHeading2}
             </h4>
-            <Image
+            <img
               src={Compliance_Solution.img}
               alt="Inspection Services"
               width={500}
@@ -241,7 +241,7 @@ const Page = () => {
           </p>
           </div>
 
-          <Image
+          <img
             src="/pics/boiler-inspection-pic4.png"
             alt="roadmap"
             width={600}
