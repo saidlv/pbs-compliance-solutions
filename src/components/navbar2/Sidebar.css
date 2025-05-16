@@ -1,0 +1,20 @@
+/* In globals.css or a CSS module (e.g., dashboard.module.css) */
+.custom-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #8AD5B7 transparent; /* Firefox */
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #8AD5B7;
+  border-radius: 2px;
+}

@@ -6,7 +6,7 @@ import Header from "@/components/navbar/Header";
 import PageLoader from "@/components/PageLoader";
 import SplashScreen from "@/components/SplashScreen";
 import { motion } from "framer-motion";
-
+import { usePathname } from "next/navigation";
 import { MenuProvider } from "@/context/MenuContext";
 import { conthrax, gnuolane, poppins } from "@/lib/fonts";
 import { Suspense } from "react";
@@ -23,6 +23,7 @@ import "./globals.css";
 // };
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
   return (
     <html lang="en">
       <head>
@@ -54,10 +55,10 @@ export default function RootLayout({ children }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             > */}
-              <Header />
+              {pathname !== "/alert/dashboard" && <Header />}
               {/* </motion.div> */}
               <Suspense fallback={<SplashScreen />}>{children}</Suspense>
-              <Footer />
+              {pathname !== "/alert/dashboard" && <Footer />}
             </motion.div>
           </CustomErrorBoundary>
         </MenuProvider>

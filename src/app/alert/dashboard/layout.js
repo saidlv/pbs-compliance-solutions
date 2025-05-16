@@ -1,0 +1,27 @@
+"use client";
+import Footer2 from "@/components/Footer2";
+import { motion } from "framer-motion";
+import { MenuProvider } from "@/context/MenuContext";
+import { conthrax, gnuolane, poppins } from "@/lib/fonts";
+import { Suspense } from "react";
+import PageLoader from "@/components/PageLoader";
+import CustomErrorBoundary from "@/components/ErrorBoundary";
+
+export default function DashboardLayout({ children }) {
+  return (
+    <MenuProvider>
+      <Suspense fallback={<PageLoader />}>
+        <CustomErrorBoundary>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {children}
+            <Footer2 />
+          </motion.div>
+        </CustomErrorBoundary>
+      </Suspense>
+    </MenuProvider>
+  );
+}
