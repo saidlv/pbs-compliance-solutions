@@ -73,8 +73,8 @@ const Page = () => {
           <CTA2
             isArrow={false}
             text={section01.div1.CTA.text}
-            href={section01.div1.CTA.href}
-            styling={`w-auto mt-3 mx-auto rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-3 2xl:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}
+            href={section01.div1.CTA.link}
+            styling={`w-auto mt-3 mx-auto rounded-xl h-12 bg-[#8AD5B7] text-[#1E2322] px-3 2xl:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}
           />
           <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center max-w-md mx-auto">
             {section01.div1.text2}
@@ -137,7 +137,7 @@ const Page = () => {
               <h2 className="text-3xl md:text-4xl xl:text-5xl text-center font-semibold text-[#8AD5B7] font-conthrax">
                 {section2.div1.heading}
               </h2>
-            </div>
+            </div> 
 
             <div className="bg-[#2E3734] p-6 rounded-2xl flex flex-col justify-center gap-2">
               {section2.div1.items.map((item, index) => {
@@ -164,16 +164,22 @@ const Page = () => {
         </div>
 
         <div className="w-full flex flex-col items-center justify-center gap-6 2xl:gap-8">
-          <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight xl:max-w-3xl text-center font-semibold text-[#8AD5B7] font-conthrax">
+          <div className="max-w-[90%] lg:max-w-3xl flex items-stretch justify-center gap-6 2xl:gap-8 w-full mx-auto">
+            <div className="w-4 bg-[#8AD5B7] h-auto"></div>
+          <div>
+          <h2 className="text-3xl md:text-4xl xl:text-[40px] xl:leading-tight xl:max-w-3xl text-center font-semibold text-[#8AD5B7] font-conthrax ">
             {section2.div2.heading}
           </h2>
-          <div className="mt-3">
+          <div className="mt-3 text-center">
             <span className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2] font-semibold">
               {section2.div2.text1}
             </span>
             <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096] font-semibold">
               {section2.div2.text2}
             </p>
+          </div>
+          </div>
+          <div className="w-4 bg-[#8AD5B7] h-auto"></div>
           </div>
 
           <div className="flex flex-col md:flex-row items-center lg:items-end 4xl:items-center justify-start gap-8 2xl:gap-16 w-full">
@@ -245,7 +251,7 @@ const Page = () => {
           <h2 className="text-[#8AD5B7] font-conthrax text-[30px] lg:text-[36px] 2xl:text-[40px] leading-tight font-semibold text-center mx-auto xl:max-w-xl">
             {section3.div1.heading}
           </h2>
-          <div className="space-y-1">
+          <div className="space-y-1 text-center">
             <p className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2] font-semibold w-full">
               {section3.div1.text1}
             </p>
@@ -256,32 +262,21 @@ const Page = () => {
           </div>
 
           <div className="w-full flex flex-col gap-1">
-            <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096] font-semibold w-full">
+            <p className="text-lg lg:text-xl xl:text-2xl text-center text-[#89A096] font-semibold w-full">
               <span className="text-[#DCE2E2]">
                 {section3.div1.text3.split(":")[0] + ": "}
               </span>
               {section3.div1.text3.split(":")[1]}
             </p>
 
-            <span className="text-lg lg:text-xl xl:text-2xl text-[#8AD5B7] font-semibold w-full">
+            <span className="text-lg lg:text-xl xl:text-2xl text-center text-[#8AD5B7] font-semibold w-full">
               {section3.div1.itemHeading}
             </span>
 
-            <div className="w-full flex flex-col gap-1">
+            <div className="w-full flex flex-wrap items-center justify-center gap-10 xl:gap-x-16 my-10">
               {section3.div1.items.map((item, index) => {
                 return (
-                  <div key={index} className="flex items-start">
-                    <DotIcon
-                      size={32}
-                      className="inline-block mr-2 flex-shrink-0"
-                    />
-                    <p className="text-lg lg:text-xl xl:text-2xl text-[#89A096] font-semibold">
-                      <span className="text-[#DCE2E2] itlaic">
-                        {item.split(":")[0] + ": "}
-                      </span>
-                      {item.substring(item.indexOf(":") + 1)}
-                    </p>
-                  </div>
+                  <img key={index} src={item} alt="image" className="w-[45%] object-contain"/>
                 );
               })}
             </div>
@@ -576,9 +571,16 @@ const Page = () => {
           </div>
         </div>
 
-          <p className="text-lg lg:text-xl 2xl:text-2xl font-semibold max-w-2xl text-center mx-auto mb-10">
+          <p className="text-lg lg:text-xl 2xl:text-2xl font-semibold max-w-2xl text-center mx-auto">
             {section4.div3.text}
           </p>
+
+          <CTA2
+           isArrow={false}
+            text="Register Now"
+            href={section01.div1.CTA.link}
+            styling={`w-auto mx-auto mt-0 mb-10 rounded-xl h-12 bg-[#8AD5B7] text-[#1E2322] px-3 2xl:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition xl:text-base font-conthrax `}
+          />
       </section>
 
       <ImageCarousel />

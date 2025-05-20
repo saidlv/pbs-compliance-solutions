@@ -86,9 +86,9 @@ export const section3 = {
       "Report Types: Compliance Status, Upcoming deadlines, violation summaries.",
     itemHeading: "Sample Reports:",
     items: [
-      "Weekly Violation Digest: Open vs resolved violations, cure deadlines, and associated fines",
-      "Monthly Permit Expiration Tracker: Renewal costs and submission links for expiring permits",
-      "Custom Executive Summaries: Share high-level compliance stats with stakeholders.",
+      "/pics/alert-pic7.png",
+      "/pics/alert-pic8.png",
+      "/pics/alert-pic9.png",
     ],
     text4: "Export Options: Download as PDF, Excel, or share via link.",
     text5: "Schedule Alerts: Get notified when reports are ready",
