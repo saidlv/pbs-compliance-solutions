@@ -70,7 +70,7 @@ const Page = () => {
         </div>
 
         <div className="w-full lg:w-[80%] mx-auto mt-10 sm:mt-16 flex flex-col items-center justify-center text-center">
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12 w-full mb-8 sm:mb-10">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12 w-full mb-8 sm:mb-10 lg:mb-0">
             <Image
               src="/pics/owner-repre-2.png"
               alt="owner representative"
@@ -98,7 +98,7 @@ const Page = () => {
               {challenges.map((challenge, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full"
+                  className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-1/2"
                 >
                   <h3 className="text-[#DCE2E2] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold">
                     {challenge.heading}
@@ -122,7 +122,7 @@ const Page = () => {
       </section>
 
       {/* Section 02 */}
-      <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-10 text-[#DCE2E2]">
+      <section className="px-4 sm:px-6 md:px-10 lg:px-16 pb-8 sm:pb-10 text-[#DCE2E2]">
         <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-full mb-4 sm:mb-6">
           <h2 className="text-[#DCE2E2] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-conthrax font-semibold">
             What We Do
@@ -245,7 +245,7 @@ const Page = () => {
       <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-10 text-[#DCE2E2]">
         {/* Dark Background Div */}
         <div
-          className="w-full 2xl:w-[70%] mx-auto lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-2xl bg-[#89A096] bg-opacity-5 p-4 lg:p-8 box-border shadow-lg hover:shadow-xl transition-all duration-300 mb-10"
+          className="w-full 2xl:w-[70%] mx-auto lg:flex-1 flex flex-col lg:flex-row justify-between items-stretch text-left rounded-2xl bg-[#89A096] bg-opacity-5 p-4 lg:p-8 box-border shadow-lg hover:shadow-xl transition-all duration-300 mb-10 lg:mb-16"
           style={{
             backgroundImage: `url('/pics/owner-repre-3.png')`,
             backgroundSize: "cover",
@@ -305,7 +305,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="w-[30%] h-1 bg-[#DCE2E2] mx-auto my-8"></div>
+          <div className="w-[25%] h-1 bg-[#DCE2E2] mx-auto my-10"></div>
 
           <p className="text-[#DCE2E2] text-lg lg:text-xl font-semibold text-center">
             Ready to Reclaim your Time?

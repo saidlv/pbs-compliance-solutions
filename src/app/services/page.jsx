@@ -103,7 +103,7 @@ const Page = () => {
                   <div
                     className={`flex flex-col ${
                       service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } items-center lg:items-stretch 3xl:items-center lg:justify-between 2xl:justify-center gap-12 p-4 lg:p-6`}
+                    } items-center xl:items-stretch 3xl:items-center lg:justify-between 2xl:justify-center gap-12 p-4 lg:p-6`}
                   >
                     <div className="w-[80%] lg:w-[45%] 2xl:w-[40%] h-full flex justify-center items-start 2xl:items-center">
                       <Image
@@ -116,11 +116,11 @@ const Page = () => {
                         className="w-full h-full object-cover xl:object-contain 2xl:object-cover object-top-right mix-blend-luminosity rounded-[10%]"
                       />
                     </div>
-                    <div className="flex flex-col gap-3 w-full lg:w-[45%] 2xl:w-[40%] justify-start">
+                    <div className="flex flex-col gap-3 w-full lg:w-[50%] 2xl:w-[40%] justify-start">
                       <h2 className="text-3xl md:text-4xl xl:text-[40px] leading-tight font-semibold text-[#8AD5B7] font-conthrax 3xl:w-4/5">
                         {service.title}
                       </h2>
-                      <p className="text-[#89A096] text-base font-semibold w-4/5 xl:w-full 2xl:w-5/6 3xl:w-3/5">
+                      <p className="text-[#89A096] text-base font-semibold w-4/5 lg:w-full 2xl:w-5/6 3xl:w-3/5">
                         {service.description}
                       </p>
                       <div className="flex gap-8 items-stretch">
@@ -160,7 +160,7 @@ const Page = () => {
           </div>
 
           <div
-            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-8 lg:mt-8 mb-6`}
+            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-8 mb-10`}
           ></div>
 
           <div className="text-[#DCE2E2] text-center">

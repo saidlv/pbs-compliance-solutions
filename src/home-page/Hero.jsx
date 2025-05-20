@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
   return (
     <button
       onClick={onClick}
-      className="absolute right-6 top-1/2 transform -translate-y-1/2 rounded-full p-2 bg-transparent hover:bg-[#8AD5B7] transition duration-300 z-20"
+      className="absolute right-3 md:right-6 top-1/2 transform -translate-y-1/2 rounded-full p-2 bg-transparent hover:bg-[#8AD5B7] transition duration-300 z-20"
     >
       <ChevronRight className="text-[#DCE2E2] w-8 h-8" />
     </button>
@@ -33,7 +33,7 @@ function SamplePrevArrow(props) {
   return (
     <button
       onClick={onClick}
-      className="absolute left-6 top-1/2 transform -translate-y-1/2 rounded-full p-2 bg-transparent hover:bg-[#8AD5B7] transition duration-300 z-20"
+      className="absolute left-3 md:left-6 top-1/2 transform -translate-y-1/2 rounded-full p-2 bg-transparent hover:bg-[#8AD5B7] transition duration-300 z-20"
     >
       <ChevronLeft className="text-[#DCE2E2] w-8 h-8" />
     </button>
@@ -55,13 +55,14 @@ const HeroCarousel = () => {
     prevArrow: <SamplePrevArrow />,
   };
 
+
   return (
     <Slider {...settings} className="relative">
       {heroSections.map((img, index) => (
-        <div key={index} className="relative bg-[#1E2322]">
-          <div className="relative min-h-screen flex items-center lg:items-end justify-center lg:justify-start">
+        <div key={index} className="relative">
+          <div className="relative min-h-[25vh] md:min-h-[40vh] lg:min-h-screen flex items-center lg:items-end justify-center lg:justify-start">
             {/* Background Image */}
-            <div className="absolute inset-0">
+            <div className="absolute h-full inset-0">
               <CustomImage
                 src={img}
                 alt={`Hero Image ${index + 1}`}

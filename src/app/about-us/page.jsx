@@ -277,7 +277,7 @@ const AboutPage = () => {
       <section className="px-6 lg:px-12">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-stretch gap-8 mb-12">
           {/* Left Content */}
-          <div className="bg-[#2B3331] rounded-[5%] lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-around gap-6 w-[80%] mx-auto lg:w-[60%] 2xl:w-[70%] p-6">
+          <div className="bg-[#2B3331] rounded-[5%] lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-around gap-6 w-[80%] mx-auto lg:w-[60%] 2xl:w-[70%] py-10 px-6">
             <div className="w-full lg:w-[50%] flex flex-row lg:flex-col items-center lg:items-center justify-between xl:justify-center gap-6 xl:gap-32">
               <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-row lg:flex-col 2xl:flex-row mb-4 lg:mb-0 gap-3">
                 <span>Buildings</span> <span>We deal in:</span>
@@ -288,7 +288,7 @@ const AboutPage = () => {
                 className="lg:w-auto 2xl:w-full h-auto"
               />
             </div>
-            <div className="w-full lg:w-[40%] 2xl:w-[30%] flex flex-row flex-wrap lg:flex-col items-start 2xl:items-right justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4 pt-8">
+            <div className="w-full lg:w-[40%] 2xl:w-[30%] flex flex-row flex-wrap lg:flex-col items-start 2xl:items-right justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4">
               {service?.buildingTypes.map((location, index) => (
                 <p key={index} className="text-[#DCE2E2] text-base 2xl:text-lg flex gap-2">
                   <DotIcon /> {location}

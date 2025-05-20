@@ -75,7 +75,7 @@ const Page = () => {
                     </p>
         
                     <div className="flex items-stretch justify-start gap-6">
-                      <div className="space-y-2 w-[98%]">
+                      <div className="space-y-2 w-[85%]">
                         {section01.items.map((item, index) => {
                           return (
                             <p
@@ -98,16 +98,18 @@ const Page = () => {
                   </div>
                 </div>
 
-        <div className="bg-[#2E3734] rounded-lg p-6 lg:p-10 flex flex-col lg:flex-row lg:items-stretch justify-center lg:justify-between gap-6">
-          <div className="w-full lg:w-[65%] 2xl:w-[60%] h-auto flex flex-col justify-center items-center gap-6">
-            <h2 className="text-2xl md:text-4xl xl:text-5xl text-[#8AD5B7] font-semibold font-conthrax">
+        <div className="bg-[#2E3734] rounded-lg p-6 lg:p-10">
+          <div className="w-full h-auto flex flex-col justify-center items-start gap-6">
+            <h2 className="text-2xl md:text-4xl xl:text-5xl text-center lg:text-left text-[#8AD5B7] font-semibold font-conthrax w-full lg:w-[65%] 2xl:w-[60%]">
               {Div2_Sec1.left.heading}
             </h2>
-            <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left">
+
+            <div className="flex flex-col lg:flex-row lg:items-start justify-center lg:justify-between gap-6">
+            <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left lg:w-[65%] 2xl:w-[60%]">
               {Div2_Sec1.left.text}
             </p>
-          </div>   
-          <div className="w-full lg:w-[35%] flex flex-col justify-end gap-6">
+            
+          <div className="w-full lg:w-[35%] flex flex-col justify-center gap-6">
             <div className="space-y-1">
               {Div2_Sec1.right.items.map((list, index) => {
                 return (
@@ -123,13 +125,14 @@ const Page = () => {
                 );
               })}
             </div>
-            
           </div>
+          </div>
+        </div>
         </div>
       </section>
 
       {/* Section 02 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-6 lg:pt-10 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-10 lg:pt-16 text-[#DCE2E2]">
         <div className="w-full lg:w-[80%] mx-auto flex flex-col items-center gap-6 2xl:gap-8">
           <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax text-center">
             {WhoNeedsInspections.heading}
@@ -276,7 +279,7 @@ const Page = () => {
 
         <div className="w-full lg:w-[90%] mx-auto overflow-hidden relative text-[#DCE2E2] py-6 sm:py-8 lg:py-10">
           {/* Moved title section here and fixed spacing */}
-          <div className="text-center mb-5 lg:mb-8">
+          <div className="text-center mb-6 lg:mb-10">
             <h1 className="text-[#8AD5B7] text-3xl lg:text-5xl font-conthrax tracking-widest mb-4">
               {WhyPBS.heading}
             </h1>

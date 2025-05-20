@@ -94,7 +94,7 @@ const HorizontalMenu = () => {
                 </Link>
 
                 {item.submenu && openDropdown === index && (
-                  <div className="absolute -left-[15vw] w-[40vw] bg-[#37403D] rounded-md shadow-lg z-10">
+                  <div className="absolute -left-[15vw] w-[40vw] bg-[#37403D] rounded-md shadow-lg z-10 p-3">
                     {item.submenu.map((subItem, subIndex) => (
                       <div
                         key={subItem.name}

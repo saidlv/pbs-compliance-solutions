@@ -47,7 +47,7 @@ const Page = () => {
   <div className="w-[100vw] relative flex justify-center">
     <div className="bg-[#8AD5B7] w-full h-2"></div>
     <div
-      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] lg:w-[60%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] lg:w-[60%] xl:w-[50%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
     >
       Local Law 126 (parking)
     </div>
@@ -75,7 +75,7 @@ const Page = () => {
             </p>
 
             <div className="flex items-stretch justify-start gap-6">
-              <div className="space-y-2 w-[98%]">
+              <div className="space-y-2 w-[80%]">
                 {section01.items.map((item, index) => {
                   return (
                     <p
@@ -122,13 +122,13 @@ const Page = () => {
                     key={index}
                     className="text-[#DCE2E2] text-base font-semibold"
                   >
-                    <h4 className="italic">{list.heading}</h4>
+                    <h4 className="italic mb-1">{list.heading}</h4>
                     <ul className="list-disc list-inside">
                       {list.items.map((item, index) => {
                         return (
                           <li key={index} className="flex gap-2 text-[#89A096]">
                             <DotIcon
-                              className="text-[#89A096] w-[5%]"
+                              className="text-[#89A096] flex-shrink-0"
                               size={32}
                             />
                             <span className="w-[95%]">{item}</span>
@@ -206,7 +206,7 @@ const Page = () => {
                 {WhatThisMeans.second.items.map((subItem, subIndex) => {
                   return (
                     <li key={subIndex} className="flex gap-2 text-[#89A096]">
-                      <DotIcon className="text-[#ffff] w-[5%]" size={32} />
+                      <DotIcon className="text-[#ffff] flex-shrink-0" size={32} />
                       <span className="w-[85%] 2xl:w-[70%] text-base lg:text-xl font-semibold">
                         <span className="text-[#ffff] italic">
                           {subItem.split(":")[0] + ": "}
@@ -245,7 +245,7 @@ const Page = () => {
                   key={index}
                   className="flex gap-2 sm:gap-3 items-center text-[#89A096]"
                 >
-                  <DotIcon className="w-4 sm:w-5 flex-shrink-0" size={32} />
+                  <DotIcon className="flex-shrink-0" size={32} />
                   <span className="text-sm italic lg:text-base font-semibold">
                     {item}
                   </span>

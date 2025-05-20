@@ -126,7 +126,7 @@ const Alerts = () => {
   }, []);
 
   return (
-    <div className="bg-brand-dark py-16" ref={ref}>
+    <div className="bg-[#37403D] py-16" ref={ref}>
       <div className="px-6 lg:px-16">
         <div className="px-8 flex flex-col lg:flex-row lg:justify-between">
           <div ref={leftRef} className="lg:w-[45%] relative hidden lg:block">

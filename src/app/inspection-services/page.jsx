@@ -61,7 +61,7 @@ const InspectionServices = () => {
               Why Compliance Matter
             </h1>
             <div className="bg-[#8AD5B7] w-full lg:w-[40%] text-[#DCE2E2] h-2 mb-6"></div>
-            <p className="text-base lg:text-lg font-semibold 2xl w-full 2xl:w-[75%]">
+            <p className="text-base lg:text-lg font-semibold 2xl xl:w-[85%] 2xl:w-[75%]">
               A single oversight can risk lives, reputations, and legal
               standing. Regular inspections aren’t just about ticking boxes,
               they’re about proactive problem solving. When Safety and
@@ -192,7 +192,7 @@ const InspectionServices = () => {
       </section>
 
       {/* Section 3 */}
-      <section className=" pb-10">
+      <section className=" py-10">
         <h2 className="text-3xl lg:text-5xl font-semibold text-[#DCE2E2] text-center font-conthrax mb-6 max-w-3xl mx-auto">
           {inspectionServices[0].headline}
         </h2>
