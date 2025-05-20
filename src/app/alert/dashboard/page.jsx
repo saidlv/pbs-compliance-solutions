@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import Sidebar from "@/components/navbar2/Sidebar";
+import DashboardTable from "@/components/member-portal/DashboardTable";
 
 const Page = () => {
   const [entries, setEntries] = useState(20);
   const [search, setSearch] = useState("");
+  const [displayComponent, setDisplayComponent] = useState("Property List");
 
   const buttonList = [
     "Property List",
@@ -47,12 +49,16 @@ const Page = () => {
 
           <div className="w-[90%] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pt-6 xl:pt-10">
             {buttonList.map((button, index) => (
-              <div
+              <buton
+                onClick={() => {setDisplayComponent(button)
+
+                }}
                 key={index}
-                className="w-full lg:w-auto bg-[#2E3734] hover:bg-[#8AD5B7] text-[#89A096] font-semibold text-lg xl:text-xl p-2 rounded-full shadow-md hover:text-[#1E2322] transition duration-300 ease-in-out text-center cursor-pointer flex items-center justify-center"
+                className={`w-full lg:w-auto hover:bg-[#8AD5B7]  font-semibold text-lg xl:text-xl p-2 rounded-full shadow-md hover:text-[#1E2322] transition duration-300 ease-in-out text-center cursor-pointer flex items-center justify-center ${
+                  displayComponent === button ? "bg-[#8AD5B7] text-[#1E2322]" : "bg-[#2E3734] text-[#89A096]"}`}
               >
                 {button}
-              </div>
+              </buton>
             ))}
           </div>
 
@@ -94,32 +100,7 @@ const Page = () => {
                 <X className="absolute right-4" />
               </div>
             </div>
-
-            <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full mt-4">
-              <table className="text-[#D9D9D9] text-center w-full">
-                <thead>
-                  <tr className="border-b-2 border-[#8AD5B7] text-[#8AD5B7] text-lg sm:text-xl lg:text-2xl font-semibold">
-                    <th className="w-2/5 lg:px-2 py-6 border-r-2 border-[#8AD5B7]">Address</th>
-                    <th className="w-1/5 lg:px-2 py-6 border-r-2 border-[#8AD5B7]">Sync Status</th>
-                    <th className="w-1/5 lg:px-2 py-6">View</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Array(9)
-                    .fill("")
-                    .map((_, index) => (
-                      <tr
-                        key={index}
-                        className={`${index !== 8 ? "border-b-2" : ""} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
-                      >
-                        <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
-                        <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
-                        <td className="w-1/5 px-2 py-6"></td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-            </div>
+            <DashboardTable/>
           </div>
 
           <div className="flex justify-between items-center w-[90%] mx-auto text-[#89A096] font-semibold text-lg xl:text-xl px-2 py-8">
