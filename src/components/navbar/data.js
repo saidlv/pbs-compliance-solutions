@@ -20,7 +20,7 @@ export const navItems = [
             name: "Local Law Parking",
             link: "/law/local-law-parking",
           },
-          { name: "Local Law Parapet", link: "/law/local-law-parapet" },
+          { name: "Local Law 126(Parapet)", link: "/law/local-law-parapet" },
           { name: "Local Law 152", link: "/law/local-law-152" },
         ],
       },
