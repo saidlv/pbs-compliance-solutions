@@ -38,33 +38,33 @@ const SidebarMenu = ({ setToggleMenu, toggleMenu }) => {
     setOpenSubmenu(newIndex);
     setOpenNestedSubmenu(null); // Close any open nested submenus when toggling a main menu
 
-    // Animate submenu items (slide in/out and fade in/out)
-    const submenuItems = submenuRefs.current[index]?.children;
-    if (submenuItems) {
-      if (newIndex === index) {
-        // Opening animation: slide in from left and fade in
-        gsap.fromTo(
-          submenuItems,
-          { x: "-20px", opacity: 0 },
-          {
-            x: "0px",
-            opacity: 1,
-            duration: 0.3,
-            stagger: 0.1,
-            ease: "power2.out",
-          }
-        );
-      } else {
-        // Closing animation: slide out to left and fade out
-        gsap.to(submenuItems, {
-          x: "-20px",
-          opacity: 0,
-          duration: 0.3,
-          stagger: 0.1,
-          ease: "power2.in",
-        });
-      }
-    }
+    // // Animate submenu items (slide in/out and fade in/out)
+    // const submenuItems = submenuRefs.current[index]?.children;
+    // if (submenuItems) {
+    //   if (newIndex === index) {
+    //     // Opening animation: slide in from left and fade in
+    //     gsap.fromTo(
+    //       submenuItems,
+    //       { x: "-20px", opacity: 0 },
+    //       {
+    //         x: "0px",
+    //         opacity: 1,
+    //         duration: 0.3,
+    //         stagger: 0.1,
+    //         ease: "power2.out",
+    //       }
+    //     );
+    //   } else {
+    //     // Closing animation: slide out to left and fade out
+    //     gsap.to(submenuItems, {
+    //       x: "-20px",
+    //       opacity: 0,
+    //       duration: 0.3,
+    //       stagger: 0.1,
+    //       ease: "power2.in",
+    //     });
+    //   }
+    // }
   };
 
   // Function to toggle a nested submenu (sub-submenu) open or closed
@@ -78,32 +78,32 @@ const SidebarMenu = ({ setToggleMenu, toggleMenu }) => {
     setOpenNestedSubmenu(newNestedIndex);
 
     // Animate nested submenu items (slide in/out and fade in/out)
-    const nestedSubmenuItems = nestedSubmenuRefs.current[key]?.children;
-    if (nestedSubmenuItems) {
-      if (newNestedIndex === key) {
-        // Opening animation: slide in from left and fade in
-        gsap.fromTo(
-          nestedSubmenuItems,
-          { x: "-20px", opacity: 0 },
-          {
-            x: "0px",
-            opacity: 1,
-            duration: 0.3,
-            stagger: 0.1,
-            ease: "power2.out",
-          }
-        );
-      } else {
-        // Closing animation: slide out to left and fade out
-        gsap.to(nestedSubmenuItems, {
-          x: "-20px",
-          opacity: 0,
-          duration: 0.3,
-          stagger: 0.1,
-          ease: "power2.in",
-        });
-      }
-    }
+    // const nestedSubmenuItems = nestedSubmenuRefs.current[key]?.children;
+    // if (nestedSubmenuItems) {
+    //   if (newNestedIndex === key) {
+    //     // Opening animation: slide in from left and fade in
+    //     gsap.fromTo(
+    //       nestedSubmenuItems,
+    //       { x: "-20px", opacity: 0 },
+    //       {
+    //         x: "0px",
+    //         opacity: 1,
+    //         duration: 0.3,
+    //         stagger: 0.1,
+    //         ease: "power2.out",
+    //       }
+    //     );
+    //   } else {
+    //     // Closing animation: slide out to left and fade out
+    //     gsap.to(nestedSubmenuItems, {
+    //       x: "-20px",
+    //       opacity: 0,
+    //       duration: 0.3,
+    //       stagger: 0.1,
+    //       ease: "power2.in",
+    //     });
+    //   }
+    // }
   };
 
   // Effect to handle sidebar opening animation when toggleMenu changes
