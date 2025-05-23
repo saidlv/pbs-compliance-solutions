@@ -187,7 +187,7 @@ const Page = () => {
                   >
                     {service?.img && (
                       <div className="w-full lg:w-1/3 flex justify-center items-center">
-                        <Image
+                        <img
                           src={service.img}
                           alt={service.heading}
                           width={100}
