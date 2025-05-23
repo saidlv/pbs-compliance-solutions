@@ -1,28 +1,32 @@
 import React from 'react'
 
-const DashboardTable = ({entries, handleIncrement, handleDecrement}) => {
+const PropertySummary = ({entries, handleIncrement, handleDecrement}) => {
   return (
     <>
-    <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto">
+    <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto custom-scrollbar">
               <table className="text-[#D9D9D9] text-center w-full h-full">
                 <thead>
                   <tr className="border-b-2 border-[#8AD5B7] text-[#8AD5B7] text-lg sm:text-xl lg:text-2xl font-semibold">
-                    <th className="w-2/5 lg:px-2 py-6 border-r-2 border-[#8AD5B7]">Address</th>
-                    <th className="w-1/5 lg:px-2 py-6 border-r-2 border-[#8AD5B7]">Sync Status</th>
-                    <th className="w-1/5 lg:px-2 py-6">View</th>
+                    {Array(10)
+                    .fill("")
+                    .map((_, index) => (
+                    <th key={index} className="lg:px-2 py-6 border-x-2 border-[#8AD5B7]">Address</th>
+                    ))}
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className='w-full'>
                   {Array(9)
                     .fill("")
                     .map((_, index) => (
                       <tr
                         key={index}
-                        className={`${index !== 8 ? "border-b-2" : ""} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
+                        className={`${index !== 8 ? "border-b-2" : ""} border-[#89A096] text-[#D9D9D9] text-lg font-semibold w-full`}
                       >
-                        <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
-                        <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
-                        <td className="w-1/5 px-2 py-6"></td>
+                        {Array(10)
+                    .fill("")
+                    .map((_, index) => (
+                    <td key={index} className="lg:px-2 py-6 border-x-2 border-[#8AD5B7]"></td>
+                    ))}
                       </tr>
                     ))}
                 </tbody>
@@ -46,4 +50,4 @@ const DashboardTable = ({entries, handleIncrement, handleDecrement}) => {
   )
 }
 
-export default DashboardTable
+export default PropertySummary

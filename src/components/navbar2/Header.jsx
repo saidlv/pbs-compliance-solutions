@@ -32,21 +32,21 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (!ref.current || !imageRef.current) return;
+  // useEffect(() => {
+  //   if (!ref.current || !imageRef.current) return;
 
-    gsap.to(imageRef.current, {
-      scale: 0.7,
-      scrollTrigger: {
-        trigger: ref.current,
-        start: "top top",
-        end: "+=200",
-        scrub: true,
-      },
-    });
+  //   gsap.to(imageRef.current, {
+  //     scale: 0.7,
+  //     scrollTrigger: {
+  //       trigger: ref.current,
+  //       start: "top top",
+  //       end: "end end",
+  //       scrub: true,
+  //     },
+  //   });
 
-    console.log("GSAP animations set up for header");
-  }, []);
+  //   console.log("GSAP animations set up for header");
+  // }, []);
 
   return (
     <div
@@ -56,13 +56,13 @@ const Header = () => {
       ref={ref}
     >
       <motion.div
-        className="flex bg-[#1E2322] flex-row justify-end items-center w-full h-[60px] lg:h-[100px] px-3 lg:px-6"
+        className="flex bg-[#1E2322] flex-row justify-end items-center w-full h-[60px] lg:h-[100px] pr-3 lg:pr-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
 
-        <div className="w-[60%] sm:w-[55%] flex justify-between items-center">
+        <div className="w-full flex justify-end items-center relative">
           <div
             className="cursor-pointer lg:p-4 pl-0"
             onClick={() => {
@@ -75,7 +75,7 @@ const Header = () => {
                 width={100}
                 height={100}
                 alt="Website Logo"
-                className="w-[40px] md:w-[45px] xl:w-[60px] object-contain h-auto relative"
+                className="w-[40px] md:w-[45px] xl:w-[60px] object-contain h-auto absolute left-1/2 top-0"
               />
             </motion.div>
           </div>

@@ -1,7 +1,6 @@
 "use client";
 import { X, Menu } from "lucide-react";
 import Image from "next/image";
-import "./Sidebar.css"; // Import your CSS file for styles
 import SidebarMenu from "./SidebarMenu";
 import { useState } from "react";
 

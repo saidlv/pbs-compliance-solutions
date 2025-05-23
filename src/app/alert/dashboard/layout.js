@@ -17,6 +17,7 @@ export default function DashboardLayout({ children }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
+            className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased overflow-x-hidden bg-[#37403D] min-h-screen w-screen relative`}
           >
             <Header />
             {children}

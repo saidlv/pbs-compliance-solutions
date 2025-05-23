@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { X } from "lucide-react";
 import Sidebar from "@/components/navbar2/Sidebar";
 import DashboardTable from "@/components/member-portal/DashboardTable";
+import ManageProperties from "@/components/member-portal/ManageProperties";
+import PropertySummary from "@/components/member-portal/PropertySummary";
+import Settings from "@/components/member-portal/Settings";
 
 const Page = () => {
   const [entries, setEntries] = useState(20);
@@ -26,7 +29,7 @@ const Page = () => {
   };
 
   return (
-    <div className="relative bg-[#37403D] w-full">
+    <div className="relative bg-[#37403D] w-full min-h-screen">
 
       {/* Sidebar (Always Visible) */}
       <Sidebar />
@@ -63,7 +66,7 @@ const Page = () => {
           </div>
 
           <div className="w-[90%] mx-auto flex flex-col justify-center items-center mt-6">
-            <div className="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between items-center w-full mx-auto text-[#89A096] font-semibold text-lg xl:text-xl p-2 rounded-full">
+            <div className="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between items-center w-full mx-auto text-[#89A096] font-semibold text-lg xl:text-xl p-2 rounded-full mb-6">
               <div className="flex items-center text-white p-2 rounded-md">
                 <span className="mr-2 text-[#89A096]">Show</span>
                 <div className="flex items-stretch gap-1">
@@ -100,21 +103,11 @@ const Page = () => {
                 <X className="absolute right-4" />
               </div>
             </div>
-            <DashboardTable/>
-          </div>
-
-          <div className="flex justify-between items-center w-[90%] mx-auto text-[#89A096] font-semibold text-lg xl:text-xl px-2 py-8">
-            <p>Showing 1 to 2 of 2 entries</p>
-            <div className="flex items-center gap-4">
-              <button className="hover:text-[#8AD5B7]" onClick={handleDecrement}>Previous</button>
-              <div
-                className="bg-[#2E3734] border border-[#8AD5B7] rounded-full h-auto outline-none w-12 flex items-center justify-center"
-                min="1"
-              >
-                {entries}
-              </div>
-              <button className="hover:text-[#8AD5B7]" onClick={handleIncrement}>Next</button>
-            </div>
+            
+            {displayComponent == "Property List" && <DashboardTable entries={entries} handleIncrement={handleIncrement} handleDecrement= {handleDecrement}/>}
+            {displayComponent == "Manage Properties" && <ManageProperties/>}
+            {displayComponent == "Property Summary" && <PropertySummary entries={entries} handleIncrement={handleIncrement} handleDecrement= {handleDecrement}/>}
+            {displayComponent == "Settings" && <Settings entries={entries} handleIncrement={handleIncrement} handleDecrement= {handleDecrement}/>}
           </div>
         </div>
       </div>

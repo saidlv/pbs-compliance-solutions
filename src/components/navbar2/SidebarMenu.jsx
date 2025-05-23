@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronDown, X } from "lucide-react";
+import { ChevronLeft, ChevronDown } from "lucide-react"; // Removed X import
 import { gsap } from "gsap";
 import { SideBarData } from "./data"; // Import sidebar data
 
@@ -72,15 +72,28 @@ const SidebarMenu = ({ setToggleMenu, toggleMenu }) => {
     }
   };
 
+  // Handle click outside to close sidebar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        handleClose(); // Trigger the closing animation
+      }
+    };
+
+    if (toggleMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [toggleMenu]);
+
   return (
     <div
       ref={sidebarRef}
       className="fixed top-0 left-0 h-full w-[80vw] sm:w-[50vw] lg:w-[30vw] bg-[#1E2322] z-50 flex flex-col items-center justify-start gap-3 lg:gap-6 pt-10"
       style={{ display: isVisible ? "flex" : "none" }}
     >
-      <button onClick={handleClose} className="absolute top-2 left-2 p-2">
-        <X className="text-[#D9D9D9] w-6 h-6" />
-      </button>
+      {/* Removed the X button */}
 
       {/* Title */}
       <h2 className="text-[#8AD5B7] text-base md:text-lg xl:text-xl font-semibold font-conthrax">
