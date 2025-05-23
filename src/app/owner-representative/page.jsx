@@ -212,19 +212,19 @@ const Page = () => {
               </h3>
               <ul className="text-base sm:text-lg md:text-lg lg:text-xl text-[#89A096] font-semibold p-3 sm:p-4 flex flex-col gap-1 sm:gap-2">
                 <li className="flex gap-2 items-center">
-                  <DotIcon size={24} />
+                  <DotIcon size={24} className="flex-shrink-0" />
                   We fight for your interests
                 </li>
                 <li className="flex gap-2 items-center">
-                  <DotIcon size={24} />
+                  <DotIcon size={24} className="flex-shrink-0" />
                   Represent you in meetings with NYC Departments or Tenants
                 </li>
                 <li className="flex gap-2 items-center">
-                  <DotIcon size={24} />
+                  <DotIcon size={24} className="flex-shrink-0" />
                   Manage Tenant disputes and Lease negotiations
                 </li>
                 <li className="flex gap-2 items-center">
-                  <DotIcon size={24} />
+                  <DotIcon size={24} className="flex-shrink-0" />
                   Coordinate repairs, upgrades, and capital Projects
                 </li>
               </ul>
