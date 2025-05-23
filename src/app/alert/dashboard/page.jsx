@@ -52,7 +52,7 @@ const Page = () => {
 
           <div className="w-[90%] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pt-6 xl:pt-10">
             {buttonList.map((button, index) => (
-              <buton
+              <button
                 onClick={() => {setDisplayComponent(button)
 
                 }}
@@ -61,7 +61,7 @@ const Page = () => {
                   displayComponent === button ? "bg-[#8AD5B7] text-[#1E2322]" : "bg-[#2E3734] text-[#89A096]"}`}
               >
                 {button}
-              </buton>
+              </button>
             ))}
           </div>
 
