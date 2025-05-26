@@ -8,6 +8,7 @@ import CTA from "@/components/CTA";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CTA2 from "@/components/CTA2";
 
 const AboutPage = () => {
   // Extracting content from static data
@@ -73,7 +74,7 @@ const AboutPage = () => {
   <div className="w-[100vw] relative flex justify-center">
     <div className="bg-[#8AD5B7] w-full h-2"></div>
     <div
-      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] sm:w-[50%] lg:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-3xl z-20"
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] lg:w-[30%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-3xl z-20"
     >
       About Us
     </div>
@@ -95,7 +96,7 @@ const AboutPage = () => {
 
           {/* Story text content */}
           <div className="w-full lg:w-[60%] xl:w-[50%] 2xl:w-[40%] space-y-6">
-            <h2 className="text-3xl xl:text-[55px] text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-2">
+            <h2 className="text-3xl xl:text-[55px] text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-3 lg:mb-6">
               {story.headline}
             </h2>
             <span className="text-[#7A8E85] text-lg xl:text-xl font-semibold block lg:inline text-center lg:text-left">
@@ -115,10 +116,10 @@ const AboutPage = () => {
       </section>
 
       {/* Vision & Mission Section */}
-      <div className="flex lg:items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16 pb-28">
+      <div className="flex lg:items-stretch justify-center lg:justify-evenly gap-12 flex-col lg:flex-row text-[#DCE2E2] font-semibold px-3 lg:px-16">
         {/* Vision Section */}
-        <div className="lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
-          <div className="flex items-start justify-start gap-3">
+        <div className="lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5  box-border">
+          <div className="flex items-start justify-center gap-3">
             <img src="/pics/Group 19.png" alt="light" className="w-16 h-16" />
             <div className="mb-3">
               <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
@@ -149,8 +150,8 @@ const AboutPage = () => {
         </div>
 
         {/* Mission Section */}
-        <div className="lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-lg bg-[#2B3331] box-border">
-          <div className="flex items-start justify-start gap-3">
+        <div className="lg:min-h-[600px] 2xl:min-h-[500px] 3xl:min-h-[450px] w-full lg:w-1/2 text-center lg:text-left py-6 px-5 rounded-2xl bg-[#2B3331] box-border">
+          <div className="flex items-start justify-center gap-3">
             <img src="/pics/Layer_1.png" alt="arrow" className="w-14 h-14" />
             <div className="mb-3">
               <h2 className="text-3xl lg:text-5xl font-bold font-conthrax text-[#8AD5B7] mb-2">
@@ -186,30 +187,37 @@ const AboutPage = () => {
       </div>
 
       {/* Redefining section */}
-      <section className="relative px-6 lg:px-6 pb-16">
+      <section className="pb-10">
+        <div className="relative">
         <Image
           src="/pics/pattern1.png"
           alt=""
-          className="opacity-45 3xl:opacity-100 w-full h-full object-cover rounded-xl filter grayscale shadow-custom absolute -top-32"
+          className="opacity-100 3xl:opacity-100 w-full h-full object-cover rounded-xl filter grayscale shadow-custom "
           width={700}
           height={500}
           loading="lazy"
         />
-        <div className="bg-[#1E2322] bg-opacity-100 rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6">
-          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] w-[70%] mx-auto my-6">
+        <div className="rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6 absolute bottom-0">
+          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] leading-tight w-[70%] mx-auto my-6">
             Redefining Excellence in NYC Construction
           </h2>
           <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
+        </div>
+        </div>
 
+        <div className="w-full flex flex-col items-center justify-center mb-6 py-3 px-10 lg:px-16">
           <p className="text-[#DCE2E2] text-base xl:text-lg font-semibold text-center mt-6">
           We are committed to becoming the New York Metropolitan area's most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.
           </p>
-          <p className="text-[#DCE2E2] font-semibold text-base xl:text-lg mt-5">
+
+          <ul className="list-disc list-inside text-[#DCE2E2] font-semibold text-base xl:text-lg text-center space-y-2 mt-5">
+          <li >
              Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape
-          </p>
-          <p className="text-[#DCE2E2] font-semibold text-base xl:text-lg mb-5">
+          </li>
+          <li >
              Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level
-          </p>
+          </li>
+          </ul>
         </div>
       </section>
 
@@ -371,10 +379,11 @@ const AboutPage = () => {
         <p className="max-w-2xl text-[#89A096] mx-auto font-semibold text-sm mb-4">
           {cta?.text}
         </p>
-        <CTA
+        <CTA2
           text={cta?.buttonText}
           href="/contacts"
-          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[20px] lg:text-[24px] w-full lg:w-[75%] xl:w-[60%] 2xl:w-[50%] rounded-full mx-auto my-0"
+          isArrow={true}
+          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[20px] lg:text-[24px] w-full lg:w-auto rounded-full mx-auto my-0"
         />
       </section>
     </div>

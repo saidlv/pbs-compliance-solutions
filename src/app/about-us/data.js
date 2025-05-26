@@ -16,7 +16,7 @@ export const aboutContent = [
         body: "We are committed to becoming the New York Metropolitan area’s most trusted partner in your Compliance, Expediting and consulting—where growth harmonizes with mastery, and innovation elevates every project from blueprint to completion.",
         pillars: [
             "Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape",
-            "Value-Driven Culture: Intentional collaboration, data-powered decisions, and unwavering ownership at every level"
+            "Value-Driven Culture:"
         ]
     },
     {
