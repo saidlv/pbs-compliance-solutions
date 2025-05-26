@@ -25,7 +25,7 @@ const heroInfo = [
     text1: "Property Management",
     text2: "Hassle-Free Management for Busy Owners",
     text3: "Streamline maintenance, tenant relations, and compliance. Focus on growth, not daily headaches.",
-    cta: "Learn More",
+    cta: "Optimze Your Property",
     ctaLink: "/property-management"
   },
    {
@@ -34,7 +34,7 @@ const heroInfo = [
     text1: "Compliance Inspection Services",
     text2: "All major Inspection services addressed",
     text3: "Our Inspection Services includes all major Departments prioritized Compliance violations (LL11, LL126 Parking Inspection, LL126 Parapet Inspection, LL1152, Sprinkler Hydrostatic Test, Boiler Inspection, Elevator Inspection)",
-    cta: "/inspection-services",
+    cta: "Opyimize Your Property",
     ctaLink: "/property-management"
   },
 ];
