@@ -16,7 +16,7 @@ const ManageProperties = () => {
               <button
                 onClick={() => {}}
                 key={index}
-                className={`w-full lg:w-auto bg-[#1E2322] hover:bg-[#8AD5B7]  font-semibold text-base xl:text-xl  p-2 rounded-full shadow-md text-[#7C9087] hover:text-[#1E2322] transition duration-300 ease-in-out text-center cursor-pointer flex items-center justify-center `}
+                className={`w-full lg:w-auto bg-[#1E2322] hover:bg-[#8AD5B7]  font-semibold text-base xl:text-xl  p-2 xl:p-3 rounded-full shadow-md text-[#7C9087] hover:text-[#1E2322] transition duration-300 ease-in-out text-center cursor-pointer flex items-center justify-center `}
               >
                 {button}
               </button>

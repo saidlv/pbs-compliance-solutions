@@ -5,13 +5,38 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import CustomImage from "@/app/CustomImage";
+import HeroCarousel from "@/home-page/HeroCarousel";
 
 // Define the hero sections array with 3 images
-const heroSections = [
-  "/pics/home-hero-1.png",
-  "/pics/home-hero-2.png",
-  "/pics/home-hero-3.png",
+const heroInfo = [
+  {
+    bg: "/pics/homeHero/bg-1.png",
+    img: "/pics/homeHero/building-1.png",
+    text1: "Owner Representative",
+    text2: "Simplify your Construction Journey with Expert Oversight",
+    text3: "Avoid the stress of managing Contractors, Budgets, and timelines. Ensure accountability, quality, and compliance for your projects.",
+    text4: "Let us handle the Hassle, Start your Project Right",
+    cta: "Learn More",
+    ctaLink: "/owner-representative"
+  },
+  {
+    bg: "/pics/homeHero/bg-2.png",
+    img: "/pics/homeHero/building-2.png",
+    text1: "Property Management",
+    text2: "Hassle-Free Management for Busy Owners",
+    text3: "Streamline maintenance, tenant relations, and compliance. Focus on growth, not daily headaches.",
+    cta: "Learn More",
+    ctaLink: "/property-management"
+  },
+   {
+    bg: "/pics/homeHero/bg-3.png",
+    img: "/pics/homeHero/building-3.png",
+    text1: "Compliance Inspection Services",
+    text2: "All major Inspection services addressed",
+    text3: "Our Inspection Services includes all major Departments prioritized Compliance violations (LL11, LL126 Parking Inspection, LL126 Parapet Inspection, LL1152, Sprinkler Hydrostatic Test, Boiler Inspection, Elevator Inspection)",
+    cta: "/inspection-services",
+    ctaLink: "/property-management"
+  },
 ];
 
 // Custom Next Arrow Component
@@ -40,7 +65,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-const HeroCarousel = () => {
+const Hero = () => {
   // Slick carousel settings
   const settings = {
     dots: false,
@@ -49,7 +74,7 @@ const HeroCarousel = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true, // Enable arrows
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -58,13 +83,13 @@ const HeroCarousel = () => {
 
   return (
     <Slider {...settings} className="relative">
-      {heroSections.map((img, index) => (
+      {/* {heroInfo.map((img, index) => (
         <div key={index} className="relative">
           <div className="relative min-h-[25vh] md:min-h-[40vh] lg:min-h-screen flex items-center lg:items-end justify-center lg:justify-start">
-            {/* Background Image */}
+            {/* Background Image }
             <div className="absolute h-full inset-0">
-              <CustomImage
-                src={img}
+              <Image
+                src={img.bg}
                 alt={`Hero Image ${index + 1}`}
                 className="w-full h-full object-cover z-0"
                 fill
@@ -74,9 +99,13 @@ const HeroCarousel = () => {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
+
+{heroInfo.map((heroData, index) => (
+      <HeroCarousel key={index} bg={heroData.bg} img={heroData.img} text1={heroData.text1} text2={heroData.text2} text3={heroData.text3} text4={heroData?.text4} cta={heroData.cta} ctaLink={heroData.ctaLink} />
+      ))}   
     </Slider>
   );
 };
 
-export default HeroCarousel;
+export default Hero;

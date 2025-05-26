@@ -23,7 +23,7 @@ const Hero = () => {
 
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
-
+ 
   return (
     <div className="relative bg-brand-dark">
       <div className="min-h-screen relative flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-between 2xl:justify-center 2xl:gap-16 py-8 lg:px-16">

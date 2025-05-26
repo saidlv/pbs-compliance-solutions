@@ -144,7 +144,6 @@ const HorizontalMenu = () => {
                 )}
               </div>
             ))}
-            <HamburgerMenu navItems={navItems} />
           </div>
         </div>
       </div>
