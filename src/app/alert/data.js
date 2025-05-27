@@ -22,7 +22,7 @@ export const section01 = {
     img: "/pics/alert-pic1.png",
     imgArray: [
       {
-        img: "/pics/alert-pic2.png",
+        img: "/pics/alert-pic10.png",
         text: "Coverage:All relevant NYC agencies (DOB, HPD, FDNY, etc.)",
       },
       {
@@ -54,11 +54,26 @@ export const section2 = {
       "Add properties individually or in bulk, using our user-friendly portal, search by address, BIN, or let our dedicated agents assist you, Remove properties with a single click.",
     title: "Ways to add or remove your properties",
     items: [
-      "Address Search: Enter an address for instant results.",
-      "BIN Lookup: Search by building Identification Number (Pull full property histories from DOB records)",
-      "Agent Assistance: Request help from our PBS team",
-      "Bulk Upload: Add multiple properties via CSV for large portfolios.",
-      "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
+      {
+        text: "Address Search: Enter an address for instant results.",
+        img: "/pics/alert-pic12.png",
+      },
+      {
+        text: "BIN Lookup: Search by building Identification Number (Pull full property histories from DOB records)",
+        img: "/pics/alert-pic13.png",
+      },
+      {
+        text: "Agent Assistance: Request help from our PBS team",
+        img: "/pics/alert-pic14.png",
+      },
+      {
+        text: "Bulk Upload: Add multiple properties via CSV for large portfolios.",
+        img: "/pics/alert-pic15.png",
+      },
+      {
+        text: "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
+        img: "/pics/alert-pic16.png",
+      },
     ],
   },
   div3: {
@@ -82,29 +97,29 @@ export const section3 = {
     text1: "From Data to Decisions in One click",
     text2:
       "Upon signing up, instantly receive a summary report of your property portfolio. Then, choose weekly or monthly updates tailored to your needs.",
-    text3:
-      "Report Types: Compliance Status, Upcoming deadlines, violation summaries.",
-    itemHeading: "Sample Reports:",
-    items: [
-      "/pics/alert-pic7.png",
-      "/pics/alert-pic8.png",
-      "/pics/alert-pic9.png",
-    ],
-    text4: "Export Options: Download as PDF, Excel, or share via link.",
-    text5: "Schedule Alerts: Get notified when reports are ready",
+    // text3:
+    //   "Report Types: Compliance Status, Upcoming deadlines, violation summaries.",
+    // itemHeading: "Sample Reports:",
+    // items: [
+    //   "/pics/alert-pic7.png",
+    //   "/pics/alert-pic8.png",
+    //   "/pics/alert-pic9.png",
+    // ],
+    // text4: "Export Options: Download as PDF, Excel, or share via link.",
+    // text5: "Schedule Alerts: Get notified when reports are ready",
   },
 
-  div2: {
-    heading: "Custom Property Inspections",
-    text1: "Track deadlines your way",
-    text2:
-      "Create unlimited inspection profiles or templates with bespoke checklists for NYC-mandated deadlines, reminders, or internal processes.",
-    text3:
-      "Unlimited inspections: Fire safety, elevator, plumbing, and more; Photo Uploads: Attach time-stamped images to inspection records",
-    text4:
-      "Multi-Step Alerts: Set reminders 30, 15 and 3 days before deadlines",
-    img: "/pics/alert-pic5.png",
-  },
+  // div2: {
+  //   heading: "Custom Property Inspections",
+  //   text1: "Track deadlines your way",
+  //   text2:
+  //     "Create unlimited inspection profiles or templates with bespoke checklists for NYC-mandated deadlines, reminders, or internal processes.",
+  //   text3:
+  //     "Unlimited inspections: Fire safety, elevator, plumbing, and more; Photo Uploads: Attach time-stamped images to inspection records",
+  //   text4:
+  //     "Multi-Step Alerts: Set reminders 30, 15 and 3 days before deadlines",
+  //   img: "/pics/alert-pic5.png",
+  // },
 
   div3: {
     img: "/pics/alert-pic6.png",
@@ -164,23 +179,24 @@ export const section4 = {
     heading: "Pricing & Plans",
     left: {
       heading: "Free Alert Service",
-      text1: "1- Free Alert Service (First 3 Months) $0/Month for unlimited alerts and mobile app access.",
+      text1:
+        "1- Free Alert Service (First 3 Months) $0/Month for unlimited alerts and mobile app access.",
       text2: "This Includes",
       items: [
-          "Basic monitoring for violations, deadlines, and permits.",
-          "Email + app notifications",
-          "24/7 emergency support",
-        ],
+        "Basic monitoring for violations, deadlines, and permits.",
+        "Email + app notifications",
+        "24/7 emergency support",
+      ],
     },
     right: {
-        heading: "Post-Trial Plan",
-        text: "($9 /Building /Month)",
-        items: [
-          "All Free Features, Plus",
-          "Priority Alerts: Urgency-ranked notifications",
-          "Historical Data Access: Full violation/Inspection history",
-        ],
-      },
+      heading: "Post-Trial Plan",
+      text: "($9 /Building /Month)",
+      items: [
+        "All Free Features, Plus",
+        "Priority Alerts: Urgency-ranked notifications",
+        "Historical Data Access: Full violation/Inspection history",
+      ],
+    },
   },
 
   div2: {
