@@ -68,7 +68,7 @@ const AboutCompany = () => {
   ];
 
   return (
-    <div className="bg-brand-dark text-brand-light px-8 lg:px-16" ref={containerRef}>
+    <div className="bg-brand-dark text-brand-light p-8 lg:p-16" ref={containerRef}>
       <div className="container mx-auto px-6 pt-16 lg:px-12 flex flex-col lg:flex-row justify-between gap-5 xl:gap-8 bg-[#1E2322] bg-opacity-25 rounded-3xl  border-2 border-brand-gray1/50 pb-12 mb-16">
         {/* Left Side - Numbers That Matter */}
         <div className="lg:w-[50%] xl:w-[55%] gsap-animate p-2">
@@ -119,7 +119,7 @@ const AboutCompany = () => {
         </div>
 
       {/* Why NYC Trusts PBS? */}
- <div className="pb-16">
+ <div className="">
             <h2 className="text-3xl text-center lg:text-5xl font-conthrax font-semibold text-[#DCE2E2] mb-3">
               Why NYC Trusts PBS?
             </h2>

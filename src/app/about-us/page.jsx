@@ -82,9 +82,9 @@ const AboutPage = () => {
 
       {/* The PBS Story Section */}
       <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-[#DCE2E2]">
-        <div className="mt-16 flex flex-col lg:flex-row items-start lg:items-center justify-center gap-12 lg:gap-16">
+        <div className="mt-16 flex flex-col lg:flex-row items-start lg:items-stretch justify-center gap-12 lg:gap-16">
           {/* Story image in a circular background */}
-          <div className="relative w-full lg:w-[37%] xl:w-[28%] 2xl:w-[22%] flex justify-center items-center">
+          <div className="relative w-full lg:w-[30%] 2xl:w-[22%] flex justify-center items-center">
             <Image
               src="/pics/Building.png"
               alt="PBS"
@@ -95,7 +95,7 @@ const AboutPage = () => {
           </div>
 
           {/* Story text content */}
-          <div className="w-full lg:w-[60%] xl:w-[50%] 2xl:w-[40%] space-y-6">
+          <div className="w-full lg:w-[60%] xl:w-[50%] 2xl:w-[40%] space-y-6 h-auto flex flex-col justify-center">
             <h2 className="text-3xl xl:text-[55px] text-center lg:text-left font-semibold font-conthrax text-[#8AD5B7] mb-3 lg:mb-6">
               {story.headline}
             </h2>
@@ -235,7 +235,7 @@ const AboutPage = () => {
 
           {/* Mission content with vertical accent line */}
           <div className="w-full lg:w-3/5 pt-12">
-            <div className="flex items-center lg:justify-start h-36 rounded-lg mb-12 gap-4">
+            <div className="flex items-center lg:justify-start h-36 xl:h-24 rounded-lg mb-12 gap-4">
               <div className="bg-[#8AD5B7] w-2 h-full rounded-lg"></div>
               <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax text-[#DCE2E2] flex flex-col gap-1">
                 <span className="">{mission?.tagline.split(",")[1] + ","}</span>

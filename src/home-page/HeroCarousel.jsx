@@ -29,7 +29,7 @@ const HeroCarousel = ({bg,img,text1,text2,text3,text4="",cta,ctaLink, className=
                     <Image
                         src={img}
                         alt="Modern skyscrapers"
-                        className="w-[60%] mx-auto lg:w-full lg:h-full 2xl:h-[85%] mix-blend-luminosity object-contain lg:object-cover object-top-right drop-shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                        className="w-[60%] mx-auto lg:w-full lg:h-full 2xl:h-[85%] mix-blend-luminosity object-contain lg:object-cover object-top-right drop-shadow-[0_15px_90px_rgba(0,0,0,0.5)] inset-10"
                         width={700}
                         height={500}
                     />

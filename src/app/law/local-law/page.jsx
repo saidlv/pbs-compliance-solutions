@@ -41,7 +41,7 @@ const Page = () => {
     </div>
   </div>
       {/*Section 01  */}
-      <section className="px-6 md:px-10 xl:px-16 pt-16 lg:pt-24 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 pt-16 pb-8 lg:pt-24 text-[#DCE2E2]">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 2xl:gap-16 w-full">
         
           <Image
@@ -115,7 +115,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 my-10"></div>
+        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 mt-16 mb-8"></div>
 
         <div className="flex flex-col lg:flex-row items-stretch justify-between w-full rounded-lg bg-[#2E3734] py-3 px-6 lg:py-10 lg:px-20 gap-6 lg:gap-12 ">
           <div className="flex-1 w-full lg:w-[50%] flex flex-col justify-between items-center lg:items-start gap-3 rounded-2xl">
@@ -158,10 +158,10 @@ const Page = () => {
       </section>
 
       {/* Section 02 */}
-      <section className="px-6 md:px-10 lg:px-16 2xl:px-24 pb-10 pt-16 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 lg:px-16 2xl:px-24 py-10 lg:py-16 text-[#DCE2E2]">
         <div className="w-full overflow-hidden relative">
           {/* Moved title section here and fixed spacing */}
-          <div className="text-center mb-10 xl:mb-16 py-2">
+          <div className="text-center mb-10 py-2">
             <h1 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-4">
               Our Services
             </h1>
@@ -322,7 +322,7 @@ const Page = () => {
       ))}
     </div>
 
-  <div className="w-full mt-0 flex flex-col xl:flex-row gap-6 items-start justify-start">
+  <div className="w-full mt-0 flex flex-col xl:flex-row gap-6 items-start justify-start pl-6 2xl:pl-10">
     <CTA2
       isArrow={false}
       text="Book your Slot Today"

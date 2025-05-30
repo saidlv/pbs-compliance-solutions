@@ -44,7 +44,7 @@ const Page = () => {
 
       {/* Section 01 */}
       <section className="px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-16 text-[#DCE2E2]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 sm:gap-6 w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-4 sm:gap-6 w-full pt-8">
           <Image
             src="/pics/owner-repre-1.png"
             alt="owner representative"
@@ -122,7 +122,7 @@ const Page = () => {
       </section>
 
       {/* Section 02 */}
-      <section className="px-4 sm:px-6 md:px-10 lg:px-16 pb-8 sm:pb-10 text-[#DCE2E2]">
+      <section className="px-4 sm:px-6 md:px-10 lg:px-16 pb-8 sm:pb-10 lg:pt-5 text-[#DCE2E2]">
         <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-full mb-4 sm:mb-6">
           <h2 className="text-[#DCE2E2] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-conthrax font-semibold">
             What We Do

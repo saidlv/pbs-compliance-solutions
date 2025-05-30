@@ -41,7 +41,7 @@ const InspectionServices = () => {
         <h2 className="text-4xl font-semibold font-conthrax w-2/3 mx-auto text-center mb-3 lg:mb-6">
           Ensuring safety, Compliance & Peace of Mind
         </h2>
-        <p className="text-xl font-semibold text-[#89A096] w-5/6 mx-auto text-center mb-6 lg:mb-10">
+        <p className="text-xl font-semibold text-[#89A096] w-full mx-auto text-center mb-6 lg:mb-10">
            Maintaining your property isn’t just an obligation, it’s a necessity
           to protect lives, uphold legal standards, and preserve long-term
           value. At PBS we turn complexity into clarity with inspections
@@ -57,7 +57,7 @@ const InspectionServices = () => {
             className="w-[80%] lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
           />
           <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-end text-center lg:text-left px-4 lg:px-0">
-            <h1 className="text-[#8AD5B7] text-3xl lg:text-[55px] font-semibold font-conthrax mb-2 leading-tight">
+            <h1 className="text-[#8AD5B7] text-4xl xl:text-[55px] font-semibold font-conthrax mb-2 leading-tight">
               Why Compliance Matter
             </h1>
             <div className="bg-[#8AD5B7] w-full lg:w-[40%] text-[#DCE2E2] h-2 mb-6"></div>
@@ -215,11 +215,11 @@ const InspectionServices = () => {
             alt="image"
             width={200}
             height={200}
-            className="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] lg:absolute lg:-top-[40%] 2xl:-top-[50%] object-contain"
+            className="w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] lg:absolute lg:-top-[50%] 2xl:-top-[50%] object-contain"
            
           />
           {/* Headline: Force 2 lines at lg */}
-          <h2 className="font-conthrax text-[#8AD5B7] text-2xl md:text-3xl lg:text-4xl font-semibold text-center lg:text-left lg:ml-[25%] max-w-full w-full lg:max-w-[22ch] 2xl:max-w-[22ch]">
+          <h2 className="font-conthrax text-[#8AD5B7] text-2xl md:text-3xl xl:text-4xl font-semibold text-center lg:text-left lg:ml-[25%] max-w-full w-full lg:max-w-[22ch] 2xl:max-w-[22ch]">
             {section.headline}
           </h2>
         </div>

@@ -86,7 +86,7 @@ const Page = () => {
       >
         <div className="w-full overflow-hidden relative">
           {/* Moved title section here and fixed spacing */}
-          <div className="text-center my-2 mb-10 py-2">
+          <div className="text-center mb-10 py-2">
             <h1 className="text-[#DCE2E2] text-4xl font-conthrax tracking-widest mb-4">
               PBS delivers expert solutions
             </h1>
@@ -103,7 +103,7 @@ const Page = () => {
                   <div
                     className={`flex flex-col ${
                       service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } items-center xl:items-stretch 3xl:items-center lg:justify-between 2xl:justify-center gap-12 p-4 lg:p-6`}
+                    } items-center xl:items-stretch 3xl:items-center lg:justify-between 2xl:justify-center gap-12 px-4 lg:px-6`}
                   >
                     <div className="w-[80%] lg:w-[45%] 2xl:w-[40%] h-full flex justify-center items-start 2xl:items-center">
                       <Image
@@ -160,11 +160,11 @@ const Page = () => {
           </div>
 
           <div
-            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-8 mb-10`}
+            className={`w-[30%] h-1 rounded-full bg-[#8AD5B7] mx-auto mt-12 mb-16`}
           ></div>
 
           <div className="text-[#DCE2E2] text-center">
-            <h4 className="text-4xl font-semibold font-conthrax mb-6">
+            <h4 className="text-4xl font-semibold font-conthrax">
               We Serve Across NYC’s Departments
             </h4>
             <p className="text-base font-semibold max-w-3xl mx-auto">

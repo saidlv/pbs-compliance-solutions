@@ -97,9 +97,9 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 my-10"></div>
+        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 mt-16 mb-8"></div>
 
-        <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 w-full lg:w-[80%] mx-auto">
+        <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full lg:w-[80%] mx-auto">
           <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center">
             Know About LL 126
           </h2>
@@ -145,12 +145,12 @@ const Page = () => {
       </section>
 
       {/*Section 02 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-16 text-[#DCE2E2]">
-        <div className="flex flex-col items-center justify-center gap-6 lg:gap-10 w-full lg:w-[90%] mx-auto pb-10">
+      <section className="px-6 md:px-10 xl:px-16 pb-8 pt-10 lg:pt-16 text-[#DCE2E2]">
+        <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full lg:w-[90%] mx-auto pb-10">
           <h2 className="text-center text-2xl md:text-3xl lg:text-5xl font-semibold font-conthrax text-[#8AD5B7]">
             {Compliance_Deadlines.title}
           </h2>
-          <p className="text-[#89A096] text-base font-semibold text-center">
+          <p className="text-[#89A096] text-base font-semibold text-center lg:max-w-4xl mx-auto">
             {Compliance_Deadlines.text}
           </p>
           <table className="border-collapse border border-[#8AD5B7] w-full">
@@ -183,7 +183,7 @@ const Page = () => {
           </table>
         </div>
 
-        <div className="flex flex-col items-center 2xl:items-start justify-center gap-6 lg:gap-10 w-full lg:w-[95%] mx-auto pb-10">
+        <div className="flex flex-col items-center 2xl:items-start justify-center gap-6 lg:gap-10 w-full lg:w-[95%] mx-auto pt-10">
           <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center w-full">
             What This Means for you
           </h2>
@@ -224,7 +224,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="w-full mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12">
+        <div className="w-full mx-auto flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12 pt-16">
           <Image
             src="/pics/local-law-parking-pic2.png"
             alt="Inspection Services"
@@ -257,7 +257,7 @@ const Page = () => {
       </section>
 
       {/* Section 03 */}
-      <section className="px-6 md:px-10 xl:px-16 py-6 lg:py-16 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 py-10 lg:py-16 text-[#DCE2E2]">
         <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-6 lg:mb-10">
           Our Offerings
         </h2>
@@ -283,7 +283,7 @@ const Page = () => {
         </div>
 
         <div>
-          <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2">
+          <h2 className="text-center text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax mb-2 mt-6 lg:mt-10">
             {" "}
             How It Works
           </h2>
@@ -376,7 +376,7 @@ const Page = () => {
         </div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-10">
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-16 lg:py-16">
           <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] 3xl:w-[35%] flex items-end">
             <Image
               src={whyPBS.img}

@@ -55,7 +55,7 @@ const Page = () => {
 
       {/*Section 01  */}
       <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-16 lg:pt-24 text-[#DCE2E2]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-10 lg:pb-16">
                   <Image
                     src="/pics/local-law-parapet-pic2.png"
                     alt="Inspection Services"
@@ -161,7 +161,7 @@ const Page = () => {
           </p>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-full mx-auto pt-4 sm:pt-6 lg:pt-10">
+        <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-full mx-auto pt-4 sm:pt-10 lg:pt-16">
           {/* Heading */}
           <h2 className="text-[#8AD5B7] text-2xl sm:text-3xl lg:text-5xl font-semibold font-conthrax text-center w-[80%] xl:w-[65%] mx-auto">
             Key Compliance Details you should know
@@ -223,10 +223,10 @@ const Page = () => {
         </div>
       </section>
 
-      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 mt-6 lg:mt-10"></div>
+      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 mt-10 lg:mt-16"></div>
 
       {/* Section 03 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-10 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 pt-4 lg:pt-8 text-[#DCE2E2]">
         <div className="relative flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-[90%] mx-auto pb-4 sm:pb-6 lg:pb-10">
           <h2 className="text-3xl lg:text-5xl font-semibold font-conthrax text-center">
             {Process.heading}
@@ -275,7 +275,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2"></div>
+        <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 mt-16"></div>
 
         <div className="w-full lg:w-[90%] mx-auto overflow-hidden relative text-[#DCE2E2] py-6 sm:py-8 lg:py-10">
           {/* Moved title section here and fixed spacing */}
@@ -289,7 +289,7 @@ const Page = () => {
           </div>
 
           {/* Content Items */}
-          <div className="w-full flex flex-col gap-6 lg:gap-8 mb-6 lg:mb-10">
+          <div className="w-full flex flex-col gap-6 lg:gap-8 mb-10 lg:mb-16">
             {WhyPBS.items.map((item, index) => (
               <div
                 key={index}

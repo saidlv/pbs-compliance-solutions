@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"; // assuming you use a utility for className me
 
 const Services = () => {
   return (
-    <section className="relative text-[#DCE2E2] py-10 px-16 text-center overflow-hidden">
+    <section className="relative text-[#DCE2E2] py-16 px-16 text-center overflow-hidden">
       <Image
         src="/pics/pattern1.png"
         alt="Background Image"
