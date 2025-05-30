@@ -127,8 +127,8 @@ const Alerts = () => {
 
   return (
     <div className="bg-[#37403D] py-16" ref={ref}>
-      <div className="px-6 lg:px-16">
-        <div className="px-8 flex flex-col lg:flex-row lg:justify-between">
+      <div className="sm:px-6 lg:px-16">
+        <div className="px-4 sm:px-8 flex flex-col lg:flex-row lg:justify-between">
           <div ref={leftRef} className="lg:w-[45%] relative hidden lg:block">
             <div className="relative h-full w-full overflow-hidden rounded-2xl border-2 border-[#8AD5B7]">
               <CustomImage
