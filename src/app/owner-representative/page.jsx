@@ -50,7 +50,7 @@ const Page = () => {
             alt="owner representative"
             width={500}
             height={500}
-            className="w-[80%] lg:w-[40%] h-auto object-cover object-center rounded-lg mb-4 sm:mb-6 lg:mb-0 mx-auto"
+            className="w-[80%] lg:w-[40%] 2xl:w-[30%] 3xl:w-[25%] h-auto lg:object-contain xl:object-cover object-center rounded-lg mb-4 sm:mb-6 lg:mb-0 mx-auto"
           />
           <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-center text-center lg:text-left px-4 sm:px-0">
             <h1 className="text-[#8AD5B7] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-conthrax mb-2 leading-tight">
@@ -70,7 +70,7 @@ const Page = () => {
         </div>
 
         <div className="w-full lg:w-[80%] mx-auto mt-10 sm:mt-16 flex flex-col items-center justify-center text-center">
-          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12 w-full mb-8 sm:mb-10 lg:mb-0">
+          <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 sm:gap-12 w-full mb-8 sm:mb-10">
             <Image
               src="/pics/owner-repre-2.png"
               alt="owner representative"
