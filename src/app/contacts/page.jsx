@@ -8,27 +8,34 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { aboutContent } from "@/app/about-us/data";
 import Image from "next/image";
+import toast from "react-hot-toast";
+import { apiRequest } from "@/utils/csrfHandler";
 
 const Page = () => {
-  const [mapLoaded, setMapLoaded] = useState(true);
+  const [mapLoaded, setMapLoaded] = useState(false);
   const leftColumnRef = useRef(null);
   const rightColumnRef = useRef(null);
   const service = aboutContent.find((item) => item.id === "service-areas");
+  const [submitStatus, setSubmitStatus] = useState({
+    loading: false,
+    error: null,
+    success: false
+  });
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const mapSection = document.getElementById("map-container");
-  //     if (mapSection) {
-  //       const rect = mapSection.getBoundingClientRect();
-  //       if (rect.top < window.innerHeight) {
-  //         setMapLoaded(true);
-  //         window.removeEventListener("scroll", handleScroll);
-  //       }
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      const mapSection = document.getElementById("map-container");
+      if (mapSection) {
+        const rect = mapSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          setMapLoaded(true);
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -39,8 +46,8 @@ const Page = () => {
         {
           scrollTrigger: {
             trigger: leftColumnRef.current,
-            start: "top 70%", // Adjust this to control when it starts appearing
-            end: "top 100%", // Adjust this to control when it fully appears
+            start: "top 70%",
+            end: "top 100%",
             toggleActions: "play none none reverse",
           },
           opacity: 1,
@@ -57,8 +64,8 @@ const Page = () => {
         {
           scrollTrigger: {
             trigger: rightColumnRef.current,
-            start: "top 70%", // Adjust this to control when it starts appearing
-            end: "top 100%", // Adjust this to control when it fully appears
+            start: "top 70%",
+            end: "top 100%",
             toggleActions: "play none none reverse",
           },
           opacity: 1,
@@ -110,6 +117,11 @@ const Page = () => {
         pattern: "[0-9]{10}",
         title: "Please enter a 10-digit phone number",
       },
+      validate: (value) => {
+        if (!value) return "Phone number is required";
+        if (!/^[0-9]{10}$/.test(value)) return "Please enter a valid 10-digit phone number";
+        return null;
+      },
     },
     {
       type: "textarea",
@@ -118,13 +130,76 @@ const Page = () => {
       label: "Message",
       inputProps: {
         required: true,
+        minLength: 10,
+      },
+      validate: (value) => {
+        if (!value) return "Message is required";
+        if (value.length < 10) return "Message must be at least 10 characters long";
+        return null;
       },
     },
   ];
 
-  const button = {
-    text: "Submit",
-    icon: Send,
+  const handleContactSubmit = async (formData) => {
+    // Validate form data before submission
+    if (!formData.full_name || !formData.email || !formData.phone || !formData.message) {
+      toast.error('Please fill in all required fields');
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address');
+      return false;
+    }
+
+    // Phone validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      toast.error('Please enter a valid 10-digit phone number');
+      return false;
+    }
+
+    setSubmitStatus({ loading: true, error: null, success: false });
+
+    try {
+      const response = await apiRequest('post', '/api/contact', {
+        full_name: formData.full_name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message
+      });
+
+      setSubmitStatus({
+        loading: false,
+        error: null,
+        success: true
+      });
+
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      return true; // This tells MultiStepForm to reset
+
+    } catch (error) {
+      console.error('Contact Form Error:', error);
+      
+      const errorMessage = error.message || 'Failed to send message. Please try again.';
+
+      setSubmitStatus({
+        loading: false,
+        error: errorMessage,
+        success: false
+      });
+
+      // Show a user-friendly error message
+      if (error.message.includes('429')) {
+        toast.error('Too many attempts. Please wait a moment before trying again.');
+      } else {
+        toast.error(errorMessage);
+      }
+      
+      return false; // This tells MultiStepForm not to reset
+    }
   };
 
   return (
@@ -206,14 +281,32 @@ Contact PBS Compliance Solutions"
 
               <MultiStepForm
                 steps={formSteps}
-                buttonObj={button}
-                onSubmit={(data) => console.log(data)}
-                containerClass="relative z-10 backdrop-blur-lg bg-[#1E2322] focus-within:border focus-within:border-white rounded-xl transition-all w-full"
+                buttonObj={{
+                  text: submitStatus.loading ? "Sending..." : "Submit",
+                  icon: Send,
+                }}
+                onSubmit={handleContactSubmit}
+                containerClass="relative z-10 backdrop-blur-lg bg-[#1E2322] focus-within:border focus-within:border-white rounded-xl transition-all w-full p-6"
                 inputClass="w-full rounded-xl text-white placeholder-gray-400 focus:border-green-500 focus:ring-2 focus:ring-green-500/30 transition-all"
-                buttonClass="md:w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-emerald-800/20 ml-6 md:ml-16 lg:ml-48"
+                buttonClass={`md:w-full flex items-center justify-center gap-2 ${
+                  submitStatus.loading 
+                    ? 'bg-gray-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500'
+                } text-white font-semibold px-8 py-4 rounded-xl transition-colors group-hover/form:shadow-lg group-hover/form:shadow-emerald-800/20 ml-6 md:ml-16 lg:ml-48`}
                 errorClass="text-rose-400 mt-2 text-sm"
                 progressLineColor={"white"}
+                disabled={submitStatus.loading}
               />
+              {submitStatus.error && (
+                <div className="text-red-500 mt-4 text-center p-4 bg-red-500/10 rounded-lg mx-6">
+                  {submitStatus.error}
+                </div>
+              )}
+              {submitStatus.success && (
+                <div className="text-green-500 mt-4 text-center p-4 bg-green-500/10 rounded-lg mx-6">
+                  Message sent successfully!
+                </div>
+              )}
             </div>
           </div>
 

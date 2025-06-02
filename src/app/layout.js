@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { MenuProvider } from "@/context/MenuContext";
 import { conthrax, gnuolane, poppins } from "@/lib/fonts";
 import { Suspense } from "react";
+import { Toaster } from 'react-hot-toast';
 import "./globals.css";
 
 // export const metadata = {
@@ -40,10 +41,12 @@ export default function RootLayout({ children }) {
           <CustomErrorBoundary>
             <PageLoader />
 
-            {/* <div className="bg-[#141414] ">
+            {
+            /* <div className="bg-[#141414] ">
           <div className="md:w-[90%] mx-auto">
           </div>
-          </div> */}
+          </div> */
+          }
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -58,6 +61,7 @@ export default function RootLayout({ children }) {
               {pathname !== "/alert/dashboard" && <Header />}
               {/* </motion.div> */}
               <Suspense fallback={<SplashScreen />}>{children}</Suspense>
+              <Toaster position="top-right" />
               {pathname !== "/alert/dashboard" && <Footer />}
             </motion.div>
           </CustomErrorBoundary>

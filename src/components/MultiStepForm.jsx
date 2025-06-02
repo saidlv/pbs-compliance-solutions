@@ -106,14 +106,21 @@ const MultiStepForm = ({
   styling,
   containerClass,
   progressLineColor = "#2ea44f",
+  disabled = false
 }) => {
   const SubmitIcon = buttonObj.icon;
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
 
-  const handleNext = () => {
-    const currentField = steps[currentStep].name; // Use the explicit name field
+  const resetForm = () => {
+    setCurrentStep(0);
+    setFormData({});
+    setError(null);
+  };
+
+  const handleNext = async () => {
+    const currentField = steps[currentStep].name;
     const value = formData[currentField] || "";
 
     // Validation
@@ -136,15 +143,15 @@ const MultiStepForm = ({
       ...prev,
       [field]: value,
     }));
+    setError(null); // Clear error when user types
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     if (currentStep === steps.length - 1) {
-      // Validate final step before submission
-      const currentField =
-        steps[currentStep].label?.toLowerCase() || `step-${currentStep}`;
+      // Validate final step
+      const currentField = steps[currentStep].name;
       const value = formData[currentField] || "";
 
       const validationError = steps[currentStep].validate?.(value);
@@ -152,15 +159,23 @@ const MultiStepForm = ({
         setError(validationError);
         return;
       }
-      onSubmit(formData);
+
+      // Submit form
+      const success = await onSubmit(formData);
+      if (success) {
+        resetForm();
+      }
     } else {
-      handleNext();
+      const success = await handleNext();
+      if (success) {
+        setError(null);
+      }
     }
   };
 
   return (
     <motion.div
-      className={`mx-auto w-full px-7 py-3 bg-[#141414] flex flex-col justify-around ${
+      className={`mx-auto w-full px-7 py-3 flex flex-col justify-around ${
         styling ? styling : ""
       } ${containerClass ? containerClass : ""}`}
       initial="hidden"
@@ -177,23 +192,15 @@ const MultiStepForm = ({
             <Input
               type={steps[currentStep].type}
               placeholder={steps[currentStep].placeholder}
-              className={`text-white  text-2xl w-full ${inputClass ? inputClass : ""}`}
-              value={
-                formData[
-                  steps[currentStep].name ||
-                    steps[currentStep].label?.toLowerCase() ||
-                    `step-${currentStep}`
-                ] || ""
-              }
+              className={`text-white text-2xl w-full ${inputClass ? inputClass : ""}`}
+              value={formData[steps[currentStep].name] || ""}
               onChange={(e) =>
                 handleChange(
-                  steps[currentStep].name ||
-                    steps[currentStep].label?.toLowerCase() ||
-                    `step-${currentStep}`,
+                  steps[currentStep].name,
                   e.target.value
                 )
               }
-              // Spread additional input props
+              disabled={disabled}
               {...steps[currentStep].inputProps}
             />
 
@@ -207,17 +214,19 @@ const MultiStepForm = ({
               </p>
             )}
           </motion.div>
+
           <ProgressTracker
-          color={progressLineColor}
-          currentStep={currentStep}
-          totalSteps={steps.length}
-        />
+            color={progressLineColor}
+            currentStep={currentStep + 1}
+            totalSteps={steps.length}
+          />
+
           <div className="flex justify-between">
             <Button
               type="button"
               variant="ghost"
               className="text-gray-300 hover:bg-gray-700"
-              disabled={currentStep === 0}
+              disabled={currentStep === 0 || disabled}
               onClick={() => setCurrentStep((s) => s - 1)}
             >
               <ChevronLeft className="mr-2 h-4 w-4" />
@@ -228,18 +237,18 @@ const MultiStepForm = ({
               <Button
                 type="submit"
                 variant="secondary"
-                className={`bg-green-600 hover:bg-brand-light ${
-                  buttonClass ? buttonClass : ""
-                }`}
+                className={buttonClass}
+                disabled={disabled}
               >
                 {buttonObj.text}
-                {SubmitIcon && <SubmitIcon className="ml-2 h-4  w-4" />}
+                {SubmitIcon && <SubmitIcon className="ml-2 h-4 w-4" />}
               </Button>
             ) : (
               <Button
                 type="submit"
                 variant="ghost"
                 className="text-gray-300 hover:bg-brand-green1"
+                disabled={disabled}
               >
                 Next
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -247,7 +256,6 @@ const MultiStepForm = ({
             )}
           </div>
         </form>
-        
       </div>
     </motion.div>
   );
