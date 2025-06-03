@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -35,7 +34,7 @@ const heroInfo = [
     text2: "All major Inspection services addressed",
     text3: "Our Inspection Services includes all major Departments prioritized Compliance violations (LL11, LL126 Parking Inspection, LL126 Parapet Inspection, LL1152, Sprinkler Hydrostatic Test, Boiler Inspection, Elevator Inspection)",
     cta: "Opyimize Your Property",
-    ctaLink: "/property-management"
+    ctaLink: "/inspection-services"
   },
 ];
 

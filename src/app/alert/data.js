@@ -5,7 +5,7 @@ export const section01 = {
       "The PBS Alert System is designed to revolutionize how property managers, owners, and stakeholders navigate compliance, deadlines, and data in New York City. Our platform combines real-time alerts, intuitive tools, and centralized access to ensure seamless operations and peace of mind, across all agencies of NYC including DOB, DEP, DOH, DSNY, ECB, FDNY, HDP & DOT, our advanced system tracks every requirement and alerts you the moment action is needed.",
     CTA: {
       text: "Start your Free Trial Today",
-      link: "/alert/dashboard",
+      link: "/portal/dashboard",
     },
     text2: "Trusted by 1300+ NYC Property Owners, managers, and firms",
   },
@@ -210,7 +210,7 @@ export const section4 = {
     text: "Register Your Property now to activate 24/7 monitoring & Unlock full access to your Membership Portal.",
     cta: {
       text: "Register Now",
-      link: "/alert/dashboard",
+      link: "/portal/dashboard",
     },
   },
 };

@@ -66,5 +66,5 @@ export const navItems = [
     ],
   },
    { name: "Contact us", link: "/contacts" },
- {name: "Member Login", link: "/alert/dashboard"},
+ {name: "Member Login", link: "/portal/dashboard"},
 ];

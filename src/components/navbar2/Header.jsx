@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 // Register the ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -81,9 +82,9 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <p className="text-[#89A096] text-base md:text-lg xl:text-xl font-semibold">
+            <Link href="/alert/profile" className="text-[#89A096] text-base md:text-lg xl:text-xl font-semibold">
               USER @PBS
-            </p>
+            </Link>
             <div className="aspect-square rounded-full w-8 sm:w-12 xl:w-16 bg-[#D9D9D9]"></div>
           </div>
         </div>
