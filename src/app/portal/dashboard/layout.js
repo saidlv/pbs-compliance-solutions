@@ -7,8 +7,10 @@ import { Suspense } from "react";
 import PageLoader from "@/components/PageLoader";
 import CustomErrorBoundary from "@/components/ErrorBoundary";
 import Header from "@/components/navbar2/Header";
+import { usePathname } from "next/navigation";
 
 export default function DashboardLayout({ children }) {
+  const pathname = usePathname();
   return (
     <MenuProvider>
       <Suspense fallback={<PageLoader />}>
@@ -19,7 +21,7 @@ export default function DashboardLayout({ children }) {
             transition={{ duration: 0.5 }}
             className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased overflow-x-hidden bg-[#37403D] min-h-screen w-screen relative`}
           >
-            <Header />
+             {pathname.endsWith("/portal/dashboard") && <Header />}
             {children}
             <Footer2 />
           </motion.div>

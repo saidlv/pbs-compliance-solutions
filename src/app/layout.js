@@ -58,11 +58,11 @@ export default function RootLayout({ children }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             > */}
-              {pathname !== "/alert/dashboard" && <Header />}
+              {!pathname.startsWith("/portal/dashboard") && <Header />}
               {/* </motion.div> */}
               <Suspense fallback={<SplashScreen />}>{children}</Suspense>
               <Toaster position="top-right" />
-              {pathname !== "/alert/dashboard" && <Footer />}
+              {!pathname.startsWith("/portal/dashboard") && <Footer />}
             </motion.div>
           </CustomErrorBoundary>
         </MenuProvider>
