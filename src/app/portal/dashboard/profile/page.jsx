@@ -1,24 +1,38 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useUser } from "@/context/UserContext";
+
 const Page = () => {
   const [profileData, setProfileData] = useState({});
+  const router = useRouter();
+  const { user } = useUser();
 
-useEffect(() => {
-  const initialData = { 
-    Name: "USER @PBS",
-    Email: "user@pbs.nyc",
-    Status: "Trialing",
-    Plan: "Gold",
-    Ends: "2025-8-10",
-    "Member Since": "May 12, 2025",
-    "Total Properties": 2,
-    Balance: "$0.00",
-    Hearings: 0,
-    "Help Center": "https://help.pbs.nyc",
-  }
-  setProfileData(initialData)
-},[])
+  useEffect(() => {
+    const initialData = {
+      Name: "USER @PBS",
+      Email: "user@pbs.nyc",
+      Status: "Trialing",
+      Plan: "Gold",
+      Ends: "2025-8-10",
+      "Member Since": "May 12, 2025",
+      "Total Properties": 2,
+      Balance: "$0.00",
+      Hearings: 0,
+      "Help Center": "https://help.pbs.nyc",
+    };
+    setProfileData(initialData);
+  }, []);
+
+  useEffect(() => {
+      if (user === null) {
+        router.push("/portal/login");
+      } else if (user && !user?.memberuser) {
+        window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+      }
+    }, [user]);
+
   return (
     <div className="bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:">
       {/* Logo and Title */}

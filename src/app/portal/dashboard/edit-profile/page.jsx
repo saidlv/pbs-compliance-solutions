@@ -2,10 +2,12 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useUser } from "@/context/UserContext";
 const Page = () => {
   const [profileData, setProfileData] = useState({});
   const [oldData, setOldData] = useState({});
   const router = useRouter();
+  const { user } = useUser();
 
   const handleSave = () => {
     setOldData(profileData);
@@ -23,6 +25,14 @@ useEffect(() => {
   setProfileData(initialData);
   setOldData(initialData);
 },[])
+
+  useEffect(() => {
+      if (user === null) {
+        router.push("/portal/login");
+      } else if (user && !user?.memberuser) {
+        window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+      }
+    }, [user]);
 
 return(
     <div className="bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:">

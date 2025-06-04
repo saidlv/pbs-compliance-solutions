@@ -12,6 +12,7 @@ import { conthrax, gnuolane, poppins } from "@/lib/fonts";
 import { Suspense } from "react";
 import { Toaster } from 'react-hot-toast';
 import "./globals.css";
+import { UserProvider } from "@/context/UserContext";
 
 // export const metadata = {
 //   title: "PBS | Proactive Building Solutions",
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased overflow-x-hidden bg-[#6C837D]`}
       >
+        <UserProvider>
         <MenuProvider>
           <CustomErrorBoundary>
             <PageLoader />
@@ -66,6 +68,7 @@ export default function RootLayout({ children }) {
             </motion.div>
           </CustomErrorBoundary>
         </MenuProvider>
+        </UserProvider>
       </body>
     </html>
   );

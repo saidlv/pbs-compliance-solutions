@@ -1,6 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useUser } from "@/context/UserContext";
 import Sidebar from "@/components/navbar2/Sidebar";
 import DashboardTable from "@/components/member-portal/DashboardTable";
 import ManageProperties from "@/components/member-portal/ManageProperties";
@@ -8,6 +10,8 @@ import PropertySummary from "@/components/member-portal/PropertySummary";
 import Settings from "@/components/member-portal/Settings";
 
 const Page = () => {
+  const router = useRouter();
+  const { user } = useUser();
   const [entries, setEntries] = useState(20);
   const [search, setSearch] = useState("");
   const [displayComponent, setDisplayComponent] = useState("Property List");
@@ -28,9 +32,16 @@ const Page = () => {
     setEntries((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
+  useEffect(() => {
+    if (user === null) {
+      router.push("/portal/login");
+    } else if (user && !user?.memberuser) {
+      window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+    }
+  }, [user]);
+
   return (
     <div className="relative bg-[#37403D] w-full min-h-screen">
-
       {/* Sidebar (Always Visible) */}
       <Sidebar />
 
@@ -53,12 +64,15 @@ const Page = () => {
           <div className="w-[90%] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pt-6 xl:pt-10">
             {buttonList.map((button, index) => (
               <button
-                onClick={() => {setDisplayComponent(button)
-
+                onClick={() => {
+                  setDisplayComponent(button);
                 }}
                 key={index}
                 className={`w-full lg:w-auto hover:bg-[#8AD5B7]  font-semibold text-lg xl:text-xl p-2 rounded-full shadow-md hover:text-[#1E2322] transition duration-300 ease-in-out text-center cursor-pointer flex items-center justify-center ${
-                  displayComponent === button ? "bg-[#8AD5B7] text-[#1E2322]" : "bg-[#2E3734] text-[#89A096]"}`}
+                  displayComponent === button
+                    ? "bg-[#8AD5B7] text-[#1E2322]"
+                    : "bg-[#2E3734] text-[#89A096]"
+                }`}
               >
                 {button}
               </button>
@@ -103,11 +117,29 @@ const Page = () => {
                 <X className="absolute right-4" />
               </div>
             </div>
-            
-            {displayComponent == "Property List" && <DashboardTable entries={entries} handleIncrement={handleIncrement} handleDecrement= {handleDecrement}/>}
-            {displayComponent == "Manage Properties" && <ManageProperties/>}
-            {displayComponent == "Property Summary" && <PropertySummary entries={entries} handleIncrement={handleIncrement} handleDecrement= {handleDecrement}/>}
-            {displayComponent == "Settings" && <Settings entries={entries} handleIncrement={handleIncrement} handleDecrement= {handleDecrement}/>}
+
+            {displayComponent == "Property List" && (
+              <DashboardTable
+                entries={entries}
+                handleIncrement={handleIncrement}
+                handleDecrement={handleDecrement}
+              />
+            )}
+            {displayComponent == "Manage Properties" && <ManageProperties />}
+            {displayComponent == "Property Summary" && (
+              <PropertySummary
+                entries={entries}
+                handleIncrement={handleIncrement}
+                handleDecrement={handleDecrement}
+              />
+            )}
+            {displayComponent == "Settings" && (
+              <Settings
+                entries={entries}
+                handleIncrement={handleIncrement}
+                handleDecrement={handleDecrement}
+              />
+            )}
           </div>
         </div>
       </div>

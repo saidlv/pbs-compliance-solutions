@@ -1,9 +1,11 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useUser } from '@/context/UserContext'
 
 export default function Page() {
   const router = useRouter()
+  const { user,setUser } = useUser()
   // form state
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -32,15 +34,25 @@ export default function Page() {
       if (!res.ok) throw new Error(data.message || 'Login failed')
       // store token
       localStorage.setItem('pbsPortalToken', data.token)
+      setUser({...data?.user, memberuser:data.memberuser})
       if(data.memberuser)
       router.push('/portal/dashboard')
-    else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+     else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
     } catch (err) {
       setError(err.message)
     } finally {
       setLoading(false)
     }
   }
+
+  useEffect(() => {
+    console.log(user)
+    if (user && user?.memberuser) {
+      router.push('/portal/dashboard')
+     } else if (user && !user?.memberuser) {
+       window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+    }
+  }, [user])
 
   return (
     <div className="flex flex-col gap-6 lg:gap-10 items-center justify-center bg-[#37403D] overflow-x-hidden py-10 md:py-16"
