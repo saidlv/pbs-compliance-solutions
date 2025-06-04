@@ -1,23 +1,26 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
+import toast from 'react-hot-toast'
 
 export default function Page() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const { user,setUser } = useUser()
+
+  useEffect(() => {
+    if (searchParams.get('signedUp') === 'true') {
+      toast.success('Signed up successfully! Please log in.')
+    }
+  }, [searchParams])
+
   // form state
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-
-  // CSRF cookie fetch
-  // useEffect(() => {
-  //   fetch('http://localhost:8000/sanctum/csrf-cookie', {
-  //     credentials: 'include'
-  //   })
-  // }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -32,27 +35,28 @@ export default function Page() {
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.message || 'Login failed')
-      // store token
+      // on successful response, show toast and then store token and set user
+      toast.success('Logged in successfully!')
       localStorage.setItem('pbsPortalToken', data.token)
-      setUser({...data?.user, memberuser:data.memberuser})
+      setUser({ ...data.user, memberuser: data.memberuser })
       if(data.memberuser)
       router.push('/portal/dashboard')
-     else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+     //else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
     } catch (err) {
       setError(err.message)
+      toast.error(err.message)
     } finally {
       setLoading(false)
     }
   }
 
-  useEffect(() => {
-    console.log(user)
-    if (user && user?.memberuser) {
-      router.push('/portal/dashboard')
-     } else if (user && !user?.memberuser) {
-       window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
-    }
-  }, [user])
+  // useEffect(() => {
+  //   if (user && user?.memberuser) {
+  //     router.push('/portal/dashboard')
+  //     } else if (user && !user?.memberuser) {
+  //       window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+  //   }
+  // }, [user])
 
   return (
     <div className="flex flex-col gap-6 lg:gap-10 items-center justify-center bg-[#37403D] overflow-x-hidden py-10 md:py-16"

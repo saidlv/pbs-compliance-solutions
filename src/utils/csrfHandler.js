@@ -94,6 +94,7 @@ export const apiRequest = async (method, endpoint, data = null) => {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
+        'Authorization': `Bearer ${localStorage.getItem("pbsPortalToken")}`,
         'X-CSRF-TOKEN': token
       },
       body: data ? JSON.stringify(data) : null,

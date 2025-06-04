@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/context/UserContext";
+import { apiRequest } from '@/utils/csrfHandler'
 import Sidebar from "@/components/navbar2/Sidebar";
-import DashboardTable from "@/components/member-portal/DashboardTable";
+import PropertyList from "@/components/member-portal/PropertyList";
 import ManageProperties from "@/components/member-portal/ManageProperties";
 import PropertySummary from "@/components/member-portal/PropertySummary";
 import Settings from "@/components/member-portal/Settings";
@@ -12,6 +13,11 @@ import Settings from "@/components/member-portal/Settings";
 const Page = () => {
   const router = useRouter();
   const { user } = useUser();
+  
+  // Dashboard API state lifted here
+  const [properties, setProperties] = useState([]);
+  const [addressResults, setAddressResults] = useState([]);
+  const [binResults, setBinResults] = useState([]);
   const [entries, setEntries] = useState(20);
   const [search, setSearch] = useState("");
   const [displayComponent, setDisplayComponent] = useState("Property List");
@@ -23,22 +29,75 @@ const Page = () => {
     "Settings",
   ];
 
-  const handleIncrement = () => {
-    setEntries((prev) => prev + 1);
-    console.log(`Showing ${entries + 1} entries`);
-  };
-
-  const handleDecrement = () => {
-    setEntries((prev) => (prev > 1 ? prev - 1 : 1));
-  };
-
-  useEffect(() => {
-    if (user === null) {
-      router.push("/portal/login");
-    } else if (user && !user?.memberuser) {
-      window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+  // load user properties
+  const loadProperties = async () => {
+    try {
+      const json = await apiRequest('get', '/user/properties');
+      setProperties(Array.isArray(json)
+        ? json
+        : Array.isArray(json.properties)
+          ? json.properties
+          : []
+      );
+    } catch (e) {
+      console.error(e);
     }
-  }, [user]);
+  };
+  useEffect(() => {
+    loadProperties();
+  }, []);
+
+  // search address by query parameter
+  const searchAddress = async (query) => {
+    try {
+      const data = await apiRequest('post', '/search-property', { query });
+      setAddressResults(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // search by BIN number
+  const searchBIN = async (bin) => {
+    try {
+      const data = await apiRequest('post', '/search-property-by-bin', { bin });
+      setBinResults(data);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // add property
+  const addProperty = async (id) => {
+    try {
+      await apiRequest('post', '/add-property-to-user', { property_id: id });
+      loadProperties();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // delete a property by ID
+  const deleteProperty = async (id) => {
+    try {
+      await apiRequest('post', '/delete-single-property-from-user', { property_id: id });
+      loadProperties();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // useEffect(() => {
+  //   if (user === null) {
+  //     router.push("/portal/login");
+  //   } else if (user && !user?.memberuser) {
+  //     window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+  //   }
+  // }, [user]);
+
+  // if (user === null || !user.memberuser) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <div className="relative bg-[#37403D] w-full min-h-screen">
@@ -95,12 +154,12 @@ const Page = () => {
                       src="/up.svg"
                       alt=""
                       className="w-2 h-2 cursor-pointer hover:mix-blend-luminosity"
-                      onClick={handleIncrement}
+                      onClick={() => setEntries((e) => e + 1)}
                     />
                     <img
                       src="/down.svg"
                       className="w-2 h-2 cursor-pointer hover:mix-blend-luminosity"
-                      onClick={handleDecrement}
+                      onClick={() => setEntries((e) => Math.max(1, e - 1))}
                     />
                   </div>
                 </div>
@@ -119,25 +178,37 @@ const Page = () => {
             </div>
 
             {displayComponent == "Property List" && (
-              <DashboardTable
+              <PropertyList
+                properties={properties}
                 entries={entries}
-                handleIncrement={handleIncrement}
-                handleDecrement={handleDecrement}
+                handleIncrement={() => setEntries((e) => e + 1)}
+                handleDecrement={() => setEntries((e) => Math.max(1, e - 1))}
               />
             )}
-            {displayComponent == "Manage Properties" && <ManageProperties />}
+            {displayComponent == "Manage Properties" && (
+              <ManageProperties
+                addressResults={addressResults}
+                onSearchAddress={searchAddress}
+                binResults={binResults}
+                onSearchBIN={searchBIN}
+                ownedProperties={properties}
+                onRefresh={loadProperties}
+                onAdd={addProperty}
+                onDelete={deleteProperty}
+              />
+            )}
             {displayComponent == "Property Summary" && (
               <PropertySummary
                 entries={entries}
-                handleIncrement={handleIncrement}
-                handleDecrement={handleDecrement}
+                handleIncrement={() => setEntries((e) => e + 1)}
+                handleDecrement={() => setEntries((e) => Math.max(1, e - 1))}
               />
             )}
             {displayComponent == "Settings" && (
               <Settings
                 entries={entries}
-                handleIncrement={handleIncrement}
-                handleDecrement={handleDecrement}
+                handleIncrement={() => setEntries((e) => e + 1)}
+                handleDecrement={() => setEntries((e) => Math.max(1, e - 1))}
               />
             )}
           </div>

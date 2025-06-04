@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DashboardTable = ({entries, handleIncrement, handleDecrement}) => {
+const PropertyList = ({ properties, entries, handleIncrement, handleDecrement }) => {
   return (
     <>
     <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto">
@@ -13,18 +13,30 @@ const DashboardTable = ({entries, handleIncrement, handleDecrement}) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {Array(9)
-                    .fill("")
-                    .map((_, index) => (
+                  {properties.length > 0 ? (
+                    properties.map((property, index) => (
                       <tr
-                        key={index}
-                        className={`${index !== 8 ? "border-b-2" : ""} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
+                        key={property.id || index}
+                        className={`${index !== properties.length - 1 ? 'border-b-2' : ''} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
                       >
-                        <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
-                        <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]"></td>
-                        <td className="w-1/5 px-2 py-6"></td>
+                        <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]">
+                          {property.address}
+                        </td>
+                        <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]">
+                          {property.syncStatus}
+                        </td>
+                        <td className="w-1/5 px-2 py-6">
+                          <button onClick={() => console.log('view', property.id)}>View</button>
+                        </td>
                       </tr>
-                    ))}
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan={3} className="py-6 text-[#89A096]">
+                        No properties found.
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
             </div>
@@ -46,4 +58,4 @@ const DashboardTable = ({entries, handleIncrement, handleDecrement}) => {
   )
 }
 
-export default DashboardTable
+export default PropertyList
