@@ -1,20 +1,12 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { useSearchParams } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
 import toast from 'react-hot-toast'
 
 export default function Page() {
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const { user,setUser } = useUser()
-
-  useEffect(() => {
-    if (searchParams.get('signedUp') === 'true') {
-      toast.success('Signed up successfully! Please log in.')
-    }
-  }, [searchParams])
+  const { setUser } = useUser()
 
   // form state
   const [email, setEmail] = useState('')
@@ -38,10 +30,12 @@ export default function Page() {
       // on successful response, show toast and then store token and set user
       toast.success('Logged in successfully!')
       localStorage.setItem('pbsPortalToken', data.token)
+      // Persist user for immediate context restoration
+      localStorage.setItem('pbsPortalUser', JSON.stringify({ ...data.user, memberuser: data.memberuser }));
       setUser({ ...data.user, memberuser: data.memberuser })
       if(data.memberuser)
-      router.push('/portal/dashboard')
-     //else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+        router.push('/portal/dashboard')
+      else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
     } catch (err) {
       setError(err.message)
       toast.error(err.message)
@@ -49,14 +43,6 @@ export default function Page() {
       setLoading(false)
     }
   }
-
-  // useEffect(() => {
-  //   if (user && user?.memberuser) {
-  //     router.push('/portal/dashboard')
-  //     } else if (user && !user?.memberuser) {
-  //       window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
-  //   }
-  // }, [user])
 
   return (
     <div className="flex flex-col gap-6 lg:gap-10 items-center justify-center bg-[#37403D] overflow-x-hidden py-10 md:py-16"

@@ -11,9 +11,6 @@ import PropertySummary from "@/components/member-portal/PropertySummary";
 import Settings from "@/components/member-portal/Settings";
 
 const Page = () => {
-  const router = useRouter();
-  const { user } = useUser();
-  
   // Dashboard API state lifted here
   const [properties, setProperties] = useState([]);
   const [addressResults, setAddressResults] = useState([]);
@@ -86,18 +83,6 @@ const Page = () => {
       console.error(e);
     }
   };
-
-  // useEffect(() => {
-  //   if (user === null) {
-  //     router.push("/portal/login");
-  //   } else if (user && !user?.memberuser) {
-  //     window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
-  //   }
-  // }, [user]);
-
-  // if (user === null || !user.memberuser) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <div className="relative bg-[#37403D] w-full min-h-screen">

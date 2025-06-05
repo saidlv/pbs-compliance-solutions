@@ -60,7 +60,7 @@ const PageLoader = () => {
       {/* Only render the loader when loading state is true */}
       {loading && (
         <motion.div
-          className="fixed inset-0 flex items-center justify-center bg-[#171717] z-50"
+          className="fixed inset-0 flex items-center justify-center bg-[#171717] z-50 min-h-screen"
           initial={{ opacity: 0 }} // Start invisible
           animate={{ opacity: 1 }} // Fade in
           exit={{ opacity: 0 }} // Fade out when removed
