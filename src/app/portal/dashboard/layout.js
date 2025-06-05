@@ -7,10 +7,8 @@ import { Suspense } from "react";
 import PageLoader from "@/components/PageLoader";
 import CustomErrorBoundary from "@/components/ErrorBoundary";
 import Header from "@/components/navbar2/Header";
-import { usePathname } from "next/navigation";
 
 export default function DashboardLayout({ children }) {
-  const pathname = usePathname();
 
   return (
     <MenuProvider>

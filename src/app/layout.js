@@ -8,12 +8,11 @@ import SplashScreen from "@/components/SplashScreen";
 import { motion } from "framer-motion";
 import { MenuProvider } from "@/context/MenuContext";
 import { conthrax, gnuolane, poppins } from "@/lib/fonts";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import { Toaster } from 'react-hot-toast';
 import "./globals.css";
 import { UserProvider } from "@/context/UserContext";
-import { useRouter, usePathname } from 'next/navigation';
-import { useUser } from "@/context/UserContext";
+import {  usePathname } from 'next/navigation';
 
 // export const metadata = {
 //   title: "PBS | Proactive Building Solutions",
@@ -24,30 +23,6 @@ import { useUser } from "@/context/UserContext";
 //     ms: "/PBS Assets/Brand Language/Steel Mockup.png", // Path to the windows icon in the public folder
 //   },
 // };
-
-// Globally guards dashboard routes by JWT and user context
-function AuthGuard({ children }) {
-  const pathname = usePathname();
-  const router = useRouter();
-  const { user, loadingUser } = useUser();
-  const token = typeof window !== 'undefined' ? localStorage.getItem('pbsPortalToken') : null;
-
-  useEffect(() => {
-    if (pathname.startsWith('/portal/dashboard')) {
-      if (!token && !loadingUser) {
-        router.push('/portal/login');
-      } else if (token && !loadingUser) {
-        if (!user) router.push('/portal/login');
-        else if (!user.memberuser) window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
-      }
-    }
-  }, [pathname, token, loadingUser, user]);
-
-  if (pathname.startsWith('/portal/dashboard') && (loadingUser || (token && !user))) {
-    return <PageLoader />;
-  }
-  return children;
-}
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
@@ -65,7 +40,6 @@ export default function RootLayout({ children }) {
         className={`${gnuolane.variable} ${conthrax.variable} ${poppins.variable} antialiased overflow-x-hidden bg-[#6C837D]`}
       >
         <UserProvider>
-          <AuthGuard>
             <MenuProvider>
               <CustomErrorBoundary>
                 <PageLoader />
@@ -95,7 +69,6 @@ export default function RootLayout({ children }) {
                 </motion.div>
               </CustomErrorBoundary>
             </MenuProvider>
-          </AuthGuard>
         </UserProvider>
       </body>
     </html>

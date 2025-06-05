@@ -1,10 +1,10 @@
 "use client";
-import {useRouter } from 'next/navigation';
-import { useUser } from '@/context/UserContext';
-import PageLoader from '@/components/PageLoader';
-import { useEffect } from 'react';
+import { useRouter } from "next/navigation";
+import { useUser } from "@/context/UserContext";
+import PageLoader from "@/components/PageLoader";
+import { useEffect } from "react";
 
-export default function AuthWrapper({ children}) {
+export default function AuthWrapper({ children }) {
   const { user, loadingUser } = useUser();
   const router = useRouter();
 
@@ -12,31 +12,25 @@ export default function AuthWrapper({ children}) {
     if (loadingUser) return;
     if (!user) {
       // not authenticated
-      router.push('/portal/login');
+      router.push("/portal/login");
       return;
     }
-    if (!user?.memberuser) {
+    if (user) {
       // authenticated but not a member
-      window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
-      return;
-    }
-    if (user?.memberuser) {
+      //   if(!user?.memberuser){
+      //   window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+      //   return;
+      // }
+      // else {
       // on login page but already a member
-      router.push('/portal/dashboard');
+      router.push("/portal/dashboard");
       return;
+      //}
     }
   }, [user, loadingUser, router]);
 
   // show loader while determining auth state
   if (loadingUser) {
-    return <PageLoader />;
-  }
-  // if requireMember but authenticated but not member, still show loader until redirect
-  if (user && !user.memberuser) {
-    return <PageLoader />;
-  }
-  // if !requireMember and user (member or not), show loader until redirect
-  if (user) {
     return <PageLoader />;
   }
 
