@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { X } from "lucide-react";
 import { apiRequest } from '@/utils/csrfHandler'
 import Sidebar from "@/components/navbar2/Sidebar";
@@ -10,6 +10,7 @@ import Settings from "@/components/member-portal/Settings";
 
 const Page = () => {
   // Dashboard API state lifted here
+  const hasInit = useRef(false);
   const [properties, setProperties] = useState([]);
   const [addressResults, setAddressResults] = useState([]);
   const [binResults, setBinResults] = useState([]);
@@ -43,19 +44,19 @@ const Page = () => {
     }
   };
   useEffect(() => {
+    // only run once, even in StrictMode
+    if (hasInit.current) return;
+    hasInit.current = true;
+    // load properties once
     loadProperties();
-    // load settings
-    const keys = ['sent_by','dob','ecb','fdny','hpd','inspections','permits'];
+    // load settings once
+    //const keys = ['sent_by','dob','ecb','fdny','hpd','inspections','permits'];
     (async () => {
       try {
-        // fetch each setting
-        const values = await Promise.all(
-          keys.map(k => apiRequest('post', '/user/setting', { key: k }))
-        );
-        const settings = {};
-        keys.forEach((k, i) => { settings[k] = values[i].data; });
-        setNotificationSettings(settings);
-        setReminderSettings(settings);
+        const settings = await apiRequest('post', '/user/notify-settings');
+        setNotificationSettings(settings.data.data);
+        const reminders = await apiRequest('post', '/user/reminder-settings');
+        setReminderSettings(reminders.data.data);
       } catch (err) {
         console.error('Failed loading settings', err);
       }
@@ -108,6 +109,7 @@ const Page = () => {
       const { data: response } = await apiRequest('post', '/user/notify-settings', payload);
       // API returns { success: true, data: <settings> }
       setNotificationSettings(response.data);
+      console.log('Updated notification settings:', response.data);
       return response.data;
     } catch (e) {
       console.error('Failed updating notifications', e);

@@ -26,7 +26,7 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
    };
    // Save changes
    const handleSave = async () => {
-     console.log('Saving settings:', settings);
+     //console.log('Saving settings:', settings);
      try {
        let updated;
        if (tab === 'notification') {

@@ -15,13 +15,12 @@ export default function AuthWrapper({ children }) {
       // not authenticated
       // clear any stale data
       localStorage.removeItem('pbsPortalToken');
-      localStorage.removeItem('pbsPortalUser');
       if (pathname !== "/portal/login") {
         router.replace("/portal/login");
       }
     } else {
       // authenticated but not a member
-      //   if(!user?.memberuser){
+      //   if(!user?.memberuser && pathname === "/portal/*") {
       //   window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
       //   return;
       // }
@@ -46,6 +45,7 @@ export default function AuthWrapper({ children }) {
   if (user && pathname !== "/portal/login") {
     return <>{children}</>;
   }
+
   // in all other cases (redirecting), show loader
   return <PageLoader />;
 }
