@@ -138,29 +138,25 @@ const SidebarMenu = ({ setToggleMenu, toggleMenu }) => {
     }
   };
 
-  // Effect to handle clicks outside the sidebar to close it
-  useEffect(() => {
-    // Function to detect clicks outside the sidebar
-    const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-        handleClose(); // Trigger the closing animation
-      }
-    };
-
-    // Add event listener when sidebar is open
-    if (toggleMenu) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    // Cleanup: remove event listener when sidebar closes or component unmounts
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [toggleMenu]);
+  // // Effect to handle clicks outside the sidebar to close it (disabled)
+  // useEffect(() => {
+  //   const handleClickOutside = (event) => {
+  //     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+  //       handleClose(); // Trigger the closing animation
+  //     }
+  //   };
+  //   if (toggleMenu) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   }
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, [toggleMenu]);
 
   // JSX: Render the sidebar with nested menus
   return (
     // Main sidebar container with fixed positioning and responsive width
     <div
       ref={sidebarRef}
+      onMouseLeave={handleClose} // Hide sidebar on mouse leave with smooth animation
       className="fixed top-0 left-0 h-full w-[80vw] sm:w-[50vw] lg:w-[30vw] bg-[#1E2322] z-50 flex flex-col items-center justify-start gap-3 lg:gap-6 pt-10"
       style={{ display: isVisible ? "flex" : "none" }} // Control visibility with state
     >
