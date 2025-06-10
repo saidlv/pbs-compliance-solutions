@@ -17,6 +17,10 @@ const Page = () => {
   const [search, setSearch] = useState("");
   const [displayComponent, setDisplayComponent] = useState("Property List");
 
+  // Settings state
+  const [notificationSettings, setNotificationSettings] = useState(null);
+  const [reminderSettings, setReminderSettings] = useState(null);
+
   const buttonList = [
     "Property List",
     "Manage Properties",
@@ -40,6 +44,22 @@ const Page = () => {
   };
   useEffect(() => {
     loadProperties();
+    // load settings
+    const keys = ['sent_by','dob','ecb','fdny','hpd','inspections','permits'];
+    (async () => {
+      try {
+        // fetch each setting
+        const values = await Promise.all(
+          keys.map(k => apiRequest('post', '/user/setting', { key: k }))
+        );
+        const settings = {};
+        keys.forEach((k, i) => { settings[k] = values[i].data; });
+        setNotificationSettings(settings);
+        setReminderSettings(settings);
+      } catch (err) {
+        console.error('Failed loading settings', err);
+      }
+    })();
   }, []);
 
   // search address by query parameter
@@ -79,6 +99,31 @@ const Page = () => {
       loadProperties();
     } catch (e) {
       console.error(e);
+    }
+  };
+
+  // update notification settings via JWT-protected API
+  const updateNotificationSettings = async (payload) => {
+    try {
+      const { data: response } = await apiRequest('post', '/user/notify-settings', payload);
+      // API returns { success: true, data: <settings> }
+      setNotificationSettings(response.data);
+      return response.data;
+    } catch (e) {
+      console.error('Failed updating notifications', e);
+      throw e;
+    }
+  };
+  // update reminder settings via JWT-protected API
+  const updateReminderSettings = async (payload) => {
+    try {
+      const { data: response } = await apiRequest('post', '/user/reminder-settings', payload);
+      // API returns { success: true, data: <settings> }
+      setReminderSettings(response.data);
+      return response.data;
+    } catch (e) {
+      console.error('Failed updating reminders', e);
+      throw e;
     }
   };
 
@@ -189,9 +234,10 @@ const Page = () => {
             )}
             {displayComponent == "Settings" && (
               <Settings
-                entries={entries}
-                handleIncrement={() => setEntries((e) => e + 1)}
-                handleDecrement={() => setEntries((e) => Math.max(1, e - 1))}
+                notificationSettings={notificationSettings}
+                reminderSettings={reminderSettings}
+                onUpdateNotifications={updateNotificationSettings}
+                onUpdateReminders={updateReminderSettings}
               />
             )}
           </div>

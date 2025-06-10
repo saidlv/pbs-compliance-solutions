@@ -20,6 +20,7 @@
     "framer-motion-3d": "^12.4.0",
     "frontend": "file:",
     "gsap": "^3.12.7",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.475.0",
     "next": "15.1.6",
     "next-sitemap": "^4.2.3",

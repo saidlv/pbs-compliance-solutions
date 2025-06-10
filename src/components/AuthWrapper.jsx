@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useUser } from "@/context/UserContext";
 import PageLoader from "@/components/PageLoader";
 import { useEffect } from "react";
@@ -7,15 +7,19 @@ import { useEffect } from "react";
 export default function AuthWrapper({ children }) {
   const { user, loadingUser } = useUser();
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (loadingUser) return;
     if (!user) {
       // not authenticated
-      router.push("/portal/login");
-      return;
-    }
-    if (user) {
+      // clear any stale data
+      localStorage.removeItem('pbsPortalToken');
+      localStorage.removeItem('pbsPortalUser');
+      if (pathname !== "/portal/login") {
+        router.replace("/portal/login");
+      }
+    } else {
       // authenticated but not a member
       //   if(!user?.memberuser){
       //   window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
@@ -23,16 +27,25 @@ export default function AuthWrapper({ children }) {
       // }
       // else {
       // on login page but already a member
-      router.push("/portal/dashboard");
-      return;
+      if (pathname === "/portal/login") {
+        router.replace("/portal/dashboard");
+      }
       //}
     }
-  }, [user, loadingUser, router]);
+  }, [user, loadingUser, router, pathname]);
 
-  // show loader while determining auth state
+  // show loader until auth status known
   if (loadingUser) {
     return <PageLoader />;
   }
-
-  return <>{children}</>;
+  // render login page for unauthenticated users
+  if (!user && pathname === "/portal/login") {
+    return <>{children}</>;
+  }
+  // render children for authenticated users on non-login pages
+  if (user && pathname !== "/portal/login") {
+    return <>{children}</>;
+  }
+  // in all other cases (redirecting), show loader
+  return <PageLoader />;
 }

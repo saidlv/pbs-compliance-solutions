@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
 import toast from 'react-hot-toast'
+import axios from 'axios'
+import { login, portalRequest } from "@/utils/csrfHandler";
 
 export default function Page() {
   const router = useRouter()
@@ -19,23 +21,21 @@ export default function Page() {
     setError('')
     setLoading(true)
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user/login`, {
-        method: 'POST',
-        credentials: 'include',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.message || 'Login failed')
+      // establish Laravel session via Sanctum + CSRF
+       //const sessionResp = await login(email, password)
+      // then perform JWT login to get token and user
+     const res = await axios.post("/api/user/login", { email, password });
+      const data = await res.data
+      if (!res.status == 200) throw new Error(data.message || 'Login failed')
       // on successful response, show toast and then store token and set user
       toast.success('Logged in successfully!')
       localStorage.setItem('pbsPortalToken', data.token)
       // Persist user for immediate context restoration
       localStorage.setItem('pbsPortalUser', JSON.stringify({ ...data.user, memberuser: data.memberuser }));
       setUser({ ...data.user, memberuser: data.memberuser })
-      if(data.memberuser)
+      //if(data.memberuser)
         router.push('/portal/dashboard')
-      else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+      //else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
     } catch (err) {
       setError(err.message)
       toast.error(err.message)

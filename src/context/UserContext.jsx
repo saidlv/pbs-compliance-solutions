@@ -1,18 +1,12 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { jwtDecode } from 'jwt-decode';
 
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  // hydrate from localStorage cache for immediate UI sync
-  const [user, setUser] = useState(() => {
-    try {
-      const s = localStorage.getItem('pbsPortalUser');
-      return s ? JSON.parse(s) : null;
-    } catch {
-      return null;
-    }
-  });
+  // track authenticated user
+  const [user, setUser] = useState(null);
   const [loadingUser, setLoadingUser] = useState(true);
 
   // On mount, attempt to load user if token present
@@ -20,6 +14,22 @@ export function UserProvider({ children }) {
     async function loadUser() {
       const token = localStorage.getItem('pbsPortalToken');
       if (!token) {
+        setLoadingUser(false);
+        return;
+      }
+      // decode and check expiry
+      let exp = 0;
+      try {
+        const decoded = jwtDecode(token);
+        exp = decoded.exp;
+      } catch {
+        exp = 0;
+      }
+      // token.exp is in seconds
+      if (Date.now() / 1000 > exp) {
+        // token expired
+        localStorage.removeItem('pbsPortalToken');
+        setUser(null);
         setLoadingUser(false);
         return;
       }
@@ -32,21 +42,17 @@ export function UserProvider({ children }) {
         try { data = await res.json(); } catch { data = null; }
         console.debug('UserContext /api/user/me:', res.status, data);
         if (res.ok && data) {
-          const loaded = data.user ?? data;
-          setUser(loaded);
-          // update cached user
-          localStorage.setItem('pbsPortalUser', JSON.stringify(loaded));
+          // set user from API
+          setUser(data.user ?? data);
         } else {
           // invalid token
           localStorage.removeItem('pbsPortalToken');
           setUser(null);
-          localStorage.removeItem('pbsPortalUser');
         }
       } catch (err) {
         console.error('UserContext loadUser error:', err);
         localStorage.removeItem('pbsPortalToken');
         setUser(null);
-        localStorage.removeItem('pbsPortalUser');
       } finally {
         setLoadingUser(false);
       }
