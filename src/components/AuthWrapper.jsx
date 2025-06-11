@@ -20,13 +20,11 @@ export default function AuthWrapper({ children }) {
       }
     } else {
       // authenticated but not a member
-      //   if(!user?.memberuser && pathname === "/portal/*") {
-      //   window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
-      //   return;
-      // }
-      // else {
-      // on login page but already a member
-      if (pathname === "/portal/login") {
+        if(!user?.memberuser && pathname.startsWith("/portal")) {
+        window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`;
+        return;
+      }
+      else if (pathname === "/portal/login") {
         router.replace("/portal/dashboard");
       }
       //}

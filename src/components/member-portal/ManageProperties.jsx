@@ -1,10 +1,8 @@
 import React from 'react'
-
+import { boroughs, getBoroId } from '@/utils/borough';
 const ManageProperties = ({
-  addressResults,
-  onSearchAddress,
-  binResults,
-  onSearchBIN,
+  addByAddress,
+  addByBin,
   ownedProperties,
   onRefresh,
   onAdd,
@@ -17,9 +15,12 @@ const ManageProperties = ({
     'Delete Property',
   ]
   const [activeTab, setActiveTab] = React.useState(buttonList[0]);
-  const [addressQuery, setAddressQuery] = React.useState('')
+  const [street, setStreet] = React.useState('');
+  const [house, setHouse] = React.useState('');
+  const [borough, setBorough] = React.useState(0); // selected borough
   const [binQuery, setBinQuery] = React.useState('')
   const [deleteId, setDeleteId] = React.useState('')
+
   return (
     <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-screen mb-8">
       {/* Tab buttons */}
@@ -36,22 +37,35 @@ const ManageProperties = ({
 
       {/* Add by Address */}
       {activeTab==='Add Property with Address' && (
-        <div>
+        <div className='flex flex-col items-center gap-6'>
           <input
-            value={addressQuery}
-            onChange={e => setAddressQuery(e.target.value)}
-            placeholder="Enter address"
-            className="p-2 rounded"
+            value={street}
+            onChange={e => setStreet(e.target.value)}
+            placeholder="Street name"
+            className="p-2 rounded w-full"
           />
-          <button onClick={() => onSearchAddress(addressQuery)} className="ml-2 p-2 bg-[#8AD5B7] rounded">Search</button>
-          <ul className="mt-4">
-            {addressResults?.map(p => (
-              <li key={p?.id} className="flex justify-between p-2">
-                <span>{p?.address}</span>
-                <button onClick={()=>onAdd(p?.id)} className="bg-[#8AD5B7] p-1 rounded">Add</button>
-              </li>
+          <input
+            value={house}
+            onChange={e => setHouse(e.target.value)}
+            placeholder="House number"
+            className="p-2 rounded w-full"
+          />
+          <select
+            value={borough}
+            onChange={e => setBorough(getBoroId(e.target.value))}
+            className="p-2 rounded w-full"
+          >
+            <option value="">Select borough</option>
+            {boroughs.map((b, idx) => (
+              <option key={idx} value={b}>{b}</option>
             ))}
-          </ul>
+          </select>
+          <button
+            onClick={() => addByAddress(street, house, borough)}
+            className="p-2 bg-[#8AD5B7] rounded w-full"
+          >
+            Add Property
+          </button>
         </div>
       )}
 
@@ -64,15 +78,7 @@ const ManageProperties = ({
             placeholder="Enter BIN"
             className="p-2 rounded"
           />
-          <button onClick={() => onSearchBIN(binQuery)} className="ml-2 p-2 bg-[#8AD5B7] rounded">Search</button>
-          <ul className="mt-4">
-            {binResults?.map(p => (
-              <li key={p?.id} className="flex justify-between p-2">
-                <span>{p?.address}</span>
-                <button onClick={()=>onAdd(p?.id)} className="bg-[#8AD5B7] p-1 rounded">Add</button>
-              </li>
-            ))}
-          </ul>
+          <button onClick={() => addByBin(binQuery)} className="ml-2 p-2 bg-[#8AD5B7] rounded">Search</button>
         </div>
       )}
 
@@ -81,7 +87,9 @@ const ManageProperties = ({
         <div>
           <button onClick={onRefresh} className="p-2 bg-[#8AD5B7] rounded">Refresh My Properties</button>
           <ul className="mt-4">
-            {ownedProperties?.map(p=> <li key={p?.id} className="p-2">{p?.address}</li>)}
+            {ownedProperties.length ? ownedProperties?.map((p,index) => <li key={index} className="p-2">{p?.address}</li>) : (
+              <li className="p-2 text-gray-500">No properties found</li>
+            )}
           </ul>
         </div>
       )}

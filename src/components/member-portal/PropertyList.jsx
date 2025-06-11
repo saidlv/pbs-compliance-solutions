@@ -1,6 +1,20 @@
-import React from 'react'
+'use client'
+import React, { useState ,useEffect } from 'react'
+import {getIdFromBoro} from '@/utils/borough'
+import { CheckCheck, X } from 'lucide-react'
 
 const PropertyList = ({ properties, entries, handleIncrement, handleDecrement }) => {
+  const [addresses, setaddresses] = useState([])
+  useEffect(() => {
+  const addresses = properties.map((prop,index)=> prop.bin +
+  " - " +
+  prop.house_number + " " +
+  prop.stname + " " +
+  getIdFromBoro(prop.boro) +
+  " NY " +
+  prop.zipcode )
+  setaddresses(addresses)
+  },[properties])
   return (
     <>
     <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto">
@@ -20,10 +34,10 @@ const PropertyList = ({ properties, entries, handleIncrement, handleDecrement })
                         className={`${index !== properties.length - 1 ? 'border-b-2' : ''} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
                       >
                         <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]">
-                          {property.address}
+                          {addresses[index]}
                         </td>
-                        <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7]">
-                          {property.syncStatus}
+                        <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7] text-center">
+                          {property.sync_at ? <CheckCheck color="#08fd0c" className='w-full flex justify-center' /> : <X color="#ff0000" className='w-full flex justify'/>}
                         </td>
                         <td className="w-1/5 px-2 py-6">
                           <button onClick={() => console.log('view', property.id)}>View</button>

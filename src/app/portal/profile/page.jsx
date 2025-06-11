@@ -2,25 +2,27 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useUser } from "@/context/UserContext";
+import {apiRequest} from '@/utils/csrfHandler';
+import {useUser} from '@/context/UserContext';
 
 const Page = () => {
   const [profileData, setProfileData] = useState({});
-
+  const { user, setUser } = useUser();
+  const router = useRouter();
   useEffect(() => {
-    const initialData = {
-      Name: "USER @PBS",
-      Email: "user@pbs.nyc",
-      Status: "Trialing",
-      Plan: "Gold",
-      Ends: "2025-8-10",
-      "Member Since": "May 12, 2025",
-      "Total Properties": 2,
-      Balance: "$0.00",
-      Hearings: 0,
-      "Help Center": "https://help.pbs.nyc",
-    };
-    setProfileData(initialData);
+    const profile = async () => {
+      try {
+        const response = await apiRequest('get', '/user/profile');
+        if (response.data && response.data.data) {
+          setProfileData(response.data.data);
+        } else {
+          console.error("No profile data found");
+        }
+      } catch (error) {
+        console.error("Error fetching profile data:", error);
+      }
+    }
+    profile();
   }, []);
 
   return (
@@ -44,13 +46,13 @@ const Page = () => {
           <div className="text-left flex flex-col justify-center items-start gap-3">
             <div className="space-y-1">
               <p className="text-3xl xl:text-4xl font-semibold text-[#8AD5B7]">
-                {profileData.Name}
+                {user?.name}
               </p>
               <p className="text-sm xl:text-base text-[#89A096] font-normal">
-                {profileData.Email}
+                {user.email}
               </p>
             </div>
-            <Link href="/alert/edit-profile">
+            <Link href="/portal/edit-profile">
               <button className="bg-[#8AD5B7] text-[#1E2322] px-4 py-2 rounded-full hover:bg-opacity-80 transition-all font-bold text-xl">
                 Edit Profile
               </button>
@@ -70,19 +72,19 @@ const Page = () => {
           <p className="flex justify-between items-center">
             <span className="text-[#89A096] text-xl font-semibold">Status</span>{" "}
             <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-              {profileData.Status}
+              {profileData.subscription?.status ?? "Active"}
             </span>
           </p>
           <p className="flex justify-between items-center">
             <span className="text-[#89A096] text-xl font-semibold">Plan</span>{" "}
             <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-              {profileData.Plan}
+              {profileData.subscription?.plan ?? "Basic"}
             </span>
           </p>
           <p className="flex justify-between items-center">
             <span className="text-[#89A096] text-xl font-semibold">Ends</span>{" "}
             <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-              {profileData.Ends}
+              {profileData.subscription?.ends ?? "N/A"}
             </span>
           </p>
           <p className="flex justify-between items-center">
@@ -90,7 +92,7 @@ const Page = () => {
               Member Since
             </span>{" "}
             <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-              {profileData["Member Since"]}
+              {profileData.subscription?.memberSince ?? "N/A"}
             </span>
           </p>
         </div>
@@ -102,7 +104,7 @@ const Page = () => {
             Total Properties
           </span>{" "}
           <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-            {profileData["Total Properties"]}
+            {profileData?.totalProperties ?? "0"}
           </span>
         </p>
 
@@ -111,7 +113,7 @@ const Page = () => {
         <p className="flex justify-between items-center">
           <span className="text-[#89A096] text-xl font-semibold">Balance</span>{" "}
           <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-            {profileData.Balance}
+            {profileData?.balance ?? "$100.00"}
           </span>
         </p>
 
@@ -120,7 +122,7 @@ const Page = () => {
         <p className="flex justify-between items-center">
           <span className="text-[#89A096] text-xl font-semibold">Hearings</span>{" "}
           <span className="text-[#8AD5B7] text-xl w-[30%] font-semibold">
-            {profileData.Hearings}
+            {profileData?.hearings}
           </span>
         </p>
 
@@ -133,11 +135,18 @@ const Page = () => {
 
       {/* Help Center and Logout */}
       <div className="w-full max-w-2xl px-6 pb-6 text-left flex justify-end">
-        <Link href="/logout">
-          <button className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all">
+          <button onClick={() => {
+            // Handle logout logic here
+            // For example, clear user data and redirect to login page
+            localStorage.removeItem('pbsPortalUser');
+            localStorage.removeItem('pbsPortalToken');
+            setUser(null);
+            setProfileData({});
+            router.push("/login") // Redirect to login page
+          }
+} className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all">
             Logout
           </button>
-        </Link>
       </div>
     </div>
   );

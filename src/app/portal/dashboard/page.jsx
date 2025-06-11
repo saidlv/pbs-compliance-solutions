@@ -7,13 +7,12 @@ import PropertyList from "@/components/member-portal/PropertyList";
 import ManageProperties from "@/components/member-portal/ManageProperties";
 import PropertySummary from "@/components/member-portal/PropertySummary";
 import Settings from "@/components/member-portal/Settings";
+import { getBoroId } from "@/utils/borough";
 
 const Page = () => {
   // Dashboard API state lifted here
   const hasInit = useRef(false);
   const [properties, setProperties] = useState([]);
-  const [addressResults, setAddressResults] = useState([]);
-  const [binResults, setBinResults] = useState([]);
   const [entries, setEntries] = useState(20);
   const [search, setSearch] = useState("");
   const [displayComponent, setDisplayComponent] = useState("Property List");
@@ -33,10 +32,8 @@ const Page = () => {
   const loadProperties = async () => {
     try {
       const json = await apiRequest('get', '/user/properties');
-      setProperties(Array.isArray(json)
-        ? json
-        : Array.isArray(json.properties)
-          ? json.properties
+      setProperties(Array.isArray(json.data.data)
+        ? json.data.data
           : []
       );
     } catch (e) {
@@ -63,21 +60,32 @@ const Page = () => {
     })();
   }, []);
 
-  // search address by query parameter
-  const searchAddress = async (query) => {
+  // search address by term, house number and borough
+  const addByAddress = async (street, house, borough) => {
     try {
-      const data = await apiRequest('post', '/search-property', { query });
-      setAddressResults(data);
+      borough = getBoroId(borough);
+      const response = await apiRequest('post', '/user/add-properties/address', { street, house, borough });
+      if (response.status === 200) {
+        const newProp = response.data;
+        console.log('New property added:', newProp);
+        // append to properties list
+        setProperties(prev => [...prev, newProp]);
+      }
     } catch (e) {
-      console.error(e);
+      console.error('searchAddress error', e);
     }
   };
 
   // search by BIN number
-  const searchBIN = async (bin) => {
+  const addByBIN = async (bin) => {
     try {
-      const data = await apiRequest('post', '/search-property-by-bin', { bin });
-      setBinResults(data);
+      const response = await apiRequest('post', '/user/add-properties/bin', { bin });
+      if (response.status === 200) {
+        const newProp = response.data.data;
+        // append to properties list
+        setProperties(prev => [...prev, newProp]);
+        console.log('Added by BIN:', newProp);
+      }
     } catch (e) {
       console.error(e);
     }
@@ -109,7 +117,6 @@ const Page = () => {
       const { data: response } = await apiRequest('post', '/user/notify-settings', payload);
       // API returns { success: true, data: <settings> }
       setNotificationSettings(response.data);
-      console.log('Updated notification settings:', response.data);
       return response.data;
     } catch (e) {
       console.error('Failed updating notifications', e);
@@ -217,10 +224,8 @@ const Page = () => {
             )}
             {displayComponent == "Manage Properties" && (
               <ManageProperties
-                addressResults={addressResults}
-                onSearchAddress={searchAddress}
-                binResults={binResults}
-                onSearchBIN={searchBIN}
+                addByAddress={addByAddress}
+                addByBIN={addByBIN}
                 ownedProperties={properties}
                 onRefresh={loadProperties}
                 onAdd={addProperty}

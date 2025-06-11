@@ -28,6 +28,14 @@
  * // Use with property data
  * const propertyBoroId = getBoroId(propertyData.borough);
  */
+export const boroughs = [
+  "MANHATTAN",
+  "BRONX",
+  "BROOKLYN",
+  "QUEENS",
+  "STATEN IS"
+]
+
 export const getBoroId = (boro) => {
   switch (boro) {
     case "MANHATTAN":
@@ -65,7 +73,7 @@ export const getIdFromBoro = (id) => {
       return "MANHATTAN";
     case 2:
       return "BRONX";
-    case 3:
+    case 3: 
       return "BROOKLYN";
     case 4:
       return "QUEENS";

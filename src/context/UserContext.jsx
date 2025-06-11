@@ -1,20 +1,26 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { jwtDecode } from 'jwt-decode';
+import {jwtDecode} from "jwt-decode";
 
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  // track authenticated user
-  const [user, setUser] = useState(null);
+  // hydrate from localStorage cache for immediate UI sync
+  const [user, setUser] = useState(() => {
+    try {
+      const s = localStorage.getItem('pbsPortalUser');
+      return s ? JSON.parse(s) : null;
+    } catch {
+      return null;
+    }
+  });
   const [loadingUser, setLoadingUser] = useState(true);
 
-  // On mount, attempt to load user if token present
   useEffect(() => {
     async function loadUser() {
       const token = localStorage.getItem('pbsPortalToken');
       if (!token) {
-        setLoadingUser(false);
+        setLoadingUser(false); // no token: hydration complete
         return;
       }
       // decode and check expiry
@@ -29,33 +35,15 @@ export function UserProvider({ children }) {
       if (Date.now() / 1000 > exp) {
         // token expired
         localStorage.removeItem('pbsPortalToken');
+        localStorage.removeItem('pbsPortalUser');
         setUser(null);
         setLoadingUser(false);
         return;
       }
-      try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/user/me`,
-          { headers: { Authorization: `Bearer ${token}` } }
-        );
-        let data;
-        try { data = await res.json(); } catch { data = null; }
-        console.debug('UserContext /api/user/me:', res.status, data);
-        if (res.ok && data) {
-          // set user from API
-          setUser(data.user ?? data);
-        } else {
-          // invalid token
-          localStorage.removeItem('pbsPortalToken');
-          setUser(null);
-        }
-      } catch (err) {
-        console.error('UserContext loadUser error:', err);
-        localStorage.removeItem('pbsPortalToken');
-        setUser(null);
-      } finally {
-        setLoadingUser(false);
-      }
+      // token valid: show cached user immediately
+      setLoadingUser(false);
+      // skipping server fetch; using cached user from localStorage
+      return;
     }
     loadUser();
   }, []);
