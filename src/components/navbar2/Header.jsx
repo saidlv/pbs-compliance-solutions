@@ -87,7 +87,7 @@ const Header = () => {
             <Link href="/portal/profile" className="text-[#89A096] text-base md:text-lg xl:text-xl font-semibold">
               {user?.name || "Profile"}
             </Link>
-            <div className="aspect-square rounded-full w-8 sm:w-12 xl:w-16 bg-[#D9D9D9]"></div>
+            {user?.photo ? <img src={process.env.NEXT_PUBLIC_API_URL + user?.photo} alt="dp" className="w-16 h-16 rounded-full"/> :<div className="aspect-square rounded-full w-8 sm:w-12 xl:w-16 bg-[#D9D9D9]"></div>}
           </div>
         </div>
       </motion.div>

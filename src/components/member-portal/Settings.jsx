@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useEffect } from "react";
+import toast from 'react-hot-toast';
 
-const Settings = ({ notificationSettings, reminderSettings, onUpdateNotifications, onUpdateReminders }) => {
+const Settings = ({ notificationSettings, reminderSettings, onUpdateNotifications, onUpdateReminders, loading=false }) => {
    // Tab state: 'notification' or 'reminder'
    const [tab, setTab] = useState('notification');
    const [settings, setSettings] = useState({});
@@ -31,13 +32,16 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
        let updated;
        if (tab === 'notification') {
          updated = await onUpdateNotifications(settings);
++        toast.success('Notification settings saved');
        } else {
          updated = await onUpdateReminders(settings);
++        toast.success('Reminder settings saved');
        }
        // sync with updated values
        setSettings(updated);
      } catch (e) {
        console.error('Failed saving settings', e);
++      toast.error('Error saving settings');
      }
    };
 
@@ -71,15 +75,16 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
          {/* Sent_by radio buttons */}
          <div className="py-4">
            <p className="text-[#89A096] font-semibold mb-2">Get notification by:</p>
-           {['email', 'app', 'both'].map((opt) => (
-             <button
+           {['email', 'app', 'both'].map((opt) => {
+             return <button
                key={opt}
-               onClick={() => handleSentBy(opt)}
+               onClick={() => !loading && handleSentBy(opt)}
+               disabled={loading}
                className={`mr-2 px-4 py-2 rounded ${settings.sent_by === opt ? 'bg-[#8AD5B7] text-[#1E2322]' : 'bg-[#1E2322] text-[#7C9087] hover:bg-[#8AD5B7] hover:text-[#1E2322]'}`}
              >
                {opt.charAt(0).toUpperCase() + opt.slice(1)}
              </button>
-           ))}
+})}
          </div>
 
          {/* Boolean settings toggles */}
@@ -102,6 +107,7 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
          <div className="mt-6">
            <button
              onClick={handleSave}
+            disabled={loading}
              className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all"
            >
              Save Settings

@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { useUser } from "@/context/UserContext";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function Page() {
   const [profileImage, setProfileImage] = useState(null);
@@ -10,12 +11,14 @@ export default function Page() {
   const [profileData, setProfileData] = useState({});
   const [oldData, setOldData] = useState({});
   const [formErrors, setFormErrors] = useState({});
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const { user, setUser } = useUser();
 
   const handleSave = async (e) => {
     e.preventDefault();
     // validate fields
+    setLoading(true);
     const errors = {};
     if (!profileData.name?.trim()) errors.name = "Name is required";
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,7 +30,10 @@ export default function Page() {
     if (!/^[0-9]{10}$/.test(profileData.contact_number || ""))
       errors.contact_number = "Enter a 10-digit phone number";
     setFormErrors(errors);
-    if (Object.keys(errors).length) return;
+    if (Object.keys(errors).length) {
+      setLoading(false);
+      return;
+    }
     setOldData(profileData);
     try {
       // prepare multipart form data
@@ -48,6 +54,7 @@ export default function Page() {
         }
       );
       if (response.status === 200) {
+        toast.success("Profile updated successfully");
         setUser({ ...response.data.user, memberuser: oldData.memberuser });
         localStorage.setItem(
           "pbsPortalUser",
@@ -63,6 +70,8 @@ export default function Page() {
     } catch (error) {
       setProfileData(oldData);
       console.error("Error updating profile data:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -73,6 +82,7 @@ export default function Page() {
       company: user?.company || "string",
       address: user?.address || "minimum four letters",
       contact_number: user?.contact_number || "",
+      photo: user?.photo || "",
     });
     setOldData(user);
   }, []);
@@ -80,8 +90,9 @@ export default function Page() {
   return (
     <form
       onSubmit={(e) => handleSave(e)}
-      className="bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:"
+      className = "relative bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:"
     >
+      {loading && <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10"><div className="border-t-4 border-[#8AD5B7] rounded-full w-12 h-12 animate-spin"/></div>}
       {/* Logo and Title */}
       <div className="flex flex-col items-center justify-center gap-6">
         <img
@@ -99,14 +110,14 @@ export default function Page() {
         <div className="flex flex-col items-center justify-center gap-6">
           {/* Edit Profile Image input with styled label */}
           <div className="flex flex-col items-center">
-            <div className="w-32 h-32 bg-[#D9D9D9] rounded-full overflow-hidden">
+            <div >
               {profileImage ? (
                 <img
                   src={URL.createObjectURL(profileImage)}
                   alt="Preview"
                   className="w-full h-full object-cover"
                 />
-              ) : null}
+              ) :  profileData?.photo ? <img src={process.env.NEXT_PUBLIC_API_URL + profileData?.photo} alt="dp" className="w-32 h-32 rounded-full"/> :<div className="w-32 h-32 bg-[#D9D9D9] rounded-full"></div>}
             </div>
             <label
               htmlFor="avatarUpload"
@@ -168,10 +179,9 @@ export default function Page() {
                   type="text"
                   placeholder="Enter your name"
                   autoComplete="name"
+                  disabled={loading}
                   value={profileData.name ?? ""}
-                  onChange={(e) =>
-                    setProfileData({ ...profileData, name: e.target.value })
-                  }
+                  onChange={(e) => !loading && setProfileData({ ...profileData, name: e.target.value })}
                   className="px-10 bg-transparent border-none outline-none w-full text-[#89A096] font-semibold text-xl"
                 />
               </td>
@@ -185,6 +195,7 @@ export default function Page() {
                   type="email"
                   placeholder="Enter your email"
                   autoComplete="email"
+                  disabled={loading}
                   value={profileData.email ?? ""}
                   onChange={(e) =>
                     setProfileData({ ...profileData, email: e.target.value })
@@ -201,6 +212,7 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Enter your company name"
+                  disabled={loading}
                   value={profileData?.company ?? "null"}
                   onChange={(e) =>
                     setProfileData({ ...profileData, company: e.target.value })
@@ -217,6 +229,7 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Enter your address (minimum four letters)"
+                  disabled={loading}
                   value={profileData?.address ?? ""}
                   required
                   minLength={4}
@@ -240,6 +253,7 @@ export default function Page() {
                   required
                   title="Please enter a 10-digit phone number"
                   placeholder="Enter your phone number"
+                  disabled={loading}
                   value={profileData?.contact_number ?? ""}
                   onChange={(e) => {
                     // allow only digits
@@ -264,12 +278,13 @@ export default function Page() {
       <div className="w-full max-w-2xl px-6 pb-6 pt-10 text-left flex justify-center gap-10">
         <button
           type="submit"
-          className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all w-[35%] md:w-[25%]"
+          disabled={loading}
+          className="mt-6 bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Save
+         Save Profile
         </button>
         <button
-          className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all w-[35%] md:w-[25%] text-center"
+          className="mt-6 bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all"
           onClick={() => {
             setProfileData(oldData);
           }}

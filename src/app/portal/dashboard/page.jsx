@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
 import { X } from "lucide-react";
+import toast from 'react-hot-toast';
 import { apiRequest } from '@/utils/csrfHandler'
 import Sidebar from "@/components/navbar2/Sidebar";
 import PropertyList from "@/components/member-portal/PropertyList";
@@ -12,6 +13,7 @@ import { getBoroId } from "@/utils/borough";
 const Page = () => {
   // Dashboard API state lifted here
   const hasInit = useRef(false);
+  const [loading, setLoading] = useState(false);
   const [properties, setProperties] = useState([]);
   const [entries, setEntries] = useState(20);
   const [search, setSearch] = useState("");
@@ -30,6 +32,7 @@ const Page = () => {
 
   // load user properties
   const loadProperties = async () => {
+    setLoading(true);
     try {
       const json = await apiRequest('get', '/user/properties');
       setProperties(Array.isArray(json.data.data)
@@ -38,6 +41,8 @@ const Page = () => {
       );
     } catch (e) {
       console.error(e);
+    } finally {
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -62,74 +67,88 @@ const Page = () => {
 
   // search address by term, house number and borough
   const addByAddress = async (street, house, borough) => {
+    setLoading(true);
     try {
-      borough = getBoroId(borough);
+       borough = getBoroId(borough);
       const response = await apiRequest('post', '/user/add-properties/address', { street, house, borough });
       if (response.status === 200) {
         const newProp = response.data.data;
-        // append to properties list
         setProperties(newProp);
-        setDisplayComponent('Property List');
+        toast.success('Property added by address');
       }
     } catch (e) {
       console.error('searchAddress error', e);
+    } finally {
+      setLoading(false);
     }
   };
 
   // search by BIN number
   const addByBIN = async (bin,bbl) => {
+    setLoading(true);
     try {
-      const response = await apiRequest('post', '/user/add-properties/bin', { bin, bbl });
+       const response = await apiRequest('post', '/user/add-properties/bin', { bin, bbl });
       if (response.status === 200) {
+        toast.success('Property added by BIN');
         const newProp = response.data.data;
-        // append to properties list
         setProperties(newProp);
         setDisplayComponent('Property List');
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      setLoading(false);
     }
   };
 
   // delete a property by BIN
   const deleteProperty = async (id) => {
+    setLoading(true);
     try {
       const res = await apiRequest('delete', `/user/properties/id/${id}`);
       if(res.status === 200) {
-      setProperties(res.data.data)
+        setProperties(Array.isArray(res.data.data) ? res.data.data : []);
+        toast.success('Property deleted');
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      setLoading(false);
     }
   };
 
   // update notification settings via JWT-protected API
   const updateNotificationSettings = async (payload) => {
+    setLoading(true);
     try {
       const { data: response } = await apiRequest('post', '/user/notify-settings', payload);
-      // API returns { success: true, data: <settings> }
       setNotificationSettings(response.data);
       return response.data;
     } catch (e) {
       console.error('Failed updating notifications', e);
       throw e;
+    } finally {
+      setLoading(false);
     }
   };
   // update reminder settings via JWT-protected API
   const updateReminderSettings = async (payload) => {
+    setLoading(true);
     try {
       const { data: response } = await apiRequest('post', '/user/reminder-settings', payload);
-      // API returns { success: true, data: <settings> }
       setReminderSettings(response.data);
       return response.data;
     } catch (e) {
       console.error('Failed updating reminders', e);
       throw e;
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="relative bg-[#37403D] w-full min-h-screen">
+      {loading && <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10"><div className="loader" /></div>}
       {/* Sidebar (Always Visible) */}
       <Sidebar />
 
@@ -174,6 +193,7 @@ const Page = () => {
               <div className="flex items-center text-white p-2 rounded-md">
                 <span className="mr-2 text-[#89A096]">Show</span>
                 <select
+                  disabled={loading}
                   value={entries}
                   onChange={(e) => setEntries(Number(e.target.value))}
                   className="bg-[#2E3734] border border-[#8AD5B7] rounded-full px-3 py-1 text-[#89A096] outline-none overflow-y-hidden"
@@ -189,6 +209,7 @@ const Page = () => {
               {/* Search bar */}
               <div className="relative flex items-center">
                 <input
+                  disabled={loading}
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -205,6 +226,7 @@ const Page = () => {
                 properties={properties}
                 entries={entries}
                 search={search}
+                loading={loading}
               />
             )}
             {displayComponent === "Manage Properties" && (
@@ -218,6 +240,7 @@ const Page = () => {
                 search={search}
                 onSearchChange={setSearch}
                 onEntriesChange={setEntries}
+                loading={loading}
               />
             )}
             {displayComponent == "Property Summary" && (
@@ -225,6 +248,7 @@ const Page = () => {
                 entries={entries}
                 search={search}
                 properties={properties}
+                loading={loading}
               />
             )}
             {displayComponent == "Settings" && (
@@ -233,6 +257,7 @@ const Page = () => {
                 reminderSettings={reminderSettings}
                 onUpdateNotifications={updateNotificationSettings}
                 onUpdateReminders={updateReminderSettings}
+                loading={loading}
               />
             )}
           </div>

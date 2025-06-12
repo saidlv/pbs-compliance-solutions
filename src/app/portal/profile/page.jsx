@@ -7,10 +7,12 @@ import {useUser} from '@/context/UserContext';
 
 const Page = () => {
   const [profileData, setProfileData] = useState({});
+  const [loading, setLoading] = useState(false);
   const { user, setUser } = useUser();
   const router = useRouter();
   useEffect(() => {
     const profile = async () => {
+      setLoading(true);
       try {
         const response = await apiRequest('get', '/user/profile');
         if (response.data && response.data.data) {
@@ -20,13 +22,16 @@ const Page = () => {
         }
       } catch (error) {
         console.error("Error fetching profile data:", error);
+      } finally {
+        setLoading(false);
       }
     }
     profile();
   }, []);
 
   return (
-    <div className="bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:">
+    <div className="relative bg-[#1E2322] text-white min-h-screen flex flex-col items-center p-6 pt-16 lg:">
+      {loading && <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10"><div className="border-t-4 border-t-[#8AD5B7] border-transparent rounded-full w-12 h-12 animate-spin" /></div>}
       {/* Logo and Title */}
       <div className="flex flex-col items-center justify-center gap-6">
         <img
@@ -53,7 +58,7 @@ const Page = () => {
               </p>
             </div>
             <Link href="/portal/edit-profile">
-              <button className="bg-[#8AD5B7] text-[#1E2322] px-4 py-2 rounded-full hover:bg-opacity-80 transition-all font-bold text-xl">
+              <button disabled={loading} className="bg-[#8AD5B7] text-[#1E2322] px-4 py-2 rounded-full hover:bg-opacity-80 transition-all font-bold text-xl disabled:opacity-50 disabled:cursor-not-allowed">
                 Edit Profile
               </button>
             </Link>
@@ -137,16 +142,15 @@ const Page = () => {
       <div className="w-full max-w-2xl px-6 pb-6 text-left flex justify-end">
           <button onClick={() => {
             // Handle logout logic here
-            // For example, clear user data and redirect to login page
             localStorage.removeItem('pbsPortalUser');
             localStorage.removeItem('pbsPortalToken');
             setUser(null);
             setProfileData({});
             router.push("/login") // Redirect to login page
           }
-} className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all">
-            Logout
-          </button>
+} disabled={loading} className="bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+             Logout
+           </button>
       </div>
     </div>
   );

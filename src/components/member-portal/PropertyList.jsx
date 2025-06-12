@@ -3,7 +3,7 @@ import React, { useState ,useEffect } from 'react'
 import {getIdFromBoro} from '@/utils/borough'
 import { CheckCheck, X } from 'lucide-react'
 
-const PropertyList = ({ properties = [], entries = 10, search = '' }) => {
+const PropertyList = ({ properties = [], entries = 10, search = '', loading = false }) => {
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => { setCurrentPage(1); }, [entries, search, properties]);
@@ -19,8 +19,10 @@ const PropertyList = ({ properties = [], entries = 10, search = '' }) => {
   const startIdx = (currentPage - 1) * entries;
   const current = filtered.slice(startIdx, startIdx + entries);
   return (
-    <>
-    <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto">
+    <div className="relative">
+      {loading && <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10"><div className="loader"/></div>}
+      <>
+      <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto">
               <table className="text-[#D9D9D9] text-center w-full h-full">
                 <thead>
                   <tr className="border-b-2 border-[#8AD5B7] text-[#8AD5B7] text-lg sm:text-xl lg:text-2xl font-semibold">
@@ -43,7 +45,11 @@ const PropertyList = ({ properties = [], entries = 10, search = '' }) => {
                           {property.sync_at ? <CheckCheck color="#08fd0c" className='w-full flex justify-center' /> : <X color="#ff0000" className='w-full flex justify'/>}
                         </td>
                         <td className="w-1/5 px-2 py-6">
-                          <button onClick={() => console.log('view', property.id)}>View</button>
+                          <button
+                            disabled={loading}
+                            onClick={() => console.log('view', property.id)}
+                            className={loading ? 'opacity-50 cursor-not-allowed' : ''}
+                          >View</button>
                         </td>
                       </tr>
                     ))
@@ -64,24 +70,25 @@ const PropertyList = ({ properties = [], entries = 10, search = '' }) => {
               </p>
               <div className="flex items-center gap-4">
                 <button
-                  className="hover:text-[#8AD5B7]"
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  disabled={currentPage <= 1}
+                  className="hover:text-[#8AD5B7] disabled:text-gray-500"
+                  onClick={() => !loading && setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={loading || currentPage <= 1}
                 >
                   Previous
                 </button>
                 <span>{currentPage} / {totalPages}</span>
                 <button
-                  className="hover:text-[#8AD5B7]"
-                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                  disabled={currentPage >= totalPages}
+                  className="hover:text-[#8AD5B7] disabled:text-gray-500"
+                  onClick={() => !loading && setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={loading || currentPage >= totalPages}
                 >
                   Next
                 </button>
               </div>
             </div>
             </>
-  )
-}
+    </div>
+   )
+ }
 
-export default PropertyList
+ export default PropertyList
