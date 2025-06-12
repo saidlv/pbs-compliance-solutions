@@ -36,6 +36,7 @@ const Page = () => {
         ? json.data.data
           : []
       );
+      console.log(json.data.data);
     } catch (e) {
       console.error(e);
     }
@@ -176,32 +177,25 @@ const Page = () => {
           </div>
 
           <div className="w-[90%] mx-auto flex flex-col justify-center items-center mt-6">
+            {(displayComponent === "Property List" || displayComponent === "Property Summary") && (
             <div className="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between items-center w-full mx-auto text-[#89A096] font-semibold text-lg xl:text-xl p-2 rounded-full mb-6">
+              {/* Entries scroller */}
               <div className="flex items-center text-white p-2 rounded-md">
                 <span className="mr-2 text-[#89A096]">Show</span>
-                <div className="flex items-stretch gap-1">
-                  <div
-                    className="bg-[#2E3734] border border-[#8AD5B7] rounded-full h-auto text-[#89A096] outline-none w-12 flex items-center justify-center"
-                    min="1"
-                  >
-                    {entries}
-                  </div>
-                  <div className="flex flex-col justify-center gap-1">
-                    <img
-                      src="/up.svg"
-                      alt=""
-                      className="w-2 h-2 cursor-pointer hover:mix-blend-luminosity"
-                      onClick={() => setEntries((e) => e + 1)}
-                    />
-                    <img
-                      src="/down.svg"
-                      className="w-2 h-2 cursor-pointer hover:mix-blend-luminosity"
-                      onClick={() => setEntries((e) => Math.max(1, e - 1))}
-                    />
-                  </div>
-                </div>
+                <select
+                  value={entries}
+                  onChange={(e) => setEntries(Number(e.target.value))}
+                  className="bg-[#2E3734] border border-[#8AD5B7] rounded-full px-3 py-1 text-[#89A096] outline-none overflow-y-hidden"
+                >
+                  {[10, 25, 50, 100].map((opt) => (
+                    <option key={opt} value={opt} className="bg-[#2E3734] text-[#89A096]">
+                      {opt}
+                    </option>
+                  ))}
+                </select>
                 <span className="ml-2 text-[#89A096]">Entries</span>
               </div>
+              {/* Search bar */}
               <div className="relative flex items-center">
                 <input
                   type="text"
@@ -210,16 +204,16 @@ const Page = () => {
                   placeholder="search"
                   className="bg-[#2E3734] rounded-full px-3 py-1 border border-[#8AD5B7]"
                 />
-                <X className="absolute right-4" />
+                <X className="absolute right-4 cursor-pointer" onClick={()=> setSearch('')}/>
               </div>
             </div>
+            )}
 
             {displayComponent == "Property List" && (
               <PropertyList
                 properties={properties}
                 entries={entries}
-                handleIncrement={() => setEntries((e) => e + 1)}
-                handleDecrement={() => setEntries((e) => Math.max(1, e - 1))}
+                search={search}
               />
             )}
             {displayComponent == "Manage Properties" && (
@@ -235,8 +229,8 @@ const Page = () => {
             {displayComponent == "Property Summary" && (
               <PropertySummary
                 entries={entries}
-                handleIncrement={() => setEntries((e) => e + 1)}
-                handleDecrement={() => setEntries((e) => Math.max(1, e - 1))}
+                search={search}
+                properties={properties}
               />
             )}
             {displayComponent == "Settings" && (

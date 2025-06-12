@@ -3,18 +3,21 @@ import React, { useState ,useEffect } from 'react'
 import {getIdFromBoro} from '@/utils/borough'
 import { CheckCheck, X } from 'lucide-react'
 
-const PropertyList = ({ properties, entries, handleIncrement, handleDecrement }) => {
-  const [addresses, setaddresses] = useState([])
-  useEffect(() => {
-  const addresses = properties.map((prop,index)=> prop.bin +
-  " - " +
-  prop.house_number + " " +
-  prop.stname + " " +
-  getIdFromBoro(prop.boro) +
-  " NY " +
-  prop.zipcode )
-  setaddresses(addresses)
-  },[properties])
+const PropertyList = ({ properties = [], entries = 10, search = '' }) => {
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  useEffect(() => { setCurrentPage(1); }, [entries, search, properties]);
+  // Prepare list with address strings
+  const formatted = properties.map(prop => ({
+    property: prop,
+    addr: `${prop.bin} - ${prop.house_number} ${prop.stname} ${getIdFromBoro(parseInt(prop.boro))} ${prop.zipcode}`
+  }));
+  // Filter by search term
+  const filtered = formatted.filter(({ addr }) => addr.toLowerCase().includes(search.toLowerCase()));
+  const total = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / entries));
+  const startIdx = (currentPage - 1) * entries;
+  const current = filtered.slice(startIdx, startIdx + entries);
   return (
     <>
     <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-[80vh] 2xl:min-h-[50vh] 3xl:min-h-[30vh] overflow-x-auto">
@@ -27,14 +30,14 @@ const PropertyList = ({ properties, entries, handleIncrement, handleDecrement })
                   </tr>
                 </thead>
                 <tbody>
-                  {properties.length > 0 ? (
-                    properties.map((property, index) => (
+                  {current.length > 0 ? (
+                    current.map(({ property, addr }, idx) => (
                       <tr
-                        key={property.id || index}
-                        className={`${index !== properties.length - 1 ? 'border-b-2' : ''} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
+                        key={property.id || idx}
+                        className={`${idx !== current.length - 1 ? 'border-b-2' : ''} border-[#89A096] text-[#D9D9D9] text-lg font-semibold`}
                       >
                         <td className="w-2/5 px-2 py-6 border-r-2 border-[#8AD5B7]">
-                          {addresses[index]}
+                          {addr}
                         </td>
                         <td className="w-1/5 px-2 py-6 border-r-2 border-[#8AD5B7] text-center">
                           {property.sync_at ? <CheckCheck color="#08fd0c" className='w-full flex justify-center' /> : <X color="#ff0000" className='w-full flex justify'/>}
@@ -55,19 +58,28 @@ const PropertyList = ({ properties, entries, handleIncrement, handleDecrement })
               </table>
             </div>
             
-             <div className="flex justify-between items-center w-full mx-auto text-[#89A096] font-semibold text-lg xl:text-xl px-2 py-8">
-            <p>Showing 1 to 2 of 2 entries</p>
-            <div className="flex items-center gap-4">
-              <button className="hover:text-[#8AD5B7]" onClick={handleDecrement}>Previous</button>
-              <div
-                className="bg-[#2E3734] border border-[#8AD5B7] rounded-full h-auto outline-none w-12 flex items-center justify-center"
-                min="1"
-              >
-                {entries}
+            <div className="flex justify-between items-center w-full mx-auto text-[#89A096] font-semibold text-lg xl:text-xl px-2 py-8">
+              <p>
+                Showing {total ? startIdx + 1 : 0} to {Math.min(startIdx + entries, total)} of {total} entries
+              </p>
+              <div className="flex items-center gap-4">
+                <button
+                  className="hover:text-[#8AD5B7]"
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={currentPage <= 1}
+                >
+                  Previous
+                </button>
+                <span>{currentPage} / {totalPages}</span>
+                <button
+                  className="hover:text-[#8AD5B7]"
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={currentPage >= totalPages}
+                >
+                  Next
+                </button>
               </div>
-              <button className="hover:text-[#8AD5B7]" onClick={handleIncrement}>Next</button>
             </div>
-          </div>
             </>
   )
 }

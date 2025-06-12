@@ -17,9 +17,9 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
    }, [tab, notificationSettings, reminderSettings]);
 
    // Toggle boolean keys
-   const handleToggle = (key) => {
-     setSettings({ ...settings, [key]: !settings[key] });
-   };
+  //  const handleToggle = (key) => {
+  //    setSettings({ ...settings, [key]: !settings[key] });
+  //  };
    // Set sent_by
    const handleSentBy = (val) => {
      setSettings({ ...settings, sent_by: val });
@@ -83,7 +83,7 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
          </div>
 
          {/* Boolean settings toggles */}
-         <div className="grid grid-cols-2 gap-4">
+         {/* <div className="grid grid-cols-2 gap-4">
            {Object.entries(settings)
              .filter(([key]) => key !== 'sent_by')
              .map(([key, value]) => (
@@ -97,7 +97,7 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
                  <span className="text-[#D9D9D9] font-semibold">{key.toUpperCase()}</span>
                </label>
              ))}
-         </div>
+         </div> */}
 
          <div className="mt-6">
            <button
