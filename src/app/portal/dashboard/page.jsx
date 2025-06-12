@@ -36,7 +36,6 @@ const Page = () => {
         ? json.data.data
           : []
       );
-      console.log(json.data.data);
     } catch (e) {
       console.error(e);
     }
@@ -102,11 +101,14 @@ const Page = () => {
     }
   };
 
-  // delete a property by ID
+  // delete a property by BIN
   const deleteProperty = async (id) => {
     try {
-      await apiRequest('post', '/delete-single-property-from-user', { property_id: id });
-      loadProperties();
+      const res = await apiRequest('delete', `/user/properties/id/${id}`);
+      if(res.status === 200) {
+      setProperties(res.data.data)
+      console.log(res.data.data)
+      }
     } catch (e) {
       console.error(e);
     }
@@ -216,7 +218,7 @@ const Page = () => {
                 search={search}
               />
             )}
-            {displayComponent == "Manage Properties" && (
+            {displayComponent === "Manage Properties" && (
               <ManageProperties
                 addByAddress={addByAddress}
                 addByBIN={addByBIN}
@@ -224,6 +226,10 @@ const Page = () => {
                 onRefresh={loadProperties}
                 onAdd={addProperty}
                 onDelete={deleteProperty}
+                entries={entries}
+                search={search}
+                onSearchChange={setSearch}
+                onEntriesChange={setEntries}
               />
             )}
             {displayComponent == "Property Summary" && (

@@ -33,9 +33,9 @@ export default function Page() {
       // Persist user for immediate context restoration
       localStorage.setItem('pbsPortalUser', JSON.stringify({ ...data.user, memberuser: data.memberuser }));
       setUser({ ...data.user, memberuser: data.memberuser })
-      //if(data.memberuser)
+      if(data.memberuser)
         router.push('/portal/dashboard')
-      //else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
+      else window.location.href = `${process.env.NEXT_PUBLIC_API_URL}/portal/subscribe`
     } catch (err) {
       setError(err.message)
       toast.error(err.message)
