@@ -42,7 +42,7 @@ const Page = () => {
       {/* Profile Section */}
       <div className="w-full max-w-2xl rounded-lg px-6 pb-6 text-center">
         <div className="flex items-center justify-center gap-6 mb-4">
-          <div className="w-32 h-32 bg-[#D9D9D9] rounded-full"></div>
+          {profileData.user?.photo ? <img src={process.env.NEXT_PUBLIC_API_URL + profileData.user?.photo} alt="dp" className="w-32 h-32 rounded-full"/> :<div className="w-32 h-32 bg-[#D9D9D9] rounded-full"></div>}
           <div className="text-left flex flex-col justify-center items-start gap-3">
             <div className="space-y-1">
               <p className="text-3xl xl:text-4xl font-semibold text-[#8AD5B7]">
