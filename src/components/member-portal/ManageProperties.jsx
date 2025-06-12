@@ -3,10 +3,10 @@ import { boroughs, getBoroId, getIdFromBoro } from '@/utils/borough';
 import { X } from 'lucide-react'
 const ManageProperties = ({
   addByAddress,
-  addByBin,
+  addByBIN,
   ownedProperties,
-  onRefresh,
-  onAdd,
+  // onRefresh,
+  // onAdd,
   onDelete,
   entries = 10,
   search = '',
@@ -24,7 +24,7 @@ const ManageProperties = ({
   const [house, setHouse] = React.useState('');
   const [borough, setBorough] = React.useState(0); // selected borough
   const [binQuery, setBinQuery] = React.useState('')
-  const [deleteId, setDeleteId] = React.useState('')
+  const [bblQuery, setBblQuery] = React.useState('')
    // pagination + filtering state for Delete tab
   const [currentPage, setCurrentPage] = useState(1)
 
@@ -82,7 +82,7 @@ const ManageProperties = ({
           />
           <select
             value={borough}
-            onChange={e => setBorough(getBoroId(e.target.value))}
+            onChange={e => setBorough(e.target.value)}
             className="p-2 rounded w-full"
           >
             <option value="">Select borough</option>
@@ -101,14 +101,24 @@ const ManageProperties = ({
 
       {/* Add by BIN */}
       {activeTab==='Add Property with BIN Number' && (
-        <div>
+        <div className='flex flex-col items-center gap-6'>
           <input
             value={binQuery}
+            required
+            minLength={7}
             onChange={e => setBinQuery(e.target.value)}
             placeholder="Enter BIN"
             className="p-2 rounded"
           />
-          <button onClick={() => addByBin(binQuery)} className="ml-2 p-2 bg-[#8AD5B7] rounded">Search</button>
+          <input
+            value={bblQuery}
+            required
+            minLength={10}
+            onChange={e => setBblQuery(e.target.value)}
+            placeholder="Enter BBL"
+            className="p-2 rounded"
+          />
+          <button onClick={() => addByBIN(binQuery, bblQuery)} className="ml-2 p-2 bg-[#8AD5B7] rounded">Add Property</button>
         </div>
       )}
 

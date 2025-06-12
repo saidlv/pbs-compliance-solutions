@@ -66,10 +66,10 @@ const Page = () => {
       borough = getBoroId(borough);
       const response = await apiRequest('post', '/user/add-properties/address', { street, house, borough });
       if (response.status === 200) {
-        const newProp = response.data;
-        console.log('New property added:', newProp);
+        const newProp = response.data.data;
         // append to properties list
-        setProperties(prev => [...prev, newProp]);
+        setProperties(newProp);
+        setDisplayComponent('Property List');
       }
     } catch (e) {
       console.error('searchAddress error', e);
@@ -77,25 +77,15 @@ const Page = () => {
   };
 
   // search by BIN number
-  const addByBIN = async (bin) => {
+  const addByBIN = async (bin,bbl) => {
     try {
-      const response = await apiRequest('post', '/user/add-properties/bin', { bin });
+      const response = await apiRequest('post', '/user/add-properties/bin', { bin, bbl });
       if (response.status === 200) {
         const newProp = response.data.data;
         // append to properties list
-        setProperties(prev => [...prev, newProp]);
-        console.log('Added by BIN:', newProp);
+        setProperties(newProp);
+        setDisplayComponent('Property List');
       }
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
-  // add property
-  const addProperty = async (id) => {
-    try {
-      await apiRequest('post', '/add-property-to-user', { property_id: id });
-      loadProperties();
     } catch (e) {
       console.error(e);
     }
@@ -107,7 +97,6 @@ const Page = () => {
       const res = await apiRequest('delete', `/user/properties/id/${id}`);
       if(res.status === 200) {
       setProperties(res.data.data)
-      console.log(res.data.data)
       }
     } catch (e) {
       console.error(e);
@@ -224,7 +213,6 @@ const Page = () => {
                 addByBIN={addByBIN}
                 ownedProperties={properties}
                 onRefresh={loadProperties}
-                onAdd={addProperty}
                 onDelete={deleteProperty}
                 entries={entries}
                 search={search}
