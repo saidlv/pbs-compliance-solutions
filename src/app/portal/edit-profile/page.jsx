@@ -285,8 +285,10 @@ export default function Page() {
         </button>
         <button
           className="mt-6 bg-[#8AD5B7] text-[#1E2322] font-bold text-xl px-6 py-2 rounded-full hover:bg-opacity-80 transition-all"
+          type="button"
           onClick={() => {
             setProfileData(oldData);
+            router.push("/portal/profile");
           }}
         >
           Cancel
