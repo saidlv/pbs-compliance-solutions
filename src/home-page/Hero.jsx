@@ -33,7 +33,7 @@ const heroInfo = [
     text1: "Compliance Inspection Services",
     text2: "All major Inspection services addressed",
     text3: "Our Inspection Services includes all major Departments prioritized Compliance violations (LL11, LL126 Parking Inspection, LL126 Parapet Inspection, LL1152, Sprinkler Hydrostatic Test, Boiler Inspection, Elevator Inspection)",
-    cta: "Opyimize Your Property",
+    cta: "Optimize Your Property",
     ctaLink: "/inspection-services"
   },
 ];
