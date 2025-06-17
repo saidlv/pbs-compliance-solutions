@@ -157,6 +157,10 @@ export function apiRequest(method, url, data) {
     data,
     headers: {
       Authorization: `Bearer ${localStorage.getItem('pbsPortalToken')}`,
-    },
-  });
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+        },
+        credentials: 'include',
+    });
 }
