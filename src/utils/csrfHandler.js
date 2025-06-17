@@ -121,7 +121,7 @@
 
 import axios from "axios";
 
-const LARAVEL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const LARAVEL = process.env.NEXT_PUBLIC_API_URL || "https://pbsnyc-production.up.railway.app";
 
 // 1) Global Axios defaults
 axios.defaults.baseURL        = LARAVEL;
