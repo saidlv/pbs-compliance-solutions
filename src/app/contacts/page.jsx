@@ -164,7 +164,7 @@ const Page = () => {
     setSubmitStatus({ loading: true, error: null, success: false });
 
     try {
-      const response = await apiRequest('post', '/api/contact', {
+      const response = await apiRequest('post', '/contact', {
         full_name: formData.full_name,
         email: formData.email,
         phone: formData.phone,
