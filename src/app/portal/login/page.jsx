@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useUser } from '@/context/UserContext'
 import toast from 'react-hot-toast'
 import axios from 'axios'
-import { login, portalRequest } from "@/utils/csrfHandler";
+import {apiRequest } from "@/utils/csrfHandler";
 
 export default function Page() {
   const router = useRouter()
@@ -24,7 +24,7 @@ export default function Page() {
       // establish Laravel session via Sanctum + CSRF
        //const sessionResp = await login(email, password)
       // then perform JWT login to get token and user
-     const res = await axios.post("/api/user/login", { email, password });
+     const res = await apiRequest('post',`/user/login`, { email, password });
       const data = await res.data
       if (!res.status == 200) throw new Error(data.message || 'Login failed')
       // on successful response, show toast and then store token and set user

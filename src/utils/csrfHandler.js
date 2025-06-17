@@ -125,7 +125,7 @@ const LARAVEL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 // 1) Global Axios defaults
 axios.defaults.baseURL        = LARAVEL;
-axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true; 
 axios.defaults.xsrfCookieName  = "XSRF-TOKEN";
 axios.defaults.xsrfHeaderName  = "X-XSRF-TOKEN";
 
