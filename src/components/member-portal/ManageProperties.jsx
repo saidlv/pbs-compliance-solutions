@@ -49,14 +49,14 @@ const ManageProperties = ({
   // Handle property selection from street search
   const handlePropertySelect = (property) => {
     setSelectedProperty(property);
-    setStreet(`${property.house_number} ${property.stname}`);
+    setStreet(`${property.zipcode} ${property.stname}`);
     setShowStreetMenu(false);
   };
 
   // Handle property selection from BIN search
   const handleBinPropertySelect = (property) => {
     setSelectedProperty(property);
-    setBinQuery(`${property.bin}: ${property.house_number} ${property.stname}`);
+    setBinQuery(`${property.bin}: ${property.zipcode} ${property.stname}`);
     setShowBinMenu(false);
   };
 
@@ -67,7 +67,7 @@ const ManageProperties = ({
         searchByAddress(street, house, borough);
 
       }
-    }, 300);
+    }, 1000);
     return () => clearTimeout(searchTimer);
   }, [street, house, borough]);
 
@@ -77,7 +77,7 @@ const ManageProperties = ({
       if (binQuery && !binQuery.includes(':')) {
         searchByBIN(binQuery);
       }
-    }, 300);
+    }, 1000);
     return () => clearTimeout(searchTimer);
   }, [binQuery]);
 
@@ -88,7 +88,7 @@ const ManageProperties = ({
       return;
     }
     try {
-      await addSelectedProperty(selectedProperty.id);
+      await addSelectedProperty(selectedProperty.bin);
       setSelectedProperty(null);
       setStreet('');
       setHouse('');
@@ -170,7 +170,25 @@ const ManageProperties = ({
                   placeholder="Enter house number"
                 />
               </div>
-              <div>
+               <div>
+                <label className="block text-[#89A096] font-semibold mb-2">Borough</label>
+                <div className="relative">
+                  <select
+                    disabled={loading || isSearching}
+                    value={borough}
+                    onChange={(e) => setBorough(e.target.value)}
+                    className="w-full bg-[#2E3734] border border-[#8AD5B7] rounded-lg px-4 py-2 text-[#D9D9D9] appearance-none"
+                  >
+                    <option value="">Select Borough</option>
+                    {boroughs.map((name,index) => (
+                      <option key={index} value={name}>{name}</option>
+                    ))}
+                  </select>
+                  <ChevronDown className="absolute right-3 top-3 text-[#8AD5B7] pointer-events-none" />
+                </div>
+              </div>
+
+               <div>
                 <label className="block text-[#89A096] font-semibold mb-2">Street Name</label>
                 <div className="relative" ref={menuRef}>
                   <input
@@ -185,32 +203,18 @@ const ManageProperties = ({
                   <ChevronDown className="absolute right-3 top-3 text-[#8AD5B7]" />
                   {showStreetMenu && searchResults.length > 0 && (
                     <div className="absolute z-50 w-full mt-1 bg-[#2E3734] border border-[#8AD5B7] rounded-lg max-h-60 overflow-y-auto">
-                      {searchResults.map((property) => (
+                      {searchResults.map((property,index) => (
                         <div
-                          key={property.id}
+                          key={index}
                           onClick={() => handlePropertySelect(property)}
                           className="px-4 py-2 hover:bg-[#37403D] cursor-pointer text-[#D9D9D9]"
                         >
-                          {property.bin}: {property.zipcode} {property.stname}
+                          {property.bin}:{property.zipcode} {property.stname}
                         </div>
                       ))}
                     </div>
                   )}
                 </div>
-              </div>
-              <div>
-                <label className="block text-[#89A096] font-semibold mb-2">Borough</label>
-                <select
-                  disabled={loading || isSearching}
-                  value={borough}
-                  onChange={(e) => setBorough(e.target.value)}
-                  className="w-full bg-[#2E3734] border border-[#8AD5B7] rounded-lg px-4 py-2 text-[#D9D9D9]"
-                >
-                  <option value="">Select Borough</option>
-                  {boroughs.map((name,index) => (
-                    <option key={index} value={name}>{name}</option>
-                  ))}
-                </select>
               </div>
             </div>
             {isSearching && <div className="text-center text-[#8AD5B7]">Searching...</div>}
@@ -241,13 +245,13 @@ const ManageProperties = ({
               <ChevronDown className="absolute right-3 top-11 text-[#8AD5B7]" />
               {showBinMenu && searchResults.length > 0 && (
                 <div className="absolute z-50 w-full mt-1 bg-[#2E3734] border border-[#8AD5B7] rounded-lg max-h-60 overflow-y-auto">
-                  {searchResults.map((property) => (
+                  {searchResults.map((property,index) => (
                     <div
-                      key={property.id}
+                      key={index}
                       onClick={() => handleBinPropertySelect(property)}
                       className="px-4 py-2 hover:bg-[#37403D] cursor-pointer text-[#D9D9D9]"
                     >
-                      {property.bin}: {property.house_number} {property.stname}
+                      {property.bin}: {property.zipcode} {property.stname}
                     </div>
                   ))}
                 </div>

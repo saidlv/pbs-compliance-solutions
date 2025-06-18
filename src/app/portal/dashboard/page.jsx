@@ -17,7 +17,8 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [properties, setProperties] = useState([]);
   const [entries, setEntries] = useState(20);
-  const [search, setSearch] = useState("");  const [displayComponent, setDisplayComponent] = useState("Property List");
+  const [search, setSearch] = useState("");  
+  const [displayComponent, setDisplayComponent] = useState("Property List");
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
 
@@ -122,17 +123,19 @@ const Page = () => {
     }
   };
   // add a selected property to user's properties
-  const addSelectedProperty = async (propertyId) => {
+  const addSelectedProperty = async (bin) => {
     setLoading(true);
     try {
       const response = await apiRequest('post', '/property/add', { 
-        property_id: propertyId 
+        bin 
       });
       if (response.status === 200) {
         // Update properties with the new data
         if (response.data && Array.isArray(response.data.data)) {
           setProperties(response.data.data);
           toast.success('Property added successfully');
+          setSearchResults([]); // Clear search results after adding
+          setSearch(''); // Clear search input
         } else {
           // If we don't get an array back, reload the full properties list
           await loadProperties();
