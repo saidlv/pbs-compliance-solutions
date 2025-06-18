@@ -9,6 +9,7 @@ import ManageProperties from "@/components/member-portal/ManageProperties";
 import PropertySummary from "@/components/member-portal/PropertySummary";
 import Settings from "@/components/member-portal/Settings";
 import { getBoroId } from "@/utils/borough";
+import { get } from "http";
 
 const Page = () => {
   // Dashboard API state lifted here
@@ -16,8 +17,9 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [properties, setProperties] = useState([]);
   const [entries, setEntries] = useState(20);
-  const [search, setSearch] = useState("");
-  const [displayComponent, setDisplayComponent] = useState("Property List");
+  const [search, setSearch] = useState("");  const [displayComponent, setDisplayComponent] = useState("Property List");
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
 
   // Settings state
   const [notificationSettings, setNotificationSettings] = useState(null);
@@ -65,43 +67,7 @@ const Page = () => {
     })();
   }, []);
 
-  // search address by term, house number and borough
-  const addByAddress = async (street, house, borough) => {
-    setLoading(true);
-    try {
-       borough = getBoroId(borough);
-      const response = await apiRequest('post', '/user/add-properties/address', { street, house, borough });
-      if (response.status === 200) {
-        const newProp = response.data.data;
-        setProperties(newProp);
-        toast.success('Property added by address');
-      }
-    } catch (e) {
-      console.error('searchAddress error', e);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // search by BIN number
-  const addByBIN = async (bin,bbl) => {
-    setLoading(true);
-    try {
-       const response = await apiRequest('post', '/user/add-properties/bin', { bin, bbl });
-      if (response.status === 200) {
-        toast.success('Property added by BIN');
-        const newProp = response.data.data;
-        setProperties(newProp);
-        setDisplayComponent('Property List');
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // delete a property by BIN
+  // delete a property by id
   const deleteProperty = async (id) => {
     setLoading(true);
     try {
@@ -112,6 +78,70 @@ const Page = () => {
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // search properties by address (house number and street name)
+  const searchByAddress = async (street, house, borough) => {
+    setIsSearching(true);
+    try {
+      const response = await apiRequest('post', '/property/search-by-address', {
+        street,
+        house_number: house,
+        borough: getBoroId(borough)
+      });
+
+      if (response.status === 200) {
+        setSearchResults(response.data.data || []);
+      }
+    } catch (e) {
+      console.error('searchByAddress error', e);
+      toast.error('Failed to search by address');
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
+  // search properties by BIN
+  const searchByBIN = async (bin) => {
+    setIsSearching(true);
+    try {
+      const response = await apiRequest('post', '/property/search-by-bin', {
+        bin: bin
+      });
+      if (response.status === 200) {
+        setSearchResults(response.data.data || []);
+      }
+    } catch (e) {
+      console.error('searchByBIN error', e);
+      toast.error('Failed to search by BIN');
+    } finally {
+      setIsSearching(false);
+    }
+  };
+  // add a selected property to user's properties
+  const addSelectedProperty = async (propertyId) => {
+    setLoading(true);
+    try {
+      const response = await apiRequest('post', '/property/add', { 
+        property_id: propertyId 
+      });
+      if (response.status === 200) {
+        // Update properties with the new data
+        if (response.data && Array.isArray(response.data.data)) {
+          setProperties(response.data.data);
+          toast.success('Property added successfully');
+        } else {
+          // If we don't get an array back, reload the full properties list
+          await loadProperties();
+          toast.success('Property added successfully');
+        }
+      }
+    } catch (e) {
+      console.error('addSelectedProperty error:', e);
+      toast.error(e.response?.data?.message || 'Failed to add property');
     } finally {
       setLoading(false);
     }
@@ -229,12 +259,13 @@ const Page = () => {
                 loading={loading}
               />
             )}
-            {displayComponent === "Manage Properties" && (
-              <ManageProperties
-                addByAddress={addByAddress}
-                addByBIN={addByBIN}
+            {displayComponent === "Manage Properties" && (              <ManageProperties
+                searchByAddress={searchByAddress}
+                searchByBIN={searchByBIN}
+                addSelectedProperty={addSelectedProperty}
+                searchResults={searchResults}
+                isSearching={isSearching}
                 ownedProperties={properties}
-                onRefresh={loadProperties}
                 onDelete={deleteProperty}
                 entries={entries}
                 search={search}

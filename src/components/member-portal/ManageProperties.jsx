@@ -1,11 +1,14 @@
-import React,{useState} from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { boroughs, getBoroId, getIdFromBoro } from '@/utils/borough';
-import { X } from 'lucide-react'
+import { X, Check, Search, ChevronDown } from 'lucide-react'
 import toast from 'react-hot-toast';
 
 const ManageProperties = ({
-  addByAddress,
-  addByBIN,
+  searchByAddress,
+  searchByBIN,
+  addSelectedProperty,
+  searchResults = [],
+  isSearching = false,
   ownedProperties,
   onDelete,
   entries = 10,
@@ -14,25 +17,89 @@ const ManageProperties = ({
   onEntriesChange,
   loading = false,
 }) => {
+  const [activeTab, setActiveTab] = useState('Add Property with Address');
+  const [street, setStreet] = useState('');
+  const [house, setHouse] = useState('');
+  const [borough, setBorough] = useState('');
+  const [binQuery, setBinQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedProperty, setSelectedProperty] = useState(null);
+  const [showStreetMenu, setShowStreetMenu] = useState(false);
+  const [showBinMenu, setShowBinMenu] = useState(false);
+  
+  const menuRef = useRef(null);
+
   // Reset pagination on loading state
-  React.useEffect(() => {
+  useEffect(() => {
     if (loading) setCurrentPage(1);
   }, [loading]);
-  const buttonList = [
-    'Add Property with Address',
-    'Add Property with BIN Number',
-    'Add Property For Me',
-    'Delete Property',
-  ]
-  const [activeTab, setActiveTab] = React.useState(buttonList[0]);
-  const [street, setStreet] = React.useState('');
-  const [house, setHouse] = React.useState('');
-  const [borough, setBorough] = React.useState(0); // selected borough
-  const [binQuery, setBinQuery] = React.useState('')
-  const [bblQuery, setBblQuery] = React.useState('')
-  const [currentPage, setCurrentPage] = useState(1)
 
-  // filter by address text
+  // Close menus when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowStreetMenu(false);
+        setShowBinMenu(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Handle property selection from street search
+  const handlePropertySelect = (property) => {
+    setSelectedProperty(property);
+    setStreet(`${property.house_number} ${property.stname}`);
+    setShowStreetMenu(false);
+  };
+
+  // Handle property selection from BIN search
+  const handleBinPropertySelect = (property) => {
+    setSelectedProperty(property);
+    setBinQuery(`${property.bin}: ${property.house_number} ${property.stname}`);
+    setShowBinMenu(false);
+  };
+
+  // Search as user types street name
+  useEffect(() => {
+    const searchTimer = setTimeout(() => {
+      if (house && borough && street) {
+        searchByAddress(street, house, borough);
+
+      }
+    }, 300);
+    return () => clearTimeout(searchTimer);
+  }, [street, house, borough]);
+
+  // Search as user types BIN
+  useEffect(() => {
+    const searchTimer = setTimeout(() => {
+      if (binQuery && !binQuery.includes(':')) {
+        searchByBIN(binQuery);
+      }
+    }, 300);
+    return () => clearTimeout(searchTimer);
+  }, [binQuery]);
+
+  // Handle final property addition
+  const handleAddProperty = async () => {
+    if (!selectedProperty || !selectedProperty.bin) {
+      toast.error('Please select a property first');
+      return;
+    }
+    try {
+      await addSelectedProperty(selectedProperty.id);
+      setSelectedProperty(null);
+      setStreet('');
+      setHouse('');
+      setBorough('');
+      setBinQuery('');
+    } catch (error) {
+      console.error('Add property error:', error);
+    }
+  };
+
+  // filter by address text for owned properties list
   const term = (search || '').toLowerCase()
   const filtered = ownedProperties.filter((p) => {
     const addr = `${p.house_number} ${p.stname} ${getIdFromBoro(p.boro)}`
@@ -44,71 +111,113 @@ const ManageProperties = ({
   const startIdx = (currentPage - 1) * entries
   const current = filtered.slice(startIdx, startIdx + entries)
 
+  const buttonList = [
+    'Add Property with Address',
+    'Add Property with BIN Number',
+    'Add Property For Me',
+    'Delete Property',
+  ];
+
   return (
-    <div className="relative">
+    <div className="relative" ref={menuRef}>
       {loading && <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center z-10"><div className="loader"/></div>}
       <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-screen mb-8">
         {/* Tab buttons */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-6">
           {buttonList.map(tab => (
-            tab === 'Add Property For Me' ? <a 
-              href={`${process.env.NEXT_PUBLIC_API_URL}/property-add`}
-              key={tab}
-               onClick={() => {
-                setActiveTab(tab);
-              }}
-              className={`p-2 rounded-full text-center font-semibold flex justify-center items-center ${activeTab===tab ? 'bg-[#8AD5B7] text-[#1E2322]' : 'bg-[#1E2322] text-[#7C9087]'}`}
-            >{tab}</a> : ( 
-            <button
-              key={tab}
-              onClick={() => {
-                setActiveTab(tab);
-              }}
-              className={`p-2 rounded-full text-center font-semibold ${activeTab===tab ? 'bg-[#8AD5B7] text-[#1E2322]' : 'bg-[#1E2322] text-[#7C9087]'}`}
-            >{tab}</button>
+            tab === 'Add Property For Me' ? (
+              <a 
+                href={`${process.env.NEXT_PUBLIC_API_URL}/property-add`}
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`p-2 rounded-full text-center font-semibold flex justify-center items-center ${activeTab===tab ? 'bg-[#8AD5B7] text-[#1E2322]' : 'bg-[#1E2322] text-[#7C9087]'}`}
+              >
+                {tab}
+              </a>
+            ) : ( 
+              <button
+                key={tab}
+                onClick={() => {
+                  setActiveTab(tab);
+                  setSelectedProperty(null);
+                  setStreet('');
+                  setHouse('');
+                  setBorough('');
+                  setBinQuery('');
+                }}
+                className={`p-2 rounded-full text-center font-semibold ${activeTab===tab ? 'bg-[#8AD5B7] text-[#1E2322]' : 'bg-[#1E2322] text-[#7C9087]'}`}
+              >
+                {tab}
+              </button>
             )
           ))}
         </div>
+
         <div className='h-1.5 bg-[#8AD5B7] my-6'></div>
 
         {/* Add by Address */}
-        {activeTab==='Add Property with Address' && (
-          <div className='flex flex-col items-center gap-6'>
-            <input
-              disabled={loading}
-              value={street}
-              onChange={e => setStreet(e.target.value)}
-              placeholder="Street name"
-              className="p-2 rounded w-full"
-            />
-            <input
-              disabled={loading}
-              value={house}
-              onChange={e => setHouse(e.target.value)}
-              placeholder="House number"
-              className="p-2 rounded w-full"
-            />
-            <select
-              disabled={loading}
-              value={borough}
-              onChange={e => setBorough(e.target.value)}
-              className="p-2 rounded w-full"
-            >
-              <option value="">Select borough</option>
-              {boroughs.map((b, idx) => (
-                <option key={idx} value={b}>{b}</option>
-              ))}
-            </select>
+        {activeTab === 'Add Property with Address' && (
+          <div className="space-y-6">
+            <div className="grid md:grid-cols-3 gap-4">
+              <div>
+                <label className="block text-[#89A096] font-semibold mb-2">House Number</label>
+                <input
+                  disabled={loading || isSearching}
+                  type="text"
+                  value={house}
+                  onChange={(e) => setHouse(e.target.value)}
+                  className="w-full bg-[#2E3734] border border-[#8AD5B7] rounded-lg px-4 py-2 text-[#D9D9D9]"
+                  placeholder="Enter house number"
+                />
+              </div>
+              <div>
+                <label className="block text-[#89A096] font-semibold mb-2">Street Name</label>
+                <div className="relative" ref={menuRef}>
+                  <input
+                    disabled={loading || isSearching}
+                    type="text"
+                    value={street}
+                    onChange={(e) => setStreet(e.target.value)}
+                    onClick={() => setShowStreetMenu(true)}
+                    className="w-full bg-[#2E3734] border border-[#8AD5B7] rounded-lg px-4 py-2 text-[#D9D9D9]"
+                    placeholder="Enter street name"
+                  />
+                  <ChevronDown className="absolute right-3 top-3 text-[#8AD5B7]" />
+                  {showStreetMenu && searchResults.length > 0 && (
+                    <div className="absolute z-50 w-full mt-1 bg-[#2E3734] border border-[#8AD5B7] rounded-lg max-h-60 overflow-y-auto">
+                      {searchResults.map((property) => (
+                        <div
+                          key={property.id}
+                          onClick={() => handlePropertySelect(property)}
+                          className="px-4 py-2 hover:bg-[#37403D] cursor-pointer text-[#D9D9D9]"
+                        >
+                          {property.bin}: {property.zipcode} {property.stname}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div>
+                <label className="block text-[#89A096] font-semibold mb-2">Borough</label>
+                <select
+                  disabled={loading || isSearching}
+                  value={borough}
+                  onChange={(e) => setBorough(e.target.value)}
+                  className="w-full bg-[#2E3734] border border-[#8AD5B7] rounded-lg px-4 py-2 text-[#D9D9D9]"
+                >
+                  <option value="">Select Borough</option>
+                  {boroughs.map((name,index) => (
+                    <option key={index} value={name}>{name}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            {isSearching && <div className="text-center text-[#8AD5B7]">Searching...</div>}
             <button
-              onClick={() => {
-                if (!street.trim() || !house.trim() || !borough) {
-                  toast.error('Please fill in street, house number and borough');
-                } else {
-                  !loading && addByAddress(street, house, borough);
-                }
-              }}
-              disabled={loading}
-              className="p-2 bg-[#8AD5B7] rounded w-full"
+              disabled={loading || isSearching || !selectedProperty}
+              onClick={handleAddProperty}
+              className="w-full bg-[#8AD5B7] text-[#37403D] font-semibold py-2 rounded-lg hover:bg-[#7AC4A6] transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Add Property
             </button>
@@ -116,53 +225,44 @@ const ManageProperties = ({
         )}
 
         {/* Add by BIN */}
-        {activeTab==='Add Property with BIN Number' && (
-          <div className='flex flex-col items-center gap-6'>
-            <input
-              disabled={loading}
-              value={binQuery}
-              required
-              minLength={7}
-              onChange={e => setBinQuery(e.target.value)}
-              placeholder="Enter BIN"
-              className="p-2 rounded"
-            />
-            <input
-              disabled={loading}
-              value={bblQuery}
-              required
-              minLength={10}
-              onChange={e => setBblQuery(e.target.value)}
-              placeholder="Enter BBL"
-              className="p-2 rounded"
-            />
+        {activeTab === 'Add Property with BIN Number' && (
+          <div className="space-y-6">
+            <div className="relative" ref={menuRef}>
+              <label className="block text-[#89A096] font-semibold mb-2">BIN Number</label>
+              <input
+                disabled={loading || isSearching}
+                type="text"
+                value={binQuery}
+                onChange={(e) => setBinQuery(e.target.value)}
+                onClick={() => setShowBinMenu(true)}
+                className="w-full bg-[#2E3734] border border-[#8AD5B7] rounded-lg px-4 py-2 text-[#D9D9D9]"
+                placeholder="Enter BIN number"
+              />
+              <ChevronDown className="absolute right-3 top-11 text-[#8AD5B7]" />
+              {showBinMenu && searchResults.length > 0 && (
+                <div className="absolute z-50 w-full mt-1 bg-[#2E3734] border border-[#8AD5B7] rounded-lg max-h-60 overflow-y-auto">
+                  {searchResults.map((property) => (
+                    <div
+                      key={property.id}
+                      onClick={() => handleBinPropertySelect(property)}
+                      className="px-4 py-2 hover:bg-[#37403D] cursor-pointer text-[#D9D9D9]"
+                    >
+                      {property.bin}: {property.house_number} {property.stname}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            {isSearching && <div className="text-center text-[#8AD5B7]">Searching...</div>}
             <button
-              onClick={() => {
-                if (binQuery.length < 7 || bblQuery.length < 10) {
-                  toast.error('Please enter valid BIN and BBL');
-                } else {
-                  !loading && addByBIN(binQuery, bblQuery);
-                }
-              }}
-              disabled={loading}
-              className="ml-2 p-2 bg-[#8AD5B7] rounded"
+              disabled={loading || isSearching || !selectedProperty}
+              onClick={handleAddProperty}
+              className="w-full bg-[#8AD5B7] text-[#37403D] font-semibold py-2 rounded-lg hover:bg-[#7AC4A6] transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Add Property
             </button>
           </div>
         )}
-
-        {/* Refresh Owned */}
-        {/* {activeTab==='Add Property For Me' && (
-          <div>
-            <button onClick={onRefresh} className="p-2 bg-[#8AD5B7] rounded">Refresh My Properties</button>
-            <ul className="mt-4">
-              {ownedProperties.length ? ownedProperties?.map((p,index) => <li key={index} className="p-2">{p?.address}</li>) : (
-                <li className="p-2 text-gray-500">No properties found</li>
-              )}
-            </ul>
-          </div>
-        )} */}
 
         {/* Delete Single */}
          {activeTab === 'Delete Property' && (
