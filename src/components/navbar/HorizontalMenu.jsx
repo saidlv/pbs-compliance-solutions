@@ -2,13 +2,14 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { navItems } from "./data";
 import { gsap } from "gsap";
-import HamburgerMenu from "./HamburgerMenu";
+import { useUser } from "@/context/UserContext";
 
 const HorizontalMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const lineRefs = useRef([]);
   const arrowRefs = useRef([]);
+  const { user } = useUser();
 
   const handleMouseEnter = (index, hasSubmenu) => {
     setOpenDropdown(index);
@@ -81,7 +82,7 @@ const HorizontalMenu = () => {
                       : "text-[#DCE2E2] hover:text-[#8AD5B7]"
                   }`}
                 >
-                  {item.name}
+                  {item.name === "Member Login" ? (user ? "Member Portal" : "Member Login") : item.name}
                   <span
                     ref={(el) => (lineRefs.current[index] = el)}
                     className={`absolute ${

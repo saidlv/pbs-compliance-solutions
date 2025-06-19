@@ -97,29 +97,7 @@ export const section3 = {
     text1: "From Data to Decisions in One click",
     text2:
       "Upon signing up, instantly receive a summary report of your property portfolio. Then, choose weekly or monthly updates tailored to your needs.",
-    // text3:
-    //   "Report Types: Compliance Status, Upcoming deadlines, violation summaries.",
-    // itemHeading: "Sample Reports:",
-    // items: [
-    //   "/pics/alert-pic7.png",
-    //   "/pics/alert-pic8.png",
-    //   "/pics/alert-pic9.png",
-    // ],
-    // text4: "Export Options: Download as PDF, Excel, or share via link.",
-    // text5: "Schedule Alerts: Get notified when reports are ready",
   },
-
-  // div2: {
-  //   heading: "Custom Property Inspections",
-  //   text1: "Track deadlines your way",
-  //   text2:
-  //     "Create unlimited inspection profiles or templates with bespoke checklists for NYC-mandated deadlines, reminders, or internal processes.",
-  //   text3:
-  //     "Unlimited inspections: Fire safety, elevator, plumbing, and more; Photo Uploads: Attach time-stamped images to inspection records",
-  //   text4:
-  //     "Multi-Step Alerts: Set reminders 30, 15 and 3 days before deadlines",
-  //   img: "/pics/alert-pic5.png",
-  // },
 
   div3: {
     img: "/pics/alert-pic6.png",
