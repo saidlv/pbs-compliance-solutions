@@ -182,7 +182,7 @@ const Page = () => {
                     className={`relative w-full flex flex-col lg:flex-row ${
                       service.id % 2 === 1
                         ? "lg:left-0"
-                        : "lg:left-[20%] xl:left-[35%]"
+                        : "lg:left-[15%] xl:left-[25%]"
                     } items-center lg:items-stretch lg:justify-between gap-12`}
                   >
                     {service?.img && (
@@ -199,7 +199,7 @@ const Page = () => {
                     <div
                       className={`flex flex-col gap-4 w-full lg:w-2/3 justify-center`}
                     >
-                      <h2 className="text-2xl lg:text-3xl text-center lg:w-4/5 lg:text-left font-semibold text-[#8AD5B7]">
+                      <h2 className="text-2xl lg:text-3xl text-center lg:w-3/5 lg:text-left font-semibold text-[#8AD5B7]">
                         {service.heading}
                       </h2>
                       <p className="text-[#DCE2E2] text-base lg:w-4/6 2xl:w-full font-semibold text-center lg:text-left ">
@@ -271,7 +271,7 @@ const Page = () => {
         </motion.div>
 
         {/* why PBS */}
-        <div className="flex flex-col lg:flex-row items-center xl:items-end 2xl:items-center my-10 lg:mb-0 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch mb-10 lg:mb-0 lg:mt-10 2xl:justify-center gap-10 lg:gap-12 xl:gap-0">
   {/* Image Section */}
   <div className="lg:w-[45%] 2xl:w-[40%] 3xl:w-[30%] flex items-end">
     <Image
@@ -280,7 +280,7 @@ const Page = () => {
       width={600}
       height={800}
       priority
-      className="w-2/3 mx-auto lg:w-full object-cover 2xl:object-contain object-top mix-blend-luminosity"
+      className="w-2/3 mx-auto lg:w-full h-full object-cover object-top mix-blend-luminosity"
     />
   </div>
 
@@ -306,7 +306,7 @@ const Page = () => {
       ))}
     </div>
 
-    <div className="flex items-stretch gap-3 pl-3 mt-3 xl:mt-6">
+    <div className="flex items-stretch gap-3 pl-3 my-2 xl:mt-6">
       <div className="w-2 bg-[#8AD5B7] hidden lg:block"></div>
       <p className="text-xl xl:text-3xl text-center lg:text-left font-semibold text-[#DCE2E2] max-w-xl">
         {whyPBS.text}

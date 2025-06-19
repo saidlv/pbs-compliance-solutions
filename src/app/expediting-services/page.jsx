@@ -50,7 +50,7 @@ const Page = () => {
             <h2 className="text-2xl lg:text-4xl xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax">
               {section01.heading}
             </h2>
-            <p className="text-lg lg:text-xl xl:text-2xl font-semibold text-[#89A096]">
+            <p className="text-lg lg:text-xl xl:text-2xl font-semibold text-[#89A096] text-center lg:text-left">
               {section01.text}
             </p>
           </div>

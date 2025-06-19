@@ -75,7 +75,7 @@ const Page = () => {
             </p>
 
             <div className="flex items-stretch justify-start gap-6">
-              <div className="space-y-2 w-[80%]">
+              <div className="space-y-2 lg:w-[80%]">
                 {section01.items.map((item, index) => {
                   return (
                     <p
@@ -97,7 +97,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 mt-16 mb-8"></div>
+        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 mt-6 lg:mt-16 mb-8"></div>
 
         <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full lg:w-[80%] mx-auto">
           <h2 className="text-[#8AD5B7] text-3xl lg:text-5xl font-semibold font-conthrax text-center">

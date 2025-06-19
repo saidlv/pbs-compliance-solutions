@@ -10,35 +10,62 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ImageCarousel from "@/components/ImageCarousel";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
-  // const settings = {
-  //   dots: false, // Show navigation dots
-  //   infinite: true, // Loop slides
-  //   speed: 500, // Transition speed
-  //   slidesToShow: 5, // Show one slide at a time
-  //   slidesToScroll: 1, // Scroll one slide at a time
-  //   centerPadding: "0%", // Add padding to show partial next/prev slides
-  //   arrows: false, // Hide arrows for mobile
-  //   autoplay: true, // Optional: Auto-scroll slides
-  //   autoplaySpeed: 2000, // Optional: 3 seconds per slide
-  //   responsive: [
-  //     {
-  //       breakpoint: 720, // Adjust for very small screens
-  //       settings: {
-  //         centerPadding: "5%",
-  //         slidesToShow: 1,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 1024, // Adjust for very small screens
-  //       settings: {
-  //         centerPadding: "5%",
-  //         slidesToShow: 3,
-  //       },
-  //     },
-  //   ],
-  // };
+  const img1Ref = useRef(null);
+  const img2Ref = useRef(null);
+  const img3Ref = useRef(null);
+  useEffect(() => {
+    // Create a media match for md breakpoint (768px)
+    const mm = gsap.matchMedia();
+
+    // Only run animations on screens >= 768px
+    mm.add("(min-width: 1024px)", () => {
+      // First image - pop out/scale animation
+      gsap.from(img1Ref.current.querySelector('.scale-image'), {
+        scale: 0,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: img1Ref.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Second image - slide from right
+      gsap.from(img2Ref.current.querySelector('.slide-right-image'), {
+        x: 100,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: img2Ref.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Third image - slide from left
+      gsap.from(img3Ref.current.querySelector('.slide-left-image'), {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: img3Ref.current,
+          start: "top center+=100",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Cleanup function
+    return () => mm.revert();
+  }, []);
 
   return (
     <div className="bg-[#37403D]">
@@ -111,7 +138,7 @@ const Page = () => {
             className="w-full hidden lg:block h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
 
-          <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 px-6">
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-10 px-6">
             {section01.div2.imgArray.map((item, index) => {
               return (
                 <div
@@ -123,10 +150,10 @@ const Page = () => {
                     alt="Inspection Services"
                     width={500}
                     height={500}
-                    className="w-full block lg:hidden h-auto object-contain object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
+                    className="w-full block lg:hidden h-auto object-contain object-right-top rounded-[16%] lg:mx-0 mx-auto mix-blend-luminosity"
                   />
 
-                  <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center flex flex-col items-center">
+                  <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center flex flex-col items-center min-h-[40%] lg:h-auto">
                     <span className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2] itlaic">
                       {item.text.split(":")[0]}
                     </span>
@@ -285,50 +312,31 @@ const Page = () => {
           </div>
 
           <div className="w-full flex flex-col">
-            <img
-              src="/pics/alert-pic17.png"
-              alt="computer"
-              className="object-contain my-6 w-full"
-            />
+            <div ref={img1Ref} className="overflow-hidden">
+              <img
+                src="/pics/alert-pic17.png"
+                alt="computer"
+                className="object-contain my-6 w-full scale-image"
+              />
+            </div>
 
-            <img
-              src="/pics/alert-pic18.png"
-              alt="computer"
-              className="object-contain my-6 w-[80%] mx-auto"
-            />
+            <div ref={img2Ref} className="overflow-hidden">
+              <img
+                src="/pics/alert-pic18.png"
+                alt="computer"
+                className="object-contain my-6 w-[80%] mx-auto slide-right-image"
+              />
+            </div>
 
-            <img
-              src="/pics/alert-pic19.png"
-              alt="computer"
-              className="px-6 md:px-10 xl:px-16 object-contain my-6 w-full mx-auto"
-            />
+            <div ref={img3Ref} className="overflow-hidden">
+              <img
+                src="/pics/alert-pic19.png"
+                alt="computer"
+                className="px-6 md:px-10 xl:px-16 object-contain my-6 w-full mx-auto slide-left-image"
+              />
+            </div>
           </div>
         </div>
-
-        {/* <div className="px-6 md:px-10 xl:px-16 flex flex-col-reverse md:flex-row items-center lg:items-center justify-center gap-6 2xl:gap-8 w-full">
-          <Image
-            src={section3.div2.img}
-            alt="Inspection Services"
-            width={500}
-            height={500}
-            className="w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
-          />
-
-          <div className="w-full h-full md:w-[80%] lg:w-[60%] 2xl:max-w-[50%] 3xl:max-w-[40%] flex flex-col justify-center items-center md:items-start gap-3 lg:gap-10 2xl:gap-16 p-6 rounded-2xl">
-            <h2 className="text-[#8AD5B7] font-conthrax text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-center md:text-left xl:max-w-[90%]">
-              {section3.div2.heading}
-            </h2>
-            <p className="text-[#DCE2E2] text-lg lg:text-xl xl:text-2xl font-semibold text-center md:text-left xl:max-w-[90%]">
-              {section3.div2.text1}
-            </p>
-            <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center md:text-left xl:max-w-[90%]">
-              {section3.div2.text2}
-            </p>
-            <p className="text-[#89A096] text-base lg:text-lg xl:text-xl font-semibold text-center md:text-left xl:max-w-[90%]">
-              {section3.div2.text3}
-            </p>
-          </div>
-        </div> */}
 
         <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8 w-full md:w-[90%] xl:w-[80%] mx-auto bg-[url('/pics/alert-pic20.png')] bg-cover bg-no-repeat bg-center rounded-2xl p-6">
           <Image
@@ -490,7 +498,7 @@ const Page = () => {
                     );
                   })}
                 </ul>
-              </div>
+              </div> 
             </div>
           </div>
         </div>

@@ -252,7 +252,7 @@ const Page = () => {
         </div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center pt-10 pb-10 lg:pb-0 gap-10 lg:gap-0">
+        <div className="w-full flex flex-col lg:flex-row items-center lg:items-stretch 2xl:justify-center pt-10 pb-10 lg:pb-0 gap-10 lg:gap-0">
           <div className="w-full lg:w-[40%] 2xl:w-[30%] flex items-end overflow-hidden">
             <Image
               src={whyPBS.img}
@@ -260,7 +260,7 @@ const Page = () => {
               width={600}
               height={800}
               priority
-              className="w-2/3 lg:w-full mx-auto h-auto lg:h-full object-cover object-top mix-blend-luminosity"
+              className="w-1/3 lg:w-full mx-auto lg:h-full object-contain lg:object-cover object-top mix-blend-luminosity"
             />
           </div>
 

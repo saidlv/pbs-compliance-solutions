@@ -79,7 +79,7 @@ const Page = () => {
               className="w-[80%] md:w-[60%] lg:w-[50%] xl:w-[40%] h-auto object-contain rounded-lg mb-4 sm:mb-6 lg:mb-0 mx-auto"
             />
             <div className="text-left w-full lg:w-[50%] flex flex-col items-start justify-center gap-4 sm:gap-6 px-4 sm:px-0">
-              <h2 className="text-[#8AD5B7] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-conthrax mb-3 leading-tight text-center lg:text-left">
+              <h2 className="text-[#8AD5B7] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold font-conthrax mb-3 leading-tight w-full text-center lg:text-left">
                 Hire an Owner Representative
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-xl text-[#DCE2E2] text-center lg:text-justify font-semibold leading-loose">
@@ -94,7 +94,7 @@ const Page = () => {
             <h4 className="text-[#8AD5B7] text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold font-conthrax">
               PBS Simplifies it all by
             </h4>
-            <div className="flex flex-col lg:flex-row justify-between gap-6 sm:gap-8 w-full">
+            <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-between gap-6 sm:gap-8 w-full">
               {challenges.map((challenge, index) => (
                 <div
                   key={index}

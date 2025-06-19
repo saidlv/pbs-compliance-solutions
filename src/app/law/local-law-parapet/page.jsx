@@ -75,7 +75,7 @@ const Page = () => {
                     </p>
         
                     <div className="flex items-stretch justify-start gap-6">
-                      <div className="space-y-2 w-[85%]">
+                      <div className="space-y-2 lg:w-[85%]">
                         {section01.items.map((item, index) => {
                           return (
                             <p
@@ -200,7 +200,7 @@ const Page = () => {
           </div>
           
           <Link href={"/alert"}
-           className="w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-end lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
+           className="w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-center gap-[10%] lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
           >
             <span className="">Get Timely Alerts</span>
             <svg
