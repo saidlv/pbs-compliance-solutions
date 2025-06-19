@@ -218,7 +218,7 @@ const Page = () => {
               </button>
             ))}
           </div>
-
+ 
           <div className="w-[90%] mx-auto flex flex-col justify-center items-center mt-6">
             {(displayComponent === "Property List" || displayComponent === "Property Summary") && (
             <div className="flex flex-col lg:flex-row gap-3 lg:gap-0 justify-between items-center w-full mx-auto text-[#89A096] font-semibold text-lg xl:text-xl p-2 rounded-full mb-6">
@@ -262,7 +262,8 @@ const Page = () => {
                 loading={loading}
               />
             )}
-            {displayComponent === "Manage Properties" && (              <ManageProperties
+            {displayComponent === "Manage Properties" && (             
+               <ManageProperties
                 searchByAddress={searchByAddress}
                 searchByBIN={searchByBIN}
                 addSelectedProperty={addSelectedProperty}

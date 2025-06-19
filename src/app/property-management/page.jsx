@@ -211,7 +211,6 @@ const Page = () => {
              isArrow={false}
              styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[12px] lg:text-[16px] font-conthrax w-full lg:w-[50%] 2xl:w-[40%] 3xl:w-[35%] rounded-xl mx-auto mt-5"
             />
-
         </div>
       </section>
 
