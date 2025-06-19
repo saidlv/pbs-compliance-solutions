@@ -6,15 +6,15 @@ import { useState } from "react";
 
 const Sidebar = () => {
   const iconList = [
-    "/pics/alert-sidebar-1.png",
-    "/pics/alert-sidebar-2.png",
-    "/pics/alert-sidebar-3.png",
-    "/pics/alert-sidebar-4.png",
-    "/pics/alert-sidebar-5.png",
-    "/pics/alert-sidebar-6.png",
-    "/pics/alert-sidebar-7.png",
-    "/pics/alert-sidebar-8.png",
-    "/pics/alert-sidebar-9.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-1.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-2.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-3.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-4.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-5.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-6.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-7.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-8.png",
+    "/pics/alert-sidebar/sidebar/alert-sidebar-9.png",
   ];
 
   const [toggleMenu, setToggleMenu] = useState(false);
