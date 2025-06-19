@@ -73,7 +73,7 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true, // Enable arrows
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -82,23 +82,7 @@ const Hero = () => {
 
   return (
     <Slider {...settings} className="relative">
-      {/* {heroInfo.map((img, index) => (
-        <div key={index} className="relative">
-          <div className="relative min-h-[25vh] md:min-h-[40vh] lg:min-h-screen flex items-center lg:items-end justify-center lg:justify-start">
-            {/* Background Image }
-            <div className="absolute h-full inset-0">
-              <Image
-                src={img.bg}
-                alt={`Hero Image ${index + 1}`}
-                className="w-full h-full object-cover z-0"
-                fill
-                priority={true}
-                quality={100}
-              />
-            </div>
-          </div>
-        </div>
-      ))} */}
+
 
 {heroInfo.map((heroData, index) => (
       <HeroCarousel key={index} bg={heroData.bg} img={heroData.img} text1={heroData.text1} text2={heroData.text2} text3={heroData.text3} text4={heroData?.text4} cta={heroData.cta} ctaLink={heroData.ctaLink} />

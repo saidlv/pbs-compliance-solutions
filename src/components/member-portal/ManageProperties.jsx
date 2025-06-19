@@ -158,7 +158,7 @@ const ManageProperties = ({
         {/* Add by Address */}
         {activeTab === 'Add Property with Address' && (
           <div className="space-y-6">
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid lg:grid-cols-3 gap-4">
               <div>
                 <label className="block text-[#89A096] font-semibold mb-2">House Number</label>
                 <input

@@ -48,7 +48,7 @@ const Settings = ({ notificationSettings, reminderSettings, onUpdateNotification
    return (
      <>
        <div className="p-3 lg:p-10 bg-[#2E3734] rounded-xl w-full min-h-screen mb-8">
-         <div className="w-full mx-auto flex justify-between items-center gap-3 xl:gap-6">
+         <div className="w-full mx-auto flex flex-col lg:flex-row justify-between items-center gap-3 xl:gap-6">
            <h2 className="font-conthrax font-semibold text-3xl xl:text-4xl text-[#D9D9D9]">
              {tab === 'notification' ? 'NOTIFICATIONS' : 'REMINDERS'}
            </h2>

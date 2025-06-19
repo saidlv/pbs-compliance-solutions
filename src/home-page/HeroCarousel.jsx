@@ -3,10 +3,9 @@ import Image from 'next/image'
 import CustomImage from '@/app/CustomImage'
 import CTA2 from "@/components/CTA2"
 
-const HeroCarousel = ({bg,img,text1,text2,text3,text4="",cta,ctaLink, className=""}) => {
+const HeroCarousel = ({bg,img,text1,text2,text3,text4="",cta,ctaLink, className=""}) => { 
     return (
-        <div className="relative bg-brand-dark">
-            <div className="h-[60%] lg:h-screen 2xl:h-[80%] relative flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between 2xl:justify-center lg:pt-8 lg:px-10">
+            <div className="bg-brand-dark h-[60vh] lg:h-screen 2xl:h-[80vh] relative flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between 2xl:justify-center lg:pt-8 lg:px-10">
                 {/* Background Image - Optional */}
                 <div
                     className="absolute w-full inset-0 h-full"
@@ -29,7 +28,7 @@ const HeroCarousel = ({bg,img,text1,text2,text3,text4="",cta,ctaLink, className=
                     <Image
                         src={img}
                         alt="Modern skyscrapers"
-                        className="w-[60%] mx-auto lg:w-full lg:h-full 2xl:h-[85%] mix-blend-luminosity object-contain lg:object-cover object-top-right drop-shadow-[0_15px_90px_rgba(0,0,0,0.5)] inset-10"
+                        className="w-[60%] mx-auto lg:w-full lg:h-full mix-blend-luminosity object-contain lg:object-cover object-top-right drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] inset-10"
                         width={700}
                         height={500}
                     />
@@ -75,7 +74,6 @@ const HeroCarousel = ({bg,img,text1,text2,text3,text4="",cta,ctaLink, className=
                     />
                 </div>
             </div>
-        </div>
     )
 }
 
