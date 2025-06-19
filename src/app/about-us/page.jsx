@@ -3,8 +3,6 @@ import Image from "next/image";
 import HeroSection from "../../components/HeroSection";
 import { aboutContent } from "./data";
 import { ChevronLeft, ChevronRight, Dot, DotIcon } from "lucide-react";
-import { useState } from "react";
-import CTA from "@/components/CTA";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -211,7 +209,7 @@ const AboutPage = () => {
           </p>
 
           <ul className="list-disc list-inside text-[#DCE2E2] font-semibold text-base xl:text-lg text-center space-y-2 mt-5">
-          <li >
+          <li>
              Standardized Excellence: Meticulous, end-to-end project management frameworks tailored to NYC's dynamic landscape
           </li>
           <li >

@@ -3,7 +3,6 @@
 import HeroSection from "../../../components/HeroSection";
 import { motion } from "framer-motion";
 import {
-  teamMembers,
   leadershipTeam,
   projectManagers,
   specialists,
@@ -102,7 +101,7 @@ const Page = () => {
                 >
                   <div className="w-full flex flex-col items-center justify-center gap-1">
                     <h3 className="text-xl md:text-lg xl:text-2xl font-conthrax font-semibold text-[#8AD5B7]">
-                      {member.name}
+                      {member.name} 
                     </h3>
 
                     <p className="text-[#ffff] text-xs xl:text-sm font-semibold">

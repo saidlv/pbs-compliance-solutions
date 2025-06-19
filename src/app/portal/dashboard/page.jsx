@@ -9,7 +9,6 @@ import ManageProperties from "@/components/member-portal/ManageProperties";
 import PropertySummary from "@/components/member-portal/PropertySummary";
 import Settings from "@/components/member-portal/Settings";
 import { getBoroId } from "@/utils/borough";
-import { get } from "http";
 
 const Page = () => {
   // Dashboard API state lifted here

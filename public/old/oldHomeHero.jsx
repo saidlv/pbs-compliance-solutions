@@ -4,6 +4,7 @@ import CustomImage from "@/app/CustomImage";
 import CTA from "@/components/CTA";
 import { useMenu } from "@/context/MenuContext";
 import { motion } from "framer-motion";
+import { Young_Serif } from "next/font/google";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
