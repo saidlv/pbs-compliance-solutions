@@ -26,7 +26,10 @@ export default function Page() {
       // then perform JWT login to get token and user
      const res = await apiRequest('post',`/user/login`, { email, password });
       const data = await res.data
-      if (!res.status == 200) throw new Error(data.message || 'Login failed')
+      if (!res.status == 200 || data?.token == undefined || !data?.token) 
+        {
+          return toast.error('Login failed');
+        }
       // on successful response, show toast and then store token and set user
       toast.success('Logged in successfully!')
       localStorage.setItem('pbsPortalToken', data.token)
