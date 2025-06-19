@@ -32,7 +32,7 @@ const Sidebar = () => {
       {/* Icon List */}
         <SidebarMenu setToggleMenu={setToggleMenu} toggleMenu={toggleMenu}/>
      
-        <div className="flex flex-col items-center justify-start gap-10 xl:gap-5 w-full h-full" onMouseOver={() => setToggleMenu(true)}>
+        <div className="flex flex-col items-center justify-start gap-6 xl:gap-5 w-full h-full" onMouseOver={() => setToggleMenu(true)}>
           {iconList.map((icon, index) => (
             <Image
               src={icon}
