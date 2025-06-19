@@ -5,67 +5,11 @@ import Image from "next/image";
 import { DotIcon } from "lucide-react";
 import CTA2 from "@/components/CTA2";
 import { section01, section2, section3, section4 } from "./data";
-import Link from "next/link";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ImageCarousel from "@/components/ImageCarousel";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Page = () => {
-  const img1Ref = useRef(null);
-  const img2Ref = useRef(null);
-  const img3Ref = useRef(null);
-  useEffect(() => {
-    // Create a media match for md breakpoint (768px)
-    const mm = gsap.matchMedia();
-
-    // Only run animations on screens >= 768px
-    mm.add("(min-width: 1024px)", () => {
-      // First image - pop out/scale animation
-      gsap.from(img1Ref.current.querySelector('.scale-image'), {
-        scale: 0,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: img1Ref.current,
-          start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
-      });
-
-      // Second image - slide from right
-      gsap.from(img2Ref.current.querySelector('.slide-right-image'), {
-        x: 100,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: img2Ref.current,
-          start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
-      });
-
-      // Third image - slide from left
-      gsap.from(img3Ref.current.querySelector('.slide-left-image'), {
-        x: -100,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: img3Ref.current,
-          start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
-      });
-    });
-
-    // Cleanup function
-    return () => mm.revert();
-  }, []);
 
   return (
     <div className="bg-[#37403D]">
@@ -312,7 +256,7 @@ const Page = () => {
           </div>
 
           <div className="w-full flex flex-col">
-            <div ref={img1Ref} className="overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src="/pics/alert-pic17.png"
                 alt="computer"
@@ -320,7 +264,7 @@ const Page = () => {
               />
             </div>
 
-            <div ref={img2Ref} className="overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src="/pics/alert-pic18.png"
                 alt="computer"
@@ -328,7 +272,7 @@ const Page = () => {
               />
             </div>
 
-            <div ref={img3Ref} className="overflow-hidden">
+            <div className="overflow-hidden">
               <img
                 src="/pics/alert-pic19.png"
                 alt="computer"
@@ -540,7 +484,7 @@ const Page = () => {
                         {item.substring(item.indexOf(":") + 1)}
                       </p>
                     );
-                  })}
+                  })} 
                 </div>
               </div>
             </div>
