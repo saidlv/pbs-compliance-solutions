@@ -9,7 +9,7 @@ export const SideBarData = {
         { img: "/pics/alert-sidebar/3.png", name: "Building Profiles" },
         { img: "/pics/alert-sidebar/4.png", name: "Calendar" },
       ],
-      img: "/pics/alert-sidebar-1.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-1.png",
       name: "Dashboard",
     },
 
@@ -20,7 +20,7 @@ export const SideBarData = {
         { img: "/pics/alert-sidebar/6.png", name: "Stop Work/Vacate Orders" },
         { img: "/pics/alert-sidebar/7.png", name: "Complaints" },
       ],
-      img: "/pics/alert-sidebar-2.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-2.png",
       name: "DOB",
     },
 
@@ -45,7 +45,7 @@ export const SideBarData = {
         { img: "/pics/alert-sidebar/13.png", name: "Corrections" },
         { img: "/pics/alert-sidebar/7.png", name: "Complaints" },
       ],
-      img: "/pics/alert-sidebar-3.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-3.png",
       name: "ECB",
     },
 
@@ -61,9 +61,9 @@ export const SideBarData = {
         { img: "/pics/alert-sidebar/19.png", name: "Violation Orders" },
         { img: "/pics/alert-sidebar/20.png", name: "Complaints" },
       ],
-      img: "/pics/alert-sidebar-4.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-4.png",
       name: "FDNY",
-    },
+    }, 
 
     {
       hasmenu: true,
@@ -74,7 +74,7 @@ export const SideBarData = {
         { img: "/pics/alert-sidebar/24.png", name: "Registrations" },
         { img: "/pics/alert-sidebar/25.png", name: "Repairs" },
       ],
-      img: "/pics/alert-sidebar-5.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-5.png",
       name: "HPD",
     },
     {
@@ -85,7 +85,7 @@ export const SideBarData = {
         { img: "/pics/alert-sidebar/28.png", name: "Façade" },
         { img: "/pics/alert-sidebar/29.png", name: "Others" },
       ],
-      img: "/pics/alert-sidebar-6.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-6.png",
       name: "Inspections",
     },
     {
@@ -115,13 +115,13 @@ export const SideBarData = {
           ],
         },
       ],
-      img: "/pics/alert-sidebar-7.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-7.png",
       name: "Permits",
     },
-    { hasmenu: false, img: "/pics/alert-sidebar-8.png", name: "Support" },
+    { hasmenu: false, img: "/pics/alert-sidebar/sidebar/alert-sidebar-8.png", name: "Support" },
     {
       hasmenu: false,
-      img: "/pics/alert-sidebar-9.png",
+      img: "/pics/alert-sidebar/sidebar/alert-sidebar-9.png",
       name: "HPD Mailings",
     },
   ],
