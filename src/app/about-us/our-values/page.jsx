@@ -12,7 +12,7 @@ const Page = () => {
   return (
     <div className="bg-[#37403D] min-h-screen overflow-hidden">
       <HeroSection
-        heading="Building Compliance, Trust, and results in the heart of new york"
+        heading="Building Compliance, Trust, and results in the heart of New york"
         text="At PBS, we don’t just inspect-we protect. From permits to final sign-off, our values ensure your project stays on time, on budget and above board."
         className="text-3xl lg:text-5xl font-conthrax font-semibold max-w-4xl mx-auto"
         img="/pics/Rectangle 123.png"

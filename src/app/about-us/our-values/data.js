@@ -184,7 +184,7 @@ Informed, never overwhelmed as you will control the frequency and type of commun
   {
     id: 6,
     title: "Precision",
-    tagline: 'Accuracy Meets Efficency',
+    tagline: 'Accuracy Meets Efficiency',
     img: "/pics/Layer_1 (1).png",
     description: [
       `Focused Expertise: Cut through complexity with ASME/DOB-certified professionals.`,

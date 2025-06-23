@@ -1,15 +1,13 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { navItems } from "./data";
 import { gsap } from "gsap";
-import { useUser } from "@/context/UserContext";
 
 const HorizontalMenu = () => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const lineRefs = useRef([]);
   const arrowRefs = useRef([]);
-  const { user } = useUser();
 
   const handleMouseEnter = (index, hasSubmenu) => {
     setOpenDropdown(index);
@@ -72,7 +70,7 @@ const HorizontalMenu = () => {
                 onMouseEnter={() => handleMouseEnter(index, !!item.submenu)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link
+                {item.name !== "Member Login" && <Link
                   href={item.link || "#"}
                   className={`px-3 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center h-full ${
                     item.submenu
@@ -82,7 +80,7 @@ const HorizontalMenu = () => {
                       : "text-[#DCE2E2] hover:text-[#8AD5B7]"
                   }`}
                 >
-                  {item.name === "Member Login" ? (user ? "Member Portal" : "Member Login") : item.name}
+                  {item.name}
                   <span
                     ref={(el) => (lineRefs.current[index] = el)}
                     className={`absolute ${
@@ -93,6 +91,20 @@ const HorizontalMenu = () => {
                     style={{ width: 0 }}
                   />
                 </Link>
+}
+
+                {item.name == "Member Login" && <a href={item.link}  className={`px-3 py-2 text-base xl:text-lg 2xl:text-xl font-medium relative transition-all duration-300 ease-in-out flex items-center h-full text-[#DCE2E2] hover:text-[#8AD5B7]`}>
+                   {item.name}
+                    <span
+                    ref={(el) => (lineRefs.current[index] = el)}
+                    className={`absolute ${
+                      item.submenu ? "top-0" : "bottom-1"
+                    } left-0 h-1 bg-[#8AD5B7] ${
+                      openDropdown === index ? "opacity-100" : "opacity-0"
+                    }`}
+                    style={{ width: 0 }}
+                  /> 
+                </a>}
 
                 {item.submenu && openDropdown === index && (
                   <div className="absolute -left-[15vw] w-[40vw] bg-[#37403D] rounded-md shadow-lg z-10 p-3">

@@ -24,7 +24,7 @@ const heroInfo = [
     text1: "Property Management",
     text2: "Hassle-Free Management for Busy Owners",
     text3: "Streamline maintenance, tenant relations, and compliance. Focus on growth, not daily headaches.",
-    cta: "Optimze Your Property",
+    cta: "Optimize Your Property",
     ctaLink: "/property-management"
   },
    {

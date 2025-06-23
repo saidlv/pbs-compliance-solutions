@@ -50,7 +50,7 @@ export const services = [
     title: "Property Management",
     icon: "/pics/service4.png",
     description:
-      "End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-end management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
+      "End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction. End-to-End management for residential and commercial properties, ensuring profitability, compliance, and tenant satisfaction.",
     sections: [
       "Financial Oversight: Rent collection, budgeting, and reporting.",
       "\nMaintenance: 24/7 emergency repairs and preventive care.",

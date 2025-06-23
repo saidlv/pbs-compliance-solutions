@@ -186,7 +186,7 @@ const Alerts = () => {
       
       <CTA2
                 text="Click to watch now"
-                href="/contacts"
+                href="/alert"
                 styling="w-full lg:w-auto mt-0 h-10 xl:h-12 rounded-full bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 font-semibold whitespace-nowrap hover:brightness-105 transition text-xl xl:text-2xl"
               />
     </div>

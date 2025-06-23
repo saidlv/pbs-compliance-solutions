@@ -113,7 +113,7 @@ export const inspectionServices = [
         headline: "Your Building’s Secrets Could be Deadly, We Find them",
         items: [
           "Hidden Risks: Like Detectives, We hunt cracks in Facades, Silent Gas Leaks, Crumbling Parapets & Elevator defects before they make headlines",
-          "Disaster-proofing: Proactive inspections aren’t just checklists, they’re shields against lawsuits, injuries, and heartache. Sleep Soundly knowing your building building is in good hands and your walls won’t weep or collapse",
+          "Disaster-proofing: Proactive inspections aren’t just checklists, they’re shields against lawsuits, injuries, and heartache. Sleep Soundly knowing your building is in good hands and your walls won’t weep or collapse",
         ],
         img: "/pics/Inspection-service-3-1.png"
       },
@@ -166,7 +166,7 @@ export const inspectionServices = [
         text: "Concrete cracks, Fines Stack, We Act",
         items: [
           "The Problem: Cracks, poor drainage, corroded rebar or crumbling concrete could cause collapses, endangering vehicles and pedestrians, also poor drainage accelerates decay leading to million-dollar repairs.",
-          "What we uncover: Structural integrity evaluations focussing on load-bearing columns, slabs, and water proofing with custom repair strategies to reinforce weak points and extend your garage’s lifespan by decades.",
+          "What we uncover: Structural integrity evaluations focusing on load-bearing columns, slabs, and water proofing with custom repair strategies to reinforce weak points and extend your garage’s lifespan by decades.",
         ],
         additionalText: "Parking Garages require regular checks to ensure safety and avoid violations",
         cta: {

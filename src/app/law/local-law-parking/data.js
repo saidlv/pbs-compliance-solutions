@@ -79,7 +79,7 @@ export const section01 = {
   export const WhyItMatter = [
     "Being Compliant with LL 126 you can avoid fines, legal disputes and operational shutdowns.",
     "You can prolong the lifespan of your parking structure by getting your inspections done on time",
-    "Tenant safety is what matters most for you, and your’s safety is what matters most to us",
+    "Tenant safety is what matters most for you, and your safety is what matters most to us",
   ];
 
   export const whyPBS = {

@@ -44,23 +44,12 @@ export default function RootLayout({ children }) {
               <CustomErrorBoundary>
                 <PageLoader />
 
-                {
-                /* <div className="bg-[#141414] ">
-              <div className="md:w-[90%] mx-auto">
-              </div>
-              </div> */
-                }
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1 }}
                 >
-                  {/* <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                > */}
                   {!pathname.startsWith("/portal/dashboard") && <Header />}
                   {/* </motion.div> */}
                   <Suspense fallback={<SplashScreen />}>{children}</Suspense>

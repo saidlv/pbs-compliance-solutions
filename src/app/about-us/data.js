@@ -26,7 +26,7 @@ export const aboutContent = [
         body: "At PBS, we exist to create mutual success. We deliver \"value for value\" by uniting administrative precision, decades of construction mastery, and unparalleled craftsmanship—turning complex visions into reality, faster and clearer than anyone else.",
         impacts: {
             "For Clients": "Transparent budgets, accelerated timelines, and a single point of accountability for your project's success",
-            "teams & Partners": "Empowerment through training, cutting-edge tools, and collaborative support to perform at your peak",
+            "Teams & Partners": "Empowerment through training, cutting-edge tools, and collaborative support to perform at your peak",
             "The Industry": "Raising the bar for ethical, efficient, and future-focused development practices"
         }
     },
@@ -60,17 +60,17 @@ export const aboutContent = [
         ,
         buildingTypes: [
             "Private homes",
-            "co-ops",
-            "condos",
+            "Co-ops",
+            "Condos",
             "High-rises",
-            "historic buildings",
-            "mixed-use",
+            "Historic buildings",
+            "Mixed-use",
             "Warehouses",
-            "residential complexes",
+            "Residential complexes",
             "Commercial hubs",
-            "new developments",
+            "New developments",
             "SROs",
-            "retrofit projects",
+            "Retrofit projects",
             "Industrial facilities"
         ],
         clientTypes: [

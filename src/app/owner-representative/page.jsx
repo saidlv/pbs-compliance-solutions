@@ -38,7 +38,7 @@ const Page = () => {
   <div className="w-[100vw] relative flex justify-center">
         <div className="bg-[#8AD5B7] w-full h-2"></div>
         <div className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[60%] lg:w-[50%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-3xl z-20">
-          Owner Repreentative
+          Owner Representative
         </div>
       </div>
 

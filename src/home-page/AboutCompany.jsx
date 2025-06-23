@@ -1,6 +1,4 @@
 "use client";
-
-import Heading from "@/components/Heading";
 import gsap from "gsap";
 import Image from "next/image";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -76,7 +74,7 @@ const AboutCompany = () => {
             Numbers That Matter
           </h2>
           <p className="lg:min-h-[15vh] xl:min-h-[12vh] box-border mb-3 text-[#89A096] text-sm">
-          Trusted by Hundred of clients, PBS has ensured 100% compliance success across all projects, leveraging 30+ years of expertise & issuing proactive alerts to safeguard timelines and standards
+          Trusted by Hundreds of clients, PBS has ensured 100% compliance success across all projects, leveraging 30+ years of expertise & issuing proactive alerts to safeguard timelines and standards
           </p>
           <div className="flex justify-center items-center bg-[#1E2322] bg-opacity-45 rounded-2xl p-3 min-h-[40vh] lg:min-h-[46vh]">
             <Image
@@ -111,7 +109,7 @@ const AboutCompany = () => {
             </ul>
             <div className="w-full py-2 lg:py-0 lg:w-2/5 flex flex-col items-center justify-start xl:gap-6">
               <img src="/pics/Asset61.png" alt="green man" width={100} className="object-contain"/>
-              <CTA2 text={"Our Offerings"} href="/services" styling="rounded-none bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-full transition-colors mt-0" />
+              <CTA2 text={"Our Offerings"} href="/services" styling="bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-auto px-4 lg:px-2 xl:px-6 transition-colors mt-0 rounded-3xl lg:text-sm" />
             </div>
             </div>
 

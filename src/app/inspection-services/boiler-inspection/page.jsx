@@ -246,7 +246,7 @@ const Page = () => {
             alt="roadmap"
             width={600}
             height={800}
-            priority={true}
+            priority="true"
             className="w-2/3 lg:w-[90%] 2xl:w-[60%] mx-auto h-auto object-contain object-top"
           />
         </div>
@@ -259,7 +259,7 @@ const Page = () => {
               alt="building"
               width={600}
               height={800}
-              priority={true}
+              priority="true"
               className="w-1/3 lg:w-full mx-auto lg:h-full object-contain lg:object-cover object-top mix-blend-luminosity"
             />
           </div>

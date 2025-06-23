@@ -69,7 +69,7 @@ const Page = () => {
   <div className="w-[100vw] relative flex justify-center">
     <div className="bg-[#8AD5B7] w-full h-2"></div>
     <div
-      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] sm:w-[50%] lg:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20"
+      className="bg-[#8AD5B7] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] sm:w-[50%] lg:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl lg:text-4xl z-20 capitalize"
     >
       Our Services
     </div>
@@ -88,10 +88,10 @@ const Page = () => {
           {/* Moved title section here and fixed spacing */}
           <div className="text-center mb-10 py-2">
             <h1 className="text-[#DCE2E2] text-4xl font-conthrax tracking-widest mb-4">
-              PBS delivers expert solutions
+              PBS Delivers Expert Solutions
             </h1>
             <p className="text-base font-poppins font-semibold px-10 text-[#DCE2E2] max-w-2xl mx-auto">
-              to navigate NYC’s complex regulations, streamline operations, and
+              To navigate NYC’s complex regulations, streamline operations, and
               protect your property investments.
             </p>
           </div>

@@ -21,7 +21,7 @@ const Page = () => {
     >
       {/* Hero Section */}
       <HeroSection
-        heading="Fire Sprinkler Inspection (Hydristatic Test)"
+        heading="Fire Sprinkler Inspection (Hydrostatic Test)"
         text="Ensuring that your property’s fire sprinkler systems are compliant with New York City’s regulations is crucial for safety and legal adherence."
         className="font-conthrax max-w-[90%] sm:max-w-2xl md:max-w-4xl lg:max-w-5xl text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold"
         bgStyle="bg-right lg:bg-top bg-cover mix-blend-luminosity"

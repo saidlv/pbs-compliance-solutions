@@ -37,7 +37,7 @@ gsap.registerPlugin(ScrollTrigger);
  * Renders a paginated blog listing with featured post and animated grid
  * @returns {JSX.Element} The rendered blog listing page
  */
-const page = () => {
+const Page = () => {
   /**
    * State for managing pagination
    * @type {[number, Function]} Current page number and setter function
@@ -187,7 +187,7 @@ const page = () => {
           {/* Recent Posts Grid - Responsive layout with staggered animations */}
           <div
             ref={gridRef}
-            className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8"
           >
             {/* Map through current page posts to create post cards */}
             {currentPosts.map((post, index) => (
@@ -280,7 +280,7 @@ const page = () => {
                 {/* Next Page Button */}
                 <PaginationItem>
                   <PaginationNext
-                    href="#"
+                    href=""
                     onClick={(e) => {
                       e.preventDefault();
                       handlePageChange(currentPage + 1);
@@ -298,4 +298,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

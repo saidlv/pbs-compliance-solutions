@@ -14,7 +14,7 @@
     description:
       "Regular Boiler Inspections are mandated by NYC regulations to maintain safety and compliance. Being compliant with Code is necessary for all stakeholders and if not there are a lot of circumstances everyone faces",
     table: {
-      headers: ["Scenerio", "Consequences", "Our Safegaurd"],
+      headers: ["Scenario", "Consequences", "Our Safeguard"],
       rows: [
         {
           scenerio: "Late Filing",

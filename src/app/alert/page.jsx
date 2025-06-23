@@ -74,12 +74,12 @@ const Page = () => {
         </div>
 
         <div>
-          <Image
+          <img
             src="/pics/alert-pic2.png"
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-full hidden lg:block h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
+            className="w-full hidden lg:block h-auto object-contain 2xl:object-cover object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
 
           <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-10 px-6">
@@ -89,8 +89,8 @@ const Page = () => {
                   key={index}
                   className="flex flex-col items-center lg:items-stretch justify-between 2xl:justify-center gap-3 2xl:gap-8 w-full"
                 >
-                  <Image
-                    src={item.img}
+                  <img
+                    src={item.img} 
                     alt="Inspection Services"
                     width={500}
                     height={500}

@@ -27,7 +27,7 @@
       {
         title: "Final Approvals",
         description:
-          "Final ApprovalsOnce the documents are submitted we wait until the final approval",
+          "Final Approvals Once the documents are submitted we wait until the final approval",
       },
     ],
   };
@@ -134,7 +134,7 @@
         "Not every project needs a full package. Our hourly experts step in for targeted tasks, from permits to Parks Department reviews.",
       bullets: [
         "Project Manager Hourly Rate",
-        "Expeditor Hourlay Rate",
+        "Expeditor Hourly Rate",
         "After-Hours Work Permits",
         "Parks Department Plan Reviews",
       ],
