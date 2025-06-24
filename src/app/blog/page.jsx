@@ -1,5 +1,4 @@
-"use client"; // Marks this as a client-side component in Next.js
-
+"use client";
 /**
  * @file Blog Listing Page Component
  * @description Displays a paginated grid of blog posts with a featured article and animations
@@ -24,15 +23,17 @@ import { ArrowRight, Bookmark, CalendarDays } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import CustomImage from "../CustomImage";
 import { posts } from "./data";
+import Link from "next/link";
 
 // Import GSAP and its ScrollTrigger plugin for scroll-based animations
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 // Register ScrollTrigger plugin with GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-/**
+/** 
  * Blog Page Component
  * Renders a paginated blog listing with featured post and animated grid
  * @returns {JSX.Element} The rendered blog listing page
@@ -226,10 +227,10 @@ const Page = () => {
                   {/* Post excerpt */}
                   <p className="text-brand-midGray mb-4">{post.excerpt}</p>
                   {/* Read more button with arrow icon */}
-                  <button className="flex items-center gap-2 text-brand-bright hover:text-[#00CC6A] transition">
+                  <Link href="/blog/blogs" className="flex items-center gap-2 text-brand-bright hover:text-[#00CC6A] transition">
                     Read More
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}
