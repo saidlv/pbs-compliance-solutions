@@ -52,8 +52,8 @@ export const navItems = [
     submenu: [
       { name: "Blogs", link: "/blog" },
       { name: "Press", link: "/" },
-      { name: "Local Law Guide", link: "/" },
-      { name: "Alert System Guide", link: "/" },
+      { name: "Local Law Guide", link: "/law/local-law" },
+      { name: "Alert System Guide", link: "/alert" },
     ],
   },
    { name: "Alert Systems", link: "/alert" },
