@@ -60,11 +60,11 @@ export const section2 = {
       },
       {
         text: "BIN Lookup: Search by building Identification Number (Pull full property histories from DOB records)",
-        img: "/pics/alert-pic13-b.png",
+        img: "/pics/alert-pic12-b.png",
       },
       {
         text: "Agent Assistance: Request help from our PBS team",
-        img: "/pics/alert-pic14-b.png",
+        img: "/pics/alert-pic12-b.png",
       },
       {
         text: "Bulk Upload: Add multiple properties via CSV for large portfolios.",
@@ -72,7 +72,7 @@ export const section2 = {
       },
       {
         text: "Remove Properties: Instantly archive sold or transferred properties while retaining historical records.",
-        img: "/pics/alert-pic16-b.png",
+        img: "/pics/alert-pic15-b.png",
       },
     ],
   },
