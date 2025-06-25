@@ -109,7 +109,7 @@ const AboutCompany = () => {
             </ul>
             <div className="w-full py-2 lg:py-0 lg:w-2/5 flex flex-col items-center justify-start xl:gap-6">
               <img src="/pics/Asset61.png" alt="green man" width={100} className="object-contain"/>
-              <CTA2 text={"Our Offerings"} href="/services" styling="bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-auto px-4 lg:px-2 xl:px-6 transition-colors mt-0 rounded-3xl lg:text-sm" />
+              <CTA2 text={"Our Offerings"} href="/services" styling="bg-[#8AD5B7] text-[#37403D] hover:from-brand-green1 hover:to-brand-green2 font-semibold w-auto px-2 lg:px-2 transition-colors mt-0 rounded-3xl lg:text-sm" />
             </div>
             </div>
 
