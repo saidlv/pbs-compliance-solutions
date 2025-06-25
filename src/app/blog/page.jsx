@@ -155,7 +155,7 @@ const Page = () => {
             initial={{ opacity: 0, y: 20 }} // Initial animation state
             animate={{ opacity: 1, y: 0 }} // Animation target state
             transition={{ duration: 0.5 }} // Animation duration
-            className="mb-20 xl:mb-32"
+            className="mb-10 xl:mb-16 h-screen"
           >
             <div className="relative rounded-2xl overflow-hidden">
               {/* Featured post image */}
@@ -164,7 +164,7 @@ const Page = () => {
                 height={100}
                 width={100}
                 alt="Featured Post"
-                className="w-full h-96 object-cover"
+                className="w-full h-full object-cover"
               />
               {/* Gradient overlay with post details */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#171717] via-[#171717dd] to-transparent p-8">
