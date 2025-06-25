@@ -70,7 +70,7 @@ const Page = () => {
             width={500}
             height={500}
             className="w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
-          />
+          /> 
         </div>
 
         <div>
@@ -260,7 +260,7 @@ const Page = () => {
               <img
                 src="/pics/alert-pic17.png"
                 alt="computer"
-                className="object-contain my-6 w-full scale-image"
+                className="object-contain my-6 w-full"
               />
             </div>
 
@@ -268,7 +268,8 @@ const Page = () => {
               <img
                 src="/pics/alert-pic18.png"
                 alt="computer"
-                className="object-contain my-6 w-[80%] mx-auto slide-right-image"
+                className="object-contain my-6 w-[80%] mx-auto"
+                quality={100}
               />
             </div>
 
@@ -276,7 +277,7 @@ const Page = () => {
               <img
                 src="/pics/alert-pic19.png"
                 alt="computer"
-                className="px-6 md:px-10 xl:px-16 object-contain my-6 w-full mx-auto slide-left-image"
+                className="px-6 md:px-10 xl:px-16 object-contain my-6 w-full mx-auto"
               />
             </div>
           </div>
