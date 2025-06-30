@@ -109,12 +109,12 @@ const Page = () => {
                   index % 2 === 0 ? "items-start" : "items-start lg:items-end"
                 } rounded-2xl flex flex-col justify-center gap-4`}
               >
-                <div className="w-full lg:w-2/3 3xl:w-1/2 flex items-stretch justify-center gap-5 xl:gap-6">
-                  <span className="w-[10%] flex items-center text-[100px] flex-shrink-0 lg:text-[128px] text-[#8AD5B7] font-semibold">
+                <div className="w-full lg:w-2/3 3xl:w-1/2 flex items-stretch justify-center gap-2 md:gap-5 xl:gap-6 text-wrap">
+                  <span className="w-[15%] text-center lg:w-[10%] flex items-center text-[80px] md:text-[100px] flex-shrink-0 lg:text-[128px] text-[#8AD5B7] font-semibold">
                     {item.step}
                   </span>
                   <div className="bg-[#8AD5B7] w-2 flex-shrink-0"></div>
-                  <div className="flex flex-col gap-2 xl:w-[85%]">
+                  <div className="flex flex-col gap-2 w-[80%] xl:w-[85%]">
                     <h4 className="text-xl lg:text-2xl xl:text-3xl text-center md:text-left font-semibold text-[#8AD5B7]">
                       {item.title}
                     </h4>

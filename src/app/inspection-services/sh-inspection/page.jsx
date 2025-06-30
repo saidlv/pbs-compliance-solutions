@@ -39,7 +39,7 @@ const Page = () => {
       </div>
 
       {/*Section 01  */}
-      <section className="px-6 md:px-10 xl:px-16 pt-10 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
+      <section className="px-6 md:px-10 xl:px-16 pt-16 lg:pt-24 text-[#DCE2E2] w-full">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
           <Image
             src="/pics/sh-inspection-pic1.png"
@@ -49,7 +49,7 @@ const Page = () => {
             className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
+            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
               {section01.title}
             </span>
             <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight xl:max-w-[80%] 2xl:max-w-[70%]">
@@ -149,7 +149,7 @@ const Page = () => {
           </div>
           <div className="hidden md:block w-2 bg-[#8AD5B7] mx-8"></div>
 
-          <p className="w-full md:w-[40%] 2xl:w-[35%] text-lg lg:text-xl text-[#89A096] font-semibold flex items-center">
+          <p className="w-full md:w-[40%] 2xl:w-[35%] text-lg lg:text-xl text-[#89A096] font-semibold flex items-center text-center md:text-left">
             {HydrostaticTesting.text2}
           </p>
         </div>
@@ -271,7 +271,7 @@ const Page = () => {
               width={600}
               height={800}
               priority
-              className="w-1/3 lg:w-full mx-auto h-auto lg:h-full object-contain lg:object-cover object-top mix-blend-luminosity"
+              className="w-full md:w-1/3 lg:w-full mx-auto h-auto lg:h-full object-contain lg:object-cover object-top mix-blend-luminosity relative -left-5 mdLleft-0"
             />
           </div>
 
@@ -282,7 +282,7 @@ const Page = () => {
               </h1>
               <div className="text-sm lg:text-base 2xl:text-xl text-center md:text-left text-[#89A096] font-semibold space-y-1">
                 <div className="flex flex-col gap-2">
-                <p className="text-[#89A096] text-sm lg:text-base 2xl:text-xl text-center lg:text-left font-semibold max-w-[90%] xl:max-w-[75%]">
+                <p className="text-[#89A096] text-sm lg:text-base 2xl:text-xl text-center lg:text-left font-semibold max-w-[90%] xl:max-w-[75%] mx-auto lg:mx-0">
                   {whyPBS.text1}
                 </p>
                   {whyPBS.list1.map((item, index) => {

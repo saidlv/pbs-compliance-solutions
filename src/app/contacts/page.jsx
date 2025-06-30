@@ -203,7 +203,7 @@ const Page = () => {
   };
 
   return (
-    <div className="bg-[#37403D]">
+    <div className="bg-[#37403D] overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection
         heading="Contact us"
@@ -236,7 +236,7 @@ Contact PBS Compliance Solutions"
             ref={leftColumnRef}
           >
             <div className="bg-[#1E2322] w-full h-full rounded-xl flex flex-col items-center justify-center relative">
-              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[30%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
+              <div className="bg-[#8AD5B7] absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-[50%] lg:w-[50%] 2xl:w-[45%] 3xl:w-[40%] rounded-full text-[#37403D] p-2 sm:p-3 lg:p-4 flex justify-center items-center font-conthrax text-center text-base sm:text-xl md:text-2xl xl:text-3xl z-20">
                 Contact Us
               </div>
 

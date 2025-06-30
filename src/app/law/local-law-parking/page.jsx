@@ -146,7 +146,7 @@ const Page = () => {
 
       {/*Section 02 */}
       <section className="px-6 md:px-10 xl:px-16 pb-8 pt-10 lg:pt-16 text-[#DCE2E2]">
-        <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-full lg:w-[90%] mx-auto pb-10">
+        <div className="flex flex-col items-center justify-center gap-4 lg:gap-6 w-[90%] mx-auto pb-10">
           <h2 className="text-center text-2xl md:text-3xl lg:text-5xl font-semibold font-conthrax text-[#8AD5B7]">
             {Compliance_Deadlines.title}
           </h2>
@@ -376,7 +376,7 @@ const Page = () => {
         </div>
 
         {/* why PBS */}
-        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-16 lg:py-16">
+        <div className="w-full flex flex-col lg:flex-row items-center md:items-stretch 2xl:justify-center gap-3 sm:gap-6 2xl:gap-16 py-6 lg:py-16">
           <div className="w-full lg:w-[45%] xl:w-1/2 2xl:w-[50%] 3xl:w-[35%] flex items-end">
             <Image
               src={whyPBS.img}
@@ -384,7 +384,7 @@ const Page = () => {
               width={600}
               height={800}
               priority
-              className="relative w-1/2 lg:w-full mx-auto h-auto lg:h-full object-contain lg:object-cover object-top rounded-[16%] mix-blend-luminosity"
+              className="relative w-full md:w-2/3 lg:w-full mx-auto h-auto lg:h-full object-contain lg:object-cover object-top rounded-[16%] mix-blend-luminosity"
             />
           </div>
 

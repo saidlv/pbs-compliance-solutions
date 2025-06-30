@@ -115,7 +115,7 @@ const Footer = () => {
                         onClick={() => {
                           Router.push(link.href);
                         }}
-                        className="cursor-pointer"
+                        className="cursor-pointer text-left md:text-center"
                       >
                         {link.name}
                       </button>

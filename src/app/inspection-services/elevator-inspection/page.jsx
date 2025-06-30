@@ -183,10 +183,10 @@ const Page = () => {
             className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
+            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
               {section01.title}
             </span>
-            <h2 className="text-2xl lg:text-[40px] 2xl:text-[48px] text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax lg:leading-tight xl:max-w-[95%] 2xl:max-w-[75%]">
+            <h2 className="text-2xl lg:text-[40px] 2xl:text-[48px] text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax lg:leading-tight xl:max-w-[95%] 2xl:max-w-[75%] mx-auto lg:mx-0">
               {section01.heading}
             </h2>
             <p className="text-base font-semibold text-[#89A096]">
@@ -194,7 +194,7 @@ const Page = () => {
             </p>
 
             <div className="flex items-stretch justify-start gap-6">
-              <div className="space-y-2 w-[90%] lg:w-[70%] 2xl:w[60%]">
+              <div className="space-y-2 w-[90%] lg:w-[70%] 2xl:w[60%] mx-auto lg:mx-0">
                 {section01.items.map((item, index) => {
                   return (
                     <p
@@ -279,7 +279,7 @@ const Page = () => {
               alt="Inspection Services"
               width={500}
               height={500}
-              className="w-[80%] h-auto object-contain object-right-top mb-6 lg:mb-0 mx-auto"
+              className="w-full md:w-[80%] h-auto object-contain object-right-top mb-6 lg:mb-0 mx-auto"
             />
           </div>
         </div>
@@ -424,7 +424,7 @@ const Page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto"
+            className="w-full md:w-[80%] lg:w-[55%] 2xl:w-[65%] h-full object-contain mx-auto"
           /> 
         </div>            
 
@@ -439,14 +439,14 @@ const Page = () => {
               text="Book Your Slot Today"
               isArrow={false}
               href="/contacts"
-              styling={`w-[90%] md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
+              styling={`w-full md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
             />
 
             <CTA2
               text="Call Our Inspectors (914-316-6956)"
               isArrow={false}
               href="/contacts"
-              styling={`w-[90%] md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
+              styling={`w-full text-wrap md:w-auto mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold hover:brightness-105 transition lg:text-base font-conthrax mx-auto`}
             />
           </div>
         </div> 

@@ -69,7 +69,7 @@ const Page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
+            className="w-full md:w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-auto object-contain object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
           /> 
         </div>
 
@@ -82,7 +82,7 @@ const Page = () => {
             className="w-full hidden lg:block h-auto object-contain 2xl:object-cover object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
 
-          <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-10 px-6">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 px-6">
             {section01.div2.imgArray.map((item, index) => {
               return (
                 <div
@@ -151,7 +151,7 @@ const Page = () => {
               alt="Inspection Services"
               width={500}
               height={500}
-              className="w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-full object-cover object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
+              className="w-full md:w-[50%] lg:w-[40%] 2xl:w-[35%] 3xl:w-[30%] h-full object-cover object-right-top mb-6 lg:mb-0 lg:mx-0 mx-auto"
             />
             <div className="w-2 flex-shrink-0 bg-[#8AD5B7] my-10 hidden lg:block"></div>
             <div className="w-full lg:w-[60%] 2xl:w-[45%] 3xl:w-[40%] flex flex-col justify-center items-center lg:items-start">
@@ -268,7 +268,7 @@ const Page = () => {
               <img
                 src="/pics/alert-pic18.png"
                 alt="computer"
-                className="object-contain my-6 w-[80%] mx-auto"
+                className="object-contain my-6 w-full lg:w-[80%] mx-auto"
                 quality={100}
               />
             </div>
@@ -289,7 +289,7 @@ const Page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[65%] lg:w-[50%] h-auto object-contain object-right-top mb-6 lg:mb-0 mx-auto"
+            className="w-full md:w-[65%] lg:w-[50%] h-auto object-contain object-right-top mb-6 lg:mb-0 mx-auto"
           />
           <div className="space-y-2 2xl:gap-3">
             <p className="text-lg lg:text-xl xl:text-2xl text-[#DCE2E2] font-semibold w-full">

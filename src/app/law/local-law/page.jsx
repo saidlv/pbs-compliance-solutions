@@ -42,7 +42,7 @@ const Page = () => {
   </div>
       {/*Section 01  */}
       <section className="px-6 md:px-10 xl:px-16 pt-16 pb-8 lg:pt-24 text-[#DCE2E2]">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 2xl:gap-16 w-full">
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-5 md:gap-10 2xl:gap-16 w-full">
         
           <Image
             src="/pics/local-law-11-pic1.png"
@@ -52,7 +52,7 @@ const Page = () => {
             className="w-[80%] lg:w-[40%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
           />
           <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+            <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
               {section01.title}
             </span>
             <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax">
@@ -115,7 +115,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2 mt-16 mb-8"></div>
+        <div className="bg-[#8AD5B7] w-[30%] mx-auto text-[#DCE2E2] h-2  mt-6 md:mt-10 lg:mt-16 mb-5 md:mb-8"></div>
 
         <div className="flex flex-col lg:flex-row items-stretch justify-between w-full rounded-lg bg-[#2E3734] py-3 px-6 lg:py-10 lg:px-20 gap-6 lg:gap-12 ">
           <div className="flex-1 w-full lg:w-[50%] flex flex-col justify-between items-center lg:items-start gap-3 rounded-2xl">
@@ -255,7 +255,7 @@ const Page = () => {
       </section>
 
       {/* Section 03 */}
-      <section className="px-6 md:px-10 lg:px-16 2xl:px-24 pt-16 text-[#DCE2E2] flex flex-col items-center justify-between">
+      <section className="px-6 md:px-10 lg:px-16 2xl:px-24 lg:pt-16 text-[#DCE2E2] flex flex-col items-center justify-between">
        <motion.div className="w-full mt-6 sm:mt-10 mb-16"
             initial={{ opacity: 0, scale:0.8 }}
             whileInView={{ opacity: 1, scale:1 }}
@@ -293,7 +293,7 @@ const Page = () => {
     <div className="text-sm lg:text-base 2xl:text-xl text-center lg:text-left text-[#89A096] font-semibold space-y-1 mt-1 xl:mt-3 2xl:mt-6">
       {whyPBS.list1.map((item, index) => (
         <span key={index} className="flex gap-2">
-          <DotIcon className="text-[#DCE2E2] w-[5%]" />
+          <DotIcon className="text-[#DCE2E2] w-[5%] flex-shrink-0" />
           {index === 0 ? (
             <span>
               <span className="text-[#DCE2E2]">{item.split(",")[0]}</span>

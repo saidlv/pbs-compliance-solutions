@@ -80,9 +80,9 @@ const AboutPage = () => {
 
       {/* The PBS Story Section */}
       <section className="py-16 px-6 lg:px-16 bg-[#37403D] text-[#DCE2E2]">
-        <div className="mt-16 flex flex-col lg:flex-row items-start lg:items-stretch justify-center gap-12 lg:gap-16">
+        <div className="relative mt-16 flex flex-col lg:flex-row items-start lg:items-stretch justify-center gap-12 lg:gap-16">
           {/* Story image in a circular background */}
-          <div className="relative w-full lg:w-[30%] 2xl:w-[22%] flex justify-center items-center">
+          <div className="absolute lg:relative bottom-0 top-20 inset-x-0 lg:inset-auto opacity-25 lg:opacity-100 w-full lg:w-[30%] 2xl:w-[22%] flex justify-center items-center rounded-2xl">
             <Image
               src="/pics/Building.png"
               alt="PBS"
@@ -104,7 +104,7 @@ const AboutPage = () => {
             {story?.body.map((text, index) => (
               <p
                 key={index}
-                className="font-semibold text-lg xl:text-xl text-balance pr-6 my-8 text-center lg:text-left lg:max-w-2xl"
+                className="font-semibold text-lg xl:text-xl text-balance lg:pr-6 my-8 text-center lg:text-left lg:max-w-2xl"
               >
                 {text}
               </p>
@@ -126,7 +126,7 @@ const AboutPage = () => {
               <p className="text-[#7A8E85] mb-3 text-left">{vision?.tagline}</p>
             </div>
           </div>
-          <p className="text-[#DCE2E2] text-left text-lg">{vision?.body}</p>
+          <p className="text-[#DCE2E2] text-center lg:text-left text-lg">{vision?.body}</p>
           <div className="text-left my-5">
             <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
               How We'll get there
@@ -160,7 +160,7 @@ const AboutPage = () => {
               </p>
             </div>
           </div>
-          <p className="text-[#DCE2E2] text-lg text-left">{mission?.body}</p>
+          <p className="text-[#DCE2E2] text-lg text-center lg:text-left">{mission?.body}</p>
           <div className="text-left my-5">
             <h2 className="text-[#8AD5B7] text-xl font-semibold mb-3">
               How We'll get there
@@ -185,18 +185,18 @@ const AboutPage = () => {
       </div>
 
       {/* Redefining section */}
-      <section className="pb-10">
+      <section className="py-10">
         <div className="relative">
         <Image
           src="/pics/pattern1.png"
           alt=""
-          className="opacity-100 3xl:opacity-100 w-full h-full object-cover rounded-xl filter grayscale shadow-custom "
+          className="opacity-100 w-full h-full object-cover rounded-xl filter grayscale shadow-custom"
           width={700}
           height={500}
           loading="lazy"
         />
         <div className="rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6 absolute bottom-0">
-          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] leading-tight w-[70%] mx-auto my-6">
+          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] leading-tight w-full lg:w-[70%] mx-auto my-6">
             Redefining Excellence in NYC Construction
           </h2>
           <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
@@ -270,7 +270,7 @@ const AboutPage = () => {
         </h2>
         <div className="w-[55%] bg-[#8AD5B7] rounded-full h-1"></div>
 
-        <p className="text-[#DCE2E2] mt-5 font-semibold text-lg font-conthrax">
+        <p className="text-[#DCE2E2] mt-5 font-semibold text-lg text-center lg:text-left font-conthrax">
           More Than a Neighbor, We’re Your Advocates
         </p>
         <p className="text-[#89A096] flex gap-3 font-semibold text-sm mt-3 text-center">
@@ -283,10 +283,10 @@ const AboutPage = () => {
       <section className="px-6 lg:px-12">
         <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-stretch gap-8 mb-12">
           {/* Left Content */}
-          <div className="bg-[#2B3331] rounded-[5%] lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-around gap-6 w-[80%] mx-auto lg:w-[60%] 2xl:w-[70%] py-10 px-6">
-            <div className="w-full lg:w-[50%] flex flex-row lg:flex-col items-center lg:items-center justify-between xl:justify-center gap-6 xl:gap-32">
-              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-row lg:flex-col 3xl:flex-row mb-4 lg:mb-0 gap-3">
-                <span>Buildings</span> <span>We deal in:</span>
+          <div className="bg-[#2B3331] rounded-2xl lg:rounded-[10%] flex flex-col lg:flex-row items-stretch justify-around gap-6 w-full md:w-[80%] mx-auto lg:w-[60%] 2xl:w-[70%] py-10 px-6">
+            <div className="w-full lg:w-[50%] flex flex-col items-center lg:items-center justify-between xl:justify-center gap-6 xl:gap-32">
+              <h2 className="text-[#8AD5B7] font-extrabold text-3xl lg:text-5xl flex flex-wrap flex-row lg:flex-col 3xl:flex-row mb-4 lg:mb-0 gap-3">
+                <span className="text-center w-full">Buildings</span> <span className="text-center w-full">We deal in:</span>
               </h2>
               <img
                 src="pics/world-map.png"
@@ -294,7 +294,7 @@ const AboutPage = () => {
                 className="w-full h-auto"
               />
             </div>
-            <div className="w-full lg:w-[40%] 2xl:w-[30%] flex flex-row flex-wrap lg:flex-col items-start 2xl:items-right justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4">
+            <div className="w-full lg:w-[40%] 2xl:w-[30%] flex flex-col items-start 2xl:items-right justify-center lg:justify-end xl:justify-center gap-4 lg:gap-2 xl:gap-4">
               {service?.buildingTypes.map((location, index) => (
                 <p key={index} className="text-[#DCE2E2] text-base 2xl:text-lg flex gap-2">
                   <DotIcon /> {location}
@@ -302,7 +302,7 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-          <div className="w-[80%] mx-auto lg:w-[40%]">
+          <div className="w-full md:w-[80%] mx-auto lg:w-[40%]">
             <Image
               src="/pics/Rectangle 52.png"
               alt=""
@@ -381,7 +381,7 @@ const AboutPage = () => {
           text={cta?.buttonText}
           href="/contacts"
           isArrow={true}
-          styling="px-8 py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-[20px] lg:text-[24px] w-full lg:w-auto rounded-full mx-auto my-0"
+          styling="px-8 py-6 lg:py-3 bg-[#8AD5B7] text-[#37403D] font-semibold text-base text-wrap lg:text-[24px] w-full lg:w-auto rounded-full mx-auto my-0"
         />
       </section>
     </div>

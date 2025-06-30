@@ -5,7 +5,7 @@ import CTA2 from "@/components/CTA2"
 
 const HeroCarousel = ({bg,img,text1,text2,text3,text4="",cta,ctaLink, className=""}) => { 
     return (
-            <div className="bg-brand-dark h-[80vh] lg:h-screen 3xl:h-[85vh] relative flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between 2xl:justify-center lg:pt-8 lg:px-10">
+            <div className="bg-brand-dark h-[90vh] lg:h-screen 3xl:h-[85vh] relative flex flex-col lg:flex-row items-center lg:items-end justify-center lg:justify-between 2xl:justify-center lg:pt-8 lg:px-10">
                 {/* Background Image - Optional */}                
                 <div
                     className="absolute w-full inset-0 h-full"

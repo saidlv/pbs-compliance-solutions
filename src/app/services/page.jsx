@@ -105,7 +105,7 @@ const Page = () => {
                       service.id % 2 === 1 ? "lg:flex-row" : "lg:flex-row-reverse"
                     } items-center xl:items-stretch 3xl:items-center lg:justify-between 2xl:justify-center gap-12 px-4 lg:px-6`}
                   >
-                    <div className="w-[80%] lg:w-[45%] 2xl:w-[40%] h-full flex justify-center items-start 2xl:items-center">
+                    <div className="w-full md:w-[80%] lg:w-[45%] 2xl:w-[40%] h-full flex justify-center items-start 2xl:items-center">
                       <Image
                         src={service.icon}
                         alt={service.title}

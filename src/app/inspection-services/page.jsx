@@ -38,7 +38,7 @@ const InspectionServices = () => {
 
       {/* Section 01 */}
       <section className="px-6 md:px-10 lg:px-16 pb-10 pt-16 text-[#DCE2E2]">
-        <h2 className="text-4xl font-semibold font-conthrax w-2/3 mx-auto text-center mb-3 lg:mb-6">
+        <h2 className="text-4xl font-semibold font-conthrax w-full md:w-2/3 mx-auto text-center mb-3 lg:mb-6">
           Ensuring safety, Compliance & Peace of Mind
         </h2>
         <p className="text-xl font-semibold text-[#89A096] w-full mx-auto text-center mb-6 lg:mb-10">
@@ -112,7 +112,7 @@ const InspectionServices = () => {
                   backgroundBlendMode: "luminosity",
                 }}
               >
-                <p className="bg-[#1E2322] w-auto mr-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096]">
+                <p className="bg-[#1E2322] w-auto mr-auto rounded-full py-2 px-3 text-lg xl:text-xl font-semibold text-[#89A096] text-center md:text-left">
                   {service.heading}
                 </p>
                 <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax">
@@ -256,17 +256,17 @@ const InspectionServices = () => {
   })}
 </div>
 
-        <div className="w-full bg-[#2E3734] py-6 px-16">
+        <div className="w-full bg-[#2E3734] py-6 px-6 md:px-10 lg:px-16">
           <p className="text-[#DCE2E2] text-xl font-semibold text-center">
             {inspectionServices[1].additionalText}
           </p>
-          <div className="max-w-4xl mx-auto mt-10 flex flex-col lg:flex-row gap-12 items-center justify-center">
+          <div className="max-w-full lg:max-w-4xl mx-auto mt-10 flex flex-col lg:flex-row gap-12 items-center justify-center">
             <CTA2
               text="Schedule a Compliance Audit
 "
               isArrow={false}
               href="/contacts"
-              styling={`w-[90%] md:w-2/3 lg:w-1/2 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+              styling={`w-full md:w-2/3 lg:w-1/2 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
             />
             {/* <CTA2
               text="Call Our Inspectors (914-316-6956)

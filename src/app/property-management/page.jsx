@@ -85,7 +85,7 @@ const Page = () => {
               alt="Inspection Services"
               width={500}
               height={500}
-              className="w-[80%] lg:w-[80%] xl:w-[75%] 2xl:w-[60%] 3xl:w-[50%] h-auto object-cover lg:mx-0 mx-auto mix-blend-luminosity"
+              className="w-full lg:w-[80%] xl:w-[75%] 2xl:w-[60%] 3xl:w-[50%] h-auto object-cover lg:mx-0 mx-auto mix-blend-luminosity mt-5"
             />
           </div>
         </div>
@@ -109,7 +109,7 @@ const Page = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] h-auto object-contain mx-auto"
+            className="w-full h-auto object-contain mx-auto"
           />
         </div>
       </section>

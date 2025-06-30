@@ -40,7 +40,7 @@
         "Building from the ground up? We’re your foundation to finish partners. NYC’s rigorous new construction process demands precision. From securing Foundation permits to final Certificates of Occupancy, we ensure every phase meets DOB, DEP, & FDNY Standards. Whether demolishing an old structure or raising a high-rise, we handle it so you can focus on the build.",
       bullets: [
         "New Building Approval",
-        "Foundation/Superstructure Permits",
+        "Foundation/ Superstructure Permits",
         "Certificate of Occupancy",
         "Demolition Permits + DEP Asbestos Inspections",
         "Builders Paving Plan Approval",

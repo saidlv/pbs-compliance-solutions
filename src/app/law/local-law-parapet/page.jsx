@@ -64,7 +64,7 @@ const Page = () => {
                     className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
                   />
                   <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
+                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
                       {section01.title}
                     </span>
                     <h2 className="text-2xl lg:text-[40px] leading-tight text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax ">
@@ -200,7 +200,7 @@ const Page = () => {
           </div>
           
           <Link href={"/alert"}
-           className="w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-center gap-[10%] lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
+           className="w-[80%] md:w-[60%] lg:w-[40%] mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#1E2322] px-0 lg:px-6 py-2 text-lg font-semibold hover:brightness-105 hover:scale-105 transition xl:text-xl font-conthrax relative flex items-center justify-center gap-[10%] lg:gap-[17%] xl:gap-[20%] 2xl:gap-[25%] 3xl:gap-[30%] 4xl:gap-[35%]"
           >
             <span className="">Get Timely Alerts</span>
             <svg
@@ -298,7 +298,7 @@ const Page = () => {
                 } items-center md:items-stretch md:justify-between rounded-lg gap-4 md:gap-6 lg:gap-8`}
               >
                 {/* Image */}
-                <div className={`w-[30%] ${index==0?"xl:w-[30%]":"xl:w-[20%]"} h-auto flex-shrink-0 flex items-center`}>
+                <div className={`w-[80%] md:w-[70%] lg:w-[30%] ${index==0?"xl:w-[30%]":"xl:w-[20%]"} h-auto flex-shrink-0 flex items-center`}>
                   <Image
                     src={item.img}
                     alt={item.data.title}
@@ -309,7 +309,7 @@ const Page = () => {
                 </div>
 
                 {/* Text Content */}
-                <div className="w-[70%] h-auto flex flex-col justify-center gap-2 sm:gap-3 lg:gap-4 flex-1 bg-[#2D3533] p-3 lg:p-6 rounded-3xl">
+                <div className="w-[80%] md:w-[70%] h-auto flex flex-col justify-center gap-2 sm:gap-3 lg:gap-4 flex-1 bg-[#2D3533] p-3 lg:p-6 rounded-3xl">
                   <h3 className="text-[#8AD5B7] text-xl lg:text-3xl font-semibold">
                     {item.data.title}
                   </h3>

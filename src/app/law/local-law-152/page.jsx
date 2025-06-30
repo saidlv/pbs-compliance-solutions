@@ -63,7 +63,7 @@ const Page = () => {
                     className="w-[80%] lg:w-[45%] h-auto object-cover object-right-top rounded-[16%] mb-6 lg:mb-0 lg:mx-0 mx-auto mix-blend-luminosity"
                   />
                   <div className="w-full lg:w-[55%] flex flex-col gap-3 justify-between items-center lg:items-start 2xl:justify-center 2xl:gap-6 p-6 rounded-2xl">
-                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl font-semibold text-[#89A096]">
+                    <span className="bg-[#1E2322] w-auto rounded-full py-2 px-3 text-base md:text-lg xl:text-xl text-center md:text-left font-semibold text-[#89A096]">
                       {section01.title}
                     </span>
                     <h2 className="text-2xl lg:text-[40px] 2xl:text-5xl text-center lg:text-left font-semibold text-[#8AD5B7] font-conthrax leading-tight">
@@ -148,7 +148,7 @@ const Page = () => {
           <h2 className="text-3xl lg:text-[40px] font-semibold font-conthrax">
             {Compliance_Deadlines.title}
           </h2>
-          <p className="text-[#89A096] text-base lg:text-xl font-semibold">
+          <p className="text-[#89A096] text-base lg:text-xl font-semibold text-center lg:text-left">
             {Compliance_Deadlines.text}
           </p>
           </div>
@@ -367,7 +367,7 @@ const Page = () => {
                     width={600}
                     height={800}
                     priority
-                    className="relative w-1/2 lg:w-full mx-auto h-auto lg:h-full object-cover lg:object-cover object-top mix-blend-luminosity"
+                    className="relative w-2/3 lg:w-full mx-auto h-auto lg:h-full object-cover lg:object-cover object-top mix-blend-luminosity"
                   />
                 </div>
       

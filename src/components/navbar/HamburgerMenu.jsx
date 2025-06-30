@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { AlignJustify, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const HamburgerMenu = ({ navItems }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openSubDropdown, setOpenSubDropdown] = useState(null);
   const mobileMenuRef = useRef(null);
+  const router = useRouter();
 
   const handleHamburgerClick = () => {
     setIsHamburgerOpen(!isHamburgerOpen);
@@ -66,7 +68,9 @@ const HamburgerMenu = ({ navItems }) => {
       setIsHamburgerOpen(false);
       setOpenDropdown(null);
       setOpenSubDropdown(null);
+      if(item.name === "Member Login")
       window.location.href = item.link;
+      else router.push(item.link);
     }
   };
 
@@ -150,7 +154,13 @@ const HamburgerMenu = ({ navItems }) => {
                             setIsHamburgerOpen(false);
                             setOpenDropdown(null);
                             setOpenSubDropdown(null);
-                            window.location.href = subItem.link;
+                            
+                            // Use window.location.href for member login, Next.js router for everything else
+                            if (subItem.name === "Member Login") {
+                              window.location.href = subItem.link;
+                            } else {
+                              router.push(subItem.link);
+                            }
                           }
                         }}
                       >
@@ -183,7 +193,13 @@ const HamburgerMenu = ({ navItems }) => {
                                 setIsHamburgerOpen(false);
                                 setOpenDropdown(null);
                                 setOpenSubDropdown(null);
-                                window.location.href = nestedItem.link;
+                                
+                                // Use window.location.href for member login, Next.js router for everything else
+                                if (nestedItem.name === "Member Login") {
+                                  window.location.href = nestedItem.link;
+                                } else {
+                                  router.push(nestedItem.link);
+                                }
                               }}
                             >
                               {nestedItem.name}
