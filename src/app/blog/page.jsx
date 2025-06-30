@@ -147,15 +147,15 @@ const Page = () => {
       /> */}
 
       {/* Main Blog Section - Dark background with responsive padding */}
-      <section className="bg-[#171717] text-[#E5E7EB] py-32 px-6 md:px-12 lg:px-24">
-        <div className="container mx-auto sm:w-[90%] md:w-[70%] md:mr-48 lg:mx-auto">
+      <section className="bg-[#37403D] text-[#DCE2E2] py-32 px-6 md:px-12 lg:px-24">
+        <div className="container mx-auto max-w-7xl">
           {/* Featured Post - Large highlighted article at the top */}
           <motion.div
             ref={featuredRef}
             initial={{ opacity: 0, y: 20 }} // Initial animation state
             animate={{ opacity: 1, y: 0 }} // Animation target state
             transition={{ duration: 0.5 }} // Animation duration
-            className="mb-10 xl:mb-16 h-screen"
+            className="mb-10 xl:mb-16 min-h-screen"
           >
             <div className="relative rounded-2xl overflow-hidden">
               {/* Featured post image */}
@@ -167,15 +167,15 @@ const Page = () => {
                 className="w-full h-full object-cover"
               />
               {/* Gradient overlay with post details */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#171717] via-[#171717dd] to-transparent p-8">
-                <span className="text-brand-bright bg-[#1A1A1A] px-4 py-1 rounded-full text-sm">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#37403D] via-[#37403D]/80 to-transparent p-8">
+                <span className="text-[#8AD5B7] bg-[#1E2322] px-4 py-1 rounded-full text-sm font-conthrax">
                   Featured Article
                 </span>
-                <h1 className="text-4xl font-bold text-white mt-4 mb-2">
+                <h1 className="text-4xl font-bold text-[#DCE2E2] mt-4 mb-2 font-conthrax">
                   The Future of Smart Construction Technologies
                 </h1>
                 {/* Post metadata with icons */}
-                <div className="flex items-center gap-4 text-[#9CA3AF]">
+                <div className="flex items-center gap-4 text-[#89A096] font-poppins">
                   <CalendarDays className="w-5 h-5" />
                   <span>March 18, 2025</span>
                   <Bookmark className="w-5 h-5" />
@@ -197,7 +197,7 @@ const Page = () => {
                 initial={{ opacity: 0, y: 20 }} // Initial animation state
                 animate={{ opacity: 1, y: 0 }} // Animation target state
                 transition={{ delay: index * 0.1 }} // Staggered delay based on index
-                className="bg-[#1A1A1A] rounded-xl overflow-hidden hover:shadow-xl transition-all"
+                className="bg-[#2E3734] rounded-xl overflow-hidden hover:shadow-xl transition-all"
               >
                 {/* Post thumbnail image */}
                 <CustomImage
@@ -211,23 +211,23 @@ const Page = () => {
                 <div className="p-6">
                   {/* Post metadata with category and date */}
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-brand-bright text-sm">
+                    <span className="text-[#8AD5B7] text-sm font-conthrax">
                       {post.category}
                     </span>
-                    <span className="text-brand-midGray text-sm">•</span>
-                    <CalendarDays className="w-4 h-4 text-brand-midGray" />
-                    <span className="text-brand-midGray text-sm">
+                    <span className="text-[#89A096] text-sm">•</span>
+                    <CalendarDays className="w-4 h-4 text-[#89A096]" />
+                    <span className="text-[#89A096] text-sm font-poppins">
                       {post.date}
                     </span>
                   </div>
                   {/* Post title */}
-                  <h2 className="text-xl font-bold text-white mb-3">
+                  <h2 className="text-xl font-bold text-[#DCE2E2] mb-3 font-conthrax">
                     {post.title}
                   </h2>
                   {/* Post excerpt */}
-                  <p className="text-brand-midGray mb-4">{post.excerpt}</p>
+                  <p className="text-[#89A096] mb-4 font-poppins">{post.excerpt}</p>
                   {/* Read more button with arrow icon */}
-                  <Link href="/blog/blogs" className="flex items-center gap-2 text-brand-bright hover:text-[#00CC6A] transition">
+                  <Link href="/blog/blogs" className="flex items-center gap-2 text-[#8AD5B7] hover:text-[#8AD5B7]/80 transition font-poppins">
                     Read More
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -253,7 +253,7 @@ const Page = () => {
                       e.preventDefault();
                       handlePageChange(currentPage - 1);
                     }}
-                    className="text-brand-midGray hover:bg-[#2d2d2d]"
+                    className="text-[#89A096] hover:bg-[#2E3734] font-poppins"
                     isActive={currentPage > 1} // Only active if not on first page
                   />
                 </PaginationItem>
@@ -267,10 +267,10 @@ const Page = () => {
                         e.preventDefault();
                         handlePageChange(index + 1);
                       }}
-                      className={`hover:bg-[#2d2d2d] ${
+                      className={`hover:bg-[#2E3734] font-poppins ${
                         currentPage === index + 1
-                          ? "bg-brand-bright text-black hover:bg-[#00CC6A]" // Active page styling
-                          : "text-brand-midGray" // Inactive page styling
+                          ? "bg-[#8AD5B7] text-[#1E2322] hover:bg-[#8AD5B7]/80" // Active page styling
+                          : "text-[#89A096]" // Inactive page styling
                       }`}
                     >
                       {index + 1}
@@ -286,7 +286,7 @@ const Page = () => {
                       e.preventDefault();
                       handlePageChange(currentPage + 1);
                     }}
-                    className="text-brand-midGray hover:bg-[#2d2d2d]"
+                    className="text-[#89A096] hover:bg-[#2E3734] font-poppins"
                     isActive={currentPage < totalPages} // Only active if not on last page
                   />
                 </PaginationItem>

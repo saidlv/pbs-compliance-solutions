@@ -99,13 +99,13 @@ const BlogPostPage = () => {
   }, []);
 
   return (
-    <section className="bg-[#171717] text-[#E5E7EB] py-16 px-6 md:px-12 lg:px-24">
+    <section className="bg-[#37403D] text-[#DCE2E2] py-16 px-6 md:px-12 lg:px-24">
       <div className="container mx-auto max-w-4xl px-6 py-24 sm:w-[90%] md:pr-32 lg:px-6 lg:w-[80%] lg:py-12">
         {/* Back Button - Navigation to return to blog listing */}
         <div ref={backButtonRef} className="mb-8">
           <a
             href="/blog"
-            className="text-brand-bright hover:text-[#00CC6A] flex items-center gap-2"
+            className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 flex items-center gap-2 font-poppins"
           >
             <ArrowLeft className="w-5 h-5" />
             Back to Blog
@@ -114,10 +114,10 @@ const BlogPostPage = () => {
 
         {/* Article Header - Title and metadata */}
         <div ref={articleHeaderRef} className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#DCE2E2] mb-6 font-conthrax">
             NYC Building Code Updates: What Contractors Need to Know for 2025
           </h1>
-          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center text-brand-midGray">
+          <div className="flex flex-col md:flex-row gap-6 items-start md:items-center text-[#89A096] font-poppins">
             <div className="flex items-center gap-3">
               <User className="w-5 h-5" />
               <span>John Doe</span>
@@ -135,7 +135,6 @@ const BlogPostPage = () => {
 
         {/* Featured Image - Main blog post image */}
         <div
-          ref={featuredImageRef}
           className="mb-12 rounded-xl overflow-hidden"
         >
           <CustomImage
@@ -153,8 +152,8 @@ const BlogPostPage = () => {
           <div className="prose prose-invert max-w-none">
             {/* Overview Section - Introduction to the article */}
             <div ref={overviewRef} className="mb-12">
-              <h2 className="text-3xl text-white mb-6">Overview</h2>
-              <p className="text-brand-midGray mb-6">
+              <h2 className="text-3xl text-[#8AD5B7] mb-6 font-conthrax">Overview</h2>
+              <p className="text-[#89A096] mb-6 font-poppins">
                 The New York City Department of Buildings has announced
                 significant updates to the construction regulations that will
                 impact all contractors working within the five boroughs. These
@@ -165,11 +164,11 @@ const BlogPostPage = () => {
 
             {/* Key Changes Section - Bullet points of important updates */}
             <div ref={keyChangesRef} className="mb-12">
-              <h2 className="text-3xl text-white mb-6 flex items-center gap-3">
-                <HardHat className="w-8 h-8 text-brand-bright" />
+              <h2 className="text-3xl text-[#8AD5B7] mb-6 flex items-center gap-3 font-conthrax">
+                <HardHat className="w-8 h-8 text-[#8AD5B7]" />
                 Key Changes
               </h2>
-              <ul className="space-y-4 text-brand-midGray">
+              <ul className="space-y-4 text-[#89A096] font-poppins">
                 {[
                   "Revised scaffolding safety requirements",
                   "Updated material storage protocols",
@@ -177,7 +176,7 @@ const BlogPostPage = () => {
                   "New inspection timelines",
                 ].map((point, index) => (
                   <li key={index} className="flex gap-3">
-                    <span className="text-brand-bright">•</span>
+                    <span className="text-[#8AD5B7]">•</span>
                     {point}
                   </li>
                 ))}
@@ -186,21 +185,21 @@ const BlogPostPage = () => {
 
             {/* Compliance Process Section - Step-by-step guide */}
             <div ref={complianceRef} className="mb-12">
-              <h2 className="text-3xl text-white mb-6 flex items-center gap-3">
-                <ClipboardList className="w-8 h-8 text-brand-bright" />
+              <h2 className="text-3xl text-[#8AD5B7] mb-6 flex items-center gap-3 font-conthrax">
+                <ClipboardList className="w-8 h-8 text-[#8AD5B7]" />
                 Compliance Process
               </h2>
               <div className="space-y-8">
                 {[1, 2, 3].map((step) => (
                   <div key={step} className="flex gap-4">
-                    <div className="w-8 h-8 bg-brand-bright text-black rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-[#8AD5B7] text-[#1E2322] rounded-full flex items-center justify-center font-conthrax font-bold">
                       {step}
                     </div>
                     <div>
-                      <h3 className="text-white font-semibold mb-2">
+                      <h3 className="text-[#DCE2E2] font-semibold mb-2 font-conthrax">
                         Documentation Review
                       </h3>
-                      <p className="text-brand-midGray">
+                      <p className="text-[#89A096] font-poppins">
                         Submit updated safety plans through the DOB NOW
                         portal...
                       </p>
@@ -213,10 +212,10 @@ const BlogPostPage = () => {
             {/* Legal References Section - Code citations in highlighted box */}
             <div
               ref={legalRefsRef}
-              className="bg-[#1A1A1A] p-8 rounded-xl mb-12"
+              className="bg-[#2E3734] p-8 rounded-xl mb-12"
             >
-              <h3 className="text-2xl text-white mb-4">NYC Code References</h3>
-              <ul className="space-y-3 text-brand-midGray">
+              <h3 className="text-2xl text-[#8AD5B7] mb-4 font-conthrax">NYC Code References</h3>
+              <ul className="space-y-3 text-[#89A096] font-poppins">
                 <li>• Local Law 196: Worker Safety Training Requirements</li>
                 <li>• Building Code §28-301.1: Structural Integrity</li>
                 <li>• 2025 NYC Construction Code Revision 4.2.1</li>
@@ -225,14 +224,14 @@ const BlogPostPage = () => {
 
             {/* FAQ Section - Common questions and answers */}
             <div ref={faqRef} className="mb-12">
-              <h2 className="text-3xl text-white mb-6">FAQ</h2>
+              <h2 className="text-3xl text-[#8AD5B7] mb-6 font-conthrax">FAQ</h2>
               <div className="space-y-6">
                 {[1, 2, 3].map((faq) => (
-                  <div key={faq} className="border-b border-[#2d2d2d] pb-6">
-                    <h3 className="text-white font-semibold mb-3">
+                  <div key={faq} className="border-b border-[#2E3734] pb-6">
+                    <h3 className="text-[#DCE2E2] font-semibold mb-3 font-conthrax">
                       When do these changes take effect?
                     </h3>
-                    <p className="text-brand-midGray">
+                    <p className="text-[#89A096] font-poppins">
                       The new regulations will be enforced starting January 1,
                       2025...
                     </p>
@@ -245,8 +244,8 @@ const BlogPostPage = () => {
           {/* Sidebar - Right column with table of contents */}
           <div className="hidden lg:block">
             <div ref={sidebarRef} className="sticky top-24">
-              <div className="bg-[#1A1A1A] p-6 rounded-xl">
-                <h3 className="text-white text-lg font-bold mb-4">
+              <div className="bg-[#2E3734] p-6 rounded-xl">
+                <h3 className="text-[#DCE2E2] text-lg font-bold mb-4 font-conthrax">
                   Table of Contents
                 </h3>
                 <nav className="space-y-3">
@@ -260,13 +259,13 @@ const BlogPostPage = () => {
                     <a
                       key={item}
                       href={`#${item.toLowerCase().replace(" ", "-")}`}
-                      className="block text-brand-midGray hover:text-brand-bright transition"
+                      className="block text-[#89A096] hover:text-[#8AD5B7] transition font-poppins"
                     >
                       {item}
                     </a>
                   ))}
                 </nav>
-                <button className="w-full mt-6 bg-brand-bright text-black py-3 rounded-lg font-semibold hover:bg-[#00CC6A] transition">
+                <button className="w-full mt-6 bg-[#8AD5B7] text-[#1E2322] py-3 rounded-lg font-semibold hover:bg-[#8AD5B7]/80 transition font-conthrax">
                   Download PDF Guide
                 </button>
               </div>
@@ -276,19 +275,19 @@ const BlogPostPage = () => {
 
         {/* Related Articles Section - Additional content suggestions */}
         <div ref={relatedArticlesRef} className="mt-20">
-          <h2 className="text-3xl text-white mb-8">Related Articles</h2>
+          <h2 className="text-3xl text-[#8AD5B7] mb-8 font-conthrax">Related Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[1, 2].map((post) => (
-              <div key={post} className="bg-[#1A1A1A] rounded-xl p-6">
-                <h3 className="text-white text-lg font-semibold mb-3">
+              <div key={post} className="bg-[#2E3734] rounded-xl p-6">
+                <h3 className="text-[#DCE2E2] text-lg font-semibold mb-3 font-conthrax">
                   Understanding NYC Zoning Laws
                 </h3>
-                <p className="text-brand-midGray mb-4">
+                <p className="text-[#89A096] mb-4 font-poppins">
                   Recent changes to commercial zoning regulations in Brooklyn...
                 </p>
                 <a
                   href="#"
-                  className="text-brand-bright hover:text-[#00CC6A] flex items-center gap-2"
+                  className="text-[#8AD5B7] hover:text-[#8AD5B7]/80 flex items-center gap-2 font-poppins"
                 >
                   Read Article
                   <ArrowLeft className="w-4 h-4 rotate-180" />
