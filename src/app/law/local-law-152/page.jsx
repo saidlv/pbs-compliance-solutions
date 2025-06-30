@@ -53,7 +53,7 @@ const Page = () => {
   </div>
 
   {/*Section 01  */}
-  <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
+  <section className="px-6 md:px-10 xl:px-16 pt-10 md:pt-16 lg:pt-24 text-[#DCE2E2] w-full">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-6 lg:pb-10">
                   <Image
                     src="/pics/local-law-152-pic1.png"
@@ -101,7 +101,7 @@ const Page = () => {
         <div className="w-[90%] lg:w-[80%] mx-auto space-y-3 lg:space-y-6 pb-10 lg:pb-0">
            <h2  className="text-3xl lg:text-5xl font-semibold font-conthrax text-center text-[#8AD5B7]">{Div2_Sec1.title}</h2>
 
-           <p className="text-base lg:text-xl font-semibold px-10 text-[#89A096] max-w-4xl mx-auto text-center flex flex-col">
+           <p className="text-base lg:text-xl font-semibold md:px-10 text-[#89A096] max-w-4xl mx-auto text-center flex flex-col">
               <span >{Div2_Sec1.description.split("(")[0]}</span>
             <span>{"(" + Div2_Sec1.description.split("(")[1]}</span>
            </p>

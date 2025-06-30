@@ -241,7 +241,7 @@ const Page = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 3 * 0.1 }}
           >
-            <p className="text-[#DCE2E2] text-base font-medium italic mb-2 flex-1 text-center lg:text-left relative lg:left-[60%] 2xl:left-[60%] p-6 bg-[#2D3533] rounded-lg w-2/3 md:w-1/2 lg:w-1/3 2xl:w-1/4 mx-auto lg:mx-0">
+            <p className="text-[#DCE2E2] text-base font-medium italic mb-2 flex-1 text-center lg:text-left relative lg:left-[60%] 2xl:left-[60%] p-6 bg-[#2D3533] rounded-lg w-full md:w-1/2 lg:w-1/3 2xl:w-1/4 mx-auto lg:mx-0">
               <span className="font-semibold">
                 SWARMP ANALYSIS {" "}
                 <span className="test-xs font-semibold text-[#89A096]">

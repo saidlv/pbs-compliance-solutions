@@ -54,7 +54,7 @@ const Page = () => {
   </div>
 
       {/*Section 01  */}
-      <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-16 lg:pt-24 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 pt-10 md:pt-16 lg:pt-24 text-[#DCE2E2]">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between 2xl:justify-center 2xl:gap-16 w-full pb-10 lg:pb-16">
                   <Image
                     src="/pics/local-law-parapet-pic2.png"
@@ -132,7 +132,7 @@ const Page = () => {
       </section>
 
       {/* Section 02 */}
-      <section className="px-6 md:px-10 xl:px-16 pt-24 md:pt-10 lg:pt-16 text-[#DCE2E2]">
+      <section className="px-6 md:px-10 xl:px-16 pt-10 lg:pt-16 text-[#DCE2E2]">
         <div className="w-full lg:w-[80%] mx-auto flex flex-col items-center gap-6 2xl:gap-8">
           <h2 className="text-3xl lg:text-5xl font-semibold text-[#8AD5B7] font-conthrax text-center">
             {WhoNeedsInspections.heading}

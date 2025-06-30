@@ -23,7 +23,7 @@ import { ErrorBoundary } from "react-error-boundary";
  */
 function ErrorFallback({ error, resetErrorBoundary }) {
   return (
-    <div className="min-h-screen bg-[#171717] text-[#E5E7EB] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#171717] text-[#E5E7EB] flex items-center justify-center px-6 overflow-x-hidden w-screen">
       <div className="container mx-auto text-center md:w-[70%] lg:w-[60%]">
         {/* Animated "Oops!" text with scale-in effect */}
         <motion.div

@@ -71,12 +71,12 @@ const Page = () => {
         <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2"></div>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-10 2xl:gap-16 w-full py-6 lg:py-10">
-          <div className="bg-[#2E3734] rounded-xl p-4 lg:p-6 w-[80%] lg:w-1/2 2xl:w-[40%] flex 3xl:items-center">
+          <div className="bg-[#2E3734] rounded-xl p-4 lg:p-6 w-[90%] md:w-[80%] lg:w-1/2 2xl:w-[40%] flex 3xl:items-center">
             <p className="text-[#89A096] text-xl xl:text-2xl font-semibold text-center lg:text-left">
               {Div2_Section1.left}
             </p>
           </div>
-          <div className="bg-[#2E3734] rounded-xl p-4 lg:p-6 w-[80%] lg:w-1/2 flex flex-col items-center justify-between">
+          <div className="bg-[#2E3734] rounded-xl p-4 lg:p-6 w-[90%] md:w-[80%] lg:w-1/2 flex flex-col items-center justify-between">
             <p className="text-[#89A096] text-xl xl:text-2xl font-semibold text-center lg:text-left">
               {Div2_Section1.right}
             </p>
@@ -131,12 +131,12 @@ const Page = () => {
               height={500}
               className="w-[50%] lg:w-1/3 3xl:w-1/4 object-contain mr-0"
             />
-            <div className="flex flex-col items-center lg:items-start justify-center gap-5 xl:gap-6 2xl:gap-8 w-[80%] lg:w-[55%] xl:w-[55%] 3xl:w-[50%] ml-0">
+            <div className="flex flex-col items-center lg:items-start justify-center gap-5 xl:gap-6 2xl:gap-8 w-full md:w-[80%] lg:w-[55%] xl:w-[55%] 3xl:w-[50%] ml-0">
               <h3 className="w-full text-2xl lg:text-3xl font-conthrax text-center lg:text-left font-semibold text-[#DCE2E2] lg:max-w-sm">
                 {compliance_alert.subheading}
               </h3>
 
-              <div className="space-y-2 w-[90%] lg:w-full 2xl:w-[85%] mx-auto lg:mx-0">
+              <div className="space-y-2 w-full md:w-[90%] lg:w-full 2xl:w-[85%] mx-auto lg:mx-0">
                 {compliance_alert.items.map((item, index) => {
                   return (
                     <p

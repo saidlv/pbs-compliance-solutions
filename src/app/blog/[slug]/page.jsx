@@ -242,7 +242,7 @@ const BlogPostPage = () => {
           </div>
 
           {/* Sidebar - Right column with table of contents */}
-          <div className="hidden lg:block">
+          <div className="lg:block">
             <div ref={sidebarRef} className="sticky top-24">
               <div className="bg-[#2E3734] p-6 rounded-xl">
                 <h3 className="text-[#DCE2E2] text-lg font-bold mb-4 font-conthrax">
