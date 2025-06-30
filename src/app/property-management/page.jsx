@@ -91,7 +91,7 @@ const Page = () => {
         </div>
       </section>
 
-      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2"></div>
+      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 my-6"></div>
 
       {/*Section 02  */}
       <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-10 text-[#DCE2E2] w-full">
@@ -114,7 +114,7 @@ const Page = () => {
         </div>
       </section>
 
-      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2"></div>
+      <div className="w-[30%] mx-auto bg-[#8AD5B7] h-2 my-6"></div>
 
       {/* Section 3 */}
       <section className="px-6 md:px-10 xl:px-16 pt-6 lg:pt-10 text-[#DCE2E2] w-full">

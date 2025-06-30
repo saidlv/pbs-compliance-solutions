@@ -54,7 +54,7 @@ const InspectionServices = () => {
             alt="Inspection Services"
             width={500}
             height={500}
-            className="w-[80%] lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 lg:mb-0 lg:mx-0 mx-auto"
+            className="w-[80%] relative -left-4 lg:left-0 lg:w-[40%] 2xl:w-[20%] h-auto object-contain rounded-lg mb-6 md:mb-10 lg:mb-0 lg:mx-0 mx-auto"
           />
           <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start justify-end text-center lg:text-left px-4 lg:px-0">
             <h1 className="text-[#8AD5B7] text-4xl xl:text-[55px] font-semibold font-conthrax mb-2 leading-tight">
@@ -174,15 +174,15 @@ const InspectionServices = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-3 justify-between items-center">
-                  <p className="text-[#89A096] text-base font-semibold w-1/2 lg:w-2/3">
+                <div className="flex flex-col md:flex-row gap-3 justify-between items-center">
+                  <p className="text-[#89A096] text-base font-semibold md:w-1/2 lg:w-2/3">
                     {service.cta.text}
                   </p>
                   <CTA2
                     text="Learn More"
                     isArrow={false}
                     href={service.cta.href}
-                    styling={`w-1/2 lg:w-1/3 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
+                    styling={`md:w-1/2 lg:w-1/3 mt-0 rounded-2xl h-12 bg-[#8AD5B7] text-[#37403D] px-0 lg:px-6 py-2 text-sm font-semibold whitespace-nowrap hover:brightness-105 transition lg:text-base font-conthrax `}
                   />
                 </div>
               </div>
