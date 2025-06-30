@@ -134,11 +134,11 @@ const AboutPage = () => {
             {(vision?.pillars || []).map((value, index) => (
               <div key={index} className="text-[#DCE2E2] flex gap-2 mb-2">
                 <Dot />
-                <div className="flex justify-evenly w-full">
-                  <span className="w-[45%] text-[#DCE2E2] font-semibold text-base">
+                <div className="flex flex-col lg:flex-row justify-evenly w-full">
+                  <span className="w-full lg:w-[45%] text-[#DCE2E2] font-semibold text-base">
                     {value.split(":")[0] + ":"}
                   </span>
-                  <span className="w-[55%] text-[#7A8E85] text-base">
+                  <span className="w-full lg:w-[55%] text-[#7A8E85] text-base">
                     {value.split(":")[1]}
                   </span>
                 </div>
