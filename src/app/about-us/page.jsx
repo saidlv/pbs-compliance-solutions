@@ -185,7 +185,7 @@ const AboutPage = () => {
       </div>
 
       {/* Redefining section */}
-      <section className="py-10">
+      <section className="pt-16 pb-10 lg:py-10">
         <div className="relative">
         <Image
           src="/pics/pattern1.png"
@@ -195,8 +195,8 @@ const AboutPage = () => {
           height={500}
           loading="lazy"
         />
-        <div className="rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6 absolute bottom-6">
-          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] leading-tight w-full lg:w-[70%] mx-auto my-6">
+        <div className="rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6 absolute bottom-0 lg:bottom-6">
+          <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] leading-tight w-full md:w-[70%] 2xl:w-[60%] mx-auto my-6">
             Redefining Excellence in NYC Construction
           </h2>
           <div className="w-[30%] bg-[#8AD5B7] rounded-full h-1"></div>
