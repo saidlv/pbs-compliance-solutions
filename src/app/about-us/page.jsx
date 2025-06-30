@@ -190,12 +190,12 @@ const AboutPage = () => {
         <Image
           src="/pics/pattern1.png"
           alt=""
-          className="opacity-100 w-full h-full object-cover rounded-xl filter grayscale shadow-custom"
+          className="opacity-100 w-full object-cover rounded-xl filter grayscale shadow-custom"
           width={700}
           height={500}
           loading="lazy"
         />
-        <div className="rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6 absolute bottom-0">
+        <div className="rounded-xl w-full mx-auto flex flex-col items-center justify-center py-3 px-6 absolute bottom-6">
           <h2 className="text-[#8AD5B7] text-center font-conthrax font-semibold text-2xl lg:text-[40px] leading-tight w-full lg:w-[70%] mx-auto my-6">
             Redefining Excellence in NYC Construction
           </h2>
